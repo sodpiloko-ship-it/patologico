@@ -129,7 +129,7 @@ footer b{font-family:var(--serif);color:#fff;display:block;margin-bottom:6px}foo
 <footer><div class="wrap">
   <div><b>Lumin Candele</b><p>Velas aromáticas artesanales, hechas a mano por Yasmin y Luigi, inspiradas en Italia. La luz que encendimos juntos.</p></div>
   <div><b>Colecciones</b><p>Dolce Profumo · Piccolina<br>Wax Melts · Ediciones de temporada</p></div>
-  <div><b>Contacto</b><p>Cera 100% vegetal · hecho a mano<br>WhatsApp · Instagram</p></div>
+  <div><b>Contacto</b><p>Cera 100% vegetal · hecho a mano<br>WhatsApp · Instagram<br><a href="#/devoluciones">Envíos y devoluciones</a></p></div>
 </div></footer>
 
 <script>
@@ -140,8 +140,8 @@ const PRODUCTS = [
    desc:'La línea principal: una invitación a disfrutar el ritual de encender. Aromas cuidadosamente seleccionados que evocan emociones, viajes y recuerdos.'},
   {id:'dolce-300', name:'Dolce Profumo · 300 g', col:'Dolce Profumo', price:600, size:'300 g · cera vegetal', flame:'#a9531f', buy:true,
    desc:'El formato grande de Dolce Profumo: más horas de aroma para acompañar tus momentos de calma, celebración y placer. Cera 100% vegetal.'},
-  {id:'waxmelts', name:'Wax Melts', col:'Nuevo', price:160, size:'set para burner', flame:'#7c8a5a', buy:true, tbd:true,
-   desc:'Nuestra nueva línea: cera aromática para derretir en burner, sin pabilo. Llena el espacio de aroma sin flama. Precio de lanzamiento (a confirmar).'},
+  {id:'waxmelts', name:'Wax Melts · paquete', col:'Nuevo', price:350, size:'quemador + velas de té + bombones aromáticos', flame:'#7c8a5a', buy:true,
+   desc:'Nuestra nueva línea: el paquete incluye quemador, velas de té y bombones aromáticos para derretir, sin pabilo. Llena el espacio de aroma sin flama. Cera 100% vegetal.'},
 ];
 const TEASERS = [
   {id:'diamuertos', name:'Día de Muertos', col:'Temporada', flame:'#7d2436',
@@ -219,7 +219,7 @@ function shop(){return `<section class="wrap">
   <div class="grid">${TEASERS.map(t=>`<div class="pcard"><div class="ph">${candle(t)}<span class="col">${t.col}</span></div>
     <div class="body"><h3>${t.name}</h3><div class="desc" style="margin-top:8px">${t.desc}</div>
     <div class="row"><a class="btn ghost block" href="#/pagar?msg=${encodeURIComponent(t.name)}" style="font-size:13.5px">Apartar / cotizar por WhatsApp</a></div></div></div>`).join('')}</div>
-  <div class="note wrap" style="max-width:none;margin-top:26px">Precios de referencia; los aromas y el precio de los Wax Melts se confirman al hacer el pedido.</div>
+  <div class="note wrap" style="max-width:none;margin-top:26px">Precios de referencia; los aromas se confirman al hacer el pedido.</div>
 </section>`;}
 
 function product(id){const p=byId(id); if(!p) return `<section class="wrap"><p>No encontrado. <a href="#/tienda">Volver</a></p></section>`;
@@ -286,6 +286,25 @@ function nosotros(){return `<section class="wrap"><div class="sh"><div class="ey
     <div style="text-align:center;margin-top:24px"><a class="btn" href="#/tienda">Conoce nuestras velas</a></div>
   </div></section>`;}
 
+function devoluciones(){return `<section class="wrap"><div class="sh"><div class="eyebrow">Atención al cliente</div><h2>Políticas de recepción y devoluciones</h2></div>
+  <div class="prose">
+    <p>En Lumin Candele, cada vela se elabora y empaca con el mayor cuidado para que llegue en perfectas condiciones. Aun así, entendemos que pueden presentarse imprevistos durante el envío. Para brindarte una atención rápida y justa, te pedimos seguir estos pasos al recibir tu pedido:</p>
+    <p><b>Graba un video al abrir tu paquete</b>, sin cortes, mostrando la caja cerrada, el proceso de apertura y el estado de cada vela. Si alguna vela llega rota, maltratada o con derrames, envíanos el video <b>dentro de las primeras 24 horas</b> posteriores a la entrega. Solo con ese video podremos evaluar el caso y ofrecer la solución correspondiente.</p>
+    <h3>💰 Reembolsos o reposiciones</h3>
+    <p><b>Devolución total o reposición sin costo:</b></p>
+    <ul>
+      <li>Si el producto llega completamente roto o inutilizable y el daño es evidente en el video de apertura.</li>
+      <li>Si el pedido presenta error en el modelo, aroma o cantidad enviada.</li>
+    </ul>
+    <p><b>Reembolso parcial (50%) o cupón de descuento:</b></p>
+    <ul>
+      <li>Si el daño es leve o estético —pequeñas fisuras en el recipiente, etiquetas despegadas o ligeras imperfecciones que no afectan el funcionamiento de la vela.</li>
+    </ul>
+    <p class="note">📌 No se realizan devoluciones ni reembolsos sin el video de apertura, ya que es el único medio para comprobar el estado del paquete al momento de la entrega.</p>
+    <p>✨ Nuestro compromiso es que cada vela conserve la esencia, la estética y el detalle con los que fue creada. Gracias por tu comprensión y por ayudarnos a mantener la calidad de Lumin Candele.</p>
+    <div class="amore">con amore 🕯️</div>
+  </div></section>`;}
+
 function render(){
   const h=(location.hash.replace('#','')||'/').split('?')[0]; const parts=h.split('/').filter(Boolean);
   let v;
@@ -296,6 +315,7 @@ function render(){
   else if(parts[0]==='gracias')v=thanks();
   else if(parts[0]==='colecciones')v=colecciones();
   else if(parts[0]==='nosotros')v=nosotros();
+  else if(parts[0]==='devoluciones')v=devoluciones();
   else v=home();
   _q=1; document.getElementById('app').innerHTML=v; paintCount(); window.scrollTo(0,0);
 }
