@@ -1,0 +1,9 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
+
+# nunca secretos en el repo del sitio
+.env
+secrets/

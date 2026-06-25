@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patológicos · Construimos compañías que corren con IA agéntica</title>
+<meta name="description" content="Patológicos es una compañía nativa de IA: produce contenido a escala a través de un portafolio de propiedades y aplica IA agéntica a procesos de industria, de punta a punta. PROCA es nuestro caso insignia.">
+<link rel="canonical" href="https://patologicos.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0f1115">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Patológicos · Construimos compañías que corren con IA agéntica">
+<meta property="og:description" content="Producimos contenido a escala y aplicamos IA a procesos reales de industria. Somos nuestra propia prueba.">
+<meta property="og:url" content="https://patologicos.com/">
+<meta property="og:locale" content="es_MX">
+<style>
+:root{
+  --bg:#0f1115;--surface:#1c2029;--surface-2:#161922;--line:rgba(255,255,255,.09);
+  --ink:#eef1f6;--ink-soft:#c7cdd8;--ink-mute:#9aa3b2;
+  --accent:#ffcf4d;--accent-2:#ffb13d;--ok:#3fd07f;--info:#5db7ff;
+  --serif:Georgia,'Times New Roman',serif;--sans:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;background:var(--accent);color:#0f1115;border-radius:999px;padding:13px 26px;font-weight:700;font-size:15px;transition:.15s}
+.btn:hover{background:var(--accent-2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--accent);border:1.5px solid rgba(255,207,77,.5)}
+.btn.ghost:hover{background:rgba(255,207,77,.1)}
+.eyebrow{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:800}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:22px;padding:14px 24px}
+.logo{font-family:var(--serif);font-size:21px;font-weight:600}
+.logo b{color:var(--accent)}
+.nlinks{display:flex;gap:22px;margin-left:auto;font-size:14px}
+.nlinks a{color:var(--ink-soft);font-weight:600}.nlinks a:hover{color:var(--accent)}
+.nav .btn{padding:9px 18px;font-size:13.5px}
+
+/* hero */
+.hero{background:radial-gradient(120% 120% at 80% -20%,#23283a,#0f1115 60%);border-bottom:1px solid var(--line)}
+.hero .wrap{padding:70px 24px 60px;max-width:900px}
+.hero h1{font-size:clamp(32px,5.5vw,54px);margin:16px 0 18px}
+.hero h1 .hl{color:var(--accent)}
+.hero p{font-size:19px;color:var(--ink-soft);max-width:60ch}
+.hero .cta{margin-top:28px;display:flex;gap:13px;flex-wrap:wrap}
+.hero .meta{margin-top:18px;font-size:13px;color:var(--ink-mute)}
+
+section{padding:60px 0;border-bottom:1px solid var(--line)}
+.sh{max-width:62ch;margin-bottom:30px}
+.sh h2{font-size:clamp(24px,3.4vw,34px)}.sh p{color:var(--ink-soft);margin-top:8px;font-size:16.5px}
+
+/* pilares */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+.pillar .n{font-family:var(--serif);font-size:14px;color:var(--accent);font-weight:700}
+.pillar h3{font-size:22px;margin:8px 0 10px}.pillar p{color:var(--ink-soft);font-size:15.5px}
+
+/* motor */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.f{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:20px}
+.f .ic{font-size:22px}.f b{display:block;font-family:var(--serif);font-size:16px;margin:10px 0 5px}
+.f span{font-size:13.5px;color:var(--ink-soft)}
+
+/* portafolio */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.prop{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;transition:.15s}
+.prop:hover{border-color:var(--accent);transform:translateY(-3px)}
+.prop .top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.prop .em{font-size:20px}.prop h3{font-size:18px;flex:1}
+.prop .tag{font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-mute);background:rgba(255,255,255,.06);padding:2px 8px;border-radius:999px}
+.prop p{font-size:13.5px;color:var(--ink-soft)}
+.prooflead{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:8px}
+
+/* caso */
+.caso{background:linear-gradient(140deg,#23283a,#161922);border:1px solid var(--line);border-radius:20px;padding:38px}
+.caso h2{font-size:28px}.caso .lead{color:var(--ink-soft);font-size:17px;margin:12px 0 18px;max-width:62ch}
+.caso .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+.caso .step{display:flex;gap:12px;font-size:14.5px;color:var(--ink-soft)}
+.caso .step b{color:var(--ink);font-family:var(--serif)}
+.caso .quote{margin-top:22px;font-family:var(--serif);font-size:20px;color:var(--accent);border-left:3px solid var(--accent);padding-left:16px}
+
+/* oferta */
+.ladder{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+.tier.feature{border-color:rgba(255,207,77,.4);box-shadow:0 0 0 1px rgba(255,207,77,.15)}
+.tier .lbl{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.tier h3{font-size:23px;margin:8px 0 4px}.tier .price{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:12px}
+.tier ul{list-style:none}.tier li{font-size:14px;color:var(--ink-soft);padding:5px 0 5px 20px;position:relative}
+.tier li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+
+/* band */
+.band{background:var(--accent);color:#0f1115;border-radius:20px;padding:40px;text-align:center}
+.band h2{font-size:30px;color:#0f1115}.band p{max-width:54ch;margin:10px auto 22px;font-size:16.5px;color:#3a2e10;font-weight:500}
+.band .btn{background:#0f1115;color:var(--accent)}.band .btn:hover{background:#1c2029}
+
+footer{padding:40px 0 30px;color:var(--ink-mute);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer b{color:var(--ink);font-family:var(--serif)}
+
+@media(max-width:900px){.two,.feat,.grid,.ladder,.caso .steps{grid-template-columns:1fr}.nlinks{display:none}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#"><b>Patológicos</b></a>
+  <nav class="nlinks">
+    <a href="#hacemos">Qué hacemos</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#caso">Caso PROCA</a>
+    <a href="#oferta">Oferta</a>
+  </nav>
+  <a class="btn" href="#contacto">Agenda una auditoría</a>
+</header>
+
+<div class="hero"><div class="wrap">
+  <div class="eyebrow">Compañía nativa de IA · build-in-public</div>
+  <h1>Construimos compañías que corren con <span class="hl">IA agéntica</span>.</h1>
+  <p>Producimos contenido a escala a través de un portafolio de propiedades, y aplicamos IA a procesos
+  reales de industria —de punta a punta, con interfaz a medida—. No lo contamos: lo operamos. <b>Somos
+  nuestra propia prueba.</b></p>
+  <div class="cta"><a class="btn" href="#contacto">Agenda una Auditoría de Proceso con IA</a>
+    <a class="btn ghost" href="#portafolio">Ver el portafolio</a></div>
+  <div class="meta">Velas · PROCA · Picando Tabla · Nomos · CAD·CAM·IA — todas movidas por el mismo motor.</div>
+</div></div>
+
+<section id="hacemos"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Qué hacemos</div><h2>Dos motores, una máquina</h2>
+    <p>La IA generativa colapsó el costo de producir. El cuello de botella ya no es producir: es tener un
+    sistema que produzca, distribuya, mida y doble lo que funciona, sin fricción humana en cada paso.</p></div>
+  <div class="two">
+    <div class="pillar"><div class="n">01</div><h3>Motor de contenido a escala</h3>
+      <p>Agentes de IA producen video, audio, texto e imagen por cada propiedad de medios, a un volumen y
+      velocidad que los medios tradicionales no igualan. Convertimos la atención en ingresos: comercio,
+      audiencia y alto ticket.</p></div>
+    <div class="pillar"><div class="n">02</div><h3>Orquestadores de IA para procesos</h3>
+      <p>Construimos sistemas agénticos que transforman un proceso real de tu industria con interfaz a
+      medida. Lo probamos en la nuestra (dental, con PROCA) y lo replicamos: legal (Nomos), seguros, y la
+      que sigue. Un método repetible, no una demo.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sh"><div class="eyebrow">El motor</div><h2>Lo que nos hace "nueva generación"</h2></div>
+  <div class="feat">
+    <div class="f"><div class="ic">🤖</div><b>Agentes que generan</b><span>Un content-loop produce por propiedad; el humano dirige y aprueba.</span></div>
+    <div class="f"><div class="ic">🔁</div><b>Loops que avanzan</b><span>Un supervisor garantiza producción continua, sin que nada se estanque.</span></div>
+    <div class="f"><div class="ic">📊</div><b>Data-driven</b><span>Medimos qué funciona en cada plataforma y doblamos lo ganador.</span></div>
+    <div class="f"><div class="ic">⚡</div><b>Velocidad > perfección</b><span>Lanzar, medir, iterar. Solo afirmamos lo demostrable.</span></div>
+  </div>
+</div></section>
+
+<section id="portafolio"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Portafolio = la prueba</div><h2>No lo contamos. Lo operamos.</h2>
+    <p>Cada propiedad corre con el mismo motor. Esa es la evidencia de que el sistema funciona.</p></div>
+  <div class="grid">
+    <div class="prop"><div class="top"><span class="em">🕯️</span><h3>Lumin Candele</h3><span class="tag">Comercio</span></div><p>Velas artesanales (madre e hijo, inspiración italiana). Audiencia → ventas con el motor de contenido.</p></div>
+    <div class="prop"><div class="top"><span class="em">🦷</span><h3>PROCA / PROCAOps</h3><span class="tag">Caso insignia</span></div><p>IA aplicada a un proceso dental de punta a punta: editor 3D + portal de operaciones.</p></div>
+    <div class="prop"><div class="top"><span class="em">🍷</span><h3>Picando Tabla</h3><span class="tag">Comercio</span></div><p>Tablas de parota & maridaje. E-commerce + Meta Ads + contenido, desde cero.</p></div>
+    <div class="prop"><div class="top"><span class="em">⚖️</span><h3>Nomos</h3><span class="tag">Orquestador</span></div><p>El orquestador de IA de la rama legal. Un producto SaaS construido y auto-gestionado por la máquina.</p></div>
+    <div class="prop"><div class="top"><span class="em">🖨️</span><h3>CAD·CAM·IA</h3><span class="tag">Medios</span></div><p>Autoridad de la revolución de producción (impresión 3D, CAD, CAM, IA) por contenido y SEO.</p></div>
+    <div class="prop"><div class="top"><span class="em">🎬</span><h3>@davidrvv.mx</h3><span class="tag">Marca</span></div><p>La marca personal del fundador: la cara humana de una compañía construida por agentes.</p></div>
+  </div>
+</div></section>
+
+<section id="caso"><div class="wrap">
+  <div class="caso">
+    <div class="eyebrow">Caso insignia</div>
+    <h2>PROCA / PROCAOps</h2>
+    <p class="lead">Tomamos un proceso real —un laboratorio dental— y lo transformamos con software, IA e
+    interfaz a medida, de punta a punta. La prueba de que sabemos aplicar IA a un proceso de industria.</p>
+    <div class="steps">
+      <div class="step"><b>El proceso</b>&nbsp;— diseño de piezas dentales, manual, lento y dependiente de expertos.</div>
+      <div class="step"><b>La solución</b>&nbsp;— editor 3D (PROCA) + portal de operaciones con IA (PROCAOps).</div>
+      <div class="step"><b>El método</b>&nbsp;— construido en público, con agentes y loops que siempre avanzan.</div>
+      <div class="step"><b>El resultado</b>&nbsp;— un proceso de industria operando con IA. <span style="color:var(--ink-mute)">[métricas en preparación]</span></div>
+    </div>
+    <div class="quote">"Lo hicimos en nuestra propia industria. Esto es lo que podemos hacer en la tuya."</div>
+  </div>
+</div></section>
+
+<section id="oferta"><div class="wrap">
+  <div class="sh"><div class="eyebrow">La oferta</div><h2>Empieza por una auditoría, escala a un producto</h2>
+    <p>Bajo riesgo para entrar, alto impacto para escalar. El mismo playbook aplicado a tu proceso.</p></div>
+  <div class="ladder">
+    <div class="tier feature"><div class="lbl">Puerta de entrada</div><h3>Auditoría de Proceso con IA</h3>
+      <div class="price">desde $8,000–$15,000 MXN</div>
+      <ul><li>Mapeamos tu proceso y dónde la IA da más palanca</li><li>Plan concreto: qué automatizar, en qué orden, qué medir</li><li>Prototipo o prueba de concepto del primer paso</li></ul></div>
+    <div class="tier"><div class="lbl">El producto</div><h3>Aplicación de IA a tu proceso</h3>
+      <div class="price">desde $120,000 MXN · ~6 meses</div>
+      <ul><li>Sistema agéntico + interfaz a la medida de tu operación</li><li>Construido en público, con entregas medibles</li><li>El método ya probado en PROCA y Nomos, aplicado a lo tuyo</li></ul></div>
+  </div>
+</div></section>
+
+<section id="contacto"><div class="wrap">
+  <div class="band">
+    <h2>¿Listo para aplicar IA a tu proceso?</h2>
+    <p>Cuéntanos tu industria y tu cuello de botella. Empezamos con una auditoría y te mostramos el camino.</p>
+    <a class="btn" href="mailto:hola@patologicos.com?subject=Auditor%C3%ADa%20de%20Proceso%20con%20IA">Agenda una Auditoría de Proceso con IA</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span><b>Patológicos</b> · compañía nativa de IA · patologicos.com</span>
+  <span>Construido en público · Velas &amp; PROCA primero</span>
+</div></footer>
+</body>
+</html>
