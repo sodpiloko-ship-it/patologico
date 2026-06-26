@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de aromas · Lumin Candele</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#bd5328">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Fraunces:opsz,wght@9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6efe2;--card:#fffdf8;--line:#e7dcc6;--ink:#3a2f28;--ink-soft:#6a5849;--ink-mute:#9c8a76;
+--terra:#bd5328;--terra-d:#9a3f1c;--olive:#6f7a45;--gold:#b3863c;--soft:#f3e3c8;
+--serif:'Cormorant Garamond',Georgia,serif;--display:'Fraunces',Georgia,serif;--sans:-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px 60px}
+header{text-align:center;padding:34px 0 18px}
+.candle{font-size:38px;filter:drop-shadow(0 4px 14px rgba(189,83,40,.3))}
+.eyebrow{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);font-weight:700;margin:12px 0 6px}
+h1{font-family:var(--display);font-weight:500;font-size:28px;color:var(--ink)}
+header p{color:var(--ink-soft);font-size:15px;max-width:34em;margin:8px auto 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 20px 22px;margin:14px 0;box-shadow:0 6px 20px rgba(120,90,50,.06)}
+.card h2{font-family:var(--serif);font-size:21px;color:var(--terra);display:flex;align-items:baseline;gap:8px}
+.card .sz{font-size:12.5px;color:var(--ink-mute);font-family:var(--sans)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--soft);color:#7a4a1f;border:1px solid #ecd6b3;border-radius:999px;padding:7px 8px 7px 14px;font-size:14px;font-weight:600}
+.chip button{border:none;background:#e7c79b;color:#7a4a1f;width:20px;height:20px;border-radius:50%;cursor:pointer;font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center}
+.chip button:hover{background:var(--terra);color:#fff}
+.empty{font-size:13.5px;color:var(--ink-mute);font-style:italic;margin:12px 0}
+.add{display:flex;gap:8px;margin-top:6px}
+.add input{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 13px;font-size:15px;font-family:inherit;color:var(--ink)}
+.add input:focus{outline:none;border-color:var(--terra)}
+.add button{background:var(--olive);color:#fff;border:none;border-radius:10px;padding:0 16px;font-weight:700;font-size:14px;cursor:pointer}
+.add button:hover{filter:brightness(1.06)}
+.bar{position:sticky;bottom:0;background:linear-gradient(180deg,transparent,var(--paper) 26%);padding:16px 0 6px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.btn{border:none;border-radius:999px;padding:13px 22px;font-weight:700;font-size:14.5px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.primary{background:var(--terra);color:#fff;box-shadow:0 8px 20px rgba(189,83,40,.25)}
+.btn.primary:hover{background:var(--terra-d)}
+.btn.ghost{background:transparent;color:var(--terra);border:1.5px solid var(--terra)}
+.btn.ghost:hover{background:var(--terra);color:#fff}
+.note{background:#fff6e9;border:1px solid #f0dcbd;border-radius:14px;padding:14px 16px;font-size:13.5px;color:#7a5a32;margin:6px 0 2px}
+.note b{color:var(--terra-d)}
+.foot{text-align:center;margin-top:20px;font-size:13px;color:var(--ink-mute)}
+.foot .amore{font-family:var(--display);font-style:italic;color:var(--terra)}
+.saved{position:fixed;left:50%;bottom:84px;transform:translateX(-50%) translateY(10px);background:#3a2f28;color:#fff;padding:10px 18px;border-radius:999px;font-size:13.5px;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+.saved.on{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:520px){.card{padding:18px 16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="candle">🕯️</div>
+    <div class="eyebrow">Lumin Candele · con amore</div>
+    <h1>Tus aromas, Yaz</h1>
+    <p>Aquí mandas tú: agrega aromas, quita los que no tengas y rótalos cuando quieras. Tus cambios se ven al instante en tu tienda.</p>
+  </header>
+
+  <div id="list"></div>
+
+  <div class="note">💡 <b>Para que salga al público:</b> cuando termines, toca <b>«Copiar mi lista»</b> y mándamela por tu chat de WhatsApp/Telegram. Yo la publico en tu tienda para todos. Mientras, ya puedes ver cómo queda con <b>«Ver mi tienda»</b>.</div>
+
+  <div class="foot">Hecho con cariño por tu equipo de Patológicos · <span class="amore">con amore</span> 🕯️</div>
+</div>
+
+<div class="bar"><div class="wrap" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding-bottom:0">
+  <a class="btn primary" href="./" target="_blank" rel="noopener">Ver mi tienda ↗</a>
+  <button class="btn ghost" onclick="copyList()">Copiar mi lista</button>
+  <button class="btn ghost" onclick="resetAll()">Restaurar</button>
+</div></div>
+<div class="saved" id="saved">Guardado ✓</div>
+
+<script>
+const KEY='lumin_aromas';
+const PRODUCTS=[
+  {id:'piccolina',  name:'Piccolina',           sz:'113 g'},
+  {id:'dolce-200',  name:'Dolce Profumo · 200 g',sz:'200 g'},
+  {id:'dolce-300',  name:'Dolce Profumo · 300 g',sz:'300 g'},
+  {id:'waxmelts',   name:'Wax Melts · paquete',  sz:'set'}
+];
+const DEFAULTS={
+  'piccolina':['Chocolate','Miel de Abeja','Lavanda'],
+  'dolce-200':['Chocolate','Miel de Abeja','Lavanda'],
+  'dolce-300':['Chocolate','Miel de Abeja','Lavanda'],
+  'waxmelts':['Honey Bees']
+};
+function load(){ try{const o=JSON.parse(localStorage.getItem(KEY)); if(o&&typeof o==='object') return o;}catch(e){} return JSON.parse(JSON.stringify(DEFAULTS)); }
+let cat=load();
+function save(){ localStorage.setItem(KEY, JSON.stringify(cat)); flash(); }
+function flash(){ const s=document.getElementById('saved'); s.classList.add('on'); clearTimeout(window._t); window._t=setTimeout(()=>s.classList.remove('on'),1100); }
+const esc=t=>(t||'').replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+
+function render(){
+  document.getElementById('list').innerHTML = PRODUCTS.map(p=>{
+    const A=(cat[p.id]||[]);
+    const chips = A.length ? A.map((a,i)=>`<span class="chip">${esc(a)}<button title="Quitar" onclick="rm('${p.id}',${i})">×</button></span>`).join('')
+      : '<div class="empty">Sin aromas todavía — agrega el primero abajo.</div>';
+    return `<div class="card"><h2>${esc(p.name)} <span class="sz">${esc(p.sz)}</span></h2>
+      <div class="chips">${chips}</div>
+      <div class="add"><input id="in-${p.id}" placeholder="Nuevo aroma (ej. Vainilla)" maxlength="32"
+        onkeydown="if(event.key==='Enter')addA('${p.id}')"><button onclick="addA('${p.id}')">Agregar</button></div></div>`;
+  }).join('');
+}
+function addA(id){
+  const el=document.getElementById('in-'+id); const v=(el.value||'').trim();
+  if(!v) return;
+  cat[id]=cat[id]||[];
+  if(!cat[id].some(a=>a.toLowerCase()===v.toLowerCase())) cat[id].push(v);
+  el.value=''; save(); render(); document.getElementById('in-'+id).focus();
+}
+function rm(id,i){ cat[id].splice(i,1); save(); render(); }
+function resetAll(){ if(confirm('¿Restaurar los aromas a como estaban?')){ cat=JSON.parse(JSON.stringify(DEFAULTS)); save(); render(); } }
+function copyList(){
+  const txt='🕯️ Aromas Lumin (para publicar):\n'+PRODUCTS.map(p=>`• ${p.name}: ${(cat[p.id]||[]).join(', ')||'(ninguno)'}`).join('\n');
+  navigator.clipboard.writeText(txt).then(()=>alert('¡Copiado! Pégalo en tu chat y yo lo publico en tu tienda. 🕯️'),
+    ()=>prompt('Copia tu lista y mándamela por el chat:',txt));
+}
+render();
+</script>
+</body>
+</html>

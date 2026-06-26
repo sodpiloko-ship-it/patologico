@@ -86,7 +86,8 @@ section{padding:56px 0}
 .detail h1{font-size:32px;margin:6px 0}.detail .lead{font-size:16px;color:var(--ink-soft);margin:12px 0}
 .detail .price{font-size:27px;display:block;margin:6px 0 16px}
 .field{margin:14px 0}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
-.field input{width:100%;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:15px;font-family:inherit}
+.field input,.field select{width:100%;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:15px;font-family:inherit;color:var(--ink)}
+.field select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23c6692f' stroke-width='2'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
 .qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;width:max-content;background:#fff;overflow:hidden}
 .qty button{width:40px;height:42px;font-size:18px;color:var(--flame-2)}.qty span{width:44px;text-align:center;font-weight:700}
 .note{background:var(--soft);border-radius:12px;padding:13px 15px;font-size:13px;color:#7a5a32;margin-top:18px}
@@ -149,6 +150,23 @@ const TEASERS = [
   {id:'eventos', name:'Velas para eventos', col:'A pedido', flame:'#c6692f',
    desc:'Velas personalizadas para bodas, bautizos, baby shower y celebraciones. Etiquetas, colores y aromas a tu medida. Cotiza por WhatsApp.'},
 ];
+// ── Catálogo de AROMAS por producto ──────────────────────────────────────────
+// Yaz lo gestiona desde su panel (panel.html): agregar, quitar y rotar aromas.
+// Se guarda en localStorage['lumin_aromas']; esto es el default publicado.
+const DEFAULT_AROMAS = {
+  'piccolina': ['Chocolate','Miel de Abeja','Lavanda'],
+  'dolce-200': ['Chocolate','Miel de Abeja','Lavanda'],
+  'dolce-300': ['Chocolate','Miel de Abeja','Lavanda'],
+  'waxmelts':  ['Honey Bees']
+};
+function loadAromas(){ try{const o=JSON.parse(localStorage.getItem('lumin_aromas'));if(o&&typeof o==='object')return o;}catch(e){} return DEFAULT_AROMAS; }
+function aromasFor(id){ const a=loadAromas()[id]; return Array.isArray(a)?a.filter(Boolean):[]; }
+function aromaField(id){
+  const A=aromasFor(id);
+  if(!A.length) return '<div class="field"><label for="ar">Aroma preferido (opcional)</label><input id="ar" maxlength="40" placeholder="Escribe tu aroma"></div>';
+  return '<div class="field"><label for="ar">Elige tu aroma</label><select id="ar" class="sel">'
+    + A.map(a=>'<option>'+a+'</option>').join('') + '</select></div>';
+}
 const byId = id => PRODUCTS.find(p=>p.id===id);
 const money = n => '$'+n.toLocaleString('es-MX');
 
@@ -230,7 +248,7 @@ function product(id){const p=byId(id); if(!p) return `<section class="wrap"><p>N
       <div class="size" style="color:var(--ink-mute);font-size:14px">${p.size||''}</div>
       <span class="price">${money(p.price)} <small style="font-size:13px;color:var(--ink-mute)">MXN</small></span>
       <p class="lead">${p.desc}</p>
-      <div class="field"><label for="ar">Aroma preferido (opcional — lo confirmamos contigo)</label><input id="ar" maxlength="40" placeholder="Ej. Vainilla, lavanda, cítricos…"></div>
+      ${aromaField(p.id)}
       <div class="field"><label>Cantidad</label><div class="qty"><button onclick="stepQ(-1)">−</button><span id="q">1</span><button onclick="stepQ(1)">+</button></div></div>
       <button class="btn block" onclick="addDetail('${p.id}')">Agregar al carrito · ${money(p.price)}</button>
       ${p.tbd?'<div class="note">El precio de los Wax Melts es de lanzamiento y puede ajustarse; te lo confirmamos al cerrar el pedido.</div>':''}
