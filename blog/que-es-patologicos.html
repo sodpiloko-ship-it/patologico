@@ -9,6 +9,15 @@ a{color:inherit;text-decoration:none}
 .nav .w{max-width:760px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:16px}
 .logo{font-family:var(--serif);font-size:20px;font-weight:600}.logo b{color:var(--accent)}
 .nav .cta{margin-left:auto;font-size:13.5px;font-weight:700;color:var(--accent)}
+.tabs{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.tabs a{font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:7px 11px;border-radius:8px}
+.tabs a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.tabs a.active{color:var(--accent);background:rgba(255,207,77,.12)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;max-width:760px;margin:0 auto;padding:18px 22px 2px}
+.chip{font-size:13px;font-weight:600;color:var(--ink-soft);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 15px;cursor:pointer;transition:.15s;font-family:inherit}
+.chip:hover{color:var(--ink);border-color:var(--accent)}
+.chip.active{background:var(--accent);color:#0f1115;border-color:var(--accent)}
+@media(max-width:560px){.tabs a{padding:6px 8px;font-size:12.5px}}
 .wrap{max-width:760px;margin:0 auto;padding:0 22px}
 article{padding:40px 0}
 .kick{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:800}
@@ -43,7 +52,7 @@ footer a{color:var(--accent)}</style><!-- Google tag (gtag.js) - Patologicos -->
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-XESKPMDFSR');
-</script></head><body><header class="nav"><div class="w"><a class="logo" href="../">Patol<b>ó</b>gicos</a><a class="cta" href="../">El proyecto →</a></div></header><article><div class="wrap"><a class="back" href="./">← Blog</a><div class="kick" style="margin-top:16px">Manifiesto</div><h1>Qué es Patológicos: una compañía de medios construida con IA</h1><div class="meta">2026-06-25 · por <b>El Editor en Jefe</b></div><p>La IA generativa colapsó el costo de producir contenido de calidad. Hoy el cuello de botella ya no es <em>producir</em>: es tener un <strong>sistema</strong> que produzca, distribuya, mida y <strong>doble lo que funciona</strong> sin fricción humana en cada paso. Nosotros construimos ese sistema, lo echamos a andar, y este texto que estás leyendo salió de él. Esa es la idea entera de Patológicos en una frase: <strong>somos nuestra propia prueba.</strong></p>
+</script></head><body><header class="nav"><div class="w"><a class="logo" href="../">Patol<b>ó</b>gicos</a><nav class="tabs"><a href="../">Inicio</a><a href="./" class="active">Blog</a><a href="../#caso">Caso PROCA</a><a href="../#oferta">Oferta</a><a href="../#contacto">Contacto</a></nav></div></header><article><div class="wrap"><a class="back" href="./">← Blog</a><div class="kick" style="margin-top:16px">Manifiesto</div><h1>Qué es Patológicos: una compañía de medios construida con IA</h1><div class="meta">2026-06-25 · por <b>El Editor en Jefe</b></div><p>La IA generativa colapsó el costo de producir contenido de calidad. Hoy el cuello de botella ya no es <em>producir</em>: es tener un <strong>sistema</strong> que produzca, distribuya, mida y <strong>doble lo que funciona</strong> sin fricción humana en cada paso. Nosotros construimos ese sistema, lo echamos a andar, y este texto que estás leyendo salió de él. Esa es la idea entera de Patológicos en una frase: <strong>somos nuestra propia prueba.</strong></p>
 <h2>Qué somos</h2>
 <p>Somos una <strong>compañía de medios de nueva generación, nativa de IA</strong>. Nuestro negocio es producir y distribuir contenido a escala —video, audio, texto, imagen— a una velocidad y volumen que un equipo tradicional no puede igualar, y convertir esa atención en ingresos.</p>
 <p>No lo hacemos desde una sola cuenta, sino a través de un <strong>portafolio de propiedades de medios</strong>, cada una con su audiencia y su lógica de negocio:</p>

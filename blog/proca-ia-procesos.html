@@ -9,6 +9,15 @@ a{color:inherit;text-decoration:none}
 .nav .w{max-width:760px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:16px}
 .logo{font-family:var(--serif);font-size:20px;font-weight:600}.logo b{color:var(--accent)}
 .nav .cta{margin-left:auto;font-size:13.5px;font-weight:700;color:var(--accent)}
+.tabs{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.tabs a{font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:7px 11px;border-radius:8px}
+.tabs a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.tabs a.active{color:var(--accent);background:rgba(255,207,77,.12)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;max-width:760px;margin:0 auto;padding:18px 22px 2px}
+.chip{font-size:13px;font-weight:600;color:var(--ink-soft);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 15px;cursor:pointer;transition:.15s;font-family:inherit}
+.chip:hover{color:var(--ink);border-color:var(--accent)}
+.chip.active{background:var(--accent);color:#0f1115;border-color:var(--accent)}
+@media(max-width:560px){.tabs a{padding:6px 8px;font-size:12.5px}}
 .wrap{max-width:760px;margin:0 auto;padding:0 22px}
 article{padding:40px 0}
 .kick{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:800}
@@ -43,7 +52,7 @@ footer a{color:var(--accent)}</style><!-- Google tag (gtag.js) - Patologicos -->
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-XESKPMDFSR');
-</script></head><body><header class="nav"><div class="w"><a class="logo" href="../">Patol<b>ó</b>gicos</a><a class="cta" href="../">El proyecto →</a></div></header><article><div class="wrap"><a class="back" href="./">← Blog</a><div class="kick" style="margin-top:16px">Caso · Alto valor</div><h1>PROCA: IA agéntica aplicada a procesos de industria</h1><div class="meta">2026-06-25 · por <b>Auditor de IA</b></div><p>La mayoría de los proyectos de "IA para empresas" entregan un asistente que contesta preguntas. Nosotros entregamos algo distinto: un <strong>orquestador de agentes</strong> que toma un proceso real de negocio —caro, manual, lento— y lo mueve de principio a fin, con un humano decidiendo en los puntos que importan. La diferencia no es de tono, es de arquitectura. Un chatbot espera a que le preguntes; un orquestador reparte el trabajo entre agentes especializados, los coordina, ejecuta cada paso y <strong>verifica el resultado antes de darlo por bueno</strong>. Esa última parte —la verificación— es la que separa una demo de un sistema en el que una operación puede confiar.</p>
+</script></head><body><header class="nav"><div class="w"><a class="logo" href="../">Patol<b>ó</b>gicos</a><nav class="tabs"><a href="../">Inicio</a><a href="./" class="active">Blog</a><a href="../#caso">Caso PROCA</a><a href="../#oferta">Oferta</a><a href="../#contacto">Contacto</a></nav></div></header><article><div class="wrap"><a class="back" href="./">← Blog</a><div class="kick" style="margin-top:16px">Caso · Alto valor</div><h1>PROCA: IA agéntica aplicada a procesos de industria</h1><div class="meta">2026-06-25 · por <b>Auditor de IA</b></div><p>La mayoría de los proyectos de "IA para empresas" entregan un asistente que contesta preguntas. Nosotros entregamos algo distinto: un <strong>orquestador de agentes</strong> que toma un proceso real de negocio —caro, manual, lento— y lo mueve de principio a fin, con un humano decidiendo en los puntos que importan. La diferencia no es de tono, es de arquitectura. Un chatbot espera a que le preguntes; un orquestador reparte el trabajo entre agentes especializados, los coordina, ejecuta cada paso y <strong>verifica el resultado antes de darlo por bueno</strong>. Esa última parte —la verificación— es la que separa una demo de un sistema en el que una operación puede confiar.</p>
 <h2>La prueba: PROCA, nuestra propia industria</h2>
 <p>Antes de proponerle a nadie transformar su proceso, lo hicimos en el nuestro. <strong>PROCA</strong> es nuestro caso insignia: aplicamos IA, geometría e interfaz a medida a un flujo de laboratorio dental real —el diseño y seguimiento de piezas— y montamos <strong>PROCAOps</strong>, el portal donde ese flujo se opera de verdad: gestión de casos, atención y pipeline de producción.</p>
 <p>El encuadre es deliberado. PROCA no es lo que vendemos: es la <strong>evidencia</strong> de que sabemos llevar IA a un proceso específico, de punta a punta, con una interfaz que la gente usa. El mensaje a un cliente potencial es directo: <em>lo hicimos en nuestra propia industria; esto es lo que podemos hacer en la tuya</em>. La autoridad aquí se gana por demostración, no por promesa.</p>
