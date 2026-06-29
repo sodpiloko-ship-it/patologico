@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-06-29T00:12:17",
+  "core": {
+    "label": "PATO",
+    "name": "Patológicos"
+  },
+  "agents": [
+    {
+      "id": "claude",
+      "label": "Claude · COO",
+      "active": true
+    },
+    {
+      "id": "codex",
+      "label": "Codex · Creativo",
+      "active": false
+    },
+    {
+      "id": "grok",
+      "label": "Grok · Editor",
+      "active": false
+    }
+  ],
+  "projects": [
+    {
+      "id": "proca",
+      "label": "PROCA",
+      "emoji": "🦷",
+      "metric": "502",
+      "unit": "ses · 28d",
+      "tier": "alta"
+    },
+    {
+      "id": "velas",
+      "label": "Velas Lumin",
+      "emoji": "🕯️",
+      "metric": "activo",
+      "unit": "tienda viva",
+      "tier": "alta"
+    },
+    {
+      "id": "fanatia",
+      "label": "Fanatia",
+      "emoji": "📷",
+      "metric": "342",
+      "unit": "ses · 28d",
+      "tier": "media"
+    },
+    {
+      "id": "wine",
+      "label": "Picando Tabla",
+      "emoji": "🍷",
+      "metric": "activo",
+      "unit": "",
+      "tier": "media"
+    },
+    {
+      "id": "procagrillz",
+      "label": "PROCA GrillZ",
+      "emoji": "💎",
+      "metric": "80",
+      "unit": "ses · 28d",
+      "tier": "alta"
+    },
+    {
+      "id": "cadcamia",
+      "label": "CAD·CAM·IA",
+      "emoji": "🖨️",
+      "metric": "60",
+      "unit": "ses · 28d",
+      "tier": "media"
+    },
+    {
+      "id": "nomos",
+      "label": "Nomos",
+      "emoji": "⚖️",
+      "metric": "MVP",
+      "unit": "jurídico",
+      "tier": "media"
+    }
+  ],
+  "events": [
+    {
+      "by": "claude",
+      "target": "core",
+      "kind": "publish"
+    },
+    {
+      "by": "claude",
+      "target": "core",
+      "kind": "panel-sync"
+    },
+    {
+      "by": "claude",
+      "target": "velas",
+      "kind": "devloop"
+    },
+    {
+      "by": "claude",
+      "target": "core",
+      "kind": "supervisor"
+    },
+    {
+      "by": "claude",
+      "target": "core",
+      "kind": "nomos-steward"
+    },
+    {
+      "by": "claude",
+      "target": "fanatia",
+      "kind": "x-engage"
+    }
+  ]
+}
