@@ -7,3 +7,6 @@ Thumbs.db
 # nunca secretos en el repo del sitio
 .env
 secrets/
+
+# panel de fundador: datos en runtime (cuentas, snapshot, bandeja, token de sync) — jamás al repo
+panel/data/

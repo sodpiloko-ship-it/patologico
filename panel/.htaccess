@@ -1,0 +1,7 @@
+# Panel de fundador — no indexar.
+Header always set X-Robots-Tag "noindex, nofollow"
+
+# El almacén de datos nunca es accesible por web (también lo refuerza data/.htaccess).
+<FilesMatch "\.(jsonl|txt)$">
+  Require all denied
+</FilesMatch>
