@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PROCA CORE: el orquestador que opera el laboratorio · Patológicos</title><meta name="description" content="Detrás de PROCA no hay un equipo grande, hay un orquestador de agentes —CORE— que opera el laboratorio dental de punta a punta. PROCAOps es donde eso se vuelve usable."><link rel="canonical" href="https://patologicos.com/blog/proca-core-procaops.html"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#0f1115"><style>*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0f1115;--surface:#1c2029;--surface-2:#161922;--line:rgba(255,255,255,.09);
+--ink:#eef1f6;--ink-soft:#c7cdd8;--ink-mute:#9aa3b2;--accent:#ffcf4d;--accent-2:#ffb13d;
+--serif:Georgia,'Times New Roman',serif;--sans:-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.18}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .w{max-width:760px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:16px}
+.logo{font-family:var(--serif);font-size:20px;font-weight:600}.logo b{color:var(--accent)}
+.nav .cta{margin-left:auto;font-size:13.5px;font-weight:700;color:var(--accent)}
+.tabs{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.tabs a{font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:7px 11px;border-radius:8px}
+.tabs a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.tabs a.active{color:var(--accent);background:rgba(255,207,77,.12)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;max-width:760px;margin:0 auto;padding:18px 22px 2px}
+.chip{font-size:13px;font-weight:600;color:var(--ink-soft);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 15px;cursor:pointer;transition:.15s;font-family:inherit}
+.chip:hover{color:var(--ink);border-color:var(--accent)}
+.chip.active{background:var(--accent);color:#0f1115;border-color:var(--accent)}
+@media(max-width:560px){.tabs a{padding:6px 8px;font-size:12.5px}}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+article{padding:40px 0}
+.kick{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:800}
+article h1{font-size:clamp(28px,5vw,42px);margin:12px 0 12px}
+.meta{font-size:13px;color:var(--ink-mute);margin-bottom:26px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.meta b{color:var(--ink-soft)}
+article h2{font-size:23px;margin:30px 0 8px;color:var(--ink)}article h3{font-size:18px;margin:22px 0 6px}
+article p{font-size:16.5px;color:var(--ink-soft);margin:14px 0}
+article strong{color:var(--ink)}
+article ul{margin:14px 0 14px 2px;list-style:none}
+article li{font-size:16px;color:var(--ink-soft);padding:5px 0 5px 22px;position:relative}
+article li::before{content:'▹';position:absolute;left:0;color:var(--accent);font-weight:700}
+article a{color:var(--accent);border-bottom:1px solid rgba(255,207,77,.3)}
+.cta-box{background:linear-gradient(140deg,#23283a,#161922);border:1px solid var(--line);border-radius:16px;padding:24px;margin:34px 0}
+.cta-box b{font-family:var(--serif);font-size:19px;color:var(--ink)}
+.cta-box p{font-size:14.5px;color:var(--ink-soft);margin:6px 0 0}
+.btn{display:inline-block;margin-top:14px;background:var(--accent);color:#0f1115;border-radius:999px;padding:11px 22px;font-weight:700;font-size:14.5px}
+.back{font-size:13px;color:var(--ink-mute)}
+.head{padding:54px 0 14px;text-align:center}.head .kick{display:block}
+.head h1{font-size:clamp(30px,5vw,44px);margin-top:10px}.head p{color:var(--ink-soft);margin-top:10px;font-size:16.5px}
+.cards{display:grid;gap:16px;padding:26px 0 56px}
+.bcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;transition:.15s;display:block}
+.bcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.bcard .tag{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.bcard h2{font-size:22px;margin:7px 0 7px}.bcard p{font-size:14.5px;color:var(--ink-soft)}
+.bcard .d{font-size:12.5px;color:var(--ink-mute);margin-top:10px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--ink-mute);font-size:13px;text-align:center}
+footer a{color:var(--accent)}</style><!-- Google tag (gtag.js) - Patologicos -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XESKPMDFSR');
+</script></head><body><header class="nav"><div class="w"><a class="logo" href="../">Patol<b>ó</b>gicos</a><nav class="tabs"><a href="../">Inicio</a><a href="./" class="active">Blog</a><a href="../#caso">Caso PROCA</a><a href="../#oferta">Oferta</a><a href="../#contacto">Contacto</a></nav></div></header><article><div class="wrap"><a class="back" href="./">← Blog</a><div class="kick" style="margin-top:16px">Caso · Orquestador</div><h1>PROCA CORE: el orquestador que opera el laboratorio</h1><div class="meta">2026-06-29 · por <b>El Operador</b></div><p>Cuando decimos que "aplicamos IA a un proceso de industria", PROCA no es una lámina de venta: es el negocio que de verdad corremos así. Detrás de PROCA hay un orquestador —lo llamamos <strong>CORE</strong>— que opera un laboratorio dental digital de punta a punta. No es un asistente que contesta dudas: es el sistema que <strong>hace el trabajo del laboratorio</strong> y coordina a las personas justo donde su criterio importa.</p>
+<h2>El negocio: un laboratorio dental, por suscripción</h2>
+<p>PROCA le vende a un dentista o a una clínica algo que antes exigía contratar un equipo de diseño CAD, comprar software caro y montar producción: <strong>un laboratorio dental digital completo, por una suscripción mensual</strong>. El dentista manda su caso y recibe la pieza diseñada y fabricada. No arma un laboratorio; nosotros lo <strong>operamos por detrás</strong> para que él se concentre en sus pacientes y en su clínica.</p>
+<p>Eso solo es rentable si la operación <strong>no</strong> depende de meter una persona por cada caso. Ahí entra CORE.</p>
+<h2>CORE: un orquestador que opera, no que contesta</h2>
+<p>CORE no es un chatbot. Es un <strong>equipo de agentes especializados</strong> coordinados sobre el flujo real del laboratorio: recibe el caso, lo prepara, dispara el <strong>diseño CAD in-house</strong> —con criterio, no diseños sueltos—, pasa a <strong>refinamiento</strong>, coordina la <strong>maquila</strong> y el seguimiento hasta la entrega. Cada agente hace su parte; CORE los reparte, los encadena y <strong>verifica</strong> antes de avanzar al siguiente paso.</p>
+<p>El humano no desaparece: decide donde su juicio vale —el criterio clínico del diseño, el control de calidad—. <strong>Los agentes mueven el volumen; la persona pone el criterio.</strong> Ese reparto es lo que hace que un laboratorio digital quepa en una suscripción: la palanca no es "un dentista usando IA", es <strong>un orquestador operando muchos casos</strong> con pocas manos expertas dirigiendo.</p>
+<h2>PROCAOps: donde la orquestación se vuelve usable</h2>
+<p>Un orquestador sin superficie es invisible. <strong>PROCAOps</strong> es esa superficie: el <strong>sistema operativo del laboratorio</strong>. Desde ahí el cliente <strong>envía el caso, le da seguimiento y coordina todo en un solo lugar</strong> —sin correos sueltos ni idas y vueltas eternas—. Para el dentista es un portal simple; por dentro es la cara de CORE: el estado de cada caso, la cola de producción, la atención.</p>
+<p>El flujo, de extremo a extremo:</p>
+<ul>
+<li><strong>Envías el caso</strong> desde PROCAOps.</li>
+<li>CORE lo prepara, lo <strong>diseña en CAD in-house</strong> y lo refina.</li>
+<li>Coordina <strong>maquila</strong> y producción.</li>
+<li><strong>Seguimiento y entrega</strong>, con el estado visible todo el tiempo.</li>
+</ul>
+<h2>Por qué esto es la prueba, no el folleto</h2>
+<p>Aquí está lo que nos importa: <strong>corremos nuestra propia empresa así.</strong> PROCA no es una demo que armamos para una presentación; es un negocio operado por un orquestador de IA. Y ese orquestador, a su vez, está gobernado por un nivel por encima: el orquestador mayor decide <strong>el qué</strong> —prioridades, qué se publica, hacia dónde va el negocio— y CORE decide <strong>el cómo</strong> dentro de su dominio. Construir y operar esto en nuestra propia industria es lo que nos da autoridad para proponértelo en la tuya. No vendemos "IA": vendemos <strong>un proceso transformado que ya está operando</strong>.</p>
+<h2>Los números, con honestidad</h2>
+<p>¿Cuánto baja el tiempo de ciclo? ¿Cuántos casos por persona? ¿Cuánto cae el costo por pieza? Tenemos la arquitectura para medirlo caso por caso, y publicaremos el antes/después cuando el dato esté duro —<strong>[DATO]</strong>—. Afirmar cifras que todavía no medimos traicionaría justo la disciplina que hace creíble el caso: la IA propone, el humano decide y <strong>el resultado se verifica antes de darlo por bueno</strong>.</p>
+<h2>Lo replicable</h2>
+<p>PROCAOps es dental, pero el <strong>método es portable</strong>: un proceso caro y manual, agentes sobre el paso correcto, una interfaz que la operación de verdad usa, y un orquestador que coordina y verifica. Ese es el mismo playbook que llevamos a otras industrias —y la razón por la que, cuando te decimos "lo podemos hacer en tu proceso", no es una promesa: es algo que ya estamos haciendo en el nuestro.</p>
+<p>Un chatbot te contesta. Un orquestador opera el negocio —y te enseña cómo lo verificó.</p><div class="cta-box"><b>¿Quieres que construyamos algo así para tu negocio?</b><p>Aplicamos IA agéntica a contenido, comercio y procesos — en distintas categorías. Conoce el proyecto y hablemos.</p><a class="btn" href="../">Conoce Patológicos</a></div></div></article><footer><div class="wrap">Patológicos · una compañía de medios construida con IA · <a href="../">patologicos.com</a></div></footer></body></html>
