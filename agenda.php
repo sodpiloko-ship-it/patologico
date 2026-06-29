@@ -22,20 +22,21 @@ $telefono  = ag_clean((string) ($_POST['telefono'] ?? ''), 60);
 $industria = ag_clean((string) ($_POST['industria'] ?? ''), 120);
 $volumen   = ag_clean((string) ($_POST['volumen'] ?? ''), 160);
 $proceso   = ag_clean((string) ($_POST['proceso'] ?? ''), 4000);
+$interes   = ag_clean((string) ($_POST['interes'] ?? ''), 80) ?: 'No especificado';
 
 $ok = ($nombre !== '' && $empresa !== '' && filter_var($correo, FILTER_VALIDATE_EMAIL) && $proceso !== '');
 if ($ok) {
     if (!is_dir(AG_DATA)) @mkdir(AG_DATA, 0750, true);
     $h = AG_DATA . '/.htaccess';
     if (!is_file($h)) @file_put_contents($h, "Require all denied\nDeny from all\n");
-    $rec = ['at' => date('c'), 'nombre' => $nombre, 'empresa' => $empresa, 'correo' => $correo,
+    $rec = ['at' => date('c'), 'interes' => $interes, 'nombre' => $nombre, 'empresa' => $empresa, 'correo' => $correo,
             'telefono' => $telefono, 'industria' => $industria, 'volumen' => $volumen,
             'proceso' => $proceso, 'ip' => ($_SERVER['REMOTE_ADDR'] ?? '')];
     @file_put_contents(AG_DATA . '/agenda.jsonl', json_encode($rec, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX);
-    $body = "Nueva solicitud de Auditoría de Proceso con IA\n\n"
+    $body = "Nueva solicitud — $interes\n\n"
           . "Nombre: $nombre\nEmpresa: $empresa\nCorreo: $correo\nWhatsApp/tel: $telefono\n"
-          . "Industria: $industria\nVolumen: $volumen\n\nProceso / cuello de botella:\n$proceso\n";
-    @mail(AG_TO, "Auditoría IA — $empresa ($nombre)", $body, "From: " . AG_FROM . "\r\nReply-To: $correo\r\n");
+          . "Industria: $industria\nTamaño/volumen: $volumen\n\nSobre su negocio / qué quiere mejorar:\n$proceso\n";
+    @mail(AG_TO, "Lead [$interes] — $empresa ($nombre)", $body, "From: " . AG_FROM . "\r\nReply-To: $correo\r\n");
 }
 $e = fn($s) => htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8');
 ?>
@@ -57,7 +58,7 @@ a{color:var(--accent)}
 <?php if ($ok): ?>
   <div class="ic">✅</div>
   <h1>¡Gracias, <?= $e($nombre) ?>!</h1>
-  <p>Recibimos tu solicitud de <b>Auditoría de Proceso con IA</b> para <b><?= $e($empresa) ?></b>.</p>
+  <p>Recibimos tu solicitud — <b><?= $e($interes) ?></b> para <b><?= $e($empresa) ?></b>.</p>
   <p>Te respondemos en <b>1 día hábil</b> a <?= $e($correo) ?> con los próximos pasos.</p>
   <a class="btn" href="./">Volver a Patológicos</a>
 <?php else: ?>

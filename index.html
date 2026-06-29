@@ -34,8 +34,8 @@ a{color:inherit;text-decoration:none}
 .agenda{max-width:620px;margin:24px auto 0;text-align:left}
 .agenda .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .agenda label{display:block;font-size:13px;color:var(--ink-soft);font-weight:600;margin-bottom:13px}
-.agenda input,.agenda textarea{width:100%;margin-top:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:11px 13px;font:15px var(--sans)}
-.agenda input:focus,.agenda textarea:focus{outline:0;border-color:var(--accent)}
+.agenda input,.agenda textarea,.agenda select{width:100%;margin-top:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:11px 13px;font:15px var(--sans)}
+.agenda input:focus,.agenda textarea:focus,.agenda select:focus{outline:0;border-color:var(--accent)}
 .agenda textarea{resize:vertical}
 .agenda button.btn{margin-top:4px;cursor:pointer;border:0}
 .agenda .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
@@ -96,13 +96,14 @@ section{padding:60px 0;border-bottom:1px solid var(--line)}
 .caso .quote{margin-top:22px;font-family:var(--serif);font-size:20px;color:var(--accent);border-left:3px solid var(--accent);padding-left:16px}
 
 /* oferta */
-.ladder{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
 .tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
 .tier.feature{border-color:rgba(255,207,77,.4);box-shadow:0 0 0 1px rgba(255,207,77,.15)}
 .tier .lbl{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800}
 .tier h3{font-size:23px;margin:8px 0 4px}.tier .price{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:12px}
 .tier ul{list-style:none}.tier li{font-size:14px;color:var(--ink-soft);padding:5px 0 5px 20px;position:relative}
 .tier li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+.tier .btn{margin-top:18px;font-size:13.5px;padding:10px 18px}
 
 /* band */
 .band{background:var(--accent);color:#0f1115;border-radius:20px;padding:40px;text-align:center}
@@ -204,24 +205,36 @@ footer b{color:var(--ink);font-family:var(--serif)}
 </div></section>
 
 <section id="oferta"><div class="wrap">
-  <div class="sh"><div class="eyebrow">La oferta</div><h2>Empieza por una auditoría, escala a un producto</h2>
-    <p>Bajo riesgo para entrar, alto impacto para escalar. El mismo playbook aplicado a tu proceso.</p></div>
+  <div class="sh"><div class="eyebrow">La oferta</div><h2>Pon IA a trabajar en tu negocio — desde $999 al mes</h2>
+    <p>Tres formas de empezar: desplegamos PATO en tu PYME, diagnosticamos un proceso, o construimos tu producto a medida. El mismo motor que corre nuestras marcas, aplicado a lo tuyo.</p></div>
   <div class="ladder">
-    <div class="tier feature"><div class="lbl">Puerta de entrada</div><h3>Auditoría de Proceso con IA</h3>
-      <div class="price">desde $8,000–$15,000 MXN</div>
-      <ul><li>Mapeamos tu proceso y dónde la IA da más palanca</li><li>Plan concreto: qué automatizar, en qué orden, qué medir</li><li>Prototipo o prueba de concepto del primer paso</li></ul></div>
+    <div class="tier feature"><div class="lbl">Para PYMES · entrada</div><h3>PATO para tu negocio</h3>
+      <div class="price">desde $999 MXN/mes</div>
+      <ul><li>Marketing y contenido que corre solo, como el nuestro</li><li>Ventas: captamos y damos seguimiento a tus prospectos</li><li>Simplificamos tu operación con automatización a la medida</li><li>Sin contratar un equipo: PATO trabaja por ti</li></ul>
+      <a class="btn" href="#contacto" data-interes="PATO para mi PYME ($999/mes)">Empieza desde $999/mes</a></div>
+    <div class="tier"><div class="lbl">Diagnóstico</div><h3>Auditoría de Proceso con IA</h3>
+      <div class="price">$8,000–$15,000 MXN</div>
+      <ul><li>Mapeamos tu proceso y dónde la IA da más palanca</li><li>Plan concreto: qué automatizar, en qué orden, qué medir</li><li>Prototipo o prueba de concepto del primer paso</li></ul>
+      <a class="btn ghost" href="#contacto" data-interes="Auditoría de Proceso con IA">Agenda una auditoría</a></div>
     <div class="tier"><div class="lbl">El producto</div><h3>Aplicación de IA a tu proceso</h3>
       <div class="price">desde $120,000 MXN · ~6 meses</div>
-      <ul><li>Sistema agéntico + interfaz a la medida de tu operación</li><li>Construido en público, con entregas medibles</li><li>El método ya probado en PROCA y Nomos, aplicado a lo tuyo</li></ul></div>
+      <ul><li>Sistema agéntico + interfaz a la medida de tu operación</li><li>Construido en público, con entregas medibles</li><li>El método ya probado en PROCA y Nomos, aplicado a lo tuyo</li></ul>
+      <a class="btn ghost" href="#contacto" data-interes="Aplicación de IA a medida">Hablemos del producto</a></div>
   </div>
 </div></section>
 
 <section id="contacto"><div class="wrap">
   <div class="band">
-    <h2>¿Listo para aplicar IA a tu proceso?</h2>
-    <p>Cuéntanos tu industria y tu cuello de botella. Empezamos con una auditoría y te mostramos el camino.</p>
+    <h2>¿Listo para poner IA a trabajar en tu negocio?</h2>
+    <p>Cuéntanos de tu negocio y qué te interesa. Te decimos cómo PATO puede ayudarte — desde $999 al mes.</p>
     <form class="agenda" action="agenda.php" method="post">
       <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label>¿Qué te interesa?
+        <select name="interes">
+          <option>PATO para mi PYME ($999/mes)</option>
+          <option>Auditoría de Proceso con IA</option>
+          <option>Aplicación de IA a medida</option>
+        </select></label>
       <div class="row">
         <label>Nombre*<input type="text" name="nombre" required></label>
         <label>Empresa*<input type="text" name="empresa" required></label>
@@ -232,13 +245,14 @@ footer b{color:var(--ink);font-family:var(--serif)}
       </div>
       <div class="row">
         <label>Industria*<input type="text" name="industria" required placeholder="seguros, dental, e-commerce…"></label>
-        <label>Volumen del proceso<input type="text" name="volumen" placeholder="ej. 200 casos/mes, 3 personas"></label>
+        <label>Tamaño / volumen<input type="text" name="volumen" placeholder="ej. 5 empleados, 200 pedidos/mes"></label>
       </div>
-      <label>¿Qué proceso quieres auditar? ¿Dónde está el cuello de botella?*
+      <label>Cuéntanos de tu negocio: ¿qué quieres mejorar (marketing, ventas, operación) o automatizar?*
         <textarea name="proceso" rows="4" required placeholder="Descríbelo en tus palabras: qué es manual, lento o caro hoy."></textarea></label>
-      <button class="btn" type="submit">Solicitar mi Auditoría de Proceso con IA</button>
+      <button class="btn" type="submit">Quiero que PATO me ayude</button>
       <p class="formnote">Te respondemos en 1 día hábil. Sin compromiso.</p>
     </form>
+    <script>document.querySelectorAll('[data-interes]').forEach(function(a){a.addEventListener('click',function(){var s=document.querySelector('select[name=interes]');if(s){s.value=a.getAttribute('data-interes');}});});</script>
   </div>
 </div></section>
 
