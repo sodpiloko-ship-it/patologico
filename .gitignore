@@ -10,3 +10,6 @@ secrets/
 
 # panel de fundador: datos en runtime (cuentas, snapshot, bandeja, token de sync) — jamás al repo
 panel/data/
+
+# solicitudes del formulario de auditoría (datos de prospectos) — jamás al repo
+/data/

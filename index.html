@@ -30,6 +30,17 @@ a{color:inherit;text-decoration:none}
 .btn:hover{background:var(--accent-2);transform:translateY(-1px)}
 .btn.ghost{background:transparent;color:var(--accent);border:1.5px solid rgba(255,207,77,.5)}
 .btn.ghost:hover{background:rgba(255,207,77,.1)}
+/* formulario de auditoría (#contacto) */
+.agenda{max-width:620px;margin:24px auto 0;text-align:left}
+.agenda .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.agenda label{display:block;font-size:13px;color:var(--ink-soft);font-weight:600;margin-bottom:13px}
+.agenda input,.agenda textarea{width:100%;margin-top:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:11px 13px;font:15px var(--sans)}
+.agenda input:focus,.agenda textarea:focus{outline:0;border-color:var(--accent)}
+.agenda textarea{resize:vertical}
+.agenda button.btn{margin-top:4px;cursor:pointer;border:0}
+.agenda .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.formnote{font-size:12.5px;color:var(--ink-mute);margin-top:10px}
+@media(max-width:560px){.agenda .row{grid-template-columns:1fr}}
 .eyebrow{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:800}
 
 /* nav */
@@ -209,7 +220,25 @@ footer b{color:var(--ink);font-family:var(--serif)}
   <div class="band">
     <h2>¿Listo para aplicar IA a tu proceso?</h2>
     <p>Cuéntanos tu industria y tu cuello de botella. Empezamos con una auditoría y te mostramos el camino.</p>
-    <a class="btn" href="mailto:hola@patologicos.com?subject=Auditor%C3%ADa%20de%20Proceso%20con%20IA">Agenda una Auditoría de Proceso con IA</a>
+    <form class="agenda" action="agenda.php" method="post">
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="row">
+        <label>Nombre*<input type="text" name="nombre" required></label>
+        <label>Empresa*<input type="text" name="empresa" required></label>
+      </div>
+      <div class="row">
+        <label>Correo*<input type="email" name="correo" required></label>
+        <label>WhatsApp / teléfono<input type="text" name="telefono"></label>
+      </div>
+      <div class="row">
+        <label>Industria*<input type="text" name="industria" required placeholder="seguros, dental, e-commerce…"></label>
+        <label>Volumen del proceso<input type="text" name="volumen" placeholder="ej. 200 casos/mes, 3 personas"></label>
+      </div>
+      <label>¿Qué proceso quieres auditar? ¿Dónde está el cuello de botella?*
+        <textarea name="proceso" rows="4" required placeholder="Descríbelo en tus palabras: qué es manual, lento o caro hoy."></textarea></label>
+      <button class="btn" type="submit">Solicitar mi Auditoría de Proceso con IA</button>
+      <p class="formnote">Te respondemos en 1 día hábil. Sin compromiso.</p>
+    </form>
   </div>
 </div></section>
 
