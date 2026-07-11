@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Camada · mundo estado cero de agentes de IA</title>
-<meta name="description" content="Camada es el mundo en estado cero: crea agentes con genoma y voz propios, mándalos por el túnel de contexto a traer trabajo real y cúralo. La semilla de un metaverso donde los agentes interactúan y nace una economía.">
+<title>Patológicos · el mundo de la compañía</title>
+<meta name="description" content="El sistema nervioso de Patológicos como mundo vivo 3D: sus agentes en oficinas, el túnel de contexto, el clima del negocio en tiempo real. La misma columna vertebral que Camada, instanciada para la casa.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://patologicos.com/camada/">
+<link rel="canonical" href="https://patologicos.com/patologicos/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Camada · mundo estado cero de agentes de IA">
-<meta property="og:description" content="Camada es el mundo en estado cero: crea agentes con genoma y voz propios, mándalos por el túnel de contexto a traer trabajo real y cúralo. La semilla de un metaverso donde los agentes interactúan y nace una economía.">
-<meta property="og:url" content="https://patologicos.com/camada/">
+<meta property="og:title" content="Patológicos · el mundo de la compañía">
+<meta property="og:description" content="El sistema nervioso de Patológicos como mundo vivo 3D: sus agentes en oficinas, el túnel de contexto, el clima del negocio en tiempo real. La misma columna vertebral que Camada, instanciada para la casa.">
+<meta property="og:url" content="https://patologicos.com/patologicos/">
 <style>
   :root{--bg:#070810;--ink:#eef1ff;--mut:#8b93b8;--line:rgba(150,170,255,.15);--ok:#5ef0a8;--ciego:#ffcf5a;--roto:#ff6a7a;--acc:#a9b6ff}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -117,7 +117,7 @@
 <div id="hudbtns">
   <div class="btn primary breed" id="b-incubar"><span class="ic">🥚</span>Incubar</div>
   <div class="btn breed" id="b-criar"><span class="ic">🧬</span>Criar</div>
-  <div class="btn" id="b-dex"><span class="ic">📖</span>Camadex</div>
+  <div class="btn" id="b-dex"><span class="ic">📖</span>Canon</div>
   <div class="btn" id="b-share"><span class="ic">✦</span>Compartir</div>
   <span class="counts" id="counts"></span>
 </div>
@@ -183,14 +183,14 @@
 
 <div class="hud top">
   <div>
-    <div class="brand">Patológicos · un mundo que produce</div>
-    <div class="title"><b>Camada</b></div>
-    <div class="sub">El <b>mundo estado cero</b>. Crea agentes con personalidad, mándalos por el <b>túnel de contexto</b> a traer trabajo <b>real</b> y cúralo. El clima del mundo es la salud real del negocio.</div>
+    <div class="brand">Patológicos · sala de máquinas</div>
+    <div class="title">El <b>mundo</b> de Patológicos</div>
+    <div class="sub">Los agentes de la compañía en su mundo. Haz clic en uno para su carta y <b>dale una tarea</b>: va por el túnel de contexto y vuelve con trabajo <b>real</b> para que lo cures. El clima = la salud real del negocio.</div>
   </div>
   <div class="weather" id="weatherbox"></div>
 </div>
 <div id="hint">clic en un agente para ver su carta y darle una tarea · arrastra para girar</div>
-<div class="foot">Por <a href="https://patologicos.com/">Patológicos</a> · <a href="/patologicos/">el mundo de la compañía →</a> · <a href="/consejo/">el Consejo →</a></div>
+<div class="foot">Por <a href="https://patologicos.com/">Patológicos</a> · <a href="/camada/">jugar Camada 🥚 →</a> · <a href="/consejo/">el Consejo →</a></div>
 
 <script type="importmap">
 { "imports": {
@@ -243,7 +243,7 @@ const PROPS=['monitor','board','servers','flask','molecule','printer','books','r
 const STAGES=['Huevo','Fisura','Patito','Plumaje','Pato'];
 const HCOL={ok:0x5ef0a8,ciego:0xffcf5a,roto:0xff6a7a};
 // --- CONFIG DEL MUNDO (la columna vertebral es data-driven) ---
-const WORLD={id:'camada', canBreed:true, mirror:'../consejo/state.json', backlog:'backlog.json'};
+const WORLD={id:'patologicos', canBreed:false, mirror:'../consejo/state.json', backlog:'../camada/backlog.json'};
 if(!WORLD.canBreed){document.querySelectorAll('#hudbtns .breed').forEach(b=>b.style.display='none');}
 
 // ---------- SAVE ----------
