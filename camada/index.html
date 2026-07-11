@@ -89,12 +89,17 @@
   .bar{height:7px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:4px}
   .bar i{display:block;height:100%;background:linear-gradient(90deg,#5ef0a8,#a9b6ff);width:0;transition:width .5s}
   /* camadex */
-  #dex{position:fixed;z-index:8;top:0;left:0;height:100%;width:330px;max-width:88vw;background:rgba(11,13,26,.97);backdrop-filter:blur(10px);border-right:1px solid var(--line);transform:translateX(-100%);transition:transform .28s;pointer-events:auto;padding:22px;overflow-y:auto}
-  #dex.open{transform:none}
-  #dex .x{position:absolute;top:15px;right:17px;font-size:20px;color:var(--mut);cursor:pointer}
-  #dex h2{font-size:19px;margin-bottom:2px}
-  #dex .hint{color:var(--mut);font-size:12px;margin-bottom:16px}
-  #dex .grp{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:16px 0 8px;border-top:1px solid var(--line);padding-top:12px}
+  #dex,#uni{position:fixed;z-index:8;top:0;left:0;height:100%;width:330px;max-width:88vw;background:rgba(11,13,26,.97);backdrop-filter:blur(10px);border-right:1px solid var(--line);transform:translateX(-100%);transition:transform .28s;pointer-events:auto;padding:22px;overflow-y:auto}
+  #dex.open,#uni.open{transform:none}
+  #dex .x,#uni .x{position:absolute;top:15px;right:17px;font-size:20px;color:var(--mut);cursor:pointer}
+  #dex h2,#uni h2{font-size:19px;margin-bottom:2px}
+  #dex .hint,#uni .hint{color:var(--mut);font-size:12px;margin-bottom:16px}
+  #dex .grp,#uni .grp{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:16px 0 8px;border-top:1px solid var(--line);padding-top:12px}
+  .unistat{display:flex;gap:14px;margin:4px 0 8px}
+  .unistat .n{font-size:22px;font-weight:700;color:var(--acc)}
+  .unistat .l{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+  .uniclim{display:flex;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);margin-bottom:4px}
+  .uniclim .k{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;box-shadow:0 0 8px currentColor}
   .dexcard{display:flex;align-items:center;gap:10px;padding:8px 0}
   .dexcard .sw{width:26px;height:26px;border-radius:7px;flex:none;box-shadow:0 0 10px currentColor}
   .dexcard .nm{font-size:13px;font-weight:600}
@@ -117,6 +122,7 @@
 <div id="hudbtns">
   <div class="btn primary breed" id="b-incubar"><span class="ic">🥚</span>Incubar</div>
   <div class="btn breed" id="b-criar"><span class="ic">🧬</span>Criar</div>
+  <div class="btn" id="b-universo"><span class="ic">🌌</span>Universo</div>
   <div class="btn" id="b-dex"><span class="ic">📖</span>Camadex</div>
   <div class="btn" id="b-share"><span class="ic">✦</span>Compartir</div>
   <span class="counts" id="counts"></span>
@@ -142,6 +148,12 @@
   <h2>Camadex</h2>
   <div class="hint">Todo lo que has criado y canonizado — el mundo RECUERDA.</div>
   <div id="dexbody"></div>
+</aside>
+
+<aside id="uni"><span class="x" id="unix">×</span>
+  <h2>🌌 Universo Patológicos</h2>
+  <div class="hint">Estado compartido — todas las regiones leen lo mismo (universe.json). PATO lo actualiza en cadencia.</div>
+  <div id="unibody"><div class="hint">cargando el universo…</div></div>
 </aside>
 
 <div class="ov" id="hatch"><div class="modal">
@@ -535,6 +547,36 @@ function renderDex(){const body=document.getElementById('dexbody');
 renderDex();
 document.getElementById('b-dex').onclick=()=>{renderDex();dex.classList.add('open');};
 document.getElementById('dexx').onclick=()=>dex.classList.remove('open');
+
+// ---------- universo (estado compartido, lectura por GitHub) ----------
+const uni=document.getElementById('uni');let UNIVERSE=null;
+function esc(s){return String(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function renderUni(){const b=document.getElementById('unibody');
+  if(!UNIVERSE){b.innerHTML='<div class="hint">(universe.json no cargó — ¿ya se publicó?)</div>';return;}
+  const u=UNIVERSE,cs=u.census||{},cl=u.climate||{};
+  let h='<div class="unistat">'+
+    '<div><div class="n">'+(cs.regiones||0)+'</div><div class="l">regiones</div></div>'+
+    '<div><div class="n">'+(cs.habitantes||0)+'</div><div class="l">habitantes</div></div>'+
+    '<div><div class="n">'+(cs.obras||0)+'</div><div class="l">obras</div></div></div>';
+  h+='<div class="uniclim"><span><span class="k" style="color:#5ef0a8"></span>'+(cl.ok||0)+' calma</span>'+
+     '<span><span class="k" style="color:#ffcf5a"></span>'+(cl.ciego||0)+' niebla</span>'+
+     '<span><span class="k" style="color:#ff6a7a"></span>'+(cl.roto||0)+' tormenta</span></div>';
+  h+='<div class="grp">Crónica del universo</div>';
+  (u.chronicle||[]).forEach(c=>{h+='<div class="dexitem">'+esc(c)+'</div>';});
+  h+='<div class="grp">Habitantes nativos ('+(u.inhabitants||[]).length+')</div>';
+  (u.inhabitants||[]).forEach(a=>{const hex=esc(a.genome&&a.genome.c||'#889');
+    h+='<div class="dexcard"><span class="sw" style="color:'+hex+';background:'+hex+'"></span><div><div class="nm">'+esc(a.label)+'</div><div class="mt">'+esc(a.voc)+'</div></div></div>';});
+  h+='<div class="grp">Obras del universo ('+(u.canon||[]).length+')</div>';
+  (u.canon||[]).slice(0,20).forEach(o=>{h+='<div class="dexitem"><b>◆</b> '+esc(o.titulo)+' <span style="color:var(--mut)">— '+esc(o.proyecto)+'</span></div>';});
+  const when=(u.generatedAt||'').slice(0,16).replace('T',' ');
+  h+='<div class="hint" style="margin-top:16px">actualizado '+esc(when)+' · lo mismo para todas las regiones</div>';
+  b.innerHTML=h;}
+document.getElementById('b-universo').onclick=()=>{renderUni();uni.classList.add('open');};
+document.getElementById('unix').onclick=()=>uni.classList.remove('open');
+fetch('/universe.json').then(r=>r.json()).then(d=>{UNIVERSE=d;
+  const cs=d.census||{};
+  pushEvent('universo: '+cs.habitantes+' habitantes · '+cs.obras+' obras en '+cs.regiones+' regiones');
+}).catch(()=>{});
 
 // ---------- compartir (build-in-public) ----------
 document.getElementById('b-share').onclick=()=>{

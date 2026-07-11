@@ -1,0 +1,272 @@
+{
+ "generatedAt": "2026-07-10T20:37:52",
+ "universe": "Patológicos",
+ "census": {
+  "regiones": 10,
+  "habitantes": 16,
+  "obras": 14
+ },
+ "climate": {
+  "ok": 9,
+  "ciego": 0,
+  "roto": 1
+ },
+ "inhabitants": [
+  {
+   "id": "claude",
+   "label": "Claude · CORE",
+   "genome": {
+    "c": "#8b7bff",
+    "f": "dodeca"
+   },
+   "voc": "orquesta el consejo",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "codex",
+   "label": "Codex",
+   "genome": {
+    "c": "#35E37A",
+    "f": "knot"
+   },
+   "voc": "produce código y contenido",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "grok",
+   "label": "Grok",
+   "genome": {
+    "c": "#ff2e4d",
+    "f": "spike"
+   },
+   "voc": "editor en jefe · voz",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "lia",
+   "label": "Lia · I+D",
+   "genome": {
+    "c": "#35d6c4",
+    "f": "ico"
+   },
+   "voc": "Tracker + ID dental",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "gauss",
+   "label": "Gauss · math",
+   "genome": {
+    "c": "#e6c34a",
+    "f": "octa"
+   },
+   "voc": "rigor matemático",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "name",
+   "label": "Ñame · comodín",
+   "genome": {
+    "c": "#ff2d95",
+    "f": "knot"
+   },
+   "voc": "ángulo caótico",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "release",
+   "label": "Release",
+   "genome": {
+    "c": "#ff7a1a",
+    "f": "cone"
+   },
+   "voc": "deploy / entrega",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "clinico",
+   "label": "Clínico",
+   "genome": {
+    "c": "#2FB6A6",
+    "f": "octa"
+   },
+   "voc": "gnatología",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "growth",
+   "label": "Growth",
+   "genome": {
+    "c": "#4df08a",
+    "f": "spike"
+   },
+   "voc": "captación / Pato",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "mlops",
+   "label": "MLOps",
+   "genome": {
+    "c": "#4fb8c6",
+    "f": "stack"
+   },
+   "voc": "infra ML",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "arq",
+   "label": "Arq",
+   "genome": {
+    "c": "#4a6df0",
+    "f": "stack"
+   },
+   "voc": "arquitectura",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "biomat",
+   "label": "Biomateriales",
+   "genome": {
+    "c": "#3fcf8e",
+    "f": "cluster"
+   },
+   "voc": "biomateriales",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "print3d",
+   "label": "Impresión 3D",
+   "genome": {
+    "c": "#ff7a2e",
+    "f": "stack"
+   },
+   "voc": "impresión 3D",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "edu",
+   "label": "Ed · PROCATraining",
+   "genome": {
+    "c": "#4db6e8",
+    "f": "ring"
+   },
+   "voc": "PROCATraining",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "library",
+   "label": "Librarian",
+   "genome": {
+    "c": "#c79a6a",
+    "f": "stack"
+   },
+   "voc": "biblioteca de investigación",
+   "region": "consejo",
+   "kind": "nativo"
+  },
+  {
+   "id": "futuro",
+   "label": "Futuro · I+D",
+   "genome": {
+    "c": "#4fd6ff",
+    "f": "knot"
+   },
+   "voc": "robótica · productización",
+   "region": "consejo",
+   "kind": "nativo"
+  }
+ ],
+ "canon": [
+  {
+   "titulo": "Reactivacion de CAD CAM IA: Sprint SEO de Resina 3D en WordPress",
+   "proyecto": "cadcamia",
+   "stamp": "20260630"
+  },
+  {
+   "titulo": "Fanatia SEO-Safe Pivot: preservar URLs mientras nace la membresía",
+   "proyecto": "fanatia",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Nomos: Piloto vendible con medición antes/después",
+   "proyecto": "legal",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Propuesta: Nomos de landing viva a piloto pagado medible",
+   "proyecto": "legal",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Actualización web urgente — Lumin Candele",
+   "proyecto": "lumin",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Complementos Para Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260708"
+  },
+  {
+   "titulo": "Diferencia de costos: Para Dos vs Regalo",
+   "proyecto": "picandotabla",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Personas por tabla: Regalo, Anfitrión y Fiesta",
+   "proyecto": "picandotabla",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Picando Tabla — Guía de armado: cuántos quesos, carnes y complementos",
+   "proyecto": "picandotabla",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Picando Tabla — variedades según los gramajes ya definidos",
+   "proyecto": "picandotabla",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Recomendación de variedad y gramajes por tabla — Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Recomendación de variedades por tabla — Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260701"
+  },
+  {
+   "titulo": "Tamaños de tabla/caja para Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260707"
+  },
+  {
+   "titulo": "Picando Tabla: aprobar prototipo y publicar tienda que sí venda",
+   "proyecto": "wine",
+   "stamp": "20260701"
+  }
+ ],
+ "chronicle": [
+  "clima del universo: 9 en calma · 1 en tormenta",
+  "16 agentes nativos habitan el Consejo",
+  "14 obras en el cuerpo de trabajo del universo",
+  "obra: «Complementos Para Picando Tabla» — picandotabla",
+  "obra: «Tamaños de tabla/caja para Picando Tabla» — picandotabla",
+  "obra: «Fanatia SEO-Safe Pivot: preservar URLs mientras nace la membresía» — fanatia"
+ ]
+}
