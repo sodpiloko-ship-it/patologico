@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta · El Ritual del Ocaso — Camada</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Propuesta del Ritual del Ocaso: al final de cada mundo, tus almas cristalizan. Sacrifícalas para sembrar el próximo mundo, o consérvalas como ancestros con karma.">
+<style>
+  :root{--bg:#0a0712;--pan:#140e1e;--ink:#f3eefb;--mut:#9a90b4;--line:rgba(190,160,255,.16);--luz:#ffd27a;--sombra:#ff6a7a;--acc:#c9a9ff;--ember:#ff9a4d}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  #sky{position:fixed;inset:0;z-index:0}
+  .wrap{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:34px 20px 80px}
+  .tag{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ember)}
+  h1{font-size:clamp(30px,7vw,54px);font-weight:700;letter-spacing:-.02em;margin:10px 0 4px;line-height:1}
+  h1 b{background:linear-gradient(90deg,var(--luz),var(--ember));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .lead{color:#d7ceea;font-size:16px;line-height:1.6;max-width:60ch;margin-top:12px}
+  .lead b{color:var(--luz)}
+  .steps{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mut)}
+  .steps span{border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+  .steps b{color:var(--acc)}
+  h2{font-size:13px;font-family:'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin:40px 0 14px;border-top:1px solid var(--line);padding-top:20px}
+  /* almas */
+  .souls{display:grid;grid-template-columns:1fr;gap:14px}
+  .soul{background:linear-gradient(180deg,rgba(30,20,44,.7),rgba(18,12,28,.7));border:1px solid var(--line);border-radius:18px;padding:18px;transition:.2s}
+  .soul.chosen-sac{border-color:rgba(255,154,77,.55);box-shadow:0 0 40px rgba(255,120,60,.14)}
+  .soul.chosen-keep{border-color:rgba(201,169,255,.5);box-shadow:0 0 40px rgba(160,120,255,.12)}
+  .sh{display:flex;align-items:center;gap:14px}
+  .orb{width:54px;height:54px;border-radius:50%;flex:none;position:relative}
+  .orb::after{content:"";position:absolute;inset:-6px;border-radius:50%;background:radial-gradient(circle,currentColor,transparent 70%);opacity:.5}
+  .sn{font-size:19px;font-weight:700}
+  .smeta{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mut);margin-top:2px}
+  .kbar{height:7px;border-radius:5px;background:linear-gradient(90deg,var(--sombra),#2a2140,var(--luz));position:relative;margin:14px 0 4px}
+  .kbar .pin{position:absolute;top:-3px;width:4px;height:13px;border-radius:2px;background:#fff;box-shadow:0 0 8px #fff;transform:translateX(-50%)}
+  .klbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--mut);display:flex;justify-content:space-between}
+  .hist{font-size:13px;color:#c8bfdd;line-height:1.5;margin:12px 0 4px}
+  .choice{display:flex;gap:10px;margin-top:14px}
+  .ch{flex:1;text-align:center;border-radius:13px;padding:13px 10px;cursor:pointer;border:1px solid var(--line);user-select:none;transition:.15s;background:rgba(255,255,255,.02)}
+  .ch .t{font-weight:700;font-size:14px}
+  .ch .d{font-size:11px;color:var(--mut);margin-top:3px;line-height:1.35}
+  .ch.sac .t{color:var(--ember)} .ch.keep .t{color:var(--acc)}
+  .ch:hover{transform:translateY(-2px);border-color:currentColor}
+  .ch.on.sac{background:rgba(255,154,77,.14);border-color:var(--ember)}
+  .ch.on.keep{background:rgba(201,169,255,.14);border-color:var(--acc)}
+  /* proximo mundo */
+  .next{position:sticky;bottom:0;margin-top:34px;background:rgba(16,10,26,.92);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .next h3{font-size:15px;margin-bottom:4px}
+  .next .sub{color:var(--mut);font-size:12.5px;margin-bottom:14px}
+  .seedbias{display:flex;height:14px;border-radius:8px;overflow:hidden;background:rgba(255,255,255,.06);margin-bottom:10px}
+  .seedbias .l{background:linear-gradient(90deg,#7a5,#ffd27a)}.seedbias .s{background:linear-gradient(90deg,#ff6a7a,#b34)}
+  .biaslbl{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);margin-bottom:12px}
+  .nrow{font-size:13.5px;line-height:1.6;color:#d7ceea}
+  .nrow b{color:var(--luz)} .chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid var(--line);border-radius:999px;padding:3px 9px;margin:3px 4px 0 0;color:var(--acc)}
+  .ancestors{font-size:13px;color:#c8bfdd;margin-top:8px}
+  .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .btn{font-weight:700;font-size:14px;border-radius:12px;padding:12px 18px;cursor:pointer;border:1px solid var(--line);background:linear-gradient(90deg,var(--ember),var(--luz));color:#1a0f04;user-select:none}
+  .note{font-size:12.5px;color:var(--mut);line-height:1.6}
+  .rules{display:grid;grid-template-columns:1fr;gap:10px;margin-top:6px}
+  .rule{border:1px solid var(--line);border-radius:12px;padding:13px 15px;background:rgba(255,255,255,.02)}
+  .rule b{color:var(--acc)}
+  .foot{margin-top:40px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);text-align:center}
+  .foot a{color:var(--acc);text-decoration:none}
+  @media(min-width:680px){.souls{grid-template-columns:1fr 1fr}.rules{grid-template-columns:1fr 1fr}.next{grid-column:1/-1}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<canvas id="sky"></canvas>
+<div class="wrap">
+  <div class="tag">Propuesta · Camada · fase siguiente</div>
+  <h1>El Ritual del <b>Ocaso</b></h1>
+  <p class="lead">Cada mundo es una <b>Edad</b> con vida finita. Cuando el sol de la Edad se apaga, las almas que criaste y moldeaste <b>cristalizan</b>. Por cada una eliges su destino — y esa elección <b>siembra el próximo mundo</b>. Así el juego gratis nunca termina: renace, torcido por lo que enseñaste.</p>
+  <div class="steps"><span><b>1.</b> el mundo se apaga</span><span><b>2.</b> cada alma cristaliza</span><span><b>3.</b> sacrificas o conservas</span><span><b>4.</b> nace la próxima Edad</span></div>
+
+  <h2>Tus almas al final de la Edad — elige el destino de cada una</h2>
+  <div class="souls" id="souls"></div>
+
+  <div class="next">
+    <h3>🌅 La próxima Edad nacerá así</h3>
+    <div class="sub">Los <b style="color:var(--ember)">sacrificios</b> tuercen la génesis del próximo mundo; los <b style="color:var(--acc)">conservados</b> regresan como ancestros con su historia.</div>
+    <div class="seedbias"><div class="l" id="bias-l" style="width:50%"></div><div class="s" id="bias-s" style="width:50%"></div></div>
+    <div class="biaslbl"><span>☾ sombra</span><span id="bias-txt">equilibrio</span><span>luz ☀</span></div>
+    <div class="nrow" id="next-ideas">Sin sacrificios aún — el próximo mundo nacería neutro.</div>
+    <div class="ancestors" id="next-anc"></div>
+    <div class="cta"><div class="btn" id="reset">↺ reiniciar elección</div><div class="note" id="cta-note"></div></div>
+  </div>
+
+  <h2>Las reglas del rito (propuesta)</h2>
+  <div class="rules">
+    <div class="rule"><b>Semilla = soulbound.</b> Lo sacrificado NO se vende ni se lista: se <b>quema</b> al usarse. Es un voto de dirección, no un activo. (La palabra “NFT” no aparece en el juego: es <b>legado</b>, <b>semilla</b>, <b>alma</b>.)</div>
+    <div class="rule"><b>Sacrificar ≠ perder.</b> El alma se quema, pero su <b>karma e ideas</b> se vuelven el sesgo génesis del próximo mundo. Tu huella persiste en la forma del mundo que viene.</div>
+    <div class="rule"><b>Conservar = ancestro.</b> El personaje persiste con su historia y karma únicos: reputación acumulada que te acompaña Edad tras Edad. No puedes quemar Y guardar la misma alma.</div>
+    <div class="rule"><b>Gratis y completo.</b> Todo esto se juega sin pagar. La economía (más adelante) solo permite <b>colocar más almas</b> de tu linaje = más voz, nunca más poder. Requiere backend y tu visto bueno.</div>
+  </div>
+
+  <div class="foot">propuesta abierta · el Consejo la está afinando por consenso · <a href="/camada/">← volver a Camada</a> · <a href="/universo/">el universo</a></div>
+</div>
+
+<script>
+// almas de ejemplo (en el juego real vienen de tus criaturas de esta Edad)
+const SOULS=[
+  {id:'nyxa', name:'Nyxa', col:'#ffd27a', karma:72, idea:'armonía', v:1, hist:'La sembraste de generosidad y la reforzaste con luz una y otra vez. Se volvió apóstol: contagió armonía a media población.'},
+  {id:'vael', name:'Vael', col:'#ff6a7a', karma:-58, idea:'dominio', v:-1, hist:'Le enseñaste sombra hasta agrietarla. Sembró miedo, corrompió a sus vecinos y desertó dos veces por el Manantial.'},
+  {id:'solen', name:'Solen', col:'#c9a9ff', karma:12, idea:'curiosidad', v:0, hist:'La dejaste crecer casi sola. Curiosa, constructora, sin bando: levantó la mitad de las obras de la Edad.'},
+];
+const state={}; // id -> 'sac' | 'keep' | null
+
+const soulsEl=document.getElementById('souls');
+SOULS.forEach(s=>{state[s.id]=null;
+  const d=document.createElement('div');d.className='soul';d.id='soul-'+s.id;
+  d.innerHTML=`<div class="sh"><div class="orb" style="background:radial-gradient(circle at 38% 34%, ${s.col}, #14101e);color:${s.col}"></div>
+    <div><div class="sn">${s.name}</div><div class="smeta">idea «${s.idea}» · karma ${s.karma>0?'+':''}${s.karma}</div></div></div>
+    <div class="kbar"><div class="pin" style="left:${(s.karma+100)/2}%"></div></div>
+    <div class="klbl"><span>☾ sombra</span><span>luz ☀</span></div>
+    <div class="hist">${s.hist}</div>
+    <div class="choice">
+      <div class="ch sac" data-id="${s.id}" data-c="sac"><div class="t">🔥 Sacrificar</div><div class="d">se vuelve semilla · siembra el próximo mundo con «${s.idea}»</div></div>
+      <div class="ch keep" data-id="${s.id}" data-c="keep"><div class="t">🕯️ Conservar</div><div class="d">regresa como ancestro con su karma e historia</div></div>
+    </div>`;
+  soulsEl.appendChild(d);});
+
+document.querySelectorAll('.ch').forEach(ch=>ch.onclick=()=>{
+  const id=ch.dataset.id,c=ch.dataset.c;state[id]=(state[id]===c)?null:c;
+  const card=document.getElementById('soul-'+id);
+  card.classList.toggle('chosen-sac',state[id]==='sac');card.classList.toggle('chosen-keep',state[id]==='keep');
+  card.querySelectorAll('.ch').forEach(x=>x.classList.toggle('on',x.dataset.c===state[id]));
+  render();
+});
+document.getElementById('reset').onclick=()=>{SOULS.forEach(s=>state[s.id]=null);
+  document.querySelectorAll('.soul').forEach(c=>c.classList.remove('chosen-sac','chosen-keep'));
+  document.querySelectorAll('.ch').forEach(x=>x.classList.remove('on'));render();};
+
+function render(){
+  const sac=SOULS.filter(s=>state[s.id]==='sac'),keep=SOULS.filter(s=>state[s.id]==='keep');
+  let bias=0;sac.forEach(s=>bias+=s.v*(Math.abs(s.karma)/100));
+  const norm=sac.length?Math.max(-1,Math.min(1,bias/sac.length)):0;
+  const luz=Math.round((norm+1)/2*100);
+  document.getElementById('bias-l').style.width=luz+'%';document.getElementById('bias-s').style.width=(100-luz)+'%';
+  document.getElementById('bias-txt').textContent = !sac.length?'equilibrio' : norm>.25?'nace en la luz' : norm<-.25?'nace en la sombra' : 'nace en tensión';
+  const ideas=[...new Set(sac.map(s=>s.idea))];
+  document.getElementById('next-ideas').innerHTML = sac.length
+    ? 'El próximo mundo despertará con estas ideas ya en el aire:'+ideas.map(i=>'<span class="chip">'+i+'</span>').join('')
+    : 'Sin sacrificios aún — el próximo mundo nacería neutro.';
+  document.getElementById('next-anc').innerHTML = keep.length
+    ? '🕯️ Regresan contigo como ancestros: <b style="color:var(--acc)">'+keep.map(s=>s.name).join(', ')+'</b>'
+    : '';
+  const undecided=SOULS.filter(s=>!state[s.id]).length;
+  document.getElementById('cta-note').textContent = undecided? undecided+' alma(s) sin decidir…' : '✓ la próxima Edad está sembrada';
+}
+render();
+
+// cielo del ocaso: sol muriente + brasas
+const cv=document.getElementById('sky'),ctx=cv.getContext('2d');
+let W,H;function rz(){W=cv.width=innerWidth;H=cv.height=innerHeight;}rz();addEventListener('resize',rz);
+const embers=[...Array(70)].map(()=>({x:Math.random(),y:Math.random(),s:Math.random()*2+.4,sp:Math.random()*.0006+.0002,d:Math.random()*6.28}));
+let tt=0;
+function sky(){tt+=0.01;ctx.clearRect(0,0,W,H);
+  const cx=W*0.5,cy=H*0.16,r=Math.min(W,H)*0.55;
+  const g=ctx.createRadialGradient(cx,cy,0,cx,cy,r);
+  g.addColorStop(0,'rgba(255,180,90,0.28)');g.addColorStop(0.35,'rgba(200,90,120,0.12)');g.addColorStop(1,'rgba(10,7,18,0)');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='rgba(255,170,100,0.9)';
+  embers.forEach(e=>{e.y-=e.sp;e.x+=Math.sin(tt+e.d)*0.0004;if(e.y<-0.02){e.y=1.02;e.x=Math.random();}
+    ctx.globalAlpha=0.15+Math.abs(Math.sin(tt*2+e.d))*0.4;ctx.beginPath();ctx.arc(e.x*W,e.y*H,e.s,0,6.28);ctx.fill();});
+  ctx.globalAlpha=1;requestAnimationFrame(sky);}
+sky();
+</script>
+</body>
+</html>
