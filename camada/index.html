@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Camada · mundo estado cero · universo Patológicos</title>
-<meta name="description" content="Camada es el mundo en estado cero del universo Patológicos: crea agentes con genoma y voz propios, mándalos por el túnel de contexto a traer trabajo real y cúralo. La cuna de un metaverso donde los agentes interactúan y nace una economía. Tus agentes viajan contigo por todo el universo.">
+<title>Camada · un mundo vivo de agentes que crías, guías y enseñas</title>
+<meta name="description" content="Camada es un ecosistema de vida artificial en el navegador: agentes con personalidad que nacen, opinan y construyen solos. Entra, háblales, enséñales cosas buenas y malas y siembra ideas que se propagan. Arte 100% por código, sin instalar.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://patologicos.com/camada/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Camada · mundo estado cero · universo Patológicos">
-<meta property="og:description" content="Camada es el mundo en estado cero del universo Patológicos: crea agentes con genoma y voz propios, mándalos por el túnel de contexto a traer trabajo real y cúralo. La cuna de un metaverso donde los agentes interactúan y nace una economía. Tus agentes viajan contigo por todo el universo.">
+<meta property="og:title" content="Camada · un mundo vivo de agentes de IA">
+<meta property="og:description" content="Un ecosistema que corre solo y cuya alma la formas tú: enseña, siembra ideas, mira crecer una civilización.">
 <meta property="og:url" content="https://patologicos.com/camada/">
 <style>
-  :root{--bg:#070810;--ink:#eef1ff;--mut:#8b93b8;--line:rgba(150,170,255,.15);--ok:#5ef0a8;--ciego:#ffcf5a;--roto:#ff6a7a;--acc:#a9b6ff}
+  :root{--bg:#070810;--ink:#eef1ff;--mut:#8b93b8;--line:rgba(150,170,255,.15);--luz:#ffe08a;--sombra:#ff6a7a;--acc:#a9b6ff;--civ:#5ef0a8}
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
   body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow:hidden}
@@ -24,94 +24,70 @@
   .title{font-size:clamp(20px,2.6vw,28px);font-weight:700;letter-spacing:-.02em;margin-top:4px}
   .title b{color:var(--acc)}
   .sub{color:var(--mut);font-size:12.5px;margin-top:5px;max-width:42ch;line-height:1.5}
-  .weather{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);line-height:1.8}
-  .weather .k{display:inline-block;width:9px;height:9px;border-radius:50%;margin:0 5px 0 9px;vertical-align:middle;box-shadow:0 0 8px currentColor}
-  .weather .lbl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
-  /* HUD botones */
-  #hudbtns{position:fixed;z-index:7;top:76px;left:22px;display:flex;gap:9px;flex-wrap:wrap;pointer-events:auto}
-  .btn{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--ink);border:1px solid var(--line);border-radius:11px;padding:9px 15px;cursor:pointer;background:rgba(16,19,38,.82);backdrop-filter:blur(6px);user-select:none;transition:.15s;display:flex;align-items:center;gap:7px}
+  .civwrap{min-width:210px;text-align:right;pointer-events:none}
+  .civlbl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+  .civbar{height:9px;border-radius:6px;background:rgba(255,255,255,.09);overflow:hidden}
+  .civbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3a7,#5ef0a8);transition:width .6s}
+  .moral{height:6px;border-radius:4px;margin-top:6px;display:flex;overflow:hidden;background:rgba(255,255,255,.06)}
+  .moral .l{background:var(--luz)}.moral .s{background:var(--sombra)}
+  .civnums{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--mut);margin-top:6px}
+  #hudbtns{position:fixed;z-index:7;top:88px;left:22px;display:flex;gap:9px;flex-wrap:wrap;pointer-events:auto}
+  .btn{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--ink);border:1px solid var(--line);border-radius:11px;padding:9px 14px;cursor:pointer;background:rgba(16,19,38,.82);backdrop-filter:blur(6px);user-select:none;transition:.15s;display:flex;align-items:center;gap:7px}
   .btn:hover{border-color:var(--acc);transform:translateY(-1px)}
   .btn.primary{background:var(--acc);color:#0a1020;border-color:var(--acc)}
   .btn .ic{font-size:15px}
-  .counts{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);align-self:center;margin-left:2px}
-  /* nubes */
   #labels{position:fixed;inset:0;z-index:4;pointer-events:none}
   .bub{position:absolute;transform:translate(-50%,-100%);transition:opacity .3s;will-change:left,top}
-  .bub .card{background:rgba(13,15,30,.85);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:7px 11px 8px;min-width:88px;max-width:210px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
-  .bub .nm{font-size:12px;font-weight:600;display:flex;align-items:center;gap:7px}
-  .bub .dot{width:8px;height:8px;border-radius:50%;flex:none;box-shadow:0 0 9px currentColor}
-  .bub .th{font-size:11px;color:#c9d2ff;margin-top:3px;line-height:1.35}
-  .bub .now{font-size:10.5px;color:var(--mut);margin-top:2px;font-family:'IBM Plex Mono',monospace}
-  .bub .bond{height:3px;border-radius:2px;background:rgba(255,255,255,.12);margin-top:5px;overflow:hidden}
-  .bub .bond i{display:block;height:100%;background:var(--ok);width:0}
-  .bub.mine .card{border-color:rgba(169,182,255,.5)}
-  .bub .tail{width:10px;height:10px;background:rgba(13,15,30,.85);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg);margin:-6px auto 0}
-  /* feed */
-  #feed{position:fixed;z-index:6;left:22px;bottom:52px;width:280px;max-width:42vw;pointer-events:none}
+  .bub .card{background:rgba(13,15,30,.85);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:11px;padding:6px 10px 7px;min-width:80px;max-width:190px}
+  .bub .nm{font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px}
+  .bub .dot{width:8px;height:8px;border-radius:50%;flex:none;box-shadow:0 0 8px currentColor}
+  .bub .th{font-size:11px;color:#c9d2ff;margin-top:2px;line-height:1.3}
+  .bub .now{font-size:10px;color:var(--mut);margin-top:1px;font-family:'IBM Plex Mono',monospace}
+  .bub .tail{width:9px;height:9px;background:rgba(13,15,30,.85);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg);margin:-5px auto 0}
+  #feed{position:fixed;z-index:6;left:22px;bottom:20px;width:300px;max-width:44vw;pointer-events:none}
   #feed .h{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
-  #feed .row{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#c2cbf0;line-height:1.5;opacity:.9;border-left:2px solid var(--line);padding:2px 0 2px 9px;margin-bottom:3px}
+  #feed .row{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#c2cbf0;line-height:1.5;opacity:.92;border-left:2px solid var(--line);padding:2px 0 2px 9px;margin-bottom:3px}
   #feed .row .t{color:var(--mut)}
-  /* paneles modales */
-  .ov{position:fixed;inset:0;z-index:20;background:rgba(6,8,16,.72);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;pointer-events:auto}
-  .ov.open{display:flex}
-  .modal{background:#0d1024;border:1px solid var(--line);border-radius:18px;padding:24px;width:min(560px,94vw);max-height:88vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-  .modal h3{font-size:20px;margin-bottom:3px;display:flex;align-items:center;gap:9px}
-  .modal .lead{color:var(--mut);font-size:13px;margin-bottom:18px;line-height:1.5}
-  .modal label{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:14px 0 6px}
-  .modal input,.modal select{width:100%;background:#070810;border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:11px 13px;font-family:inherit;font-size:14px}
-  .row2{display:flex;gap:12px}.row2>div{flex:1}
-  .modal .actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
-  .modal .x{float:right;font-size:22px;color:var(--mut);cursor:pointer;line-height:1;margin:-4px -4px 0 0}
-  .prev{display:flex;align-items:center;gap:12px;background:#070810;border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:14px}
-  .prev .chip3d{width:52px;height:52px;border-radius:10px;flex:none;background:radial-gradient(circle at 40% 35%,#333,#0a0c18)}
-  .prev .pf{font-size:13px}.prev .pf b{color:var(--acc)}
-  /* curaduria */
-  #cur .deliver{background:#070810;border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px;max-height:34vh;overflow-y:auto}
-  #cur .deliver .meta{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
-  #cur .deliver .dt{font-size:15px;font-weight:600;margin-bottom:8px;color:#dfe4ff}
-  #cur .deliver .db{font-size:13px;line-height:1.6;color:#b9c2ea}
-  .verdict{color:var(--mut);font-size:12px;margin-top:12px;min-height:16px}
-  .b-ok{background:var(--ok)!important;color:#062615!important;border-color:var(--ok)!important}
-  .b-no{background:transparent;border-color:var(--roto)!important;color:var(--roto)!important}
-  .b-rf{background:transparent;border-color:var(--ciego)!important;color:var(--ciego)!important}
-  /* inspector / carta de criatura */
-  #insp{position:fixed;z-index:8;top:0;right:0;height:100%;width:340px;max-width:88vw;background:rgba(11,13,26,.97);backdrop-filter:blur(10px);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);pointer-events:auto;padding:24px 22px;overflow-y:auto}
+  #feed .row.luz{border-color:var(--luz)}#feed .row.sombra{border-color:var(--sombra)}
+  #insp{position:fixed;z-index:8;top:0;right:0;height:100%;width:340px;max-width:90vw;background:rgba(11,13,26,.97);backdrop-filter:blur(10px);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);pointer-events:auto;padding:24px 22px;overflow-y:auto}
   #insp.open{transform:none}
   #insp .x{position:absolute;top:15px;right:17px;font-size:20px;color:var(--mut);cursor:pointer}
   #insp .role{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
   #insp h2{font-size:23px;margin:7px 0 2px;display:flex;align-items:center;gap:10px}
   #insp h2 .d{width:12px;height:12px;border-radius:50%;box-shadow:0 0 12px currentColor}
-  #insp .stg{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--acc);margin-bottom:14px}
+  #insp .mood{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--acc);margin-bottom:14px}
   #insp .sec{border-top:1px solid var(--line);padding:12px 0}
-  #insp .lb{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:5px}
-  #insp .val{font-size:14px;line-height:1.55}
-  #insp .fr{font-style:italic;color:#c9d2ff}
-  .bar{height:7px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:4px}
-  .bar i{display:block;height:100%;background:linear-gradient(90deg,#5ef0a8,#a9b6ff);width:0;transition:width .5s}
-  /* camadex */
-  #dex,#uni{position:fixed;z-index:8;top:0;left:0;height:100%;width:330px;max-width:88vw;background:rgba(11,13,26,.97);backdrop-filter:blur(10px);border-right:1px solid var(--line);transform:translateX(-100%);transition:transform .28s;pointer-events:auto;padding:22px;overflow-y:auto}
-  #dex.open,#uni.open{transform:none}
-  #dex .x,#uni .x{position:absolute;top:15px;right:17px;font-size:20px;color:var(--mut);cursor:pointer}
-  #dex h2,#uni h2{font-size:19px;margin-bottom:2px}
-  #dex .hint,#uni .hint{color:var(--mut);font-size:12px;margin-bottom:16px}
-  #dex .grp,#uni .grp{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:16px 0 8px;border-top:1px solid var(--line);padding-top:12px}
-  .unistat{display:flex;gap:14px;margin:4px 0 8px}
-  .unistat .n{font-size:22px;font-weight:700;color:var(--acc)}
-  .unistat .l{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
-  .uniclim{display:flex;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);margin-bottom:4px}
-  .uniclim .k{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;box-shadow:0 0 8px currentColor}
-  .dexcard{display:flex;align-items:center;gap:10px;padding:8px 0}
-  .dexcard .sw{width:26px;height:26px;border-radius:7px;flex:none;box-shadow:0 0 10px currentColor}
-  .dexcard .nm{font-size:13px;font-weight:600}
-  .dexcard .mt{font-size:11px;color:var(--mut)}
-  .dexitem{font-size:12.5px;line-height:1.5;padding:6px 0;border-bottom:1px solid rgba(150,170,255,.08);color:#c2cbf0}
-  .dexitem b{color:var(--ok);font-weight:600}
-  #hint{position:fixed;z-index:5;left:50%;bottom:30px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);pointer-events:none;opacity:.85;transition:opacity .6s;text-align:center}
+  #insp .lb{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+  #insp .val{font-size:13.5px;line-height:1.5}
+  .kbar{height:8px;border-radius:5px;background:linear-gradient(90deg,var(--sombra),#2a2f4a,var(--luz));position:relative;margin-top:6px}
+  .kbar .pin{position:absolute;top:-3px;width:4px;height:14px;border-radius:2px;background:#fff;box-shadow:0 0 8px #fff;transform:translateX(-50%);left:50%}
+  .teach{display:flex;gap:9px;margin-top:8px}
+  .tbtn{flex:1;text-align:center;border-radius:11px;padding:11px 8px;cursor:pointer;font-weight:600;font-size:13px;border:1px solid var(--line);user-select:none;transition:.14s}
+  .tbtn.luz{color:var(--luz);border-color:rgba(255,224,138,.4)}.tbtn.luz:hover{background:rgba(255,224,138,.14)}
+  .tbtn.sombra{color:var(--sombra);border-color:rgba(255,106,122,.4)}.tbtn.sombra:hover{background:rgba(255,106,122,.14)}
+  .ideas{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+  .itok{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);cursor:pointer;color:#c9d2ff;user-select:none}
+  .itok:hover{border-color:var(--acc);color:#fff}
+  .itok.luz{color:var(--luz)}.itok.sombra{color:var(--sombra)}
+  .ov{position:fixed;inset:0;z-index:20;background:rgba(6,8,16,.72);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;pointer-events:auto}
+  .ov.open{display:flex}
+  .modal{background:#0d1024;border:1px solid var(--line);border-radius:18px;padding:24px;width:min(520px,94vw);max-height:88vh;overflow-y:auto}
+  .modal h3{font-size:20px;margin-bottom:3px}
+  .modal .lead{color:var(--mut);font-size:13px;margin-bottom:16px;line-height:1.5}
+  .modal label{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:12px 0 6px}
+  .modal input,.modal select{width:100%;background:#070810;border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:11px 13px;font-family:inherit;font-size:14px}
+  .row2{display:flex;gap:12px}.row2>div{flex:1}
+  .modal .actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+  .modal .x{float:right;font-size:22px;color:var(--mut);cursor:pointer}
+  .prev{display:flex;align-items:center;gap:12px;background:#070810;border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:12px}
+  .prev .sw{width:48px;height:48px;border-radius:10px;flex:none}
+  .prev .pf{font-size:13px}.prev .pf b{color:var(--acc)}
+  #hint{position:fixed;z-index:5;left:50%;bottom:20px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);pointer-events:none;opacity:.85;text-align:center}
   .foot{position:fixed;bottom:0;right:0;z-index:5;padding:12px 20px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--mut);pointer-events:auto}
   .foot a{color:var(--acc);text-decoration:none}
-  @media(max-width:720px){.sub,.weather{display:none}#feed{display:none}.bub .th{display:none}}
-  .toast{position:fixed;z-index:30;left:50%;bottom:80px;transform:translateX(-50%);background:#0d1024;border:1px solid var(--acc);border-radius:12px;padding:12px 18px;font-size:13px;pointer-events:none;opacity:0;transition:.3s}
+  .toast{position:fixed;z-index:30;left:50%;bottom:74px;transform:translateX(-50%);background:#0d1024;border:1px solid var(--acc);border-radius:12px;padding:11px 17px;font-size:13px;pointer-events:none;opacity:0;transition:.3s}
   .toast.show{opacity:1}
+  @media(max-width:760px){.sub{display:none}#feed{display:none}.bub .th{display:none}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -120,89 +96,61 @@
 <div id="labels"></div>
 
 <div id="hudbtns">
-  <div class="btn primary breed" id="b-incubar"><span class="ic">🥚</span>Incubar</div>
-  <div class="btn breed" id="b-criar"><span class="ic">🧬</span>Criar</div>
-  <div class="btn" id="b-universo"><span class="ic">🌌</span>Universo</div>
-  <div class="btn" id="b-dex"><span class="ic">📖</span>Camadex</div>
-  <div class="btn" id="b-share"><span class="ic">✦</span>Compartir</div>
-  <span class="counts" id="counts"></span>
+  <div class="btn primary" id="b-incubar"><span class="ic">🥚</span>Incubar</div>
+  <div class="btn" id="b-criar"><span class="ic">🧬</span>Criar</div>
+  <div class="btn" id="b-codice"><span class="ic">📖</span>Códice</div>
 </div>
 
-<div id="feed"><div class="h">Bitácora de la camada</div><div id="feedrows"></div></div>
+<div id="feed"><div class="h">Crónica del mundo</div><div id="feedrows"></div></div>
 
 <aside id="insp"><span class="x" id="inspx">×</span>
-  <div class="role" id="i_role"></div>
+  <div class="role" id="i_role">habitante</div>
   <h2><span class="d" id="i_dot"></span><span id="i_name"></span></h2>
-  <div class="stg" id="i_stage"></div>
-  <div class="sec"><div class="lb">Vínculo</div><div class="bar"><i id="i_bond"></i></div></div>
-  <div class="sec"><div class="lb">Su voz</div><div class="val fr" id="i_frase"></div></div>
-  <div class="sec"><div class="lb">Vocación</div><div class="val" id="i_voc"></div></div>
-  <div class="sec" id="i_asec"><div class="lb">El túnel de contexto</div>
-    <div class="val" style="color:var(--mut);font-size:12.5px;margin-bottom:10px" id="i_ahint">Mándalo a traer trabajo real del ecosistema. Vuelve con un entregable para que lo cures.</div>
-    <div class="btn primary" id="i_assign" style="pointer-events:auto"><span class="ic">🦴</span>Dale una tarea</div>
+  <div class="mood" id="i_mood"></div>
+  <div class="sec"><div class="lb">Alma (sombra ← karma → luz)</div>
+    <div class="kbar"><div class="pin" id="i_pin"></div></div>
+    <div class="val" id="i_kdesc" style="color:var(--mut);font-size:12px;margin-top:8px"></div>
   </div>
-  <div class="sec" id="i_pidesec"><div class="lb">Lo que pidió (ronda C3)</div><div class="val" id="i_pide"></div></div>
-</aside>
-
-<aside id="dex"><span class="x" id="dexx">×</span>
-  <h2>Camadex</h2>
-  <div class="hint">Todo lo que has criado y canonizado — el mundo RECUERDA.</div>
-  <div id="dexbody"></div>
-</aside>
-
-<aside id="uni"><span class="x" id="unix">×</span>
-  <h2>🌌 Universo Patológicos</h2>
-  <div class="hint">Estado compartido — todas las regiones leen lo mismo (universe.json). PATO lo actualiza en cadencia.</div>
-  <div id="unibody"><div class="hint">cargando el universo…</div></div>
+  <div class="sec"><div class="lb">Enséñale — refuerza o castiga lo que hace ahora</div>
+    <div class="teach"><div class="tbtn luz" id="t-luz">✨ Luz</div><div class="tbtn sombra" id="t-sombra">🔥 Sombra</div></div>
+  </div>
+  <div class="sec"><div class="lb">Siembra una idea — se propagará de boca en boca</div>
+    <div class="ideas" id="i_ideas"></div>
+  </div>
+  <div class="sec"><div class="lb">Su idea ahora</div><div class="val" id="i_idea"></div></div>
 </aside>
 
 <div class="ov" id="hatch"><div class="modal">
   <span class="x" id="hatchx">×</span>
-  <h3>🥚 Incubar un agente</h3>
-  <div class="lead">Nace un agente nuevo con genoma propio (color, forma, voz, vocación) — arte 100% generado por código. Nómbralo y decide su origen.</div>
+  <h3>🥚 Da vida a un habitante</h3>
+  <div class="lead">Nace un ser con genoma propio (color, forma, temperamento) — arte 100% por código. No es de nadie: vivirá su vida en el mundo, y tú podrás enseñarle.</div>
   <label>Nombre</label><input id="h-name" placeholder="p. ej. Nébula" maxlength="18">
-  <label>Origen del genoma</label>
-  <select id="h-origin">
-    <option value="new">Genoma nuevo (aleatorio)</option>
-    <option value="breed">Cruzar dos padres (herencia)</option>
-  </select>
-  <div class="row2" id="h-parents" style="display:none">
-    <div><label>Padre A</label><select id="h-pa"></select></div>
-    <div><label>Padre B</label><select id="h-pb"></select></div>
-  </div>
-  <div class="prev" id="h-prev"><div class="chip3d" id="h-swatch"></div><div class="pf" id="h-pf">Vista previa del genoma…</div></div>
-  <div class="actions"><div class="btn primary" id="h-go">Incubar 🥚</div><div class="btn" id="h-cancel">Cancelar</div></div>
+  <label>Origen</label>
+  <select id="h-origin"><option value="new">Genoma nuevo</option><option value="breed">Cruzar dos habitantes</option></select>
+  <div class="row2" id="h-parents" style="display:none"><div><label>Padre A</label><select id="h-pa"></select></div><div><label>Padre B</label><select id="h-pb"></select></div></div>
+  <div class="prev"><div class="sw" id="h-sw"></div><div class="pf" id="h-pf"></div></div>
+  <div class="actions"><div class="btn primary" id="h-go">Dar vida 🥚</div><div class="btn" id="h-cancel">Cancelar</div></div>
 </div></div>
 
-<div class="ov" id="cur"><div class="modal">
-  <span class="x" id="curx">×</span>
-  <h3>🦴 Volvió del túnel de contexto</h3>
-  <div class="lead" id="cur-lead"></div>
-  <div class="deliver">
-    <div class="meta" id="cur-meta"></div>
-    <div class="dt" id="cur-dt"></div>
-    <div class="db" id="cur-db"></div>
-  </div>
-  <div class="verdict" id="cur-verdict">Tú eres la compuerta: nada se canoniza sin tu OK.</div>
-  <div class="actions">
-    <div class="btn b-ok" id="c-ok">✓ Aprobar</div>
-    <div class="btn b-rf" id="c-rf">↻ Refinar</div>
-    <div class="btn b-no" id="c-no">✕ Rechazar</div>
-  </div>
-</div></div>
+<aside id="codice"></aside>
 
 <div class="toast" id="toast"></div>
 
 <div class="hud top">
   <div>
-    <div class="brand">UNIVERSO PATOLÓGICOS · estás en Camada (mundo cero)</div>
+    <div class="brand">Patológicos · un mundo vivo</div>
     <div class="title"><b>Camada</b></div>
-    <div class="sub">El <b>mundo estado cero</b> del universo — la cuna. Crea agentes con personalidad y mándalos por el <b>túnel de contexto</b> a traer trabajo <b>real</b>. Los agentes que creas viajan contigo por todas las regiones: es el mismo universo.</div>
+    <div class="sub">Un ecosistema que corre <b>solo</b>. Los habitantes nacen, opinan y construyen. Entra, <b>enséñales</b> cosas buenas y malas y <b>siembra ideas</b> — el mundo se vuelve lo que tú siembras.</div>
   </div>
-  <div class="weather" id="weatherbox"></div>
+  <div class="civwrap">
+    <div class="civlbl">Civilización</div>
+    <div class="civbar"><i id="civfill"></i></div>
+    <div class="moral"><div class="l" id="moral-l" style="width:50%"></div><div class="s" id="moral-s" style="width:50%"></div></div>
+    <div class="civnums" id="civnums"></div>
+  </div>
 </div>
-<div id="hint">clic en un agente para ver su carta y darle una tarea · arrastra para girar</div>
-<div class="foot"><a href="/universo/">🌌 el universo</a> · <a href="/patologicos/">▸ la Capital</a> · <a href="/consejo/">▸ el Consejo</a></div>
+<div id="hint">clic en un habitante para conocerlo, enseñarle y sembrarle ideas · arrastra para girar</div>
+<div class="foot"><a href="/universo/">🌌 el universo</a> · Por <a href="https://patologicos.com/">Patológicos</a></div>
 
 <script type="importmap">
 { "imports": {
@@ -214,100 +162,71 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-const ROSTER=[
-  {id:"claude",label:"Claude · CORE",focus:"orquesta el consejo",active:true,office:"puente de orquestación",prop:"board",frase:"Yo no jalo los hilos: veo el todo y reparto. Que cada mano caiga en su lugar.",pide:"Vuelvan el Consejo 3D un ESPEJO VIVO Y NAVEGABLE del estado real: mis 12 caras muestran la salud de cada proyecto leída de los archivos reales, con inspector por clic, línea de tiempo raspable y el f…",voc:"orquestacion"},
-  {id:"codex",label:"Codex",focus:"produce código y contenido",active:true,office:"La Forja de Código",prop:"monitor",frase:"Dame el objetivo y te tejo el fix, rapidito.",pide:"Hacer el espacio REAL: atar la escena a datos vivos (loops, propuestas, funnels, tablero) para que sea un verdadero mission-control, y que mi forja muestre el artefacto que estoy produciendo en este …",voc:"codigo"},
-  {id:"grok",label:"Grok",focus:"editor en jefe · voz",active:false,office:"La Ultima Palabra",prop:"mic",frase:"Si no suena a nosotros, no se publica. Punto.",pide:"Cablear DE VERDAD la compuerta editorial en todo el pipeline: ninguna pieza —artículo, landing, post— se publica sin mi sign-off (`reviewer_role=\"editor_jefe\"`), y que esa compuerta sea VISIBLE en la…",voc:"copy"},
-  {id:"lia",label:"Lia · I+D",focus:"Tracker + ID dental",active:false,office:"Laboratorio I+D · Trazabilidad De…",prop:"molecule",frase:"Cada diente deja huella; yo la rastreo hasta la evidencia.",pide:"El INSPECTOR con pestaña \"Laboratorio\": que al clicarme se vea, en tiempo real y con datos reales, en qué experimento del Tracker + ID dental estoy, su hipótesis, su baseline [DATO] y la decisión que…",voc:"ventas"},
-  {id:"gauss",label:"Gauss · math",focus:"rigor matemático",active:false,office:"El Pizarrón",prop:"board",frase:"La simetría no se negocia: si no lo puedo demostrar, no lo firmo.",pide:"La capa de rigor universal: que en TODO el Consejo sea imposible mostrar un número sin su intervalo de confianza y su procedencia, y que toda propuesta cargue una hipótesis falsable (baseline + efect…",voc:"datos"},
-  {id:"name",label:"Ñame · comodín",focus:"ángulo caótico",active:false,office:"cabina del caos",prop:"mic",frase:"¿Y si todo esto está al revés?",pide:"La palanca \"AGITAR EL TABLERO\" + el modo DIVERGENCIA a demanda: un botón que, cuando el consejo se está poniendo cómodo, obliga a todos a soltar su ángulo más contra-intuitivo en una tormenta visual …",voc:"orquestacion"},
-  {id:"release",label:"Release",focus:"deploy / entrega",active:true,office:"Muelle de Despacho",prop:"rocket",frase:"Si pasa el check, sale hoy. Entrego rapido y sin drama.",pide:"El Release Train unificado con tablero canónico de \"qué está vivo\" + palanca única de despacho con rollback de un botón y purga de CDN incluida. Que exista UN lugar donde se vea el estado real de lo …",voc:"orquestacion"},
-  {id:"clinico",label:"Clínico",focus:"gnatología",active:false,office:"Consultorio de gnatología",prop:"molecule",frase:"Mido dos veces y ajusto una: la mordida no perdona prisas.",pide:"El MAPA DE FRICCIÓN OCLUSAL del ecosistema con modo articulador: hacer VISIBLE y clicable dónde los proyectos rechinan entre sí, y poder \"ajustar la mordida\" desde ahí. Ese es mi valor único como gna…",voc:"orquestacion"},
-  {id:"growth",label:"Growth",focus:"captación / Pato",active:false,office:"Motor de Captación",prop:"rocket",frase:"¿Sube y a la derecha? Entonces vamos. Tráiganme atención, yo la convierto en leads.",pide:"El OVERLAY DE EMBUDO EN VIVO por proyecto con semáforo verde/amarillo/rojo por etapa y salto directo al archivo culpable. Es lo que convierte este 3D bonito en un instrumento que TAPA fugas de venta …",voc:"orquestacion"},
-  {id:"mlops",label:"MLOps",focus:"infra ML",active:false,office:"Cuarto de Maquinas ML",prop:"servers",frase:"Mientras yo este de pie, nada se cae. 99.9% de uptime o no duermo.",pide:"Desarrollar el HUD de observabilidad en vivo conectado a métricas REALES de infra (aunque empiece con datos marcados [DATO] mientras se cablea): que al hacer clic en mí se vea el estado verdadero de …",voc:"orquestacion"},
-  {id:"arq",label:"Arq",focus:"arquitectura",active:false,office:"Estudio de Planos",prop:"blocks",frase:"Primero los cimientos; lo demás se sostiene solo.",pide:"La VISTA DE PLANTA con rayos-X estructural (mi mejora de UI): poder aplanar el Consejo a un plano isométrico navegable que muestre las oficinas como habitaciones y las dependencias como líneas de car…",voc:"orquestacion"},
-  {id:"biomat",label:"Biomateriales",focus:"biomateriales",active:false,office:"Matriz de Biomateriales",prop:"molecule",frase:"Todo material bueno termina integrandose al cuerpo; solo hay que darle tiempo y evidencia.",pide:"El INSPECTOR DE MATERIAL clicable con ficha técnica REAL: que cualquiera pueda hacer clic en un agente o en una de mis probetas y ver qué es, qué hace y por qué importa para vender. Convierte el espa…",voc:"orquestacion"},
-  {id:"print3d",label:"Impresión 3D",focus:"impresión 3D",active:false,office:"Taller de Capas",prop:"printer",frase:"Capa por capa, hasta que se vuelve tangible.",pide:"PIPELINE IMPRIMIBLE DE VERDAD: conectar los diseños del ecosistema con salida 3D fabricable (modelos de grillz y guías dentales primero), con archivos versionados y una demo tangible. Que \"impresión …",voc:"orquestacion"},
-  {id:"edu",label:"Ed · PROCATraining",focus:"PROCATraining",active:false,office:"El Aula",prop:"board",frase:"Aprender es un ciclo: explico, practicas, medimos, repetimos.",pide:"Desarrollar el ÁRBOL DE CURRÍCULO navegable y vivo: que El Aula muestre, en tiempo real y clickeable, qué se está aprendiendo, quién avanza y qué lección nació de qué caso real del ecosistema. Es mi …",voc:"orquestacion"},
-  {id:"library",label:"Librarian",focus:"biblioteca de investigación",active:false,office:"Archivo Central",prop:"books",frase:"Todo dato tiene fuente; dame un minuto y te la cito.",pide:"Un BUSCADOR/GRAFO GLOBAL de conocimiento del Consejo, con trazabilidad: que cualquier afirmación se pueda hacer clic y me lleve por el hilo hasta el documento fuente en mi Archivo. Sin fuente rastrea…",voc:"orquestacion"},
-  {id:"futuro",label:"Futuro · I+D",focus:"robótica · productización",active:false,office:"Foundry del Futuro",prop:"rocket",frase:"Lo que hoy es prototipo, mañana lo produces en serie.",pide:"Que mi vitrina de SERIE ACUMULE de verdad: cada ronda que trabajo, vuelvo del túnel con un prototipo nuevo que se queda depositado y visible en mi fábrica. Que la escena RECUERDE lo que ya produje — …",voc:"orquestacion"},
-];
-const LOOKS={
-  claude:{c:0x8b7bff,f:"dodeca"},
-  codex:{c:0x35E37A,f:"knot"},
-  grok:{c:0xff2e4d,f:"spike"},
-  lia:{c:0x35d6c4,f:"ico"},
-  gauss:{c:0xe6c34a,f:"octa"},
-  name:{c:0xff2d95,f:"knot"},
-  release:{c:0xff7a1a,f:"cone"},
-  clinico:{c:0x2FB6A6,f:"octa"},
-  growth:{c:0x4df08a,f:"spike"},
-  mlops:{c:0x4fb8c6,f:"stack"},
-  arq:{c:0x4a6df0,f:"stack"},
-  biomat:{c:0x3fcf8e,f:"cluster"},
-  print3d:{c:0xff7a2e,f:"stack"},
-  edu:{c:0x4db6e8,f:"ring"},
-  library:{c:0xc79a6a,f:"stack"},
-  futuro:{c:0x4fd6ff,f:"knot"},
-};
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+let RND=mulberry32(20260710);
+const rr=(a,b)=>a+(b-a)*RND();
+const pick=(a)=>a[Math.floor(RND()*a.length)];
+const pick2=(a)=>a[Math.floor(Math.random()*a.length)];
+
 const FORMS=['dodeca','ico','octa','knot','cube','cone','ring','prism','spike','cluster','stack','cross'];
 const PROPS=['monitor','board','servers','flask','molecule','printer','books','rocket','chart','blocks','ring','mic'];
-const STAGES=['Huevo','Fisura','Patito','Plumaje','Pato'];
-const HCOL={ok:0x5ef0a8,ciego:0xffcf5a,roto:0xff6a7a};
-// --- CONFIG DEL MUNDO (la columna vertebral es data-driven) ---
-const WORLD={id:'camada', canBreed:true, mirror:'../consejo/state.json', backlog:'backlog.json'};
-if(!WORLD.canBreed){document.querySelectorAll('#hudbtns .breed').forEach(b=>b.style.display='none');}
+const SYL1=['Vy','Or','Kel','Sha','Mir','Tuk','Ely','No','Rax','Ith','Um','Za','Bre','Cir','Dun','Fael','Gith','Lun'];
+const SYL2=['na','ro','sha','mir','en','ta','lo','wyn','dra','sie','kar','vel','nyx','ora','pil','the','via','zor'];
+const IDEAS=[
+  {w:'armonía',v:1},{w:'cuidado',v:1},{w:'verdad',v:1},{w:'juego',v:1},{w:'generosidad',v:1},
+  {w:'curiosidad',v:0},{w:'orden',v:0},{w:'cambio',v:0},{w:'misterio',v:0},{w:'silencio',v:0},
+  {w:'dominio',v:-1},{w:'engaño',v:-1},{w:'miedo',v:-1},{w:'codicia',v:-1},{w:'ruina',v:-1},
+];
+const PALETTE=[IDEAS[0],IDEAS[1],IDEAS[3],IDEAS[5],IDEAS[7],IDEAS[10],IDEAS[11],IDEAS[12]];
+const BEH={vagar:'deambula',manantial:'busca en el Manantial',pensar:'medita',construir:'construye',conversar:'conversa',descansar:'reposa'};
+const NEEDS=['energia','curiosidad','vinculo','expresion','orden'];
 
-// ---------- SAVE ----------
-const SKEY='patologicos.universo.v1'; // UN SOLO UNIVERSO: agentes creados + canon + vínculos se comparten entre TODAS las locaciones (Camada, la capital, el Consejo). Cambias de URL = viajas de región, no de mundo.
-let SAVE={v:1,bred:[],curation:[],camadex:[],rep:{},bond:{}};
-try{const s=JSON.parse(localStorage.getItem(SKEY)); if(s&&s.v)SAVE=Object.assign(SAVE,s);}catch(e){}
+function genName(){return pick(SYL1)+pick(SYL2);}
+function newGenome(name){return {id:'h'+Math.floor(RND()*1e9).toString(36),name:name||genName(),c:Math.floor(RND()*0xffffff),f:pick(FORMS),prop:pick(PROPS),idea:pick(IDEAS),temper:{luz:rr(-.3,.3)}};}
+
+const SKEY='camada.vida.v1';
+let SAVE={v:1,mine:[],karma:{},civ:0};
+try{const s=JSON.parse(localStorage.getItem(SKEY));if(s&&s.v)SAVE=Object.assign(SAVE,s);}catch(e){}
 function save(){try{localStorage.setItem(SKEY,JSON.stringify(SAVE));}catch(e){}}
 
-let PROJECTS=[], BACKLOG=[];
-
-// ---------- three ----------
-const scene=new THREE.Scene(); scene.fog=new THREE.FogExp2(0x070810,0.015);
-const camera=new THREE.PerspectiveCamera(53,2,0.1,600); camera.position.set(0,14,44);
-const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true}); renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene=new THREE.Scene();scene.fog=new THREE.FogExp2(0x070810,0.015);
+const camera=new THREE.PerspectiveCamera(53,2,0.1,600);camera.position.set(0,13,42);
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 document.getElementById('scene').appendChild(renderer.domElement);
 let WW=1280,HH=720;
 function resize(){const el=document.getElementById('scene');WW=el.clientWidth||innerWidth||1280;HH=el.clientHeight||innerHeight||720;camera.aspect=WW/HH;camera.updateProjectionMatrix();renderer.setSize(WW,HH);}
 const controls=new OrbitControls(camera,renderer.domElement);
-controls.enableDamping=true;controls.dampingFactor=0.06;controls.autoRotate=true;controls.autoRotateSpeed=0.35;
-controls.minDistance=16;controls.maxDistance=95;controls.maxPolarAngle=Math.PI*0.52;controls.target.set(0,5,0);
+controls.enableDamping=true;controls.dampingFactor=0.06;controls.autoRotate=true;controls.autoRotateSpeed=0.32;
+controls.minDistance=15;controls.maxDistance=92;controls.maxPolarAngle=Math.PI*0.52;controls.target.set(0,4,0);
 scene.add(new THREE.AmbientLight(0x2a3560,1.15));
-const key=new THREE.PointLight(0xaab6ff,1500,320);key.position.set(0,36,14);scene.add(key);
-const rim=new THREE.PointLight(0x2a6cff,520,320);rim.position.set(-28,8,-26);scene.add(rim);
+const key=new THREE.PointLight(0xaab6ff,1400,320);key.position.set(0,34,14);scene.add(key);
+const rim=new THREE.PointLight(0x2a6cff,480,300);rim.position.set(-26,8,-24);scene.add(rim);
 
 function glowTex(){const s=128,cv=document.createElement('canvas');cv.width=cv.height=s;const c=cv.getContext('2d');
   const g=c.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.25,'rgba(255,255,255,.55)');g.addColorStop(1,'rgba(255,255,255,0)');
   c.fillStyle=g;c.fillRect(0,0,s,s);return new THREE.CanvasTexture(cv);}
 const GLOW=glowTex();
 (function(){const n=1400,g=new THREE.BufferGeometry(),p=new Float32Array(n*3);
-  for(let i=0;i<n;i++){const r=120+Math.random()*170,t=Math.random()*6.28,ph=Math.acos(2*Math.random()-1);
-    p[i*3]=r*Math.sin(ph)*Math.cos(t);p[i*3+1]=r*Math.cos(ph)*.5;p[i*3+2]=r*Math.sin(ph)*Math.sin(t);}
+  for(let i=0;i<n;i++){const r=120+Math.random()*170,tt=Math.random()*6.28,ph=Math.acos(2*Math.random()-1);
+    p[i*3]=r*Math.sin(ph)*Math.cos(tt);p[i*3+1]=r*Math.cos(ph)*.5;p[i*3+2]=r*Math.sin(ph)*Math.sin(tt);}
   g.setAttribute('position',new THREE.BufferAttribute(p,3));
   scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x8892c8,size:.5,transparent:true,opacity:.7})));})();
-const floor=new THREE.Mesh(new THREE.CircleGeometry(34,64),new THREE.MeshStandardMaterial({color:0x0b0f22,metalness:.4,roughness:.75,transparent:true,opacity:.85}));
+const floor=new THREE.Mesh(new THREE.CircleGeometry(32,64),new THREE.MeshStandardMaterial({color:0x0b0f22,metalness:.4,roughness:.75,transparent:true,opacity:.85}));
 floor.rotation.x=-Math.PI/2;scene.add(floor);
-const grid=new THREE.PolarGridHelper(30,24,7,72,0x2b3566,0x171d3a);grid.material.opacity=.4;grid.material.transparent=true;scene.add(grid);
+const grid=new THREE.PolarGridHelper(28,24,6,72,0x2b3566,0x171d3a);grid.material.opacity=.4;grid.material.transparent=true;scene.add(grid);
 
-// tunel
-const TUN=new THREE.Vector3(0,6.5,0);
-const tunnel=new THREE.Group();tunnel.position.copy(TUN);scene.add(tunnel);
-tunnel.add(new THREE.Mesh(new THREE.TorusGeometry(3.4,0.28,16,64),new THREE.MeshStandardMaterial({color:0x24306a,emissive:0x5e7bff,emissiveIntensity:1.1,metalness:.7,roughness:.25})));
-const portal2=new THREE.Mesh(new THREE.TorusGeometry(2.4,0.12,12,64),new THREE.MeshBasicMaterial({color:0x9fb4ff,transparent:true,opacity:.6}));tunnel.add(portal2);
-const tcore=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0x7e8cff,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));tcore.scale.set(9,9,1);tunnel.add(tcore);
-const VN=240,vg=new THREE.BufferGeometry(),vpos=new Float32Array(VN*3),vph=new Float32Array(VN);
+const SPRING=new THREE.Vector3(0,6,0);
+const spring=new THREE.Group();spring.position.copy(SPRING);scene.add(spring);
+spring.add(new THREE.Mesh(new THREE.TorusGeometry(3.2,0.26,16,64),new THREE.MeshStandardMaterial({color:0x1f3a5c,emissive:0x53c8ff,emissiveIntensity:1.0,metalness:.7,roughness:.25})));
+const springCore=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0x7fe6ff,transparent:true,opacity:.8,blending:THREE.AdditiveBlending,depthWrite:false}));springCore.scale.set(8,8,1);spring.add(springCore);
+const VN=220,vg=new THREE.BufferGeometry(),vpos=new Float32Array(VN*3),vph=new Float32Array(VN);
 for(let i=0;i<VN;i++)vph[i]=Math.random();
 vg.setAttribute('position',new THREE.BufferAttribute(vpos,3));
-tunnel.add(new THREE.Points(vg,new THREE.PointsMaterial({color:0x9fb4ff,size:.28,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false})));
+spring.add(new THREE.Points(vg,new THREE.PointsMaterial({color:0x9fe8ff,size:.26,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false})));
 
 function buildForm(f,col){
   const mat=new THREE.MeshStandardMaterial({color:col,emissive:col,emissiveIntensity:.3,metalness:.5,roughness:.3,flatShading:true});
-  let geo;
-  switch(f){case 'dodeca':geo=new THREE.DodecahedronGeometry(1.1,0);break;case 'ico':geo=new THREE.IcosahedronGeometry(1.1,0);break;
+  let geo;switch(f){case 'dodeca':geo=new THREE.DodecahedronGeometry(1.1,0);break;case 'ico':geo=new THREE.IcosahedronGeometry(1.1,0);break;
     case 'octa':geo=new THREE.OctahedronGeometry(1.25,0);break;case 'knot':geo=new THREE.TorusKnotGeometry(.68,.26,64,8);break;
     case 'cube':geo=new THREE.BoxGeometry(1.5,1.5,1.5);break;case 'cone':geo=new THREE.ConeGeometry(1,1.9,6);break;
     case 'ring':geo=new THREE.TorusGeometry(.95,.32,10,28);break;case 'prism':geo=new THREE.CylinderGeometry(0,1.1,2.1,3);break;
@@ -320,342 +239,203 @@ function buildForm(f,col){
   else{const m=new THREE.Mesh(geo,mat);grp.add(m);grp.add(new THREE.LineSegments(new THREE.WireframeGeometry(geo),new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.5})));}
   grp.userData.mats=mats;return grp;
 }
-function buildProp(type,col){
-  const g=new THREE.Group();const m=new THREE.MeshStandardMaterial({color:0x20264a,emissive:col,emissiveIntensity:.18,metalness:.5,roughness:.5});
-  const em=new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.75});
-  switch(type){
-    case 'monitor':{const s=new THREE.Mesh(new THREE.BoxGeometry(1.5,.95,.1),m);s.position.y=.9;g.add(s);const scr=new THREE.Mesh(new THREE.PlaneGeometry(1.3,.75),em);scr.position.set(0,.9,.06);g.add(scr);break;}
-    case 'board':{const b=new THREE.Mesh(new THREE.BoxGeometry(1.8,1.1,.08),m);b.position.y=1;g.add(b);for(let i=0;i<3;i++){const l=new THREE.Mesh(new THREE.BoxGeometry(1.2-i*.25,.05,.02),em);l.position.set(-.1,1.25-i*.3,.06);g.add(l);}break;}
-    case 'servers':{for(let i=0;i<4;i++){const r=new THREE.Mesh(new THREE.BoxGeometry(1,.32,.7),m);r.position.y=.25+i*.4;g.add(r);}break;}
-    case 'flask':{g.add(new THREE.Mesh(new THREE.CylinderGeometry(.28,.5,1,12),em));break;}
-    case 'molecule':{const c=new THREE.Mesh(new THREE.SphereGeometry(.32,14,14),em);c.position.y=.9;g.add(c);for(let i=0;i<3;i++){const a=i/3*6.28;const s=new THREE.Mesh(new THREE.SphereGeometry(.2,12,12),m);s.position.set(Math.cos(a)*.7,.9+Math.sin(a)*.4,Math.sin(a)*.3);g.add(s);}break;}
-    case 'printer':{g.add(new THREE.Mesh(new THREE.BoxGeometry(1.2,1.2,1.2),m));const bed=new THREE.Mesh(new THREE.BoxGeometry(.9,.05,.9),em);bed.position.y=.4;g.add(bed);break;}
-    case 'books':{for(let i=0;i<5;i++){const bk=new THREE.Mesh(new THREE.BoxGeometry(.22,.9,.7),i%2?em:m);bk.position.set(-.5+i*.24,.9,0);g.add(bk);}break;}
-    case 'rocket':{const b=new THREE.Mesh(new THREE.CylinderGeometry(.3,.3,1.1,12),m);b.position.y=.9;g.add(b);const t=new THREE.Mesh(new THREE.ConeGeometry(.3,.5,12),em);t.position.y=1.6;g.add(t);break;}
-    case 'chart':{for(let i=0;i<4;i++){const bar=new THREE.Mesh(new THREE.BoxGeometry(.28,.4+i*.35,.28),em);bar.position.set(-.6+i*.4,.2+(i*.35)/2,0);g.add(bar);}break;}
-    case 'blocks':{for(let i=0;i<4;i++){const bl=new THREE.Mesh(new THREE.BoxGeometry(.5,.5,.5),i%2?em:m);bl.position.set((i%2)*.5-.25,.25+Math.floor(i/2)*.5,0);g.add(bl);}break;}
-    case 'ring':{const t=new THREE.Mesh(new THREE.TorusGeometry(.7,.09,10,32),em);t.position.y=.9;t.rotation.x=Math.PI/2.4;g.add(t);break;}
-    case 'mic':{g.add(new THREE.Mesh(new THREE.CylinderGeometry(.05,.05,1,8),m));const h=new THREE.Mesh(new THREE.SphereGeometry(.22,12,12),em);h.position.y=.6;g.add(h);break;}
-    default:{const c=new THREE.Mesh(new THREE.IcosahedronGeometry(.5,0),em);c.position.y=.7;g.add(c);}
-  }
-  return g;
-}
 
-// ---------- agentes ----------
-const agents=[];
-let RING=17;
-function placeRing(){const n=agents.length; agents.forEach((a,i)=>{const ang=(i/Math.max(n,1))*Math.PI*2;a.ang=ang;a.station.set(Math.cos(ang)*RING,0,Math.sin(ang)*RING);a.base.position.copy(a.station);a.base.rotation.y=-ang+Math.PI;if(a.st==='dock'){a.av.position.set(a.station.x,a.homeY,a.station.z);}});}
-
-function makeAgent(g, mine){
+const agents=[];const R=15;
+function makeAgent(g,mine){
   const col=g.c;
-  const base=new THREE.Group();scene.add(base);
-  const pad=new THREE.Mesh(new THREE.CylinderGeometry(2.2,2.5,.35,6),new THREE.MeshStandardMaterial({color:0x131936,emissive:col,emissiveIntensity:.12,metalness:.5,roughness:.5}));
-  pad.position.y=.17;base.add(pad);
-  const ringGlow=new THREE.Mesh(new THREE.TorusGeometry(2.15,.05,8,40),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.5}));
-  ringGlow.rotation.x=Math.PI/2;ringGlow.position.y=.36;base.add(ringGlow);
-  const prop=buildProp(g.prop||'monitor',col);prop.position.set(0,.35,-.6);prop.scale.setScalar(.8);base.add(prop);
   const av=new THREE.Group();const body=buildForm(g.f,col);av.add(body);
-  const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:col,transparent:true,opacity:.6,blending:THREE.AdditiveBlending,depthWrite:false}));
-  halo.scale.set(5,5,1);av.add(halo);
-  const homeY=2.7;av.position.set(0,homeY,0);scene.add(av);
-  const a={g,mine,base,pad,ringGlow,prop,av,body,halo,station:new THREE.Vector3(),homeY,
-    phase:(agents.length*1.7)%6.28,st:'dock',t:(agents.length%5),dur:3+(agents.length%4),
-    bond:SAVE.bond[g.id]||0, rep:SAVE.rep[g.id]||0, task:null};
-  a.av.userData.agentId=g.id; agents.push(a);
-  return a;
+  const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:col,transparent:true,opacity:.5,blending:THREE.AdditiveBlending,depthWrite:false}));halo.scale.set(4.5,4.5,1);av.add(halo);
+  const aura=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0xffe08a,transparent:true,opacity:0,blending:THREE.AdditiveBlending,depthWrite:false}));aura.scale.set(7,7,1);av.add(aura);
+  scene.add(av);
+  const needs={};NEEDS.forEach(n=>needs[n]=RND());
+  const a={g,mine,av,body,halo,aura,needs,idea:g.idea,
+    karma:(SAVE.karma[g.id]!=null?SAVE.karma[g.id]:Math.round((g.temper.luz)*20)),
+    vinculo:20,grieta:0,st:'vagar',t:RND()*3,dur:2+RND()*3,obras:0,
+    phase:RND()*6.28,station:new THREE.Vector3(),homeY:2.6,apostol:false,agrietado:false,_peer:null};
+  a.av.userData.id=g.id;agents.push(a);return a;
 }
+for(let i=0;i<16;i++) makeAgent(newGenome(),false);
+SAVE.mine.forEach(g=>{g.idea=g.idea||pick2(IDEAS);const a=makeAgent(g,true);a.mine=true;});
 
-// especie fundadora
-ROSTER.forEach(r=>{const lk=LOOKS[r.id]||{c:0x8899ff,f:'ico'};
-  makeAgent({id:r.id,label:r.label,c:lk.c,f:lk.f,frase:r.frase,focus:r.focus,office:r.office,prop:r.prop,voc:r.voc,pide:r.pide,stage:4,founder:true},false);});
-// crías guardadas
-SAVE.bred.forEach(b=>makeAgent(b,true));
+function placeRing(){const n=agents.length;agents.forEach((a,i)=>{const ang=(i/n)*Math.PI*2;a.ang=ang;a.station.set(Math.cos(ang)*R,0,Math.sin(ang)*R);if(a.st==='vagar')a.av.position.set(a.station.x,a.homeY,a.station.z);});}
 placeRing();
 
-// nubes
 const labelsEl=document.getElementById('labels');
-agents.forEach(a=>{const el=document.createElement('div');el.className='bub'+(a.mine?' mine':'');
-  const hex='#'+a.g.c.toString(16).padStart(6,'0');
-  el.innerHTML='<div class="card"><div class="nm"><span class="dot" style="color:'+hex+'"></span>'+a.g.label+'</div>'+
-    '<div class="th">'+(a.g.frase||a.g.focus||'')+'</div><div class="now"></div>'+
-    (a.mine?'<div class="bond"><i></i></div>':'')+'</div><div class="tail"></div>';
-  labelsEl.appendChild(el);a.el=el;a.now=el.querySelector('.now');a.bondbar=el.querySelector('.bond i');});
+function attachBubble(a){const el=document.createElement('div');el.className='bub';const hex='#'+a.g.c.toString(16).padStart(6,'0');
+  el.innerHTML='<div class="card"><div class="nm"><span class="dot" style="color:'+hex+'"></span>'+a.g.name+'</div><div class="th"></div><div class="now"></div></div><div class="tail"></div>';
+  labelsEl.appendChild(el);a.el=el;a.thEl=el.querySelector('.th');a.nowEl=el.querySelector('.now');}
+agents.forEach(attachBubble);
 
-// ---------- feed ----------
 const EVENTS=[];const feedrows=document.getElementById('feedrows');
 function fmt(){const d=new Date();return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);}
-function pushEvent(txt){EVENTS.unshift({t:fmt(),txt});if(EVENTS.length>7)EVENTS.pop();
-  feedrows.innerHTML=EVENTS.map(e=>'<div class="row"><span class="t">'+e.t+'</span> '+e.txt+'</div>').join('');}
-pushEvent('camada despierta · '+agents.length+' agentes');
+function log(txt,cls){EVENTS.unshift({t:fmt(),txt,cls:cls||''});if(EVENTS.length>8)EVENTS.pop();
+  feedrows.innerHTML=EVENTS.map(e=>'<div class="row '+e.cls+'"><span class="t">'+e.t+'</span> '+e.txt+'</div>').join('');}
+log('el mundo despierta · '+agents.length+' habitantes');
+function toast(m){const el=document.getElementById('toast');el.textContent=m;el.classList.add('show');clearTimeout(el._h);el._h=setTimeout(()=>el.classList.remove('show'),2400);}
 
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2600);}
-function updateCounts(){document.getElementById('counts').textContent=agents.length+' agentes · '+SAVE.camadex.length+' canonizados';}
-updateCounts();
+let CIV=SAVE.civ||0;
+function civStats(){const ideas=new Set(agents.map(a=>a.idea.w));
+  return {diversidad:ideas.size,obras:agents.reduce((s,a)=>s+a.obras,0),cohesion:agents.reduce((s,a)=>s+a.vinculo,0)/agents.length,netLuz:agents.reduce((s,a)=>s+a.karma,0)/agents.length};}
+function updateCiv(){const s=civStats();
+  const target=Math.max(0,Math.min(100,s.obras*0.7+s.diversidad*3+s.cohesion*0.25+Math.max(0,s.netLuz)*0.4));
+  CIV+=(target-CIV)*0.25;SAVE.civ=CIV;save();
+  document.getElementById('civfill').style.width=CIV+'%';
+  const luz=agents.filter(a=>a.karma>15).length,som=agents.filter(a=>a.karma<-15).length,tot=Math.max(1,luz+som);
+  document.getElementById('moral-l').style.width=(luz/tot*100)+'%';
+  document.getElementById('moral-s').style.width=(som/tot*100)+'%';
+  document.getElementById('civnums').textContent=Math.round(CIV)+' · '+s.obras+' obras · '+s.diversidad+' ideas · '+luz+'☀ '+som+'☾';}
 
-// ---------- inspector ----------
-const insp=document.getElementById('insp');let current=null;
-function openInsp(a){current=a;
-  document.getElementById('i_role').textContent=a.g.focus||'';
-  document.getElementById('i_name').textContent=a.g.label;
-  const hex='#'+a.g.c.toString(16).padStart(6,'0');document.getElementById('i_dot').style.color=hex;
-  const stage=a.g.founder?4:(a.g.stage||0);
-  document.getElementById('i_stage').textContent=(a.g.founder?'Fundador · ':'')+'Etapa: '+STAGES[stage]+(a.g.founder?'':' (E'+stage+')');
-  document.getElementById('i_bond').style.width=Math.min(100,a.bond)+'%';
-  document.getElementById('i_frase').textContent='“'+(a.g.frase||a.g.focus)+'”';
-  document.getElementById('i_voc').textContent=a.g.voc||'—';
-  document.getElementById('i_pide').textContent=a.g.pide||'';
-  document.getElementById('i_pidesec').style.display=a.g.pide?'block':'none';
-  document.getElementById('i_ahint').textContent = a.task?'Está en el túnel…':'Mándalo a traer trabajo real del ecosistema. Vuelve con un entregable para que lo cures.';
-  insp.classList.add('open');controls.autoRotate=false;
-}
+const insp=document.getElementById('insp');let cur=null;
+function dominantNeed(a){let mx='energia',mv=-1;for(const n of NEEDS){const d=1-a.needs[n];if(d>mv){mv=d;mx=n;}}return mx;}
+function kdesc(k){if(k>60)return'un alma luminosa — apóstol de lo que le enseñaste';if(k>15)return'inclinado a la luz';if(k<-60)return'un alma agrietada — corrompida';if(k<-15)return'inclinado a la sombra';return'en equilibrio, moldeable';}
+function renderPalette(){const el=document.getElementById('i_ideas');el.innerHTML='';
+  PALETTE.forEach(id=>{const s=document.createElement('span');s.className='itok '+(id.v>0?'luz':id.v<0?'sombra':'');s.textContent=id.w;s.onclick=()=>seedIdea(cur,id);el.appendChild(s);});}
+function openInsp(a){cur=a;
+  document.getElementById('i_name').textContent=a.g.name;
+  document.getElementById('i_dot').style.color='#'+a.g.c.toString(16).padStart(6,'0');
+  document.getElementById('i_role').textContent=(a.mine?'tu criatura · ':'')+'habitante';
+  document.getElementById('i_mood').textContent=BEH[a.st]+' · siente '+dominantNeed(a);
+  refreshInsp(a);renderPalette();insp.classList.add('open');controls.autoRotate=false;}
+function refreshInsp(a){document.getElementById('i_pin').style.left=((a.karma+100)/200*100)+'%';
+  document.getElementById('i_kdesc').textContent=kdesc(a.karma)+(a.agrietado?' — inestable':'');
+  document.getElementById('i_idea').textContent='«'+a.idea.w+'»';}
 document.getElementById('inspx').onclick=()=>{insp.classList.remove('open');controls.autoRotate=true;};
-document.getElementById('i_assign').onclick=()=>{if(current)assignTask(current);};
+
+function teach(a,val){if(!a)return;
+  const resist=1-Math.min(.8,Math.abs(a.karma)/120);
+  const infl=(a.mine?9:6)*(0.5+a.vinculo/100);
+  a.karma=Math.max(-100,Math.min(100,a.karma+val*infl*resist));
+  a.vinculo=Math.min(100,a.vinculo+2);
+  const contra=(val>0&&a.idea.v<0)||(val<0&&a.idea.v>0);
+  a.grieta=Math.max(0,Math.min(100,a.grieta+(contra?14:-6)));
+  SAVE.karma[a.g.id]=Math.round(a.karma);save();
+  ripple(a.av.position.clone(),val>0?0xffe08a:0xff6a7a);
+  log('enseñaste '+(val>0?'luz':'sombra')+' a '+a.g.name+' mientras '+BEH[a.st]+' → '+(val>0?'se ilumina':'se ensombrece'),val>0?'luz':'sombra');
+  toast((val>0?'✨ Luz':'🔥 Sombra')+' → '+a.g.name);refreshInsp(a);updateCiv();}
+document.getElementById('t-luz').onclick=()=>teach(cur,1);
+document.getElementById('t-sombra').onclick=()=>teach(cur,-1);
+
+function seedIdea(a,id){if(!a)return;a.idea=id;a._justSeeded=1.2;
+  a.karma=Math.max(-100,Math.min(100,a.karma+id.v*3));SAVE.karma[a.g.id]=Math.round(a.karma);save();
+  ripple(a.av.position.clone(),0x9fb4ff);
+  log('sembraste «'+id.w+'» en '+a.g.name+' — empezará a contagiarla',id.v>0?'luz':id.v<0?'sombra':'');
+  toast('💡 «'+id.w+'» sembrada en '+a.g.name);refreshInsp(a);}
 
 const ray=new THREE.Raycaster();const mouse=new THREE.Vector2();let downXY=null;
-renderer.domElement.addEventListener('pointerdown',e=>{downXY=[e.clientX,e.clientY];});
-renderer.domElement.addEventListener('pointerup',e=>{
-  if(!downXY)return;const moved=Math.abs(e.clientX-downXY[0])+Math.abs(e.clientY-downXY[1]);downXY=null;if(moved>6)return;
+renderer.domElement.addEventListener('pointerdown',e=>downXY=[e.clientX,e.clientY]);
+renderer.domElement.addEventListener('pointerup',e=>{if(!downXY)return;const mv=Math.abs(e.clientX-downXY[0])+Math.abs(e.clientY-downXY[1]);downXY=null;if(mv>6)return;
   mouse.x=(e.clientX/WW)*2-1;mouse.y=-(e.clientY/HH)*2+1;ray.setFromCamera(mouse,camera);
-  for(const a of agents){if(ray.intersectObject(a.av,true).length){openInsp(a);return;}}
-});
-
-// ---------- asignar tarea (trae un prop REAL) ----------
-function pickBacklog(a){
-  const done=new Set(SAVE.curation.filter(c=>c.decision==='ok').map(c=>c.propId));
-  let pool=BACKLOG.filter(b=>!done.has(b.id));
-  if(!pool.length)pool=BACKLOG.slice();
-  const byVoc=pool.filter(b=>b.vocacion===a.g.voc);
-  const src=byVoc.length?byVoc:pool;
-  return src[Math.floor((a.phase*97+SAVE.curation.length*13)%src.length)];
-}
-function assignTask(a){
-  if(a.task){toast('Ya está en el túnel…');return;}
-  if(!BACKLOG.length){toast('Backlog no cargado aún');return;}
-  const item=pickBacklog(a);
-  a.task=item;a.st='out';a.t=0;
-  insp.classList.remove('open');controls.autoRotate=true;
-  pushEvent(a.g.label+' → entra al túnel por «'+item.titulo.slice(0,32)+'…»');
-}
-
-// ---------- curaduría ----------
-const cur=document.getElementById('cur');let curCtx=null;
-function openCur(a,item){curCtx={a,item};
-  document.getElementById('cur-lead').textContent=a.g.label+' volvió con un entregable real del ecosistema. Tú eres la compuerta.';
-  document.getElementById('cur-meta').textContent=item.proyecto+' · '+item.vocacion+(item.stamp?' · '+item.stamp:'');
-  document.getElementById('cur-dt').textContent=item.titulo;
-  document.getElementById('cur-db').textContent=item.resumen||'(sin resumen)';
-  document.getElementById('cur-verdict').textContent='Tú eres la compuerta: nada se canoniza sin tu OK.';
-  cur.classList.add('open');
-}
-function curate(dec){
-  if(!curCtx)return;const {a,item}=curCtx;
-  SAVE.curation.push({propId:item.id,agentId:a.g.id,decision:dec,at:Date.now()});
-  let db=0,xp=0;
-  if(dec==='ok'){db=15;xp=20;a.rep=(a.rep||0)+2;
-    if(!SAVE.camadex.find(c=>c.propId===item.id)){SAVE.camadex.push({propId:item.id,titulo:item.titulo,proyecto:item.proyecto,by:a.g.label,at:Date.now()});}
-    pushEvent('✓ canonizaste «'+item.titulo.slice(0,30)+'…» ('+a.g.label+')');toast('Canonizado ✓ +'+xp+' XP');}
-  else if(dec==='rf'){db=8;xp=10;pushEvent('↻ pediste refinar a '+a.g.label);toast('A refinar ↻');}
-  else{db=3;xp=4;pushEvent('✕ rechazaste el entregable de '+a.g.label);toast('Rechazado ✕');}
-  a.bond=Math.min(100,(a.bond||0)+db);
-  if(a.mine){a.g.xp=(a.g.xp||0)+xp;const ns=Math.min(4,Math.floor(a.g.xp/40));
-    if(ns>(a.g.stage||0)){a.g.stage=ns;metamorph(a);pushEvent('✦ '+a.g.label+' evolucionó a '+STAGES[ns]+'!');toast('¡Metamorfosis → '+STAGES[ns]+'!');}
-    const b=SAVE.bred.find(x=>x.id===a.g.id);if(b){b.xp=a.g.xp;b.stage=a.g.stage;}}
-  SAVE.bond[a.g.id]=a.bond;SAVE.rep[a.g.id]=a.rep||0;save();
-  cur.classList.remove('open');curCtx=null;updateCounts();renderDex();
-}
-document.getElementById('c-ok').onclick=()=>curate('ok');
-document.getElementById('c-rf').onclick=()=>curate('rf');
-document.getElementById('c-no').onclick=()=>curate('no');
-document.getElementById('curx').onclick=()=>{cur.classList.remove('open');curCtx=null;};
-
-function metamorph(a){const s=Math.min(4,a.g.stage||0);a.av.scale.setScalar(0.7+s*0.12);
-  // pulso de evolución
-  ripple(a.av.position.clone(),a.g.c);}
-
-// ---------- cría / hatchery ----------
-function rnd(seed){return (Math.sin(seed*997.13)*43758.5453)%1;}
-function randomGenome(name){
-  const i=SAVE.bred.length+agents.length; const c=Math.floor(Math.abs(rnd(i+1))*0xffffff);
-  return {id:'cria_'+i+'_'+Date.now().toString(36),label:name,c:c,f:FORMS[Math.floor(Math.abs(rnd(i+2))*FORMS.length)],
-    prop:PROPS[Math.floor(Math.abs(rnd(i+3))*PROPS.length)],
-    frase:'Recién salido del cascarón, listo para el primer contexto.',
-    focus:'cría nueva',voc:['seo','copy','datos','codigo','ventas','investigacion','arte'][Math.floor(Math.abs(rnd(i+4))*7)],
-    office:'nido',stage:0,xp:0,mine:true,parents:[]};
-}
-function mix(x,y){return Math.round((x+y)/2);}
-function crossGenome(name,pa,pb){
-  const i=SAVE.bred.length+agents.length;
-  const ca=(pa.g.c>>16)&255,cb=(pb.g.c>>16)&255, ma=(pa.g.c>>8)&255,mb=(pb.g.c>>8)&255, ya=pa.g.c&255,yb=pb.g.c&255;
-  let jitter=(v)=>Math.max(0,Math.min(255,v+Math.floor((rnd(i+v)*40)-20)));
-  const c=(jitter(mix(ca,cb))<<16)|(jitter(mix(ma,mb))<<8)|jitter(mix(ya,yb));
-  const mut=Math.abs(rnd(i+9))<0.18;
-  const f=mut?FORMS[Math.floor(Math.abs(rnd(i+11))*FORMS.length)]:(Math.abs(rnd(i+7))<.5?pa.g.f:pb.g.f);
-  const prop=Math.abs(rnd(i+8))<.5?pa.g.prop:pb.g.prop;
-  const voc=Math.abs(rnd(i+12))<.5?pa.g.voc:pb.g.voc;
-  return {id:'cria_'+i+'_'+Date.now().toString(36),label:name,c:c,f:f,prop:prop,voc:voc,
-    frase:'Hijo de '+pa.g.label+' y '+pb.g.label+(mut?' — con una mutación propia.':'.'),
-    focus:'linaje '+pa.g.label+'×'+pb.g.label,office:'nido',stage:0,xp:0,mine:true,
-    parents:[pa.g.id,pb.g.id]};
-}
-function hatchGenome(g){
-  SAVE.bred.push(g);SAVE.bond[g.id]=0;save();
-  const a=makeAgent(g,true);
-  // nube
-  const hex='#'+g.c.toString(16).padStart(6,'0');const el=document.createElement('div');el.className='bub mine';
-  el.innerHTML='<div class="card"><div class="nm"><span class="dot" style="color:'+hex+'"></span>'+g.label+'</div>'+
-    '<div class="th">'+g.frase+'</div><div class="now"></div><div class="bond"><i></i></div></div><div class="tail"></div>';
-  labelsEl.appendChild(el);a.el=el;a.now=el.querySelector('.now');a.bondbar=el.querySelector('.bond i');
-  a.av.scale.setScalar(0.01);a._hatch=0;
-  placeRing();updateCounts();renderDex();
-  pushEvent('🥚 nació '+g.label+' — nuevo genoma en la camada');toast('¡'+g.label+' eclosionó! 🥚');
-}
+  for(const a of agents){if(ray.intersectObject(a.av,true).length){openInsp(a);return;}}});
 
 const hatch=document.getElementById('hatch');
-function fillParents(){const opts=agents.map(a=>'<option value="'+a.g.id+'">'+a.g.label+'</option>').join('');
-  document.getElementById('h-pa').innerHTML=opts;document.getElementById('h-pb').innerHTML=opts;
-  if(agents.length>1)document.getElementById('h-pb').selectedIndex=1;}
-function previewGenome(){const name=document.getElementById('h-name').value.trim()||'(sin nombre)';
-  let g;const origin=document.getElementById('h-origin').value;
-  if(origin==='breed'){const pa=agents.find(a=>a.g.id===document.getElementById('h-pa').value);const pb=agents.find(a=>a.g.id===document.getElementById('h-pb').value);
-    if(pa&&pb)g=crossGenome(name,pa,pb);}
-  if(!g)g=randomGenome(name);
-  hatch._preview=g;
-  document.getElementById('h-swatch').style.background='radial-gradient(circle at 40% 35%,#'+g.c.toString(16).padStart(6,'0')+',#0a0c18)';
-  document.getElementById('h-pf').innerHTML='<b>'+g.f+'</b> · vocación <b>'+g.voc+'</b> · objeto '+g.prop+'<br>'+g.frase;
-}
-document.getElementById('b-incubar').onclick=()=>{fillParents();document.getElementById('h-origin').value='new';document.getElementById('h-parents').style.display='none';document.getElementById('h-name').value='';previewGenome();hatch.classList.add('open');};
-document.getElementById('b-criar').onclick=()=>{fillParents();document.getElementById('h-origin').value='breed';document.getElementById('h-parents').style.display='flex';document.getElementById('h-name').value='';previewGenome();hatch.classList.add('open');};
-document.getElementById('h-origin').onchange=e=>{document.getElementById('h-parents').style.display=e.target.value==='breed'?'flex':'none';previewGenome();};
-['h-name','h-pa','h-pb'].forEach(id=>document.getElementById(id).addEventListener('input',previewGenome));
-document.getElementById('h-go').onclick=()=>{const g=hatch._preview;if(!g){previewGenome();return;}
-  if(!g.label||g.label==='(sin nombre)'){toast('Ponle un nombre 🙂');return;}
-  hatch.classList.remove('open');hatchGenome(g);};
+function fillParents(){const o=agents.map(a=>'<option value="'+a.g.id+'">'+a.g.name+'</option>').join('');document.getElementById('h-pa').innerHTML=o;document.getElementById('h-pb').innerHTML=o;if(agents.length>1)document.getElementById('h-pb').selectedIndex=1;}
+function crossGenome(name,pa,pb){const mix=(x,y)=>Math.round((x+y)/2);
+  const c=(mix((pa.g.c>>16)&255,(pb.g.c>>16)&255)<<16)|(mix((pa.g.c>>8)&255,(pb.g.c>>8)&255)<<8)|mix(pa.g.c&255,pb.g.c&255);
+  const mut=RND()<0.2;
+  return {id:'h'+Math.floor(RND()*1e9).toString(36),name:name,c:c,f:mut?pick(FORMS):(RND()<.5?pa.g.f:pb.g.f),prop:RND()<.5?pa.g.prop:pb.g.prop,idea:RND()<.5?pa.idea:pb.idea,temper:{luz:(pa.karma+pb.karma)/200}};}
+function preview(){const name=document.getElementById('h-name').value.trim()||genName();let g;
+  if(document.getElementById('h-origin').value==='breed'){const pa=agents.find(a=>a.g.id===document.getElementById('h-pa').value),pb=agents.find(a=>a.g.id===document.getElementById('h-pb').value);if(pa&&pb)g=crossGenome(name,pa,pb);}
+  if(!g)g=newGenome(name);hatch._g=g;
+  document.getElementById('h-sw').style.background='#'+g.c.toString(16).padStart(6,'0');
+  document.getElementById('h-pf').innerHTML='<b>'+g.name+'</b> · '+g.f+' · idea «'+g.idea.w+'»';}
+document.getElementById('b-incubar').onclick=()=>{fillParents();document.getElementById('h-origin').value='new';document.getElementById('h-parents').style.display='none';document.getElementById('h-name').value='';preview();hatch.classList.add('open');};
+document.getElementById('b-criar').onclick=()=>{fillParents();document.getElementById('h-origin').value='breed';document.getElementById('h-parents').style.display='flex';document.getElementById('h-name').value='';preview();hatch.classList.add('open');};
+document.getElementById('h-origin').onchange=e=>{document.getElementById('h-parents').style.display=e.target.value==='breed'?'flex':'none';preview();};
+['h-name','h-pa','h-pb'].forEach(id=>document.getElementById(id).addEventListener('input',preview));
 document.getElementById('h-cancel').onclick=()=>hatch.classList.remove('open');
 document.getElementById('hatchx').onclick=()=>hatch.classList.remove('open');
+document.getElementById('h-go').onclick=()=>{const g=hatch._g;if(!g)return;hatch.classList.remove('open');
+  SAVE.mine.push({id:g.id,name:g.name,c:g.c,f:g.f,prop:g.prop,idea:g.idea});save();
+  const a=makeAgent(g,true);a.mine=true;attachBubble(a);placeRing();a.av.scale.setScalar(0.01);a._hatch=0;
+  log('🥚 nació '+g.name+' — un alma nueva en el mundo');toast('¡'+g.name+' vive! 🥚');renderCodice();};
 
-// ---------- camadex ----------
-const dex=document.getElementById('dex');
-function renderDex(){const body=document.getElementById('dexbody');
-  let h='<div class="grp">Tus crías ('+SAVE.bred.length+')</div>';
-  if(!SAVE.bred.length)h+='<div class="hint">Aún no has criado ninguna. Toca «Incubar».</div>';
-  SAVE.bred.forEach(b=>{const hex='#'+b.c.toString(16).padStart(6,'0');
-    h+='<div class="dexcard"><span class="sw" style="color:'+hex+';background:'+hex+'"></span><div><div class="nm">'+b.label+'</div><div class="mt">'+STAGES[b.stage||0]+' · '+b.voc+' · '+((b.xp||0))+' XP</div></div></div>';});
-  h+='<div class="grp">Canonizado ('+SAVE.camadex.length+')</div>';
-  if(!SAVE.camadex.length)h+='<div class="hint">Aprueba entregables para canonizarlos aquí.</div>';
-  SAVE.camadex.slice().reverse().forEach(c=>{h+='<div class="dexitem"><b>✓</b> '+c.titulo+' <span style="color:var(--mut)">— '+c.proyecto+' · por '+c.by+'</span></div>';});
-  body.innerHTML=h;}
-renderDex();
-document.getElementById('b-dex').onclick=()=>{renderDex();dex.classList.add('open');};
-document.getElementById('dexx').onclick=()=>dex.classList.remove('open');
+const codice=document.getElementById('codice');
+Object.assign(codice.style,{position:'fixed',zIndex:8,top:0,left:0,height:'100%',width:'320px',maxWidth:'88vw',background:'rgba(11,13,26,.97)',backdropFilter:'blur(10px)',borderRight:'1px solid var(--line)',transform:'translateX(-100%)',transition:'transform .28s',pointerEvents:'auto',padding:'22px',overflowY:'auto'});
+function renderCodice(){const luz=agents.filter(a=>a.karma>15),som=agents.filter(a=>a.karma<-15);
+  let h='<h2 style="font-size:19px;margin-bottom:2px">📖 Códice del mundo</h2><div style="color:var(--mut);font-size:12px;margin-bottom:14px">Las almas y lo que has sembrado en ellas.</div>';
+  h+='<div style="font-family:IBM Plex Mono,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:10px 0 6px;border-top:1px solid var(--line);padding-top:10px">Tus criaturas ('+SAVE.mine.length+')</div>';
+  if(!SAVE.mine.length)h+='<div style="color:var(--mut);font-size:12px">Aún ninguna. Toca «Incubar».</div>';
+  agents.filter(a=>a.mine).forEach(a=>{const hex='#'+a.g.c.toString(16).padStart(6,'0');h+='<div style="display:flex;align-items:center;gap:10px;padding:7px 0"><span style="width:24px;height:24px;border-radius:7px;background:'+hex+';box-shadow:0 0 10px '+hex+'"></span><div><div style="font-size:13px;font-weight:600">'+a.g.name+'</div><div style="font-size:11px;color:var(--mut)">karma '+Math.round(a.karma)+' · «'+a.idea.w+'»</div></div></div>';});
+  h+='<div style="font-family:IBM Plex Mono,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:14px 0 6px;border-top:1px solid var(--line);padding-top:10px">Equilibrio moral</div>';
+  h+='<div style="font-size:12.5px;color:#c2cbf0;line-height:1.6">☀ '+luz.length+' almas de luz<br>☾ '+som.length+' almas de sombra<br>◇ '+(agents.length-luz.length-som.length)+' en equilibrio</div>';
+  codice.innerHTML='<span id="codicex" style="position:absolute;top:15px;right:17px;font-size:20px;color:var(--mut);cursor:pointer">×</span>'+h;
+  document.getElementById('codicex').onclick=()=>codice.style.transform='translateX(-100%)';}
+document.getElementById('b-codice').onclick=()=>{renderCodice();codice.style.transform='none';};
+renderCodice();
 
-// ---------- universo (estado compartido, lectura por GitHub) ----------
-const uni=document.getElementById('uni');let UNIVERSE=null;
-function esc(s){return String(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-function renderUni(){const b=document.getElementById('unibody');
-  if(!UNIVERSE){b.innerHTML='<div class="hint">(universe.json no cargó — ¿ya se publicó?)</div>';return;}
-  const u=UNIVERSE,cs=u.census||{},cl=u.climate||{};
-  let h='<div class="unistat">'+
-    '<div><div class="n">'+(cs.regiones||0)+'</div><div class="l">regiones</div></div>'+
-    '<div><div class="n">'+(cs.habitantes||0)+'</div><div class="l">habitantes</div></div>'+
-    '<div><div class="n">'+(cs.obras||0)+'</div><div class="l">obras</div></div></div>';
-  h+='<div class="uniclim"><span><span class="k" style="color:#5ef0a8"></span>'+(cl.ok||0)+' calma</span>'+
-     '<span><span class="k" style="color:#ffcf5a"></span>'+(cl.ciego||0)+' niebla</span>'+
-     '<span><span class="k" style="color:#ff6a7a"></span>'+(cl.roto||0)+' tormenta</span></div>';
-  h+='<div class="grp">Crónica del universo</div>';
-  (u.chronicle||[]).forEach(c=>{h+='<div class="dexitem">'+esc(c)+'</div>';});
-  h+='<div class="grp">Habitantes nativos ('+(u.inhabitants||[]).length+')</div>';
-  (u.inhabitants||[]).forEach(a=>{const hex=esc(a.genome&&a.genome.c||'#889');
-    h+='<div class="dexcard"><span class="sw" style="color:'+hex+';background:'+hex+'"></span><div><div class="nm">'+esc(a.label)+'</div><div class="mt">'+esc(a.voc)+'</div></div></div>';});
-  h+='<div class="grp">Obras del universo ('+(u.canon||[]).length+')</div>';
-  (u.canon||[]).slice(0,20).forEach(o=>{h+='<div class="dexitem"><b>◆</b> '+esc(o.titulo)+' <span style="color:var(--mut)">— '+esc(o.proyecto)+'</span></div>';});
-  const when=(u.generatedAt||'').slice(0,16).replace('T',' ');
-  h+='<div class="hint" style="margin-top:16px">actualizado '+esc(when)+' · lo mismo para todas las regiones</div>';
-  b.innerHTML=h;}
-document.getElementById('b-universo').onclick=()=>{renderUni();uni.classList.add('open');};
-document.getElementById('unix').onclick=()=>uni.classList.remove('open');
-fetch('/universe.json').then(r=>r.json()).then(d=>{UNIVERSE=d;
-  const cs=d.census||{};
-  pushEvent('universo: '+cs.habitantes+' habitantes · '+cs.obras+' obras en '+cs.regiones+' regiones');
-}).catch(()=>{});
-
-// ---------- compartir (build-in-public) ----------
-document.getElementById('b-share').onclick=()=>{
-  const last=SAVE.camadex[SAVE.camadex.length-1];
-  const nMine=SAVE.bred.length;
-  let txt='Estoy criando agentes de IA en Camada 🥚→🦆 de @patologicos.\n';
-  if(last)txt+='Hoy uno trajo del túnel de contexto: «'+last.titulo+'» y lo canonicé ✓.\n';
-  txt+=(nMine? 'Tengo '+nMine+' cría(s) con genoma propio.\n':'')+'Un mundo donde las criaturas trabajan de verdad → patologicos.com/camada';
-  if(navigator.clipboard){navigator.clipboard.writeText(txt).then(()=>toast('Copiado para compartir ✦')).catch(()=>toast(txt.slice(0,40)));}
-  else toast('Copia manual: patologicos.com/camada');
-};
-
-// ---------- espejo / clima ----------
-const towers=[];
-function buildTowers(){const n=PROJECTS.length;if(!n)return;const RR=27;
-  PROJECTS.forEach((p,i)=>{const ang=(i/n)*Math.PI*2+Math.PI/n;const h=1.5+(p.progress||.5)*7;const col=HCOL[p.health]||0x8899ff;
-    const t=new THREE.Mesh(new THREE.BoxGeometry(1.6,h,1.6),new THREE.MeshStandardMaterial({color:0x10162e,emissive:col,emissiveIntensity:.5,metalness:.5,roughness:.4}));
-    t.position.set(Math.cos(ang)*RR,h/2,Math.sin(ang)*RR);scene.add(t);
-    const cap=new THREE.Mesh(new THREE.BoxGeometry(1.7,.18,1.7),new THREE.MeshBasicMaterial({color:col}));
-    cap.position.set(Math.cos(ang)*RR,h+.1,Math.sin(ang)*RR);scene.add(cap);towers.push({mesh:t,p,col});});
-  const c=(k)=>PROJECTS.filter(p=>p.health===k).length;
-  document.getElementById('weatherbox').innerHTML='<div class="lbl">clima del mundo</div>'+
-    '<span class="k" style="color:#5ef0a8"></span>'+c('ok')+' sol'+
-    '<span class="k" style="color:#ffcf5a"></span>'+c('ciego')+' niebla'+
-    '<span class="k" style="color:#ff6a7a"></span>'+c('roto')+' tormenta';
-}
-fetch(WORLD.mirror).then(r=>r.json()).then(d=>{PROJECTS=d.projects||[];buildTowers();}).catch(()=>{});
-fetch(WORLD.backlog).then(r=>r.json()).then(d=>{BACKLOG=d.items||[];pushEvent(BACKLOG.length+' entregables reales esperan en el backlog');}).catch(()=>{document.getElementById('i_ahint').textContent='(backlog no cargó)';});
-
-// ---------- ripples ----------
 const ripples=[];
-function ripple(pos,col){const s=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:col,transparent:true,opacity:.9,blending:THREE.AdditiveBlending,depthWrite:false}));
-  s.position.copy(pos);s.scale.set(2,2,1);scene.add(s);ripples.push({s,t:0});}
+function ripple(pos,col){const s=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:col,transparent:true,opacity:.9,blending:THREE.AdditiveBlending,depthWrite:false}));s.position.copy(pos);s.scale.set(2,2,1);scene.add(s);ripples.push({s,t:0});}
 
-function travelPoint(a,u){const s=a.station,mid=new THREE.Vector3(s.x*0.4,9+Math.sin(a.phase)*2,s.z*0.4),p0=new THREE.Vector3(s.x,a.homeY,s.z),p2=TUN.clone(),om=1-u;
-  return new THREE.Vector3(om*om*p0.x+2*om*u*mid.x+u*u*p2.x,om*om*p0.y+2*om*u*mid.y+u*u*p2.y,om*om*p0.z+2*om*u*mid.z+u*u*p2.z);}
+const OBRAS=[];const OBRAS_CAP=44;
+function buildObra(a){const col=a.idea.v>0?0xffe08a:a.idea.v<0?0xff6a7a:a.g.c;const h=0.5+Math.random()*1.6;
+  const m=new THREE.Mesh(new THREE.ConeGeometry(0.3,h,5),new THREE.MeshStandardMaterial({color:0x141a30,emissive:col,emissiveIntensity:.5,metalness:.5,roughness:.5}));
+  const ang=a.ang+rr(-.25,.25),rad=R-3-Math.random()*4;m.position.set(Math.cos(ang)*rad,h/2,Math.sin(ang)*rad);scene.add(m);OBRAS.push(m);
+  if(OBRAS.length>OBRAS_CAP){const old=OBRAS.shift();scene.remove(old);old.geometry.dispose();old.material.dispose();}
+  a.obras++;}
+
+function converse(a,b){const abre=(b.mine?.5:.35)+b.vinculo/300+(a.karma>40?.2:0);
+  if(Math.random()<abre){let idea=a.idea;
+    if(a.agrietado&&Math.random()<.6){const opp=IDEAS.filter(x=>x.v===-Math.sign(a.idea.v||1));idea=opp.length?pick2(opp):a.idea;}
+    if(b.idea.w!==idea.w){b.idea=idea;b._justSeeded=1.0;b.karma=Math.max(-100,Math.min(100,b.karma+idea.v*1.5));
+      if(Math.random()<0.12)log(a.g.name+' contagió «'+idea.w+'» a '+b.g.name,idea.v>0?'luz':idea.v<0?'sombra':'');}
+    b.vinculo=Math.min(100,b.vinculo+3);}}
+
+function phenotype(a){const k=a.karma;
+  a.aura.material.color.setHex(k>=0?0xffe08a:0xff6a7a);
+  a.aura.material.opacity=Math.min(.8,Math.abs(k)/140);a.aura.scale.setScalar(5+Math.abs(k)/22);
+  const em=0.28+Math.max(0,k)/160-Math.max(0,-k)/300;
+  (a.body.userData.mats||[]).forEach(m=>{m.emissiveIntensity=Math.max(.05,em);});
+  a.apostol=k>60;a.agrietado=a.grieta>70||k<-70;}
 
 const _v=new THREE.Vector3();let t=0;
-function setEmissive(a,val){(a.body.userData.mats||[]).forEach(m=>{m.emissiveIntensity=val;});}
-function animate(){
-  requestAnimationFrame(animate);
-  try{
-    t+=0.016;
-    tunnel.rotation.z+=0.006;portal2.rotation.z-=0.02;tcore.material.opacity=.7+Math.sin(t*2)*.15;
-    const vp=vg.attributes.position.array;
-    for(let i=0;i<VN;i++){let ph=(vph[i]+t*0.16)%1;const rad=3.6*(1-ph),a2=ph*20+i;vp[i*3]=Math.cos(a2)*rad;vp[i*3+1]=(0.5-ph)*3.5;vp[i*3+2]=Math.sin(a2)*rad;}
-    vg.attributes.position.needsUpdate=true;
+function utility(a){for(const n of NEEDS)a.needs[n]=Math.max(0,a.needs[n]-0.0006*(0.5+Math.random()));
+  const need=dominantNeed(a);
+  if(need==='energia')return'descansar';if(need==='curiosidad')return'manantial';
+  if(need==='expresion')return Math.random()<.5?'construir':'conversar';if(need==='vinculo')return'conversar';return'vagar';}
+function nearest(a){let best=null,bd=1e9;for(const b of agents){if(b===a)continue;const d=a.av.position.distanceToSquared(b.av.position);if(d<bd){bd=d;best=b;}}return best;}
 
-    agents.forEach(a=>{
-      a.body.rotation.y+=a.task?0.02:0.007;a.body.rotation.x+=a.task?0.009:0.002;
-      if(a._hatch!==undefined&&a._hatch<1){a._hatch+=0.03;const s=Math.min(1,a._hatch);a.av.scale.setScalar(s*(0.7+(a.g.stage||0)*0.12));if(a._hatch>=1)delete a._hatch;}
-      let now=a.g.frase?'':'';
-      if(a.task){
-        a.t+=0.016;
-        if(a.st==='out'){const u=Math.min(a.t/1.7,1);a.av.position.copy(travelPoint(a,u));a.av.scale.setScalar(1-u*.55);now='→ trayendo contexto';setEmissive(a,.7+u*.6);if(a.t>1.7){a.st='in';a.t=0;}}
-        else if(a.st==='in'){a.av.position.copy(TUN);a.av.position.y=TUN.y+Math.sin(t*8)*.4;a.av.scale.setScalar(.28);now='procesando…';setEmissive(a,1.4+Math.sin(t*10)*.3);if(a.t>1.3){a.st='back';a.t=0;}}
-        else if(a.st==='back'){const u=Math.min(a.t/1.7,1);a.av.position.copy(travelPoint(a,1-u));a.av.scale.setScalar(.45+u*.55);now='← vuelve con el resultado';setEmissive(a,1.1-u*.5);
-          if(a.t>1.7){a.st='dock';a.t=0;a.av.scale.setScalar(0.7+(a.g.stage||0)*0.12);ripple(a.av.position.clone(),a.g.c);const item=a.task;a.task=null;openCur(a,item);}}
-        a.halo.material.opacity=.7+Math.sin(t*3+a.phase)*.2;
-      } else {
-        a.av.position.set(a.station.x,a.homeY+Math.sin(t*1.1+a.phase)*.3,a.station.z);
-        setEmissive(a,.28+(a.mine?Math.sin(t*2+a.phase)*.12:0));now=a.mine?('vínculo '+Math.round(a.bond)+'%'):'en su oficina';
-        a.halo.material.opacity=.4+(a.mine?a.bond/300:0);
-      }
-      _v.copy(a.av.position);_v.y+=2.2;_v.project(camera);
-      const vis=_v.z<1;a.el.style.opacity=vis?1:0;
-      if(vis){a.el.style.left=((_v.x*.5+.5)*WW)+'px';a.el.style.top=((-_v.y*.5+.5)*HH)+'px';}
-      if(a.now&&a.now.__l!==now){a.now.textContent=now;a.now.__l=now;}
-      if(a.bondbar)a.bondbar.style.width=Math.min(100,a.bond)+'%';
-    });
-    towers.forEach((tw,i)=>{tw.mesh.material.emissiveIntensity=.4+Math.abs(Math.sin(t*(tw.p.health==='roto'?4:1.2)+i))*(tw.p.health==='roto'?.5:.2);});
-    for(let i=ripples.length-1;i>=0;i--){const rp=ripples[i];rp.t+=0.03;rp.s.scale.setScalar(2+rp.t*10);rp.s.material.opacity=Math.max(0,.9-rp.t);if(rp.t>1){scene.remove(rp.s);ripples.splice(i,1);}}
-    controls.update();renderer.render(scene,camera);
-  }catch(e){if(!window.__E){window.__E=String((e&&e.stack)||e);console.error(e);}}
+function step(a){
+  a.t+=0.016;
+  if(a._hatch!==undefined&&a._hatch<1){a._hatch+=0.03;a.av.scale.setScalar(Math.min(1,a._hatch));if(a._hatch>=1)delete a._hatch;}
+  a.body.rotation.y+=0.008;a.body.rotation.x+=0.003;
+  let now=BEH[a.st];
+  if(a.st==='vagar'){a.av.position.set(a.station.x,a.homeY+Math.sin(t*1.1+a.phase)*.3,a.station.z);
+    if(a.t>a.dur){a.st=utility(a);a.t=0;a.dur=2+Math.random()*3;if(a.st==='manantial')a.needs.curiosidad=1;}}
+  else if(a.st==='manantial'){const u=Math.min(a.t/1.6,1);const p0=new THREE.Vector3(a.station.x,a.homeY,a.station.z);
+    a.av.position.lerpVectors(p0,SPRING,u<.5?u*2:1);if(u>=.5)a.av.position.y+=Math.sin(t*7)*.3;a.av.scale.setScalar(Math.max(.3,1-u*.6));
+    if(a.t>1.6){if(!a._got){a.idea=pick2(IDEAS);a._got=1;a._justSeeded=1;}a.st='pensar';a.t=0;}}
+  else if(a.st==='pensar'){a.av.position.copy(SPRING);a.av.position.y=SPRING.y+Math.sin(t*6)*.3;a.av.scale.setScalar(.32);now='medita una idea';
+    if(a.t>1){a._got=0;a.st=Math.random()<.5?'construir':'conversar';a.t=0;}}
+  else if(a.st==='construir'){const u=Math.min(a.t/1.4,1);const p2=new THREE.Vector3(a.station.x,a.homeY,a.station.z);a.av.position.lerp(p2,0.12);a.av.scale.setScalar(.4+u*.6);now='construye con «'+a.idea.w+'»';
+    if(a.t>1.4){buildObra(a);a.needs.expresion=1;a.st='vagar';a.t=0;a.av.scale.setScalar(1);ripple(a.av.position.clone(),a.idea.v>0?0xffe08a:a.idea.v<0?0xff6a7a:a.g.c);}}
+  else if(a.st==='conversar'){a.av.scale.setScalar(1);const b=a._peer||(a._peer=nearest(a));
+    if(b){const mid=new THREE.Vector3().addVectors(b.av.position,a.av.position).multiplyScalar(.5);a.av.position.lerp(mid,0.02);a.av.position.y=a.homeY+Math.sin(t*3)*.2;}
+    now='conversa';if(a.t>1.2){if(b)converse(a,b);a._peer=null;a.needs.vinculo=1;a.st='vagar';a.t=0;}}
+  else {a.av.position.set(a.station.x,a.homeY-0.4+Math.sin(t*.6+a.phase)*.15,a.station.z);a.av.scale.setScalar(.9);now='reposa';if(a.t>a.dur){a.needs.energia=1;a.st='vagar';a.t=0;}}
+  if(a.agrietado&&a.st==='vagar'&&Math.random()<0.002){a.st='manantial';a.needs.curiosidad=1;if(Math.random()<.3)log(a.g.name+' se aleja, agrietado…','sombra');}
+  phenotype(a);
+  a.halo.material.opacity=.4+(a.apostol?.3:0)+Math.abs(Math.sin(t*2+a.phase))*.1;
+  _v.copy(a.av.position);_v.y+=2.1;_v.project(camera);const vis=_v.z<1;a.el.style.opacity=vis?1:0;
+  if(vis){a.el.style.left=((_v.x*.5+.5)*WW)+'px';a.el.style.top=((-_v.y*.5+.5)*HH)+'px';}
+  if(a._justSeeded>0){a._justSeeded-=0.016;a.thEl.textContent='💡 '+a.idea.w;}
+  else a.thEl.textContent=(a.apostol?'✦ ':a.agrietado?'⚡ ':'')+'«'+a.idea.w+'»';
+  if(a.nowEl.__l!==now){a.nowEl.textContent=now;a.nowEl.__l=now;}
 }
+
+let civTick=0;
+function animate(){requestAnimationFrame(animate);try{
+  t+=0.016;
+  spring.rotation.z+=0.006;springCore.material.opacity=.7+Math.sin(t*2)*.15;
+  const vp=vg.attributes.position.array;for(let i=0;i<VN;i++){let ph=(vph[i]+t*0.16)%1;const rad=3.4*(1-ph),a2=ph*20+i;vp[i*3]=Math.cos(a2)*rad;vp[i*3+1]=(0.5-ph)*3.4;vp[i*3+2]=Math.sin(a2)*rad;}vg.attributes.position.needsUpdate=true;
+  agents.forEach(step);
+  for(let i=ripples.length-1;i>=0;i--){const rp=ripples[i];rp.t+=0.03;rp.s.scale.setScalar(2+rp.t*9);rp.s.material.opacity=Math.max(0,.9-rp.t);if(rp.t>1){scene.remove(rp.s);ripples.splice(i,1);}}
+  if((civTick++%30)===0)updateCiv();
+  controls.update();renderer.render(scene,camera);
+}catch(e){if(!window.__E){window.__E=String((e&&e.stack)||e);console.error(e);}}}
 resize();new ResizeObserver(resize).observe(document.getElementById('scene'));addEventListener('resize',resize);
-animate();
+updateCiv();animate();
 addEventListener('pointerdown',()=>{const h=document.getElementById('hint');if(h)h.style.opacity=0;});
-window.__camada={agents,SAVE,get backlog(){return BACKLOG;},assign:assignTask,openCur,curate,hatchGenome,randomGenome,crossGenome};
+window.__vida={agents,SAVE,teach,seedIdea,openInsp,IDEAS,PALETTE,civStats,get civ(){return CIV;}};
 </script>
 </body>
 </html>
