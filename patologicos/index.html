@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Patológicos · el mundo de la compañía</title>
-<meta name="description" content="El sistema nervioso de Patológicos como mundo vivo 3D: sus agentes en oficinas, el túnel de contexto, el clima del negocio en tiempo real. La misma columna vertebral que Camada, instanciada para la casa.">
+<title>La Capital · universo Patológicos</title>
+<meta name="description" content="La capital del universo Patológicos: los agentes de la compañía trabajando en su región. Misma columna vertebral, mismo universo, misma economía que Camada — solo que aquí es la casa. Viaja entre regiones por el túnel de contexto.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://patologicos.com/patologicos/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Patológicos · el mundo de la compañía">
-<meta property="og:description" content="El sistema nervioso de Patológicos como mundo vivo 3D: sus agentes en oficinas, el túnel de contexto, el clima del negocio en tiempo real. La misma columna vertebral que Camada, instanciada para la casa.">
+<meta property="og:title" content="La Capital · universo Patológicos">
+<meta property="og:description" content="La capital del universo Patológicos: los agentes de la compañía trabajando en su región. Misma columna vertebral, mismo universo, misma economía que Camada — solo que aquí es la casa. Viaja entre regiones por el túnel de contexto.">
 <meta property="og:url" content="https://patologicos.com/patologicos/">
 <style>
   :root{--bg:#070810;--ink:#eef1ff;--mut:#8b93b8;--line:rgba(150,170,255,.15);--ok:#5ef0a8;--ciego:#ffcf5a;--roto:#ff6a7a;--acc:#a9b6ff}
@@ -183,14 +183,14 @@
 
 <div class="hud top">
   <div>
-    <div class="brand">Patológicos · sala de máquinas</div>
-    <div class="title">El <b>mundo</b> de Patológicos</div>
-    <div class="sub">Los agentes de la compañía en su mundo. Haz clic en uno para su carta y <b>dale una tarea</b>: va por el túnel de contexto y vuelve con trabajo <b>real</b> para que lo cures. El clima = la salud real del negocio.</div>
+    <div class="brand">UNIVERSO PATOLÓGICOS · estás en la Capital</div>
+    <div class="title">La <b>Capital</b></div>
+    <div class="sub">El corazón del universo: los agentes de la compañía trabajando. Clic en uno → su carta → <b>dale una tarea</b>: cruza el túnel de contexto y vuelve con trabajo <b>real</b> para que lo cures. Los agentes que creaste en Camada también viven aquí — es el mismo universo.</div>
   </div>
   <div class="weather" id="weatherbox"></div>
 </div>
 <div id="hint">clic en un agente para ver su carta y darle una tarea · arrastra para girar</div>
-<div class="foot">Por <a href="https://patologicos.com/">Patológicos</a> · <a href="/camada/">jugar Camada 🥚 →</a> · <a href="/consejo/">el Consejo →</a></div>
+<div class="foot">UNIVERSO PATOLÓGICOS · <a href="/camada/">▸ viajar a Camada (mundo cero)</a> · <a href="/consejo/">▸ el Consejo</a></div>
 
 <script type="importmap">
 { "imports": {
@@ -247,7 +247,7 @@ const WORLD={id:'patologicos', canBreed:false, mirror:'../consejo/state.json', b
 if(!WORLD.canBreed){document.querySelectorAll('#hudbtns .breed').forEach(b=>b.style.display='none');}
 
 // ---------- SAVE ----------
-const SKEY='camada.save.'+WORLD.id;
+const SKEY='patologicos.universo.v1'; // UN SOLO UNIVERSO: agentes creados + canon + vínculos se comparten entre TODAS las locaciones (Camada, la capital, el Consejo). Cambias de URL = viajas de región, no de mundo.
 let SAVE={v:1,bred:[],curation:[],camadex:[],rep:{},bond:{}};
 try{const s=JSON.parse(localStorage.getItem(SKEY)); if(s&&s.v)SAVE=Object.assign(SAVE,s);}catch(e){}
 function save(){try{localStorage.setItem(SKEY,JSON.stringify(SAVE));}catch(e){}}

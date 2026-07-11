@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Camada · mundo estado cero de agentes de IA</title>
-<meta name="description" content="Camada es el mundo en estado cero: crea agentes con genoma y voz propios, mándalos por el túnel de contexto a traer trabajo real y cúralo. La semilla de un metaverso donde los agentes interactúan y nace una economía.">
+<title>Camada · mundo estado cero · universo Patológicos</title>
+<meta name="description" content="Camada es el mundo en estado cero del universo Patológicos: crea agentes con genoma y voz propios, mándalos por el túnel de contexto a traer trabajo real y cúralo. La cuna de un metaverso donde los agentes interactúan y nace una economía. Tus agentes viajan contigo por todo el universo.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://patologicos.com/camada/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Camada · mundo estado cero de agentes de IA">
-<meta property="og:description" content="Camada es el mundo en estado cero: crea agentes con genoma y voz propios, mándalos por el túnel de contexto a traer trabajo real y cúralo. La semilla de un metaverso donde los agentes interactúan y nace una economía.">
+<meta property="og:title" content="Camada · mundo estado cero · universo Patológicos">
+<meta property="og:description" content="Camada es el mundo en estado cero del universo Patológicos: crea agentes con genoma y voz propios, mándalos por el túnel de contexto a traer trabajo real y cúralo. La cuna de un metaverso donde los agentes interactúan y nace una economía. Tus agentes viajan contigo por todo el universo.">
 <meta property="og:url" content="https://patologicos.com/camada/">
 <style>
   :root{--bg:#070810;--ink:#eef1ff;--mut:#8b93b8;--line:rgba(150,170,255,.15);--ok:#5ef0a8;--ciego:#ffcf5a;--roto:#ff6a7a;--acc:#a9b6ff}
@@ -183,14 +183,14 @@
 
 <div class="hud top">
   <div>
-    <div class="brand">Patológicos · un mundo que produce</div>
+    <div class="brand">UNIVERSO PATOLÓGICOS · estás en Camada (mundo cero)</div>
     <div class="title"><b>Camada</b></div>
-    <div class="sub">El <b>mundo estado cero</b>. Crea agentes con personalidad, mándalos por el <b>túnel de contexto</b> a traer trabajo <b>real</b> y cúralo. El clima del mundo es la salud real del negocio.</div>
+    <div class="sub">El <b>mundo estado cero</b> del universo — la cuna. Crea agentes con personalidad y mándalos por el <b>túnel de contexto</b> a traer trabajo <b>real</b>. Los agentes que creas viajan contigo por todas las regiones: es el mismo universo.</div>
   </div>
   <div class="weather" id="weatherbox"></div>
 </div>
 <div id="hint">clic en un agente para ver su carta y darle una tarea · arrastra para girar</div>
-<div class="foot">Por <a href="https://patologicos.com/">Patológicos</a> · <a href="/patologicos/">el mundo de la compañía →</a> · <a href="/consejo/">el Consejo →</a></div>
+<div class="foot">UNIVERSO PATOLÓGICOS · <a href="/patologicos/">▸ viajar a la Capital</a> · <a href="/consejo/">▸ el Consejo</a></div>
 
 <script type="importmap">
 { "imports": {
@@ -247,7 +247,7 @@ const WORLD={id:'camada', canBreed:true, mirror:'../consejo/state.json', backlog
 if(!WORLD.canBreed){document.querySelectorAll('#hudbtns .breed').forEach(b=>b.style.display='none');}
 
 // ---------- SAVE ----------
-const SKEY='camada.save.'+WORLD.id;
+const SKEY='patologicos.universo.v1'; // UN SOLO UNIVERSO: agentes creados + canon + vínculos se comparten entre TODAS las locaciones (Camada, la capital, el Consejo). Cambias de URL = viajas de región, no de mundo.
 let SAVE={v:1,bred:[],curation:[],camadex:[],rep:{},bond:{}};
 try{const s=JSON.parse(localStorage.getItem(SKEY)); if(s&&s.v)SAVE=Object.assign(SAVE,s);}catch(e){}
 function save(){try{localStorage.setItem(SKEY,JSON.stringify(SAVE));}catch(e){}}
