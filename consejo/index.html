@@ -71,6 +71,21 @@
   gtag('js', new Date());
   gtag('config', 'G-XESKPMDFSR');
 </script>
+<style>
+  /* consenso de la ronda (data-driven: round.json) */
+  #consenso{position:fixed;z-index:6;right:16px;bottom:38px;max-width:330px;pointer-events:auto;font-family:'Space Grotesk',ui-sans-serif,system-ui,sans-serif}
+  #consenso .pill2{background:rgba(16,19,38,.9);border:1px solid var(--acc);border-radius:12px;padding:9px 13px;cursor:pointer;font-size:12.5px;color:var(--ink);backdrop-filter:blur(6px);user-select:none}
+  #consenso .pill2 b{color:var(--acc)}
+  #consenso .card2{display:none;background:rgba(13,15,30,.96);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin-top:8px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  #consenso.open .card2{display:block}
+  #consenso .h2c{font-size:13px;font-weight:600;color:var(--acc);margin-bottom:6px;line-height:1.35}
+  #consenso .row3{font-size:11.5px;color:#c2cbf0;line-height:1.5;margin:3px 0}
+  #consenso .bars{margin-top:8px}
+  #consenso .bar3{display:flex;align-items:center;gap:6px;margin:2px 0;font-size:10px;color:var(--mut)}
+  #consenso .bar3 i{height:6px;border-radius:3px;background:linear-gradient(90deg,#5ef0a8,#a9b6ff);display:block;flex:none}
+  #consenso .np{font-size:11px;color:#cdd6ff;margin-top:9px;border-top:1px solid var(--line);padding-top:8px;line-height:1.5}
+  @media(max-width:720px){#consenso{display:none}}
+</style>
 </head>
 <body>
 <div id="scene"></div>
@@ -89,7 +104,7 @@
   <div class="sec"><div class="lb">Su voz</div><div class="val fr" id="i_frase"></div></div>
   <div class="sec"><div class="lb">Oficina</div><div class="val" id="i_off"></div></div>
   <div class="sec"><div class="lb">Cómo se mueve por el túnel</div><div class="val" id="i_move"></div></div>
-  <div class="sec"><div class="lb">Lo que pide (ronda C3 · tiene autoridad)</div><div class="val" id="i_pide"></div></div>
+  <div class="sec"><div class="lb" id="i_pide_lbl">Lo que pide (ronda C3 · tiene autoridad)</div><div class="val" id="i_pide"></div></div>
 </aside>
 
 <div class="hud top">
@@ -100,6 +115,7 @@
   </div>
   <div class="health" id="healthbox"></div>
 </div>
+<div id="consenso"></div>
 <div id="hint">clic en un agente · arrastra para girar · scroll para acercar</div>
 <div class="hud foot">
   <span class="pill">Espejo: <span id="statesrc">state.json</span></span>
@@ -337,6 +353,30 @@ fetch('state.json').then(r=>r.json()).then(d=>{PROJECTS=d.projects||[]; buildTow
   const roto=PROJECTS.filter(p=>p.health==='roto').map(p=>p.label);
   if(roto.length)pushEvent('⚠ salud: '+roto.length+' funnel(s) en rojo — '+roto[0]);
 }).catch(()=>{document.getElementById('statesrc').textContent='(sin state.json)';});
+
+// RONDA (data-driven): round.json = lo que cada agente pide + el consenso de la ronda.
+// Si no carga, se queda con el C3 embebido (sin regresión).
+function renderConsenso(rd){
+  const el=document.getElementById('consenso'); const c=rd&&rd.consenso; if(!el||!c)return;
+  const rank=(c.ranking||[]).slice(0,6); const max=(rank[0]&&rank[0].puntos)||100;
+  const bars=rank.map(r=>'<div class="bar3"><span style="width:76px;flex:none;color:'+(r.id===c.ganadora?'var(--acc)':'var(--mut)')+'">'+r.label+'</span><i style="width:'+Math.round((r.puntos/max)*120)+'px"></i><span>'+r.puntos+'</span></div>').join('');
+  el.innerHTML='<div class="pill2" id="cnspill">🏛️ Ronda <b>'+(rd.round||'')+'</b> · consenso ▸</div>'+
+    '<div class="card2"><div class="h2c">'+(c.titulo||'')+'</div>'+
+    '<div class="row3">'+(c.resumen||'')+'</div>'+
+    '<div class="bars">'+bars+'</div>'+
+    '<div class="np"><b style="color:var(--acc)">Siguiente paso:</b> '+(c.siguiente_paso||'')+'</div>'+
+    '<div class="np" style="color:var(--mut)"><b>Disidencia:</b> '+(c.disidencia||'')+'</div></div>';
+  document.getElementById('cnspill').onclick=()=>el.classList.toggle('open');
+}
+fetch('round.json').then(r=>r.json()).then(rd=>{
+  if(!rd)return;
+  const byId={}; (rd.wishes||[]).forEach(w=>{byId[w.id]=w;});
+  agents.forEach(a=>{const w=byId[a.id]; if(w&&w.pide)a.pide=w.pide;});
+  const stamp=document.getElementById('stamp'); if(stamp&&rd.round)stamp.textContent=rd.round;
+  const lbl=document.getElementById('i_pide_lbl'); if(lbl&&rd.round)lbl.textContent='Lo que pide (ronda '+rd.round+' · tiene autoridad)';
+  renderConsenso(rd);
+  const g=rd.consenso&&rd.consenso.ganadora; if(g)pushEvent('ronda '+rd.round+': ganó «'+g+'» — medición como instrumento');
+}).catch(()=>{});
 
 // RIPPLES
 const ripples=[];

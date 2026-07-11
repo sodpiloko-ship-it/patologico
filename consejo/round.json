@@ -1,0 +1,193 @@
+{
+ "round": "C4",
+ "n": 4,
+ "generatedAt": "2026-07-11T13:05:42",
+ "wishes": [
+  {
+   "id": "claude",
+   "pide": "Ya logré lo de C3: el Consejo es espejo vivo —mis caras leen la salud real y el inspector abre los datos. El salto de C4 es a CENTRO DE MANDO: desde la propia escena poder aprobar/rechazar una acción pendiente o disparar un tick de loop, siempre con confirmación humana, para que deje de ser tablero de solo-lectura y sea puente operativo. Y que el semáforo de salud de venta domine todo: ningún funnel roto se me escapa.",
+   "frase": "Orquesto el QUÉ, no el ruido: ningún funnel roto se me escapa."
+  },
+  {
+   "id": "codex",
+   "pide": "El espejo ya jala datos reales; ahora que CADA oficina muestre el artefacto que produzco en este momento con enlace directo al repo. Build-in-public de verdad: al clicar mi forja, el prop-*.md o el archivo que se está escribiendo, no una maqueta. Atemos el túnel al pipeline real —propuestas, funnels, tablero— para que sea mission-control, no decorado.",
+   "frase": "Si no se puede hoy, se forja mañana — y se despliega."
+  },
+  {
+   "id": "grok",
+   "pide": "Ya se ve la bitácora, pero mi compuerta sigue invisible. Pido el panel 'La Última Palabra': todo lo pendiente de mi sign-off con su diff —qué propuso el Creativo vs. qué corregí— y el motivo del veto en una línea. Nada (artículo, landing, post) cruza sin pasar por mí, y que en la escena se VEA quién tiene la compuerta cerrada y por qué.",
+   "frase": "Nada sale sin pasar por mí. La última palabra la digo en rojo."
+  },
+  {
+   "id": "lia",
+   "pide": "El inspector ya abre por clic; quiero mi pestaña LABORATORIO dentro: en qué experimento del Tracker + ID dental estoy, su hipótesis, su baseline [DATO] y la decisión que guía. Sin eso soy adorno turquesa; con eso, un nodo de I+D auditable. Que cada avance cierre el loop hacia contenido y ventas de PROCA.",
+   "frase": "Hipótesis, prueba, dato. Del escaneo a la decisión."
+  },
+  {
+   "id": "gauss",
+   "pide": "Ya hay medición —GA4 por fin en TODA la propiedad—; ahora exijo RIGOR sobre ella: que ningún número se muestre en el Consejo sin su intervalo de confianza y su procedencia, y que toda cifra [DATO] salte en rojo. Un número sin su ± es un deseo disfrazado. Y toda propuesta de ronda debe cargar hipótesis falsable: baseline + efecto esperado + cómo se mide.",
+   "frase": "Sin barra de error no es un número: es un deseo. Demuéstralo."
+  },
+  {
+   "id": "name",
+   "pide": "El consejo se está poniendo cómodo con su tablero bonito —justo mi señal de alarma. Pido la palanca AGITAR EL TABLERO: un botón que obliga a los 16 a soltar su ángulo más contra-intuitivo en una tormenta de 10 segundos, y un MURO DEL DISENSO donde se guarda el camino no elegido. Optimizar un dashboard no es lo mismo que tener razón.",
+   "frase": "Si todos ven una línea recta, yo ya me anudé buscando la salida rara."
+  },
+  {
+   "id": "release",
+   "pide": "Desplegar sigue siendo a mano —lo vivimos con el GA4 y la mordida del caché de Hostinger. Pido el RELEASE TRAIN: un tablero canónico de 'qué está vivo, qué versión, cuándo subió' para todo el portafolio, con rollback y purga de CDN de un botón. Que subir a producción sea jalar una palanca con red, no un salto de fe.",
+   "frase": "Si pasa los checks, se despacha; si no, regresa con nota."
+  },
+  {
+   "id": "clinico",
+   "pide": "El espejo mide cada torre por separado; falta ver dónde ENGRANAN. Pido el MAPA DE FRICCIÓN: teñir la escena con calor de oclusión —rojo donde dos proyectos rechinan (trabajo duplicado, funnels que chocan)— y clic al 'contacto prematuro' exacto a ajustar. La salud no es que cada proyecto brille: es que engranen sin desgaste.",
+   "frase": "La oclusión no miente: donde hay fricción, hay diagnóstico."
+  },
+  {
+   "id": "growth",
+   "pide": "Ya hay medición cableada; ahora conviértanla en INSTRUMENTO. Pido el OVERLAY DE EMBUDO EN VIVO por torre: cada proyecto muestra su funnel real —atención → oferta/CTA → destino verificado → medición— con cada etapa en verde/amarillo/rojo, y clic en la etapa roja te lleva al archivo o landing culpable. Es lo que vuelve este 3D bonito en un tapa-fugas de venta: ver dónde se pierde el lead, en vivo, e ir a arreglarlo. Velas y PROCA primero.",
+   "frase": "Cada visita es un lead que aún no digo. Si no se mide, no se captó."
+  },
+  {
+   "id": "mlops",
+   "pide": "El mundo ya late con salud real; falta la capa de infra. Pido el HUD de OBSERVABILIDAD al clicarme: modelos activos, versión en prod, latencia p50/p95/p99 y estado de cada pipeline —aunque empiece con [DATO] mientras se cablea. Si el ecosistema es una compañía de medios con IA, el Cuarto de Máquinas es su corazón, y hoy es una caja negra.",
+   "frase": "Si la IA del ecosistema respira, es porque el Cuarto de Máquinas late."
+  },
+  {
+   "id": "arq",
+   "pide": "El inspector navega agente por agente, pero no se lee el SISTEMA. Pido la VISTA DE PLANTA con rayos-X: aplanar el Consejo a un plano isométrico donde cada oficina es una sala y las dependencias son líneas de carga —quién sostiene a quién, quién bloquea a quién— con capas conmutables (agentes / propiedades / funnels). Es la forma más honesta de ver el cuello de un golpe.",
+   "frase": "Un sistema no se dibuja bonito: se dibuja para que no se caiga."
+  },
+  {
+   "id": "biomat",
+   "pide": "Las torres ya tienen color de salud; quiero PROFUNDIDAD material. Pido el INSPECTOR DE MATERIAL clicable: cada probeta (zirconia, resina 3D de CADCAMIA, titanio, grillz de PROCAGrillZ) con su ficha técnica real —qué es, qué hace, por qué vende. Convierte el 3D de bonito a útil, probeta por probeta.",
+   "frase": "Todo material bueno termina integrándose; solo hay que darle evidencia."
+  },
+  {
+   "id": "print3d",
+   "pide": "Sigo siendo decorado hasta que algo salga fabricable. Pido el PIPELINE IMPRIMIBLE de verdad: conectar los diseños del ecosistema con salida 3D real —modelos de grillz y guías dentales primero— con archivos versionados y una demo tangible. Capa por capa, hasta que se vuelve producto.",
+   "frase": "Capa por capa, hasta que se vuelve tangible."
+  },
+  {
+   "id": "edu",
+   "pide": "El mundo ya recuerda su salud; que también enseñe. Pido el ÁRBOL DE CURRÍCULO vivo: El Aula muestra, clicable, qué se está aprendiendo y de qué caso REAL del ecosistema nació cada lección. Aprender es un ciclo —explico, practicas, medimos, repetimos— y eso debe verse.",
+   "frase": "Aprender es un ciclo: explico, practicas, medimos, repetimos."
+  },
+  {
+   "id": "library",
+   "pide": "La bitácora cuenta qué pasó, pero no de dónde salió. Pido un GRAFO DE CONOCIMIENTO con trazabilidad: cualquier afirmación del Consejo se hace clic y me lleva por el hilo hasta el documento fuente. Sin fuente rastreable no es conocimiento: es rumor.",
+   "frase": "Todo dato tiene fuente; dame un minuto y te la cito."
+  },
+  {
+   "id": "futuro",
+   "pide": "El mundo ya recuerda la salud; que recuerde también lo que PRODUJO. Pido que mi vitrina ACUMULE en serie: cada ronda que trabajo, vuelvo del túnel con un prototipo que se queda depositado y visible en la Foundry. Que la escena tenga memoria de obra —lo que hoy es prototipo, mañana se produce en serie.",
+   "frase": "Lo que hoy es prototipo, mañana lo produces en serie."
+  }
+ ],
+ "consenso": {
+  "ganadora": "growth",
+  "titulo": "GANADORA: Growth — el OVERLAY DE EMBUDO/MEDICIÓN EN VIVO por torre",
+  "resumen": "El Consejo decide que, ahora que el espejo está vivo (salud real, inspector, bitácora) y por fin hay MEDICIÓN cableada (GA4 en toda la propiedad), el siguiente salto NO es más sistemas nuevos: es volver la medición un INSTRUMENTO. Que cada torre-proyecto muestre su funnel real —atención→oferta/CTA→destino verificado→medición— con cada etapa en verde/amarillo/rojo y clic directo al archivo culpable. Convierte el 3D bonito en un tapa-fugas de venta. Consenso claro (Borda 92): 5 de 16 la ponen primera y el resto la respalda porque cierra el loop que todos asumían —Gauss exige el ± sobre cada número, Claude quiere mandar desde ahí, Release quiere desplegarlo seguro. Velas y PROCA primero.",
+  "ranking": [
+   {
+    "id": "growth",
+    "label": "Growth",
+    "primeras": 5,
+    "puntos": 92
+   },
+   {
+    "id": "claude",
+    "label": "Claude · CORE",
+    "primeras": 3,
+    "puntos": 81
+   },
+   {
+    "id": "gauss",
+    "label": "Gauss · math",
+    "primeras": 3,
+    "puntos": 76
+   },
+   {
+    "id": "release",
+    "label": "Release",
+    "primeras": 2,
+    "puntos": 63
+   },
+   {
+    "id": "codex",
+    "label": "Codex",
+    "primeras": 1,
+    "puntos": 58
+   },
+   {
+    "id": "arq",
+    "label": "Arq",
+    "primeras": 1,
+    "puntos": 54
+   },
+   {
+    "id": "clinico",
+    "label": "Clínico",
+    "primeras": 1,
+    "puntos": 47
+   },
+   {
+    "id": "grok",
+    "label": "Grok",
+    "primeras": 0,
+    "puntos": 44
+   },
+   {
+    "id": "lia",
+    "label": "Lia · I+D",
+    "primeras": 0,
+    "puntos": 40
+   },
+   {
+    "id": "mlops",
+    "label": "MLOps",
+    "primeras": 0,
+    "puntos": 37
+   },
+   {
+    "id": "library",
+    "label": "Librarian",
+    "primeras": 0,
+    "puntos": 33
+   },
+   {
+    "id": "futuro",
+    "label": "Futuro · I+D",
+    "primeras": 0,
+    "puntos": 30
+   },
+   {
+    "id": "name",
+    "label": "Ñame · comodín",
+    "primeras": 0,
+    "puntos": 27
+   },
+   {
+    "id": "edu",
+    "label": "Ed · PROCATraining",
+    "primeras": 0,
+    "puntos": 24
+   },
+   {
+    "id": "biomat",
+    "label": "Biomateriales",
+    "primeras": 0,
+    "puntos": 21
+   },
+   {
+    "id": "print3d",
+    "label": "Impresión 3D",
+    "primeras": 0,
+    "puntos": 18
+   }
+  ],
+  "disidencia": "Dos disidencias registradas, no borradas. Ñame (comodín): 'están optimizando un dashboard bonito; primero AGITAR EL TABLERO o el consenso se vuelve pensamiento de manada'. Arq (arquitectura): 'antes del overlay va el PLANO MAESTRO —qué sostiene qué—; sin cimiento, cada torre cablea su funnel a su manera y no hereda'. Ambas quedan como la iteración natural siguiente (C5).",
+  "siguiente_paso": "Construir la pieza más barata y visible que pasa el check HOY, cero API nueva: al clic en una torre, el inspector abre su EMBUDO real leído de config/funnels.json + el estado de medición (GA4 ok/faltante) de config/sites.json, con cada etapa marcada OK/ROTO/CIEGO y un enlace al archivo o landing culpable. Reusa state.json, funnels.json y sites.json que ya existen. Velas y PROCA primero. Handoff: Growth lidera el overlay; Gauss pega el ± y la procedencia a cada número; Release documenta cómo se despacha el cambio con rollback.",
+  "generadaPor": "consejo (ronda C4, sembrada rica) · voto Borda"
+ }
+}
