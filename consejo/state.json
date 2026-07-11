@@ -1,0 +1,80 @@
+{
+ "generatedAt": "2026-07-10T18:53:57",
+ "projects": [
+  {
+   "id": "patologicos",
+   "label": "Escaparate + blog de Patológicos",
+   "domain": "patologicos.com",
+   "health": "ok",
+   "progress": 0.92
+  },
+  {
+   "id": "procadental",
+   "label": "Hub educativo de pacientes",
+   "domain": "procadental.com",
+   "health": "ok",
+   "progress": 0.92
+  },
+  {
+   "id": "procaops",
+   "label": "Plataforma/portal PROCAOps + blog SEO ",
+   "domain": "procaops.com",
+   "health": "ok",
+   "progress": 0.92
+  },
+  {
+   "id": "picandotabla",
+   "label": "Tienda de tablas de quesos/charcutería",
+   "domain": "picandotabla.com",
+   "health": "ok",
+   "progress": 0.92
+  },
+  {
+   "id": "velaslumin",
+   "label": "Sitio de velas Lumin Candele",
+   "domain": "velaslumin.com",
+   "health": "ok",
+   "progress": 0.92
+  },
+  {
+   "id": "cadcamia",
+   "label": "CAD CAM IA",
+   "domain": "cadcamia.com",
+   "health": "roto",
+   "progress": 0.32
+  },
+  {
+   "id": "fanatia",
+   "label": "Fanatia — fotografía artística / lence",
+   "domain": "fanatia.com",
+   "health": "ok",
+   "progress": 0.92
+  },
+  {
+   "id": "piloko",
+   "label": "Piloko — sitio personal de artista",
+   "domain": "piloko.com",
+   "health": "ok",
+   "progress": 0.92
+  },
+  {
+   "id": "procagrillz",
+   "label": "PROCA GrillZ — negocio de grillz",
+   "domain": "procagrillz.com",
+   "health": "ok",
+   "progress": 0.92
+  },
+  {
+   "id": "usanomos",
+   "label": "NOMOS - orquestador juridico con IA",
+   "domain": "usanomos.com",
+   "health": "ok",
+   "progress": 0.92
+  }
+ ],
+ "counts": {
+  "ok": 9,
+  "ciego": 0,
+  "roto": 1
+ }
+}

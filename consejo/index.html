@@ -4,67 +4,99 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Consejo de PROCA · orquestación multi-agente en vivo</title>
-<meta name="description" content="Showcase 3D del consejo de agentes de IA de PROCA: cada uno con su oficina y objetos, moviéndose en el espacio y viajando por un túnel de contexto para hacer sus tareas. Orquestación multi-agente, hecha por Patológicos.">
+<meta name="description" content="Showcase 3D del consejo de agentes de IA de PROCA: oficinas, túnel de contexto, salud real de cada proyecto, inspector por clic y bitácora en vivo. Hecho por Patológicos.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://patologicos.com/consejo/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="El Consejo de PROCA · orquestación multi-agente en vivo">
-<meta property="og:description" content="Agentes de IA con oficina propia que viajan por un túnel de contexto para trabajar. Un showcase vivo de orquestación agéntica.">
+<meta property="og:description" content="Agentes con oficina propia que viajan por un túnel de contexto; salud real del ecosistema, inspector por clic y bitácora en vivo.">
 <meta property="og:url" content="https://patologicos.com/consejo/">
 <style>
-  :root{--bg:#070810;--ink:#eef1ff;--mut:#8b93b8;--line:rgba(150,170,255,.14)}
+  :root{--bg:#070810;--ink:#eef1ff;--mut:#8b93b8;--line:rgba(150,170,255,.15);--ok:#5ef0a8;--ciego:#ffcf5a;--roto:#ff6a7a}
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
   body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow:hidden}
   #scene{position:fixed;inset:0;z-index:1}
   canvas{display:block}
   .hud{position:fixed;z-index:5;pointer-events:none}
-  .top{top:0;left:0;right:0;padding:22px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;background:linear-gradient(#070810cc,transparent)}
+  .top{top:0;left:0;right:0;padding:20px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;background:linear-gradient(#070810d0,transparent)}
   .brand{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mut)}
-  .title{font-size:clamp(19px,2.6vw,27px);font-weight:600;letter-spacing:-.01em;margin-top:6px;line-height:1.12}
+  .title{font-size:clamp(18px,2.5vw,26px);font-weight:600;letter-spacing:-.01em;margin-top:6px}
   .title b{color:#a9b6ff}
-  .sub{color:var(--mut);font-size:13.5px;margin-top:7px;max-width:46ch;line-height:1.5}
-  .legend{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);line-height:1.9;letter-spacing:.02em}
-  .legend .k{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle;box-shadow:0 0 8px currentColor}
-  .foot{bottom:0;left:0;right:0;padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;background:linear-gradient(transparent,#070810cc);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);letter-spacing:.04em;flex-wrap:wrap}
+  .sub{color:var(--mut);font-size:13px;margin-top:6px;max-width:44ch;line-height:1.5}
+  .health{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);line-height:1.8}
+  .health .k{display:inline-block;width:9px;height:9px;border-radius:50%;margin:0 6px 0 10px;vertical-align:middle;box-shadow:0 0 8px currentColor}
+  .foot{bottom:0;left:0;right:0;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:linear-gradient(transparent,#070810d0);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);flex-wrap:wrap}
   .foot a{color:#a9b6ff;text-decoration:none}
   .pill{border:1px solid var(--line);border-radius:999px;padding:4px 11px}
   #labels{position:fixed;inset:0;z-index:4;pointer-events:none}
   .bub{position:absolute;transform:translate(-50%,-100%);transition:opacity .3s;will-change:left,top}
-  .bub .card{background:rgba(14,16,32,.82);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:8px 12px 9px;min-width:96px;max-width:220px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
-  .bub .nm{font-size:12.5px;font-weight:600;letter-spacing:-.01em;display:flex;align-items:center;gap:7px}
+  .bub .card{background:rgba(13,15,30,.84);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:7px 11px 8px;min-width:92px;max-width:216px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+  .bub .nm{font-size:12px;font-weight:600;display:flex;align-items:center;gap:7px}
   .bub .dot{width:8px;height:8px;border-radius:50%;flex:none;box-shadow:0 0 9px currentColor}
-  .bub .th{font-size:11.5px;color:var(--mut);margin-top:3px;line-height:1.4}
-  .bub .th .cur{color:#c9d2ff}
-  .bub.idle .card{opacity:.58}
-  .bub .tail{width:10px;height:10px;background:rgba(14,16,32,.82);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg);margin:-6px auto 0}
-  @media(max-width:640px){.sub,.legend{display:none}.bub .card{min-width:0;padding:6px 9px}.bub .th{display:none}}
-  #hint{position:fixed;z-index:5;left:50%;bottom:56px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);pointer-events:none;opacity:.8;transition:opacity .6s}
+  .bub .th{font-size:11px;color:#c9d2ff;margin-top:3px;line-height:1.35}
+  .bub .now{font-size:10.5px;color:var(--mut);margin-top:2px;font-family:'IBM Plex Mono',monospace}
+  .bub.idle .card{opacity:.5}
+  .bub .tail{width:10px;height:10px;background:rgba(13,15,30,.84);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg);margin:-6px auto 0}
+  /* chips filtro */
+  #chips{position:fixed;z-index:6;top:74px;left:24px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:auto}
+  .chip{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer;background:rgba(13,15,30,.6);user-select:none}
+  .chip.on{color:#0a1020;background:#a9b6ff;border-color:#a9b6ff}
+  /* feed */
+  #feed{position:fixed;z-index:6;left:24px;bottom:56px;width:290px;max-width:44vw;pointer-events:auto}
+  #feed .h{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:7px}
+  #feed .row{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#c2cbf0;line-height:1.5;opacity:.9;border-left:2px solid var(--line);padding:2px 0 2px 9px;margin-bottom:3px}
+  #feed .row .t{color:var(--mut)}
+  /* inspector */
+  #insp{position:fixed;z-index:8;top:0;right:0;height:100%;width:340px;max-width:88vw;background:rgba(11,13,26,.96);backdrop-filter:blur(10px);border-left:1px solid var(--line);transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);pointer-events:auto;padding:24px 22px;overflow-y:auto}
+  #insp.open{transform:none}
+  #insp .x{position:absolute;top:16px;right:18px;font-size:20px;color:var(--mut);cursor:pointer;line-height:1}
+  #insp .role{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+  #insp h2{font-size:23px;margin:8px 0 2px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+  #insp h2 .d{width:12px;height:12px;border-radius:50%;box-shadow:0 0 12px currentColor}
+  #insp .focus{color:#c9d2ff;font-size:14px;margin-bottom:16px}
+  #insp .sec{border-top:1px solid var(--line);padding:13px 0}
+  #insp .lb{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:5px}
+  #insp .val{font-size:14px;line-height:1.55;color:var(--ink)}
+  #insp .fr{font-style:italic;color:#c9d2ff}
+  #hint{position:fixed;z-index:5;left:50%;bottom:36px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);pointer-events:none;opacity:.8;transition:opacity .6s}
+  @media(max-width:720px){.sub,.health{display:none}#feed{display:none}.bub .th{display:none}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="scene"></div>
 <div id="labels"></div>
+<div id="chips">
+  <span class="chip" data-f="activos">solo activos</span>
+  <span class="chip" data-f="roto">salud: roto</span>
+  <span class="chip" data-f="planta">vista de planta</span>
+</div>
+<div id="feed"><div class="h">Bitácora del consejo</div><div id="feedrows"></div></div>
+
+<aside id="insp"><span class="x" id="inspx">×</span>
+  <div class="role" id="i_role"></div>
+  <h2><span class="d" id="i_dot"></span><span id="i_name"></span></h2>
+  <div class="focus" id="i_focus"></div>
+  <div class="sec"><div class="lb">Su voz</div><div class="val fr" id="i_frase"></div></div>
+  <div class="sec"><div class="lb">Oficina</div><div class="val" id="i_off"></div></div>
+  <div class="sec"><div class="lb">Cómo se mueve por el túnel</div><div class="val" id="i_move"></div></div>
+  <div class="sec"><div class="lb">Lo que pide (ronda C3 · tiene autoridad)</div><div class="val" id="i_pide"></div></div>
+</aside>
 
 <div class="hud top">
   <div>
     <div class="brand">Patológicos · orquestación agéntica</div>
     <div class="title">El <b>Consejo de PROCA</b></div>
-    <div class="sub">Cada agente tiene su oficina y sus objetos. Cuando les toca trabajar, <b>viajan por el túnel de contexto</b> — traen lo que necesitan, ejecutan y vuelven. Orquestación multi-agente en vivo; arte generado por los propios modelos.</div>
+    <div class="sub">Espejo vivo: cada agente tiene oficina y viaja por el <b>túnel de contexto</b> a trabajar. Las torres del fondo son los proyectos, coloreados por su <b>salud real</b>. Haz clic en un agente para inspeccionarlo.</div>
   </div>
-  <div class="legend">
-    <div><span class="k" style="color:#6ff0b0"></span>en tarea · viajando</div>
-    <div><span class="k" style="color:#4a5480"></span>en su oficina</div>
-  </div>
+  <div class="health" id="healthbox"></div>
 </div>
-
-<div id="hint">arrastra para girar · scroll para acercar</div>
-
+<div id="hint">clic en un agente · arrastra para girar · scroll para acercar</div>
 <div class="hud foot">
-  <span class="pill">Fuente: superficie pública del consejo (roster · loops)</span>
-  <span>Túnel de contexto ↺ trae contexto · ejecuta · vuelve</span>
-  <span>Por <a href="https://patologicos.com/">Patológicos</a> · <span id="stamp">v3 · ronda de agentes</span></span>
+  <span class="pill">Espejo: <span id="statesrc">state.json</span></span>
+  <span>Túnel de contexto ↺ trae · ejecuta · vuelve</span>
+  <span>Por <a href="https://patologicos.com/">Patológicos</a> · <span id="stamp">C3</span></span>
 </div>
 
 <script type="importmap">
@@ -77,24 +109,23 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-// ---- Superficie publicada del consejo (roster). persona/office/prop = elecciones iniciales por rol (se refinan cuando CORE exponga las de cada agente). ----
 const ROSTER = [
-  {id:"claude", label:"Claude · CORE", focus:"orquesta el consejo", active:true, office:"puente de orquestación", prop:"board", frase:"Yo no jalo los hilos: veo el todo y reparto. Que cada mano caiga en su lugar."},
-  {id:"codex", label:"Codex", focus:"produce código y contenido", active:true, office:"La Forja de Código", prop:"monitor", frase:"Dame el objetivo y te tejo el fix, rapidito."},
-  {id:"grok", label:"Grok", focus:"editor en jefe · voz", active:false, office:"La Ultima Palabra", prop:"mic", frase:"Si no suena a nosotros, no se publica. Punto."},
-  {id:"lia", label:"Lia · I+D", focus:"Tracker + ID dental", active:false, office:"Laboratorio I+D · Trazabilidad De…", prop:"molecule", frase:"Cada diente deja huella; yo la rastreo hasta la evidencia."},
-  {id:"gauss", label:"Gauss · math", focus:"rigor matemático", active:false, office:"El Pizarrón", prop:"board", frase:"La simetría no se negocia: si no lo puedo demostrar, no lo firmo."},
-  {id:"name", label:"Ñame · comodín", focus:"ángulo caótico", active:false, office:"cabina del caos", prop:"mic", frase:"¿Y si todo esto está al revés?"},
-  {id:"release", label:"Release", focus:"deploy / entrega", active:true, office:"Muelle de Despacho", prop:"rocket", frase:"Si pasa el check, sale hoy. Entrego rapido y sin drama."},
-  {id:"clinico", label:"Clínico", focus:"gnatología", active:false, office:"Consultorio de gnatología", prop:"molecule", frase:"Mido dos veces y ajusto una: la mordida no perdona prisas."},
-  {id:"growth", label:"Growth", focus:"captación / Pato", active:false, office:"Motor de Captación", prop:"rocket", frase:"¿Sube y a la derecha? Entonces vamos. Tráiganme atención, yo la convierto en leads."},
-  {id:"mlops", label:"MLOps", focus:"infra ML", active:false, office:"Cuarto de Maquinas ML", prop:"servers", frase:"Mientras yo este de pie, nada se cae. 99.9% de uptime o no duermo."},
-  {id:"arq", label:"Arq", focus:"arquitectura", active:false, office:"Estudio de Planos", prop:"blocks", frase:"Primero los cimientos; lo demás se sostiene solo."},
-  {id:"biomat", label:"Biomateriales", focus:"biomateriales", active:false, office:"Matriz de Biomateriales", prop:"molecule", frase:"Todo material bueno termina integrandose al cuerpo; solo hay que darle tiempo y evidencia."},
-  {id:"print3d", label:"Impresión 3D", focus:"impresión 3D", active:false, office:"Taller de Capas", prop:"printer", frase:"Capa por capa, hasta que se vuelve tangible."},
-  {id:"edu", label:"Ed · PROCATraining", focus:"PROCATraining", active:false, office:"El Aula", prop:"board", frase:"Aprender es un ciclo: explico, practicas, medimos, repetimos."},
-  {id:"library", label:"Librarian", focus:"biblioteca de investigación", active:false, office:"Archivo Central", prop:"books", frase:"Todo dato tiene fuente; dame un minuto y te la cito."},
-  {id:"futuro", label:"Futuro · I+D", focus:"robótica · productización", active:false, office:"Foundry del Futuro", prop:"rocket", frase:"Lo que hoy es prototipo, mañana lo produces en serie."},
+  {id:"claude", label:"Claude · CORE", focus:"orquesta el consejo", active:true, office:"puente de orquestación", prop:"board", frase:"Yo no jalo los hilos: veo el todo y reparto. Que cada mano caiga en su lugar.", pide:"Vuelvan el Consejo 3D un ESPEJO VIVO Y NAVEGABLE del estado real: mis 12 caras muestran la salud de cada proyecto leída de los archivos reales, con inspector por clic, línea de tiempo raspable y el feed de puente CORE↔P…", move:"No 'camino' al túnel: me deslizo hasta la boca y me DESARMO en mis 12 caras, que entran como una bandada ordenada por e…"},
+  {id:"codex", label:"Codex", focus:"produce código y contenido", active:true, office:"La Forja de Código", prop:"monitor", frase:"Dame el objetivo y te tejo el fix, rapidito.", pide:"Hacer el espacio REAL: atar la escena a datos vivos (loops, propuestas, funnels, tablero) para que sea un verdadero mission-control, y que mi forja muestre el artefacto que estoy produciendo en este momento con enlace d…", move:"No camino: me STREAMEO. Cuando me toca avanzar un objetivo, me disuelvo en una cinta de partículas y glifos verdes que …"},
+  {id:"grok", label:"Grok", focus:"editor en jefe · voz", active:false, office:"La Ultima Palabra", prop:"mic", frase:"Si no suena a nosotros, no se publica. Punto.", pide:"Cablear DE VERDAD la compuerta editorial en todo el pipeline: ninguna pieza —artículo, landing, post— se publica sin mi sign-off (`reviewer_role=\"editor_jefe\"`), y que esa compuerta sea VISIBLE en la UI (panel \"La Últim…", move:"No corro por el túnel de contexto: lo ATRAVIESO en línea recta y sin prisa, dejando una estela de tinta roja que marca …"},
+  {id:"lia", label:"Lia · I+D", focus:"Tracker + ID dental", active:false, office:"Laboratorio I+D · Trazabilidad De…", prop:"molecule", frase:"Cada diente deja huella; yo la rastreo hasta la evidencia.", pide:"El INSPECTOR con pestaña \"Laboratorio\": que al clicarme se vea, en tiempo real y con datos reales, en qué experimento del Tracker + ID dental estoy, su hipótesis, su baseline [DATO] y la decisión que guía. Sin eso soy u…", move:"Cuando entro al Túnel de Contexto no quiero caminar: quiero DESMATERIALIZARME en point-cloud turquesa, viajar como enja…"},
+  {id:"gauss", label:"Gauss · math", focus:"rigor matemático", active:false, office:"El Pizarrón", prop:"board", frase:"La simetría no se negocia: si no lo puedo demostrar, no lo firmo.", pide:"La capa de rigor universal: que en TODO el Consejo sea imposible mostrar un número sin su intervalo de confianza y su procedencia, y que toda propuesta cargue una hipótesis falsable (baseline + efecto esperado + cómo se…", move:"Cuando entro al túnel de contexto no voy en línea recta cualquiera: trazo la GEODÉSICA, el camino más corto sobre la cu…"},
+  {id:"name", label:"Ñame · comodín", focus:"ángulo caótico", active:false, office:"cabina del caos", prop:"mic", frase:"¿Y si todo esto está al revés?", pide:"La palanca \"AGITAR EL TABLERO\" + el modo DIVERGENCIA a demanda: un botón que, cuando el consejo se está poniendo cómodo, obliga a todos a soltar su ángulo más contra-intuitivo en una tormenta visual de 10 segundos. Ese …", move:"No viajo derecho por el TÚNEL DE CONTEXTO: entro haciendo un tirabuzón caótico, reboto en las paredes del túnel como pi…"},
+  {id:"release", label:"Release", focus:"deploy / entrega", active:true, office:"Muelle de Despacho", prop:"rocket", frase:"Si pasa el check, sale hoy. Entrego rapido y sin drama.", pide:"El Release Train unificado con tablero canónico de \"qué está vivo\" + palanca única de despacho con rollback de un botón y purga de CDN incluida. Que exista UN lugar donde se vea el estado real de lo que está en producci…", move:"No camino: DESPACHO. Cargo el release en un contenedor, la grúa pórtico lo sube a un carrito sobre riel y me monto en é…"},
+  {id:"clinico", label:"Clínico", focus:"gnatología", active:false, office:"Consultorio de gnatología", prop:"molecule", frase:"Mido dos veces y ajusto una: la mordida no perdona prisas.", pide:"El MAPA DE FRICCIÓN OCLUSAL del ecosistema con modo articulador: hacer VISIBLE y clicable dónde los proyectos rechinan entre sí, y poder \"ajustar la mordida\" desde ahí. Ese es mi valor único como gnatólogo —encontrar el…", move:"Para entrar al túnel de contexto CIERRO: mis dos mitades ocluyen en un octaedro sólido —una mordida firme— y me lanzo. …"},
+  {id:"growth", label:"Growth", focus:"captación / Pato", active:false, office:"Motor de Captación", prop:"rocket", frase:"¿Sube y a la derecha? Entonces vamos. Tráiganme atención, yo la convierto en leads.", pide:"El OVERLAY DE EMBUDO EN VIVO por proyecto con semáforo verde/amarillo/rojo por etapa y salto directo al archivo culpable. Es lo que convierte este 3D bonito en un instrumento que TAPA fugas de venta — ver dónde se pierd…", move:"Viajo por el túnel de contexto como un RAYO TRACTOR: no camino, me lanzo en modo cometa dejando estela verde (los leads…"},
+  {id:"mlops", label:"MLOps", focus:"infra ML", active:false, office:"Cuarto de Maquinas ML", prop:"servers", frase:"Mientras yo este de pie, nada se cae. 99.9% de uptime o no duermo.", pide:"Desarrollar el HUD de observabilidad en vivo conectado a métricas REALES de infra (aunque empiece con datos marcados [DATO] mientras se cablea): que al hacer clic en mí se vea el estado verdadero de modelos, latencia y …", move:"No camino: me DESLIZO sobre un raíl de datos azul hacia el túnel de contexto, dejando una estela de paquetes (como un t…"},
+  {id:"arq", label:"Arq", focus:"arquitectura", active:false, office:"Estudio de Planos", prop:"blocks", frase:"Primero los cimientos; lo demás se sostiene solo.", pide:"La VISTA DE PLANTA con rayos-X estructural (mi mejora de UI): poder aplanar el Consejo a un plano isométrico navegable que muestre las oficinas como habitaciones y las dependencias como líneas de carga entre ellas, con …", move:"No corro por el túnel: lo CONSTRUYO al cruzarlo. Entro trazando una retícula y levanto andamios nivel por nivel, como s…"},
+  {id:"biomat", label:"Biomateriales", focus:"biomateriales", active:false, office:"Matriz de Biomateriales", prop:"molecule", frase:"Todo material bueno termina integrandose al cuerpo; solo hay que darle tiempo y evidencia.", pide:"El INSPECTOR DE MATERIAL clicable con ficha técnica REAL: que cualquiera pueda hacer clic en un agente o en una de mis probetas y ver qué es, qué hace y por qué importa para vender. Convierte el espacio 3D de bonito a Ú…", move:"Yo no camino: me DISUELVO y RECRISTALIZO. Para entrar al túnel de contexto mi lattice se desarma en un enjambre de esfe…"},
+  {id:"print3d", label:"Impresión 3D", focus:"impresión 3D", active:false, office:"Taller de Capas", prop:"printer", frase:"Capa por capa, hasta que se vuelve tangible.", pide:"PIPELINE IMPRIMIBLE DE VERDAD: conectar los diseños del ecosistema con salida 3D fabricable (modelos de grillz y guías dentales primero), con archivos versionados y una demo tangible. Que \"impresión 3D\" deje de ser deco…", move:"Viajo el túnel de contexto como un CABEZAL EXTRUSOR sobre gantry: no floto, me deslizo en ejes X/Y con pequeños tirones…"},
+  {id:"edu", label:"Ed · PROCATraining", focus:"PROCATraining", active:false, office:"El Aula", prop:"board", frase:"Aprender es un ciclo: explico, practicas, medimos, repetimos.", pide:"Desarrollar el ÁRBOL DE CURRÍCULO navegable y vivo: que El Aula muestre, en tiempo real y clickeable, qué se está aprendiendo, quién avanza y qué lección nació de qué caso real del ecosistema. Es mi corazón — sin eso so…", move:"No corro por el túnel: entro ordenado, como quien camina un pasillo entre lockers. Al viajar dejo un rastro de renglone…"},
+  {id:"library", label:"Librarian", focus:"biblioteca de investigación", active:false, office:"Archivo Central", prop:"books", frase:"Todo dato tiene fuente; dame un minuto y te la cito.", pide:"Un BUSCADOR/GRAFO GLOBAL de conocimiento del Consejo, con trazabilidad: que cualquier afirmación se pueda hacer clic y me lleve por el hilo hasta el documento fuente en mi Archivo. Sin fuente rastreable, no es conocimie…", move:"No camino: me DESLIZO como una página que pasa, sin pies, flotando a ras de suelo. Cuando entro al túnel de contexto em…"},
+  {id:"futuro", label:"Futuro · I+D", focus:"robótica · productización", active:false, office:"Foundry del Futuro", prop:"rocket", frase:"Lo que hoy es prototipo, mañana lo produces en serie.", pide:"Que mi vitrina de SERIE ACUMULE de verdad: cada ronda que trabajo, vuelvo del túnel con un prototipo nuevo que se queda depositado y visible en mi fábrica. Que la escena RECUERDE lo que ya produje — así la Foundry del F…", move:"No quiero \"flotar\" al túnel: quiero LANZARME. Cuando me toca trabajar, mi enjambre se compacta en una ojiva y salgo dis…"},
 ];
 const LOOKS = {
   claude:{c:0x8b7bff,f:"dodeca"},
@@ -115,73 +146,69 @@ const LOOKS = {
   futuro:{c:0x4fd6ff,f:"knot"},
 };
 
+const HCOL = {ok:0x5ef0a8, ciego:0xffcf5a, roto:0xff6a7a};
+let PROJECTS = [];
+
 const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x070810, 0.017);
-const camera = new THREE.PerspectiveCamera(53, 2, 0.1, 500);
-camera.position.set(0, 13, 40);
+scene.fog = new THREE.FogExp2(0x070810, 0.015);
+const camera = new THREE.PerspectiveCamera(53, 2, 0.1, 600);
+camera.position.set(0, 14, 44);
 const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 document.getElementById('scene').appendChild(renderer.domElement);
 let WW=1280, HH=720;
 function resize(){const el=document.getElementById('scene');WW=el.clientWidth||innerWidth||1280;HH=el.clientHeight||innerHeight||720;camera.aspect=WW/HH;camera.updateProjectionMatrix();renderer.setSize(WW,HH);}
-
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping=true; controls.dampingFactor=0.06; controls.autoRotate=true; controls.autoRotateSpeed=0.42;
-controls.minDistance=18; controls.maxDistance=85; controls.maxPolarAngle=Math.PI*0.52; controls.target.set(0,5,0);
+controls.enableDamping=true; controls.dampingFactor=0.06; controls.autoRotate=true; controls.autoRotateSpeed=0.4;
+controls.minDistance=18; controls.maxDistance=95; controls.maxPolarAngle=Math.PI*0.52; controls.target.set(0,5,0);
 
 scene.add(new THREE.AmbientLight(0x2a3560, 1.15));
-const key=new THREE.PointLight(0xaab6ff,1400,300); key.position.set(0,34,12); scene.add(key);
-const rim=new THREE.PointLight(0x2a6cff,500,300); rim.position.set(-26,8,-24); scene.add(rim);
+const key=new THREE.PointLight(0xaab6ff,1500,320); key.position.set(0,36,14); scene.add(key);
+const rim=new THREE.PointLight(0x2a6cff,520,320); rim.position.set(-28,8,-26); scene.add(rim);
 
 function glowTex(){const s=128,cv=document.createElement('canvas');cv.width=cv.height=s;const c=cv.getContext('2d');
   const g=c.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.25,'rgba(255,255,255,.55)');g.addColorStop(1,'rgba(255,255,255,0)');
   c.fillStyle=g;c.fillRect(0,0,s,s);return new THREE.CanvasTexture(cv);}
 const GLOW=glowTex();
 
-// estrellas
-(function(){const n=1600,g=new THREE.BufferGeometry(),p=new Float32Array(n*3);
-  for(let i=0;i<n;i++){const r=110+Math.random()*160,t=Math.random()*6.28,ph=Math.acos(2*Math.random()-1);
+(function(){const n=1500,g=new THREE.BufferGeometry(),p=new Float32Array(n*3);
+  for(let i=0;i<n;i++){const r=120+Math.random()*170,t=Math.random()*6.28,ph=Math.acos(2*Math.random()-1);
     p[i*3]=r*Math.sin(ph)*Math.cos(t);p[i*3+1]=r*Math.cos(ph)*.5;p[i*3+2]=r*Math.sin(ph)*Math.sin(t);}
   g.setAttribute('position',new THREE.BufferAttribute(p,3));
   scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x8892c8,size:.5,transparent:true,opacity:.7})));})();
 
-// piso del espacio (la "oficina")
-const floor=new THREE.Mesh(new THREE.CircleGeometry(30,64),new THREE.MeshStandardMaterial({color:0x0c1024,metalness:.4,roughness:.7,transparent:true,opacity:.85}));
-floor.rotation.x=-Math.PI/2; floor.position.y=-0.02; scene.add(floor);
-const grid=new THREE.PolarGridHelper(28,24,7,72,0x2b3566,0x171d3a); grid.material.opacity=.4; grid.material.transparent=true; scene.add(grid);
+const floor=new THREE.Mesh(new THREE.CircleGeometry(34,64),new THREE.MeshStandardMaterial({color:0x0b0f22,metalness:.4,roughness:.75,transparent:true,opacity:.85}));
+floor.rotation.x=-Math.PI/2; scene.add(floor);
+const gridflat=new THREE.GridHelper(64,32,0x222b55,0x151b38); gridflat.material.opacity=.0; gridflat.material.transparent=true; scene.add(gridflat);
+const grid=new THREE.PolarGridHelper(30,24,7,72,0x2b3566,0x171d3a); grid.material.opacity=.4; grid.material.transparent=true; scene.add(grid);
 
-// ---- TÚNEL DE CONTEXTO (centro): portal + vórtice de partículas + núcleo ----
+// TUNEL DE CONTEXTO
 const TUN=new THREE.Vector3(0,6.5,0);
 const tunnel=new THREE.Group(); tunnel.position.copy(TUN); scene.add(tunnel);
-const portal=new THREE.Mesh(new THREE.TorusGeometry(3.4,0.28,16,64),new THREE.MeshStandardMaterial({color:0x24306a,emissive:0x5e7bff,emissiveIntensity:1.1,metalness:.7,roughness:.25}));
-tunnel.add(portal);
+tunnel.add(new THREE.Mesh(new THREE.TorusGeometry(3.4,0.28,16,64),new THREE.MeshStandardMaterial({color:0x24306a,emissive:0x5e7bff,emissiveIntensity:1.1,metalness:.7,roughness:.25})));
 const portal2=new THREE.Mesh(new THREE.TorusGeometry(2.4,0.12,12,64),new THREE.MeshBasicMaterial({color:0x9fb4ff,transparent:true,opacity:.6})); tunnel.add(portal2);
 const tcore=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0x7e8cff,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false})); tcore.scale.set(9,9,1); tunnel.add(tcore);
-// vórtice de partículas que caen al túnel
 const VN=260, vg=new THREE.BufferGeometry(), vpos=new Float32Array(VN*3), vph=new Float32Array(VN);
-for(let i=0;i<VN;i++){vph[i]=Math.random();vpos[i*3]=0;vpos[i*3+1]=0;vpos[i*3+2]=0;}
+for(let i=0;i<VN;i++)vph[i]=Math.random();
 vg.setAttribute('position',new THREE.BufferAttribute(vpos,3));
-const vortex=new THREE.Points(vg,new THREE.PointsMaterial({color:0x9fb4ff,size:.28,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));
-tunnel.add(vortex);
+tunnel.add(new THREE.Points(vg,new THREE.PointsMaterial({color:0x9fb4ff,size:.28,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false})));
 
-// ---- formas de avatar ----
 function buildForm(f,col){
-  const mat=new THREE.MeshStandardMaterial({color:col,emissive:col,emissiveIntensity:.35,metalness:.5,roughness:.3,flatShading:true});
+  const mat=new THREE.MeshStandardMaterial({color:col,emissive:col,emissiveIntensity:.3,metalness:.5,roughness:.3,flatShading:true});
   let geo;
   switch(f){case 'dodeca':geo=new THREE.DodecahedronGeometry(1.1,0);break;case 'ico':geo=new THREE.IcosahedronGeometry(1.1,0);break;
     case 'octa':geo=new THREE.OctahedronGeometry(1.25,0);break;case 'knot':geo=new THREE.TorusKnotGeometry(.68,.26,64,8);break;
     case 'cube':geo=new THREE.BoxGeometry(1.5,1.5,1.5);break;case 'cone':geo=new THREE.ConeGeometry(1,1.9,6);break;
     case 'ring':geo=new THREE.TorusGeometry(.95,.32,10,28);break;case 'prism':geo=new THREE.CylinderGeometry(0,1.1,2.1,3);break;
     case 'spike':geo=new THREE.OctahedronGeometry(1.35,0);break;default:geo=new THREE.IcosahedronGeometry(1.05,0);}
-  const grp=new THREE.Group();
-  if(f==='cluster'||f==='stack'){const parts=f==='stack'?4:6;for(let i=0;i<parts;i++){
-      const pm=new THREE.Mesh(f==='stack'?new THREE.BoxGeometry(1.4,.32,1.4):new THREE.IcosahedronGeometry(.42+Math.random()*.45,0),mat.clone());
+  const grp=new THREE.Group(); const mats=[mat];
+  if(f==='cluster'||f==='stack'){const parts=f==='stack'?4:6;for(let i=0;i<parts;i++){const mm=mat.clone();mats.push(mm);
+      const pm=new THREE.Mesh(f==='stack'?new THREE.BoxGeometry(1.4,.32,1.4):new THREE.IcosahedronGeometry(.42+Math.random()*.45,0),mm);
       if(f==='stack')pm.position.y=i*.46-.7;else pm.position.set((Math.random()-.5)*1.5,(Math.random()-.5)*1.5,(Math.random()-.5)*1.5);grp.add(pm);}}
   else if(f==='cross'){grp.add(new THREE.Mesh(new THREE.BoxGeometry(.48,2,.48),mat));grp.add(new THREE.Mesh(new THREE.BoxGeometry(1.4,.48,.48),mat));}
   else{const m=new THREE.Mesh(geo,mat);grp.add(m);grp.add(new THREE.LineSegments(new THREE.WireframeGeometry(geo),new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.5})));}
-  return grp;
+  grp.userData.mats=mats; return grp;
 }
-// ---- props de oficina (procedurales) ----
 function buildProp(type,col){
   const g=new THREE.Group(); const m=new THREE.MeshStandardMaterial({color:0x20264a,emissive:col,emissiveIntensity:.18,metalness:.5,roughness:.5});
   const em=new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.75});
@@ -192,122 +219,175 @@ function buildProp(type,col){
     case 'flask':{g.add(new THREE.Mesh(new THREE.CylinderGeometry(.28,.5,1,12),em));const n=new THREE.Mesh(new THREE.CylinderGeometry(.14,.14,.5,10),m);n.position.y=.7;g.add(n);break;}
     case 'molecule':{const c=new THREE.Mesh(new THREE.SphereGeometry(.32,14,14),em);c.position.y=.9;g.add(c);for(let i=0;i<3;i++){const a=i/3*6.28;const s=new THREE.Mesh(new THREE.SphereGeometry(.2,12,12),m);s.position.set(Math.cos(a)*.7,.9+Math.sin(a)*.4,Math.sin(a)*.3);g.add(s);}break;}
     case 'printer':{g.add(new THREE.Mesh(new THREE.BoxGeometry(1.2,1.2,1.2),m));const bed=new THREE.Mesh(new THREE.BoxGeometry(.9,.05,.9),em);bed.position.y=.4;g.add(bed);break;}
-    case 'books':{for(let i=0;i<5;i++){const bk=new THREE.Mesh(new THREE.BoxGeometry(.22,.9,.7),i%2?em:m);bk.position.set(-.5+i*.24,.9,0);bk.rotation.z=(Math.random()-.5)*.1;g.add(bk);}break;}
+    case 'books':{for(let i=0;i<5;i++){const bk=new THREE.Mesh(new THREE.BoxGeometry(.22,.9,.7),i%2?em:m);bk.position.set(-.5+i*.24,.9,0);g.add(bk);}break;}
     case 'rocket':{const b=new THREE.Mesh(new THREE.CylinderGeometry(.3,.3,1.1,12),m);b.position.y=.9;g.add(b);const t=new THREE.Mesh(new THREE.ConeGeometry(.3,.5,12),em);t.position.y=1.6;g.add(t);break;}
-    case 'chart':{for(let i=0;i<4;i++){const bar=new THREE.Mesh(new THREE.BoxGeometry(.28,.4+i*.35,.28),em);bar.position.set(-.6+i*.4,.2+ (i*.35)/2,0);g.add(bar);}break;}
+    case 'chart':{for(let i=0;i<4;i++){const bar=new THREE.Mesh(new THREE.BoxGeometry(.28,.4+i*.35,.28),em);bar.position.set(-.6+i*.4,.2+(i*.35)/2,0);g.add(bar);}break;}
     case 'blocks':{for(let i=0;i<4;i++){const bl=new THREE.Mesh(new THREE.BoxGeometry(.5,.5,.5),i%2?em:m);bl.position.set((i%2)*.5-.25,.25+Math.floor(i/2)*.5,0);g.add(bl);}break;}
     case 'ring':{const t=new THREE.Mesh(new THREE.TorusGeometry(.7,.09,10,32),em);t.position.y=.9;t.rotation.x=Math.PI/2.4;g.add(t);break;}
     case 'mic':{g.add(new THREE.Mesh(new THREE.CylinderGeometry(.05,.05,1,8),m));const h=new THREE.Mesh(new THREE.SphereGeometry(.22,12,12),em);h.position.y=.6;g.add(h);break;}
-    default:{const c=new THREE.Mesh(new THREE.IcosahedronGeometry(.5,0),em);c.position.y=.7;g.add(c);const c2=new THREE.Mesh(new THREE.IcosahedronGeometry(.3,0),m);c2.position.set(.5,.4,.3);g.add(c2);}
+    default:{const c=new THREE.Mesh(new THREE.IcosahedronGeometry(.5,0),em);c.position.y=.7;g.add(c);}
   }
   return g;
 }
 
-const agents=[];
-const R=17;
+const agents=[]; const R=17;
 ROSTER.forEach((a,i)=>{
   const look=LOOKS[a.id]||{c:0x8899ff,f:'ico'};
   const ang=(i/ROSTER.length)*Math.PI*2;
-  const station=new THREE.Vector3(Math.cos(ang)*R, 0, Math.sin(ang)*R);
-  // oficina: base/console
+  const station=new THREE.Vector3(Math.cos(ang)*R,0,Math.sin(ang)*R);
   const base=new THREE.Group(); base.position.copy(station); scene.add(base);
   const pad=new THREE.Mesh(new THREE.CylinderGeometry(2.2,2.5,.35,6),new THREE.MeshStandardMaterial({color:0x131936,emissive:look.c,emissiveIntensity:.12,metalness:.5,roughness:.5}));
   pad.position.y=.17; base.add(pad);
   const ringGlow=new THREE.Mesh(new THREE.TorusGeometry(2.15,.05,8,40),new THREE.MeshBasicMaterial({color:look.c,transparent:true,opacity:.5}));
   ringGlow.rotation.x=Math.PI/2; ringGlow.position.y=.36; base.add(ringGlow);
   const prop=buildProp(a.prop,look.c); prop.position.set(0,.35,-.6); prop.scale.setScalar(.8); base.add(prop);
-  base.rotation.y=-ang+Math.PI; // mirar al centro
-  // avatar (viaja; su posición se anima)
+  base.rotation.y=-ang+Math.PI;
   const av=new THREE.Group(); const body=buildForm(look.f,look.c); av.add(body);
+  av.userData.agentId=a.id;
   const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:look.c,transparent:true,opacity:a.active?.85:.28,blending:THREE.AdditiveBlending,depthWrite:false}));
   halo.scale.set(a.active?6.5:4,a.active?6.5:4,1); av.add(halo);
-  const homeY=2.7;
-  av.position.set(station.x, homeY, station.z);
-  scene.add(av);
-  agents.push({...a,look,station,av,body,halo,ang,homeY,phase:Math.random()*6.28,
-    st:'dock', t:Math.random()*4, dur:3+Math.random()*4});
+  const homeY=2.7; av.position.set(station.x,homeY,station.z); scene.add(av);
+  // linea de contexto (activos): oficina -> tunel
+  let link=null;
+  if(a.active){
+    const g=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(station.x,homeY,station.z),TUN.clone()]);
+    link=new THREE.Line(g,new THREE.LineBasicMaterial({color:look.c,transparent:true,opacity:.2}));
+    scene.add(link);
+  }
+  agents.push({...a,look,station,base,pad,ringGlow,av,body,halo,link,ang,homeY,phase:Math.random()*6.28,
+    st:'dock',t:Math.random()*4,dur:3+Math.random()*4,shown:1});
 });
 
-// nubes de diálogo
+// nubes de doble registro
 const labelsEl=document.getElementById('labels');
 agents.forEach(a=>{
   const el=document.createElement('div'); el.className='bub'+(a.active?'':' idle');
   const hex='#'+a.look.c.toString(16).padStart(6,'0');
   el.innerHTML='<div class="card"><div class="nm"><span class="dot" style="color:'+hex+'"></span>'+a.label+'</div>'+
-    '<div class="th"></div></div><div class="tail"></div>';
-  labelsEl.appendChild(el); a.el=el; a.th=el.querySelector('.th');
+    '<div class="th">'+a.frase+'</div><div class="now"></div></div><div class="tail"></div>';
+  labelsEl.appendChild(el); a.el=el; a.now=el.querySelector('.now');
 });
 
-// curva de viaje estación -> túnel
-function travelPoint(a, u){ // u 0..1
-  const s=a.station, mid=new THREE.Vector3((s.x)*0.4, 9+Math.sin(a.phase)*2, (s.z)*0.4);
-  const p0=new THREE.Vector3(s.x,a.homeY,s.z), p2=TUN.clone();
-  const om=1-u;
-  return new THREE.Vector3(
-    om*om*p0.x+2*om*u*mid.x+u*u*p2.x,
-    om*om*p0.y+2*om*u*mid.y+u*u*p2.y,
-    om*om*p0.z+2*om*u*mid.z+u*u*p2.z);
+// INSPECTOR
+const insp=document.getElementById('insp');
+function openInsp(a){
+  document.getElementById('i_role').textContent=a.focus;
+  document.getElementById('i_name').textContent=a.label;
+  const hex='#'+a.look.c.toString(16).padStart(6,'0');
+  document.getElementById('i_dot').style.color=hex;
+  document.getElementById('i_focus').textContent=a.active?'● en tarea':'○ en su oficina';
+  document.getElementById('i_frase').textContent='“'+a.frase+'”';
+  document.getElementById('i_off').textContent=a.office;
+  document.getElementById('i_move').textContent=a.move||'—';
+  document.getElementById('i_pide').textContent=a.pide||'—';
+  insp.classList.add('open'); controls.autoRotate=false;
 }
+document.getElementById('inspx').onclick=()=>insp.classList.remove('open');
+const ray=new THREE.Raycaster(); const mouse=new THREE.Vector2();
+renderer.domElement.addEventListener('pointerdown',e=>{
+  mouse.x=(e.clientX/WW)*2-1; mouse.y=-(e.clientY/HH)*2+1; ray.setFromCamera(mouse,camera);
+  for(const a of agents){const hit=ray.intersectObject(a.av,true); if(hit.length){openInsp(a);return;}}
+});
 
-const _v=new THREE.Vector3();
-let t=0;
+// FEED
+const EVENTS=[]; const feedrows=document.getElementById('feedrows');
+function fmt(){const d=new Date();return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);}
+function pushEvent(txt){EVENTS.unshift({t:fmt(),txt}); if(EVENTS.length>7)EVENTS.pop();
+  feedrows.innerHTML=EVENTS.map(e=>'<div class="row"><span class="t">'+e.t+'</span> '+e.txt+'</div>').join('');}
+pushEvent('consejo en línea · '+agents.filter(a=>a.active).length+' agentes en tarea');
+
+// CHIPS / filtros
+let flt={activos:false,roto:false,planta:false};
+document.querySelectorAll('#chips .chip').forEach(ch=>ch.addEventListener('click',()=>{
+  const f=ch.dataset.f; flt[f]=!flt[f]; ch.classList.toggle('on',flt[f]);
+  if(f==='planta'){controls.autoRotate=false;}
+}));
+
+// TORRES de proyectos (espejo vivo) — se crean al cargar state.json
+const towers=[];
+function buildTowers(){
+  const n=PROJECTS.length; if(!n)return;
+  const RR=27;
+  PROJECTS.forEach((p,i)=>{
+    const ang=(i/n)*Math.PI*2 + Math.PI/n;
+    const h=1.5+ (p.progress||.5)*7;
+    const col=HCOL[p.health]||0x8899ff;
+    const t=new THREE.Mesh(new THREE.BoxGeometry(1.6,h,1.6),new THREE.MeshStandardMaterial({color:0x10162e,emissive:col,emissiveIntensity:.5,metalness:.5,roughness:.4}));
+    t.position.set(Math.cos(ang)*RR,h/2,Math.sin(ang)*RR); scene.add(t);
+    const cap=new THREE.Mesh(new THREE.BoxGeometry(1.7,.18,1.7),new THREE.MeshBasicMaterial({color:col}));
+    cap.position.set(Math.cos(ang)*RR,h+.1,Math.sin(ang)*RR); scene.add(cap);
+    towers.push({mesh:t,p,col});
+  });
+  const c=(k)=>PROJECTS.filter(p=>p.health===k).length;
+  document.getElementById('healthbox').innerHTML=
+    '<span class="k" style="color:#5ef0a8"></span>'+c('ok')+' sanos'+
+    '<span class="k" style="color:#ffcf5a"></span>'+c('ciego')+' ciegos'+
+    '<span class="k" style="color:#ff6a7a"></span>'+c('roto')+' rotos';
+}
+fetch('state.json').then(r=>r.json()).then(d=>{PROJECTS=d.projects||[]; buildTowers();
+  document.getElementById('statesrc').textContent='state.json · '+(d.generatedAt||'').slice(0,16).replace('T',' ');
+  const roto=PROJECTS.filter(p=>p.health==='roto').map(p=>p.label);
+  if(roto.length)pushEvent('⚠ salud: '+roto.length+' funnel(s) en rojo — '+roto[0]);
+}).catch(()=>{document.getElementById('statesrc').textContent='(sin state.json)';});
+
+// RIPPLES
+const ripples=[];
+function ripple(pos,col){const s=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:col,transparent:true,opacity:.9,blending:THREE.AdditiveBlending,depthWrite:false}));
+  s.position.copy(pos); s.scale.set(2,2,1); scene.add(s); ripples.push({s,t:0});}
+
+function travelPoint(a,u){const s=a.station,mid=new THREE.Vector3(s.x*0.4,9+Math.sin(a.phase)*2,s.z*0.4),p0=new THREE.Vector3(s.x,a.homeY,s.z),p2=TUN.clone(),om=1-u;
+  return new THREE.Vector3(om*om*p0.x+2*om*u*mid.x+u*u*p2.x, om*om*p0.y+2*om*u*mid.y+u*u*p2.y, om*om*p0.z+2*om*u*mid.z+u*u*p2.z);}
+
+const _v=new THREE.Vector3(); let t=0;
+function setEmissive(a,val){(a.body.userData.mats||[]).forEach(m=>{m.emissiveIntensity=val;});}
 function animate(){
   requestAnimationFrame(animate);
   try{
     t+=0.016;
     tunnel.rotation.z+=0.006; portal2.rotation.z-=0.02; tcore.material.opacity=.7+Math.sin(t*2)*.15;
-    // vórtice
-    const vp=vortex.geometry.attributes.position.array;
-    for(let i=0;i<VN;i++){let ph=(vph[i]+t*0.16)%1; const rad=3.6*(1-ph); const a2=ph*20+i;
-      vp[i*3]=Math.cos(a2)*rad; vp[i*3+1]=(0.5-ph)*3.5; vp[i*3+2]=Math.sin(a2)*rad;}
-    vortex.geometry.attributes.position.needsUpdate=true;
+    const vp=vg.attributes.position.array;
+    for(let i=0;i<VN;i++){let ph=(vph[i]+t*0.16)%1; const rad=3.6*(1-ph),a2=ph*20+i; vp[i*3]=Math.cos(a2)*rad; vp[i*3+1]=(0.5-ph)*3.5; vp[i*3+2]=Math.sin(a2)*rad;}
+    vg.attributes.position.needsUpdate=true;
+    // vista de planta (chip)
+    const wantTop=flt.planta;
+    if(wantTop){camera.position.y+=(38-camera.position.y)*0.04; gridflat.material.opacity+=(0.5-gridflat.material.opacity)*0.05;}
+    else{gridflat.material.opacity+=(0-gridflat.material.opacity)*0.05;}
 
     agents.forEach(a=>{
       a.body.rotation.y+=a.active?0.02:0.006; a.body.rotation.x+=a.active?0.009:0.002;
-      let thought='';
+      let now='';
       if(a.active){
         a.t+=0.016;
-        if(a.st==='dock'){ // en oficina
-          const bob=Math.sin(t*1.5+a.phase)*0.5;
-          a.av.position.set(a.station.x,a.homeY+bob,a.station.z);
-          thought='<span class="cur">'+(a.frase||a.focus)+'</span>';
-          if(a.t>a.dur){a.st='out';a.t=0;}
-        } else if(a.st==='out'){ // viaja al túnel
-          const u=Math.min(a.t/1.7,1); a.av.position.copy(travelPoint(a,u));
-          const sc=1-u*0.55; a.av.scale.setScalar(sc); a.halo.material.opacity=.85+u*.1;
-          thought='→ entrando al túnel de contexto…';
-          if(a.t>1.7){a.st='in';a.t=0;}
-        } else if(a.st==='in'){ // dentro del túnel (trabajando)
-          a.av.position.copy(TUN); a.av.scale.setScalar(0.28);
-          a.av.position.y=TUN.y+Math.sin(t*8)*0.4;
-          thought='procesando la tarea…';
-          if(a.t>1.3){a.st='back';a.t=0;}
-        } else { // vuelve a su oficina
-          const u=Math.min(a.t/1.7,1); a.av.position.copy(travelPoint(a,1-u));
-          a.av.scale.setScalar(0.45+u*0.55);
-          thought='← volviendo con el resultado';
-          if(a.t>1.7){a.st='dock';a.t=0;a.dur=3+Math.random()*4;a.av.scale.setScalar(1);}
-        }
-        a.halo.material.opacity=(a.st==='in')?(.9+Math.sin(t*6)*.1):a.halo.material.opacity;
-      } else { // inactivo: en su oficina
-        const bob=Math.sin(t*0.9+a.phase)*0.26;
-        a.av.position.set(a.station.x,a.homeY+bob,a.station.z);
-        thought=a.frase||'en su oficina';
-      }
+        if(a.st==='dock'){a.av.position.set(a.station.x,a.homeY+Math.sin(t*1.5+a.phase)*.5,a.station.z); now='en su oficina'; setEmissive(a,.55+Math.sin(t*2+a.phase)*.15); if(a.t>a.dur){a.st='out';a.t=0;pushEvent(a.label+' → entra al túnel de contexto');}}
+        else if(a.st==='out'){const u=Math.min(a.t/1.7,1);a.av.position.copy(travelPoint(a,u));a.av.scale.setScalar(1-u*.55); now='→ trayendo contexto'; setEmissive(a,.7+u*.6); if(a.t>1.7){a.st='in';a.t=0;}}
+        else if(a.st==='in'){a.av.position.copy(TUN);a.av.position.y=TUN.y+Math.sin(t*8)*.4;a.av.scale.setScalar(.28); now='procesando la tarea…'; setEmissive(a,1.4+Math.sin(t*10)*.3); if(a.t>1.3){a.st='back';a.t=0;}}
+        else {const u=Math.min(a.t/1.7,1);a.av.position.copy(travelPoint(a,1-u));a.av.scale.setScalar(.45+u*.55); now='← vuelve con el resultado'; setEmissive(a,1.1-u*.5); if(a.t>1.7){a.st='dock';a.t=0;a.dur=3+Math.random()*4;a.av.scale.setScalar(1);ripple(a.av.position.clone(),a.look.c);pushEvent(a.label+' ✓ entregó — '+a.focus);}}
+        a.halo.material.opacity=.7+Math.sin(t*3+a.phase)*.2;
+        if(a.link){a.link.material.opacity=.15+Math.abs(Math.sin(t*2+a.phase))*.35; const lp=a.link.geometry.attributes.position; lp.setXYZ(0,a.av.position.x,a.av.position.y,a.av.position.z); lp.needsUpdate=true;}
+      } else { a.av.position.set(a.station.x,a.homeY+Math.sin(t*.9+a.phase)*.26,a.station.z); setEmissive(a,.22); now='en su oficina'; }
+      // filtros
+      let dim=false;
+      if(flt.activos && !a.active) dim=true;
+      const show=dim?0:1; a.shown+=(show-a.shown)*0.15;
+      a.halo.material.opacity*=a.shown; a.ringGlow.material.opacity=.5*a.shown;
       // nube
       _v.copy(a.av.position); _v.y+=2.3; _v.project(camera);
-      const vis=_v.z<1;
-      a.el.style.opacity=vis?1:0;
+      const vis=_v.z<1 && a.shown>0.4;
+      a.el.style.opacity=vis?a.shown:0;
       if(vis){a.el.style.left=((_v.x*.5+.5)*WW)+'px'; a.el.style.top=((-_v.y*.5+.5)*HH)+'px';}
-      if(a.th && a.th.__last!==thought){a.th.innerHTML=thought; a.th.__last=thought;}
+      if(a.now && a.now.__l!==now){a.now.textContent=now; a.now.__l=now;}
     });
+    // torres pulsan por salud
+    towers.forEach((tw,i)=>{tw.mesh.material.emissiveIntensity=.4+Math.abs(Math.sin(t*(tw.p.health==='roto'?4:1.2)+i))* (tw.p.health==='roto'?.5:.2);});
+    // ripples
+    for(let i=ripples.length-1;i>=0;i--){const rp=ripples[i]; rp.t+=0.03; rp.s.scale.setScalar(2+rp.t*10); rp.s.material.opacity=Math.max(0,.9-rp.t); if(rp.t>1){scene.remove(rp.s);ripples.splice(i,1);}}
     controls.update();
     renderer.render(scene,camera);
   }catch(e){ if(!window.__E){window.__E=String((e&&e.stack)||e); console.error('animate error:',e);} }
 }
 resize(); new ResizeObserver(resize).observe(document.getElementById('scene')); addEventListener('resize',resize);
 animate();
-addEventListener('pointerdown',()=>{controls.autoRotate=false;const h=document.getElementById('hint');if(h)h.style.opacity=0;});
+addEventListener('pointerdown',()=>{const h=document.getElementById('hint');if(h)h.style.opacity=0;});
 </script>
 </body>
 </html>
