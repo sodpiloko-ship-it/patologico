@@ -87,6 +87,17 @@
   .foot a{color:var(--acc);text-decoration:none}
   .toast{position:fixed;z-index:30;left:50%;bottom:74px;transform:translateX(-50%);background:#0d1024;border:1px solid var(--acc);border-radius:12px;padding:11px 17px;font-size:13px;pointer-events:none;opacity:0;transition:.3s}
   .toast.show{opacity:1}
+  #headline{position:fixed;z-index:9;top:74px;left:50%;transform:translateX(-50%) translateY(-14px);max-width:min(560px,92vw);text-align:center;background:linear-gradient(90deg,rgba(255,224,138,.14),rgba(201,169,255,.14));border:1px solid rgba(255,224,138,.4);border-radius:14px;padding:11px 20px;font-size:15px;font-weight:600;letter-spacing:-.01em;pointer-events:none;opacity:0;transition:.4s;backdrop-filter:blur(6px)}
+  #headline.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  #huella{position:fixed;z-index:20;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(6,8,16,.72);backdrop-filter:blur(4px);pointer-events:auto}
+  #huella.open{display:flex}
+  #huella .card{background:#0d1024;border:1px solid var(--line);border-radius:18px;padding:24px;width:min(560px,94vw);max-height:88vh;overflow-y:auto}
+  #huella h3{font-size:21px;margin-bottom:3px}#huella .x{float:right;font-size:22px;color:var(--mut);cursor:pointer}
+  #huella .lead{color:var(--mut);font-size:13px;margin-bottom:16px;line-height:1.5}
+  .hcanvas{width:100%;border-radius:12px;border:1px solid var(--line);background:#070810;display:block}
+  #huella .acts{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+  #huella .btn2{font-weight:700;font-size:13px;border-radius:11px;padding:11px 16px;cursor:pointer;border:1px solid var(--line);background:var(--acc);color:#0a1020;user-select:none;text-decoration:none;display:inline-block}
+  #huella .btn2.ghost{background:transparent;color:var(--ink)}
   @media(max-width:760px){.sub{display:none}#feed{display:none}.bub .th{display:none}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -98,9 +109,11 @@
 <div id="hudbtns">
   <div class="btn primary" id="b-incubar"><span class="ic">🥚</span>Incubar</div>
   <div class="btn" id="b-criar"><span class="ic">🧬</span>Criar</div>
+  <div class="btn" id="b-huella"><span class="ic">✎</span>Tu Huella</div>
   <div class="btn" id="b-codice"><span class="ic">📖</span>Códice</div>
 </div>
 
+<div id="headline"></div>
 <div id="feed"><div class="h">Crónica del mundo</div><div id="feedrows"></div></div>
 
 <aside id="insp"><span class="x" id="inspx">×</span>
@@ -134,6 +147,14 @@
 
 <aside id="codice"></aside>
 
+<div id="huella"><div class="card">
+  <span class="x" id="huellax">×</span>
+  <h3>✎ Tu Huella en el mundo</h3>
+  <div class="lead">Lo que cambió desde que entraste — atribuido a ti. Exporta la postal y compártela.</div>
+  <canvas class="hcanvas" id="hcanvas" width="1000" height="560"></canvas>
+  <div class="acts"><a class="btn2" id="h-png" download="mi-huella-camada.png">⬇ Descargar postal (PNG)</a><div class="btn2 ghost" id="h-close2">Cerrar</div></div>
+</div></div>
+
 <div class="toast" id="toast"></div>
 
 <div class="hud top">
@@ -147,6 +168,7 @@
     <div class="civbar"><i id="civfill"></i></div>
     <div class="moral"><div class="l" id="moral-l" style="width:50%"></div><div class="s" id="moral-s" style="width:50%"></div></div>
     <div class="civnums" id="civnums"></div>
+    <div class="civnums" id="ledger" style="color:#c9a9ff"></div>
   </div>
 </div>
 <div id="hint">clic en un habitante para conocerlo, enseñarle y sembrarle ideas · arrastra para girar</div>
@@ -274,6 +296,13 @@ log('el mundo despierta · '+agents.length+' habitantes');
 function toast(m){const el=document.getElementById('toast');el.textContent=m;el.classList.add('show');clearTimeout(el._h);el._h=setTimeout(()=>el.classList.remove('show'),2400);}
 
 let CIV=SAVE.civ||0;
+// --- Gauss: métricas legibles (R0 del meme) · Grok: titulares · snapshot para Tu Huella ---
+let _contagios=0,_charlas=0,R0=0;
+function dominantMeme(){const c={};agents.forEach(a=>c[a.idea.w]=(c[a.idea.w]||0)+1);let w='—',n=0;for(const k in c)if(c[k]>n){n=c[k];w=k;}return {w,n,pct:Math.round(n/agents.length*100)};}
+function snapshot(){const s=civStats(),dm=dominantMeme();return {civ:Math.round(CIV),obras:s.obras,ideas:s.diversidad,luz:agents.filter(a=>a.karma>15).length,som:agents.filter(a=>a.karma<-15).length,dom:dm.w,domPct:dm.pct};}
+const SNAP={t0:null,titulares:[]};
+let _conquistado='';
+function headline(txt){const el=document.getElementById('headline');el.textContent=txt;el.classList.add('show');clearTimeout(el._h);el._h=setTimeout(()=>el.classList.remove('show'),5200);SNAP.titulares.unshift(txt);if(SNAP.titulares.length>6)SNAP.titulares.pop();}
 function civStats(){const ideas=new Set(agents.map(a=>a.idea.w));
   return {diversidad:ideas.size,obras:agents.reduce((s,a)=>s+a.obras,0),cohesion:agents.reduce((s,a)=>s+a.vinculo,0)/agents.length,netLuz:agents.reduce((s,a)=>s+a.karma,0)/agents.length};}
 function updateCiv(){const s=civStats();
@@ -283,7 +312,14 @@ function updateCiv(){const s=civStats();
   const luz=agents.filter(a=>a.karma>15).length,som=agents.filter(a=>a.karma<-15).length,tot=Math.max(1,luz+som);
   document.getElementById('moral-l').style.width=(luz/tot*100)+'%';
   document.getElementById('moral-s').style.width=(som/tot*100)+'%';
-  document.getElementById('civnums').textContent=Math.round(CIV)+' · '+s.obras+' obras · '+s.diversidad+' ideas · '+luz+'☀ '+som+'☾';}
+  document.getElementById('civnums').textContent=Math.round(CIV)+' · '+s.obras+' obras · '+s.diversidad+' ideas · '+luz+'☀ '+som+'☾';
+  // Gauss: números en pantalla (R0 del meme + idea dominante)
+  R0=_charlas?+(_contagios/_charlas).toFixed(2):0;_contagios=0;_charlas=0;
+  const dm=dominantMeme();
+  document.getElementById('ledger').textContent='idea dominante «'+dm.w+'» '+dm.pct+'% · contagio R0='+R0.toFixed(2)+' · Civ = obras·0.7 + ideas·3 + unión·0.25 + luz·0.4';
+  // Grok: titular cuando un meme conquista la mayoría
+  if(dm.pct>=56 && _conquistado!==dm.w){_conquistado=dm.w;headline('«'+dm.w+'» conquistó el mundo — '+dm.pct+'% de las almas la repiten');}
+  else if(dm.pct<45)_conquistado='';}
 
 const insp=document.getElementById('insp');let cur=null;
 function dominantNeed(a){let mx='energia',mv=-1;for(const n of NEEDS){const d=1-a.needs[n];if(d>mv){mv=d;mx=n;}}return mx;}
@@ -311,7 +347,11 @@ function teach(a,val){if(!a)return;
   SAVE.karma[a.g.id]=Math.round(a.karma);save();
   ripple(a.av.position.clone(),val>0?0xffe08a:0xff6a7a);
   log('enseñaste '+(val>0?'luz':'sombra')+' a '+a.g.name+' mientras '+BEH[a.st]+' → '+(val>0?'se ilumina':'se ensombrece'),val>0?'luz':'sombra');
-  toast((val>0?'✨ Luz':'🔥 Sombra')+' → '+a.g.name);refreshInsp(a);updateCiv();}
+  toast((val>0?'✨ Luz':'🔥 Sombra')+' → '+a.g.name);
+  // legibilidad inmediata: titular al cruzar umbral (sin esperar al loop)
+  if(a.karma>60&&!a.apostol){a.apostol=true;headline('nació un apóstol: '+a.g.name+' irradia «'+a.idea.w+'»');}
+  if((a.grieta>70||a.karma<-70)&&!a.agrietado){a.agrietado=true;headline(a.g.name+' se agrietó — la sombra lo quebró');}
+  refreshInsp(a);updateCiv();}
 document.getElementById('t-luz').onclick=()=>teach(cur,1);
 document.getElementById('t-sombra').onclick=()=>teach(cur,-1);
 
@@ -373,11 +413,11 @@ function buildObra(a){const col=a.idea.v>0?0xffe08a:a.idea.v<0?0xff6a7a:a.g.c;co
   if(OBRAS.length>OBRAS_CAP){const old=OBRAS.shift();scene.remove(old);old.geometry.dispose();old.material.dispose();}
   a.obras++;}
 
-function converse(a,b){const abre=(b.mine?.5:.35)+b.vinculo/300+(a.karma>40?.2:0);
+function converse(a,b){_charlas++;const abre=(b.mine?.5:.35)+b.vinculo/300+(a.karma>40?.2:0);
   if(Math.random()<abre){let idea=a.idea;
     if(a.agrietado&&Math.random()<.6){const opp=IDEAS.filter(x=>x.v===-Math.sign(a.idea.v||1));idea=opp.length?pick2(opp):a.idea;}
-    if(b.idea.w!==idea.w){b.idea=idea;b._justSeeded=1.0;b.karma=Math.max(-100,Math.min(100,b.karma+idea.v*1.5));
-      if(Math.random()<0.12)log(a.g.name+' contagió «'+idea.w+'» a '+b.g.name,idea.v>0?'luz':idea.v<0?'sombra':'');}
+    if(b.idea.w!==idea.w){b.idea=idea;b._justSeeded=1.0;_contagios++;b.karma=Math.max(-100,Math.min(100,b.karma+idea.v*1.5));
+      if(Math.random()<0.14)log((a.apostol?'el apóstol ':'')+a.g.name+' contagió «'+idea.w+'» a '+b.g.name,idea.v>0?'luz':idea.v<0?'sombra':'');}
     b.vinculo=Math.min(100,b.vinculo+3);}}
 
 function phenotype(a){const k=a.karma;
@@ -385,7 +425,10 @@ function phenotype(a){const k=a.karma;
   a.aura.material.opacity=Math.min(.8,Math.abs(k)/140);a.aura.scale.setScalar(5+Math.abs(k)/22);
   const em=0.28+Math.max(0,k)/160-Math.max(0,-k)/300;
   (a.body.userData.mats||[]).forEach(m=>{m.emissiveIntensity=Math.max(.05,em);});
-  a.apostol=k>60;a.agrietado=a.grieta>70||k<-70;}
+  const ap=k>60, ag=(a.grieta>70||k<-70);
+  if(SNAP.t0){if(ap&&!a.apostol)headline('nació un apóstol: '+a.g.name+' irradia «'+a.idea.w+'»');
+    if(ag&&!a.agrietado)headline(a.g.name+' se agrietó — la sombra lo quebró');}
+  a.apostol=ap;a.agrietado=ag;}
 
 const _v=new THREE.Vector3();let t=0;
 function utility(a){for(const n of NEEDS)a.needs[n]=Math.max(0,a.needs[n]-0.0006*(0.5+Math.random()));
@@ -432,10 +475,35 @@ function animate(){requestAnimationFrame(animate);try{
   if((civTick++%30)===0)updateCiv();
   controls.update();renderer.render(scene,camera);
 }catch(e){if(!window.__E){window.__E=String((e&&e.stack)||e);console.error(e);}}}
+// ---------- Tu Huella (postal antes→después, exportable) ----------
+function drawHuella(){const cv=document.getElementById('hcanvas'),x=cv.getContext('2d'),W=cv.width,H=cv.height;
+  const now=snapshot(),t0=SNAP.t0||now;
+  const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'#0b0f22');g.addColorStop(1,'#140e1e');x.fillStyle=g;x.fillRect(0,0,W,H);
+  x.fillStyle='rgba(200,210,255,.5)';for(let i=0;i<90;i++){x.globalAlpha=Math.random()*.6+.1;x.fillRect(Math.random()*W,Math.random()*H,1.6,1.6);}x.globalAlpha=1;
+  x.fillStyle='#8b93b8';x.font='500 20px "IBM Plex Mono",monospace';x.fillText('CAMADA · TU HUELLA',44,58);
+  x.fillStyle='#eef1ff';x.font='700 42px "Space Grotesk",sans-serif';x.fillText('El mundo que moldeaste',44,110);
+  function metric(label,a,b,y,col){x.fillStyle='#8b93b8';x.font='500 15px "IBM Plex Mono",monospace';x.fillText(label,44,y);
+    x.font='700 26px "Space Grotesk",sans-serif';x.fillStyle='#c2cbf0';const pre=a+'   →   ';x.fillText(pre,330,y+2);
+    x.fillStyle=col||'#a9b6ff';x.fillText(''+b,330+x.measureText(pre).width,y+2);}
+  metric('Civilización',t0.civ,now.civ,192,'#5ef0a8');
+  metric('Almas de luz  ☀',t0.luz,now.luz,242,'#ffe08a');
+  metric('Almas de sombra  ☾',t0.som,now.som,292,'#ff6a7a');
+  metric('Ideas vivas',t0.ideas,now.ideas,342,'#a9b6ff');
+  x.fillStyle='#8b93b8';x.font='500 15px "IBM Plex Mono",monospace';x.fillText('Idea dominante',44,398);
+  x.fillStyle='#c9a9ff';x.font='700 25px "Space Grotesk",sans-serif';x.fillText('«'+now.dom+'» '+now.domPct+'%   ·   contagio R0 '+R0.toFixed(2),330,400);
+  x.fillStyle='#8b93b8';x.font='500 14px "IBM Plex Mono",monospace';x.fillText('LO QUE PASÓ',44,450);
+  x.fillStyle='#d7ceea';x.font='500 16px "Space Grotesk",sans-serif';
+  (SNAP.titulares.length?SNAP.titulares:['el mundo apenas despierta bajo tu mirada']).slice(0,3).forEach((h,i)=>x.fillText('·  '+String(h).slice(0,74),44,480+i*26));
+  x.fillStyle='#7f88a8';x.font='500 14px "IBM Plex Mono",monospace';x.fillText('patologicos.com/camada',44,H-26);
+  document.getElementById('h-png').href=cv.toDataURL('image/png');}
+document.getElementById('b-huella').onclick=()=>{drawHuella();document.getElementById('huella').classList.add('open');};
+document.getElementById('huellax').onclick=()=>document.getElementById('huella').classList.remove('open');
+document.getElementById('h-close2').onclick=()=>document.getElementById('huella').classList.remove('open');
+
 resize();new ResizeObserver(resize).observe(document.getElementById('scene'));addEventListener('resize',resize);
-updateCiv();animate();
+updateCiv();SNAP.t0=snapshot();animate();
 addEventListener('pointerdown',()=>{const h=document.getElementById('hint');if(h)h.style.opacity=0;});
-window.__vida={agents,SAVE,teach,seedIdea,openInsp,IDEAS,PALETTE,civStats,get civ(){return CIV;}};
+window.__vida={agents,SAVE,teach,seedIdea,openInsp,IDEAS,PALETTE,civStats,dominantMeme,snapshot,drawHuella,get civ(){return CIV;},get r0(){return R0;},get snap0(){return SNAP.t0;}};
 </script>
 </body>
 </html>
