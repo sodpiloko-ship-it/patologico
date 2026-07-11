@@ -4,51 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Consejo de PROCA · orquestación multi-agente en vivo</title>
-<meta name="description" content="Showcase 3D en vivo del consejo de agentes de IA de PROCA: cada agente con avatar propio, moviéndose según lo que hace, con nubes de diálogo de lo que piensa. Orquestación multi-agente, hecha por Patológicos.">
+<meta name="description" content="Showcase 3D del consejo de agentes de IA de PROCA: cada uno con su oficina y objetos, moviéndose en el espacio y viajando por un túnel de contexto para hacer sus tareas. Orquestación multi-agente, hecha por Patológicos.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://patologicos.com/consejo/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="El Consejo de PROCA · orquestación multi-agente en vivo">
-<meta property="og:description" content="16 agentes de IA con avatar 3D, moviéndose según lo que hacen y pensando en voz alta. Un showcase vivo de orquestación agéntica.">
+<meta property="og:description" content="Agentes de IA con oficina propia que viajan por un túnel de contexto para trabajar. Un showcase vivo de orquestación agéntica.">
 <meta property="og:url" content="https://patologicos.com/consejo/">
 <style>
-  :root{--bg:#080912;--ink:#eef1ff;--mut:#8b93b8;--line:rgba(150,170,255,.14)}
+  :root{--bg:#070810;--ink:#eef1ff;--mut:#8b93b8;--line:rgba(150,170,255,.14)}
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
   body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow:hidden}
   #scene{position:fixed;inset:0;z-index:1}
   canvas{display:block}
-  /* HUD */
   .hud{position:fixed;z-index:5;pointer-events:none}
-  .top{top:0;left:0;right:0;padding:22px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
-    background:linear-gradient(#080912cc,transparent)}
+  .top{top:0;left:0;right:0;padding:22px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;background:linear-gradient(#070810cc,transparent)}
   .brand{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mut)}
   .title{font-size:clamp(19px,2.6vw,27px);font-weight:600;letter-spacing:-.01em;margin-top:6px;line-height:1.12}
   .title b{color:#a9b6ff}
-  .sub{color:var(--mut);font-size:13.5px;margin-top:7px;max-width:44ch;line-height:1.5}
+  .sub{color:var(--mut);font-size:13.5px;margin-top:7px;max-width:46ch;line-height:1.5}
   .legend{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);line-height:1.9;letter-spacing:.02em}
   .legend .k{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle;box-shadow:0 0 8px currentColor}
-  .foot{bottom:0;left:0;right:0;padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;
-    background:linear-gradient(transparent,#080912cc);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);letter-spacing:.04em;flex-wrap:wrap}
+  .foot{bottom:0;left:0;right:0;padding:16px 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;background:linear-gradient(transparent,#070810cc);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);letter-spacing:.04em;flex-wrap:wrap}
   .foot a{color:#a9b6ff;text-decoration:none}
   .pill{border:1px solid var(--line);border-radius:999px;padding:4px 11px}
-  /* nubes de diálogo */
   #labels{position:fixed;inset:0;z-index:4;pointer-events:none}
-  .bub{position:absolute;transform:translate(-50%,-100%);transition:opacity .3s;will-change:transform,left,top}
-  .bub .card{background:rgba(16,18,34,.82);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;
-    padding:8px 12px 9px;min-width:96px;max-width:210px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+  .bub{position:absolute;transform:translate(-50%,-100%);transition:opacity .3s;will-change:left,top}
+  .bub .card{background:rgba(14,16,32,.82);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:12px;padding:8px 12px 9px;min-width:96px;max-width:220px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
   .bub .nm{font-size:12.5px;font-weight:600;letter-spacing:-.01em;display:flex;align-items:center;gap:7px}
   .bub .dot{width:8px;height:8px;border-radius:50%;flex:none;box-shadow:0 0 9px currentColor}
   .bub .th{font-size:11.5px;color:var(--mut);margin-top:3px;line-height:1.4}
   .bub .th .cur{color:#c9d2ff}
-  .bub.idle .card{opacity:.6}
-  .bub .tail{width:10px;height:10px;background:rgba(16,18,34,.82);border-right:1px solid var(--line);border-bottom:1px solid var(--line);
-    transform:rotate(45deg);margin:-6px auto 0}
-  .think{display:inline-block;width:20px;text-align:left;color:#8aa0ff}
-  @media(max-width:640px){.sub{display:none}.legend{display:none}.bub .card{min-width:0;padding:6px 9px}.bub .th{display:none}}
-  #hint{position:fixed;z-index:5;left:50%;bottom:56px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);
-    pointer-events:none;opacity:.8;transition:opacity .6s}
-  a.linkfont{position:fixed;left:-9999px}
+  .bub.idle .card{opacity:.58}
+  .bub .tail{width:10px;height:10px;background:rgba(14,16,32,.82);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg);margin:-6px auto 0}
+  @media(max-width:640px){.sub,.legend{display:none}.bub .card{min-width:0;padding:6px 9px}.bub .th{display:none}}
+  #hint{position:fixed;z-index:5;left:50%;bottom:56px;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut);pointer-events:none;opacity:.8;transition:opacity .6s}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -60,11 +51,11 @@
   <div>
     <div class="brand">Patológicos · orquestación agéntica</div>
     <div class="title">El <b>Consejo de PROCA</b></div>
-    <div class="sub">16 agentes de IA, cada uno con su avatar. Se mueven según lo que hacen y piensan en voz alta. Un showcase vivo de la orquestación multi-agente — arte generado por los propios modelos.</div>
+    <div class="sub">Cada agente tiene su oficina y sus objetos. Cuando les toca trabajar, <b>viajan por el túnel de contexto</b> — traen lo que necesitan, ejecutan y vuelven. Orquestación multi-agente en vivo; arte generado por los propios modelos.</div>
   </div>
   <div class="legend">
-    <div><span class="k" style="color:#6ff0b0"></span>activo · trabajando</div>
-    <div><span class="k" style="color:#4a5480"></span>en espera</div>
+    <div><span class="k" style="color:#6ff0b0"></span>en tarea · viajando</div>
+    <div><span class="k" style="color:#4a5480"></span>en su oficina</div>
   </div>
 </div>
 
@@ -72,8 +63,8 @@
 
 <div class="hud foot">
   <span class="pill">Fuente: superficie pública del consejo (roster · loops)</span>
-  <span>Ciclos: <span id="loops"></span></span>
-  <span>Hecho por <a href="https://patologicos.com/">Patológicos</a> con modelos frontera · <span id="stamp"></span></span>
+  <span>Túnel de contexto ↺ trae contexto · ejecuta · vuelve</span>
+  <span>Por <a href="https://patologicos.com/">Patológicos</a> · <span id="stamp">v2</span></span>
 </div>
 
 <script type="importmap">
@@ -86,200 +77,225 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-// ---- Superficie publicada del consejo (roster + loops). Se hereda del puente CORE->PATO (caso_estudio). ----
+// ---- Superficie publicada del consejo (roster). persona/office/prop = elecciones iniciales por rol (se refinan cuando CORE exponga las de cada agente). ----
 const ROSTER = [
-  {id:'claude',   label:'Claude · CORE',    focus:'orquesta el consejo',            active:true },
-  {id:'codex',    label:'Codex',            focus:'produce código y contenido',     active:true },
-  {id:'grok',     label:'Grok',             focus:'editor en jefe · voz',           active:false},
-  {id:'lia',      label:'Lia · I+D',        focus:'Tracker + ID dental',            active:false},
-  {id:'gauss',    label:'Gauss · math',     focus:'rigor matemático',               active:false},
-  {id:'name',     label:'Ñame · comodín',   focus:'revisa procesos · ángulo caótico',active:false},
-  {id:'release',  label:'Release',          focus:'deploy / entrega',               active:true },
-  {id:'clinico',  label:'Clínico',          focus:'gnatología',                     active:false},
-  {id:'growth',   label:'Growth',           focus:'captación / Pato',               active:false},
-  {id:'mlops',    label:'MLOps',            focus:'infra ML',                       active:false},
-  {id:'arq',      label:'Arq',              focus:'arquitectura',                   active:false},
-  {id:'biomat',   label:'Biomateriales',    focus:'biomateriales',                  active:false},
-  {id:'print3d',  label:'Impresión 3D',     focus:'impresión 3D',                   active:false},
-  {id:'edu',      label:'Ed · PROCATraining',focus:'PROCATraining',                 active:false},
-  {id:'library',  label:'Librarian',        focus:'biblioteca de investigación',    active:false},
-  {id:'futuro',   label:'Futuro · I+D',     focus:'I+D + robótica · productización',active:false},
+  {id:'claude', label:'Claude · CORE',     focus:'orquesta el consejo',        active:true,  office:'sala de orquestación', prop:'ring'},
+  {id:'codex',  label:'Codex',             focus:'produce código y contenido', active:true,  office:'estación de código',   prop:'monitor'},
+  {id:'grok',   label:'Grok',              focus:'editor en jefe · voz',       active:false, office:'estudio editorial',    prop:'mic'},
+  {id:'lia',    label:'Lia · I+D',         focus:'Tracker + ID dental',        active:false, office:'laboratorio I+D',      prop:'flask'},
+  {id:'gauss',  label:'Gauss · math',      focus:'rigor matemático',           active:false, office:'pizarrón',             prop:'board'},
+  {id:'name',   label:'Ñame · comodín',    focus:'ángulo caótico',             active:false, office:'rincón caótico',       prop:'chaos'},
+  {id:'release',label:'Release',           focus:'deploy / entrega',           active:true,  office:'muelle de entrega',    prop:'rocket'},
+  {id:'clinico',label:'Clínico',           focus:'gnatología',                 active:false, office:'consultorio',          prop:'flask'},
+  {id:'growth', label:'Growth',            focus:'captación / Pato',           active:false, office:'sala de crecimiento',  prop:'chart'},
+  {id:'mlops',  label:'MLOps',             focus:'infra ML',                   active:false, office:'sala de servidores',   prop:'servers'},
+  {id:'arq',    label:'Arq',               focus:'arquitectura',               active:false, office:'mesa de arquitectura', prop:'blocks'},
+  {id:'biomat', label:'Biomateriales',     focus:'biomateriales',              active:false, office:'lab de materiales',    prop:'molecule'},
+  {id:'print3d',label:'Impresión 3D',      focus:'impresión 3D',               active:false, office:'taller de impresión',  prop:'printer'},
+  {id:'edu',    label:'Ed · PROCATraining',focus:'PROCATraining',              active:false, office:'aula',                 prop:'board'},
+  {id:'library',label:'Librarian',         focus:'biblioteca de investigación',active:false, office:'biblioteca',           prop:'books'},
+  {id:'futuro', label:'Futuro · I+D',      focus:'robótica · productización',  active:false, office:'lab del futuro',       prop:'servers'},
 ];
-const LOOPS = ['Advance 15m','Consenso 1h','Core 4h','Grok review','Debate'];
-
-// cada agente ELIGE su look -> color + forma (arte procedural, generado por código, sin assets externos)
 const LOOKS = {
-  claude:{c:0x8b7bff, f:'dodeca'}, codex:{c:0x54e08a, f:'knot'},   grok:{c:0x39c6ff, f:'spike'},
-  lia:{c:0x35d6c4, f:'ico'},       gauss:{c:0xe6c34a, f:'octa'},   name:{c:0xff5cc8, f:'cluster'},
-  release:{c:0xff8a3d, f:'cube'},  clinico:{c:0xff5d6c, f:'cross'},growth:{c:0x9ee34a, f:'cone'},
-  mlops:{c:0x6a7bff, f:'stack'},   arq:{c:0xf0a93d, f:'prism'},    biomat:{c:0x46d38a, f:'cluster'},
-  print3d:{c:0x4ad6ff, f:'stack'}, edu:{c:0x5aa0ff, f:'ring'},     library:{c:0xc79a6a, f:'cube'},
-  futuro:{c:0xd7deff, f:'ico'},
+  claude:{c:0x8b7bff,f:'dodeca'}, codex:{c:0x54e08a,f:'knot'}, grok:{c:0x39c6ff,f:'spike'},
+  lia:{c:0x35d6c4,f:'ico'}, gauss:{c:0xe6c34a,f:'octa'}, name:{c:0xff5cc8,f:'cluster'},
+  release:{c:0xff8a3d,f:'cube'}, clinico:{c:0xff5d6c,f:'cross'}, growth:{c:0x9ee34a,f:'cone'},
+  mlops:{c:0x6a7bff,f:'stack'}, arq:{c:0xf0a93d,f:'prism'}, biomat:{c:0x46d38a,f:'cluster'},
+  print3d:{c:0x4ad6ff,f:'stack'}, edu:{c:0x5aa0ff,f:'ring'}, library:{c:0xc79a6a,f:'cube'}, futuro:{c:0xd7deff,f:'ico'},
 };
 
 const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x080912, 0.021);
-const camera = new THREE.PerspectiveCamera(52, innerWidth/innerHeight, 0.1, 400);
-camera.position.set(0, 9, 34);
+scene.fog = new THREE.FogExp2(0x070810, 0.017);
+const camera = new THREE.PerspectiveCamera(53, 2, 0.1, 500);
+camera.position.set(0, 13, 40);
 const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 document.getElementById('scene').appendChild(renderer.domElement);
 let WW=1280, HH=720;
-function resize(){const el=document.getElementById('scene');WW=el.clientWidth||window.innerWidth||1280;HH=el.clientHeight||window.innerHeight||720;camera.aspect=WW/HH;camera.updateProjectionMatrix();renderer.setSize(WW,HH);}
+function resize(){const el=document.getElementById('scene');WW=el.clientWidth||innerWidth||1280;HH=el.clientHeight||innerHeight||720;camera.aspect=WW/HH;camera.updateProjectionMatrix();renderer.setSize(WW,HH);}
 
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true; controls.dampingFactor = 0.06;
-controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
-controls.minDistance = 16; controls.maxDistance = 70;
-controls.maxPolarAngle = Math.PI*0.56; controls.target.set(0,3,0);
+controls.enableDamping=true; controls.dampingFactor=0.06; controls.autoRotate=true; controls.autoRotateSpeed=0.42;
+controls.minDistance=18; controls.maxDistance=85; controls.maxPolarAngle=Math.PI*0.52; controls.target.set(0,5,0);
 
-// luces
-scene.add(new THREE.AmbientLight(0x334066, 1.1));
-const key = new THREE.PointLight(0xaab6ff, 900, 200); key.position.set(0,26,10); scene.add(key);
-const rim = new THREE.PointLight(0x2a6cff, 300, 200); rim.position.set(-20,6,-20); scene.add(rim);
+scene.add(new THREE.AmbientLight(0x2a3560, 1.15));
+const key=new THREE.PointLight(0xaab6ff,1400,300); key.position.set(0,34,12); scene.add(key);
+const rim=new THREE.PointLight(0x2a6cff,500,300); rim.position.set(-26,8,-24); scene.add(rim);
 
-// glow texture procedural (halo aditivo) — sin imagen externa
-function glowTex(){
-  const s=128, cv=document.createElement('canvas'); cv.width=cv.height=s;
-  const g=cv.getContext('2d').createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
-  g.addColorStop(0,'rgba(255,255,255,1)'); g.addColorStop(.25,'rgba(255,255,255,.55)');
-  g.addColorStop(1,'rgba(255,255,255,0)');
-  const c=cv.getContext('2d'); c.fillStyle=g; c.fillRect(0,0,s,s);
-  return new THREE.CanvasTexture(cv);
-}
-const GLOW = glowTex();
+function glowTex(){const s=128,cv=document.createElement('canvas');cv.width=cv.height=s;const c=cv.getContext('2d');
+  const g=c.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.25,'rgba(255,255,255,.55)');g.addColorStop(1,'rgba(255,255,255,0)');
+  c.fillStyle=g;c.fillRect(0,0,s,s);return new THREE.CanvasTexture(cv);}
+const GLOW=glowTex();
 
-// estrellas de fondo
-(function stars(){
-  const n=1400, g=new THREE.BufferGeometry(), p=new Float32Array(n*3);
-  for(let i=0;i<n;i++){const r=90+Math.random()*140, t=Math.random()*Math.PI*2, ph=Math.acos(2*Math.random()-1);
-    p[i*3]=r*Math.sin(ph)*Math.cos(t); p[i*3+1]=r*Math.cos(ph)*.5; p[i*3+2]=r*Math.sin(ph)*Math.sin(t);}
+// estrellas
+(function(){const n=1600,g=new THREE.BufferGeometry(),p=new Float32Array(n*3);
+  for(let i=0;i<n;i++){const r=110+Math.random()*160,t=Math.random()*6.28,ph=Math.acos(2*Math.random()-1);
+    p[i*3]=r*Math.sin(ph)*Math.cos(t);p[i*3+1]=r*Math.cos(ph)*.5;p[i*3+2]=r*Math.sin(ph)*Math.sin(t);}
   g.setAttribute('position',new THREE.BufferAttribute(p,3));
-  scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x8892c8,size:.5,transparent:true,opacity:.7})));
-})();
+  scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x8892c8,size:.5,transparent:true,opacity:.7})));})();
 
-// piso: anillo/rejilla suave
-const grid = new THREE.PolarGridHelper(20, 16, 8, 64, 0x2b3566, 0x1a2148);
-grid.material.opacity=.35; grid.material.transparent=true; grid.position.y=-4; scene.add(grid);
+// piso del espacio (la "oficina")
+const floor=new THREE.Mesh(new THREE.CircleGeometry(30,64),new THREE.MeshStandardMaterial({color:0x0c1024,metalness:.4,roughness:.7,transparent:true,opacity:.85}));
+floor.rotation.x=-Math.PI/2; floor.position.y=-0.02; scene.add(floor);
+const grid=new THREE.PolarGridHelper(28,24,7,72,0x2b3566,0x171d3a); grid.material.opacity=.4; grid.material.transparent=true; scene.add(grid);
 
-// núcleo central = PROCA (el hub orquestador)
-const core = new THREE.Group(); scene.add(core);
-const coreMesh = new THREE.Mesh(new THREE.IcosahedronGeometry(2.1,1),
-  new THREE.MeshStandardMaterial({color:0x1a2350,emissive:0x5566ff,emissiveIntensity:.6,metalness:.6,roughness:.25,flatShading:true}));
-core.add(coreMesh);
-const coreWire = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.IcosahedronGeometry(2.5,1)),
-  new THREE.LineBasicMaterial({color:0x7a88ff,transparent:true,opacity:.35})); core.add(coreWire);
-core.position.y = 3;
-const coreHalo = new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0x5e6cff,transparent:true,opacity:.6,blending:THREE.AdditiveBlending,depthWrite:false}));
-coreHalo.scale.set(11,11,1); core.add(coreHalo);
+// ---- TÚNEL DE CONTEXTO (centro): portal + vórtice de partículas + núcleo ----
+const TUN=new THREE.Vector3(0,6.5,0);
+const tunnel=new THREE.Group(); tunnel.position.copy(TUN); scene.add(tunnel);
+const portal=new THREE.Mesh(new THREE.TorusGeometry(3.4,0.28,16,64),new THREE.MeshStandardMaterial({color:0x24306a,emissive:0x5e7bff,emissiveIntensity:1.1,metalness:.7,roughness:.25}));
+tunnel.add(portal);
+const portal2=new THREE.Mesh(new THREE.TorusGeometry(2.4,0.12,12,64),new THREE.MeshBasicMaterial({color:0x9fb4ff,transparent:true,opacity:.6})); tunnel.add(portal2);
+const tcore=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0x7e8cff,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false})); tcore.scale.set(9,9,1); tunnel.add(tcore);
+// vórtice de partículas que caen al túnel
+const VN=260, vg=new THREE.BufferGeometry(), vpos=new Float32Array(VN*3), vph=new Float32Array(VN);
+for(let i=0;i<VN;i++){vph[i]=Math.random();vpos[i*3]=0;vpos[i*3+1]=0;vpos[i*3+2]=0;}
+vg.setAttribute('position',new THREE.BufferAttribute(vpos,3));
+const vortex=new THREE.Points(vg,new THREE.PointsMaterial({color:0x9fb4ff,size:.28,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));
+tunnel.add(vortex);
 
-// constructor de forma por 'f'
-function buildForm(f, col){
-  const mat = new THREE.MeshStandardMaterial({color:col,emissive:col,emissiveIntensity:.35,metalness:.5,roughness:.3,flatShading:true});
+// ---- formas de avatar ----
+function buildForm(f,col){
+  const mat=new THREE.MeshStandardMaterial({color:col,emissive:col,emissiveIntensity:.35,metalness:.5,roughness:.3,flatShading:true});
   let geo;
-  switch(f){
-    case 'dodeca': geo=new THREE.DodecahedronGeometry(1.15,0); break;
-    case 'ico':    geo=new THREE.IcosahedronGeometry(1.15,0); break;
-    case 'octa':   geo=new THREE.OctahedronGeometry(1.3,0); break;
-    case 'knot':   geo=new THREE.TorusKnotGeometry(.72,.28,64,8); break;
-    case 'cube':   geo=new THREE.BoxGeometry(1.6,1.6,1.6); break;
-    case 'cone':   geo=new THREE.ConeGeometry(1.05,2,6); break;
-    case 'ring':   geo=new THREE.TorusGeometry(1,.34,10,28); break;
-    case 'prism':  geo=new THREE.CylinderGeometry(0,1.15,2.2,3); break;
-    case 'spike':  geo=new THREE.OctahedronGeometry(1.4,0); break;
-    default:       geo=new THREE.IcosahedronGeometry(1.1,0);
-  }
-  const m=new THREE.Mesh(geo,mat);
-  const grp=new THREE.Group(); grp.add(m);
-  if(f==='cluster' || f==='stack'){
-    grp.remove(m);
-    const parts=f==='stack'?4:6;
-    for(let i=0;i<parts;i++){
-      const s=f==='stack'?.7:(.4+Math.random()*.5);
-      const pm=new THREE.Mesh(f==='stack'?new THREE.BoxGeometry(1.5,.34,1.5):new THREE.IcosahedronGeometry(s,0),mat.clone());
-      if(f==='stack'){pm.position.y=i*.5-.75;} else {pm.position.set((Math.random()-.5)*1.6,(Math.random()-.5)*1.6,(Math.random()-.5)*1.6);}
-      grp.add(pm);
-    }
-  }
-  if(f==='cross'){
-    grp.remove(m);
-    grp.add(new THREE.Mesh(new THREE.BoxGeometry(.5,2.1,.5),mat));
-    grp.add(new THREE.Mesh(new THREE.BoxGeometry(1.5,.5,.5),mat));
-  }
-  // wire outline
-  const wire=new THREE.LineSegments(new THREE.WireframeGeometry(geo),new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.5}));
-  if(f!=='cluster'&&f!=='stack'&&f!=='cross') grp.add(wire);
+  switch(f){case 'dodeca':geo=new THREE.DodecahedronGeometry(1.1,0);break;case 'ico':geo=new THREE.IcosahedronGeometry(1.1,0);break;
+    case 'octa':geo=new THREE.OctahedronGeometry(1.25,0);break;case 'knot':geo=new THREE.TorusKnotGeometry(.68,.26,64,8);break;
+    case 'cube':geo=new THREE.BoxGeometry(1.5,1.5,1.5);break;case 'cone':geo=new THREE.ConeGeometry(1,1.9,6);break;
+    case 'ring':geo=new THREE.TorusGeometry(.95,.32,10,28);break;case 'prism':geo=new THREE.CylinderGeometry(0,1.1,2.1,3);break;
+    case 'spike':geo=new THREE.OctahedronGeometry(1.35,0);break;default:geo=new THREE.IcosahedronGeometry(1.05,0);}
+  const grp=new THREE.Group();
+  if(f==='cluster'||f==='stack'){const parts=f==='stack'?4:6;for(let i=0;i<parts;i++){
+      const pm=new THREE.Mesh(f==='stack'?new THREE.BoxGeometry(1.4,.32,1.4):new THREE.IcosahedronGeometry(.42+Math.random()*.45,0),mat.clone());
+      if(f==='stack')pm.position.y=i*.46-.7;else pm.position.set((Math.random()-.5)*1.5,(Math.random()-.5)*1.5,(Math.random()-.5)*1.5);grp.add(pm);}}
+  else if(f==='cross'){grp.add(new THREE.Mesh(new THREE.BoxGeometry(.48,2,.48),mat));grp.add(new THREE.Mesh(new THREE.BoxGeometry(1.4,.48,.48),mat));}
+  else{const m=new THREE.Mesh(geo,mat);grp.add(m);grp.add(new THREE.LineSegments(new THREE.WireframeGeometry(geo),new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.5})));}
   return grp;
 }
-
-const agents = [];
-const R = 13;
-ROSTER.forEach((a,i)=>{
-  const look = LOOKS[a.id] || {c:0x8899ff,f:'ico'};
-  const ang = (i/ROSTER.length)*Math.PI*2;
-  const grp = new THREE.Group();
-  const body = buildForm(look.f, look.c);
-  grp.add(body);
-  // halo
-  const halo = new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:look.c,transparent:true,opacity:a.active?.9:.28,blending:THREE.AdditiveBlending,depthWrite:false}));
-  halo.scale.set(a.active?7:4.4, a.active?7:4.4, 1); grp.add(halo);
-  // anillo "pensando" (solo activos)
-  let ring=null;
-  if(a.active){
-    ring=new THREE.Mesh(new THREE.TorusGeometry(2.1,.05,8,48),new THREE.MeshBasicMaterial({color:look.c,transparent:true,opacity:.7}));
-    ring.rotation.x=Math.PI/2; grp.add(ring);
-    // línea al núcleo
-    const lg=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),new THREE.Vector3(-Math.cos(ang)*R,3-(2.6+Math.sin(ang*1.3)),-Math.sin(ang)*R)]);
-    const line=new THREE.Line(lg,new THREE.LineBasicMaterial({color:look.c,transparent:true,opacity:.22}));
-    grp.add(line);
+// ---- props de oficina (procedurales) ----
+function buildProp(type,col){
+  const g=new THREE.Group(); const m=new THREE.MeshStandardMaterial({color:0x20264a,emissive:col,emissiveIntensity:.18,metalness:.5,roughness:.5});
+  const em=new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.75});
+  switch(type){
+    case 'monitor':{const s=new THREE.Mesh(new THREE.BoxGeometry(1.5,.95,.1),m);s.position.y=.9;g.add(s);const scr=new THREE.Mesh(new THREE.PlaneGeometry(1.3,.75),em);scr.position.set(0,.9,.06);g.add(scr);g.add(new THREE.Mesh(new THREE.CylinderGeometry(.06,.06,.5),m));break;}
+    case 'board':{const b=new THREE.Mesh(new THREE.BoxGeometry(1.8,1.1,.08),m);b.position.y=1;g.add(b);for(let i=0;i<3;i++){const l=new THREE.Mesh(new THREE.BoxGeometry(1.2-i*.25,.05,.02),em);l.position.set(-.1,1.25-i*.3,.06);g.add(l);}break;}
+    case 'servers':{for(let i=0;i<4;i++){const r=new THREE.Mesh(new THREE.BoxGeometry(1,.32,.7),m);r.position.y=.25+i*.4;g.add(r);const li=new THREE.Mesh(new THREE.BoxGeometry(.1,.1,.02),em);li.position.set(.4,.25+i*.4,.37);g.add(li);}break;}
+    case 'flask':{g.add(new THREE.Mesh(new THREE.CylinderGeometry(.28,.5,1,12),em));const n=new THREE.Mesh(new THREE.CylinderGeometry(.14,.14,.5,10),m);n.position.y=.7;g.add(n);break;}
+    case 'molecule':{const c=new THREE.Mesh(new THREE.SphereGeometry(.32,14,14),em);c.position.y=.9;g.add(c);for(let i=0;i<3;i++){const a=i/3*6.28;const s=new THREE.Mesh(new THREE.SphereGeometry(.2,12,12),m);s.position.set(Math.cos(a)*.7,.9+Math.sin(a)*.4,Math.sin(a)*.3);g.add(s);}break;}
+    case 'printer':{g.add(new THREE.Mesh(new THREE.BoxGeometry(1.2,1.2,1.2),m));const bed=new THREE.Mesh(new THREE.BoxGeometry(.9,.05,.9),em);bed.position.y=.4;g.add(bed);break;}
+    case 'books':{for(let i=0;i<5;i++){const bk=new THREE.Mesh(new THREE.BoxGeometry(.22,.9,.7),i%2?em:m);bk.position.set(-.5+i*.24,.9,0);bk.rotation.z=(Math.random()-.5)*.1;g.add(bk);}break;}
+    case 'rocket':{const b=new THREE.Mesh(new THREE.CylinderGeometry(.3,.3,1.1,12),m);b.position.y=.9;g.add(b);const t=new THREE.Mesh(new THREE.ConeGeometry(.3,.5,12),em);t.position.y=1.6;g.add(t);break;}
+    case 'chart':{for(let i=0;i<4;i++){const bar=new THREE.Mesh(new THREE.BoxGeometry(.28,.4+i*.35,.28),em);bar.position.set(-.6+i*.4,.2+ (i*.35)/2,0);g.add(bar);}break;}
+    case 'blocks':{for(let i=0;i<4;i++){const bl=new THREE.Mesh(new THREE.BoxGeometry(.5,.5,.5),i%2?em:m);bl.position.set((i%2)*.5-.25,.25+Math.floor(i/2)*.5,0);g.add(bl);}break;}
+    case 'ring':{const t=new THREE.Mesh(new THREE.TorusGeometry(.7,.09,10,32),em);t.position.y=.9;t.rotation.x=Math.PI/2.4;g.add(t);break;}
+    case 'mic':{g.add(new THREE.Mesh(new THREE.CylinderGeometry(.05,.05,1,8),m));const h=new THREE.Mesh(new THREE.SphereGeometry(.22,12,12),em);h.position.y=.6;g.add(h);break;}
+    default:{const c=new THREE.Mesh(new THREE.IcosahedronGeometry(.5,0),em);c.position.y=.7;g.add(c);const c2=new THREE.Mesh(new THREE.IcosahedronGeometry(.3,0),m);c2.position.set(.5,.4,.3);g.add(c2);}
   }
-  const baseY = 2.6 + Math.sin(i*1.7)*1.4;
-  grp.position.set(Math.cos(ang)*R, baseY, Math.sin(ang)*R);
-  scene.add(grp);
-  agents.push({...a, look, grp, body, halo, ring, ang, baseY, phase:Math.random()*Math.PI*2});
+  return g;
+}
+
+const agents=[];
+const R=17;
+ROSTER.forEach((a,i)=>{
+  const look=LOOKS[a.id]||{c:0x8899ff,f:'ico'};
+  const ang=(i/ROSTER.length)*Math.PI*2;
+  const station=new THREE.Vector3(Math.cos(ang)*R, 0, Math.sin(ang)*R);
+  // oficina: base/console
+  const base=new THREE.Group(); base.position.copy(station); scene.add(base);
+  const pad=new THREE.Mesh(new THREE.CylinderGeometry(2.2,2.5,.35,6),new THREE.MeshStandardMaterial({color:0x131936,emissive:look.c,emissiveIntensity:.12,metalness:.5,roughness:.5}));
+  pad.position.y=.17; base.add(pad);
+  const ringGlow=new THREE.Mesh(new THREE.TorusGeometry(2.15,.05,8,40),new THREE.MeshBasicMaterial({color:look.c,transparent:true,opacity:.5}));
+  ringGlow.rotation.x=Math.PI/2; ringGlow.position.y=.36; base.add(ringGlow);
+  const prop=buildProp(a.prop,look.c); prop.position.set(0,.35,-.6); prop.scale.setScalar(.8); base.add(prop);
+  base.rotation.y=-ang+Math.PI; // mirar al centro
+  // avatar (viaja; su posición se anima)
+  const av=new THREE.Group(); const body=buildForm(look.f,look.c); av.add(body);
+  const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:look.c,transparent:true,opacity:a.active?.85:.28,blending:THREE.AdditiveBlending,depthWrite:false}));
+  halo.scale.set(a.active?6.5:4,a.active?6.5:4,1); av.add(halo);
+  const homeY=2.7;
+  av.position.set(station.x, homeY, station.z);
+  scene.add(av);
+  agents.push({...a,look,station,av,body,halo,ang,homeY,phase:Math.random()*6.28,
+    st:'dock', t:Math.random()*4, dur:3+Math.random()*4});
 });
 
-// ---- nubes de diálogo (DOM proyectado) ----
-const labelsEl = document.getElementById('labels');
+// nubes de diálogo
+const labelsEl=document.getElementById('labels');
 agents.forEach(a=>{
   const el=document.createElement('div'); el.className='bub'+(a.active?'':' idle');
   const hex='#'+a.look.c.toString(16).padStart(6,'0');
   el.innerHTML='<div class="card"><div class="nm"><span class="dot" style="color:'+hex+'"></span>'+a.label+'</div>'+
-    '<div class="th">'+(a.active?('<span class="cur">'+a.focus+'</span><span class="think"></span>'):('en espera'))+'</div></div><div class="tail"></div>';
-  labelsEl.appendChild(el); a.el=el; a.think=el.querySelector('.think');
+    '<div class="th"></div></div><div class="tail"></div>';
+  labelsEl.appendChild(el); a.el=el; a.th=el.querySelector('.th');
 });
-document.getElementById('loops').textContent = LOOPS.join(' · ');
-document.getElementById('stamp').textContent = 'v1';
 
-const _v = new THREE.Vector3();
-const dots=['','·','··','···'];
+// curva de viaje estación -> túnel
+function travelPoint(a, u){ // u 0..1
+  const s=a.station, mid=new THREE.Vector3((s.x)*0.4, 9+Math.sin(a.phase)*2, (s.z)*0.4);
+  const p0=new THREE.Vector3(s.x,a.homeY,s.z), p2=TUN.clone();
+  const om=1-u;
+  return new THREE.Vector3(
+    om*om*p0.x+2*om*u*mid.x+u*u*p2.x,
+    om*om*p0.y+2*om*u*mid.y+u*u*p2.y,
+    om*om*p0.z+2*om*u*mid.z+u*u*p2.z);
+}
+
+const _v=new THREE.Vector3();
 let t=0;
 function animate(){
   requestAnimationFrame(animate);
   try{
-  t+=0.016;
-  core.rotation.y+=0.003; coreMesh.rotation.x+=0.004;
-  coreHalo.material.opacity=0.5+Math.sin(t*1.5)*0.12;
-  agents.forEach((a,i)=>{
-    a.body.rotation.y+=a.active?0.02:0.006;
-    a.body.rotation.x+=a.active?0.01:0.002;
-    const bob=Math.sin(t*(a.active?1.6:0.9)+a.phase)*(a.active?0.6:0.28);
-    a.grp.position.y=a.baseY+bob;
-    if(a.active){a.halo.material.opacity=0.75+Math.sin(t*3+a.phase)*0.2; if(a.ring)a.ring.rotation.z+=0.03;}
-    // proyectar a pantalla
-    _v.setFromMatrixPosition(a.grp.matrixWorld); _v.y+=2.4; _v.project(camera);
-    const vis=_v.z<1;
-    a.el.style.opacity=vis?1:0;
-    if(vis){a.el.style.left=((_v.x*.5+.5)*WW)+'px'; a.el.style.top=((-_v.y*.5+.5)*HH)+'px';}
-    if(a.active && a.think && (i%1===0)) a.think.textContent=dots[Math.floor(t*2)%4];
-  });
-  controls.update();
-  renderer.render(scene,camera);
-  }catch(e){ if(!window.__E){ window.__E=String((e&&e.stack)||e); console.error('animate error:',e); } }
-}
-animate();
+    t+=0.016;
+    tunnel.rotation.z+=0.006; portal2.rotation.z-=0.02; tcore.material.opacity=.7+Math.sin(t*2)*.15;
+    // vórtice
+    const vp=vortex.geometry.attributes.position.array;
+    for(let i=0;i<VN;i++){let ph=(vph[i]+t*0.16)%1; const rad=3.6*(1-ph); const a2=ph*20+i;
+      vp[i*3]=Math.cos(a2)*rad; vp[i*3+1]=(0.5-ph)*3.5; vp[i*3+2]=Math.sin(a2)*rad;}
+    vortex.geometry.attributes.position.needsUpdate=true;
 
+    agents.forEach(a=>{
+      a.body.rotation.y+=a.active?0.02:0.006; a.body.rotation.x+=a.active?0.009:0.002;
+      let thought='';
+      if(a.active){
+        a.t+=0.016;
+        if(a.st==='dock'){ // en oficina
+          const bob=Math.sin(t*1.5+a.phase)*0.5;
+          a.av.position.set(a.station.x,a.homeY+bob,a.station.z);
+          thought='<span class="cur">'+a.focus+'</span>';
+          if(a.t>a.dur){a.st='out';a.t=0;}
+        } else if(a.st==='out'){ // viaja al túnel
+          const u=Math.min(a.t/1.7,1); a.av.position.copy(travelPoint(a,u));
+          const sc=1-u*0.55; a.av.scale.setScalar(sc); a.halo.material.opacity=.85+u*.1;
+          thought='→ entrando al túnel de contexto…';
+          if(a.t>1.7){a.st='in';a.t=0;}
+        } else if(a.st==='in'){ // dentro del túnel (trabajando)
+          a.av.position.copy(TUN); a.av.scale.setScalar(0.28);
+          a.av.position.y=TUN.y+Math.sin(t*8)*0.4;
+          thought='procesando la tarea…';
+          if(a.t>1.3){a.st='back';a.t=0;}
+        } else { // vuelve a su oficina
+          const u=Math.min(a.t/1.7,1); a.av.position.copy(travelPoint(a,1-u));
+          a.av.scale.setScalar(0.45+u*0.55);
+          thought='← volviendo con el resultado';
+          if(a.t>1.7){a.st='dock';a.t=0;a.dur=3+Math.random()*4;a.av.scale.setScalar(1);}
+        }
+        a.halo.material.opacity=(a.st==='in')?(.9+Math.sin(t*6)*.1):a.halo.material.opacity;
+      } else { // inactivo: en su oficina
+        const bob=Math.sin(t*0.9+a.phase)*0.26;
+        a.av.position.set(a.station.x,a.homeY+bob,a.station.z);
+        thought='en su oficina';
+      }
+      // nube
+      _v.copy(a.av.position); _v.y+=2.3; _v.project(camera);
+      const vis=_v.z<1;
+      a.el.style.opacity=vis?1:0;
+      if(vis){a.el.style.left=((_v.x*.5+.5)*WW)+'px'; a.el.style.top=((-_v.y*.5+.5)*HH)+'px';}
+      if(a.th && a.th.__last!==thought){a.th.innerHTML=thought; a.th.__last=thought;}
+    });
+    controls.update();
+    renderer.render(scene,camera);
+  }catch(e){ if(!window.__E){window.__E=String((e&&e.stack)||e); console.error('animate error:',e);} }
+}
 resize(); new ResizeObserver(resize).observe(document.getElementById('scene')); addEventListener('resize',resize);
+animate();
 addEventListener('pointerdown',()=>{controls.autoRotate=false;const h=document.getElementById('hint');if(h)h.style.opacity=0;});
 </script>
 </body>
