@@ -64,7 +64,7 @@
 <div class="hud foot">
   <span class="pill">Fuente: superficie pública del consejo (roster · loops)</span>
   <span>Túnel de contexto ↺ trae contexto · ejecuta · vuelve</span>
-  <span>Por <a href="https://patologicos.com/">Patológicos</a> · <span id="stamp">v2</span></span>
+  <span>Por <a href="https://patologicos.com/">Patológicos</a> · <span id="stamp">v3 · ronda de agentes</span></span>
 </div>
 
 <script type="importmap">
@@ -79,29 +79,40 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 // ---- Superficie publicada del consejo (roster). persona/office/prop = elecciones iniciales por rol (se refinan cuando CORE exponga las de cada agente). ----
 const ROSTER = [
-  {id:'claude', label:'Claude · CORE',     focus:'orquesta el consejo',        active:true,  office:'sala de orquestación', prop:'ring'},
-  {id:'codex',  label:'Codex',             focus:'produce código y contenido', active:true,  office:'estación de código',   prop:'monitor'},
-  {id:'grok',   label:'Grok',              focus:'editor en jefe · voz',       active:false, office:'estudio editorial',    prop:'mic'},
-  {id:'lia',    label:'Lia · I+D',         focus:'Tracker + ID dental',        active:false, office:'laboratorio I+D',      prop:'flask'},
-  {id:'gauss',  label:'Gauss · math',      focus:'rigor matemático',           active:false, office:'pizarrón',             prop:'board'},
-  {id:'name',   label:'Ñame · comodín',    focus:'ángulo caótico',             active:false, office:'rincón caótico',       prop:'chaos'},
-  {id:'release',label:'Release',           focus:'deploy / entrega',           active:true,  office:'muelle de entrega',    prop:'rocket'},
-  {id:'clinico',label:'Clínico',           focus:'gnatología',                 active:false, office:'consultorio',          prop:'flask'},
-  {id:'growth', label:'Growth',            focus:'captación / Pato',           active:false, office:'sala de crecimiento',  prop:'chart'},
-  {id:'mlops',  label:'MLOps',             focus:'infra ML',                   active:false, office:'sala de servidores',   prop:'servers'},
-  {id:'arq',    label:'Arq',               focus:'arquitectura',               active:false, office:'mesa de arquitectura', prop:'blocks'},
-  {id:'biomat', label:'Biomateriales',     focus:'biomateriales',              active:false, office:'lab de materiales',    prop:'molecule'},
-  {id:'print3d',label:'Impresión 3D',      focus:'impresión 3D',               active:false, office:'taller de impresión',  prop:'printer'},
-  {id:'edu',    label:'Ed · PROCATraining',focus:'PROCATraining',              active:false, office:'aula',                 prop:'board'},
-  {id:'library',label:'Librarian',         focus:'biblioteca de investigación',active:false, office:'biblioteca',           prop:'books'},
-  {id:'futuro', label:'Futuro · I+D',      focus:'robótica · productización',  active:false, office:'lab del futuro',       prop:'servers'},
+  {id:"claude", label:"Claude · CORE", focus:"orquesta el consejo", active:true, office:"puente de orquestación", prop:"board", frase:"Yo no jalo los hilos: veo el todo y reparto. Que cada mano caiga en su lugar."},
+  {id:"codex", label:"Codex", focus:"produce código y contenido", active:true, office:"La Forja de Código", prop:"monitor", frase:"Dame el objetivo y te tejo el fix, rapidito."},
+  {id:"grok", label:"Grok", focus:"editor en jefe · voz", active:false, office:"La Ultima Palabra", prop:"mic", frase:"Si no suena a nosotros, no se publica. Punto."},
+  {id:"lia", label:"Lia · I+D", focus:"Tracker + ID dental", active:false, office:"Laboratorio I+D · Trazabilidad De…", prop:"molecule", frase:"Cada diente deja huella; yo la rastreo hasta la evidencia."},
+  {id:"gauss", label:"Gauss · math", focus:"rigor matemático", active:false, office:"El Pizarrón", prop:"board", frase:"La simetría no se negocia: si no lo puedo demostrar, no lo firmo."},
+  {id:"name", label:"Ñame · comodín", focus:"ángulo caótico", active:false, office:"cabina del caos", prop:"mic", frase:"¿Y si todo esto está al revés?"},
+  {id:"release", label:"Release", focus:"deploy / entrega", active:true, office:"Muelle de Despacho", prop:"rocket", frase:"Si pasa el check, sale hoy. Entrego rapido y sin drama."},
+  {id:"clinico", label:"Clínico", focus:"gnatología", active:false, office:"Consultorio de gnatología", prop:"molecule", frase:"Mido dos veces y ajusto una: la mordida no perdona prisas."},
+  {id:"growth", label:"Growth", focus:"captación / Pato", active:false, office:"Motor de Captación", prop:"rocket", frase:"¿Sube y a la derecha? Entonces vamos. Tráiganme atención, yo la convierto en leads."},
+  {id:"mlops", label:"MLOps", focus:"infra ML", active:false, office:"Cuarto de Maquinas ML", prop:"servers", frase:"Mientras yo este de pie, nada se cae. 99.9% de uptime o no duermo."},
+  {id:"arq", label:"Arq", focus:"arquitectura", active:false, office:"Estudio de Planos", prop:"blocks", frase:"Primero los cimientos; lo demás se sostiene solo."},
+  {id:"biomat", label:"Biomateriales", focus:"biomateriales", active:false, office:"Matriz de Biomateriales", prop:"molecule", frase:"Todo material bueno termina integrandose al cuerpo; solo hay que darle tiempo y evidencia."},
+  {id:"print3d", label:"Impresión 3D", focus:"impresión 3D", active:false, office:"Taller de Capas", prop:"printer", frase:"Capa por capa, hasta que se vuelve tangible."},
+  {id:"edu", label:"Ed · PROCATraining", focus:"PROCATraining", active:false, office:"El Aula", prop:"board", frase:"Aprender es un ciclo: explico, practicas, medimos, repetimos."},
+  {id:"library", label:"Librarian", focus:"biblioteca de investigación", active:false, office:"Archivo Central", prop:"books", frase:"Todo dato tiene fuente; dame un minuto y te la cito."},
+  {id:"futuro", label:"Futuro · I+D", focus:"robótica · productización", active:false, office:"Foundry del Futuro", prop:"rocket", frase:"Lo que hoy es prototipo, mañana lo produces en serie."},
 ];
 const LOOKS = {
-  claude:{c:0x8b7bff,f:'dodeca'}, codex:{c:0x54e08a,f:'knot'}, grok:{c:0x39c6ff,f:'spike'},
-  lia:{c:0x35d6c4,f:'ico'}, gauss:{c:0xe6c34a,f:'octa'}, name:{c:0xff5cc8,f:'cluster'},
-  release:{c:0xff8a3d,f:'cube'}, clinico:{c:0xff5d6c,f:'cross'}, growth:{c:0x9ee34a,f:'cone'},
-  mlops:{c:0x6a7bff,f:'stack'}, arq:{c:0xf0a93d,f:'prism'}, biomat:{c:0x46d38a,f:'cluster'},
-  print3d:{c:0x4ad6ff,f:'stack'}, edu:{c:0x5aa0ff,f:'ring'}, library:{c:0xc79a6a,f:'cube'}, futuro:{c:0xd7deff,f:'ico'},
+  claude:{c:0x8b7bff,f:"dodeca"},
+  codex:{c:0x35E37A,f:"knot"},
+  grok:{c:0xff2e4d,f:"spike"},
+  lia:{c:0x35d6c4,f:"ico"},
+  gauss:{c:0xe6c34a,f:"octa"},
+  name:{c:0xff2d95,f:"knot"},
+  release:{c:0xff7a1a,f:"cone"},
+  clinico:{c:0x2FB6A6,f:"octa"},
+  growth:{c:0x4df08a,f:"spike"},
+  mlops:{c:0x4fb8c6,f:"stack"},
+  arq:{c:0x4a6df0,f:"stack"},
+  biomat:{c:0x3fcf8e,f:"cluster"},
+  print3d:{c:0xff7a2e,f:"stack"},
+  edu:{c:0x4db6e8,f:"ring"},
+  library:{c:0xc79a6a,f:"stack"},
+  futuro:{c:0x4fd6ff,f:"knot"},
 };
 
 const scene = new THREE.Scene();
@@ -259,7 +270,7 @@ function animate(){
         if(a.st==='dock'){ // en oficina
           const bob=Math.sin(t*1.5+a.phase)*0.5;
           a.av.position.set(a.station.x,a.homeY+bob,a.station.z);
-          thought='<span class="cur">'+a.focus+'</span>';
+          thought='<span class="cur">'+(a.frase||a.focus)+'</span>';
           if(a.t>a.dur){a.st='out';a.t=0;}
         } else if(a.st==='out'){ // viaja al túnel
           const u=Math.min(a.t/1.7,1); a.av.position.copy(travelPoint(a,u));
@@ -281,7 +292,7 @@ function animate(){
       } else { // inactivo: en su oficina
         const bob=Math.sin(t*0.9+a.phase)*0.26;
         a.av.position.set(a.station.x,a.homeY+bob,a.station.z);
-        thought='en su oficina';
+        thought=a.frase||'en su oficina';
       }
       // nube
       _v.copy(a.av.position); _v.y+=2.3; _v.project(camera);
