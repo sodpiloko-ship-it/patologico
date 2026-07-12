@@ -48,7 +48,12 @@ header.nav{position:sticky;top:0;z-index:100;background:var(--paper);border-bott
 .navcta{font-family:var(--mono);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
   background:var(--acc);color:var(--ink);padding:8px 16px;border:var(--bd)}
 .navcta:hover{background:var(--paper)}
+.nlinks a.hot{color:var(--acc);border-bottom-color:var(--acc)}
+.xnav{font-family:var(--mono);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--acc);border:2px solid var(--acc);padding:6px 10px;white-space:nowrap}
+.xnav:hover{background:var(--acc);color:var(--ink)}
 @media(max-width:900px){.nlinks,.clock{display:none}}
+@media(max-width:560px){.xnav{display:none}}
 
 /* secciones */
 section{border-bottom:var(--bd)}
@@ -74,9 +79,9 @@ section{border-bottom:var(--bd)}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(180deg,rgba(10,10,10,.55),rgba(10,10,10,.15) 45%,rgba(10,10,10,.75))}
-.hero .in{position:relative;z-index:2;align-self:flex-end;padding:20px 20px 40px;width:100%}
+.hero .in{position:relative;z-index:2;align-self:flex-start;padding:84px 20px 40px;width:100%;max-width:900px;margin-right:auto}
 .hero .eyebrow{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--acc)}
-.hero h1{font-size:clamp(52px,11.5vw,190px);margin:14px 0 0}
+.hero h1{font-size:clamp(40px,7.5vw,104px);margin:12px 0 0}
 .hero .sub{font-size:clamp(16px,2vw,22px);max-width:56ch;margin-top:20px;line-height:1.4}
 .hero .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
 .badge{position:absolute;right:20px;top:74px;z-index:2;font-family:var(--mono);font-size:11px;text-transform:uppercase;
@@ -175,9 +180,49 @@ section{border-bottom:var(--bd)}
 .foot{padding:40px 20px 20px}
 .foot .map{display:flex;gap:28px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 .foot .meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin-top:20px;padding-top:16px;border-top:2px solid var(--paper)}
-.wordmark{font-family:var(--display);font-size:clamp(60px,12.5vw,220px);line-height:.82;letter-spacing:-.04em;
+.wordmark{font-family:var(--display);font-size:clamp(44px,9vw,150px);line-height:.82;letter-spacing:-.04em;
   text-transform:uppercase;white-space:nowrap;overflow:hidden;margin-top:24px}
 
+/* 00 — corre el motor con tu negocio */
+.corre-in{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.corre-lede{padding:32px 20px 40px;border-right:var(--bd)}
+.inv .corre-lede{border-color:var(--paper)}
+.corre-lede h2{font-size:clamp(28px,3.8vw,52px);line-height:.95}
+.corre-lede p{font-size:16px;max-width:46ch;margin-top:16px;opacity:.9}
+.corre-form{padding:32px 20px 40px;display:flex;flex-direction:column;gap:12px}
+.corre-form label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--acc)}
+.corre-form textarea{width:100%;background:transparent;border:2px solid var(--paper);color:var(--paper);padding:13px;font:15px var(--body);resize:vertical}
+.corre-form textarea:focus{outline:0;border-color:var(--acc)}
+.corre-form textarea::placeholder{color:var(--paper);opacity:.5}
+.corre-ex{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.corre-ex span{opacity:.6}
+.corre-ex button{background:transparent;border:1px solid var(--paper);color:var(--paper);font:inherit;padding:5px 10px;cursor:pointer;text-transform:uppercase;letter-spacing:.06em}
+.corre-ex button:hover{background:var(--acc);color:var(--ink);border-color:var(--acc)}
+.corre-form .btn{align-self:flex-start;cursor:pointer}
+.corre-note{opacity:.6;font-size:11px}
+.corre-stage{border-top:var(--bd)}
+.inv .corre-stage{border-color:var(--paper)}
+.corre-term{min-height:150px}
+.corre-out{padding:0 20px 36px}
+.corre-diag{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--acc);padding:14px 0;
+  border-top:2px solid var(--paper);border-bottom:2px solid var(--paper);margin-bottom:20px}
+.corre-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--paper)}
+.corre-cards .cd{padding:16px;border-right:2px solid var(--paper);opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.corre-cards .cd:last-child{border-right:0}
+.corre-cards .cd.on{opacity:1;transform:none}
+.corre-cards .cd .k{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--acc)}
+.corre-cards .cd h4{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:16px;letter-spacing:-.02em;margin:8px 0 6px;line-height:.95}
+.corre-cards .cd p{font-size:13px;line-height:1.35;opacity:.88}
+.corre-cta{margin-top:24px}
+.corre-cta>p{font-size:16px;max-width:62ch;margin-bottom:14px}
+.corre-capture{display:flex;gap:10px;flex-wrap:wrap}
+.corre-capture input{flex:1;min-width:180px;background:transparent;border:2px solid var(--paper);color:var(--paper);padding:12px 13px;font:15px var(--body)}
+.corre-capture input:focus{outline:0;border-color:var(--acc)}
+.corre-capture input::placeholder{color:var(--paper);opacity:.5}
+.corre-capture .btn{cursor:pointer}
+.corre-final{margin-top:14px;color:var(--acc)}
+@media(max-width:760px){.corre-in{grid-template-columns:1fr}.corre-lede{border-right:0;border-bottom:var(--bd)}
+  .corre-cards{grid-template-columns:1fr 1fr}.corre-cards .cd:nth-child(2n){border-right:0}}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes blink{50%{opacity:0}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
@@ -198,14 +243,15 @@ section{border-bottom:var(--bd)}
 <header class="nav">
   <a class="brand" href="/">PATOLOGICOS</a>
   <nav class="nlinks">
+    <a href="#corre" class="hot">Corre el motor</a>
     <a href="#hacemos">Qué hacemos</a>
     <a href="#portafolio">Portafolio</a>
     <a href="#caso">Caso</a>
-    <a href="#motor">Motor</a>
     <a href="#oferta">Oferta</a>
     <a href="kibiexe/">KIBI</a>
     <a href="blog/">Blog</a>
   </nav>
+  <a class="xnav" href="https://x.com/patologico" target="_blank" rel="noopener">@Patologico ↗</a>
   <span class="clock"><span class="dot"></span><span id="clk">--:--:--</span> CDMX</span>
   <a class="navcta" href="#contacto">Agenda</a>
 </header>
@@ -223,6 +269,47 @@ section{border-bottom:var(--bd)}
     <div class="cta">
       <a class="btn" href="#contacto">Agenda una auditoría</a>
       <a class="btn ghost" href="#portafolio">Ver el portafolio</a>
+    </div>
+  </div>
+</section>
+
+<!-- 00 — CORRE EL MOTOR CON TU NEGOCIO -->
+<section id="corre" class="inv">
+  <div class="ix"><span>/ 00 — Corre el motor con TU negocio</span><span><span class="dot"></span> en vivo · 1 ciclo</span></div>
+  <div class="corre-in">
+    <div class="corre-lede">
+      <h2>Describe tu PYME. Mira al motor trabajar.</h2>
+      <p>El mismo motor que corre nuestras propiedades se enciende con tu negocio: agentes de contenido,
+      anuncios, ventas y operación. Un ciclo, en vivo. Lo corremos de verdad y te mandamos lo que salga.</p>
+    </div>
+    <form class="corre-form" id="corre-form" autocomplete="off">
+      <label for="corre-input">Tu negocio</label>
+      <textarea id="corre-input" name="negocio" rows="3" maxlength="400"
+        placeholder="Ej: taquería de barrio en Guadalajara, ~60 comensales al día, sin redes activas."></textarea>
+      <div class="corre-ex">
+        <span>Prueba:</span>
+        <button type="button" data-ex="Taquería de barrio en Guadalajara, ~60 comensales al día, sin redes sociales activas.">Taquería</button>
+        <button type="button" data-ex="Despacho contable en Monterrey, 4 contadores, capta clientes por referidos y quiere crecer.">Despacho contable</button>
+        <button type="button" data-ex="Marca de velas artesanales de soya, vende por WhatsApp e Instagram, ~30 pedidos al mes.">Velas artesanales</button>
+      </div>
+      <button class="btn" type="submit" id="corre-run">Correr el motor →</button>
+      <div class="corre-note mono">1 ciclo · sin costo · sin registro</div>
+    </form>
+  </div>
+  <div class="corre-stage" id="corre-stage" hidden>
+    <div class="corre-term term" id="corre-term"></div>
+    <div class="corre-out" id="corre-out" hidden>
+      <div class="corre-diag" id="corre-diag"></div>
+      <div class="corre-cards" id="corre-cards"></div>
+      <div class="corre-cta">
+        <p id="corre-cta-txt"></p>
+        <form class="corre-capture" id="corre-capture">
+          <input type="email" id="corre-email" name="correo" placeholder="tu@correo.com" required>
+          <input type="text" id="corre-wa" name="telefono" placeholder="WhatsApp (opcional)">
+          <button class="btn" type="submit">Quiero esto corriendo de verdad →</button>
+        </form>
+        <div class="corre-final mono" id="corre-final" hidden></div>
+      </div>
     </div>
   </div>
 </section>
@@ -433,6 +520,81 @@ section{border-bottom:var(--bd)}
   fetch('pulse.json?_t='+Date.now()).then(function(r){return r.json();}).then(function(d){
     if(d&&d.agents){var act=d.agents.filter(function(x){return x.active;}).length;var e=document.getElementById('c-agentes');if(e&&act)e.textContent=act;}
   }).catch(function(){});
+})();
+</script>
+
+<!-- 00 — motor de la demo "Corre el motor" (cola honesta, sin API) -->
+<script>
+(function(){
+  var form=document.getElementById('corre-form'); if(!form) return;
+  var input=document.getElementById('corre-input'),
+      stage=document.getElementById('corre-stage'), term=document.getElementById('corre-term'),
+      out=document.getElementById('corre-out'), diag=document.getElementById('corre-diag'),
+      cards=document.getElementById('corre-cards'), run=document.getElementById('corre-run'),
+      ctaTxt=document.getElementById('corre-cta-txt'), capture=document.getElementById('corre-capture'),
+      finalEl=document.getElementById('corre-final');
+  var DEFAULT_AGENTS=['recepción — negocio recibido','filtros — formato válido · es_MX',
+    'cola — entró a la fila real de PATO','content-loop — asignará tu guion',
+    'ads-agent — asignará tu anuncio','ventas — preparará tu seguimiento'];
+  var DELIVERABLES=[
+    {k:'Guion · video corto',h:'Un guion listo para grabar',p:'Un video corto pensado para tu negocio y tu cliente.'},
+    {k:'Anuncio · Meta Ads',h:'Copy + ángulo de campaña',p:'El primer anuncio para captar a quien te compra.'},
+    {k:'Ventas · WhatsApp',h:'Mensaje de seguimiento',p:'Un primer WhatsApp que puedes mandar hoy mismo.'},
+    {k:'Automatización #1',h:'Lo que te quitamos de encima',p:'La primera tarea repetitiva que el motor automatiza.'}
+  ];
+  function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function line(txt){var d=document.createElement('div');d.className='ln';var i=txt.indexOf('—');
+    if(i>0){d.innerHTML='<span class="t">'+esc(txt.slice(0,i))+'—</span> '+esc(txt.slice(i+1));}
+    else{d.textContent=txt;} term.appendChild(d); return d;}
+  document.querySelectorAll('.corre-ex button').forEach(function(b){
+    b.addEventListener('click',function(){input.value=b.getAttribute('data-ex');input.focus();});
+  });
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var neg=(input.value||'').trim();
+    if(neg.length<10){input.focus();return;}
+    run.disabled=true; run.textContent='Corriendo…';
+    stage.hidden=false; term.innerHTML=''; out.hidden=true; cards.innerHTML=''; finalEl.hidden=true; capture.hidden=false;
+    if(window.gtag) gtag('event','demo_run');
+    line('recepción — enviando a la máquina…');
+    fetch('demo.php',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:'accion=run&negocio='+encodeURIComponent(neg)})
+      .then(function(r){return r.json().catch(function(){return {status:'error'};});})
+      .then(render).catch(function(){render({status:'error'});});
+  });
+  function render(data){
+    term.innerHTML=''; run.disabled=false; run.textContent='Correr el motor →';
+    if(data.status==='rechazado'){ line('supervisor — '+(data.motivo||'esto no parece un negocio · describe tu PYME')); return; }
+    if(data.status==='limite'){ line('supervisor — ya corriste varias · vuelve en un rato o agenda directo abajo'); return; }
+    if(data.status==='error'){ line('supervisor — no pudimos encolar ahora · escríbenos directo en Agenda'); return; }
+    var ag=(data.agentes&&data.agentes.length)?data.agentes:DEFAULT_AGENTS, i=0;
+    (function step(){ if(i<ag.length){ line(ag[i]); i++; setTimeout(step,470); return; } revealOut(data); })();
+  }
+  function revealOut(data){
+    out.hidden=false;
+    diag.textContent=data.diagnostico||'Consejo de autorización: negocio válido · en cola para tu ciclo real.';
+    cards.innerHTML='';
+    DELIVERABLES.forEach(function(d,idx){
+      var el=document.createElement('div'); el.className='cd';
+      el.innerHTML='<div class="k">'+esc(d.k)+'</div><h4>'+esc(d.h)+'</h4><p>'+esc(d.p)+'</p>';
+      cards.appendChild(el); setTimeout(function(){el.classList.add('on');},240+idx*240);
+    });
+    ctaTxt.textContent='Esto fue el encolado. El ciclo real —diagnóstico + los 4 entregables con tu negocio— lo corre PATO y te lo mandamos. ¿A dónde?';
+  }
+  capture.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var email=(document.getElementById('corre-email').value||'').trim();
+    var wa=(document.getElementById('corre-wa').value||'').trim();
+    if(!email) return;
+    var btn=capture.querySelector('button'); btn.disabled=true; btn.textContent='Enviando…';
+    if(window.gtag) gtag('event','generate_lead',{form:'demo'});
+    fetch('demo.php',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:'accion=lead&negocio='+encodeURIComponent((input.value||'').trim())+'&correo='+encodeURIComponent(email)+'&telefono='+encodeURIComponent(wa)})
+      .then(function(r){return r.json().catch(function(){return {status:'ok'};});})
+      .then(done).catch(done);
+    function done(){ capture.hidden=true; finalEl.hidden=false;
+      finalEl.textContent='✓ Listo. PATO corre tu ciclo y te contacta en 1 día hábil.'; }
+  });
 })();
 </script>
 </body>
