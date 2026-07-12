@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-07-12T10:02:01",
- "count": 14,
+ "generatedAt": "2026-07-12T11:02:01",
+ "count": 15,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260630-232056",
@@ -57,6 +57,14 @@
    "titulo": "Diferencia de costos: Para Dos vs Regalo",
    "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-01T10:05:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Jessica tiene razón: si la Tabla Para Dos y la Tabla Regalo traen prácticamente la misma comida, entonces la diferencia no debe explicarse como “más producto”, sino como presentación + experiencia de regalo + empaque + margen. Precio actual del catálogo: - Para D",
    "stamp": "20260701"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-mensaje-para-el-primer-cliente-de-whatsapp-20260712-104159",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Mensaje para el primer cliente de WhatsApp",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-12T10:41:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- ¡Hola, Nombre! 😊 Gracias por escribir a Picando Tabla. Tenemos estas dos opciones: 🧀 Tabla para Dos — $490 Para 2 personas. Incluye una selección de quesos, carnes frías, fruta, frutos secos y crujientes. Llega armada y lista para disfrutar; también incluimos una",
+   "stamp": "20260712"
   },
   {
    "id": "prop-picandotabla-fundadora-personas-por-tabla-regalo-anfitrion-y-fiesta-20260701-100131",

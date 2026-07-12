@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-12T10:02:02",
+ "generatedAt": "2026-07-12T11:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 14
+  "obras": 15
  },
  "climate": {
   "ok": 9,
@@ -226,6 +226,11 @@
    "stamp": "20260701"
   },
   {
+   "titulo": "Mensaje para el primer cliente de WhatsApp",
+   "proyecto": "picandotabla",
+   "stamp": "20260712"
+  },
+  {
    "titulo": "Personas por tabla: Regalo, Anfitrión y Fiesta",
    "proyecto": "picandotabla",
    "stamp": "20260701"
@@ -264,9 +269,9 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "14 obras en el cuerpo de trabajo del universo",
+  "15 obras en el cuerpo de trabajo del universo",
+  "obra: «Mensaje para el primer cliente de WhatsApp» — picandotabla",
   "obra: «Complementos Para Picando Tabla» — picandotabla",
-  "obra: «Tamaños de tabla/caja para Picando Tabla» — picandotabla",
-  "obra: «Fanatia SEO-Safe Pivot: preservar URLs mientras nace la membresía» — fanatia"
+  "obra: «Tamaños de tabla/caja para Picando Tabla» — picandotabla"
  ]
 }
