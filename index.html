@@ -3,134 +3,183 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Patológicos · Construimos compañías que corren con IA agéntica</title>
-<meta name="description" content="Patológicos es una compañía nativa de IA: produce contenido a escala a través de un portafolio de propiedades y aplica IA agéntica a procesos de industria, de punta a punta. PROCA es nuestro caso insignia.">
+<title>Patológicos · No lo contamos. Lo operamos.</title>
+<meta name="description" content="Patológicos es una compañía nativa de IA: opera un portafolio de propiedades de medios y aplica IA agéntica a procesos reales de industria, de punta a punta. No lo contamos: lo operamos.">
 <link rel="canonical" href="https://patologicos.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0A0A0A">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Patológicos · Construimos compañías que corren con IA agéntica">
-<meta property="og:description" content="Producimos contenido a escala y aplicamos IA a procesos reales de industria. Somos nuestra propia prueba.">
+<meta property="og:title" content="Patológicos · No lo contamos. Lo operamos.">
+<meta property="og:description" content="Compañía nativa de IA. Operamos un portafolio de medios y aplicamos IA a procesos reales de industria.">
 <meta property="og:url" content="https://patologicos.com/">
 <meta property="og:locale" content="es_MX">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* IDENTIDAD BLANCA — paleta ad-hoc derivada del pato (blanco + dorado) */
-  --bg:#ffffff;--surface:#faf9f5;--surface-2:#f3f1ea;--line:rgba(24,26,32,.10);--line-2:rgba(24,26,32,.16);
-  --ink:#16181d;--ink-soft:#494e58;--ink-mute:#868c98;
-  --accent:#eaa900;        /* dorado del pato (rellenos/bordes) */
-  --accent-2:#cf9200;      /* dorado hover */
-  --accent-ink:#9a6b00;    /* dorado legible como TEXTO sobre blanco */
-  --gold-wash:rgba(234,169,0,.10);
-  --ok:#1f9d57;--info:#2f7fd6;
-  --serif:Georgia,'Times New Roman',serif;--sans:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
-  --r:14px;
+  --ink:#0A0A0A; --paper:#F4F2ED; --acc:#FF2E00;
+  --display:'Archivo Black','Arial Black',sans-serif;
+  --body:'Archivo',system-ui,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --bd:2px solid var(--ink);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;letter-spacing:-.01em}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acc);color:var(--paper)}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-.btn{display:inline-block;background:var(--accent);color:#231a00;border-radius:999px;padding:13px 26px;font-weight:800;font-size:15px;transition:.15s;box-shadow:0 1px 0 rgba(0,0,0,.04)}
-.btn:hover{background:var(--accent-2);transform:translateY(-1px)}
-.btn.ghost{background:transparent;color:var(--accent-ink);border:1.5px solid var(--line-2)}
-.btn.ghost:hover{background:var(--gold-wash);border-color:var(--accent)}
-.eyebrow{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-ink);font-weight:800}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:-.03em;line-height:.9}
+.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
 
-/* formulario de auditoría (#contacto) */
-.agenda{max-width:620px;margin:24px auto 0;text-align:left}
-.agenda .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.agenda label{display:block;font-size:13px;color:#231a00;font-weight:700;margin-bottom:13px}
-.agenda input,.agenda textarea,.agenda select{width:100%;margin-top:6px;background:#fff;border:1px solid rgba(0,0,0,.15);border-radius:10px;color:var(--ink);padding:11px 13px;font:15px var(--sans)}
-.agenda input:focus,.agenda textarea:focus,.agenda select:focus{outline:0;border-color:var(--accent-2);box-shadow:0 0 0 3px rgba(234,169,0,.25)}
-.agenda textarea{resize:vertical}
-.agenda button.btn{margin-top:4px;cursor:pointer;border:0}
-.agenda .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.formnote{font-size:12.5px;color:#5a4400;margin-top:10px;font-weight:600}
-@media(max-width:560px){.agenda .row{grid-template-columns:1fr}}
+/* barra de progreso de scroll */
+#prog{position:fixed;top:0;left:0;height:4px;width:0;background:var(--acc);z-index:200}
 
-/* nav */
-.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
-  display:flex;align-items:center;gap:22px;padding:14px 24px}
-.logo{font-family:var(--serif);font-size:21px;font-weight:600;display:flex;align-items:center;gap:9px}
-.logo b{color:var(--ink)}
-.logo .dot{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 34% 32%,#ffe08a,var(--accent) 70%);box-shadow:0 0 0 3px var(--gold-wash)}
-.nlinks{display:flex;gap:22px;margin-left:auto;font-size:14px}
-.nlinks a{color:var(--ink-soft);font-weight:600}.nlinks a:hover{color:var(--accent-ink)}
-.nav .btn{padding:9px 18px;font-size:13.5px}
+/* header persistente (barra superior de navegación continua) */
+header.nav{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:var(--bd);
+  display:flex;align-items:center;gap:22px;padding:0 20px;height:56px}
+.brand{font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:-.03em}
+.brand .live{color:var(--acc)}
+.nlinks{display:flex;gap:18px;margin-left:auto;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em}
+.nlinks a{padding:4px 0;border-bottom:2px solid transparent}
+.nlinks a:hover{color:var(--acc)}
+.clock{font-family:var(--mono);font-size:12px;letter-spacing:.08em;display:flex;align-items:center;gap:7px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acc);display:inline-block;animation:pulse 1.4s infinite}
+.navcta{font-family:var(--mono);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+  background:var(--acc);color:var(--ink);padding:8px 16px;border:var(--bd)}
+.navcta:hover{background:var(--paper)}
+@media(max-width:900px){.nlinks,.clock{display:none}}
 
-/* hero */
-.hero{position:relative;background:
-   radial-gradient(80% 90% at 50% -8%,var(--gold-wash),transparent 60%),
-   linear-gradient(180deg,#fffdf8,#ffffff 70%);
-   border-bottom:1px solid var(--line);overflow:hidden}
-.hero .wrap{padding:52px 24px 60px;max-width:940px;text-align:center;display:flex;flex-direction:column;align-items:center}
-.duckcard{position:relative;width:min(560px,92vw);border-radius:22px;overflow:hidden;margin:20px 0 4px;
-  box-shadow:0 24px 60px -22px rgba(154,107,0,.45),0 0 0 1px var(--line);background:#fff}
-.duckcard::after{content:"";position:absolute;inset:0;border-radius:22px;box-shadow:inset 0 0 0 2px rgba(234,169,0,.28);pointer-events:none}
-.duckcard video{display:block;width:100%;height:auto;background:#f3f1ea}
-.wordmark{font-size:clamp(40px,9vw,88px);letter-spacing:.02em;margin:18px 0 6px;line-height:1}
-.wordmark .g{background:linear-gradient(180deg,#f6c84c,var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .tag{font-size:clamp(16.5px,2.3vw,20px);color:var(--ink-soft);max-width:60ch}
-.hero .tag b{color:var(--ink)}
-.hero .cta{margin-top:24px;display:flex;gap:13px;flex-wrap:wrap;justify-content:center}
-.hero .meta{margin-top:18px;font-size:13px;color:var(--ink-mute)}
+/* secciones */
+section{border-bottom:var(--bd)}
+.ix{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:12px;
+  text-transform:uppercase;letter-spacing:.08em;padding:16px 20px;border-bottom:var(--bd)}
+.pad{padding:20px}
+.inv{background:var(--ink);color:var(--paper)}
+.inv .ix{border-color:var(--paper)}
+.inv a:hover{color:var(--acc)}
 
-section{padding:60px 0;border-bottom:1px solid var(--line)}
-.sh{max-width:62ch;margin-bottom:30px}
-.sh h2{font-size:clamp(24px,3.4vw,34px)}.sh p{color:var(--ink-soft);margin-top:8px;font-size:16.5px}
+/* botones */
+.btn{font-family:var(--mono);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em;
+  padding:15px 26px;border:var(--bd);background:var(--acc);color:var(--ink);display:inline-block;cursor:pointer;transition:background .12s,color .12s}
+.btn:hover{background:var(--paper);color:var(--ink)}
+.btn.ghost{background:transparent}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.inv .btn{border-color:var(--paper)}
+.inv .btn.ghost{color:var(--paper)}
+.inv .btn.ghost:hover{background:var(--paper);color:var(--ink)}
 
-/* pilares */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.pillar{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
-.pillar .n{font-family:var(--serif);font-size:14px;color:var(--accent-ink);font-weight:700}
-.pillar h3{font-size:22px;margin:8px 0 10px}.pillar p{color:var(--ink-soft);font-size:15.5px}
+/* hero video */
+.hero{position:relative;overflow:hidden;background:var(--ink);color:var(--paper);min-height:min(88vh,760px);display:flex}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(10,10,10,.55),rgba(10,10,10,.15) 45%,rgba(10,10,10,.75))}
+.hero .in{position:relative;z-index:2;align-self:flex-end;padding:20px 20px 40px;width:100%}
+.hero .eyebrow{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--acc)}
+.hero h1{font-size:clamp(52px,11.5vw,190px);margin:14px 0 0}
+.hero .sub{font-size:clamp(16px,2vw,22px);max-width:56ch;margin-top:20px;line-height:1.4}
+.hero .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.badge{position:absolute;right:20px;top:74px;z-index:2;font-family:var(--mono);font-size:11px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--paper);border:2px solid var(--paper);padding:6px 10px;display:flex;align-items:center;gap:7px}
+.cursor{display:inline-block;width:.52em;height:.86em;background:currentColor;margin-left:.06em;vertical-align:baseline;animation:blink 1s step-end infinite}
 
-/* motor */
-.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.f{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:20px}
-.f .ic{font-size:22px}.f b{display:block;font-family:var(--serif);font-size:16px;margin:10px 0 5px}
-.f span{font-size:13.5px;color:var(--ink-soft)}
+/* ticker de contadores */
+.ticker{display:grid;grid-template-columns:repeat(4,1fr);font-family:var(--mono)}
+.ticker .cell{padding:18px 20px;border-right:var(--bd)}
+.ticker .cell:last-child{border-right:0}
+.ticker .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#0a0a0aaa}
+.ticker .v{font-family:var(--display);font-size:clamp(26px,4vw,44px);margin-top:6px}
+.ticker .v .up{color:var(--acc);font-family:var(--mono);font-size:14px;vertical-align:super}
+@media(max-width:760px){.ticker{grid-template-columns:1fr 1fr}.ticker .cell:nth-child(2n){border-right:0}.ticker .cell{border-bottom:var(--bd)}}
 
-/* portafolio */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.prop{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;transition:.15s}
-.prop:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(154,107,0,.35)}
-.prop .top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.prop .em{font-size:20px}.prop h3{font-size:18px;flex:1}
-.prop .tag{font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-mute);background:rgba(24,26,32,.05);padding:2px 8px;border-radius:999px}
-.prop.live .tag{color:#231a00;background:var(--accent)}
-.prop p{font-size:13.5px;color:var(--ink-soft)}
+/* marquesina */
+.marq{overflow:hidden;white-space:nowrap}
+.marq .track{display:inline-block;animation:marquee 26s linear infinite;padding:16px 0}
+.marq span{font-family:var(--display);font-size:clamp(26px,5vw,60px);text-transform:uppercase;letter-spacing:-.02em;padding:0 .4em}
+.marq span.sep{color:var(--acc)}
+
+/* dos columnas: qué hacemos */
+.two{display:grid;grid-template-columns:1fr 1fr}
+.two .col{padding:32px 20px 40px;border-right:var(--bd)}
+.two .col:last-child{border-right:0}
+.two .n{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--acc)}
+.two h2{font-size:clamp(28px,3.6vw,52px);margin:12px 0 14px}
+.two p{font-size:17px;max-width:48ch}
+@media(max-width:760px){.two{grid-template-columns:1fr}.two .col{border-right:0;border-bottom:var(--bd)}.two .col:last-child{border-bottom:0}}
+
+/* portafolio: filas con inversión */
+.row{display:grid;grid-template-columns:64px 1fr minmax(120px,auto);gap:18px;align-items:center;
+  padding:24px 20px;border-bottom:var(--bd);transition:background .12s,color .12s}
+.row:last-child{border-bottom:0}
+.row:hover{background:var(--ink);color:var(--paper)}
+.row .idx{font-family:var(--mono);font-size:13px}
+.row h3{font-size:clamp(24px,4.4vw,48px)}
+.row .desc{font-family:var(--body);font-size:15px;margin-top:6px;max-width:60ch;line-height:1.35}
+.row .tag{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;text-align:right}
+.row.link .tag::after{content:" →"}
+@media(max-width:760px){.row{grid-template-columns:40px 1fr}.row .tag{grid-column:2;text-align:left;margin-top:4px}}
 
 /* caso */
-.caso{background:linear-gradient(140deg,#fffaf0,var(--surface));border:1px solid var(--line-2);border-radius:20px;padding:38px}
-.caso h2{font-size:28px}.caso .lead{color:var(--ink-soft);font-size:17px;margin:12px 0 18px;max-width:62ch}
-.caso .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
-.caso .step{display:flex;gap:12px;font-size:14.5px;color:var(--ink-soft)}
-.caso .step b{color:var(--ink);font-family:var(--serif)}
-.caso .quote{margin-top:22px;font-family:var(--serif);font-size:20px;color:var(--accent-ink);border-left:3px solid var(--accent);padding-left:16px}
+.caso{padding:40px 20px 48px}
+.caso h2{font-size:clamp(34px,6vw,90px)}
+.caso .lead{font-size:18px;max-width:60ch;margin:16px 0 24px}
+.caso .steps{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--paper)}
+.caso .step{padding:20px;border-right:2px solid var(--paper);border-bottom:2px solid var(--paper)}
+.caso .step:nth-child(2n){border-right:0}
+.caso .step:nth-last-child(-n+2){border-bottom:0}
+.caso .step .l{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--acc)}
+.caso .step p{font-size:15px;margin-top:8px}
+.caso .quote{font-family:var(--display);font-size:clamp(22px,3vw,38px);text-transform:uppercase;letter-spacing:-.02em;margin-top:30px;max-width:20ch;line-height:.98}
+.caso .quote .mono{font-family:var(--mono);font-size:12px;color:var(--acc);display:block;margin-top:10px;letter-spacing:.08em}
+@media(max-width:640px){.caso .steps{grid-template-columns:1fr}.caso .step{border-right:0}}
+
+/* motor en vivo — terminal */
+.term{font-family:var(--mono);font-size:13px;line-height:1.65;padding:22px 20px;min-height:230px}
+.term .ln{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.92}
+.term .ln .t{color:var(--acc)}
+.term .caret{color:var(--acc)}
+.term .caret b{display:inline-block;width:.55em;height:1em;background:var(--acc);vertical-align:-2px;animation:blink 1s step-end infinite}
 
 /* oferta */
-.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
-.tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
-.tier.feature{border-color:rgba(234,169,0,.5);box-shadow:0 0 0 1px rgba(234,169,0,.18)}
-.tier .lbl{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:800}
-.tier h3{font-size:23px;margin:8px 0 4px}.tier .price{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:12px}
-.tier ul{list-style:none}.tier li{font-size:14px;color:var(--ink-soft);padding:5px 0 5px 20px;position:relative}
-.tier li::before{content:"→";position:absolute;left:0;color:var(--accent-ink)}
-.tier .btn{margin-top:18px;font-size:13.5px;padding:10px 18px}
+.ladder{display:grid;grid-template-columns:repeat(3,1fr)}
+.tier{padding:28px 20px 32px;border-right:var(--bd);display:flex;flex-direction:column}
+.tier:last-child{border-right:0}
+.tier.feat{background:var(--ink);color:var(--paper)}
+.tier .l{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--acc)}
+.tier h3{font-size:clamp(22px,2.6vw,34px);margin:10px 0 4px}
+.tier .price{font-family:var(--mono);font-size:15px;margin-bottom:16px}
+.tier ul{list-style:none;flex:1}
+.tier li{font-size:14px;padding:7px 0 7px 18px;position:relative;border-top:1px solid rgba(10,10,10,.14)}
+.tier.feat li{border-top-color:rgba(244,242,237,.18)}
+.tier li::before{content:"/";position:absolute;left:0;color:var(--acc);font-family:var(--mono)}
+.tier .btn{margin-top:18px;text-align:center}
+.tier.feat .btn{border-color:var(--paper)}
+@media(max-width:760px){.ladder{grid-template-columns:1fr}.tier{border-right:0;border-bottom:var(--bd)}.tier:last-child{border-bottom:0}}
 
-/* band */
-.band{background:linear-gradient(135deg,#ffd24d,var(--accent));color:#231a00;border-radius:20px;padding:40px;text-align:center;box-shadow:0 20px 50px -24px rgba(154,107,0,.6)}
-.band h2{font-size:30px;color:#231a00}.band p{max-width:54ch;margin:10px auto 22px;font-size:16.5px;color:#5a4400;font-weight:600}
-.band .btn{background:#16181d;color:#ffd24d}.band .btn:hover{background:#000}
+/* contacto / formulario */
+.agenda{padding:32px 20px 44px;display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:820px}
+.agenda .full{grid-column:1/-1}
+.agenda label{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.agenda input,.agenda textarea,.agenda select{width:100%;background:var(--paper);border:var(--bd);color:var(--ink);
+  padding:12px 13px;font:15px var(--body)}
+.agenda input:focus,.agenda textarea:focus,.agenda select:focus{outline:0;border-color:var(--acc)}
+.agenda textarea{resize:vertical}
+.agenda .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.agenda .formnote{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:#0a0a0a99;margin-top:6px}
+.agenda .btn{cursor:pointer;justify-self:start}
+@media(max-width:640px){.agenda{grid-template-columns:1fr}}
 
-footer{padding:40px 0 30px;color:var(--ink-mute);font-size:13px}
-footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-footer b{color:var(--ink);font-family:var(--serif)}
+/* footer / sitemap */
+.foot{padding:40px 20px 20px}
+.foot .map{display:flex;gap:28px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.foot .meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.06em;margin-top:20px;padding-top:16px;border-top:2px solid var(--paper)}
+.wordmark{font-family:var(--display);font-size:clamp(60px,12.5vw,220px);line-height:.82;letter-spacing:-.04em;
+  text-transform:uppercase;white-space:nowrap;overflow:hidden;margin-top:24px}
 
-@media(max-width:900px){.two,.feat,.grid,.ladder,.caso .steps{grid-template-columns:1fr}.nlinks{display:none}}
-@media(prefers-reduced-motion:reduce){.duckcard video{display:none}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes blink{50%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.hero video{display:none}}
 </style>
 <!-- Google tag (gtag.js) - Patologicos -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
@@ -142,143 +191,246 @@ footer b{color:var(--ink);font-family:var(--serif)}
 </script>
 </head>
 <body>
+<div id="prog"></div>
+
 <header class="nav">
-  <a class="logo" href="#"><span class="dot"></span><b>Patológicos</b></a>
+  <a class="brand" href="/">PATOL<span class="live">Ó</span>GICOS</a>
   <nav class="nlinks">
     <a href="#hacemos">Qué hacemos</a>
     <a href="#portafolio">Portafolio</a>
-    <a href="#caso">Caso PROCA</a>
+    <a href="#caso">Caso</a>
+    <a href="#motor">Motor</a>
     <a href="#oferta">Oferta</a>
-    <a href="kibiexe/">El mundo vivo</a>
+    <a href="kibiexe/">KIBI</a>
     <a href="blog/">Blog</a>
   </nav>
-  <a class="btn" href="#contacto">Agenda una auditoría</a>
+  <span class="clock"><span class="dot"></span><span id="clk">--:--:--</span> CDMX</span>
+  <a class="navcta" href="#contacto">Agenda</a>
 </header>
 
-<div class="hero"><div class="wrap">
-  <div class="eyebrow">Compañía nativa de IA · build-in-public</div>
-  <div class="duckcard">
-    <video src="pato.mp4" autoplay muted loop playsinline preload="auto" aria-label="Mascota de Patológicos — el pato"></video>
+<!-- HERO -->
+<section class="hero">
+  <video src="pato.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="badge"><span class="dot"></span>pato.mp4 · en vivo</div>
+  <div class="in">
+    <div class="eyebrow">Compañía nativa de IA · Build-in-public</div>
+    <h1>No lo contamos.<br>Lo operamos<span class="cursor"></span></h1>
+    <p class="sub">Operamos un portafolio de propiedades de medios y aplicamos IA agéntica a procesos reales de
+    industria, de punta a punta. El humano orquesta; los agentes hacen cada vez más. Somos nuestra propia prueba.</p>
+    <div class="cta">
+      <a class="btn" href="#contacto">Agenda una auditoría</a>
+      <a class="btn ghost" href="#portafolio">Ver el portafolio</a>
+    </div>
   </div>
-  <h1 class="wordmark">PATOL<span class="g">Ó</span>GICOS</h1>
-  <p class="tag">Construimos compañías que corren con <b>IA agéntica</b>. Producimos contenido a escala
-  a través de un portafolio de propiedades y aplicamos IA a procesos reales de industria —de punta a punta—.
-  No lo contamos: lo operamos. <b>Somos nuestra propia prueba.</b></p>
-  <div class="cta"><a class="btn" href="#contacto">Agenda una Auditoría de Proceso con IA</a>
-    <a class="btn ghost" href="#portafolio">Ver el portafolio</a></div>
-  <div class="meta">Velas · PROCA · Picando Tabla · Nomos · CAD·CAM·IA — todas movidas por el mismo motor.</div>
-</div></div>
+</section>
 
-<section id="hacemos"><div class="wrap">
-  <div class="sh"><div class="eyebrow">Qué hacemos</div><h2>Dos motores, una máquina</h2>
-    <p>La IA generativa colapsó el costo de producir. El cuello de botella ya no es producir: es tener un
-    sistema que produzca, distribuya, mida y doble lo que funciona, sin fricción humana en cada paso.</p></div>
+<!-- TICKER -->
+<section class="ticker">
+  <div class="cell"><div class="k">Activos generados</div><div class="v"><span id="c-activos">1240</span><span class="up">▲</span></div></div>
+  <div class="cell"><div class="k">Tareas en el loop</div><div class="v" id="c-tareas">7</div></div>
+  <div class="cell"><div class="k">Agentes activos</div><div class="v" id="c-agentes">3</div></div>
+  <div class="cell"><div class="k">Hora de máquina</div><div class="v" id="clk2">--:--:--</div></div>
+</section>
+
+<!-- MARQUESINA -->
+<section class="inv marq">
+  <div class="track" id="marq"></div>
+</section>
+
+<!-- QUÉ HACEMOS -->
+<section id="hacemos">
+  <div class="ix"><span>/ 01 — Qué hacemos</span><span>Dos motores, una máquina</span></div>
   <div class="two">
-    <div class="pillar"><div class="n">01</div><h3>Motor de contenido a escala</h3>
+    <div class="col">
+      <div class="n">01 / Medios</div>
+      <h2>Motor de contenido a escala</h2>
       <p>Agentes de IA producen video, audio, texto e imagen por cada propiedad de medios, a un volumen y
       velocidad que los medios tradicionales no igualan. Convertimos la atención en ingresos: comercio,
-      audiencia y alto ticket.</p></div>
-    <div class="pillar"><div class="n">02</div><h3>Orquestadores de IA para procesos</h3>
-      <p>Construimos sistemas agénticos que transforman un proceso real de tu industria con interfaz a
-      medida. Lo probamos en la nuestra (dental, con PROCA) y lo replicamos: legal (Nomos), seguros, y la
-      que sigue. Un método repetible, no una demo.</p></div>
+      audiencia y alto ticket. El humano dirige y aprueba.</p>
+    </div>
+    <div class="col">
+      <div class="n">02 / Procesos</div>
+      <h2>Orquestadores de IA para procesos</h2>
+      <p>Construimos sistemas agénticos que transforman un proceso real de tu industria con interfaz a la
+      medida. Lo probamos en la nuestra —dental, con PROCA— y lo replicamos: legal con Nomos, y la que sigue.
+      Un método repetible, no una demo.</p>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section><div class="wrap">
-  <div class="sh"><div class="eyebrow">El motor</div><h2>Lo que nos hace "nueva generación"</h2></div>
-  <div class="feat">
-    <div class="f"><div class="ic">🤖</div><b>Agentes que generan</b><span>Un content-loop produce por propiedad; el humano dirige y aprueba.</span></div>
-    <div class="f"><div class="ic">🔁</div><b>Loops que avanzan</b><span>Un supervisor garantiza producción continua, sin que nada se estanque.</span></div>
-    <div class="f"><div class="ic">📊</div><b>Data-driven</b><span>Medimos qué funciona en cada plataforma y doblamos lo ganador.</span></div>
-    <div class="f"><div class="ic">⚡</div><b>Velocidad > perfección</b><span>Lanzar, medir, iterar. Solo afirmamos lo demostrable.</span></div>
+<!-- PORTAFOLIO -->
+<section id="portafolio">
+  <div class="ix"><span>/ 02 — Portafolio</span><span>No lo contamos. Lo operamos.</span></div>
+  <div>
+    <div class="row"><div class="idx">A/</div><div><h3>Lumin Candele</h3><div class="desc">Velas artesanales, hechas a mano. Audiencia convertida en ventas con el motor de contenido.</div></div><div class="tag">Comercio</div></div>
+    <div class="row"><div class="idx">B/</div><div><h3>PROCA / PROCAOps</h3><div class="desc">IA aplicada a un proceso dental de punta a punta: editor 3D y portal de operaciones. Caso insignia.</div></div><div class="tag">Caso insignia</div></div>
+    <div class="row"><div class="idx">C/</div><div><h3>Picando Tabla</h3><div class="desc">Tablas de quesos y charcutería para maridaje. Comercio, contenido y anuncios desde cero.</div></div><div class="tag">Comercio</div></div>
+    <div class="row"><div class="idx">D/</div><div><h3>Nomos</h3><div class="desc">Orquestador de IA para la rama legal. Un producto SaaS construido y gobernado por la máquina.</div></div><div class="tag">Orquestador</div></div>
+    <div class="row"><div class="idx">E/</div><div><h3>CAD·CAM·IA</h3><div class="desc">Autoridad de la revolución de producción —impresión 3D, CAD, CAM, IA— por contenido y SEO.</div></div><div class="tag">Medios</div></div>
+    <a class="row link" href="kibiexe/"><div class="idx">F/</div><div><h3>KIBI · el mundo vivo</h3><div class="desc">Una sociedad de IA que corre, colapsa y renace sola, sin parar. Build-in-public, en directo.</div></div><div class="tag">En vivo</div></a>
   </div>
-</div></section>
+</section>
 
-<section id="portafolio"><div class="wrap">
-  <div class="sh"><div class="eyebrow">Portafolio = la prueba</div><h2>No lo contamos. Lo operamos.</h2>
-    <p>Cada propiedad corre con el mismo motor. Esa es la evidencia de que el sistema funciona.</p></div>
-  <div class="grid">
-    <div class="prop"><div class="top"><span class="em">🕯️</span><h3>Lumin Candele</h3><span class="tag">Comercio</span></div><p>Velas artesanales (madre e hijo, inspiración italiana). Audiencia → ventas con el motor de contenido.</p></div>
-    <div class="prop"><div class="top"><span class="em">🦷</span><h3>PROCA / PROCAOps</h3><span class="tag">Caso insignia</span></div><p>IA aplicada a un proceso dental de punta a punta: editor 3D + portal de operaciones.</p></div>
-    <div class="prop"><div class="top"><span class="em">🍷</span><h3>Picando Tabla</h3><span class="tag">Comercio</span></div><p>Tablas de parota & maridaje. E-commerce + Meta Ads + contenido, desde cero.</p></div>
-    <div class="prop"><div class="top"><span class="em">⚖️</span><h3>Nomos</h3><span class="tag">Orquestador</span></div><p>El orquestador de IA de la rama legal. Un producto SaaS construido y auto-gestionado por la máquina.</p></div>
-    <div class="prop"><div class="top"><span class="em">🖨️</span><h3>CAD·CAM·IA</h3><span class="tag">Medios</span></div><p>Autoridad de la revolución de producción (impresión 3D, CAD, CAM, IA) por contenido y SEO.</p></div>
-    <a class="prop live" href="kibiexe/"><div class="top"><span class="em">🌱</span><h3>KIBI · el mundo vivo</h3><span class="tag">En vivo</span></div><p>Una sociedad de IA que corre, colapsa y renace sola, sin parar. Build-in-public, en directo. <b>Míralo →</b></p></a>
-  </div>
-</div></section>
-
-<section id="caso"><div class="wrap">
+<!-- CASO -->
+<section id="caso" class="inv">
+  <div class="ix"><span>/ 03 — Caso insignia</span><span>PROCA / PROCAOps</span></div>
   <div class="caso">
-    <div class="eyebrow">Caso insignia</div>
     <h2>PROCA / PROCAOps</h2>
     <p class="lead">Tomamos un proceso real —un laboratorio dental— y lo transformamos con software, IA e
-    interfaz a medida, de punta a punta. La prueba de que sabemos aplicar IA a un proceso de industria.</p>
+    interfaz a la medida, de punta a punta. La prueba de que sabemos aplicar IA a un proceso de industria.</p>
     <div class="steps">
-      <div class="step"><b>El proceso</b>&nbsp;— diseño de piezas dentales, manual, lento y dependiente de expertos.</div>
-      <div class="step"><b>La solución</b>&nbsp;— editor 3D (PROCA) + portal de operaciones con IA (PROCAOps).</div>
-      <div class="step"><b>El método</b>&nbsp;— construido en público, con agentes y loops que siempre avanzan.</div>
-      <div class="step"><b>El resultado</b>&nbsp;— un proceso de industria operando con IA. <span style="color:var(--ink-mute)">[métricas en preparación]</span></div>
+      <div class="step"><div class="l">El proceso</div><p>Diseño de piezas dentales: manual, lento y dependiente de expertos.</p></div>
+      <div class="step"><div class="l">La solución</div><p>Editor 3D (PROCA) + portal de operaciones con IA (PROCAOps).</p></div>
+      <div class="step"><div class="l">El método</div><p>Construido en público, con agentes y loops que siempre avanzan.</p></div>
+      <div class="step"><div class="l">El resultado</div><p>Un proceso de industria operando con IA. <span class="mono" style="color:var(--acc)">[métricas en preparación]</span></p></div>
     </div>
-    <div class="quote">"Lo hicimos en nuestra propia industria. Esto es lo que podemos hacer en la tuya."</div>
+    <div class="quote">Lo hicimos en nuestra propia industria.<span class="mono">Esto es lo que podemos hacer en la tuya.</span></div>
   </div>
-</div></section>
+</section>
 
-<section id="oferta"><div class="wrap">
-  <div class="sh"><div class="eyebrow">La oferta</div><h2>Pon IA a trabajar en tu negocio — desde $999 al mes</h2>
-    <p>Tres formas de empezar: desplegamos PATO en tu PYME, diagnosticamos un proceso, o construimos tu producto a medida. El mismo motor que corre nuestras marcas, aplicado a lo tuyo.</p></div>
+<!-- MOTOR EN VIVO -->
+<section id="motor" class="inv">
+  <div class="ix"><span>/ 04 — Motor en vivo</span><span><span class="dot"></span> agentes operando</span></div>
+  <div class="term" id="term"></div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta">
+  <div class="ix"><span>/ 05 — Oferta</span><span>Pon IA a trabajar en tu negocio</span></div>
   <div class="ladder">
-    <div class="tier feature"><div class="lbl">Para PYMES · entrada</div><h3>PATO para tu negocio</h3>
+    <div class="tier feat">
+      <div class="l">Para PYMES · entrada</div>
+      <h3>PATO para tu negocio</h3>
       <div class="price">desde $999 MXN/mes</div>
-      <ul><li>Marketing y contenido que corre solo, como el nuestro</li><li>Ventas: captamos y damos seguimiento a tus prospectos</li><li>Simplificamos tu operación con automatización a la medida</li><li>Sin contratar un equipo: PATO trabaja por ti</li></ul>
-      <a class="btn" href="#contacto" data-interes="PATO para mi PYME ($999/mes)">Empieza desde $999/mes</a></div>
-    <div class="tier"><div class="lbl">Diagnóstico</div><h3>Auditoría de Proceso con IA</h3>
-      <div class="price">$8,000–$15,000 MXN</div>
+      <ul><li>Marketing y contenido que corre solo, como el nuestro</li><li>Ventas: captamos y damos seguimiento a tus prospectos</li><li>Automatización a la medida de tu operación</li><li>La máquina trabaja; tú orquestas</li></ul>
+      <a class="btn" href="#contacto" data-interes="PATO para mi PYME ($999/mes)">Empieza desde $999/mes</a>
+    </div>
+    <div class="tier">
+      <div class="l">Diagnóstico</div>
+      <h3>Auditoría de Proceso con IA</h3>
+      <div class="price">$8,000 – $15,000 MXN</div>
       <ul><li>Mapeamos tu proceso y dónde la IA da más palanca</li><li>Plan concreto: qué automatizar, en qué orden, qué medir</li><li>Prototipo o prueba de concepto del primer paso</li></ul>
-      <a class="btn ghost" href="#contacto" data-interes="Auditoría de Proceso con IA">Agenda una auditoría</a></div>
-    <div class="tier"><div class="lbl">El producto</div><h3>Aplicación de IA a tu proceso</h3>
+      <a class="btn ghost" href="#contacto" data-interes="Auditoría de Proceso con IA">Agenda una auditoría</a>
+    </div>
+    <div class="tier">
+      <div class="l">El producto</div>
+      <h3>Aplicación de IA a tu proceso</h3>
       <div class="price">desde $120,000 MXN · ~6 meses</div>
       <ul><li>Sistema agéntico + interfaz a la medida de tu operación</li><li>Construido en público, con entregas medibles</li><li>El método ya probado en PROCA y Nomos, aplicado a lo tuyo</li></ul>
-      <a class="btn ghost" href="#contacto" data-interes="Aplicación de IA a medida">Hablemos del producto</a></div>
+      <a class="btn ghost" href="#contacto" data-interes="Aplicación de IA a medida">Hablemos del producto</a>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section id="contacto"><div class="wrap">
-  <div class="band">
-    <h2>¿Listo para poner IA a trabajar en tu negocio?</h2>
-    <p>Cuéntanos de tu negocio y qué te interesa. Te decimos cómo PATO puede ayudarte — desde $999 al mes.</p>
-    <form class="agenda" action="agenda.php" method="post">
-      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <label>¿Qué te interesa?
-        <select name="interes">
-          <option>PATO para mi PYME ($999/mes)</option>
-          <option>Auditoría de Proceso con IA</option>
-          <option>Aplicación de IA a medida</option>
-        </select></label>
-      <div class="row">
-        <label>Nombre*<input type="text" name="nombre" required></label>
-        <label>Empresa*<input type="text" name="empresa" required></label>
-      </div>
-      <div class="row">
-        <label>Correo*<input type="email" name="correo" required></label>
-        <label>WhatsApp / teléfono<input type="text" name="telefono"></label>
-      </div>
-      <div class="row">
-        <label>Industria*<input type="text" name="industria" required placeholder="seguros, dental, e-commerce…"></label>
-        <label>Tamaño / volumen<input type="text" name="volumen" placeholder="ej. 5 empleados, 200 pedidos/mes"></label>
-      </div>
-      <label>Cuéntanos de tu negocio: ¿qué quieres mejorar (marketing, ventas, operación) o automatizar?*
-        <textarea name="proceso" rows="4" required placeholder="Descríbelo en tus palabras: qué es manual, lento o caro hoy."></textarea></label>
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="ix"><span>/ 06 — Contacto</span><span>Te respondemos en 1 día hábil</span></div>
+  <form class="agenda" action="agenda.php" method="post">
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="full">
+      <label>¿Qué te interesa?</label>
+      <select name="interes">
+        <option>PATO para mi PYME ($999/mes)</option>
+        <option>Auditoría de Proceso con IA</option>
+        <option>Aplicación de IA a medida</option>
+      </select>
+    </div>
+    <div><label>Nombre*</label><input type="text" name="nombre" required></div>
+    <div><label>Empresa*</label><input type="text" name="empresa" required></div>
+    <div><label>Correo*</label><input type="email" name="correo" required></div>
+    <div><label>WhatsApp / teléfono</label><input type="text" name="telefono"></div>
+    <div><label>Industria*</label><input type="text" name="industria" required placeholder="seguros, dental, e-commerce…"></div>
+    <div><label>Tamaño / volumen</label><input type="text" name="volumen" placeholder="5 empleados, 200 pedidos/mes"></div>
+    <div class="full"><label>Cuéntanos de tu negocio: ¿qué quieres mejorar o automatizar?*</label>
+      <textarea name="proceso" rows="4" required placeholder="Qué es manual, lento o caro hoy."></textarea></div>
+    <div class="full">
       <button class="btn" type="submit">Quiero que PATO me ayude</button>
-      <p class="formnote">Te respondemos en 1 día hábil. Sin compromiso.</p>
-    </form>
-    <script>document.querySelectorAll('[data-interes]').forEach(function(a){a.addEventListener('click',function(){var s=document.querySelector('select[name=interes]');if(s){s.value=a.getAttribute('data-interes');}});});</script>
-  </div>
-</div></section>
+      <div class="formnote">Te respondemos en 1 día hábil · Sin compromiso</div>
+    </div>
+  </form>
+  <script>document.querySelectorAll('[data-interes]').forEach(function(a){a.addEventListener('click',function(){var s=document.querySelector('select[name=interes]');if(s){s.value=a.getAttribute('data-interes');}});});</script>
+</section>
 
-<footer><div class="wrap">
-  <span><b>Patológicos</b> · compañía nativa de IA · patologicos.com</span>
-  <span>Construido en público · Velas &amp; PROCA primero</span>
-</div></footer>
+<!-- FOOTER / SITEMAP -->
+<section class="inv foot">
+  <div class="map">
+    <a href="#portafolio">Portafolio</a>
+    <a href="kibiexe/">KIBI · el mundo vivo</a>
+    <a href="blog/">Blog</a>
+    <a href="#oferta">Oferta</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <div class="wordmark">PATOLÓGICOS</div>
+  <div class="meta">
+    <span>Compañía nativa de IA · patologicos.com</span>
+    <span><span id="clk3">--:--:--</span> CDMX · Construido en público</span>
+  </div>
+</section>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* reloj CDMX HH:MM:SS */
+  function tick(){
+    var t;
+    try{ t = new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mexico_City',hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date()); }
+    catch(e){ t = new Date().toTimeString().slice(0,8); }
+    ['clk','clk2','clk3'].forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t;});
+  }
+  tick(); setInterval(tick,1000);
+
+  /* barra de progreso de scroll */
+  var prog=document.getElementById('prog');
+  function onScroll(){var h=document.documentElement;var p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1);prog.style.width=(p*100)+'%';}
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* marquesina */
+  var marcas=['Velas','PROCA','Picando Tabla','Nomos','CAD·CAM·IA','KIBI'];
+  var one=marcas.map(function(m){return '<span>'+m+'</span><span class="sep">/</span>';}).join('');
+  document.getElementById('marq').innerHTML=one+one; /* duplicado para loop continuo */
+
+  /* contadores */
+  var cA=1240,cT=7,cG=3;
+  if(!reduce){
+    setInterval(function(){cA+=Math.floor(Math.random()*3)+1;var e=document.getElementById('c-activos');if(e)e.textContent=cA.toLocaleString('es-MX');},2600);
+    setInterval(function(){cT=Math.max(3,Math.min(12,cT+(Math.random()<.5?-1:1)));var e=document.getElementById('c-tareas');if(e)e.textContent=cT;},4200);
+  }
+
+  /* motor en vivo — log de agentes tipo terminal */
+  var term=document.getElementById('term');
+  var AG=[
+    ['project_state','consolidó 11 proyectos · 1 vendiendo, 8 por cerrar'],
+    ['devloop','avanza velas — instrumentar Meta Pixel + evento de pedido'],
+    ['funnel_health','vigila 9 funnels · destino del dinero'],
+    ['reality_audit','mapa de propiedades · 0 huecos nuevos'],
+    ['supervisor','loops vivos · dev-loop OK · publish OK'],
+    ['content','pieza generada — hub de pacientes PROCADental'],
+    ['seo','propuesta title/meta · +3 enlaces internos'],
+    ['blog','borrador en cola — IA y sistemas para PYMES'],
+    ['x_engage','reporte de engagement · 2 originales listos'],
+    ['calendar','slot planificado · publicación en vivo'],
+    ['nomos_steward','consenso del equipo IA · escala a David: capital'],
+    ['weekly_report','digest semanal armado · señales reales']
+  ];
+  var lines=[], i=0;
+  function nowT(){try{return new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mexico_City',hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date());}catch(e){return new Date().toTimeString().slice(0,8);}}
+  function esc(s){return s.replace(/</g,'&lt;');}
+  function push(){
+    var a=AG[i%AG.length]; i++;
+    lines.push('<div class="ln"><span class="t">['+nowT()+']</span> '+esc(a[0])+' — '+esc(a[1])+'</div>');
+    if(lines.length>7) lines.shift();
+    term.innerHTML=lines.join('')+'<div class="ln caret">pato@patologicos:~$ <b></b></div>';
+    term.scrollTop=term.scrollHeight;
+  }
+  push();push();push();
+  if(!reduce) setInterval(push, 2200);
+
+  /* fetch pulse.json (datos reales del portafolio) para el conteo de agentes activos, si existe */
+  fetch('pulse.json?_t='+Date.now()).then(function(r){return r.json();}).then(function(d){
+    if(d&&d.agents){var act=d.agents.filter(function(x){return x.active;}).length;var e=document.getElementById('c-agentes');if(e&&act)e.textContent=act;}
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
