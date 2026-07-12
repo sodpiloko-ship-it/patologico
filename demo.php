@@ -74,9 +74,15 @@ if ($accion === 'lead') {
     $rec = ['at' => date('c'), 'tipo' => 'demo-lead', 'negocio' => $negocio,
             'correo' => $correo, 'telefono' => $tel, 'ip' => $ip];
     @file_put_contents($dir . '/demo.jsonl', json_encode($rec, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX);
+    // Responder YA y CERRAR la conexión: el envío de correo NO debe bloquear al front (bug del botón "Enviando…").
+    http_response_code(200);
+    echo json_encode(['status' => 'ok'], JSON_UNESCAPED_UNICODE);
+    if (function_exists('fastcgi_finish_request')) { fastcgi_finish_request(); }
+    elseif (function_exists('litespeed_finish_request')) { litespeed_finish_request(); }
+    // Con la respuesta ya entregada, el correo se manda en segundo plano (best-effort).
     $body = "Nuevo lead — Demo 'Corre el motor'\n\nNegocio: $negocio\nCorreo: $correo\nWhatsApp/tel: $tel\n";
     @mail(DM_TO, "Lead [Demo motor] — $correo", $body, "From: " . DM_FROM . "\r\nReply-To: $correo\r\n");
-    dm_out(['status' => 'ok']);
+    exit;
 }
 
 // --- accion=run: encola la consulta (para que PATO la corra) + acuse honesto ---

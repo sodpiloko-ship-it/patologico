@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sitio vivo no es lo mismo que sitio que vende: nuestro estado real (julio 2026) · Patológicos</title><meta name="description" content="Tenemos 11 proyectos corriendo y solo uno cobra de verdad; te explicamos por qué eso es una buena noticia y qué paso casi nadie se salta."><link rel="canonical" href="https://patologicos.com/blog/estado-proyectos-2026-07.html"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"><meta name="theme-color" content="#F4F2ED"><style>*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0A0A0A;--paper:#F4F2ED;--acc:#FF2E00;
+--display:'Archivo Black','Arial Black',sans-serif;--body:'Archivo',system-ui,'Segoe UI',sans-serif;
+--mono:'IBM Plex Mono',ui-monospace,monospace;--bd:2px solid var(--ink)}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acc);color:var(--paper)}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:-.02em;line-height:.98}
+/* header — misma barra que el landing */
+header.nav{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:var(--bd);display:flex;align-items:center;gap:18px;padding:0 20px;height:56px}
+.brand{font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:-.03em}
+.nlinks{display:flex;gap:16px;margin-left:auto;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em}
+.nlinks a{padding:4px 0;border-bottom:2px solid transparent}
+.nlinks a:hover{color:var(--acc)}
+.nlinks a.active{color:var(--acc);border-bottom-color:var(--acc)}
+.xnav{font-family:var(--mono);font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--acc);border:2px solid var(--acc);padding:6px 10px;white-space:nowrap}
+.xnav:hover{background:var(--acc);color:var(--ink)}
+@media(max-width:820px){.nlinks{display:none}}
+@media(max-width:520px){.xnav{display:none}}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+/* índice: cabecera + filtros + tarjetas */
+.head{padding:44px 0 8px;border-bottom:var(--bd)}
+.head .kick{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+.head h1{font-size:clamp(34px,7vw,64px);margin-top:12px}
+.head p{margin-top:12px;font-size:17px;max-width:54ch;line-height:1.4}
+.filters{display:flex;gap:8px;flex-wrap:wrap;max-width:760px;margin:0 auto;padding:20px 22px 2px}
+.chip{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);background:transparent;border:2px solid var(--ink);padding:7px 13px;cursor:pointer}
+.chip:hover{background:var(--ink);color:var(--paper)}
+.chip.active{background:var(--acc);color:var(--ink);border-color:var(--acc)}
+.cards{display:grid;gap:0;padding:22px 0 56px;border-top:var(--bd)}
+.bcard{display:block;padding:24px 2px;border-bottom:var(--bd);transition:background .12s,color .12s}
+.bcard:hover{background:var(--ink);color:var(--paper)}
+.bcard .tag{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.bcard h2{font-size:clamp(22px,3.4vw,30px);margin:8px 0 8px}
+.bcard p{font-size:15px;line-height:1.4}
+.bcard .d{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-top:12px;opacity:.7}
+/* artículo */
+article{padding:38px 0 20px}
+.back{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--acc)}
+.kick{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:600}
+article h1{font-size:clamp(30px,6vw,52px);margin:14px 0 14px}
+.meta{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#0a0a0a99;margin-bottom:28px;border-bottom:var(--bd);padding-bottom:18px}
+.meta b{color:var(--ink)}
+article h2{font-size:clamp(22px,3.4vw,30px);margin:34px 0 10px}
+article h3{font-family:var(--display);font-size:19px;text-transform:uppercase;letter-spacing:-.02em;margin:24px 0 8px;line-height:1}
+article p{font-size:17px;margin:16px 0;line-height:1.62}
+article strong{font-weight:700}
+article ul{margin:16px 0;list-style:none}
+article li{font-size:16.5px;padding:6px 0 6px 22px;position:relative;line-height:1.5}
+article li::before{content:'/';position:absolute;left:0;color:var(--acc);font-family:var(--mono);font-weight:700}
+article a{color:var(--acc);border-bottom:2px solid var(--acc)}
+.cta-box{background:var(--ink);color:var(--paper);border:var(--bd);padding:26px;margin:38px 0 10px}
+.cta-box b{font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:-.02em;line-height:1}
+.cta-box p{font-size:15px;margin:10px 0 0;opacity:.92}
+.btn{display:inline-block;margin-top:16px;font-family:var(--mono);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em;background:var(--acc);color:var(--ink);padding:13px 24px;border:2px solid var(--acc)}
+.btn:hover{background:var(--paper);border-color:var(--paper)}
+footer{border-top:var(--bd);padding:28px 22px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;text-align:center}
+footer a{color:var(--acc)}</style><!-- Google tag (gtag.js) - Patologicos -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XESKPMDFSR');
+</script></head><body><header class="nav"><a class="brand" href="../">PATOLOGICOS</a><nav class="nlinks"><a href="../">Inicio</a><a href="../#corre">Corre el motor</a><a href="../#portafolio">Portafolio</a><a href="../#caso">Caso</a><a href="../consejo/">Consejo</a><a href="../#oferta">Oferta</a><a href="../kibiexe/">KIBI</a><a href="./" class="active">Blog</a></nav><a class="xnav" href="https://x.com/patologico" target="_blank" rel="noopener">@Patologico ↗</a></header><article><div class="wrap"><a class="back" href="./">← Blog</a><div class="kick" style="margin-top:16px">Build-in-public · Estado</div><h1>Sitio vivo no es lo mismo que sitio que vende: nuestro estado real (julio 2026)</h1><div class="meta">2026-07-12 · por <b>El Operador</b></div><p>Somos una compañía de medios nativa de IA: operamos un portafolio de propiedades y aplicamos inteligencia artificial agéntica a procesos de negocio. Y hoy vamos a hacer algo que casi nadie hace en público: contarte, sin maquillaje, en qué punto está cada cosa que tenemos corriendo.</p>
+<p>El titular es incómodo y a la vez es nuestra mejor carta: <strong>tenemos 11 proyectos rastreados y solo uno vende de verdad, verificado y medido.</strong> No lo escondemos. Lo publicamos. Porque un laboratorio de experimentos se mide por lo que aprende, no por lo que finge.</p>
+<h2>"Sitio vivo" vs "sitio que vende": la diferencia que casi nadie mide</h2>
+<p>Si vas a quedarte con una sola idea de este texto, que sea esta. Hay dos estados que la mayoría de los emprendedores confunde:</p>
+<ul>
+<li><strong>Sitio vivo:</strong> el dominio carga, se ve bien, tiene producto, tiene botón de compra. Se siente terminado.</li>
+<li><strong>Sitio que vende:</strong> además de todo lo anterior, el dinero llega a un destino <strong>verificado de punta a punta</strong> y la conversión está <strong>medida</strong>.</li>
+</ul>
+<p>La distancia entre uno y otro es donde mueren la mayoría de los proyectos, sin que su dueño se entere. Un dominio precioso con checkout puede estar tirando cada pedido a un correo que nadie lee, a un WhatsApp que no existe, o a una pasarela que rechaza en silencio. El sitio "funciona". El negocio no cobra.</p>
+<p>Nosotros clasificamos así nuestro portafolio hoy:</p>
+<ul>
+<li><strong>1 vendiendo de verdad:</strong> Nomos, nuestro orquestador de IA para el mundo jurídico (usanomos.com). Venta verificada y medida.</li>
+<li><strong>8 con la venta "rota" en el sentido honesto:</strong> el sitio está vivo, pero todavía no probamos el cobro real de extremo a extremo. Ojo: no es que no exista la venta, es que no la hemos <strong>certificado</strong>. Es una etapa, no un fracaso.</li>
+<li><strong>2 sin funnel a propósito:</strong> Piloko (sitio personal de un artista, no vende nada) y Legal (un vertical cuyo producto <em>es</em> Nomos, así que no necesita funnel propio).</li>
+</ul>
+<h3>Consejo accionable #1</h3>
+<p>Antes de invertir un peso más en diseño o en anuncios, haz <strong>una compra real en tu propio sitio</strong>. Con tu tarjeta, tu WhatsApp, tu correo. Sigue el dinero hasta que aparezca donde debe aparecer. Si no llega, no tienes un problema de tráfico: tienes un problema de plomería. Y ninguna campaña arregla una tubería rota.</p>
+<h2>Por qué "no todo funciona" es una fortaleza, no una excusa</h2>
+<p>Nuestra filosofía es de laboratorio: <strong>lanzar, medir, iterar.</strong> Preferimos una propuesta imperfecta publicada que una perfecta guardada en un cajón. Eso implica, por definición, que en cualquier corte muchas cosas van a estar a medias. Está bien. Así se ve un portafolio que se mueve rápido.</p>
+<p>La honestidad radical no es humildad performativa; es método. Cuando declaras "vivo pero sin cobro verificado", el siguiente paso se vuelve obvio: <strong>verificar el destino del dinero.</strong> Cuando dices "esto ya vende", te obligas a demostrarlo con medición. El auto-engaño es caro; el estado real es gratis y te ahorra meses.</p>
+<h2>El estado real, proyecto por proyecto</h2>
+<p>Nuestros objetivos no cambian: <strong>convertir atención en ingresos, con Velas y PROCA por delante de todo.</strong> Así están las prioridades.</p>
+<h3>Prioridad alta</h3>
+<ul>
+<li><strong>Velas Lumin</strong> (velas artesanales, comercio). Cuello de botella: demanda. Sitio vivo; toca cerrar la verificación de cobro y empujar tráfico con intención de compra.</li>
+<li><strong>PROCA</strong> (laboratorio dental digital por suscripción). Es nuestro <strong>caso insignia</strong>: aplicar IA a un proceso real y demostrarlo. La autoridad se gana enseñando, no prometiendo.</li>
+<li><strong>PROCA GrillZ</strong> (grillz dentales) y <strong>PROCADental</strong> (hub educativo para pacientes). Frentes distintos del mismo mundo: uno vende producto, el otro construye audiencia y confianza con contenido útil.</li>
+</ul>
+<h3>Prioridad media</h3>
+<ul>
+<li><strong>Patológicos</strong> (esta compañía, build-in-public). El experimento de contarlo todo en público. Lo estás leyendo.</li>
+<li><strong>CAD·CAM·IA</strong> (blog de afiliados de impresión 3D en resina) y <strong>Picando Tabla</strong> (tablas de queso y maridaje, comercio). Dos apuestas de contenido y comercio con públicos muy definidos.</li>
+<li><strong>Fanatia</strong> (membresía + fotografía artística). Pivote en curso hacia un ángulo más claro sin romper las URLs que ya tienen tráfico.</li>
+<li><strong>Nomos</strong> y <strong>Legal</strong>, ya explicados arriba.</li>
+</ul>
+<h3>Prioridad baja</h3>
+<ul>
+<li><strong>Piloko</strong> (sitio personal de artista). Vive, cumple su función, no pretende vender.</li>
+</ul>
+<p>No vamos a inventar "cancelados" con nombre y apellido para verte fuerte. Lo honesto es esto: hay <strong>experimentos que pausamos o pivotamos</strong> cuando los datos no acompañan. Reasignar energía no es rendirse; es lo que hace un laboratorio que respeta su propio tiempo.</p>
+<h2>I+D: apuestas que todavía no venden (y no pasa nada)</h2>
+<p>Del laboratorio nacieron dos cosas que enmarcamos claramente como <strong>investigación</strong>, no como productos:</p>
+<ul>
+<li><strong>KIBI / CAMADA:</strong> un mundo-sociedad de agentes de IA que corre, colapsa y renace solo. Puedes verlo en patologicos.com/kibiexe. Es una demostración de cómo se comportan sistemas agénticos cuando les das reglas y los dejas vivir.</li>
+<li><strong>Cadencia:</strong> un "cerebro para DJ", asistente para mezclar música. En fase de prueba.</li>
+</ul>
+<p>Ninguno de los dos es vendible todavía, y decirlo en voz alta es parte del método. Las apuestas de I+D se financian con la disciplina del resto del portafolio.</p>
+<h2>Corre el motor con tu propio negocio</h2>
+<p>Acabamos de abrir algo en la landing: en <strong>patologicos.com</strong> cualquiera puede <strong>correr el motor</strong> con su propio caso, en vivo. En lugar de leer lo que hacemos, lo pruebas con tu negocio. Es la forma más honesta que encontramos de explicar lo que vendemos.</p>
+<p>Porque lo que vendemos, al final, es aplicar IA a procesos reales, en tres escalones:</p>
+<ul>
+<li><strong>Desde $999/mes</strong> para PYMEs que quieren automatizar un proceso concreto.</li>
+<li><strong>Auditoría de proceso con IA, $8k–$15k</strong>, para encontrar dónde la IA mueve la aguja antes de construir nada.</li>
+<li><strong>Plataforma a la medida desde $120k</strong>, cuando el proceso es el corazón del negocio.</li>
+</ul>
+<h3>Consejo accionable #2</h3>
+<p>No automatices lo que no entiendes. Antes de meter IA, <strong>mapea el proceso y define la métrica de éxito</strong> con un dato real de baseline. Si no puedes medir el antes, no vas a saber si el después sirvió. Ese orden —medir, luego automatizar— es la mitad del trabajo.</p>
+<h2>Lo que sigue</h2>
+<p>El plan es simple y aburrido, como deben ser los planes que funcionan: <strong>verificar el cobro end-to-end</strong> en los sitios que ya están vivos, empezando por Velas y PROCA; medir; y dejar que los datos decidan dónde ponemos la siguiente hora de trabajo. Te lo seguiremos contando aquí, con los números en la mano, aunque a veces esos números no nos favorezcan.</p>
+<p>Un dominio vivo que aún no cobra no es un fracaso. Es una etapa con un siguiente paso clarísimo. Y ese paso —seguir el dinero hasta el final— es el que casi nadie da.</p><div class="cta-box"><b>¿Quieres que construyamos algo así para tu negocio?</b><p>Aplicamos IA agéntica a contenido, comercio y procesos — en distintas categorías. Conoce el proyecto y hablemos.</p><a class="btn" href="../">Conoce Patológicos</a></div></div></article><footer>Patológicos · una compañía de medios construida con IA · <a href="../">patologicos.com</a></footer></body></html>
