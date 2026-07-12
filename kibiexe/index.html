@@ -1,0 +1,157 @@
+<!doctype html><html lang=es><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>KIBI · el mundo en vivo</title>
+<style>
+:root{--bg:#08080f;--pan:#11111d;--ink:#eef1ff;--mut:#8b8ba8;--acc:#a9b6ff;--pal:#ffd27a;--line:rgba(160,150,220,.16);--g:#5ef0a8;--b:#ff6a7a}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:radial-gradient(1200px 800px at 60% -10%,#151528,transparent),var(--bg);color:var(--ink);
+ font-family:'Space Grotesk',system-ui,Segoe UI,sans-serif;line-height:1.45;overflow:hidden}
+#wrap{display:grid;grid-template-columns:1fr 320px;grid-template-rows:auto 1fr;height:100vh;gap:0}
+header{grid-column:1/3;display:flex;align-items:center;gap:16px;padding:12px 20px;border-bottom:1px solid var(--line);
+ background:rgba(10,10,20,.6);backdrop-filter:blur(6px)}
+h1{font-size:19px;letter-spacing:.02em}h1 b{color:var(--pal)}
+.tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--mut)}
+.pill{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:3px 10px;border-radius:999px;background:rgba(169,182,255,.12);color:var(--acc)}
+.pill.g{background:rgba(94,240,168,.14);color:var(--g)}.pill.b{background:rgba(255,106,122,.14);color:var(--b)}
+.pill.amber{background:rgba(255,210,122,.14);color:var(--pal)}
+.grow{flex:1}
+a.play{font-family:'IBM Plex Mono',monospace;font-size:12px;text-decoration:none;color:#08080f;background:var(--pal);
+ padding:7px 14px;border-radius:9px;font-weight:600}
+a.play:hover{filter:brightness(1.08)}
+#stage{position:relative;overflow:hidden}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#banner{position:absolute;left:50%;top:22px;transform:translateX(-50%);z-index:5;padding:9px 18px;border-radius:12px;
+ font-family:'IBM Plex Mono',monospace;font-size:13px;background:rgba(255,106,122,.16);color:#ffd0d6;border:1px solid rgba(255,106,122,.3);
+ opacity:0;transition:opacity .5s}
+#banner.on{opacity:1}
+aside{border-left:1px solid var(--line);background:var(--pan);padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:16px}
+.card{background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
+.card h2{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:8px;font-family:'IBM Plex Mono',monospace}
+.big{font-size:28px;font-weight:700}.big span{font-size:13px;color:var(--mut);font-weight:400}
+.kv{display:flex;justify-content:space-between;font-size:12.5px;padding:3px 0}.kv .m{color:var(--mut)}
+.narr{font-size:12.5px;color:#c7c9e6;border-left:2px solid var(--line);padding:2px 0 2px 10px;margin:6px 0}
+.foot{grid-column:1/3;display:none}
+.evt{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--mut);margin-top:4px}
+.evt b{color:var(--acc)}.evt .p{color:var(--pal)}
+.off{opacity:.5}
+</style></head><body>
+<div id=wrap>
+  <header>
+    <h1>KI<b>BI</b> · el mundo en vivo</h1>
+    <span class=pill id=iter>iteración —</span>
+    <span class=tag id=ver></span>
+    <span class=grow></span>
+    <span class=pill id=live>conectando…</span>
+    <a class=play id=playlink href="../kibi3d.html" style="display:none">▶ jugar</a>
+  </header>
+  <div id=stage>
+    <canvas id=cv></canvas>
+    <div id=banner></div>
+  </div>
+  <aside>
+    <div class=card>
+      <h2>El mundo</h2>
+      <div class=big id=vivos>—<span> almas vivas</span></div>
+      <div class=kv><span class=m>mundo</span><span id=wid>—</span></div>
+      <div class=kv><span class=m>etapa</span><span id=stg>—</span></div>
+      <div class=kv><span class=m>día</span><span id=day>—</span></div>
+    </div>
+    <div class=card>
+      <h2>El último renacer</h2>
+      <div id=ultimo class=evt>el mundo aún no ha cerrado un ciclo.</div>
+    </div>
+    <div class=card>
+      <h2>La corriente del mundo</h2>
+      <div id=narr></div>
+    </div>
+    <div class=card>
+      <h2>Almas registradas</h2>
+      <div class=big id=almas>—<span> tarjetas (asset continuo)</span></div>
+      <div class=tag>cada alma persiste vida tras vida — su memoria es el asset.</div>
+    </div>
+  </aside>
+</div>
+<script>
+const cv=document.getElementById('cv'), ctx=cv.getContext('2d');
+let W=1600,H=1024, DEVICE=Math.min(devicePixelRatio||1,2);
+function fit(){const s=document.getElementById('stage'); cv.width=s.clientWidth*DEVICE; cv.height=s.clientHeight*DEVICE;}
+addEventListener('resize',fit); fit();
+// color por oficio (hash → matiz), estable y offline
+function hue(str){let h=0;for(const c of (str||'')){h=(h*31+c.charCodeAt(0))%360;}return h;}
+let last=null, lastIter=-1, flash=0, lastTick=null, staleN=0;
+function draw(snap){
+  const st=snap.state||snap; const wd=st.world||{}; W=wd.w||1600; H=wd.h||1024;
+  const cw=cv.width, ch=cv.height, sx=cw/W, sy=ch/H, s=Math.min(sx,sy), ox=(cw-W*s)/2, oy=(ch-H*s)/2;
+  ctx.clearRect(0,0,cw,ch);
+  // suelo
+  ctx.fillStyle='rgba(255,255,255,.015)'; ctx.fillRect(ox,oy,W*s,H*s);
+  ctx.strokeStyle='rgba(160,150,220,.10)'; ctx.strokeRect(ox,oy,W*s,H*s);
+  const dep=wd.deposits||[]; for(const d of dep){ctx.fillStyle='rgba(255,210,122,.35)';ctx.beginPath();ctx.arc(ox+d.x*s,oy+d.y*s,5*DEVICE,0,7);ctx.fill();}
+  // agentes
+  const ags=st.agents||[];
+  for(const a of ags){
+    const x=ox+a.x*s, y=oy+a.y*s;
+    if(!a.alive){ctx.fillStyle='rgba(140,140,160,.35)';ctx.beginPath();ctx.arc(x,y,3*DEVICE,0,7);ctx.fill();continue;}
+    const hu=hue(a.role);
+    ctx.fillStyle=`hsl(${hu} 70% 62%)`;
+    ctx.beginPath();ctx.arc(x,y,5.2*DEVICE,0,7);ctx.fill();
+    ctx.fillStyle='rgba(255,255,255,.85)';ctx.font=`${9*DEVICE}px IBM Plex Mono,monospace`;ctx.textAlign='center';
+    if(a.arq_glifo)ctx.fillText(a.arq_glifo,x,y-8*DEVICE);
+  }
+  // jugadores (anillos)
+  for(const p of (st.players||[])){const x=ox+p.x*s,y=oy+p.y*s;ctx.strokeStyle='#ffd27a';ctx.lineWidth=2*DEVICE;ctx.beginPath();ctx.arc(x,y,8*DEVICE,0,7);ctx.stroke();}
+  if(flash>0){flash-=1;ctx.fillStyle=`rgba(94,240,168,${.10*flash/30})`;ctx.fillRect(0,0,cw,ch);}
+}
+function ago(){/* no-op */}
+// fuente del retrato: ?src=<url> apunta a un servidor KIBI público (espectar en vivo desde un host estático);
+// por defecto usa el snapshot local (./state.json, que escribe el demonio) y cae a /api/mirror si se sirve en vivo.
+const P=new URLSearchParams(location.search), SRC=P.get('src');
+const SOURCES=SRC?[SRC.replace(/\/$/,'')+'/api/mirror']:['./state.json','/api/mirror'];
+// el botón ▶ jugar SOLO aparece si hay un servidor de juego real detrás (host estático = solo espectador).
+// ?api=<url> lo apunta a un servidor remoto; si no, se prueba el mismo origen (/api/version).
+const API=P.get('api'), PLAY=document.getElementById('playlink');
+(async()=>{
+  if(API){PLAY.href=API.replace(/\/$/,'')+'/kibi3d.html';PLAY.style.display='';return;}
+  try{const r=await fetch('/api/version',{cache:'no-store'});if(r.ok)PLAY.style.display='';}catch(e){}
+})();
+async function poll(){
+  let snap=null;
+  for(const base of SOURCES){
+    const url=base+(base.includes('?')?'&':'?')+'t='+Date.now();
+    try{const r=await fetch(url,{cache:'no-store'});if(r.ok){snap=await r.json();break;}}catch(e){}
+  }
+  const live=document.getElementById('live');
+  if(!snap){live.textContent='sin señal';live.className='pill b';return;}
+  const st=snap.state||snap, wd=st.world||{};
+  // ¿el mundo AVANZA (en vivo) o es una instantánea congelada (host estático)?
+  const tk=(st.tick!=null?st.tick:snap.ts);
+  if(tk===lastTick){staleN++;}else{staleN=0;lastTick=tk;}
+  if(staleN>=3){live.textContent='instantánea';live.className='pill amber';}
+  else{live.textContent='● en vivo';live.className='pill g';}
+  draw(snap);
+  document.getElementById('vivos').innerHTML=(st.vivos??'—')+'<span> almas vivas</span>';
+  document.getElementById('wid').textContent=st.wid||'—';
+  document.getElementById('stg').textContent=st.stageName||('etapa '+(st.stage??'—'));
+  document.getElementById('day').textContent=st.day??'—';
+  const it=snap.iteracion_mundo??0;
+  document.getElementById('iter').textContent='iteración '+it;
+  document.getElementById('ver').textContent=snap.version||'';
+  document.getElementById('almas').innerHTML=((snap.almas||[]).length||0)+'<span> tarjetas (asset continuo)</span>';
+  const u=snap.ultimo;
+  if(u){document.getElementById('ultimo').innerHTML=
+    `renacer <b>#${u.n}</b> · murió de <i>${u.murio_de||'—'}</i><br>conservó a <span class=p>${u.keep||'—'}</span>`+
+    (u.enacto&&u.enacto.length?` · enactó <b>${u.enacto.join(', ')}</b>`:'')+
+    (u.aprende?`<br>aprende: la próxima obra será «<span class=p>${u.aprende}</span>»`:'');}
+  const nx=(st.narrative||[]).map(n=>(n&&typeof n==='object')?(n.text||n.t||''):(''+n)).filter(Boolean).slice(0,8);
+  document.getElementById('narr').innerHTML=nx.map(t=>`<div class=narr>${t.replace(/</g,'&lt;')}</div>`).join('')||'<div class="narr off">silencio…</div>';
+  // banner de colapso/renacer
+  const b=document.getElementById('banner');
+  if(st.collapsed){b.textContent='el mundo colapsó — '+(st.reason||'')+' · el consejo de los muertos decide…';b.className='on';}
+  else if(it!==lastIter&&lastIter>=0){b.textContent='✦ el mundo renació — iteración '+it;b.className='on';flash=30;setTimeout(()=>b.className='',3500);}
+  else if(!st.collapsed){b.className='';}
+  lastIter=it;
+}
+poll(); setInterval(poll,2000);
+</script>
+</body></html>
