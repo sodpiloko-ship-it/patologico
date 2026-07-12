@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-12T15:02:02",
+ "generatedAt": "2026-07-12T16:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 15
+  "obras": 16
  },
  "climate": {
   "ok": 9,
@@ -216,6 +216,11 @@
    "stamp": "20260701"
   },
   {
+   "titulo": "Propuesta X (@Patologico) — \"Corre el motor con TU negocio\" · build-in-public",
+   "proyecto": "patologicos",
+   "stamp": ""
+  },
+  {
    "titulo": "Complementos Para Picando Tabla",
    "proyecto": "picandotabla",
    "stamp": "20260708"
@@ -269,7 +274,7 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "15 obras en el cuerpo de trabajo del universo",
+  "16 obras en el cuerpo de trabajo del universo",
   "obra: «Mensaje para el primer cliente de WhatsApp» — picandotabla",
   "obra: «Complementos Para Picando Tabla» — picandotabla",
   "obra: «Tamaños de tabla/caja para Picando Tabla» — picandotabla"

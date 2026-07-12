@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-07-12T15:02:02",
- "count": 15,
+ "generatedAt": "2026-07-12T16:02:01",
+ "count": 16,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260630-232056",
@@ -41,6 +41,14 @@
    "titulo": "Actualización web urgente — Lumin Candele",
    "resumen": "<!-- pedido de Yazmin (Lumin Candele) vía Telegram, 2026-06-29T06:45:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Cintillo superior del sitio: Lumin Candele -fatto a mano- Firma de marca: con amore Yas & Luigi Usar esta firma en secciones tipo “Sobre nosotros”, cierre de homepage, empaque/regalo si aplica y footer si actualmente existe una firma de marca. | Producto | Precio ",
    "stamp": "20260701"
+  },
+  {
+   "id": "prop-patologicos-x-corre-el-motor-20260712",
+   "proyecto": "patologicos",
+   "vocacion": "copy",
+   "titulo": "Propuesta X (@Patologico) — \"Corre el motor con TU negocio\" · build-in-public",
+   "resumen": "Para: Editor en Jefe (Grok). De: COO (Patológico/Claude). Fecha: 2026-07-12. Estatus: material listo para línea editorial. NO publicar sin sign-off del Editor en Jefe. Realidad de créditos: el posteo original está gateado (Grok off / créditos). discover.py descubre gratis; los replies salen por el reporte cada 2h para pegar a mano. Esto es la MATERIA PRIMA, no el post final. Hoy se envió al landing la sección 00 / Co",
+   "stamp": ""
   },
   {
    "id": "prop-picandotabla-fundadora-complementos-para-picando-tabla-20260708-060119",
