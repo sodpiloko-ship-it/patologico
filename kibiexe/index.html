@@ -52,6 +52,12 @@ aside{border-left:1px solid var(--line);background:var(--pan);padding:16px;overf
     <div id=banner></div>
   </div>
   <aside>
+    <div class=card id=hoycard>
+      <h2 style="color:var(--pal)">📰 Hoy en el mundo</h2>
+      <div id=hoy-titular class=big style="font-size:15px;line-height:1.35">—</div>
+      <div id=hoy-nov style="margin-top:9px;display:flex;flex-direction:column;gap:5px"></div>
+      <div id=hoy-alma class=tag style="margin-top:9px;color:var(--pal)"></div>
+    </div>
     <div class=card>
       <h2>El mundo</h2>
       <div class=big id=vivos>—<span> almas vivas</span></div>
@@ -155,5 +161,18 @@ async function poll(){
   lastIter=it;
 }
 poll(); setInterval(poll,2000);
+// EL DIARIO: «Hoy en el mundo» (daily.json, 1x/día) — la razón para volver a ver a los agentes
+function loadHoy(){
+  fetch('./daily.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{
+    const card=document.getElementById('hoycard');
+    if(!d){card.style.display='none';return;}
+    card.style.display='';
+    document.getElementById('hoy-titular').textContent=d.titular||'';
+    document.getElementById('hoy-nov').innerHTML=(d.novedades||[]).slice(0,5).map(n=>`<div class=narr>${(''+n).replace(/</g,'&lt;')}</div>`).join('');
+    const a=d.alma_del_dia;
+    document.getElementById('hoy-alma').textContent=a?('★ Alma del día: '+a.name+' · '+a.vidas+' vidas · '+(a.oficio||'')):'';
+  }).catch(function(){document.getElementById('hoycard').style.display='none';});
+}
+loadHoy(); setInterval(loadHoy, 300000);
 </script>
 </body></html>

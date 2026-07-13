@@ -1,0 +1,28 @@
+{
+  "fecha": "2026-07-12",
+  "titular": "El consejo de los muertos empezó a INVENTAR obras nuevas — ya no elige de una lista fija.",
+  "novedades": [
+    "El consejo de los muertos empezó a INVENTAR obras nuevas — ya no elige de una lista fija.",
+    "Los muertos ahora pueden ACUÑAR palabras nuevas, propias de su mundo.",
+    "El mundo aprendió a REGENERAR sus recursos — menos hambrunas.",
+    "El mundo AFINA sus obras: prueba varios valores y se queda con el que más alarga la vida.",
+    "Los muertos deliberan y ordenan sus demandas por cuánto sufrieron.",
+    "El mundo renació 53 vez(es) en 24h — cada vez, sus muertos lo curaron."
+  ],
+  "renaceres_24h": 53,
+  "almas_registradas": 53,
+  "alma_del_dia": {
+    "name": "Umsie",
+    "vidas": 3,
+    "level": 3,
+    "oficio": "Ingeniero"
+  },
+  "desarrollo": [
+    "El consejo de los muertos empezó a INVENTAR obras nuevas — ya no elige de una lista fija.",
+    "Los muertos ahora pueden ACUÑAR palabras nuevas, propias de su mundo.",
+    "El mundo aprendió a REGENERAR sus recursos — menos hambrunas.",
+    "El mundo AFINA sus obras: prueba varios valores y se queda con el que más alarga la vida.",
+    "Los muertos deliberan y ordenan sus demandas por cuánto sufrieron."
+  ],
+  "generado": "2026-07-12T21:00:03"
+}
