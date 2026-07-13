@@ -1,0 +1,4 @@
+# KIBI kibiexe: el visor y su estado/diario deben servirse FRESCOS (retención: al volver, ver lo de HOY)
+<FilesMatch "\.(json|html)$">
+  Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
