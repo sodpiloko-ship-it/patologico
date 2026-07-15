@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-15T01:02:02",
+ "generatedAt": "2026-07-15T02:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 5
+  "obras": 6
  },
  "climate": {
   "ok": 9,
@@ -214,14 +214,19 @@
    "titulo": "Propuesta: convertir Piloko en el hub curado de la marca personal de David",
    "proyecto": "piloko",
    "stamp": "20260715"
+  },
+  {
+   "titulo": "Velas Lumin — propuesta: Pixel validado + primer experimento de Meta Ads",
+   "proyecto": "velas",
+   "stamp": "20260715"
   }
  ],
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "5 obras en el cuerpo de trabajo del universo",
+  "6 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: convertir Piloko en el hub curado de la marca personal de David» — piloko",
-  "obra: «Mensaje para el primer cliente de WhatsApp» — picandotabla",
-  "obra: «Complementos Para Picando Tabla» — picandotabla"
+  "obra: «Velas Lumin — propuesta: Pixel validado + primer experimento de Meta Ads» — velas",
+  "obra: «Mensaje para el primer cliente de WhatsApp» — picandotabla"
  ]
 }

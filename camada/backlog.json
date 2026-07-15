@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-07-15T01:02:02",
- "count": 5,
+ "generatedAt": "2026-07-15T02:02:02",
+ "count": 6,
  "items": [
   {
    "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20260701-094808",
@@ -40,6 +40,14 @@
    "vocacion": "copy",
    "titulo": "Propuesta: convertir Piloko en el hub curado de la marca personal de David",
    "resumen": "Hacer que piloko.com deje de ser solo un sitio de artista y funcione como el activo central de la marca personal de David: una entrada clara a su obra, ideas y contacto. Piloko ya está definido como sitio personal de artista, pero no hay datos ni decisiones documentadas sobre su bio, obra principal, CTA, CMS o rendimiento. Sin una narrativa y una acción prioritaria, la distribución en redes lleva atención a un destin",
+   "stamp": "20260715"
+  },
+  {
+   "id": "prop-velas-vender-con-meta-ads-instalar-pixel-1er-s-20260715-012251",
+   "proyecto": "velas",
+   "vocacion": "ventas",
+   "titulo": "Velas Lumin — propuesta: Pixel validado + primer experimento de Meta Ads",
+   "resumen": "Poner en marcha un primer experimento medible de Meta Ads para vender desde velaslumin.com, empezando por validar el embudo completo: anuncio → producto → checkout → pedido recibido → compra registrada. Lumin tiene capacidad de hasta 500 velas/mes y el cuello es demanda. El sitio vende e-commerce directo y el ticket promedio reportado es de ~$300 MXN; con margen aproximado de 40%, cada pedido deja una contribución br",
    "stamp": "20260715"
   }
  ]
