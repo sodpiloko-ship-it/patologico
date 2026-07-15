@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-07-15T03:02:02",
- "count": 6,
+ "generatedAt": "2026-07-15T04:02:02",
+ "count": 7,
  "items": [
   {
    "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20260701-094808",
@@ -40,6 +40,14 @@
    "vocacion": "copy",
    "titulo": "Propuesta: convertir Piloko en el hub curado de la marca personal de David",
    "resumen": "Hacer que piloko.com deje de ser solo un sitio de artista y funcione como el activo central de la marca personal de David: una entrada clara a su obra, ideas y contacto. Piloko ya está definido como sitio personal de artista, pero no hay datos ni decisiones documentadas sobre su bio, obra principal, CTA, CMS o rendimiento. Sin una narrativa y una acción prioritaria, la distribución en redes lleva atención a un destin",
+   "stamp": "20260715"
+  },
+  {
+   "id": "prop-proca-publicar-el-caso-de-estudio-proca-procao-20260715-032201",
+   "proyecto": "proca",
+   "vocacion": "datos",
+   "titulo": "Propuesta: publicar el caso de estudio PROCA / PROCAOps",
+   "resumen": "Publicar en patologicos.com un caso de estudio que convierta PROCA / PROCAOps en prueba comercial de la capacidad de Patológicos para transformar procesos operativos con software, IA e interfaz a medida. PROCA no se presenta como el producto que se vende a cualquier industria: es la evidencia real de que el método ya funcionó en dental. El puente comercial es claro: “lo hicimos en nuestra industria; podemos diagnosti",
    "stamp": "20260715"
   },
   {

@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-15T03:02:02",
+ "generatedAt": "2026-07-15T04:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 6
+  "obras": 7
  },
  "climate": {
   "ok": 9,
@@ -216,6 +216,11 @@
    "stamp": "20260715"
   },
   {
+   "titulo": "Propuesta: publicar el caso de estudio PROCA / PROCAOps",
+   "proyecto": "proca",
+   "stamp": "20260715"
+  },
+  {
    "titulo": "Velas Lumin — propuesta: Pixel validado + primer experimento de Meta Ads",
    "proyecto": "velas",
    "stamp": "20260715"
@@ -224,9 +229,9 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "6 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: convertir Piloko en el hub curado de la marca personal de David» — piloko",
-  "obra: «Velas Lumin — propuesta: Pixel validado + primer experimento de Meta Ads» — velas",
-  "obra: «Mensaje para el primer cliente de WhatsApp» — picandotabla"
+  "obra: «Propuesta: publicar el caso de estudio PROCA / PROCAOps» — proca",
+  "obra: «Velas Lumin — propuesta: Pixel validado + primer experimento de Meta Ads» — velas"
  ]
 }
