@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-07-15T05:02:02",
- "count": 7,
+ "generatedAt": "2026-07-15T06:02:02",
+ "count": 8,
  "items": [
   {
    "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20260701-094808",
@@ -48,6 +48,14 @@
    "vocacion": "datos",
    "titulo": "Propuesta: publicar el caso de estudio PROCA / PROCAOps",
    "resumen": "Publicar en patologicos.com un caso de estudio que convierta PROCA / PROCAOps en prueba comercial de la capacidad de Patológicos para transformar procesos operativos con software, IA e interfaz a medida. PROCA no se presenta como el producto que se vende a cualquier industria: es la evidencia real de que el método ya funcionó en dental. El puente comercial es claro: “lo hicimos en nuestra industria; podemos diagnosti",
+   "stamp": "20260715"
+  },
+  {
+   "id": "prop-procagrillz-capturar-la-demanda-org-nica-grillz-600--20260715-052115",
+   "proyecto": "procagrillz",
+   "vocacion": "copy",
+   "titulo": "PROCAGrillZ: convertir intención orgánica en solicitudes de escaneo",
+   "resumen": "Convertir la demanda orgánica de GrillZ —estimada por el objetivo en ~600 sesiones/mes— en solicitudes calificadas de escaneo intraoral, primer paso verificable hacia diseño, cotización y venta. El activo ya existe: GA4 histórico registra /grillz/ con 522 sesiones en 90 días, además de tráfico en /grillz-cdmx/, /grillz-dental-en-cdmx/, /blingz/ y /listag/. La decisión SEO vigente es mantener este cluster en procadent",
    "stamp": "20260715"
   },
   {

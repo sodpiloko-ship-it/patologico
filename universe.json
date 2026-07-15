@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-15T05:02:02",
+ "generatedAt": "2026-07-15T06:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 9,
@@ -221,6 +221,11 @@
    "stamp": "20260715"
   },
   {
+   "titulo": "PROCAGrillZ: convertir intención orgánica en solicitudes de escaneo",
+   "proyecto": "procagrillz",
+   "stamp": "20260715"
+  },
+  {
    "titulo": "Velas Lumin — propuesta: Pixel validado + primer experimento de Meta Ads",
    "proyecto": "velas",
    "stamp": "20260715"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: convertir Piloko en el hub curado de la marca personal de David» — piloko",
   "obra: «Propuesta: publicar el caso de estudio PROCA / PROCAOps» — proca",
-  "obra: «Velas Lumin — propuesta: Pixel validado + primer experimento de Meta Ads» — velas"
+  "obra: «PROCAGrillZ: convertir intención orgánica en solicitudes de escaneo» — procagrillz"
  ]
 }
