@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KIBI — El Mundo Dicho</title>
+<meta name="description" content="KIBI: un mundo construido con palabras que corre, colapsa y renace en vivo. Tarjetas, el consejo de los muertos, la historia de sus Dicciones y el desarrollo del sistema que se construye solo.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070f;--ink:#e9e6ff;--mut:#8f8aa8;--teal:#7df0cf;--vio:#a48bff;--rojo:#ff4d5e;--oro:#ffd27a;--line:rgba(164,139,255,.16)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 'Rajdhani','Bahnschrift',system-ui,sans-serif}
+.mono{font-family:'JetBrains Mono','Cascadia Mono',monospace}
+a{color:var(--teal);text-decoration:none}
+header{position:sticky;top:0;z-index:9;background:rgba(7,7,15,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{max-width:1080px;margin:0 auto;display:flex;gap:4px;align-items:center;padding:12px 20px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:20px;letter-spacing:.14em;margin-right:auto}
+.brand b{color:var(--teal)} .brand i{font-style:normal;color:var(--vio)}
+.nav a.tab{padding:6px 13px;border-radius:99px;color:var(--mut);font-weight:600;letter-spacing:.06em;font-size:14px}
+.nav a.tab.on,.nav a.tab:hover{color:var(--ink);background:rgba(164,139,255,.1)}
+.wrap{max-width:1080px;margin:0 auto;padding:26px 20px 80px}
+.hero{padding:54px 0 30px;text-align:center}
+.hero .pre{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.34em;color:var(--vio);text-transform:uppercase}
+.hero h1{font-size:clamp(40px,7vw,76px);font-weight:700;letter-spacing:.03em;line-height:1.04;margin:.12em 0}
+.hero h1 span{color:var(--teal)}
+.hero .lema{color:var(--mut);font-size:18px;max-width:640px;margin:10px auto 0}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:30px 0 8px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:12px 22px;min-width:130px}
+.stat b{display:block;font-size:30px;color:var(--teal)} .stat span{font-size:12px;color:var(--mut);letter-spacing:.12em;text-transform:uppercase}
+h2.sec{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--vio);border-bottom:1px solid var(--line);padding:46px 0 10px;margin-bottom:18px;font-family:'JetBrains Mono',monospace}
+.lore{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.lore blockquote{border-left:2px solid var(--teal);padding:6px 0 6px 16px;color:var(--ink);font-size:16.5px;font-style:italic;opacity:.92}
+.live{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:radial-gradient(ellipse at 50% 40%,rgba(125,240,207,.08),transparent 70%),#0a0a16;display:flex;align-items:center;justify-content:center;text-align:center}
+.live iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.live .soon .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--rojo);margin-right:8px;animation:pul 1.6s infinite}
+@keyframes pul{50%{opacity:.35}}
+.live .soon b{font-size:22px;letter-spacing:.1em}
+.live .soon p{color:var(--mut);margin-top:6px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}
+.card{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:linear-gradient(180deg,rgba(164,139,255,.05),transparent);transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-2px);border-color:rgba(125,240,207,.4)}
+.card h3{font-size:19px;letter-spacing:.04em} .card .of{color:var(--vio);font-size:13px;letter-spacing:.08em}
+.card .m{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--mut);margin-top:8px;line-height:1.8}
+.card .m b{color:var(--oro)}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.filtros button{background:none;border:1px solid var(--line);border-radius:99px;color:var(--mut);padding:5px 14px;font:600 13px 'Rajdhani',sans-serif;letter-spacing:.06em;cursor:pointer}
+.filtros button.on{color:var(--bg);background:var(--teal);border-color:var(--teal)}
+.rowlist{display:flex;flex-direction:column;gap:0}
+.dic{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:13px 4px;border-bottom:1px solid var(--line)}
+.dic .n{font-family:'JetBrains Mono',monospace;color:var(--vio);font-size:13px;padding-top:2px}
+.dic .fin{color:var(--rojo)} .dic .apr{color:var(--teal)} .dic .kp{color:var(--oro)}
+.dic p{font-size:14.5px;color:var(--ink);opacity:.92} .dic .sub{font-size:12.5px;color:var(--mut);font-family:'JetBrains Mono',monospace;margin-top:2px}
+.capas{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.capa{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.capa .st{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+.capa .st.vivo{color:var(--teal)} .capa .st.en_desarrollo{color:var(--oro)} .capa .st.roadmap,.capa .st.futuro{color:var(--mut)}
+.capa h4{font-size:16.5px;margin:3px 0 2px} .capa p{font-size:13px;color:var(--mut)}
+.eras{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:22px}
+.era{flex:1 1 150px;padding:14px 16px;border-right:1px solid var(--line)}
+.era:last-child{border-right:0}
+.era b{display:block;color:var(--teal);font-size:15px} .era span{font-size:12px;color:var(--mut)}
+footer{border-top:1px solid var(--line);color:var(--mut);text-align:center;padding:26px;font-size:13px}
+footer .mono{font-size:11px;opacity:.7}
+@media(max-width:640px){.dic{grid-template-columns:52px 1fr}}
+</style></head><body>
+<header><nav class="nav">
+  <span class="brand"><b>KIBI</b> · <i>EL MUNDO DICHO</i></span>
+  <a class="tab on" href="#live">Live</a><a class="tab" href="#tarjetas">Tarjetas</a>
+  <a class="tab" href="#consejo">Consejo</a><a class="tab" href="#historia">Historia</a>
+  <a class="tab" href="#desarrollo">Desarrollo</a>
+</nav></header>
+<div class="wrap">
+
+<section class="hero">
+  <div class="pre">un mundo construido con palabras</div>
+  <h1>KIBI<br><span>EL MUNDO DICHO</span></h1>
+  <p class="lema">Una oración viva que corre 24/7: sus seres nacen, trabajan, pelean y mueren; el mundo colapsa,
+  el consejo de los muertos lo corrige, y renace mejor dicho. <b>Un mundo que se corrige a sí mismo cada vez que muere.</b></p>
+  <div class="stats" id="stats"></div>
+</section>
+
+<h2 class="sec" id="live">▸ EN VIVO</h2>
+<div class="live" id="livebox"><div class="soon"><span class="dot"></span><b>EL LIVE LLEGA PRONTO</b>
+<p>El documental 24/7 del Mundo Dicho se transmitirá aquí (YouTube).<br>Mientras tanto, el mundo corre y su historia se escribe abajo.</p></div></div>
+
+<h2 class="sec">▸ EL CANON</h2>
+<div class="lore" id="lore"></div>
+<div style="height:18px"></div>
+<div class="eras" id="eras"></div>
+
+<h2 class="sec" id="tarjetas">▸ TARJETAS — LAS PALABRAS PROPIAS</h2>
+<p style="color:var(--mut);margin-bottom:14px">Cada tarjeta es un <b>alma continua</b>: el mismo ser persiste vida tras vida, acumula
+niveles, oficios, patrimonio y leyenda. Su historial <i>es</i> su valor.</p>
+<div class="filtros" id="filtros"></div>
+<div class="grid" id="cards"></div>
+<div style="text-align:center;margin-top:16px"><button id="mas" class="filtros" style="border:1px solid var(--line);border-radius:99px;background:none;color:var(--teal);padding:8px 22px;font:600 14px 'Rajdhani';cursor:pointer">ver más almas ▾</button></div>
+
+<h2 class="sec" id="consejo">▸ EL CONSEJO DE LOS MUERTOS</h2>
+<p style="color:var(--mut);margin-bottom:14px">Cuando el mundo colapsa, sus muertos salen del texto, diagnostican de qué murió y
+deciden qué se corrige. Estas son sus últimas sentencias reales:</p>
+<div class="rowlist" id="consejo-list"></div>
+
+<h2 class="sec" id="historia">▸ HISTORIA — LAS DICCIONES</h2>
+<p style="color:var(--mut);margin-bottom:14px">Cada Dicción es una vida completa del mundo. Así han muerto:</p>
+<div id="causas" style="margin-bottom:16px"></div>
+<div class="rowlist" id="dicciones"></div>
+
+<h2 class="sec" id="desarrollo">▸ DESARROLLO — EL SISTEMA QUE SE CONSTRUYE SOLO</h2>
+<p style="color:var(--mut);margin-bottom:14px">KIBI se desarrolla a sí mismo: consejos de IA diseñan, agentes construyen, cada pieza
+pasa una compuerta de pruebas deterministas antes de entrar al mundo.</p>
+<div class="capas" id="capas"></div>
+
+</div>
+<footer>KIBI es un experimento de <a href="/">Patológicos</a> — orquestación agéntica en público.<br>
+<span class="mono" id="gen"></span></footer>
+<script>
+fetch('data.json').then(r=>r.json()).then(D=>{
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  // stats
+  $('stats').innerHTML = [['almas',D.stats.almas],['dicciones vividas',D.stats.dicciones],['capas del sistema',D.capas.length]]
+    .map(([k,v])=>`<div class="stat"><b>${v}</b><span>${k}</span></div>`).join('');
+  $('gen').textContent = 'datos reales del motor · generado '+D.stats.generado;
+  // lore + eras
+  $('lore').innerHTML = D.lore.map(l=>`<blockquote>«${esc(l)}»</blockquote>`).join('');
+  $('eras').innerHTML = D.eras.map((e,i)=>`<div class="era"><span>ERA ${'I II III IV V'.split(' ')[i]}</span><b>${esc(e.replace('Era del ','').replace('Era de la ',''))}</b></div>`).join('');
+  // live
+  fetch('live.json').then(r=>r.ok?r.json():null).then(cfg=>{
+    if(!cfg) return;
+    const id=cfg.youtube_id, ch=cfg.youtube_channel;
+    if(id) $('livebox').innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=0" allowfullscreen title="KIBI en vivo"></iframe>`;
+    else if(ch) $('livebox').innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel=${encodeURIComponent(ch)}" allowfullscreen title="KIBI en vivo"></iframe>`;
+  }).catch(()=>{});
+  // tarjetas
+  const OFI=[...new Set(D.cards.map(c=>c.oficio).filter(Boolean))].slice(0,8);
+  let filtro=null, mostrar=24;
+  function pinta(){
+    const rows=D.cards.filter(c=>!filtro||c.oficio===filtro);
+    $('cards').innerHTML=rows.slice(0,mostrar).map(c=>`<div class="card"><h3>${esc(c.name)}</h3>
+      <div class="of">${esc(c.oficio||'ser')} · nivel ${c.level||1}</div>
+      <div class="m">vidas <b>${c.vidas||1}</b> · patrimonio <b>${c.patrimonio||0}</b> oro<br>items ${c.items_persistentes||0} · leyenda <b>${c.valor_lore||0}</b></div></div>`).join('');
+    $('mas').style.display = rows.length>mostrar?'':'none';
+  }
+  $('filtros').innerHTML=`<button class="on">todas</button>`+OFI.map(o=>`<button>${esc(o)}</button>`).join('');
+  [...$('filtros').children].forEach((b,i)=>b.onclick=()=>{ [...$('filtros').children].forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); filtro=i?OFI[i-1]:null; mostrar=24; pinta(); });
+  $('mas').onclick=()=>{mostrar+=48;pinta();};
+  pinta();
+  // consejo (decisiones con enacto o aprende)
+  const cons=D.dicciones.filter(d=>(d.enacto&&d.enacto.length)||d.aprende).slice(0,30);
+  $('consejo-list').innerHTML=cons.map(d=>`<div class="dic"><div class="n">D${d.n??'·'}</div><div>
+    <p><span class="fin">✝ ${esc((d.murio_de||'').split(':')[0])}</span>${d.aprende?` — el consejo dictó desarrollar <span class="apr">«${esc(d.aprende)}»</span>`:''}${(d.enacto&&d.enacto.length)?` · enactó <span class="apr">${d.enacto.length} obra(s)</span>`:''}</p>
+    <div class="sub">${d.keep?`el alma que cruzó: <span class="kp">${esc(d.keep)}</span>${d.alma_vidas?` (vida ${d.alma_vidas})`:''}`:'nadie cruzó'} · ${esc((d.ts||'').replace('T',' ').slice(0,16))}</div>
+  </div></div>`).join('');
+  // historia
+  $('causas').innerHTML=D.stats.causas.map(([c,n])=>`<span style="display:inline-block;border:1px solid var(--line);border-radius:99px;padding:4px 13px;margin:0 6px 8px 0;font-size:13px;color:var(--mut)"><b style="color:var(--rojo)">${n}×</b> ${esc(c)}</span>`).join('');
+  $('dicciones').innerHTML=D.dicciones.slice(0,60).map(d=>`<div class="dic"><div class="n">D${d.n??'·'}</div><div>
+    <p>murió de <span class="fin">${esc(d.murio_de||'?')}</span></p>
+    <div class="sub">${d.keep?`sobrevivió <span class="kp">${esc(d.keep)}</span> · `:''}${esc((d.ts||'').replace('T',' ').slice(0,16))}</div></div></div>`).join('');
+  // desarrollo
+  $('capas').innerHTML=D.capas.map(c=>`<div class="capa"><div class="st ${esc(c.estado||'roadmap')}">${esc(c.estado||'roadmap')}</div>
+    <h4>${esc(c.nombre||c.titulo||c.id||'capa')}</h4><p>${esc(c.desc||c.nota||'')}</p></div>`).join('');
+  // nav activo
+  const tabs=[...document.querySelectorAll('.nav a.tab')];
+  addEventListener('scroll',()=>{ let cur=tabs[0];
+    tabs.forEach(t=>{ const el=document.querySelector(t.hash); if(el&&el.getBoundingClientRect().top<120) cur=t; });
+    tabs.forEach(t=>t.classList.toggle('on',t===cur)); },{passive:true});
+});
+</script></body></html>
