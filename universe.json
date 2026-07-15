@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-14T23:02:02",
+ "generatedAt": "2026-07-15T00:02:03",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 16
+  "obras": 4
  },
  "climate": {
   "ok": 9,
@@ -191,28 +191,8 @@
  ],
  "canon": [
   {
-   "titulo": "Reactivacion de CAD CAM IA: Sprint SEO de Resina 3D en WordPress",
-   "proyecto": "cadcamia",
-   "stamp": "20260630"
-  },
-  {
-   "titulo": "Fanatia SEO-Safe Pivot: preservar URLs mientras nace la membresía",
-   "proyecto": "fanatia",
-   "stamp": "20260701"
-  },
-  {
-   "titulo": "Nomos: Piloto vendible con medición antes/después",
-   "proyecto": "legal",
-   "stamp": "20260701"
-  },
-  {
    "titulo": "Propuesta: Nomos de landing viva a piloto pagado medible",
    "proyecto": "legal",
-   "stamp": "20260701"
-  },
-  {
-   "titulo": "Actualización web urgente — Lumin Candele",
-   "proyecto": "lumin",
    "stamp": "20260701"
   },
   {
@@ -226,57 +206,17 @@
    "stamp": "20260708"
   },
   {
-   "titulo": "Diferencia de costos: Para Dos vs Regalo",
-   "proyecto": "picandotabla",
-   "stamp": "20260701"
-  },
-  {
    "titulo": "Mensaje para el primer cliente de WhatsApp",
    "proyecto": "picandotabla",
    "stamp": "20260712"
-  },
-  {
-   "titulo": "Personas por tabla: Regalo, Anfitrión y Fiesta",
-   "proyecto": "picandotabla",
-   "stamp": "20260701"
-  },
-  {
-   "titulo": "Picando Tabla — Guía de armado: cuántos quesos, carnes y complementos",
-   "proyecto": "picandotabla",
-   "stamp": "20260701"
-  },
-  {
-   "titulo": "Picando Tabla — variedades según los gramajes ya definidos",
-   "proyecto": "picandotabla",
-   "stamp": "20260701"
-  },
-  {
-   "titulo": "Recomendación de variedad y gramajes por tabla — Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260701"
-  },
-  {
-   "titulo": "Recomendación de variedades por tabla — Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260701"
-  },
-  {
-   "titulo": "Tamaños de tabla/caja para Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260707"
-  },
-  {
-   "titulo": "Picando Tabla: aprobar prototipo y publicar tienda que sí venda",
-   "proyecto": "wine",
-   "stamp": "20260701"
   }
  ],
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "16 obras en el cuerpo de trabajo del universo",
+  "4 obras en el cuerpo de trabajo del universo",
   "obra: «Mensaje para el primer cliente de WhatsApp» — picandotabla",
   "obra: «Complementos Para Picando Tabla» — picandotabla",
-  "obra: «Tamaños de tabla/caja para Picando Tabla» — picandotabla"
+  "obra: «Propuesta: Nomos de landing viva a piloto pagado medible» — legal"
  ]
 }
