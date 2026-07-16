@@ -58,6 +58,28 @@ h2.sec{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--v
 .era{flex:1 1 150px;padding:14px 16px;border-right:1px solid var(--line)}
 .era:last-child{border-right:0}
 .era b{display:block;color:var(--teal);font-size:15px} .era span{font-size:12px;color:var(--mut)}
+/* ---- MODAL de tarjeta ---- */
+#cardmodal{position:fixed;inset:0;z-index:50;background:rgba(5,5,12,.88);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:4vh 16px}
+#cardmodal.open{display:flex}
+.cm{position:relative;max-width:820px;width:100%;background:linear-gradient(180deg,rgba(20,18,38,.98),rgba(10,10,20,.99));border:1px solid rgba(164,139,255,.3);border-radius:20px;padding:26px 28px;margin-bottom:6vh}
+.cm .x{position:absolute;top:14px;right:18px;font-size:26px;color:var(--mut);cursor:pointer;line-height:1} .cm .x:hover{color:var(--ink)}
+.cm-head{display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center}
+#cm-av{width:220px;height:250px;border:1px solid var(--line);border-radius:14px;background:radial-gradient(ellipse at 50% 30%,rgba(125,240,207,.07),transparent 70%)}
+.cm-head h2{font-size:30px;letter-spacing:.03em;border:0;padding:0;margin:0;text-transform:none;font-family:'Rajdhani',sans-serif;color:var(--ink)}
+.cm-head .of{color:var(--vio);font-size:15px;letter-spacing:.1em}
+.cm-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:12.5px;font-family:'JetBrains Mono',monospace;color:var(--mut)} .chip b{color:var(--teal)}
+.cm h4{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--vio);font-family:'JetBrains Mono',monospace;margin:22px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.gr{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
+.gr .g{border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-align:center} .gr .g b{display:block;font-size:20px;color:var(--teal)} .gr .g span{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.itemrow{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:8px 0}
+.itemrow .gl{font-size:26px;text-align:center} .itemrow b{color:var(--oro)} .itemrow .sub{font-size:12.5px;color:var(--mut);font-family:'JetBrains Mono',monospace}
+.itemrow .val{color:var(--oro);font-family:'JetBrains Mono',monospace;font-size:13px}
+.vida{border-left:2px solid var(--line);padding:4px 0 4px 14px;margin:8px 0} .vida .m{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--mut)} .vida .fin{color:var(--rojo)}
+.diario{border-left:2px solid var(--teal);padding:6px 0 6px 14px;font-style:italic;color:var(--ink);opacity:.9;font-size:15px}
+.ley{display:flex;gap:10px;flex-wrap:wrap;align-items:center} .ley .p{border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mut)} .ley .p b{color:var(--oro)} .ley .eq{color:var(--vio);font-size:18px}
+.glos{font-size:13px;color:var(--mut);margin-top:6px} .glos b{color:var(--ink)}
+.card{cursor:pointer}
 footer{border-top:1px solid var(--line);color:var(--mut);text-align:center;padding:26px;font-size:13px}
 footer .mono{font-size:11px;opacity:.7}
 @media(max-width:640px){.dic{grid-template-columns:52px 1fr}}
@@ -112,6 +134,13 @@ pasa una compuerta de pruebas deterministas antes de entrar al mundo.</p>
 </div>
 <footer>KIBI es un experimento de <a href="/">Patológicos</a> — orquestación agéntica en público.<br>
 <span class="mono" id="gen"></span></footer>
+<div id="cardmodal"><div class="cm">
+  <span class="x" id="cm-x">&times;</span>
+  <div class="cm-head"><canvas id="cm-av" width="220" height="250"></canvas>
+    <div><h2 id="cm-name"></h2><div class="of" id="cm-of"></div><div class="cm-chips" id="cm-chips"></div>
+    <div class="glos" id="cm-glos"></div></div></div>
+  <div id="cm-body"></div>
+</div></div>
 <script>
 fetch('data.json').then(r=>r.json()).then(D=>{
   const $=id=>document.getElementById(id);
@@ -135,7 +164,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   let filtro=null, mostrar=24;
   function pinta(){
     const rows=D.cards.filter(c=>!filtro||c.oficio===filtro);
-    $('cards').innerHTML=rows.slice(0,mostrar).map(c=>`<div class="card"><h3>${esc(c.name)}</h3>
+    $('cards').innerHTML=rows.slice(0,mostrar).map(c=>`<div class="card" data-cid="${c.card_id}"><h3>${esc(c.name)}</h3>
       <div class="of">${esc(c.oficio||'ser')} · nivel ${c.level||1}</div>
       <div class="m">vidas <b>${c.vidas||1}</b> · patrimonio <b>${c.patrimonio||0}</b> oro<br>items ${c.items_persistentes||0} · leyenda <b>${c.valor_lore||0}</b></div></div>`).join('');
     $('mas').style.display = rows.length>mostrar?'':'none';
@@ -144,7 +173,49 @@ fetch('data.json').then(r=>r.json()).then(D=>{
   [...$('filtros').children].forEach((b,i)=>b.onclick=()=>{ [...$('filtros').children].forEach(x=>x.classList.remove('on'));
     b.classList.add('on'); filtro=i?OFI[i-1]:null; mostrar=24; pinta(); });
   $('mas').onclick=()=>{mostrar+=48;pinta();};
+  $('cards').addEventListener('click',e=>{ const el=e.target.closest('.card'); if(el) openCard(el.dataset.cid); });
   pinta();
+  // ---- MODAL DE TARJETA ----
+  let DET=null;
+  async function openCard(cid){
+    if(!DET){ try{ DET=await (await fetch('detalle.json')).json(); }catch(e){ DET={}; } }
+    const c=D.cards.find(x=>String(x.card_id)===String(cid)); const d=DET[String(cid)]||{};
+    if(!c) return;
+    $('cm-name').textContent=c.name; $('cm-of').textContent=(c.oficio||'ser')+' · nivel '+(c.level||1);
+    $('cm-chips').innerHTML=[['vidas',c.vidas||1],['leyenda',c.valor_lore||0],['patrimonio',(c.patrimonio||0)+' oro'],['aliados',d.aliados||0]]
+      .map(([k,v])=>`<span class="chip">${k} <b>${v}</b></span>`).join('');
+    $('cm-glos').textContent='La LEYENDA es el valor de la tarjeta: se gana viviendo, no se compra. Vidas = encarnaciones de esta alma.';
+    const g=d.growth||{}; const T={vigor:'Vigor',obra:'Obra',vinculo:'Vínculo',saber:'Saber',voluntad:'Voluntad'};
+    let html='';
+    html+='<h4>Stats de por vida <span style="text-transform:none;letter-spacing:0">— crecen con el track-record: Vigor pelea, Obra produce, Vínculo alía, Saber investiga, Voluntad resiste</span></h4><div class="gr">'+
+      Object.keys(T).map(k=>`<div class="g"><b>${g[k]||0}</b><span>${T[k]}</span></div>`).join('')+'</div>';
+    if((d.items||[]).length){
+      html+='<h4>Items persistentes <span style="text-transform:none;letter-spacing:0">— objetos ganados viviendo; viajan con el alma entre mundos</span></h4>'+
+        d.items.map(i=>`<div class="itemrow"><div class="gl">${esc(i.glifo||'◆')}</div>
+          <div><b>${esc(i.nombre||'?')}</b>${i.titulo?' · «'+esc(i.titulo)+'»':''}
+          <div class="sub">${esc(i.slot||'')}${i.word?' · palabra «'+esc(i.word)+'»':''}${i.estado?' · '+esc(i.estado):''}</div></div>
+          <div class="val">+${i.valor||0} leyenda</div></div>`).join('');
+    }
+    const ld=d.leyenda_desglose||{};
+    html+='<h4>Leyenda — cómo se calcula</h4><div class="ley">'+
+      `<span class="p">vidas×5 <b>${ld.vidas||0}</b></span><span class="eq">+</span>`+
+      `<span class="p">aporte al mundo <b>${ld.aporte||0}</b></span><span class="eq">+</span>`+
+      `<span class="p">patrimonio <b>${ld.patrimonio||0}</b></span><span class="eq">+</span>`+
+      `<span class="p">items <b>${ld.items||0}</b></span><span class="eq">=</span>`+
+      `<span class="p" style="border-color:rgba(255,210,122,.5)">LEYENDA <b>${c.valor_lore||0}</b></span></div>`;
+    if(d.diario) html+='<h4>De su diario</h4><div class="diario">«'+esc(d.diario)+'»</div>';
+    if((d.historia||[]).length){
+      html+='<h4>Sus vidas <span style="text-transform:none;letter-spacing:0">— una por Dicción del mundo</span></h4>'+
+        d.historia.slice().reverse().map(h=>`<div class="vida">buscó «${esc(h.busco||'—')}» · aportó ${h.aporto||0}
+          <div class="m">edad ${h.edad||'?'} días · <span class="fin">✝ ${esc((h.murio||'?').split(':')[0])}</span> · ${esc(h.mundo||'')}</div></div>`).join('');
+    }
+    if((d.words||[]).length) html+='<h4>Palabras en el alma</h4><div class="cm-chips">'+d.words.map(w=>`<span class="chip"><b>${esc(w)}</b></span>`).join('')+'</div>';
+    $('cm-body').innerHTML=html;
+    document.getElementById('cardmodal').classList.add('open');
+    if(window.__cmAvatar) window.__cmAvatar(c);
+  }
+  document.getElementById('cm-x').onclick=()=>document.getElementById('cardmodal').classList.remove('open');
+  document.getElementById('cardmodal').addEventListener('click',e=>{ if(e.target.id==='cardmodal') e.currentTarget.classList.remove('open'); });
   // consejo (decisiones con enacto o aprende)
   const cons=D.dicciones.filter(d=>(d.enacto&&d.enacto.length)||d.aprende).slice(0,30);
   $('consejo-list').innerHTML=cons.map(d=>`<div class="dic"><div class="n">D${d.n??'·'}</div><div>
@@ -165,4 +236,40 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     tabs.forEach(t=>{ const el=document.querySelector(t.hash); if(el&&el.getBoundingClientRect().top<120) cur=t; });
     tabs.forEach(t=>t.classList.toggle('on',t===cur)); },{passive:true});
 });
+</script>
+<script type="module">
+try{
+  const THREE = await import('https://unpkg.com/three@0.160.0/build/three.module.js');
+  const OF_COL={Ingeniero:0x63f6ff,Granjero:0x8fe388,Productor:0xa67cff,Investigador:0x7da0ff,Administrador:0xffd27a,'Guardián':0xff647f,Guardian:0xff647f};
+  let R=null,S=null,C=null,rig=null,emb=null;
+  window.__cmAvatar=function(card){
+    const cv=document.getElementById('cm-av');
+    if(!R){ R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true}); R.setPixelRatio(Math.min(devicePixelRatio,2));
+      S=new THREE.Scene(); S.add(new THREE.HemisphereLight(0xcfd6ff,0x2a2a44,1.2));
+      const d=new THREE.DirectionalLight(0xffffff,1.2); d.position.set(3,6,5); S.add(d);
+      C=new THREE.PerspectiveCamera(32,220/250,0.1,60); C.position.set(0,2.5,8.6); C.lookAt(0,2.1,0);
+      (function loop(){ requestAnimationFrame(loop);
+        if(rig&&document.getElementById('cardmodal').classList.contains('open')){ rig.rotation.y+=0.012;
+          const tt=performance.now()*0.003; if(emb){emb.position.y=3.85+Math.sin(tt)*0.08; emb.rotation.y=tt;} R.render(S,C);} })();
+    }
+    if(rig) S.remove(rig);
+    rig=new THREE.Group();
+    const col=OF_COL[card.oficio]||0x7df0cf;
+    const M=c=>new THREE.MeshLambertMaterial({color:c});
+    const torso=new THREE.Mesh(new THREE.CapsuleGeometry(0.72,1.15,6,14),M(col)); torso.position.y=1.45; rig.add(torso);
+    const head=new THREE.Mesh(new THREE.SphereGeometry(0.62,20,16),M(0xdcc0a4)); head.position.y=2.95; rig.add(head);
+    emb=new THREE.Mesh(new THREE.OctahedronGeometry(0.34,0),new THREE.MeshBasicMaterial({color:0xffd27a})); emb.position.y=3.85; rig.add(emb);
+    const lg=new THREE.CapsuleGeometry(0.15,0.8,4,8); lg.translate(0,-0.5,0);
+    [[0.82,2.0],[-0.82,2.0],[0.24,1.03],[-0.24,1.03]].forEach(([x,y])=>{const l=new THREE.Mesh(lg,M(col)); l.position.set(x,y,0); rig.add(l);});
+    S.add(rig);
+  };
+}catch(e){
+  window.__cmAvatar=function(card){
+    const cv=document.getElementById('cm-av'), x=cv.getContext('2d');
+    x.clearRect(0,0,220,250); x.fillStyle='#7df0cf';
+    x.beginPath(); x.ellipse(110,150,34,52,0,0,7); x.fill();
+    x.fillStyle='#dcc0a4'; x.beginPath(); x.arc(110,78,26,0,7); x.fill();
+    x.fillStyle='#ffd27a'; x.beginPath(); x.moveTo(110,28); x.lineTo(122,42); x.lineTo(110,56); x.lineTo(98,42); x.closePath(); x.fill();
+  };
+}
 </script></body></html>
