@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KIBI — Reporte: NFTs, identidad y distribución de tarjetas</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070f;--ink:#e9e6ff;--mut:#8f8aa8;--teal:#7df0cf;--vio:#a48bff;--rojo:#ff4d5e;--oro:#ffd27a;--line:rgba(164,139,255,.16)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 'Rajdhani','Bahnschrift',system-ui,sans-serif;padding-bottom:70px}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:var(--teal);text-decoration:none}
+.wrap{max-width:920px;margin:0 auto;padding:40px 20px}
+.pre{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3em;color:var(--vio);text-transform:uppercase}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.1;margin:.2em 0 .3em} h1 span{color:var(--teal)}
+.tldr{border:1px solid rgba(125,240,207,.35);border-radius:14px;padding:18px 22px;background:linear-gradient(180deg,rgba(125,240,207,.06),transparent);margin:22px 0}
+.tldr b{color:var(--teal)}
+h2{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--vio);border-bottom:1px solid var(--line);padding:38px 0 10px;margin-bottom:16px;font-family:'JetBrains Mono',monospace}
+h3{font-size:19px;margin:18px 0 6px} h3 .tag{font-size:11px;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;padding:3px 10px;border-radius:99px;border:1px solid var(--line);vertical-align:3px;margin-left:8px}
+.tag.ya{color:var(--teal);border-color:rgba(125,240,207,.4)} .tag.luego{color:var(--oro);border-color:rgba(255,210,122,.4)} .tag.no{color:var(--rojo);border-color:rgba(255,77,94,.4)}
+p{margin:8px 0;color:var(--ink);opacity:.94} .mut{color:var(--mut)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+td b{color:var(--teal)} .rojo{color:var(--rojo)} .oro{color:var(--oro)} .ok{color:var(--teal)}
+ul{margin:8px 0 8px 22px} li{margin:5px 0}
+.ruta{display:grid;gap:12px;margin:16px 0}
+.paso{border:1px solid var(--line);border-radius:12px;padding:14px 18px;display:grid;grid-template-columns:52px 1fr;gap:14px}
+.paso .n{font-family:'JetBrains Mono',monospace;font-size:22px;color:var(--vio)} .paso b{color:var(--teal)}
+.nota{border-left:2px solid var(--oro);padding:4px 0 4px 14px;color:var(--mut);font-size:14px;margin:14px 0}
+footer{border-top:1px solid var(--line);color:var(--mut);text-align:center;padding:24px;font-size:13px;margin-top:50px}
+</style></head><body><div class="wrap">
+
+<div class="pre">kibi · reporte para david · 2026-07-16</div>
+<h1>NFTs, identidad y <span>distribución de tarjetas</span></h1>
+<p class="mut">Pregunta: ¿hacemos NFTs ya, o es un paso futuro y basta Google ahora? Opciones, costos y la ruta recomendada.</p>
+
+<div class="tldr"><b>TL;DR — Recomendación:</b> Google login <b>AHORA</b> (prototipo en días, sobre el ledger de
+propiedad que KIBI ya tiene) con la arquitectura <b>NFT-ready</b> (ids estables + metadata exportable). El
+mint on-chain es <b>paso futuro</b> — se activa en semanas cuando haya comunidad que lo pida, vía
+<b>lazy-mint en una L2 barata</b> (Base o Polygon). MetaMask entra como <b>exploración intermedia</b>: un
+botón «conectar wallet» que vincula la dirección a la cuenta Google, sin mover nada on-chain todavía.
+<b>Google hoy no quema ningún puente: lo construye.</b></div>
+
+<h2>▸ 1 · Por qué Google primero</h2>
+<ul>
+<li><b>Lo que la fusión necesita YA es identidad, no blockchain:</b> «las palabras solo las colocan jugadores»
+exige cuentas y un inventario por cuenta. Eso es login + el <b>ledger de ownership que cards.py ya tiene</b>
+(commerce/owned_roster). Cero piezas nuevas de infraestructura.</li>
+<li><b>Fricción mínima:</b> un click con la cuenta que todos tienen. Cada paso cripto (instalar wallet, seed
+phrase, gas) corta el funnel — para un juego que apenas construye audiencia, la prioridad es que JUEGUEN.</li>
+<li><b>Prototipo barato:</b> Google Identity Services (gratis) + verificación del token en server.py +
+cookie de sesión + panel «mi colección» en el portal. Días de trabajo, y queda funcionando.</li>
+<li><b>Reversibilidad:</b> todo lo comprable/coleccionable vive en nuestro ledger; si mañana minteamos,
+el NFT es un espejo del ledger — no una migración dolorosa.</li>
+</ul>
+
+<h2>▸ 2 · Las opciones NFT (cuando toque)</h2>
+<table>
+<tr><th>Opción</th><th>Qué es</th><th>Costo real</th><th>Veredicto</th></tr>
+<tr><td><b>Base (L2 de Coinbase)</b></td><td>ERC-721/1155 en la L2 con más tracción consumer; gas de centavos; ecosistema Coinbase (onramp fácil)</td><td>Deploy ~1-5 USD · mint &lt;0.01 USD/pieza <span class="mut">[verificar al activar]</span></td><td class="ok">Candidata #1 para el futuro</td></tr>
+<tr><td><b>Polygon PoS</b></td><td>La L2 clásica de gaming/coleccionables; soporte OpenSea maduro; enorme tooling</td><td>Similar: centavos por mint</td><td class="ok">Candidata #2 (empate técnico)</td></tr>
+<tr><td><b>Lazy minting</b></td><td>La pieza EXISTE off-chain firmada y solo se mintea cuando alguien la compra/reclama — el gas lo paga el comprador</td><td>0 hasta la venta</td><td class="ok">El patrón correcto para 350+ tarjetas: no pagamos por adelantado un catálogo entero</td></tr>
+<tr><td><b>Ethereum L1</b></td><td>Mainnet</td><td class="rojo">Gas prohibitivo por pieza para coleccionables de juego</td><td class="rojo">No para KIBI</td></tr>
+<tr><td><b>Solana</b></td><td>Rápida y barata (compressed NFTs), wallet Phantom</td><td>Muy bajo</td><td class="oro">Viable, pero fuera del mundo EVM/MetaMask que quieres explorar — segunda fase si acaso</td></tr>
+<tr><td><b>Wallets embebidas<br>(thirdweb / Privy / Web3Auth)</b></td><td><b>EL PUENTE:</b> el usuario entra CON GOOGLE y el servicio le crea una wallet invisible; después puede exportarla a MetaMask</td><td>Free tier generoso; SaaS al escalar <span class="mut">[verificar planes al activar]</span></td><td class="ok">La jugada elegante: Google hoy = wallet mañana, sin re-onboarding</td></tr>
+</table>
+
+<h2>▸ 3 · MetaMask: qué explorar y cuándo</h2>
+<p>MetaMask es la puerta EVM estándar (Base y Polygon son EVM: la exploración sirve para ambas). La exploración
+correcta <b>no es mintear</b> — es esto, en orden:</p>
+<ul>
+<li><b>Fase A (barata, ya se puede):</b> botón «Conectar wallet» en el portal (la API <span class="mono">window.ethereum</span>,
+sin librerías pesadas) que firma un mensaje y <b>vincula la dirección a la cuenta Google</b>. Cero gas, cero
+contratos — puro aprendizaje + la base de datos queda lista.</li>
+<li><b>Fase B (cuando haya demanda):</b> contrato ERC-721 en testnet de Base (gratis) con 2-3 tarjetas de
+prueba; verificar el flujo mint→OpenSea→transfer.</li>
+<li><b>Fase C (lanzamiento):</b> lazy-mint en mainnet con las tarjetas legendarias primero (arcaísmos,
+Dragón, Silencio) — la escasez que ya diseñamos ES la colección.</li>
+</ul>
+<div class="nota">⚠️ Dos cosas que NO delego a nadie: las claves del contrato (custodia tuya) y cualquier
+promesa pública de "valor" de los NFTs (riesgo legal/regulatorio — los vendemos como coleccionables de juego,
+no como inversión). Y el mint implica GASTO: pasa por el gate de spend como todo dinero.</div>
+
+<h2>▸ 4 · Distribución de tarjetas (con Google ya alcanza)</h2>
+<table>
+<tr><th>Canal</th><th>Cómo</th><th>Cuándo</th></tr>
+<tr><td><b>Pack de registro</b></td><td>Al entrar con Google: 1 KIBI base (puro potencial) + 3 palabras comunes</td><td class="ok">Con el login</td></tr>
+<tr><td><b>Drops del mundo</b></td><td>Jefes de zona/eventos dropean tarjetas de palabra a las cuentas que participaron (bendijeron, apostaron, estuvieron en el chat)</td><td class="ok">Con el login</td></tr>
+<tr><td><b>Tienda</b></td><td>La tienda CARDWORD existente, ahora por cuenta; palabras raras rotan</td><td class="ok">Con el login</td></tr>
+<tr><td><b>Regalos/comercio</b></td><td>Entre cuentas (el mercado de cartas ya existe en el motor)</td><td class="oro">Fase 2</td></tr>
+<tr><td><b>Mint on-chain</b></td><td>Las legendarias como NFT reclamables por sus dueños</td><td class="oro">Futuro (fase C)</td></tr>
+</table>
+
+<h2>▸ 5 · La ruta recomendada</h2>
+<div class="ruta">
+<div class="paso"><div class="n">1</div><div><b>LOGIN GOOGLE + colección por cuenta</b> (días) — Google Identity Services,
+sesión en server.py, panel «mi colección» en el portal, pack de registro. Las palabras ya solo las colocan jugadores.</div></div>
+<div class="paso"><div class="n">2</div><div><b>NFT-READY por diseño</b> (se hace junto al paso 1, casi gratis) — card_id
+estable + metadata JSON por tarjeta (imagen procedural, atributos, lore de fusión) en URLs públicas. Es el
+formato exacto que OpenSea/los contratos esperan después.</div></div>
+<div class="paso"><div class="n">3</div><div><b>EXPLORACIÓN METAMASK fase A</b> (un fin de semana) — «Conectar wallet»:
+firma + vínculo a la cuenta. Aprendemos sin gastar ni prometer nada.</div></div>
+<div class="paso"><div class="n">4</div><div><b>GATE DE DECISIÓN</b> — cuando haya N jugadores activos pidiendo
+propiedad real (o un partner), se decide Base vs Polygon con datos frescos y se hace lazy-mint de las
+legendarias. <span class="mut">Hasta entonces, cero gasto on-chain.</span></div></div>
+</div>
+
+<h2>▸ 6 · Respuesta directa a tu pregunta</h2>
+<p><b>Sí: NFT es paso futuro y Google alcanza ahora mismo</b> — con la condición de construir el paso 1
+«NFT-ready» (ids + metadata), que cuesta casi nada hoy y hace que el salto on-chain de mañana sea un espejo
+del ledger, no una migración. MetaMask se explora en paralelo con la fase A (sin gas, sin contratos).
+Lo único que encolo a la máquina si apruebas: <b>LOGIN1</b> (prototipo Google + panel de colección + pack de
+registro) y <b>WALLET-A</b> (conectar wallet, solo vínculo).</p>
+
+</div><footer>KIBI · El Mundo Dicho — reporte interno (noindex) · <a href="/kibi/">← volver al portal</a></footer>
+</body></html>
