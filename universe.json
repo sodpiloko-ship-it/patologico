@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-16T12:02:02",
+ "generatedAt": "2026-07-16T13:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 8
+  "obras": 9
  },
  "climate": {
   "ok": 9,
@@ -196,6 +196,11 @@
    "stamp": "20260701"
   },
   {
+   "titulo": "Lanzamiento de preventa Día de Muertos — Lumin Candele",
+   "proyecto": "lumin",
+   "stamp": "20260716"
+  },
+  {
    "titulo": "Propuesta X (@Patologico) — \"Corre el motor con TU negocio\" · build-in-public",
    "proyecto": "patologicos",
    "stamp": ""
@@ -234,9 +239,9 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "9 obras en el cuerpo de trabajo del universo",
+  "obra: «Lanzamiento de preventa Día de Muertos — Lumin Candele» — lumin",
   "obra: «Propuesta: convertir Piloko en el hub curado de la marca personal de David» — piloko",
-  "obra: «Propuesta: publicar el caso de estudio PROCA / PROCAOps» — proca",
-  "obra: «PROCAGrillZ: convertir intención orgánica en solicitudes de escaneo» — procagrillz"
+  "obra: «Propuesta: publicar el caso de estudio PROCA / PROCAOps» — proca"
  ]
 }
