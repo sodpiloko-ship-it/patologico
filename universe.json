@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-16T13:02:02",
+ "generatedAt": "2026-07-16T14:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 9
+  "obras": 12
  },
  "climate": {
   "ok": 9,
@@ -196,7 +196,22 @@
    "stamp": "20260701"
   },
   {
+   "titulo": "Actualización de gramajes — Lumin Candele",
+   "proyecto": "lumin",
+   "stamp": "20260716"
+  },
+  {
+   "titulo": "Colección Día de Muertos — ficha de venta y publicación",
+   "proyecto": "lumin",
+   "stamp": "20260716"
+  },
+  {
    "titulo": "Lanzamiento de preventa Día de Muertos — Lumin Candele",
+   "proyecto": "lumin",
+   "stamp": "20260716"
+  },
+  {
+   "titulo": "Vela personalizada Día de Muertos — ficha de lanzamiento",
    "proyecto": "lumin",
    "stamp": "20260716"
   },
@@ -239,9 +254,9 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "9 obras en el cuerpo de trabajo del universo",
-  "obra: «Lanzamiento de preventa Día de Muertos — Lumin Candele» — lumin",
-  "obra: «Propuesta: convertir Piloko en el hub curado de la marca personal de David» — piloko",
-  "obra: «Propuesta: publicar el caso de estudio PROCA / PROCAOps» — proca"
+  "12 obras en el cuerpo de trabajo del universo",
+  "obra: «Actualización de gramajes — Lumin Candele» — lumin",
+  "obra: «Colección Día de Muertos — ficha de venta y publicación» — lumin",
+  "obra: «Lanzamiento de preventa Día de Muertos — Lumin Candele» — lumin"
  ]
 }
