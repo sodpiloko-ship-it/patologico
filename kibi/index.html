@@ -184,7 +184,7 @@ fetch('data.json').then(r=>r.json()).then(D=>{
     $('cm-name').textContent=c.name; $('cm-of').textContent=(c.oficio||'ser')+' · nivel '+(c.level||1);
     $('cm-chips').innerHTML=[['vidas',c.vidas||1],['leyenda',c.valor_lore||0],['patrimonio',(c.patrimonio||0)+' oro'],['aliados',d.aliados||0]]
       .map(([k,v])=>`<span class="chip">${k} <b>${v}</b></span>`).join('');
-    $('cm-glos').textContent='La LEYENDA es el valor de la tarjeta: se gana viviendo, no se compra. Vidas = encarnaciones de esta alma.';
+    $('cm-glos').innerHTML='La LEYENDA es el valor de la tarjeta: se gana viviendo, no se compra. &nbsp;<a href="tarjeta.html?cid='+cid+'" style="color:var(--teal)">ver TARJETA NFT ▸</a>';
     const g=d.growth||{}; const T={vigor:'Vigor',obra:'Obra',vinculo:'Vínculo',saber:'Saber',voluntad:'Voluntad'};
     let html='';
     html+='<h4>Stats de por vida <span style="text-transform:none;letter-spacing:0">— crecen con el track-record: Vigor pelea, Obra produce, Vínculo alía, Saber investiga, Voluntad resiste</span></h4><div class="gr">'+

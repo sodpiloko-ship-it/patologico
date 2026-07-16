@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KIBI — Tarjeta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* KIBI tarjeta NFT — base 1a (hairline/editorial). Ver estilo-tarjeta.md. */
+:root{
+  --tinta:#171410; --borde:#1c1a15; --tinta2:#6f6b62; --tinta3:#a8a39a;
+  --ph:#b3afa6; --hair:#e6e3db; --lore:#3b3833; --lienzo:#f1f0ec; --carta:#ffffff;
+  --acc:#171410;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--lienzo);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;color:var(--tinta);padding:32px 16px}
+.mono{font-family:'Space Mono',monospace}
+.escena{perspective:1600px;width:340px;height:600px;cursor:pointer}
+.tarjeta{position:relative;width:100%;height:100%;transform-style:preserve-3d;
+  transition:transform .75s cubic-bezier(.4,.12,.2,1)}
+.escena.volteada .tarjeta{transform:rotateY(180deg)}
+.cara{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  background:var(--carta);border:1px solid var(--borde);padding:26px;display:flex;flex-direction:column}
+.frente{gap:20px}
+.reverso{gap:16px;transform:rotateY(180deg)}
+/* — header — */
+.head{display:flex;align-items:center;justify-content:space-between}
+.head .kibi{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.24em;color:var(--tinta)}
+.punto{width:9px;height:9px;border-radius:50%;background:var(--acc)}
+/* — arte — */
+.arte{flex:1;border:1px solid var(--hair);display:flex;align-items:center;justify-content:center;
+  background:repeating-linear-gradient(45deg,#f4f3ef 0 9px,#eeece6 9px 18px)}
+.arte span{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ph)}
+/* — keywords — */
+.kw{line-height:.94;letter-spacing:-.015em;font-size:44px}
+.kw .w1{font-weight:600;display:block}
+.kw .w2{font-weight:300;display:block}
+/* — rareza — */
+.rz{display:flex;align-items:center;justify-content:space-between}
+.rz .lbl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--tinta3);text-transform:uppercase}
+.pips{display:flex;gap:5px}
+.pip{width:6px;height:6px;border-radius:50%;border:1px solid var(--acc)}
+.pip.on{background:var(--acc)}
+/* — reverso — */
+.rlbl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--tinta3);text-transform:uppercase}
+.stats{display:flex;flex-direction:column;gap:14px}
+.stat .fila{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.stat .nom{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--tinta2);text-transform:uppercase}
+.stat .val{font-size:15px;font-weight:600}
+.track{height:2px;background:var(--hair)}
+.fill{height:2px;background:var(--acc);width:0}
+.div{height:1px;background:var(--hair)}
+.kicker{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.20em;text-transform:uppercase;color:var(--tinta3)}
+.cuerpo{font-size:13.5px;font-weight:300;line-height:1.55;color:var(--lore);overflow:hidden}
+.pie{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline}
+.pie .id{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--tinta3)}
+/* — fuera de la tarjeta — */
+.nav{margin-top:22px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.nav a{color:var(--tinta2);text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:2px}
+.nav a:hover{color:var(--tinta)}
+.hint{margin-top:10px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tinta3)}
+</style></head><body>
+
+<div class="escena" id="escena"><div class="tarjeta">
+  <div class="cara frente">
+    <div class="head"><span class="kibi">KIBI</span><span class="punto"></span></div>
+    <div class="arte"><span>arte — render pendiente</span></div>
+    <div class="kw"><span class="w1" id="w1">—</span><span class="w2" id="w2">—</span></div>
+    <div class="rz"><span class="lbl" id="rz-lbl">RAREZA</span><span class="pips" id="pips"></span></div>
+  </div>
+  <div class="cara reverso">
+    <div class="head"><span class="kibi">KIBI</span><span class="rlbl">STATS·LORE</span></div>
+    <div class="stats" id="stats"></div>
+    <div class="div"></div>
+    <div><div class="kicker">Lore</div><div class="cuerpo" id="lore" style="margin-top:8px"></div></div>
+    <div class="pie"><span class="id" id="cid">#—</span><span class="id" id="vidas"></span></div>
+  </div>
+</div></div>
+<div class="nav"><a href="/kibi/">← el portal</a></div>
+<div class="hint">click — girar</div>
+
+<script>
+(function(){
+  var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  document.getElementById('escena').addEventListener('click',function(){this.classList.toggle('volteada');});
+
+  // rareza por LEYENDA (valor ganado viviendo): >=300 legendario · >=120 épico · resto raro
+  function tier(l){ return l>=300?['LEGENDARIO','oklch(0.64 0.2 41)',3] : l>=120?['ÉPICO','oklch(0.58 0.2 305)',2] : ['RARO','oklch(0.6 0.19 248)',1]; }
+  // stats desde growth (0..~40) -> porcentaje acotado
+  function pct(g){ return Math.max(8, Math.min(96, 22 + (g||0)*5)); }
+
+  Promise.all([fetch('data.json').then(function(r){return r.json();}),
+               fetch('detalle.json').then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})])
+  .then(function(res){
+    var D=res[0], DET=res[1]||{};
+    var cid=new URLSearchParams(location.search).get('cid');
+    var c = cid ? D.cards.find(function(x){return String(x.card_id)===String(cid);}) : D.cards[0];
+    if(!c){ document.getElementById('w1').textContent='SIN'; document.getElementById('w2').textContent='ALMA'; return; }
+    var d = DET[String(c.card_id)]||{};
+    var t = tier(c.valor_lore||0);
+    document.documentElement.style.setProperty('--acc', t[1]);
+    // keywords: la palabra del alma manda; si no hay, nombre/oficio — contraste 600/300 = la firma
+    var words = d.words||[];
+    var w1 = words.length ? words[0] : c.name;
+    var w2 = words.length ? c.name : (c.oficio||'ser');
+    document.getElementById('w1').textContent = String(w1).toUpperCase();
+    document.getElementById('w2').textContent = String(w2).toUpperCase();
+    document.title = 'KIBI — ' + c.name;
+    // rareza
+    document.getElementById('rz-lbl').textContent = t[0];
+    var pips=''; for(var i=0;i<3;i++) pips += '<span class="pip'+(i<t[2]?' on':'')+'"></span>';
+    document.getElementById('pips').innerHTML = pips;
+    // stats (reverso): Ataque=vigor · Defensa=voluntad · Velocidad=obra · Magia=saber
+    var g=d.growth||{};
+    var S=[['ATAQUE',g.vigor],['DEFENSA',g.voluntad],['VELOCIDAD',g.obra],['MAGIA',g.saber]];
+    document.getElementById('stats').innerHTML = S.map(function(s){
+      var p=pct(s[1]);
+      return '<div class="stat"><div class="fila"><span class="nom">'+s[0]+'</span><span class="val">'+p+'</span></div>'+
+             '<div class="track"><div class="fill" style="width:'+p+'%"></div></div></div>';
+    }).join('');
+    // lore: diario > historia > fallback
+    var lore = d.diario || '';
+    if(!lore && (d.historia||[]).length){ var h=d.historia[d.historia.length-1];
+      lore = 'Buscó «'+(h.busco||'—')+'» y aportó '+(h.aporto||0)+' al mundo antes de que llegara el fin.'; }
+    if(!lore) lore = c.name+', '+(c.oficio||'ser')+' del Mundo Dicho. Su leyenda apenas comienza a pronunciarse.';
+    document.getElementById('lore').textContent = lore.slice(0, 260);
+    document.getElementById('cid').textContent = '#'+c.card_id;
+    document.getElementById('vidas').textContent = (c.vidas||1)+' VIDAS · LEYENDA '+(c.valor_lore||0);
+  });
+})();
+</script>
+</body></html>
