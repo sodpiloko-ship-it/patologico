@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumin Candele · Velas aromáticas artesanales · con amore</title>
+<title>Lumin Candele · Velas aromáticas artesanales · con amore</title><meta property="og:image" content="https://velaslumin.com/img/hero.jpg"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Lumin Candele","description":"Velas aromaticas de soya hechas a mano por una madre y su hijo, inspiradas en Italia.","url":"https://velaslumin.com/","image":"https://velaslumin.com/img/hero.jpg","telephone":"+52525540707893","areaServed":"Ciudad de Mexico","priceRange":"$$"}</script>
 <meta name="description" content="Velas aromáticas artesanales, hechas a mano por una madre y su hijo, inspiradas en Italia. Cera 100% vegetal. Colecciones Dolce Profumo y Piccolina. El regalo perfecto para encender un momento.">
 <link rel="canonical" href="https://velaslumin.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#bd5328">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,43 +121,70 @@ footer b{font-family:var(--serif);color:#fff;display:block;margin-bottom:6px}foo
 </head>
 <body>
 <div class="toprib"><span class="lbl">Lumin Candele</span>La luce che accendiamo insieme · la luz que encendimos juntos</div>
+<div style="background:#bd5328;color:#fff;text-align:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:6px 8px;font-family:Georgia,serif">Lumin Candele · fatto a mano</div>
 <header class="nav">
-  <a class="logo" href="#/">Lumin Candele<small>con amore</small></a>
-  <nav class="links"><a href="#/tienda">Tienda</a><a href="#/colecciones">Colecciones</a><a href="#/nosotros">Nuestra historia</a></nav>
+  <a class="logo" href="#/">Lumin Candele<small>fatto a mano</small></a>
+  <nav class="links"><a href="#/tienda">Tienda</a><a href="#/colecciones">Colecciones</a><a href="#/nosotros">Nuestra historia</a><a href="/blog/">Diario</a></nav>
   <button class="cartbtn" id="cartBtn">Carrito<span class="c" id="cartCount">0</span></button>
 </header>
 <main id="app"></main>
 <footer><div class="wrap">
   <div><b>Lumin Candele</b><p>Velas aromáticas artesanales, hechas a mano por Yasmin y Luigi, inspiradas en Italia. La luz que encendimos juntos.</p></div>
-  <div><b>Colecciones</b><p>Dolce Profumo · Piccolina<br>Wax Melts · Ediciones de temporada</p></div>
-  <div><b>Contacto</b><p>Cera 100% vegetal · hecho a mano<br>WhatsApp · Instagram<br><a href="#/devoluciones">Envíos y devoluciones</a></p></div>
+  <div><b>Colecciones</b><p>Dolce Profumo · Piccolina · Wax Melts<br>Día de Muertos (preventa) · Ediciones de temporada</p></div>
+  <div><b>Contacto</b><p>Cera 100% vegetal · hecho a mano<br><a href="https://wa.me/525540707893" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://instagram.com/lumin_candele" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@lumin.candele" target="_blank" rel="noopener">TikTok</a> · <a href="https://facebook.com/lumin_candele" target="_blank" rel="noopener">Facebook</a><br><a href="#/devoluciones">Envíos y devoluciones</a></p></div>
 </div></footer>
 
 <script>
 const PRODUCTS = [
-  {id:'piccolina', name:'Piccolina', col:'Piccolina', price:210, size:'113 g · cera vegetal', flame:'#e0962f', buy:true,
-   desc:'Nuestra vela pequeña: formato delicado, encantador para regalar o para tus pequeños rituales en casa. Cera 100% vegetal, hecha a mano. Disponible en varios aromas.'},
-  {id:'dolce-200', name:'Dolce Profumo · 200 g', col:'Dolce Profumo', price:480, size:'200 g · cera vegetal', flame:'#c6692f', buy:true,
-   desc:'La línea principal: una invitación a disfrutar el ritual de encender. Aromas cuidadosamente seleccionados que evocan emociones, viajes y recuerdos.'},
-  {id:'dolce-300', name:'Dolce Profumo · 300 g', col:'Dolce Profumo', price:600, size:'300 g · cera vegetal', flame:'#a9531f', buy:true,
+  {id:'piccolina', name:'Piccolina', col:'Piccolina', price:189, size:'113 g · cera vegetal', flame:'#e0962f', buy:true,
+   desc:'Nuestra vela pequeña: formato delicado, encantador para regalar o para tus pequeños rituales en casa. Cera 100% vegetal, hecha a mano.'},
+  {id:'dolce-200', name:'Dolce Profumo · 200 g', col:'Dolce Profumo', price:289, size:'200 g · cera vegetal', flame:'#c6692f', buy:true,
+   desc:'La línea principal: una invitación a disfrutar el ritual de encender. Aromas que evocan emociones, viajes y recuerdos.'},
+  {id:'dolce-300', name:'Dolce Profumo · 300 g', col:'Dolce Profumo', price:349, size:'300 g · cera vegetal', flame:'#a9531f', buy:true,
    desc:'El formato grande de Dolce Profumo: más horas de aroma para acompañar tus momentos de calma, celebración y placer. Cera 100% vegetal.'},
-  {id:'waxmelts', name:'Wax Melts · paquete', col:'Nuevo', price:350, size:'quemador + velas de té + bombones aromáticos', flame:'#7c8a5a', buy:true,
-   desc:'Nuestra nueva línea: el paquete incluye quemador, velas de té y bombones aromáticos para derretir, sin pabilo. Llena el espacio de aroma sin flama. Cera 100% vegetal.'},
+  {id:'waxmelts', name:'Wax Melts · paquete', col:'Nuevo', price:439, size:'quemador + velas de té + bombones aromáticos', flame:'#7c8a5a', buy:true,
+   desc:'El paquete completo: quemador, velas de té y bombones aromáticos para derretir, sin pabilo. Llena el espacio de aroma sin flama. Cera 100% vegetal.'},
+  {id:'waxmelts-solo', name:'Wax Melts · sin quemador', col:'Nuevo', price:229, size:'bombones aromáticos para derretir', flame:'#6f7a45', buy:true,
+   desc:'Solo los bombones aromáticos, para cuando ya tienes tu quemador. Derrítelos y perfuma sin flama. Cera 100% vegetal, hecha a mano.'},
+  {id:'quemador', name:'Quemador para Wax Melts', col:'Accesorio', price:99, size:'para derretir tus wax melts', flame:'#9c8a76', buy:true,
+   desc:'El quemador para derretir tus wax melts y bombones aromáticos. Combínalo con cualquiera de nuestros aromas.'},
+  {id:'set-descubrimiento', name:'Set Descubrimiento', col:'Sets · Regalo', price:499, size:'3 Piccolina · aromas a elegir', flame:'#cf7836', buy:true,
+   desc:'Tres velas Piccolina para descubrir tus aromas favoritos (eliges los aromas por WhatsApp). El regalo perfecto para empezar. Cera 100% vegetal, hecha a mano.'},
+  {id:'set-regalo', name:'Set Regalo Dolce', col:'Sets · Regalo', price:449, size:'Dolce 300 g + caja + tarjeta', flame:'#bd5328', buy:true,
+   desc:'Una Dolce Profumo de 300 g en caja de regalo, con tarjeta manuscrita por Yas & Luigi. Listo para regalar un momento. Cera 100% vegetal.'},
+  {id:'kit-hogar', name:'Kit Hogar', col:'Sets · Regalo', price:699, size:'Dolce 200 g + Wax Melts (paquete)', flame:'#a9531f', buy:true,
+   desc:'Viste tu casa de aroma: una Dolce Profumo 200 g para tus espacios y el paquete de Wax Melts para los rincones. Cera 100% vegetal.'},
+  {id:'kit-autor', name:'Kit de Autor · sorpresa', col:'Sets · Edición', price:899, size:'selección curada por Yas & Luigi', flame:'#7d2436', buy:true,
+   desc:'Una selección sorpresa curada a mano por Yas & Luigi: velas y aromas elegidos por nosotros, en presentación especial. La experiencia Lumin completa — incluye envío gratis en CDMX.'},
+  // ── Colección Día de Muertos · preventa (lanzamiento oficial: agosto) ──
+  {id:'muertos-camino', name:'Camino de Luz', col:'Día de Muertos · Preventa', price:240, size:'200 g · aroma chocolate abuelita', flame:'#7d2436', buy:true, muertos:true, noAroma:true,
+   desc:'La vela conmemorativa de la colección: aroma chocolate abuelita para acompañar tu altar, tus recuerdos y a quienes amas. Cera de soya, hecha a mano.'},
+  {id:'muertos-personalizada', name:'Vela personalizada · Día de Muertos', col:'Día de Muertos · Preventa', price:280, size:'279 g · aroma pan de muerto', flame:'#7d2436', buy:true, muertos:true, noAroma:true, personalize:true,
+   desc:'Vela de soya en vaso, conmemorativa de Día de Muertos: lleva una flor de cempasúchil de cera y la etiqueta va personalizada con el nombre de tu ser querido(a). Que la llama sagrada arda en su memoria.'},
+  {id:'muertos-fantasma-gato', name:'Gatito fantasma', col:'Día de Muertos · Preventa', price:120, size:'vela de molde · aroma pan de muerto', flame:'#7d2436', buy:true, muertos:true, noAroma:true,
+   desc:'Vela de molde con forma de gatito fantasma, aroma pan de muerto. Una compañía tierna para tu altar u ofrenda. Cera de soya, hecha a mano.'},
+  {id:'muertos-fantasma-perro', name:'Perrito fantasma', col:'Día de Muertos · Preventa', price:120, size:'vela de molde · aroma pan de muerto', flame:'#7d2436', buy:true, muertos:true, noAroma:true,
+   desc:'Vela de molde con forma de perrito fantasma, aroma pan de muerto. Una compañía tierna para tu altar u ofrenda. Cera de soya, hecha a mano.'},
+  {id:'muertos-esqueleto-gato', name:'Gatito esqueleto', col:'Día de Muertos · Preventa', price:100, size:'vela de molde · aroma arroz con leche', flame:'#3a2f28', buy:true, muertos:true, noAroma:true,
+   desc:'Vela de molde con forma de gatito esqueleto, aroma arroz con leche. Para recordar también a las mascotas que nos acompañaron. Cera de soya, hecha a mano.'},
+  {id:'muertos-esqueleto-perro', name:'Perrito esqueleto', col:'Día de Muertos · Preventa', price:100, size:'vela de molde · aroma arroz con leche', flame:'#3a2f28', buy:true, muertos:true, noAroma:true,
+   desc:'Vela de molde con forma de perrito esqueleto, aroma arroz con leche. Para recordar también a las mascotas que nos acompañaron. Cera de soya, hecha a mano.'},
 ];
 const TEASERS = [
-  {id:'diamuertos', name:'Día de Muertos', col:'Temporada', flame:'#7d2436',
-   desc:'Edición limitada que sale para la temporada: aromas y diseño inspirados en la fecha. Avísanos si la quieres apartar.'},
+  {id:'autunno', name:'Dolce Autunno', col:'Próximamente · Agosto', flame:'#bd5328',
+   desc:'Nuestra mini-colección de otoño: vela en vaso con calabacitas decorativas (aroma canela) y wax melts aroma pumpkin spice. Pronto disponible.'},
   {id:'eventos', name:'Velas para eventos', col:'A pedido', flame:'#c6692f',
    desc:'Velas personalizadas para bodas, bautizos, baby shower y celebraciones. Etiquetas, colores y aromas a tu medida. Cotiza por WhatsApp.'},
 ];
 // ── Catálogo de AROMAS por producto ──────────────────────────────────────────
-// Yaz lo gestiona desde su panel (panel.html): agregar, quitar y rotar aromas.
+// Yas lo gestiona desde su panel (panel.html): agregar, quitar y rotar aromas.
 // Se guarda en localStorage['lumin_aromas']; esto es el default publicado.
 const DEFAULT_AROMAS = {
-  'piccolina': ['Chocolate','Miel de Abeja','Lavanda'],
-  'dolce-200': ['Chocolate','Miel de Abeja','Lavanda'],
-  'dolce-300': ['Chocolate','Miel de Abeja','Lavanda'],
-  'waxmelts':  ['Honey Bees']
+  'piccolina': ['Chocolate','Miel de abeja','Lavanda','Cítricos','Vino tinto','Fresa'],
+  'dolce-200': ['Cherry punch','Chocolate','Cítricos','Café moka','Eucalipto','Miel de abeja'],
+  'dolce-300': ['Lavanda','Manzana-canela','Rosas rojas','Canela','Coco','Vainilla francesa'],
+  'waxmelts':  ['Miel de abeja','Fresa','Manzana-canela'],
+  'waxmelts-solo': ['Miel de abeja','Fresa','Manzana-canela']
 };
 function loadAromas(){ try{const o=JSON.parse(localStorage.getItem('lumin_aromas'));if(o&&typeof o==='object')return o;}catch(e){} return DEFAULT_AROMAS; }
 function aromasFor(id){ const a=loadAromas()[id]; return Array.isArray(a)?a.filter(Boolean):[]; }
@@ -192,22 +219,32 @@ function candle(p){const f=p.flame||'#e0962f';return `<svg viewBox="0 0 400 320"
   <path d="M200 106 q9 13 0 22 q-9 -9 0 -22" fill="#ffe0a3"/>
   <text x="200" y="250" font-family="Georgia,serif" font-size="15" fill="#9b6b3a" text-anchor="middle" opacity=".7">Lumin</text>
 </svg>`;}
-const PHOTO = {piccolina:'1.jpg','dolce-200':'2.jpg','dolce-300':'3.jpg',waxmelts:'4.jpg'};
+const PHOTO = {piccolina:'1.jpg','dolce-200':'2.jpg','dolce-300':'3.jpg',waxmelts:'4.jpg','waxmelts-solo':'4.jpg','set-descubrimiento':'1.jpg','set-regalo':'3.jpg','kit-hogar':'2.jpg','kit-autor':'hero.jpg'};
 const HERO_IMG = 'hero.jpg';
+const GAL = {"piccolina":["piccolina-1.jpg","piccolina-2.jpg","piccolina-3.jpg","piccolina-4.jpg","piccolina-5.jpg","piccolina-6.jpg","piccolina-7.jpg"],"dolce-200":["dolce200-1.jpg","dolce200-2.jpg","dolce200-3.jpg","dolce200-4.jpg","dolce200-5.jpg","dolce200-6.jpg","dolce200-7.jpg"],"dolce-300":["dolce300-1.jpg","dolce300-2.jpg","dolce300-3.jpg","dolce300-4.jpg","dolce300-5.jpg","dolce300-6.jpg","dolce300-7.jpg","dolce300-8.jpg"],"waxmelts":["waxmelts-1.jpg","waxmelts-2.jpg","waxmelts-3.jpg","waxmelts-4.jpg","waxmelts-5.jpg","waxmelts-6.jpg","waxmelts-7.jpg"],"waxmelts-solo":["waxmelts-1.jpg","waxmelts-2.jpg","waxmelts-3.jpg","waxmelts-4.jpg","waxmelts-5.jpg","waxmelts-6.jpg","waxmelts-7.jpg"],
+"muertos-camino":["muertos-camino-1.jpg","muertos-camino-2.jpg","muertos-camino-3.jpg","muertos-fantasmas-2.jpg"],
+"muertos-personalizada":["muertos-personalizada-1.jpg","muertos-personalizada-2.jpg","muertos-personalizada-3.jpg"],
+"muertos-fantasma-gato":["muertos-fantasma-gato-1.jpg","muertos-fantasmas-2.jpg","muertos-coleccion-1.jpg"],
+"muertos-fantasma-perro":["muertos-fantasma-perro-1.jpg","muertos-fantasmas-2.jpg","muertos-coleccion-1.jpg"],
+"muertos-esqueleto-gato":["muertos-esqueleto-gato-1.jpg","muertos-esqueletos-2.jpg","muertos-coleccion-1.jpg"],
+"muertos-esqueleto-perro":["muertos-esqueleto-perro-1.jpg","muertos-esqueletos-2.jpg","muertos-coleccion-1.jpg"]};
+function firstPhoto(id){var g=GAL[id];return (g&&g[0])||PHOTO[id]||'';}
+function galThumbs(id){var g=GAL[id]||[];if(g.length<2)return '';return '<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">'+g.map(function(f,i){return '<button onclick="swapMain(\''+f+'\',this)" aria-label="Foto '+(i+1)+'" style="width:54px;height:54px;border-radius:8px;border:2px solid '+(i===0?'#bd5328':'#e7dcc6')+';background:url(\'img/'+f+'\') center/cover;cursor:pointer;padding:0"></button>';}).join('')+'</div>';}
+function swapMain(f,btn){var m=document.getElementById('mphoto');if(m)m.style.backgroundImage="url('img/"+f+"')";if(btn){var s=btn.parentNode.children;for(var i=0;i<s.length;i++)s[i].style.borderColor='#e7dcc6';btn.style.borderColor='#bd5328';}}
 function photoTag(file,alt){ return file ? `<div class="photo" style="background-image:url('img/${file}')" role="img" aria-label="${(alt||'').replace(/"/g,'')}"></div>` : ''; }
 
 function pcard(p){return `<a class="pcard" href="#/producto/${p.id}">
-  <div class="ph">${candle(p)}${photoTag(PHOTO[p.id],p.name)}<span class="col">${p.col}</span></div>
+  <div class="ph">${candle(p)}${photoTag(firstPhoto(p.id),p.name)}<span class="col">${p.col}</span></div>
   <div class="body"><h3>${p.name}</h3><div class="size">${p.size||'&nbsp;'}</div><div class="desc">${p.desc}</div>
   <div class="row"><span class="price">${money(p.price)}</span><span class="btn ghost" style="padding:8px 16px;font-size:13px">Ver</span></div></div></a>`;}
 
 function home(){return `
   <div class="hero"><div class="wrap">
-    <div><div class="eyebrow">Fatto a mano · Inspirado en Italia</div>
+    <div><div class="eyebrow">Hecho a mano · Inspirado en Italia</div>
       <h1>La luz que encendimos juntos.</h1>
       <p>Velas aromáticas artesanales, de <b>cera 100% vegetal</b>, hechas a mano por una madre y su hijo. No vendemos velas: regalamos momentos.</p>
       <div class="cta"><a class="btn" href="#/tienda">Ver las velas</a><a class="btn ghost" href="#/nosotros">Nuestra historia</a></div>
-      <div class="amore">— con amore, Yasmin & Luigi</div></div>
+      <div class="amore">— con amore, Yas & Luigi</div></div>
     <div class="heroart">${candle({name:'Lumin',flame:'#c6692f'})}${photoTag(HERO_IMG,'Vela Lumin Candele')}</div>
   </div></div>
 
@@ -218,54 +255,76 @@ function home(){return `
     <div class="prop"><div class="ic">🎁</div><b>Para regalar</b><span>No se regala una vela, se regala un momento.</span></div>
   </div></section>
 
+  <section class="wrap" id="muertos"><div class="sh"><div class="eyebrow" style="color:#7d2436">Preventa · Lanzamiento oficial en agosto</div><h2>Día de Muertos · Camino de Luz</h2>
+    <p>Nuestra colección conmemorativa: velas para recordar a quienes amamos, con aromas que saben a hogar — pan de muerto, arroz con leche y chocolate abuelita. Sobre pedido: enviamos dentro de los 2 días posteriores a tu pago.</p></div>
+    <div class="grid">${PRODUCTS.filter(p=>p.muertos).map(pcard).join('')}</div>
+  </section>
+
   <section class="wrap"><div class="sh"><div class="eyebrow">Nuestras colecciones</div><h2>Aromas que cuentan historias</h2>
     <p>Cera vegetal, hecha a mano, en los formatos que acompañan cada momento.</p></div>
-    <div class="grid">${PRODUCTS.map(pcard).join('')}</div>
+    <div class="grid">${PRODUCTS.filter(p=>!p.muertos).map(pcard).join('')}</div>
   </section>
+
+  <section class="wrap"><div class="band" style="background:linear-gradient(135deg,#7d2436,#bd5328)"><div class="eyebrow" style="color:#ffe0a3">Próximamente · Agosto</div>
+    <h2>Lo que viene este otoño</h2>
+    <p><b>Dolce Autunno</b>, nuestra mini-colección de otoño: vela en vaso con calabacitas decorativas (aroma canela) y wax melts pumpkin spice. Y la preventa de <b>Día de Muertos</b> ya está abierta. Apártalas por WhatsApp.</p>
+    <a class="btn" href="#/tienda">Ver lo que viene</a></div></section>
 
   <section class="wrap"><div class="band"><div class="eyebrow" style="color:#ffe0a3">El nombre</div>
     <h2>Lumin = LU + MIN</h2>
     <p><b>LU</b> de Luis (Luigi) + <b>MIN</b> de Yasmin. Y <i>Candele</i>, “velas” en italiano. Lumin Candele es, literal, la luz que encendimos juntos.</p>
-    <a class="btn" href="#/nosotros">Conoce nuestra historia</a></div></section>`;
+    <a class="btn" href="#/nosotros">Conoce nuestra historia</a></div></section><section class="wrap"><div class="band" style="background:linear-gradient(135deg,#6f7a45,#bd5328)"><div class="eyebrow" style="color:#ffe0a3">Síguenos</div><h2>Mira cómo nacen nuestras velas</h2><p>El detrás de cámaras, los aromas nuevos y la historia de cada vela — en nuestras redes.</p><div style="margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn" href="https://www.tiktok.com/@lumin.candele" target="_blank" rel="noopener">TikTok</a><a class="btn" href="https://instagram.com/lumin_candele" target="_blank" rel="noopener">Instagram</a><a class="btn" href="https://facebook.com/lumin_candele" target="_blank" rel="noopener">Facebook</a></div></div></section>`;
 }
 
 function shop(){return `<section class="wrap">
   <div class="sh"><div class="eyebrow">Tienda</div><h2>Velas & colecciones</h2>
     <p>Cera 100% vegetal, hecha a mano. Disponibles en varios aromas.</p></div>
-  <div class="grid">${PRODUCTS.map(pcard).join('')}</div>
+  <div class="grid">${PRODUCTS.filter(p=>!p.muertos).map(pcard).join('')}</div>
+  <div class="sh" style="margin-top:38px"><div class="eyebrow" style="color:#7d2436">Preventa · Lanzamiento oficial en agosto</div><h2 style="font-size:24px">Día de Muertos · Camino de Luz</h2>
+    <p>Sobre pedido: enviamos dentro de los 2 días posteriores a tu pago.</p></div>
+  <div class="grid">${PRODUCTS.filter(p=>p.muertos).map(pcard).join('')}</div>
   <div class="sh" style="margin-top:38px"><h2 style="font-size:24px">Próximamente & a pedido</h2></div>
   <div class="grid">${TEASERS.map(t=>`<div class="pcard"><div class="ph">${candle(t)}<span class="col">${t.col}</span></div>
     <div class="body"><h3>${t.name}</h3><div class="desc" style="margin-top:8px">${t.desc}</div>
     <div class="row"><a class="btn ghost block" href="#/pagar?msg=${encodeURIComponent(t.name)}" style="font-size:13.5px">Apartar / cotizar por WhatsApp</a></div></div></div>`).join('')}</div>
-  <div class="note wrap" style="max-width:none;margin-top:26px">Precios de referencia; los aromas se confirman al hacer el pedido.</div>
+  <div class="note wrap" style="max-width:none;margin-top:26px">Elige tu aroma por vela; el pedido y la entrega se cierran por WhatsApp.</div>
 </section>`;}
 
 function product(id){const p=byId(id); if(!p) return `<section class="wrap"><p>No encontrado. <a href="#/tienda">Volver</a></p></section>`;
   return `<section class="wrap"><a href="#/tienda" style="color:var(--ink-mute);font-size:13.5px">← Tienda</a>
   <div class="detail" style="margin-top:14px">
-    <div class="media">${candle(p)}${photoTag(PHOTO[p.id],p.name)}</div>
+    <div><div class="media">${firstPhoto(id)?`<div class="photo" id="mphoto" style="background-image:url('img/${firstPhoto(id)}')" role="img" aria-label="${p.name}"></div>`:candle(p)}</div>${galThumbs(id)}</div>
     <div><div class="eyebrow">${p.col}</div><h1>${p.name}</h1>
       <div class="size" style="color:var(--ink-mute);font-size:14px">${p.size||''}</div>
       <span class="price">${money(p.price)} <small style="font-size:13px;color:var(--ink-mute)">MXN</small></span>
       <p class="lead">${p.desc}</p>
-      ${aromaField(p.id)}
+      ${p.noAroma?'':aromaField(p.id)}
+      ${p.personalize?'<div class="field"><label for="pn">Nombre para la etiqueta (a quien se dedica)</label><input id="pn" maxlength="40" placeholder="Ej. Teresita Navarro"></div>':''}
       <div class="field"><label>Cantidad</label><div class="qty"><button onclick="stepQ(-1)">−</button><span id="q">1</span><button onclick="stepQ(1)">+</button></div></div>
       <button class="btn block" onclick="addDetail('${p.id}')">Agregar al carrito · ${money(p.price)}</button>
+      ${p.muertos?'<div class="note" style="background:#f3e0dc;color:#7d2436">🗓️ <b>Preventa Día de Muertos</b> · lanzamiento oficial en agosto. Sobre pedido: enviamos dentro de los 2 días posteriores a tu pago.</div>':''}
+      <div id="addedMsg" style="display:none;align-items:center;gap:10px;background:#eaf6ea;border:1px solid #bfe0bf;border-radius:12px;padding:12px 14px;margin-top:12px;flex-wrap:wrap"><b style="color:#2e7d32">Agregado ✓</b><a class="btn" style="padding:8px 16px;font-size:13px" href="#/carrito">Ver carrito (<span class="n">0</span>)</a><a href="#/tienda" style="font-size:13.5px;color:var(--ink-mute)">Seguir comprando →</a></div>
       ${p.tbd?'<div class="note">El precio de los Wax Melts es de lanzamiento y puede ajustarse; te lo confirmamos al cerrar el pedido.</div>':''}
       <div class="note" style="background:#f0ede1">🕯️ Cera 100% vegetal, hecha a mano. Entregas y aromas se confirman por WhatsApp.</div>
-    </div></div></section>`;}
+    </div></div>
+    <div class="sh" style="margin-top:46px"><div class="eyebrow">También te puede gustar</div><h2 style="font-size:24px">Otras velas para ti</h2></div>
+    <div class="grid">${PRODUCTS.filter(x=>x.id!==id&&!!x.muertos===!!p.muertos).slice(0,3).map(pcard).join('')}</div>
+    </section>`;}
 function stepQ(d){_q=Math.max(1,_q+d);document.getElementById('q').textContent=_q;}
-function addDetail(id){const a=document.getElementById('ar');add(id,_q,a?a.value.trim():'');toast('Agregado al carrito');location.hash='#/carrito';}
+function addDetail(id){const p=byId(id);const a=document.getElementById('ar');const pn=document.getElementById('pn');
+  if(p&&p.personalize&&(!pn||!pn.value.trim())){toast('Escribe el nombre para la etiqueta 🕯️');if(pn)pn.focus();return;}
+  let ex=a?a.value.trim():''; if(pn&&pn.value.trim())ex=(ex?ex+' · ':'')+'Etiqueta: '+pn.value.trim();
+  add(id,_q,ex);toast('Agregado al carrito ✓');var m=document.getElementById('addedMsg');if(m){var n=m.querySelector('.n');if(n)n.textContent=count();m.style.display='flex';m.scrollIntoView({behavior:'smooth',block:'center'});}}
 
 function cartView(){
   if(!cart.length) return `<section class="wrap"><div class="empty"><div class="big">🕯️</div><h2 style="margin:10px 0 6px">Tu carrito está vacío</h2><p>Aún no agregas ninguna vela.</p><a class="btn" style="margin-top:16px" href="#/tienda">Ir a la tienda</a></div></section>`;
-  const rows=cart.map((it,i)=>{const p=byId(it.id);return `<div class="citem"><div class="thumb">${candle(p)}${photoTag(PHOTO[p.id],p.name)}</div>
+  const rows=cart.map((it,i)=>{const p=byId(it.id);return `<div class="citem"><div class="thumb">${candle(p)}${photoTag(firstPhoto(p.id),p.name)}</div>
     <div><div class="nm">${p.name}</div>${it.ar?`<div class="ex">Aroma: ${it.ar}</div>`:''}
       <div class="qty" style="margin-top:6px;transform:scale(.85);transform-origin:left"><button onclick="cq(${i},-1)">−</button><span>${it.qty}</span><button onclick="cq(${i},1)">+</button></div></div>
     <div><div class="pr">${money(p.price*it.qty)}</div><button class="rm" onclick="rm(${i})">quitar</button></div></div>`;}).join('');
   return `<section class="wrap cart"><div class="sh" style="margin-bottom:16px"><h2>Tu carrito</h2></div>${rows}
     <div class="summary"><div class="ln"><span>Subtotal</span><span>${money(subtotal())}</span></div>
-      <div class="ln"><span>Envío</span><span>Se confirma por WhatsApp</span></div>
+      <div class="ln"><span>Envío CDMX</span><span>${subtotal()>=899?'¡Gratis! 🎉':'Gratis desde $899'}</span></div>
       <div class="ln tot"><span>Total</span><span>${money(subtotal())}</span></div>
       <a class="btn block" style="margin-top:16px" href="#/pagar">Finalizar compra</a>
       <a class="btn ghost block" style="margin-top:10px" href="#/tienda">Seguir viendo</a></div></section>`;}
@@ -281,22 +340,29 @@ function checkout(){
     <div class="field"><label>WhatsApp</label><input id="f_w" placeholder="55 0000 0000"></div>
     <div class="field"><label>Aroma(s) que quieres</label><input id="f_a" placeholder="Tus aromas favoritos"></div>
     <button class="btn block" onclick="placeOrder()">Confirmar pedido</button>
-    <div class="note">El pago en línea con <b>Stripe</b> está en configuración. Por ahora confirmamos tu pedido y cerramos el pago y los aromas contigo por <b>WhatsApp</b>. con amore 🕯️</div></section>`;}
-function placeOrder(){const n=(document.getElementById('f_n')||{}).value||''; if(!n.trim()){toast('Pon tu nombre para continuar');return;} location.hash='#/gracias';}
+    <div class="note">Al confirmar se abre <b>WhatsApp</b> con tu pedido listo para enviar. Cerramos aromas, <b>pago por transferencia</b> y entrega contigo por ahí. Nuestras velas se hacen sobre pedido: enviamos dentro de los <b>2 días posteriores a tu pago</b>. con amore 🕯️</div></section>`;}
+function placeOrder(){const n=(document.getElementById('f_n')||{}).value||''; const w=(document.getElementById('f_w')||{}).value||''; const a=(document.getElementById('f_a')||{}).value||''; if(!n.trim()){toast('Pon tu nombre para continuar');return;}
+  const items=cart.map(it=>{const p=byId(it.id);return '- '+it.qty+'x '+p.name+(it.ar?' ('+it.ar+')':'')+' = '+money(p.price*it.qty);}).join('\n');
+  const msg='Hola Lumin! Quiero hacer este pedido:\n\n'+(items||'(carrito)')+'\n\nTotal: '+money(subtotal())+'\nNombre: '+n+(w?'\nWhatsApp: '+w:'')+(a?'\nAromas: '+a:'')+'\n\nPago: transferencia.';
+  const url='https://wa.me/525540707893?text='+encodeURIComponent(msg);
+  const win=window.open(url,'_blank'); if(!win){location.href=url;return;}
+  location.hash='#/gracias';}
 function thanks(){const t=subtotal();cart=[];save();return `<section class="wrap" style="max-width:560px;text-align:center;padding-top:40px"><div style="font-size:52px">🕯️</div>
-  <h2 style="margin:10px 0">¡Gracias!</h2><p style="color:var(--ink-soft)">Recibimos tu pedido. Te escribimos por WhatsApp para confirmar aromas, pago y entrega.</p>
+  <h2 style="margin:10px 0">¡Casi listo!</h2><p style="color:var(--ink-soft)">Te abrimos <b>WhatsApp</b> con tu pedido — solo dale <b>enviar</b> y cerramos aromas, <b>pago por transferencia</b> y entrega por ahí.</p>
   ${t?`<p style="color:var(--ink-mute);font-size:14px;margin-top:8px">Total: <b>${money(t)}</b></p>`:''}
-  <p class="amore" style="font-family:var(--serif);font-style:italic;color:var(--flame-2);margin-top:14px">con amore, Yasmin & Luigi</p>
+  <p class="amore" style="font-family:var(--serif);font-style:italic;color:var(--flame-2);margin-top:14px">con amore, Yas & Luigi</p>
   <a class="btn" style="margin-top:18px" href="#/">Volver al inicio</a></section>`;}
 
 function colecciones(){return `<section class="wrap"><div class="sh"><div class="eyebrow">Colecciones</div><h2>Nuestras velas</h2>
   <p>Dos colecciones fijas, una línea nueva y ediciones de temporada.</p></div>
-  <div class="grid">${PRODUCTS.map(pcard).join('')}</div>
+  <div class="grid">${PRODUCTS.filter(p=>!p.muertos).map(pcard).join('')}</div>
+  <div class="sh" style="margin-top:32px"><div class="eyebrow" style="color:#7d2436">Preventa · Agosto</div><h2 style="font-size:24px">Día de Muertos · Camino de Luz</h2></div>
+  <div class="grid">${PRODUCTS.filter(p=>p.muertos).map(pcard).join('')}</div>
   <div class="grid" style="margin-top:20px">${TEASERS.map(t=>`<div class="pcard"><div class="ph">${candle(t)}<span class="col">${t.col}</span></div><div class="body"><h3>${t.name}</h3><div class="desc" style="margin-top:8px">${t.desc}</div></div></div>`).join('')}</div></section>`;}
 
 function nosotros(){return `<section class="wrap"><div class="sh"><div class="eyebrow">Nuestra historia</div><h2>Un sueño de madre e hijo, inspirado en Italia</h2></div>
   <div class="prose">
-    <p>Somos <b>Yasmin (Yaz) y Luigi</b>, madre e hijo, creadores de Lumin Candele. Nunca hemos salido del país, pero desde que empezamos a estudiar italiano nos enamoramos de su cultura, sus paisajes y las historias que escuchábamos en clase. Sin darnos cuenta, Italia dejó de ser solo un destino… y se convirtió en inspiración.</p>
+    <p>Somos <b>Yasmin (Yas) y Luigi</b>, madre e hijo, creadores de Lumin Candele. Nunca hemos salido del país, pero desde que empezamos a estudiar italiano nos enamoramos de su cultura, sus paisajes y las historias que escuchábamos en clase. Sin darnos cuenta, Italia dejó de ser solo un destino… y se convirtió en inspiración.</p>
     <p>En una conversación muy casual, Luigi me propuso hacer algo juntos —una actividad solo de mamá e hijo—. Le sugerí aprender a hacer velas. Tomamos un curso en línea y empezamos como un simple hobby. Cuando las personas comenzaron a pedirnos velas, entendimos que podía convertirse en algo más grande, y decidimos tomarlo en serio: no solo como negocio, sino como <b>proyecto familiar</b>.</p>
     <p>Así nació una marca inspirada en Italia: nombres, colecciones y aromas que evocan aquello que soñamos conocer algún día. El nombre surge de la combinación de los nuestros: <b>LU</b> de Luis y <b>MIN</b> de Yasmin. Y <i>Candele</i>, que significa velas en italiano. <b>Lumin Candele es, literal, la luz que encendimos juntos.</b></p>
     <p>Hoy, más que vender velas, celebramos momentos, contamos historias y construimos un sueño compartido. Gracias por formar parte de este camino.</p>
@@ -341,6 +407,6 @@ document.getElementById('cartBtn').onclick=()=>location.hash='#/carrito';
 function toast(m){const t=document.createElement('div');t.textContent=m;t.style.cssText='position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#3a2e23;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;z-index:50;box-shadow:0 8px 24px rgba(0,0,0,.2)';document.body.appendChild(t);setTimeout(()=>t.remove(),1600);}
 window.addEventListener('hashchange',render); render();
 </script>
-<div class="pvw">Vista previa · <b>borrador</b></div>
-</body>
+
+<a class="wa-fab" href="https://wa.me/525540707893?text=Hola%20Lumin!%20Me%20interesan%20sus%20velas" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position:fixed;right:18px;bottom:18px;z-index:9999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.28)"><svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm5.8 14.5c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg></a></body>
 </html>
