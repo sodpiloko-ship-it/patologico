@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-22T14:02:02",
+ "generatedAt": "2026-07-22T15:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 12
+  "obras": 15
  },
  "climate": {
   "ok": 9,
@@ -221,6 +221,11 @@
    "stamp": ""
   },
   {
+   "titulo": "Cómo implementar Mercado Pago en Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
+  },
+  {
    "titulo": "Complementos Para Picando Tabla",
    "proyecto": "picandotabla",
    "stamp": "20260708"
@@ -229,6 +234,16 @@
    "titulo": "Mensaje para el primer cliente de WhatsApp",
    "proyecto": "picandotabla",
    "stamp": "20260712"
+  },
+  {
+   "titulo": "Plan para cobrar con Mercado Pago en Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
+  },
+  {
+   "titulo": "Vínculos de Mercado Pago por producto",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
   },
   {
    "titulo": "Propuesta: convertir Piloko en el hub curado de la marca personal de David",
@@ -254,9 +269,9 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "12 obras en el cuerpo de trabajo del universo",
-  "obra: «Actualización de gramajes — Lumin Candele» — lumin",
-  "obra: «Colección Día de Muertos — ficha de venta y publicación» — lumin",
-  "obra: «Lanzamiento de preventa Día de Muertos — Lumin Candele» — lumin"
+  "15 obras en el cuerpo de trabajo del universo",
+  "obra: «Cómo implementar Mercado Pago en Picando Tabla» — picandotabla",
+  "obra: «Plan para cobrar con Mercado Pago en Picando Tabla» — picandotabla",
+  "obra: «Vínculos de Mercado Pago por producto» — picandotabla"
  ]
 }

@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-07-22T14:02:02",
- "count": 12,
+ "generatedAt": "2026-07-22T15:02:02",
+ "count": 15,
  "items": [
   {
    "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20260701-094808",
@@ -51,6 +51,14 @@
    "stamp": ""
   },
   {
+   "id": "prop-picandotabla-fundadora-como-implementar-mercado-pago-en-picando-tabla-20260722-142429",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Cómo implementar Mercado Pago en Picando Tabla",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-22T14:19:09 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Sí es posible. Por tratarse de alimentos perecederos y entregas locales, lo haremos en dos etapas. Primero confirmamos disponibilidad, fecha, zona y envío por WhatsApp. Después enviamos al cliente su vínculo de Mercado Pago. Jessica debe: 1. Entrar a la cuenta co",
+   "stamp": "20260722"
+  },
+  {
    "id": "prop-picandotabla-fundadora-complementos-para-picando-tabla-20260708-060119",
    "proyecto": "picandotabla",
    "vocacion": "copy",
@@ -65,6 +73,22 @@
    "titulo": "Mensaje para el primer cliente de WhatsApp",
    "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-12T10:41:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- ¡Hola, Nombre! 😊 Gracias por escribir a Picando Tabla. Tenemos estas dos opciones: 🧀 Tabla para Dos — $490 Para 2 personas. Incluye una selección de quesos, carnes frías, fruta, frutos secos y crujientes. Llega armada y lista para disfrutar; también incluimos una",
    "stamp": "20260712"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-plan-para-cobrar-con-mercado-pago-en-picando-tab-20260722-142245",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Plan para cobrar con Mercado Pago en Picando Tabla",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-22T14:19:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Implementar Mercado Pago Checkout Pro conectado al carrito actual. Así cada pedido puede incluir varias tablas, complementos y cantidades; el comprador paga en Mercado Pago y regresa a Picando Tabla. El sitio ya cuenta con carrito, captura de zona/fecha y confirm",
+   "stamp": "20260722"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-vinculos-de-mercado-pago-por-producto-20260722-141914",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Vínculos de Mercado Pago por producto",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-22T14:17:05 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Sí se pueden agregar. Para una primera versión conviene colocar un botón “Pagar con Mercado Pago” dentro de cada ficha, conservando el carrito y WhatsApp para pedidos con varios productos, cantidades especiales o envío por cotizar. Mercado Pago permite crear enla",
+   "stamp": "20260722"
   },
   {
    "id": "prop-piloko-crecer-marca-personal-20260715-002330",
