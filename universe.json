@@ -1,14 +1,14 @@
 {
- "generatedAt": "2026-07-23T15:02:02",
+ "generatedAt": "2026-07-23T16:02:02",
  "universe": "Patológicos",
  "census": {
-  "regiones": 10,
+  "regiones": 11,
   "habitantes": 16,
   "obras": 24
  },
  "climate": {
   "ok": 9,
-  "ciego": 0,
+  "ciego": 1,
   "roto": 1
  },
  "inhabitants": [
