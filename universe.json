@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-22T19:02:02",
+ "generatedAt": "2026-07-22T20:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 15
+  "obras": 20
  },
  "climate": {
   "ok": 9,
@@ -221,6 +221,26 @@
    "stamp": ""
   },
   {
+   "titulo": "Actualización de quesos y carnes en todas las tablas",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
+  },
+  {
+   "titulo": "Actualización de variedades — Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
+  },
+  {
+   "titulo": "Actualización — Tabla de Regalo",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
+  },
+  {
+   "titulo": "Actualización urgente de variedades en Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
+  },
+  {
    "titulo": "Cómo implementar Mercado Pago en Picando Tabla",
    "proyecto": "picandotabla",
    "stamp": "20260722"
@@ -229,6 +249,11 @@
    "titulo": "Complementos Para Picando Tabla",
    "proyecto": "picandotabla",
    "stamp": "20260708"
+  },
+  {
+   "titulo": "Descripciones de producto — Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
   },
   {
    "titulo": "Mensaje para el primer cliente de WhatsApp",
@@ -269,9 +294,9 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "15 obras en el cuerpo de trabajo del universo",
-  "obra: «Cómo implementar Mercado Pago en Picando Tabla» — picandotabla",
-  "obra: «Plan para cobrar con Mercado Pago en Picando Tabla» — picandotabla",
-  "obra: «Vínculos de Mercado Pago por producto» — picandotabla"
+  "20 obras en el cuerpo de trabajo del universo",
+  "obra: «Actualización de quesos y carnes en todas las tablas» — picandotabla",
+  "obra: «Actualización de variedades — Picando Tabla» — picandotabla",
+  "obra: «Actualización — Tabla de Regalo» — picandotabla"
  ]
 }

@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-07-22T19:02:02",
- "count": 15,
+ "generatedAt": "2026-07-22T20:02:02",
+ "count": 20,
  "items": [
   {
    "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20260701-094808",
@@ -51,6 +51,38 @@
    "stamp": ""
   },
   {
+   "id": "prop-picandotabla-fundadora-actualizacion-de-quesos-y-carnes-en-todas-las-ta-20260722-191245",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Actualización de quesos y carnes en todas las tablas",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-22T19:11:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Modificar únicamente las descripciones en index.html(C:/Patologicos/web/picandotabla/index.html:146). No cambiar nombres, precios, porciones, acompañamientos ni presentación. | Tabla | Descripción actualizada | |---|---| | Tabla para Dos | Una selección de 2 vari",
+   "stamp": "20260722"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-actualizacion-de-variedades-picando-tabla-20260722-191018",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Actualización de variedades — Picando Tabla",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-22T19:09:03 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Texto listo para sustituir en las fichas del catálogo: Una selección para compartir que incluye 2 variedades de quesos y 2 variedades de carnes frías, acompañadas de fruta, frutos secos y crujientes. Lista para servir y disfrutar con tu vino. Una tabla generosa c",
+   "stamp": "20260722"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-actualizacion-tabla-de-regalo-20260722-191334",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Actualización — Tabla de Regalo",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-22T19:11:09 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Actualizar únicamente la descripción de la Tabla de Regalo en Picando Tabla: Una tabla curada y presentada para regalar, con 3 variedades de quesos y 2 variedades de carnes frías, además de detalles seleccionados. Lista para sorprender y disfrutar. Conservar sin ",
+   "stamp": "20260722"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-actualizacion-urgente-de-variedades-en-picando-t-20260722-190620",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Actualización urgente de variedades en Picando Tabla",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-22T19:01:15 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- La actualización queda como prioridad. El sitio ya tiene las cuatro fichas; falta recibir la composición real para no publicar ingredientes incorrectos. Jessica, envía la información copiando y llenando este formato: Tabla para Dos — $490 - Quesos: DATO - Carnes ",
+   "stamp": "20260722"
+  },
+  {
    "id": "prop-picandotabla-fundadora-como-implementar-mercado-pago-en-picando-tabla-20260722-142429",
    "proyecto": "picandotabla",
    "vocacion": "copy",
@@ -65,6 +97,14 @@
    "titulo": "Complementos Para Picando Tabla",
    "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-07T13:29:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Jessica, contemplaría los complementos como extras de maridaje que elevan la tabla sin complicar demasiado la operación. La idea es que sean fáciles de agregar al carrito, buenos para regalo y compatibles con entrega local en CDMX. 1. Pan, crackers y crostinis - ",
    "stamp": "20260708"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-descripciones-de-producto-picando-tabla-20260722-190439",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Descripciones de producto — Picando Tabla",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-22T19:01:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Las descripciones actuales no especifican la composición exacta. El proyecto sólo contiene recomendaciones; no hay una receta final confirmada por Jessica. Para no publicar ingredientes incorrectos, éstos quedan como DATO. Una selección para dos personas, lista p",
+   "stamp": "20260722"
   },
   {
    "id": "prop-picandotabla-fundadora-mensaje-para-el-primer-cliente-de-whatsapp-20260712-104159",
