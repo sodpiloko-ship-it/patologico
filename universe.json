@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-23T09:02:02",
+ "generatedAt": "2026-07-23T10:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 22
+  "obras": 24
  },
  "climate": {
   "ok": 9,
@@ -251,6 +251,11 @@
    "stamp": "20260722"
   },
   {
+   "titulo": "Cambio urgente — Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260723"
+  },
+  {
    "titulo": "Cómo implementar Mercado Pago en Picando Tabla",
    "proyecto": "picandotabla",
    "stamp": "20260722"
@@ -259,6 +264,11 @@
    "titulo": "Complementos Para Picando Tabla",
    "proyecto": "picandotabla",
    "stamp": "20260708"
+  },
+  {
+   "titulo": "Corrección urgente de picandotabla.com",
+   "proyecto": "picandotabla",
+   "stamp": "20260723"
   },
   {
    "titulo": "Descripciones de producto — Picando Tabla",
@@ -304,9 +314,9 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "22 obras en el cuerpo de trabajo del universo",
-  "obra: «Actualización aprobada — Picando Tabla» — picandotabla",
-  "obra: «Actualización de quesos y carnes en todas las tablas» — picandotabla",
-  "obra: «Actualización de variedades — Picando Tabla» — picandotabla"
+  "24 obras en el cuerpo de trabajo del universo",
+  "obra: «Cambio urgente — Picando Tabla» — picandotabla",
+  "obra: «Corrección urgente de picandotabla.com» — picandotabla",
+  "obra: «Actualización aprobada — Picando Tabla» — picandotabla"
  ]
 }
