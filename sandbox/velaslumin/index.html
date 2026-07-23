@@ -140,7 +140,7 @@ const PRODUCTS = [
    desc:'Nuestra vela pequeña: formato delicado, encantador para regalar o para tus pequeños rituales en casa. Cera 100% vegetal, hecha a mano.'},
   {id:'dolce-200', name:'Dolce Profumo · 200 g', col:'Dolce Profumo', price:289, size:'200 g · cera vegetal', flame:'#c6692f', buy:true,
    desc:'La línea principal: una invitación a disfrutar el ritual de encender. Aromas que evocan emociones, viajes y recuerdos.'},
-  {id:'dolce-300', name:'Dolce Profumo · 300 g', col:'Dolce Profumo', price:349, size:'300 g · cera vegetal', flame:'#a9531f', buy:true,
+  {id:'dolce-300', name:'Dolce Profumo · 300 g', col:'Dolce Profumo', price:349, size:'300 g · cera vegetal', flame:'#a9531f', buy:true, fav:true,
    desc:'El formato grande de Dolce Profumo: más horas de aroma para acompañar tus momentos de calma, celebración y placer. Cera 100% vegetal.'},
   {id:'waxmelts', name:'Wax Melts · paquete', col:'Nuevo', price:439, size:'quemador + velas de té + bombones aromáticos', flame:'#7c8a5a', buy:true,
    desc:'El paquete completo: quemador, velas de té y bombones aromáticos para derretir, sin pabilo. Llena el espacio de aroma sin flama. Cera 100% vegetal.'},
@@ -233,10 +233,42 @@ function galThumbs(id){var g=GAL[id]||[];if(g.length<2)return '';return '<div st
 function swapMain(f,btn){var m=document.getElementById('mphoto');if(m)m.style.backgroundImage="url('img/"+f+"')";if(btn){var s=btn.parentNode.children;for(var i=0;i<s.length;i++)s[i].style.borderColor='#e7dcc6';btn.style.borderColor='#bd5328';}}
 function photoTag(file,alt){ return file ? `<div class="photo" style="background-image:url('img/${file}')" role="img" aria-label="${(alt||'').replace(/"/g,'')}"></div>` : ''; }
 
-function pcard(p){return `<a class="pcard" href="#/producto/${p.id}">
-  <div class="ph">${candle(p)}${photoTag(firstPhoto(p.id),p.name)}<span class="col">${p.col}</span></div>
+function pcard(p){return `<a class="pcard" href="#/producto/${p.id}"${p.fav?' style="border:2px solid var(--terra)"':''}>
+  <div class="ph">${candle(p)}${photoTag(firstPhoto(p.id),p.name)}<span class="col" ${p.fav?'style="background:var(--terra);color:#fff"':''}>${p.fav?'La favorita':p.col}</span></div>
   <div class="body"><h3>${p.name}</h3><div class="size">${p.size||'&nbsp;'}</div><div class="desc">${p.desc}</div>
   <div class="row"><span class="price">${money(p.price)}</span><span class="btn ghost" style="padding:8px 16px;font-size:13px">Ver</span></div></div></a>`;}
+
+// ── Ocasiones (escalera): la tienda se recorre por momento, no por catálogo plano ──
+const OCASIONES = [
+  {t:'Para tu casa y tu ritual', d:'La vela de todos los días: tu lectura, tu baño, tu sobremesa.', ids:['dolce-300','dolce-200','piccolina','waxmelts','waxmelts-solo','quemador']},
+  {t:'Para regalar', d:'No se regala una vela, se regala un momento — listos para entregar.', ids:['set-regalo','set-descubrimiento','kit-hogar','kit-autor']},
+];
+function ocasionSections(){return OCASIONES.map(o=>`
+  <section class="wrap"><div class="sh"><div class="eyebrow">${o.t}</div><h2 style="font-size:26px">${o.d}</h2></div>
+  <div class="grid">${o.ids.map(id=>pcard(byId(id))).join('')}</div></section>`).join('');}
+
+// ── Complementos "de la casa" por producto (upsell EN el detalle, catálogo real) ──
+// swap:true = en lugar del producto (upgrade); si no, se agrega aparte.
+const BUMPS = {
+  'dolce-200': [{id:'dolce-300', label:'Mejor la grande: 300 g por solo $60 más', delta:60, swap:true}],
+  'waxmelts-solo': [{id:'quemador', label:'Agrega el quemador', delta:99}],
+  'waxmelts': [{id:'waxmelts-solo', label:'Bombones aromáticos extra', delta:229}],
+  'muertos-camino': [{id:'muertos-fantasma-gato', label:'Compañía para el altar: gatito fantasma', delta:120},{id:'muertos-fantasma-perro', label:'Compañía para el altar: perrito fantasma', delta:120}],
+  'muertos-personalizada': [{id:'muertos-fantasma-gato', label:'Compañía para el altar: gatito fantasma', delta:120},{id:'muertos-fantasma-perro', label:'Compañía para el altar: perrito fantasma', delta:120}],
+};
+function bumpField(id){
+  const B=BUMPS[id]; if(!B||!B.length) return '';
+  return '<div class="field"><label>Complétala <span style="font-weight:400;color:var(--ink-mute)">· los favoritos de la casa</span></label>'
+    + B.map((b,i)=>`<label style="display:flex;gap:10px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer">
+        <input type="checkbox" data-bump="${i}" style="margin-top:3px;accent-color:var(--terra)" onchange="bumpTotal('${id}')">
+        <span style="font-size:14px"><b style="color:var(--flame-2)">${b.label}</b> <span style="color:var(--terra);font-weight:700">+${money(b.delta)}</span></span></label>`).join('')
+    + '</div>';
+}
+function bumpTotal(id){
+  const p=byId(id); const B=BUMPS[id]||[]; let total=p.price;
+  B.forEach((b,i)=>{const cb=document.querySelector('input[data-bump="'+i+'"]'); if(cb&&cb.checked){ total = b.swap ? byId(b.id).price : total+byId(b.id).price; }});
+  const el=document.getElementById('addBtnPrice'); if(el) el.textContent=money(total*_q);
+}
 
 function home(){return `
   <div class="hero"><div class="wrap">
@@ -260,10 +292,7 @@ function home(){return `
     <div class="grid">${PRODUCTS.filter(p=>p.muertos).map(pcard).join('')}</div>
   </section>
 
-  <section class="wrap"><div class="sh"><div class="eyebrow">Nuestras colecciones</div><h2>Aromas que cuentan historias</h2>
-    <p>Cera vegetal, hecha a mano, en los formatos que acompañan cada momento.</p></div>
-    <div class="grid">${PRODUCTS.filter(p=>!p.muertos).map(pcard).join('')}</div>
-  </section>
+  ${ocasionSections()}
 
   <section class="wrap"><div class="band" style="background:linear-gradient(135deg,#7d2436,#bd5328)"><div class="eyebrow" style="color:#ffe0a3">Próximamente · Agosto</div>
     <h2>Lo que viene este otoño</h2>
@@ -276,12 +305,13 @@ function home(){return `
     <a class="btn" href="#/nosotros">Conoce nuestra historia</a></div></section><section class="wrap"><div class="band" style="background:linear-gradient(135deg,#6f7a45,#bd5328)"><div class="eyebrow" style="color:#ffe0a3">Síguenos</div><h2>Mira cómo nacen nuestras velas</h2><p>El detrás de cámaras, los aromas nuevos y la historia de cada vela — en nuestras redes.</p><div style="margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn" href="https://www.tiktok.com/@lumin.candele" target="_blank" rel="noopener">TikTok</a><a class="btn" href="https://instagram.com/lumin_candele" target="_blank" rel="noopener">Instagram</a><a class="btn" href="https://facebook.com/lumin_candele" target="_blank" rel="noopener">Facebook</a></div></div></section>`;
 }
 
-function shop(){return `<section class="wrap">
+function shop(){return `<section class="wrap" style="padding-bottom:0">
   <div class="sh"><div class="eyebrow">Tienda</div><h2>Velas & colecciones</h2>
-    <p>Cera 100% vegetal, hecha a mano. Disponibles en varios aromas.</p></div>
-  <div class="grid">${PRODUCTS.filter(p=>!p.muertos).map(pcard).join('')}</div>
-  <div class="sh" style="margin-top:38px"><div class="eyebrow" style="color:#7d2436">Preventa · Lanzamiento oficial en agosto</div><h2 style="font-size:24px">Día de Muertos · Camino de Luz</h2>
-    <p>Sobre pedido: enviamos dentro de los 2 días posteriores a tu pago.</p></div>
+    <p>Cera 100% vegetal, hecha a mano. Sobre pedido: enviamos dentro de los 2 días posteriores a tu pago.</p></div></section>
+  ${ocasionSections()}
+  <section class="wrap" style="padding-top:0">
+  <div class="sh" style="margin-top:8px"><div class="eyebrow" style="color:#7d2436">Preventa · Lanzamiento oficial en agosto</div><h2 style="font-size:24px">Día de Muertos · Camino de Luz</h2>
+    <p>Velas para recordar a quienes amamos, con aromas que saben a hogar.</p></div>
   <div class="grid">${PRODUCTS.filter(p=>p.muertos).map(pcard).join('')}</div>
   <div class="sh" style="margin-top:38px"><h2 style="font-size:24px">Próximamente & a pedido</h2></div>
   <div class="grid">${TEASERS.map(t=>`<div class="pcard"><div class="ph">${candle(t)}<span class="col">${t.col}</span></div>
@@ -300,21 +330,28 @@ function product(id){const p=byId(id); if(!p) return `<section class="wrap"><p>N
       <p class="lead">${p.desc}</p>
       ${p.noAroma?'':aromaField(p.id)}
       ${p.personalize?'<div class="field"><label for="pn">Nombre para la etiqueta (a quien se dedica)</label><input id="pn" maxlength="40" placeholder="Ej. Teresita Navarro"></div>':''}
+      ${bumpField(p.id)}
       <div class="field"><label>Cantidad</label><div class="qty"><button onclick="stepQ(-1)">−</button><span id="q">1</span><button onclick="stepQ(1)">+</button></div></div>
-      <button class="btn block" onclick="addDetail('${p.id}')">Agregar al carrito · ${money(p.price)}</button>
+      <button class="btn block" onclick="addDetail('${p.id}')">Agregar al carrito · <span id="addBtnPrice">${money(p.price)}</span></button>
       ${p.muertos?'<div class="note" style="background:#f3e0dc;color:#7d2436">🗓️ <b>Preventa Día de Muertos</b> · lanzamiento oficial en agosto. Sobre pedido: enviamos dentro de los 2 días posteriores a tu pago.</div>':''}
       <div id="addedMsg" style="display:none;align-items:center;gap:10px;background:#eaf6ea;border:1px solid #bfe0bf;border-radius:12px;padding:12px 14px;margin-top:12px;flex-wrap:wrap"><b style="color:#2e7d32">Agregado ✓</b><a class="btn" style="padding:8px 16px;font-size:13px" href="#/carrito">Ver carrito (<span class="n">0</span>)</a><a href="#/tienda" style="font-size:13.5px;color:var(--ink-mute)">Seguir comprando →</a></div>
       ${p.tbd?'<div class="note">El precio de los Wax Melts es de lanzamiento y puede ajustarse; te lo confirmamos al cerrar el pedido.</div>':''}
-      <div class="note" style="background:#f0ede1">🕯️ Cera 100% vegetal, hecha a mano. Entregas y aromas se confirman por WhatsApp.</div>
+      <div class="note" style="background:#f0ede1">🕯️ Cera 100% vegetal, hecha a mano <b>sobre pedido</b>: enviamos dentro de los 2 días posteriores a tu pago. Entregas y aromas se confirman por WhatsApp.</div>
     </div></div>
     <div class="sh" style="margin-top:46px"><div class="eyebrow">También te puede gustar</div><h2 style="font-size:24px">Otras velas para ti</h2></div>
     <div class="grid">${PRODUCTS.filter(x=>x.id!==id&&!!x.muertos===!!p.muertos).slice(0,3).map(pcard).join('')}</div>
     </section>`;}
-function stepQ(d){_q=Math.max(1,_q+d);document.getElementById('q').textContent=_q;}
-function addDetail(id){const p=byId(id);const a=document.getElementById('ar');const pn=document.getElementById('pn');
+function stepQ(d){_q=Math.max(1,_q+d);document.getElementById('q').textContent=_q;const h=(location.hash.replace('#','')||'/').split('?')[0].split('/').filter(Boolean);if(h[0]==='producto')bumpTotal(h[1]);}
+function addDetail(id){let p=byId(id);const a=document.getElementById('ar');const pn=document.getElementById('pn');
   if(p&&p.personalize&&(!pn||!pn.value.trim())){toast('Escribe el nombre para la etiqueta 🕯️');if(pn)pn.focus();return;}
   let ex=a?a.value.trim():''; if(pn&&pn.value.trim())ex=(ex?ex+' · ':'')+'Etiqueta: '+pn.value.trim();
-  add(id,_q,ex);toast('Agregado al carrito ✓');var m=document.getElementById('addedMsg');if(m){var n=m.querySelector('.n');if(n)n.textContent=count();m.style.display='flex';m.scrollIntoView({behavior:'smooth',block:'center'});}}
+  // Complementos "de la casa": swap = upgrade (reemplaza), resto se agrega aparte
+  let mainId=id; const extras=[];
+  (BUMPS[id]||[]).forEach((b,i)=>{const cb=document.querySelector('input[data-bump="'+i+'"]');
+    if(cb&&cb.checked){ if(b.swap) mainId=b.id; else extras.push(b.id); }});
+  add(mainId,_q,ex);
+  extras.forEach(x=>add(x,1,''));
+  toast('Agregado al carrito ✓');var m=document.getElementById('addedMsg');if(m){var n=m.querySelector('.n');if(n)n.textContent=count();m.style.display='flex';m.scrollIntoView({behavior:'smooth',block:'center'});}}
 
 function cartView(){
   if(!cart.length) return `<section class="wrap"><div class="empty"><div class="big">🕯️</div><h2 style="margin:10px 0 6px">Tu carrito está vacío</h2><p>Aún no agregas ninguna vela.</p><a class="btn" style="margin-top:16px" href="#/tienda">Ir a la tienda</a></div></section>`;
@@ -324,7 +361,7 @@ function cartView(){
     <div><div class="pr">${money(p.price*it.qty)}</div><button class="rm" onclick="rm(${i})">quitar</button></div></div>`;}).join('');
   return `<section class="wrap cart"><div class="sh" style="margin-bottom:16px"><h2>Tu carrito</h2></div>${rows}
     <div class="summary"><div class="ln"><span>Subtotal</span><span>${money(subtotal())}</span></div>
-      <div class="ln"><span>Envío CDMX</span><span>${subtotal()>=899?'¡Gratis! 🎉':'Gratis desde $899'}</span></div>
+      <div class="ln"><span>Envío CDMX</span><span>${subtotal()>=899?'¡Gratis! 🎉':'Gratis desde $899 · si no, lo confirmamos por WhatsApp'}</span></div>
       <div class="ln tot"><span>Total</span><span>${money(subtotal())}</span></div>
       <a class="btn block" style="margin-top:16px" href="#/pagar">Finalizar compra</a>
       <a class="btn ghost block" style="margin-top:10px" href="#/tienda">Seguir viendo</a></div></section>`;}
@@ -343,6 +380,12 @@ function checkout(){
     <div class="note">Al confirmar se abre <b>WhatsApp</b> con tu pedido listo para enviar. Cerramos aromas, <b>pago por transferencia</b> y entrega contigo por ahí. Nuestras velas se hacen sobre pedido: enviamos dentro de los <b>2 días posteriores a tu pago</b>. con amore 🕯️</div></section>`;}
 function placeOrder(){const n=(document.getElementById('f_n')||{}).value||''; const w=(document.getElementById('f_w')||{}).value||''; const a=(document.getElementById('f_a')||{}).value||''; if(!n.trim()){toast('Pon tu nombre para continuar');return;}
   const items=cart.map(it=>{const p=byId(it.id);return '- '+it.qty+'x '+p.name+(it.ar?' ('+it.ar+')':'')+' = '+money(p.price*it.qty);}).join('\n');
+  // Registro en la comanda (la comanda es el registro único de pedidos; el cliente además manda su WhatsApp)
+  try{
+    const pl=JSON.stringify({nombre:n, whatsapp:w, aromas:a, total:subtotal(),
+      items:cart.map(it=>{const p=byId(it.id);return {qty:it.qty, nombre:p.name+(it.ar?' ('+it.ar+')':''), precio:p.price};})});
+    if(navigator.sendBeacon){ navigator.sendBeacon('order.php', new Blob([pl],{type:'application/json'})); }
+  }catch(e){}
   const msg='Hola Lumin! Quiero hacer este pedido:\n\n'+(items||'(carrito)')+'\n\nTotal: '+money(subtotal())+'\nNombre: '+n+(w?'\nWhatsApp: '+w:'')+(a?'\nAromas: '+a:'')+'\n\nPago: transferencia.';
   const url='https://wa.me/525540707893?text='+encodeURIComponent(msg);
   const win=window.open(url,'_blank'); if(!win){location.href=url;return;}
