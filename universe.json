@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-07-22T22:02:03",
+ "generatedAt": "2026-07-22T23:02:04",
  "universe": "Patológicos",
  "census": {
   "regiones": 10,
   "habitantes": 16,
-  "obras": 20
+  "obras": 22
  },
  "climate": {
   "ok": 9,
@@ -221,6 +221,11 @@
    "stamp": ""
   },
   {
+   "titulo": "Actualización aprobada — Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
+  },
+  {
    "titulo": "Actualización de quesos y carnes en todas las tablas",
    "proyecto": "picandotabla",
    "stamp": "20260722"
@@ -237,6 +242,11 @@
   },
   {
    "titulo": "Actualización urgente de variedades en Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260722"
+  },
+  {
+   "titulo": "Ajuste de tarjetas — Picando Tabla",
    "proyecto": "picandotabla",
    "stamp": "20260722"
   },
@@ -294,9 +304,9 @@
  "chronicle": [
   "clima del universo: 9 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "20 obras en el cuerpo de trabajo del universo",
+  "22 obras en el cuerpo de trabajo del universo",
+  "obra: «Actualización aprobada — Picando Tabla» — picandotabla",
   "obra: «Actualización de quesos y carnes en todas las tablas» — picandotabla",
-  "obra: «Actualización de variedades — Picando Tabla» — picandotabla",
-  "obra: «Actualización — Tabla de Regalo» — picandotabla"
+  "obra: «Actualización de variedades — Picando Tabla» — picandotabla"
  ]
 }
