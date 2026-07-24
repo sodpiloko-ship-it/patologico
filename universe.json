@@ -1,14 +1,14 @@
 {
- "generatedAt": "2026-07-24T06:02:03",
+ "generatedAt": "2026-07-24T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 11,
   "habitantes": 16,
-  "obras": 24
+  "obras": 25
  },
  "climate": {
-  "ok": 9,
-  "ciego": 1,
+  "ok": 10,
+  "ciego": 0,
   "roto": 1
  },
  "inhabitants": [
@@ -251,6 +251,11 @@
    "stamp": "20260722"
   },
   {
+   "titulo": "Ajuste de tarjetas principales — Picando Tabla",
+   "proyecto": "picandotabla",
+   "stamp": "20260724"
+  },
+  {
    "titulo": "Cambio urgente — Picando Tabla",
    "proyecto": "picandotabla",
    "stamp": "20260723"
@@ -312,11 +317,11 @@
   }
  ],
  "chronicle": [
-  "clima del universo: 9 en calma · 1 en tormenta",
+  "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "24 obras en el cuerpo de trabajo del universo",
+  "25 obras en el cuerpo de trabajo del universo",
+  "obra: «Ajuste de tarjetas principales — Picando Tabla» — picandotabla",
   "obra: «Cambio urgente — Picando Tabla» — picandotabla",
-  "obra: «Corrección urgente de picandotabla.com» — picandotabla",
-  "obra: «Actualización aprobada — Picando Tabla» — picandotabla"
+  "obra: «Corrección urgente de picandotabla.com» — picandotabla"
  ]
 }

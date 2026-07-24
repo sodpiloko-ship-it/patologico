@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-24T06:02:02",
+ "generatedAt": "2026-07-24T07:02:02",
  "projects": [
   {
    "id": "patologicos",
@@ -75,13 +75,13 @@
    "id": "velasaromaticas",
    "label": "Sitio NUEVO de Lumin Candele",
    "domain": "www.velasaromaticas.com.mx",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   }
  ],
  "counts": {
-  "ok": 9,
-  "ciego": 1,
+  "ok": 10,
+  "ciego": 0,
   "roto": 1
  }
 }
