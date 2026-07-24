@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-07-23T20:02:02",
+ "generatedAt": "2026-07-23T21:02:02",
  "projects": [
   {
    "id": "patologicos",
-   "label": "Escaparate + blog de Patológicos",
+   "label": "Sitio del PRODUCTO Pato",
    "domain": "patologicos.com",
    "health": "ok",
    "progress": 0.92
