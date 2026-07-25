@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicita tu diagnóstico sin costo — Pato</title>
+<meta name="description" content="Cuéntanos de tu negocio en 3 minutos y preparamos una propuesta de cómo Pato te ayudaría a vender más. Sin costo ni compromiso.">
+<link rel="canonical" href="https://patologicos.com/solicitar.html">
+<meta property="og:url" content="https://patologicos.com/solicitar.html">
+<meta property="og:title" content="Solicita tu diagnóstico sin costo — Pato">
+<meta property="og:description" content="Cuéntanos de tu negocio en 3 minutos y preparamos una propuesta de cómo Pato te ayudaría a vender más. Sin costo ni compromiso.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#F4F3EE;color:#1B1C18;font-family:'Hanken Grotesk',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:#1B1C18;text-decoration:none}
+    a:hover{color:#000}
+    button{font-family:inherit;cursor:pointer}
+    input,textarea{font-family:inherit}
+    input:focus,textarea:focus{outline:none;border-color:#C8ED4B!important;box-shadow:0 0 0 3px #eaf3d1}
+    ::selection{background:#d7f06a;color:#191A16}
+    @keyframes patoPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+  </style>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#C8ED4B">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XESKPMDFSR');</script>
+</head>
+<body>
+<div id="dc-root">
+<div style="min-height:100vh;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;gap:14px;padding:0 clamp(18px,4vw,32px);height:60px;border-bottom:1px solid #E7E5DE;background:#F8F7F2;flex:none">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px">
+      <div style="width:26px;height:26px;border-radius:8px;background:#C8ED4B;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px #b4dc3c"><div style="width:9px;height:9px;border-radius:50%;background:#191A16"></div></div>
+      <span style="font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:-0.03em">pato</span>
+    </a>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:16px">
+      <sc-if value="{{ notProposal }}" hint-placeholder-val="{{ true }}"><span style="font-size:13px;color:#86867C">{{ stepLabel }}</span></sc-if>
+      <a href="index.html" style="font-size:13.5px;color:#55564E;cursor:pointer">Salir</a>
+    </div>
+  </div>
+
+  <div style="flex:1;display:flex;flex-wrap:wrap;align-items:stretch">
+    <aside style="flex:1 1 320px;max-width:400px;background:#191A16;color:#EDECE4;padding:clamp(28px,4vw,44px)">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#26271f;border:1px solid #3a3b31;border-radius:22px;padding:6px 13px;font-size:12.5px;color:#C8ED4B;margin-bottom:24px"><span style="width:7px;height:7px;border-radius:50%;background:#C8ED4B;animation:patoPulse 2.2s ease-in-out infinite"></span>Onboarding gratuito</div>
+      <h1 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(24px,2.6vw,30px);line-height:1.15;letter-spacing:-0.02em;margin:0">Cuéntanos de tu negocio.</h1>
+      <p style="font-size:14.5px;color:#B5B4AA;line-height:1.6;margin:14px 0 30px">En 3 minutos preparamos una propuesta de cómo Pato te ayudaría a vender más. Sin costo ni compromiso.</p>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="5">
+          <div onClick="{{ st.onClick }}" style="display:flex;align-items:center;gap:12px;cursor:pointer">
+            <div style="{{ st.numStyle }}"><sc-if value="{{ st.done }}" hint-placeholder-val="{{ false }}">✓</sc-if><sc-if value="{{ st.pending }}" hint-placeholder-val="{{ true }}">{{ st.n }}</sc-if></div>
+            <span style="{{ st.labelStyle }}">{{ st.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="height:1px;background:#2b2c25;margin:30px 0 20px"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+        <span style="background:#26271f;border:1px solid #3a3b31;color:#B5B4AA;font-size:11.5px;padding:5px 11px;border-radius:20px">Gratis</span>
+        <span style="background:#26271f;border:1px solid #3a3b31;color:#B5B4AA;font-size:11.5px;padding:5px 11px;border-radius:20px">Sin tarjeta</span>
+        <span style="background:#26271f;border:1px solid #3a3b31;color:#B5B4AA;font-size:11.5px;padding:5px 11px;border-radius:20px">3 minutos</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:9px;font-size:12.5px;color:#7a7b70"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#C8ED4B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l3 3 9-9"/><path d="M3 15h14"/></svg>Al final: enlace mágico para comenzar.</div>
+    </aside>
+
+    <main style="flex:2 1 440px;min-width:0;display:flex;flex-direction:column;background:#F4F3EE">
+      <sc-if value="{{ notProposal }}" hint-placeholder-val="{{ true }}">
+      <div style="height:4px;background:#EBEAE2"><div style="height:100%;background:#C8ED4B;transition:width .3s ease;width:{{ progress }}"></div></div>
+      </sc-if>
+      <div style="flex:1;padding:clamp(28px,4vw,52px);max-width:640px;width:100%">
+
+        <sc-if value="{{ is1 }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.02em;margin:0">Tu negocio</h2>
+          <p style="font-size:15px;color:#6A6B61;margin:8px 0 28px">Lo básico para conocerte.</p>
+          <div style="display:flex;flex-direction:column;gap:22px">
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">¿Cómo se llama tu negocio?</label><input value="{{ data.negocio }}" onInput="{{ setNegocio }}" placeholder="Ej. Migas — Repostería artesanal" style="width:100%;background:#FBFAF7;border:1px solid #E1DFD7;border-radius:10px;padding:13px 15px;font-size:15px;color:#1B1C18"/></div>
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:10px">¿A qué se dedica?</label><div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ categoriaChips }}" as="chip" hint-placeholder-count="6"><button onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button></sc-for></div></div>
+            <div style="display:flex;gap:16px;flex-wrap:wrap"><div style="flex:1 1 200px"><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">Ciudad</label><input value="{{ data.ciudad }}" onInput="{{ setCiudad }}" placeholder="Ej. Guadalajara" style="width:100%;background:#FBFAF7;border:1px solid #E1DFD7;border-radius:10px;padding:13px 15px;font-size:15px;color:#1B1C18"/></div></div>
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:10px">¿Hace cuánto vendes?</label><div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ antiguedadChips }}" as="chip" hint-placeholder-count="4"><button onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button></sc-for></div></div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ is2 }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.02em;margin:0">Tu producto</h2>
+          <p style="font-size:15px;color:#6A6B61;margin:8px 0 28px">Qué vendes y a qué precio.</p>
+          <div style="display:flex;flex-direction:column;gap:22px">
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">¿Qué vendes?</label><textarea value="{{ data.producto }}" onInput="{{ setProducto }}" rows="3" placeholder="Ej. Pasteles, cupcakes y postres por pedido para eventos y cumpleaños." style="width:100%;background:#FBFAF7;border:1px solid #E1DFD7;border-radius:10px;padding:13px 15px;font-size:15px;color:#1B1C18;resize:vertical;line-height:1.5"></textarea></div>
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:10px">Ticket promedio</label><div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ precioChips }}" as="chip" hint-placeholder-count="4"><button onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button></sc-for></div></div>
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:10px">¿Cuántos productos manejas?</label><div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ catalogoChips }}" as="chip" hint-placeholder-count="4"><button onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button></sc-for></div></div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ is3 }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.02em;margin:0">Cómo vendes hoy</h2>
+          <p style="font-size:15px;color:#6A6B61;margin:8px 0 28px">Tus canales y herramientas actuales.</p>
+          <div style="display:flex;flex-direction:column;gap:22px">
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:10px">¿Por dónde vendes? <span style="color:#9a9a90;font-weight:400">(elige las que apliquen)</span></label><div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ canalesChips }}" as="chip" hint-placeholder-count="6"><button onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button></sc-for></div></div>
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">¿Qué herramientas usas hoy?</label><input value="{{ data.herramientas }}" onInput="{{ setHerramientas }}" placeholder="Ej. WhatsApp, Instagram, un Excel de pedidos" style="width:100%;background:#FBFAF7;border:1px solid #E1DFD7;border-radius:10px;padding:13px 15px;font-size:15px;color:#1B1C18"/></div>
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:10px">Ventas mensuales aproximadas</label><div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ ventasChips }}" as="chip" hint-placeholder-count="4"><button onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button></sc-for></div></div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ is4 }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.02em;margin:0">Tus objetivos</h2>
+          <p style="font-size:15px;color:#6A6B61;margin:8px 0 28px">Qué quieres lograr con Pato.</p>
+          <div style="display:flex;flex-direction:column;gap:22px">
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:10px">¿Qué te gustaría lograr? <span style="color:#9a9a90;font-weight:400">(elige las que apliquen)</span></label><div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ objetivosChips }}" as="chip" hint-placeholder-count="5"><button onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button></sc-for></div></div>
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">¿Cuál es tu mayor reto para vender?</label><textarea value="{{ data.reto }}" onInput="{{ setReto }}" rows="3" placeholder="Ej. Recibo muchos mensajes pero se me pierden pedidos y no sé qué producto me deja más." style="width:100%;background:#FBFAF7;border:1px solid #E1DFD7;border-radius:10px;padding:13px 15px;font-size:15px;color:#1B1C18;resize:vertical;line-height:1.5"></textarea></div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ is5 }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.02em;margin:0">¿A dónde enviamos tu propuesta?</h2>
+          <p style="font-size:15px;color:#6A6B61;margin:8px 0 28px">Te mandamos la propuesta y un enlace mágico para comenzar.</p>
+          <div style="display:flex;flex-direction:column;gap:22px">
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">Tu nombre</label><input value="{{ data.nombre }}" onInput="{{ setNombre }}" placeholder="Ej. Andrea Vargas" style="width:100%;background:#FBFAF7;border:1px solid #E1DFD7;border-radius:10px;padding:13px 15px;font-size:15px;color:#1B1C18"/></div>
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">Correo</label><input type="email" value="{{ data.correo }}" onInput="{{ setCorreo }}" placeholder="tu@correo.com" style="width:100%;background:#FBFAF7;border:1px solid #E1DFD7;border-radius:10px;padding:13px 15px;font-size:15px;color:#1B1C18"/></div>
+            <div><label style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">WhatsApp</label><input value="{{ data.whatsapp }}" onInput="{{ setWhatsapp }}" placeholder="+52 ..." style="width:100%;background:#FBFAF7;border:1px solid #E1DFD7;border-radius:10px;padding:13px 15px;font-size:15px;color:#1B1C18"/></div>
+            <div style="display:flex;align-items:center;gap:9px;font-size:12.5px;color:#86867C;background:#FBFAF7;border:1px solid #EBEAE2;border-radius:10px;padding:11px 13px"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="#7ba50f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="12" height="8" rx="2"/><path d="M7 9V7a3 3 0 0 1 6 0v2"/></svg>Tus datos son privados. Nada de spam.</div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ notProposal }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;align-items:center;gap:12px;margin-top:34px">
+          <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}"><button onClick="{{ back }}" style="background:#FBFAF7;color:#1B1C18;border:1px solid #E1DFD7;border-radius:10px;padding:13px 20px;font-size:14.5px;font-weight:600" style-hover="background:#F1F0EA">Atrás</button></sc-if>
+          <button onClick="{{ next }}" style="margin-left:auto;background:#C8ED4B;color:#191A16;border:1px solid #b4dc3c;border-radius:10px;padding:13px 22px;font-size:14.5px;font-weight:600;display:inline-flex;align-items:center;gap:8px" style-hover="background:#d3f163">{{ nextLabel }} <span style="font-size:16px">→</span></button>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ isProposal }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:9px;background:#EAF1D2;color:#5c7a12;border-radius:22px;padding:6px 14px;font-size:13px;font-weight:600;margin-bottom:18px"><span style="width:18px;height:18px;border-radius:50%;background:#C8ED4B;color:#191A16;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">✓</span>Propuesta lista</div>
+          <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(24px,3vw,32px);letter-spacing:-0.02em;margin:0;line-height:1.1">Así te ayudaría Pato, {{ nombreCorto }}.</h2>
+          <p style="font-size:15px;color:#6A6B61;line-height:1.55;margin:14px 0 26px">Con base en lo que nos contaste sobre <strong style="color:#1B1C18">{{ negocioLabel }}</strong>, esto es lo que construiríamos y operaríamos por ti.</p>
+
+          <div style="border:1px solid #E9E7DF;background:#FBFAF7;border-radius:14px;padding:20px 22px;margin-bottom:16px">
+            <div style="font-size:12.5px;font-weight:600;color:#86867C;margin-bottom:14px">Lo que construiríamos</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:11px 16px">
+              <div style="display:flex;align-items:center;gap:9px;font-size:13.5px"><span style="width:18px;height:18px;border-radius:50%;background:#EAF1D2;color:#5c7a12;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none">✓</span>Sitio y tienda administrados</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13.5px"><span style="width:18px;height:18px;border-radius:50%;background:#EAF1D2;color:#5c7a12;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none">✓</span>WhatsApp conectado a órdenes</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13.5px"><span style="width:18px;height:18px;border-radius:50%;background:#EAF1D2;color:#5c7a12;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none">✓</span>Analítica y embudo de ventas</div>
+              <div style="display:flex;align-items:center;gap:9px;font-size:13.5px"><span style="width:18px;height:18px;border-radius:50%;background:#EAF1D2;color:#5c7a12;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none">✓</span>Finanzas y utilidad por producto</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px">
+            <div style="flex:1 1 200px;border:1px solid #DBE6B4;background:#F3F7E4;border-radius:14px;padding:18px 20px">
+              <div style="font-size:12.5px;color:#6a7550;margin-bottom:4px">Impacto estimado · primeros 90 días</div>
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;color:#3d5e0e;letter-spacing:-0.02em">+25 a 40%</div>
+              <div style="font-size:12.5px;color:#6a7550">en conversión, según tu categoría</div>
+            </div>
+            <div style="flex:1 1 200px;border:1px solid #E9E7DF;background:#FBFAF7;border-radius:14px;padding:18px 20px">
+              <div style="font-size:12.5px;color:#86867C;margin-bottom:4px">Plan fundador</div>
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em">$2,490<span style="font-size:14px;color:#86867C;font-weight:400"> /mes</span></div>
+              <div style="font-size:12.5px;color:#86867C">+ $4,900 implementación · 3 meses mín.</div>
+            </div>
+          </div>
+
+          <div style="border:1px solid #E1DFD7;background:#FBFAF7;border-radius:14px;padding:20px 22px">
+            <div style="display:flex;align-items:center;gap:11px;margin-bottom:10px">
+              <div style="width:34px;height:34px;border-radius:9px;background:#191A16;display:flex;align-items:center;justify-content:center;flex:none"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#C8ED4B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="10" rx="2"/><path d="M3 7l7 4 7-4"/></svg></div>
+              <div><div style="font-size:15px;font-weight:600">Revisa tu correo</div><div style="font-size:12.5px;color:#86867C">Enviamos tu propuesta y un enlace mágico a <strong style="color:#55564E">{{ correoLabel }}</strong></div></div>
+            </div>
+            <p style="font-size:13px;color:#6A6B61;line-height:1.5;margin:0 0 16px">Haz clic en el enlace mágico del correo para entrar a tu panel — sin contraseñas. Un especialista de Pato revisará tu propuesta contigo.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <a href="producto.html" style="background:#C8ED4B;color:#191A16;border:1px solid #b4dc3c;border-radius:10px;padding:12px 18px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px" style-hover="background:#d3f163">Abrir mi panel de prueba <span style="font-size:15px">→</span></a>
+              <button style="background:#FBFAF7;color:#1B1C18;border:1px solid #E1DFD7;border-radius:10px;padding:12px 18px;font-size:14px;font-weight:600" style-hover="background:#F1F0EA">Reenviar enlace</button>
+              <button onClick="{{ restart }}" style="background:none;color:#86867C;border:none;padding:12px 6px;font-size:14px">Empezar de nuevo</button>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+      </div>
+    </main>
+  </div>
+</div>
+</div>
+<script src="assets/dc-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  state = {
+    step: 1,
+    data: { negocio:'', categoria:'', ciudad:'', antiguedad:'', producto:'', precio:'', catalogo:'', canales:[], herramientas:'', ventas:'', objetivos:[], reto:'', nombre:'', correo:'', whatsapp:'' }
+  };
+  componentDidMount(){ const s = this.props.startStep; if (s && s > 1) this.setState({ step: s }); }
+  set(key, val){ this.setState(s => ({ data: { ...s.data, [key]: val } })); }
+  toggle(key, val){ this.setState(s => { const arr = s.data[key]; const has = arr.includes(val); return { data: { ...s.data, [key]: has ? arr.filter(x=>x!==val) : [...arr, val] } }; }); }
+  go(n){ this.setState({ step: n }); try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){} }
+  next(){
+    const paso = this.state.step;
+    if (paso === 5) { this.enviarSolicitud(); }
+    this.go(Math.min(6, paso + 1));
+  }
+  enviarSolicitud(){
+    // El diseno terminaba el asistente mostrando la propuesta y NADA MAS: el lead moria en
+    // el navegador. Aqui se envia al servidor (solicitud.php lo guarda ANTES de avisar).
+    const d = this.state.data || {};
+    const j = (x) => Array.isArray(x) ? x.join(', ') : (x || '');
+    const payload = {
+      negocio: j(d.negocio), giro: j(d.categoria), ciudad: j(d.ciudad),
+      antiguedad: j(d.antiguedad), producto: j(d.producto), ticket: j(d.precio),
+      catalogo: j(d.catalogo), canales: j(d.canales), herramientas: j(d.herramientas),
+      ventas_mes: j(d.ventas), objetivos: j(d.objetivos), reto: j(d.reto),
+      nombre: j(d.nombre), correo: j(d.correo), whatsapp: j(d.whatsapp),
+      origen: (typeof location !== 'undefined' ? location.pathname : '')
+    };
+    try {
+      fetch('solicitud.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      }).catch(function(){});
+    } catch (e) {}
+    // Evento de conversion: sin esto no se puede optimizar ni saber que anuncio trajo el lead.
+    try { if (window.gtag) window.gtag('event', 'generate_lead', {event_category:'solicitud_diagnostico', value:1}); } catch (e) {}
+    try { if (window.fbq) window.fbq('track', 'Lead'); } catch (e) {}
+  }
+  back(){ this.go(Math.max(1, this.state.step - 1)); }
+  chip(active){ return active
+    ? 'background:#191A16;color:#F4F3EE;border:1px solid #191A16;font-size:13.5px;font-weight:600;padding:9px 15px;border-radius:22px;cursor:pointer'
+    : 'background:#FBFAF7;color:#55564E;border:1px solid #E4E2DA;font-size:13.5px;padding:9px 15px;border-radius:22px;cursor:pointer'; }
+  chipLime(active){ return active
+    ? 'background:#C8ED4B;color:#191A16;border:1px solid #b4dc3c;font-size:13.5px;font-weight:600;padding:9px 15px;border-radius:22px;cursor:pointer'
+    : 'background:#FBFAF7;color:#55564E;border:1px solid #E4E2DA;font-size:13.5px;padding:9px 15px;border-radius:22px;cursor:pointer'; }
+  mk(opts, key, multi, lime){
+    const d = this.state.data;
+    return opts.map(o => ({
+      label: o,
+      style: (multi ? d[key].includes(o) : d[key] === o) ? (lime ? this.chipLime(true) : this.chip(true)) : this.chip(false),
+      onClick: () => multi ? this.toggle(key, o) : this.set(key, o)
+    }));
+  }
+  renderVals(){
+    const d = this.state.data;
+    const step = this.state.step;
+    const labels = ['Tu negocio','Tu producto','Cómo vendes hoy','Tus objetivos','Tus datos'];
+    const steps = labels.map((label, i) => {
+      const n = i + 1;
+      const done = step > n;
+      const active = step === n;
+      const numStyle = active
+        ? 'width:26px;height:26px;border-radius:50%;background:#C8ED4B;color:#191A16;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none'
+        : (done ? 'width:26px;height:26px;border-radius:50%;background:#2f3a12;color:#C8ED4B;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none'
+                : 'width:26px;height:26px;border-radius:50%;background:transparent;border:1px solid #3a3b31;color:#6f7064;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex:none');
+      const labelStyle = active ? 'color:#EDECE4;font-weight:600;font-size:14px' : (done ? 'color:#B5B4AA;font-size:14px' : 'color:#6f7064;font-size:14px');
+      return { n, label, done, pending: !done, numStyle, labelStyle, onClick: () => this.go(n) };
+    });
+    return {
+      step, data: d, steps,
+      progress: (Math.min(step,5)/5*100) + '%',
+      stepLabel: 'Paso ' + Math.min(step,5) + ' de 5',
+      is1: step===1, is2: step===2, is3: step===3, is4: step===4, is5: step===5,
+      isProposal: step>=6, notProposal: step<6,
+      canBack: step>1,
+      nextLabel: step===5 ? 'Enviar y ver propuesta' : 'Continuar',
+      setNegocio: e=>this.set('negocio', e.target.value),
+      setCiudad: e=>this.set('ciudad', e.target.value),
+      setProducto: e=>this.set('producto', e.target.value),
+      setHerramientas: e=>this.set('herramientas', e.target.value),
+      setReto: e=>this.set('reto', e.target.value),
+      setNombre: e=>this.set('nombre', e.target.value),
+      setCorreo: e=>this.set('correo', e.target.value),
+      setWhatsapp: e=>this.set('whatsapp', e.target.value),
+      categoriaChips: this.mk(['Repostería / comida','Moda','Belleza','Hogar','Servicios','Otro'],'categoria',false,false),
+      antiguedadChips: this.mk(['Voy a empezar','Menos de 1 año','1–3 años','3+ años'],'antiguedad',false,false),
+      precioChips: this.mk(['Menos de $200','$200–$800','$800–$3,000','Más de $3,000'],'precio',false,false),
+      catalogoChips: this.mk(['1–10','10–50','50–200','200+'],'catalogo',false,false),
+      ventasChips: this.mk(['Menos de $20k','$20k–$80k','$80k–$200k','Más de $200k'],'ventas',false,false),
+      canalesChips: this.mk(['WhatsApp','Instagram','Facebook','Tienda en línea','Marketplace','Local físico'],'canales',true,false),
+      objetivosChips: this.mk(['Vender más','Ordenar la operación','Entender mis números','Cobrar mejor','Crecer en línea'],'objetivos',true,true),
+      next: ()=>this.next(), back: ()=>this.back(), restart: ()=>this.go(1),
+      nombreCorto: (d.nombre||'').trim().split(' ')[0] || 'hola',
+      negocioLabel: d.negocio || 'tu negocio',
+      correoLabel: d.correo || 'tu correo',
+    };
+  }
+}
+window.addEventListener('DOMContentLoaded', function () {
+  window.__dc = dcMount(document.getElementById('dc-root'), new Component({"startStep": 1}));
+  window.__dcRender = window.__dc.render;   // permite refrescar al llegar datos del servidor
+});
+</script>
+
+</body>
+</html>
