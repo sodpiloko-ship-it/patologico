@@ -41,4 +41,12 @@ RedirectMatch 404 ^/blog/_(src|pending|rejected)(/|$)
   RewriteRule ^(.*)$ https://patologicos.com/$1 [R=301,L]
 </IfModule>
 
+# --------------------------------------------------------------------------
+# 4) La preview de Lumin ya no vive aquí. El sitio tiene su propio dominio
+#    (www.velasaromaticas.com.mx) desde el cutover; dejar una copia navegable
+#    en patologicos.com parte las señales y muestra precios que envejecen.
+#    El sandbox sigue sirviendo para el resto de previews.
+# --------------------------------------------------------------------------
+RedirectMatch 301 ^/sandbox/velaslumin/?(.*)$ https://www.velasaromaticas.com.mx/$1
+
 ErrorDocument 404 /index.html
