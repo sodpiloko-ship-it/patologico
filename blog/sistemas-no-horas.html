@@ -47,13 +47,17 @@ article ul{margin:16px 0;list-style:none}
 article li{font-size:16.5px;padding:6px 0 6px 24px;position:relative;line-height:1.68;color:#2E2F29}
 article li::before{content:'';position:absolute;left:4px;top:16px;width:7px;height:7px;border-radius:2px;background:var(--acc)}
 article a{color:var(--chipfg);border-bottom:1px solid #b9d36a}
+.article-visual{margin:clamp(28px,5vw,42px) 0}
+.article-visual img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--card);box-shadow:0 18px 44px -34px rgba(20,20,15,.55)}
+.article-visual figcaption{margin-top:10px;font-size:13px;line-height:1.5;color:var(--muted)}
 .cta-box{background:var(--dark);color:var(--paper);border-radius:18px;padding:clamp(24px,3vw,32px);margin:42px 0 10px}
 .cta-box b{font-family:var(--display);font-size:clamp(19px,2.6vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.25;display:block}
 .cta-box p{font-size:15px;margin:10px 0 0;color:#C9C9C0;line-height:1.7}
 .btn{display:inline-block;margin-top:18px;font-weight:700;font-size:14.5px;background:var(--acc);color:var(--dark);padding:13px 24px;border-radius:999px}
 .btn:hover{background:#d8f76b}
 footer{border-top:1px solid var(--line);padding:30px 22px;font-size:13.5px;color:var(--muted);text-align:center}
-footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
+footer a{color:var(--chipfg)}
+@media(max-width:520px){.article-visual{margin:26px -4px}.article-visual img{border-radius:14px}}</style><!-- Google tag (gtag.js) - Patologicos -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
