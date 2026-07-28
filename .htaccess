@@ -32,7 +32,14 @@ RedirectMatch 404 ^/blog/_(src|pending|rejected)(/|$)
 </IfModule>
 
 # --------------------------------------------------------------------------
-# 3) Canónico: una sola casa. Sin esto el sitio vive en dos hostnames y las
+# 3) MIGRACIONES SEO. Cada contenido público tiene un solo canonical.
+#    Las URLs históricas conservan su autoridad con 301; nunca se dejan dos
+#    copias indexables del mismo artículo.
+# --------------------------------------------------------------------------
+RedirectMatch 301 ^/blog/tu-negocio-sera-invisible\.html$ https://patologicos.com/invisible/
+
+# --------------------------------------------------------------------------
+# 4) Canónico: una sola casa. Sin esto el sitio vive en dos hostnames y las
 #    señales de ranking se parten (el mismo problema detectado en fanatia.com).
 # --------------------------------------------------------------------------
 <IfModule mod_rewrite.c>
@@ -42,7 +49,7 @@ RedirectMatch 404 ^/blog/_(src|pending|rejected)(/|$)
 </IfModule>
 
 # --------------------------------------------------------------------------
-# 4) La preview de Lumin ya no vive aquí. El sitio tiene su propio dominio
+# 5) La preview de Lumin ya no vive aquí. El sitio tiene su propio dominio
 #    (www.velasaromaticas.com.mx) desde el cutover; dejar una copia navegable
 #    en patologicos.com parte las señales y muestra precios que envejecen.
 #    El sandbox sigue sirviendo para el resto de previews.

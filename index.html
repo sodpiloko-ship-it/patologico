@@ -22,14 +22,43 @@
     button{font-family:inherit;cursor:pointer}
     ::selection{background:#d7f06a;color:#191A16}
     @keyframes patoPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+    .pato-mobile-menu{display:none;position:relative;margin-left:auto}
+    .pato-mobile-menu>summary{list-style:none;width:42px;height:42px;border:1px solid #DAD8CF;border-radius:10px;background:#FBFAF7;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .pato-mobile-menu>summary::-webkit-details-marker{display:none}
+    .pato-mobile-menu>summary span,.pato-mobile-menu>summary span::before,.pato-mobile-menu>summary span::after{display:block;width:18px;height:2px;border-radius:2px;background:#191A16;content:"";position:relative}
+    .pato-mobile-menu>summary span::before{position:absolute;top:-6px}
+    .pato-mobile-menu>summary span::after{position:absolute;top:6px}
+    .pato-mobile-menu[open]>summary{background:#191A16;border-color:#191A16}
+    .pato-mobile-menu[open]>summary span,.pato-mobile-menu[open]>summary span::before,.pato-mobile-menu[open]>summary span::after{background:#F4F3EE}
+    .pato-mobile-panel{position:absolute;right:0;top:50px;width:min(290px,calc(100vw - 32px));padding:10px;background:#FBFAF7;border:1px solid #DAD8CF;border-radius:14px;box-shadow:0 22px 48px -20px rgba(20,20,15,.45);display:flex;flex-direction:column;gap:2px}
+    .pato-mobile-panel a{padding:11px 12px;border-radius:9px;color:#34352F;font-size:15px;font-weight:600}
+    .pato-mobile-panel a:hover{background:#F0EFE8}
+    .pato-mobile-panel .pato-mobile-cta{margin-top:6px;background:#C8ED4B;color:#191A16;text-align:center;border:1px solid #b4dc3c}
     @media(max-width:760px){
       html,body{max-width:100%;overflow-x:hidden}
       .pato-nav-links,.pato-login,.pato-demo-sidebar{display:none!important}
       .pato-nav{gap:10px!important;padding:0 16px!important}
-      .pato-nav-actions{margin-left:auto!important}
+      .pato-nav-actions{display:none!important}
+      .pato-mobile-menu{display:block}
+      .pato-demo-toolbar{height:auto!important;min-height:52px;padding:9px 12px!important}
+      .pato-demo-business{min-width:0;flex:1;flex-wrap:wrap;row-gap:4px!important}
+      .pato-demo-toolbar-actions{display:none!important}
       .pato-demo-grid{grid-template-columns:minmax(0,1fr)!important}
       .pato-demo-main{min-width:0!important;padding:16px!important}
+      .pato-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+      .pato-kpi-grid>div{min-width:0;padding:13px 14px!important}
+      .pato-kpi-grid>div:nth-child(2){border-right:0!important}
+      .pato-kpi-grid>div:nth-child(-n+2){border-bottom:1px solid #EEEDE6}
+      .pato-kpi-value{font-size:clamp(23px,7vw,28px)!important;white-space:nowrap}
+      .pato-kpi-grid svg{display:none}
       .pato-orders-scroll{max-width:100%;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+    }
+    @media(max-width:340px){
+      .pato-mobile-fluid{min-width:0!important}
+      .pato-kpi-grid{grid-template-columns:minmax(0,1fr)!important}
+      .pato-kpi-grid>div{border-right:0!important;border-bottom:1px solid #EEEDE6!important}
+      .pato-kpi-grid>div:last-child{border-bottom:0!important}
+      .pato-kpi-value{font-size:26px!important}
     }
   </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -64,6 +93,18 @@
       <a href="blog/" style="color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Blog</a>
       <a href="casos.html" style="color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Casos</a>
     </div>
+    <details class="pato-mobile-menu">
+      <summary aria-label="Abrir menú"><span></span></summary>
+      <nav id="pato-mobile-panel" class="pato-mobile-panel" aria-label="Menú principal">
+        <a href="#producto" onclick="this.closest('details').removeAttribute('open')">Producto</a>
+        <a href="#como" onclick="this.closest('details').removeAttribute('open')">Cómo funciona</a>
+        <a href="#diferencia" onclick="this.closest('details').removeAttribute('open')">La diferencia</a>
+        <a href="#precios" onclick="this.closest('details').removeAttribute('open')">Precios</a>
+        <a href="blog/">Blog</a>
+        <a href="casos.html">Casos</a>
+        <a class="pato-mobile-cta" href="solicitar.html">Solicitar diagnóstico</a>
+      </nav>
+    </details>
     <div class="pato-nav-actions" style="margin-left:auto;display:flex;align-items:center;gap:12px">
       <a class="pato-login" href="solicitar.html" style="cursor:pointer;color:#55564E;font-size:14.5px">Iniciar sesión</a>
       <a href="solicitar.html" style="background:#C8ED4B;color:#191A16;border:1px solid #b4dc3c;border-radius:9px;padding:9px 15px;font-size:14px;font-weight:600;display:inline-flex;align-items:center" style-hover="background:#d3f163">Solicitar diagnóstico</a>
@@ -90,14 +131,14 @@
 <div style="max-width:1180px;margin:clamp(38px,5vw,60px) auto 0;padding:0 clamp(14px,4vw,40px)">
   <div style="border-radius:16px;border:1px solid #E1DFD6;background:#FBFAF7;box-shadow:0 1px 3px rgba(20,20,15,.05),0 34px 64px -36px rgba(20,20,15,.32);overflow:hidden">
 
-    <div style="height:52px;display:flex;align-items:center;gap:12px;padding:0 16px;border-bottom:1px solid #EBEAE2;background:#F8F7F2">
-      <div style="display:flex;align-items:center;gap:9px">
+    <div class="pato-demo-toolbar" style="height:52px;display:flex;align-items:center;gap:12px;padding:0 16px;border-bottom:1px solid #EBEAE2;background:#F8F7F2">
+      <div class="pato-demo-business" style="display:flex;align-items:center;gap:9px">
         <div style="width:26px;height:26px;border-radius:7px;background:#EAF1D2;color:#5c7a12;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:13px">{{ businessInitial }}</div>
         <span style="font-weight:600;font-size:14px">{{ business }}</span>
         <span style="color:#A2A298;font-size:12.5px">· Repostería artesanal</span>
         <span style="background:#191A16;color:#C8ED4B;font-size:10.5px;font-weight:700;letter-spacing:0.04em;border-radius:999px;padding:3px 9px;white-space:nowrap">DEMO · DATOS DE EJEMPLO</span>
       </div>
-      <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <div class="pato-demo-toolbar-actions" style="margin-left:auto;display:flex;align-items:center;gap:8px">
         <div style="display:flex;align-items:center;gap:7px;background:#FEFEFC;border:1px solid #E7E5DD;border-radius:8px;padding:6px 10px;font-size:12.5px;color:#55564E">Esta semana <span style="color:#9a9a90">▾</span></div>
         <div style="width:32px;height:32px;border-radius:8px;border:1px solid #E7E5DD;background:#FEFEFC;display:flex;align-items:center;justify-content:center;color:#7B7C72">
           <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="9" cy="9" r="6"/><path d="M17 17l-3.5-3.5"/></svg>
@@ -141,10 +182,10 @@
         </div>
 
         <div>
-          <div style="border:1px solid #E9E7DF;border-radius:12px;background:#FEFEFC;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:hidden">
+          <div class="pato-kpi-grid" style="border:1px solid #E9E7DF;border-radius:12px;background:#FEFEFC;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:hidden">
             <div style="padding:14px 16px;border-right:1px solid #EEEDE6">
               <div style="font-size:12px;color:#86867C">Venta total</div>
-              <div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:5px">$184,320</div>
+              <div class="pato-kpi-value" style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:5px">$184,320</div>
               <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
                 <span style="display:inline-flex;align-items:center;gap:3px;background:#ECF3D6;color:#4E7D16;font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:20px">▲ 18%</span>
                 <svg width="52" height="18" viewBox="0 0 52 18" fill="none"><polyline points="0,14 9,12 18,13 27,8 36,9 44,5 52,2" stroke="#7ea52a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -152,7 +193,7 @@
             </div>
             <div style="padding:14px 16px;border-right:1px solid #EEEDE6">
               <div style="font-size:12px;color:#86867C">Cobrado</div>
-              <div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:5px">$142,900</div>
+              <div class="pato-kpi-value" style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:5px">$142,900</div>
               <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
                 <span style="display:inline-flex;align-items:center;gap:3px;background:#ECF3D6;color:#4E7D16;font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:20px">▲ 12%</span>
                 <svg width="52" height="18" viewBox="0 0 52 18" fill="none"><polyline points="0,13 9,14 18,10 27,11 36,7 44,6 52,3" stroke="#7ea52a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -160,7 +201,7 @@
             </div>
             <div style="padding:14px 16px;border-right:1px solid #EEEDE6">
               <div style="font-size:12px;color:#86867C">Utilidad estimada</div>
-              <div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:5px">$61,200</div>
+              <div class="pato-kpi-value" style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:5px">$61,200</div>
               <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
                 <span style="display:inline-flex;align-items:center;gap:3px;background:#ECF3D6;color:#4E7D16;font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:20px">▲ 9%</span>
                 <svg width="52" height="18" viewBox="0 0 52 18" fill="none"><polyline points="0,12 9,11 18,12 27,9 36,10 44,7 52,5" stroke="#7ea52a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -168,7 +209,7 @@
             </div>
             <div style="padding:14px 16px">
               <div style="font-size:12px;color:#86867C">Conversión</div>
-              <div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:5px">3.2%</div>
+              <div class="pato-kpi-value" style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:5px">3.2%</div>
               <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
                 <span style="display:inline-flex;align-items:center;gap:3px;background:#F6E9E2;color:#B0472C;font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:20px">▼ 0.4%</span>
                 <svg width="52" height="18" viewBox="0 0 52 18" fill="none"><polyline points="0,4 9,6 18,5 27,9 36,8 44,12 52,14" stroke="#c07a5f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -179,7 +220,7 @@
         </div>
 
         <div style="display:flex;flex-wrap:wrap;gap:16px">
-          <div style="flex:2 1 360px;min-width:300px;border:1px solid #DBE6B4;background:#F3F7E4;border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:12px">
+          <div class="pato-mobile-fluid" style="flex:2 1 360px;min-width:300px;border:1px solid #DBE6B4;background:#F3F7E4;border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:12px">
             <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
               <div style="width:26px;height:26px;border-radius:7px;background:#C8ED4B;display:flex;align-items:center;justify-content:center">
                 <svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#2c3a06" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3l1.6 4.4L16 9l-4.4 1.6L10 15l-1.6-4.4L4 9l4.4-1.6z"/></svg>
@@ -198,7 +239,7 @@
             </div>
           </div>
 
-          <div style="flex:1 1 260px;min-width:250px;border:1px solid #E9E7DF;background:#FEFEFC;border-radius:12px;overflow:hidden">
+          <div class="pato-mobile-fluid" style="flex:1 1 260px;min-width:250px;border:1px solid #E9E7DF;background:#FEFEFC;border-radius:12px;overflow:hidden">
             <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 15px 11px">
               <span style="font-weight:600;font-size:14px">Necesita tu atención</span>
               <span style="background:#F6E9E2;color:#B0472C;font-size:11px;font-weight:700;padding:1px 8px;border-radius:20px">4</span>
@@ -252,7 +293,7 @@
   <p style="font-size:clamp(15px,1.5vw,18px);color:#55564E;line-height:1.55;max-width:62ch;margin:16px 0 0">Cada herramienta vive por su lado. Nadie conecta el tráfico con las ventas, ni las conversaciones con el dinero. Tú terminas de analista, coordinador y soporte de tu propio negocio.</p>
 
   <div style="display:flex;align-items:center;gap:clamp(16px,3vw,32px);flex-wrap:wrap;margin-top:32px">
-    <div style="flex:1 1 340px;min-width:300px;border:1px dashed #D6D4CB;background:#F7F6F1;border-radius:16px;padding:20px">
+    <div class="pato-mobile-fluid" style="flex:1 1 340px;min-width:300px;border:1px dashed #D6D4CB;background:#F7F6F1;border-radius:16px;padding:20px">
       <div style="font-size:12.5px;font-weight:600;color:#9a9a90;margin-bottom:14px">Hoy · herramientas sueltas</div>
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
         <div style="display:flex;align-items:center;gap:10px;background:#FBFAF7;border:1px dashed #DBD9D0;border-radius:10px;padding:10px 11px"><div style="width:28px;height:28px;border-radius:7px;background:#F0EFE8;color:#8a8b7f;display:flex;align-items:center;justify-content:center;flex:none"><svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h12l-1-3H5z"/><path d="M5 8v8h10V8"/></svg></div><div style="min-width:0"><div style="font-size:12.5px;font-weight:600">Tienda online</div><div style="font-size:10.5px;color:#c8503a;display:flex;align-items:center;gap:4px"><span style="width:5px;height:5px;border-radius:50%;background:#c8503a"></span>sin conectar</div></div></div>
@@ -269,7 +310,7 @@
       <span style="font-size:11.5px;font-weight:600">con Pato</span>
     </div>
 
-    <div style="flex:1 1 340px;min-width:300px;border:1px solid #D8E4AE;background:#F3F7E4;border-radius:16px;padding:20px">
+    <div class="pato-mobile-fluid" style="flex:1 1 340px;min-width:300px;border:1px solid #D8E4AE;background:#F3F7E4;border-radius:16px;padding:20px">
       <div style="font-size:12.5px;font-weight:600;color:#5c7a12;margin-bottom:14px">Con Pato · un solo sistema conectado</div>
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
         <div style="display:flex;align-items:center;gap:9px;background:#FBFCF4;border:1px solid #E1E9C6;border-radius:10px;padding:11px"><span style="width:7px;height:7px;border-radius:50%;background:#7ba50f;flex:none"></span><span style="font-size:12.5px;font-weight:600">Sitio y tienda</span></div>
@@ -319,7 +360,7 @@
   <p style="font-size:clamp(15px,1.5vw,18px);color:#55564E;line-height:1.55;max-width:60ch;margin:16px 0 0">Pato no es un software que instalas. Es un equipo y una IA que operan tu sistema de ventas por ti.</p>
 
   <div style="display:flex;gap:clamp(16px,3vw,28px);flex-wrap:wrap;margin-top:32px">
-    <div style="flex:1 1 320px;min-width:280px;border:1px solid #E4E2DA;background:#FBFAF7;border-radius:16px;padding:22px 24px">
+    <div class="pato-mobile-fluid" style="flex:1 1 320px;min-width:280px;border:1px solid #E4E2DA;background:#FBFAF7;border-radius:16px;padding:22px 24px">
       <div style="font-size:13px;font-weight:600;color:#86867C;margin-bottom:16px">Lo que dejas de hacer</div>
       <div style="display:flex;flex-direction:column;gap:14px">
         <div style="display:flex;align-items:center;gap:12px"><span style="width:22px;height:22px;border-radius:50%;background:#F0EFE8;color:#a2a298;display:flex;align-items:center;justify-content:center;font-size:12px;flex:none">✕</span><span style="font-size:15px;color:#55564E">Construir la web tú mismo</span></div>
@@ -329,7 +370,7 @@
       </div>
     </div>
 
-    <div style="flex:1.3 1 380px;min-width:300px;border:1px solid #C8ED4B;background:#191A16;color:#EDECE4;border-radius:16px;padding:24px 26px;position:relative;overflow:hidden">
+    <div class="pato-mobile-fluid" style="flex:1.3 1 380px;min-width:300px;border:1px solid #C8ED4B;background:#191A16;color:#EDECE4;border-radius:16px;padding:24px 26px;position:relative;overflow:hidden">
       <div style="font-size:13px;font-weight:600;color:#C8ED4B;margin-bottom:12px">Lo que sí tienes</div>
       <div style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(20px,2.4vw,26px);line-height:1.2;letter-spacing:-0.02em;margin-bottom:18px">Un equipo <span style="color:#C8ED4B">+</span> una IA, sobre el mismo sistema.</div>
       <div style="display:flex;flex-direction:column;gap:12px">
@@ -439,7 +480,7 @@
 
     <sc-if value="{{ showIA }}" hint-placeholder-val="{{ false }}">
     <div style="display:flex;flex-wrap:wrap">
-      <div style="flex:1.7 1 380px;min-width:300px;padding:20px;border-right:1px solid #EEEDE6">
+      <div class="pato-mobile-fluid" style="flex:1.7 1 380px;min-width:300px;padding:20px;border-right:1px solid #EEEDE6">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
           <div style="width:26px;height:26px;border-radius:7px;background:#C8ED4B;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 20 20" fill="none" stroke="#2c3a06" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3l1.6 4.4L16 9l-4.4 1.6L10 15l-1.6-4.4L4 9l4.4-1.6z"/></svg></div>
           <span style="font-family:'Space Grotesk';font-weight:600;font-size:16px">Pato IA</span>
@@ -540,11 +581,11 @@
         <span style="color:#9a9a90;font-size:13px">· julio 2025</span>
         <span style="margin-left:auto;font-size:12.5px;color:#B07A12;background:#FBF4E6;border:1px solid #eeddc0;padding:4px 11px;border-radius:20px">Por cobrar: $8,900</span>
       </div>
-      <div style="border:1px solid #E9E7DF;border-radius:12px;background:#FEFEFC;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:hidden;margin-bottom:16px">
-        <div style="padding:14px 16px;border-right:1px solid #EEEDE6"><div style="font-size:12px;color:#86867C">Ventas</div><div style="font-family:'Space Grotesk';font-weight:600;font-size:23px;font-variant-numeric:tabular-nums;margin-top:4px">$184,320</div></div>
-        <div style="padding:14px 16px;border-right:1px solid #EEEDE6"><div style="font-size:12px;color:#86867C">Cobrado</div><div style="font-family:'Space Grotesk';font-weight:600;font-size:23px;font-variant-numeric:tabular-nums;margin-top:4px">$142,900</div></div>
-        <div style="padding:14px 16px;border-right:1px solid #EEEDE6"><div style="font-size:12px;color:#86867C">Gastos</div><div style="font-family:'Space Grotesk';font-weight:600;font-size:23px;font-variant-numeric:tabular-nums;margin-top:4px">$84,600</div></div>
-        <div style="padding:14px 16px;background:#F5F8E8"><div style="font-size:12px;color:#5c7a12">Utilidad estimada</div><div style="font-family:'Space Grotesk';font-weight:600;font-size:23px;font-variant-numeric:tabular-nums;margin-top:4px;color:#3d5e0e">$61,200</div></div>
+      <div class="pato-kpi-grid" style="border:1px solid #E9E7DF;border-radius:12px;background:#FEFEFC;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:hidden;margin-bottom:16px">
+        <div style="padding:14px 16px;border-right:1px solid #EEEDE6"><div style="font-size:12px;color:#86867C">Ventas</div><div class="pato-kpi-value" style="font-family:'Space Grotesk';font-weight:600;font-size:23px;font-variant-numeric:tabular-nums;margin-top:4px">$184,320</div></div>
+        <div style="padding:14px 16px;border-right:1px solid #EEEDE6"><div style="font-size:12px;color:#86867C">Cobrado</div><div class="pato-kpi-value" style="font-family:'Space Grotesk';font-weight:600;font-size:23px;font-variant-numeric:tabular-nums;margin-top:4px">$142,900</div></div>
+        <div style="padding:14px 16px;border-right:1px solid #EEEDE6"><div style="font-size:12px;color:#86867C">Gastos</div><div class="pato-kpi-value" style="font-family:'Space Grotesk';font-weight:600;font-size:23px;font-variant-numeric:tabular-nums;margin-top:4px">$84,600</div></div>
+        <div style="padding:14px 16px;background:#F5F8E8"><div style="font-size:12px;color:#5c7a12">Utilidad estimada</div><div class="pato-kpi-value" style="font-family:'Space Grotesk';font-weight:600;font-size:23px;font-variant-numeric:tabular-nums;margin-top:4px;color:#3d5e0e">$61,200</div></div>
       </div>
       <div style="border:1px solid #E9E7DF;background:#FEFEFC;border-radius:12px;padding:16px">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:16px">
@@ -584,7 +625,7 @@
   <p style="font-size:clamp(15px,1.5vw,18px);color:#55564E;line-height:1.55;max-width:66ch;margin:16px 0 0">Una base mensual para operar y mejorar. Implementación avanzada cuando ya existe una operación robusta. Desarrollo premium cuando tu industria necesita una herramienta propia.</p>
 
   <div style="display:flex;gap:clamp(16px,3vw,28px);flex-wrap:wrap;margin-top:32px;align-items:stretch">
-    <div style="flex:1.3 1 380px;min-width:300px;border:1px solid #E1DFD6;border-top:3px solid #C8ED4B;background:#FBFAF7;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column">
+    <div class="pato-mobile-fluid" style="flex:1.3 1 380px;min-width:300px;border:1px solid #E1DFD6;border-top:3px solid #C8ED4B;background:#FBFAF7;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column">
       <div style="display:inline-flex;align-self:flex-start;align-items:center;gap:7px;background:#EAF1D2;color:#5c7a12;font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;margin-bottom:18px"><span style="width:6px;height:6px;border-radius:50%;background:#7ba50f"></span>Plan fundador · cupos limitados</div>
       <div style="font-family:'Space Grotesk';font-size:22px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px">PATO mensual</div>
       <p style="font-size:14px;line-height:1.55;color:#55564E;margin:0 0 18px">La base operada para una PYME: vender, registrar, medir y mejorar desde un mismo sistema.</p>
@@ -612,7 +653,7 @@
       </div>
     </div>
 
-    <div style="flex:1 1 320px;min-width:280px;display:grid;gap:16px">
+    <div class="pato-mobile-fluid" style="flex:1 1 320px;min-width:280px;display:grid;gap:16px">
       <div style="border:1px solid #E4E2DA;background:#F7F6F1;border-radius:16px;padding:24px 26px;display:flex;flex-direction:column">
         <div style="font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5c7a12;margin-bottom:10px">Para operaciones robustas</div>
         <h3 style="font-family:'Space Grotesk';font-size:22px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px">PATO Implementación</h3>
