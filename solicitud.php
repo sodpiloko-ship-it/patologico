@@ -80,6 +80,7 @@ $rec = [
     'nombre'      => $nombre,
     'correo'      => $correo,
     'whatsapp'    => $whats,
+    'interes'     => pv($d, 'interes', 40),
     'negocio'     => $negocio,
     'giro'        => pv($d, 'giro', 80),
     'ciudad'      => pv($d, 'ciudad', 80),

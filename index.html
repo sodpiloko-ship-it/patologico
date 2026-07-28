@@ -22,6 +22,15 @@
     button{font-family:inherit;cursor:pointer}
     ::selection{background:#d7f06a;color:#191A16}
     @keyframes patoPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+    @media(max-width:760px){
+      html,body{max-width:100%;overflow-x:hidden}
+      .pato-nav-links,.pato-login,.pato-demo-sidebar{display:none!important}
+      .pato-nav{gap:10px!important;padding:0 16px!important}
+      .pato-nav-actions{margin-left:auto!important}
+      .pato-demo-grid{grid-template-columns:minmax(0,1fr)!important}
+      .pato-demo-main{min-width:0!important;padding:16px!important}
+      .pato-orders-scroll{max-width:100%;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+    }
   </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#C8ED4B">
@@ -40,14 +49,14 @@
 </sc-if>
 
 <header style="position:sticky;top:0;z-index:50;background:rgba(244,243,238,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E7E5DE">
-  <nav style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px);height:64px;display:flex;align-items:center;gap:22px">
+  <nav class="pato-nav" style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,4vw,40px);height:64px;display:flex;align-items:center;gap:22px">
     <div style="display:flex;align-items:center;gap:10px">
       <div style="width:26px;height:26px;border-radius:8px;background:#C8ED4B;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px #b4dc3c">
         <div style="width:9px;height:9px;border-radius:50%;background:#191A16"></div>
       </div>
       <span style="font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:-0.03em">pato</span>
     </div>
-    <div style="display:flex;gap:2px;margin-left:8px">
+    <div class="pato-nav-links" style="display:flex;gap:2px;margin-left:8px">
       <a onClick="{{ goProducto }}" style="cursor:pointer;color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Producto</a>
       <a onClick="{{ goComo }}" style="cursor:pointer;color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Cómo funciona</a>
       <a onClick="{{ goDiferencia }}" style="cursor:pointer;color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">La diferencia</a>
@@ -55,8 +64,8 @@
       <a href="blog/" style="color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Blog</a>
       <a href="casos.html" style="color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Casos</a>
     </div>
-    <div style="margin-left:auto;display:flex;align-items:center;gap:12px">
-      <a href="solicitar.html" style="cursor:pointer;color:#55564E;font-size:14.5px">Iniciar sesión</a>
+    <div class="pato-nav-actions" style="margin-left:auto;display:flex;align-items:center;gap:12px">
+      <a class="pato-login" href="solicitar.html" style="cursor:pointer;color:#55564E;font-size:14.5px">Iniciar sesión</a>
       <a href="solicitar.html" style="background:#C8ED4B;color:#191A16;border:1px solid #b4dc3c;border-radius:9px;padding:9px 15px;font-size:14px;font-weight:600;display:inline-flex;align-items:center" style-hover="background:#d3f163">Solicitar diagnóstico</a>
     </div>
   </nav>
@@ -101,8 +110,8 @@
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:212px minmax(0,1fr)">
-      <aside style="border-right:1px solid #EBEAE2;background:#F8F7F2;padding:14px 12px;display:flex;flex-direction:column;gap:1px;min-height:560px">
+    <div class="pato-demo-grid" style="display:grid;grid-template-columns:212px minmax(0,1fr)">
+      <aside class="pato-demo-sidebar" style="border-right:1px solid #EBEAE2;background:#F8F7F2;padding:14px 12px;display:flex;flex-direction:column;gap:1px;min-height:560px">
         <div style="display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:9px;font-size:13.5px;font-weight:600;color:#1B1C18;background:#E9F0CE">
           <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 10 3l7 6.5"/><path d="M5 8.5V17h10V8.5"/></svg>Inicio</div>
         <div style="display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:9px;font-size:13.5px;color:#7B7C72"><svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14l4-4 3 3 6-6"/><path d="M13 7h4v4"/></svg>Ventas</div>
@@ -119,7 +128,7 @@
         <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;font-size:12px;color:#9a9a90"><span style="width:7px;height:7px;border-radius:50%;background:#C8ED4B;animation:patoPulse 2.4s ease-in-out infinite"></span>Equipo Pato · en línea</div>
       </aside>
 
-      <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:18px">
+      <div class="pato-demo-main" style="min-width:0;padding:22px 24px 26px;display:flex;flex-direction:column;gap:18px">
         <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
           <div style="flex:1;min-width:240px">
             <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:22px;letter-spacing:-0.02em;margin:0">Buenas tardes, Andrea.</h2>
@@ -373,7 +382,7 @@
         <span style="background:#FBFAF7;border:1px solid #E4E2DA;color:#55564E;font-size:12px;padding:5px 11px;border-radius:20px">Entregadas</span>
         <div style="margin-left:auto;display:flex;align-items:center;gap:7px;background:#FBFAF7;border:1px solid #E4E2DA;border-radius:8px;padding:6px 10px;color:#9a9a90;font-size:12.5px"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="9" cy="9" r="6"/><path d="M17 17l-3.5-3.5"/></svg>Buscar orden</div>
       </div>
-      <div style="overflow-x:auto">
+      <div class="pato-orders-scroll" style="max-width:100%;overflow-x:auto">
         <div style="min-width:820px">
           <div style="display:grid;grid-template-columns:1.6fr 1.9fr 0.9fr 1.1fr 1.2fr 0.7fr 1fr;gap:12px;padding:10px 20px;font-size:11.5px;color:#9a9a90;font-weight:600;text-transform:none;border-bottom:1px solid #EEEDE6;background:#F8F7F2">
             <div>Cliente</div><div>Producto</div><div>Total</div><div>Pago</div><div>Estado</div><div>Margen</div><div>Entrega</div>
@@ -571,15 +580,17 @@
 
 <section id="precios" style="max-width:1120px;margin:clamp(72px,9vw,124px) auto 0;padding:0 clamp(20px,4vw,40px)">
   <div style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#5c7a12"><span style="width:7px;height:7px;border-radius:2px;background:#C8ED4B"></span>Precios</div>
-  <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(26px,3.4vw,40px);line-height:1.1;letter-spacing:-0.025em;margin:14px 0 0;max-width:20ch">Un sistema administrado, no un hosting.</h2>
-  <p style="font-size:clamp(15px,1.5vw,18px);color:#55564E;line-height:1.55;max-width:60ch;margin:16px 0 0">Un equipo y una IA operando tu sistema de ventas, por menos de lo que cuesta un solo freelancer.</p>
+  <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(26px,3.4vw,40px);line-height:1.1;letter-spacing:-0.025em;margin:14px 0 0;max-width:22ch">Empezamos con el sistema que necesitas. Crecemos hasta la operación que imaginas.</h2>
+  <p style="font-size:clamp(15px,1.5vw,18px);color:#55564E;line-height:1.55;max-width:66ch;margin:16px 0 0">Una base mensual para operar y mejorar. Implementación avanzada cuando ya existe una operación robusta. Desarrollo premium cuando tu industria necesita una herramienta propia.</p>
 
   <div style="display:flex;gap:clamp(16px,3vw,28px);flex-wrap:wrap;margin-top:32px;align-items:stretch">
     <div style="flex:1.3 1 380px;min-width:300px;border:1px solid #E1DFD6;border-top:3px solid #C8ED4B;background:#FBFAF7;border-radius:16px;padding:26px 28px;display:flex;flex-direction:column">
       <div style="display:inline-flex;align-self:flex-start;align-items:center;gap:7px;background:#EAF1D2;color:#5c7a12;font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;margin-bottom:18px"><span style="width:6px;height:6px;border-radius:50%;background:#7ba50f"></span>Plan fundador · cupos limitados</div>
-      <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(38px,5vw,52px);letter-spacing:-0.03em">$2,490</span><span style="font-size:16px;color:#86867C">MXN / mes</span></div>
-      <div style="font-size:14px;color:#55564E;margin-top:8px">+ <strong style="color:#1B1C18">$4,900 MXN</strong> de implementación · pago único</div>
-      <div style="font-size:13.5px;color:#86867C;margin-top:4px">Permanencia mínima: 3 meses</div>
+      <div style="font-family:'Space Grotesk';font-size:22px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px">PATO mensual</div>
+      <p style="font-size:14px;line-height:1.55;color:#55564E;margin:0 0 18px">La base operada para una PYME: vender, registrar, medir y mejorar desde un mismo sistema.</p>
+      <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(38px,5vw,52px);letter-spacing:-0.03em"><!-- POND_PRICE:monthly:START -->$2,490<!-- POND_PRICE:monthly:END --></span><span style="font-size:16px;color:#86867C">MXN / mes</span></div>
+      <div style="font-size:14px;color:#55564E;margin-top:8px">+ <strong style="color:#1B1C18"><!-- POND_PRICE:setup:START -->$4,900<!-- POND_PRICE:setup:END --> MXN</strong> de implementación · pago único</div>
+      <div style="font-size:13.5px;color:#86867C;margin-top:4px">Permanencia mínima: <!-- POND_PRICE:minimum_periods:START -->3<!-- POND_PRICE:minimum_periods:END --> meses</div>
       <div style="height:1px;background:#EBEAE2;margin:22px 0"></div>
       <div style="font-size:12.5px;font-weight:600;color:#86867C;margin-bottom:14px">Todo incluido, operado por el equipo</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:11px 16px;margin-bottom:16px">
@@ -601,16 +612,27 @@
       </div>
     </div>
 
-    <div style="flex:1 1 300px;min-width:280px;border:1px solid #E4E2DA;background:#F7F6F1;border-radius:16px;padding:26px 28px">
-      <div style="font-size:13px;font-weight:600;color:#86867C;margin-bottom:18px">Lo que normalmente pagarías por separado</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid #EBEAE2"><span style="font-size:13.5px;color:#55564E">Desarrollador web</span><span style="font-size:13.5px;color:#86867C;font-variant-numeric:tabular-nums">$8,000+</span></div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #EBEAE2"><span style="font-size:13.5px;color:#55564E">Diseño y contenido</span><span style="font-size:13.5px;color:#86867C;font-variant-numeric:tabular-nums">$4,000/mes</span></div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #EBEAE2"><span style="font-size:13.5px;color:#55564E">Analista de datos</span><span style="font-size:13.5px;color:#86867C;font-variant-numeric:tabular-nums">$6,000/mes</span></div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #EBEAE2"><span style="font-size:13.5px;color:#55564E">Herramientas sueltas</span><span style="font-size:13.5px;color:#86867C;font-variant-numeric:tabular-nums">$1,500/mes</span></div>
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0"><span style="font-size:13.5px;color:#55564E">Coordinar todo tú</span><span style="font-size:13px;color:#86867C;font-style:italic">tu tiempo</span></div>
-      <div style="background:#191A16;border-radius:12px;padding:16px 18px;margin-top:18px">
-        <div style="font-size:12.5px;color:#9a9a90;margin-bottom:4px">Con Pato</div>
-        <div style="color:#EDECE4;font-size:14.5px;line-height:1.5">Un equipo <span style="color:#C8ED4B">+</span> una IA, sobre un mismo sistema, por <strong style="color:#C8ED4B">$2,490/mes</strong>.</div>
+    <div style="flex:1 1 320px;min-width:280px;display:grid;gap:16px">
+      <div style="border:1px solid #E4E2DA;background:#F7F6F1;border-radius:16px;padding:24px 26px;display:flex;flex-direction:column">
+        <div style="font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5c7a12;margin-bottom:10px">Para operaciones robustas</div>
+        <h3 style="font-family:'Space Grotesk';font-size:22px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px">PATO Implementación</h3>
+        <p style="font-size:14px;line-height:1.55;color:#55564E;margin:0">Mapeamos el proceso y conectamos la capa comercial y operativa con tus catálogos, datos, pedidos y herramientas existentes.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 18px">
+          <span style="font-size:11.5px;background:#ECEBE4;color:#55564E;border-radius:999px;padding:5px 9px">Procesos</span>
+          <span style="font-size:11.5px;background:#ECEBE4;color:#55564E;border-radius:999px;padding:5px 9px">Migración</span>
+          <span style="font-size:11.5px;background:#ECEBE4;color:#55564E;border-radius:999px;padding:5px 9px">Integraciones</span>
+        </div>
+        <div style="font-size:13px;color:#86867C;margin-top:auto">Proyecto a la medida · precio y calendario después del diagnóstico</div>
+        <a href="solicitar.html?interes=implementacion" style="display:inline-flex;justify-content:center;margin-top:14px;border:1px solid #CAC9C0;color:#1B1C18;border-radius:10px;padding:11px 14px;font-size:14px;font-weight:600;text-decoration:none">Evaluar mi operación →</a>
+      </div>
+
+      <div style="border:1px solid #2F302A;background:#191A16;color:#EDECE4;border-radius:16px;padding:24px 26px;display:flex;flex-direction:column">
+        <div style="font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C8ED4B;margin-bottom:10px">Desarrollo premium</div>
+        <h3 style="font-family:'Space Grotesk';font-size:22px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px;color:#F4F3EE">PATO Industria</h3>
+        <p style="font-size:14px;line-height:1.55;color:#B5B4AA;margin:0">Diseñamos software y experiencias alrededor del proceso real de tu industria, con interfaces, automatización y agentes de IA donde aportan valor.</p>
+        <div style="font-size:12px;line-height:1.5;color:#8F9087;margin-top:15px">Capacidad demostrada en PROCA D, PROCAOps, KIBI y el sistema de PATO.</div>
+        <div style="font-size:13px;color:#A8A89F;margin-top:16px">Descubrimiento y alcance antes de cotizar · sin soluciones genéricas</div>
+        <a href="solicitar.html?interes=industria" style="display:inline-flex;justify-content:center;margin-top:14px;background:#C8ED4B;color:#191A16;border-radius:10px;padding:11px 14px;font-size:14px;font-weight:700;text-decoration:none">Diseñar una solución →</a>
       </div>
     </div>
   </div>
@@ -619,7 +641,7 @@
 <section style="margin-top:clamp(80px,10vw,130px);background:#191A16;color:#EDECE4">
   <div style="max-width:900px;margin:0 auto;padding:clamp(60px,8vw,96px) clamp(20px,4vw,40px);text-align:center">
     <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(30px,4.5vw,52px);line-height:1.05;letter-spacing:-0.03em;margin:0">Dedícate a tu producto.</h2>
-    <p style="font-size:clamp(16px,1.7vw,20px);color:#B5B4AA;line-height:1.5;max-width:520px;margin:18px auto 0">Nosotros construimos, operamos y mejoramos el sistema para venderlo — con nuestro equipo y potenciado por IA.</p>
+    <p style="font-size:clamp(16px,1.7vw,20px);color:#B5B4AA;line-height:1.5;max-width:620px;margin:18px auto 0">Empieza con PATO mensual desde <!-- POND_PRICE:monthly:START -->$2,490<!-- POND_PRICE:monthly:END --> MXN/mes. Si tu operación exige más, diseñamos la implementación o el producto de industria después del diagnóstico.</p>
     <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px">
       <button onClick="{{ goOnboarding }}" style="background:#C8ED4B;color:#191A16;border:1px solid #C8ED4B;border-radius:11px;padding:14px 24px;font-size:15.5px;font-weight:600;display:inline-flex;align-items:center;gap:9px" style-hover="background:#d3f163">Solicitar diagnóstico <span style="font-size:17px">→</span></button>
       <button onClick="{{ goComo }}" style="background:transparent;color:#EDECE4;border:1px solid #3a3b31;border-radius:11px;padding:14px 24px;font-size:15.5px;font-weight:600" style-hover="background:#232419">Ver cómo funciona</button>

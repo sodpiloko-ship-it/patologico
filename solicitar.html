@@ -163,8 +163,8 @@
             </div>
             <div style="flex:1 1 200px;border:1px solid #E9E7DF;background:#FBFAF7;border-radius:14px;padding:18px 20px">
               <div style="font-size:12.5px;color:#86867C;margin-bottom:4px">Plan fundador</div>
-              <div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em">$2,490<span style="font-size:14px;color:#86867C;font-weight:400"> /mes</span></div>
-              <div style="font-size:12.5px;color:#86867C">+ $4,900 implementación · 3 meses mín.</div>
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em"><!-- POND_PRICE:monthly:START -->$2,490<!-- POND_PRICE:monthly:END --><span style="font-size:14px;color:#86867C;font-weight:400"> /mes</span></div>
+              <div style="font-size:12.5px;color:#86867C">+ <!-- POND_PRICE:setup:START -->$4,900<!-- POND_PRICE:setup:END --> implementación · <!-- POND_PRICE:minimum_periods:START -->3<!-- POND_PRICE:minimum_periods:END --> meses mín.</div>
             </div>
           </div>
 
@@ -193,9 +193,20 @@
 class Component extends DCLogic {
   state = {
     step: 1,
-    data: { negocio:'', categoria:'', ciudad:'', antiguedad:'', producto:'', precio:'', catalogo:'', canales:[], herramientas:'', ventas:'', objetivos:[], reto:'', nombre:'', correo:'', whatsapp:'' }
+    data: { interes:'', negocio:'', categoria:'', ciudad:'', antiguedad:'', producto:'', precio:'', catalogo:'', canales:[], herramientas:'', ventas:'', objetivos:[], reto:'', nombre:'', correo:'', whatsapp:'' }
   };
-  componentDidMount(){ const s = this.props.startStep; if (s && s > 1) this.setState({ step: s }); }
+  componentDidMount(){
+    const s = this.props.startStep;
+    let interes = '';
+    try {
+      const q = new URLSearchParams(window.location.search).get('interes') || '';
+      if (['implementacion','industria'].includes(q)) interes = q;
+    } catch (e) {}
+    this.setState(prev => ({
+      step: (s && s > 1) ? s : prev.step,
+      data: { ...prev.data, interes }
+    }));
+  }
   set(key, val){ this.setState(s => ({ data: { ...s.data, [key]: val } })); }
   toggle(key, val){ this.setState(s => { const arr = s.data[key]; const has = arr.includes(val); return { data: { ...s.data, [key]: has ? arr.filter(x=>x!==val) : [...arr, val] } }; }); }
   go(n){ this.setState({ step: n }); try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){} }
@@ -210,12 +221,13 @@ class Component extends DCLogic {
     const d = this.state.data || {};
     const j = (x) => Array.isArray(x) ? x.join(', ') : (x || '');
     const payload = {
+      interes: j(d.interes),
       negocio: j(d.negocio), giro: j(d.categoria), ciudad: j(d.ciudad),
       antiguedad: j(d.antiguedad), producto: j(d.producto), ticket: j(d.precio),
       catalogo: j(d.catalogo), canales: j(d.canales), herramientas: j(d.herramientas),
       ventas_mes: j(d.ventas), objetivos: j(d.objetivos), reto: j(d.reto),
       nombre: j(d.nombre), correo: j(d.correo), whatsapp: j(d.whatsapp),
-      origen: (typeof location !== 'undefined' ? location.pathname : '')
+      origen: (typeof location !== 'undefined' ? location.pathname + location.search : '')
     };
     try {
       fetch('solicitud.php', {
@@ -226,7 +238,7 @@ class Component extends DCLogic {
       }).catch(function(){});
     } catch (e) {}
     // Evento de conversion: sin esto no se puede optimizar ni saber que anuncio trajo el lead.
-    try { if (window.gtag) window.gtag('event', 'generate_lead', {event_category:'solicitud_diagnostico', value:1}); } catch (e) {}
+    try { if (window.gtag) window.gtag('event', 'generate_lead', {event_category:'solicitud_diagnostico', interes:j(d.interes)||'mensual', value:1}); } catch (e) {}
     try { if (window.fbq) window.fbq('track', 'Lead'); } catch (e) {}
   }
   back(){ this.go(Math.max(1, this.state.step - 1)); }
