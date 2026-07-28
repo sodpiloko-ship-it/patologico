@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>POND — Conecta tu negocio con agentes de IA | Pato</title>
+<meta name="description" content="PATO opera el sistema y POND prepara una conexión común para que herramientas autorizadas consulten ofertas, precios y disponibilidad sin reemplazar tu negocio.">
+<link rel="canonical" href="https://patologicos.com/pond/">
+<meta property="og:url" content="https://patologicos.com/pond/">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="POND — Conecta tu negocio con agentes de IA | Pato">
+<meta property="og:description" content="PATO opera el sistema y POND prepara una conexión común para que herramientas autorizadas consulten ofertas, precios y disponibilidad sin reemplazar tu negocio.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pond-ink:#1B1C18;
+      --pond-ink-soft:#55564E;
+      --pond-muted:#86867C;
+      --pond-paper:#F4F3EE;
+      --pond-card:#FBFAF7;
+      --pond-line:#E2E0D8;
+      --pond-acid:#C8ED4B;
+      --pond-acid-deep:#5C7A12;
+      --pond-acid-soft:#EAF1D2;
+      --pond-dark:#191A16;
+      --pond-dark-soft:#26271F;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--pond-paper);color:var(--pond-ink);font-family:'Hanken Grotesk',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:inherit;text-decoration:none}
+    button,summary{font:inherit}
+    section[id]{scroll-margin-top:88px}
+    ::selection{background:#D7F06A;color:var(--pond-dark)}
+    .pond-skip{position:fixed;left:16px;top:12px;z-index:1000;padding:10px 14px;border-radius:9px;background:var(--pond-dark);color:#fff;transform:translateY(-160%);transition:transform .18s ease}
+    .pond-skip:focus{transform:translateY(0)}
+    .pond-wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+    .pond-kicker{display:inline-flex;align-items:center;gap:8px;color:var(--pond-acid-deep);font-size:13px;font-weight:700;letter-spacing:.01em}
+    .pond-kicker::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--pond-acid);box-shadow:0 0 0 3px rgba(200,237,75,.2)}
+    .pond-heading{max-width:20ch;margin:14px 0 0;font-family:'Space Grotesk',sans-serif;font-size:clamp(29px,4vw,46px);font-weight:600;line-height:1.05;letter-spacing:-.035em}
+    .pond-lede{max-width:64ch;margin:16px 0 0;color:var(--pond-ink-soft);font-size:clamp(16px,1.65vw,19px);line-height:1.62}
+    .pond-button{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;border:1px solid #B4DC3C;border-radius:11px;background:var(--pond-acid);color:var(--pond-dark);font-size:15px;font-weight:700;box-shadow:0 8px 22px -16px rgba(58,82,0,.7);transition:background .18s ease,transform .18s ease}
+    .pond-button:hover{background:#D3F163;transform:translateY(-1px)}
+    .pond-button:focus-visible,.pond-link-button:focus-visible,.pond-nav a:focus-visible,.pond-mobile-menu summary:focus-visible{outline:3px solid rgba(122,165,15,.35);outline-offset:3px}
+    .pond-link-button{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid #D7D5CC;border-radius:11px;background:var(--pond-card);color:var(--pond-ink);font-size:15px;font-weight:700;transition:background .18s ease}
+    .pond-link-button:hover{background:#F0EFE8}
+    .pond-header{position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(218,216,207,.9);background:rgba(244,243,238,.91);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    .pond-nav{height:66px;display:flex;align-items:center;gap:24px}
+    .pond-brand{display:flex;align-items:center;gap:10px;flex:none}
+    .pond-mark{width:27px;height:27px;border:1px solid #B4DC3C;border-radius:8px;background:var(--pond-acid);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+    .pond-mark::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--pond-dark)}
+    .pond-wordmark{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;letter-spacing:-.04em}
+    .pond-product-tag{margin-left:2px;padding:4px 8px;border:1px solid #DAD8CF;border-radius:999px;color:var(--pond-muted);font-size:11px;font-weight:700;letter-spacing:.08em}
+    .pond-nav-links{display:flex;align-items:center;gap:2px}
+    .pond-nav-links a{padding:8px 10px;border-radius:8px;color:var(--pond-ink-soft);font-size:14px;font-weight:600}
+    .pond-nav-links a:hover{background:#ECEBE4;color:var(--pond-dark)}
+    .pond-nav-cta{margin-left:auto}
+    .pond-mobile-menu{display:none;position:relative;margin-left:auto}
+    .pond-mobile-menu>summary{width:42px;height:42px;display:grid;place-items:center;list-style:none;border:1px solid #DAD8CF;border-radius:10px;background:var(--pond-card);cursor:pointer}
+    .pond-mobile-menu>summary::-webkit-details-marker{display:none}
+    .pond-menu-bars,.pond-menu-bars::before,.pond-menu-bars::after{display:block;position:relative;width:18px;height:2px;border-radius:2px;background:var(--pond-dark);content:""}
+    .pond-menu-bars::before{position:absolute;top:-6px}
+    .pond-menu-bars::after{position:absolute;top:6px}
+    .pond-mobile-panel{position:absolute;right:0;top:50px;width:min(290px,calc(100vw - 32px));display:flex;flex-direction:column;gap:2px;padding:10px;border:1px solid #DAD8CF;border-radius:14px;background:var(--pond-card);box-shadow:0 22px 48px -20px rgba(20,20,15,.45)}
+    .pond-mobile-panel a{padding:11px 12px;border-radius:9px;color:#34352F;font-size:15px;font-weight:700}
+    .pond-mobile-panel a:hover{background:#F0EFE8}
+    .pond-mobile-panel .pond-mobile-cta{margin-top:6px;border:1px solid #B4DC3C;background:var(--pond-acid);color:var(--pond-dark);text-align:center}
+    .pond-hero{padding:clamp(54px,8vw,92px) 0 clamp(64px,9vw,110px)}
+    .pond-hero-copy{text-align:center}
+    .pond-hero-pill{display:inline-flex;align-items:center;gap:9px;padding:6px 13px 6px 10px;border:1px solid #D9E4B2;border-radius:999px;background:#F7F9EE;color:var(--pond-acid-deep);font-size:13px;font-weight:700}
+    .pond-hero-pill::before{content:"";width:7px;height:7px;border-radius:50%;background:#7BA50F;box-shadow:0 0 0 3px rgba(123,165,15,.13)}
+    .pond-hero h1{max-width:17ch;margin:22px auto 0;font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,6vw,68px);font-weight:600;line-height:.99;letter-spacing:-.048em}
+    .pond-highlight{background:linear-gradient(180deg,transparent 61%,#D7F06A 61%);padding-inline:3px}
+    .pond-hero-copy>p{max-width:690px;margin:23px auto 0;color:var(--pond-ink-soft);font-size:clamp(17px,1.8vw,21px);line-height:1.55}
+    .pond-hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+    .pond-hero-note{margin-top:17px;color:var(--pond-muted);font-size:13px;line-height:1.55}
+    .pond-system{margin-top:clamp(40px,6vw,68px);overflow:hidden;border:1px solid #DCDAD1;border-radius:18px;background:var(--pond-card);box-shadow:0 2px 5px rgba(20,20,15,.04),0 34px 70px -46px rgba(20,20,15,.5)}
+    .pond-system-top{display:flex;align-items:center;gap:12px;padding:14px 17px;border-bottom:1px solid #E8E6DE;background:#F8F7F2}
+    .pond-system-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700}
+    .pond-system-title span{color:var(--pond-muted);font-family:'Hanken Grotesk',sans-serif;font-weight:500}
+    .pond-system-status{margin-left:auto;display:inline-flex;align-items:center;gap:7px;padding:5px 9px;border:1px solid #D9E4B2;border-radius:999px;background:#F3F7E4;color:var(--pond-acid-deep);font-size:11.5px;font-weight:700}
+    .pond-system-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#7BA50F}
+    .pond-flow{display:grid;grid-template-columns:minmax(0,1fr) 52px minmax(0,1.08fr) 52px minmax(0,1fr);align-items:stretch;gap:8px;padding:clamp(20px,4vw,38px)}
+    .pond-flow-card{min-width:0;padding:19px;border:1px solid #E2E0D8;border-radius:14px;background:#F8F7F2}
+    .pond-flow-card.is-pond{border-color:#BBD849;background:var(--pond-dark);color:#F1F0E8;box-shadow:0 20px 42px -34px rgba(0,0,0,.8)}
+    .pond-flow-eyebrow{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--pond-muted)}
+    .pond-flow-card.is-pond .pond-flow-eyebrow{color:var(--pond-acid)}
+    .pond-flow-name{margin-top:8px;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:650;letter-spacing:-.025em}
+    .pond-flow-card p{margin:8px 0 0;color:var(--pond-ink-soft);font-size:13.5px;line-height:1.55}
+    .pond-flow-card.is-pond p{color:#BFC0B6}
+    .pond-flow-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+    .pond-flow-list span{padding:5px 8px;border-radius:999px;background:#ECEBE4;color:var(--pond-ink-soft);font-size:11px;font-weight:700}
+    .pond-flow-card.is-pond .pond-flow-list span{border:1px solid #3A3B31;background:var(--pond-dark-soft);color:#DBDAD1}
+    .pond-flow-arrow{display:grid;place-items:center;color:#9AAE58;font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600}
+    .pond-flow-foot{display:flex;align-items:flex-start;gap:10px;padding:13px 17px;border-top:1px solid #E8E6DE;background:#F8F7F2;color:var(--pond-ink-soft);font-size:12.5px;line-height:1.5}
+    .pond-flow-foot strong{color:var(--pond-ink)}
+    .pond-flow-foot::before{content:"i";width:20px;height:20px;display:grid;place-items:center;flex:none;border:1px solid #CFCFC5;border-radius:50%;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700}
+    .pond-section{padding:clamp(68px,9vw,112px) 0}
+    .pond-section.is-soft{border-block:1px solid #E7E5DE;background:#F8F7F2}
+    .pond-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:34px}
+    .pond-role{min-width:0;padding:24px;border:1px solid #E2E0D8;border-radius:16px;background:var(--pond-card)}
+    .pond-role.is-pato{border-color:#313229;background:var(--pond-dark);color:#F1F0E8}
+    .pond-role.is-pond{border-color:#BDD94C;background:#F3F7E4}
+    .pond-role-tag{display:inline-flex;padding:5px 9px;border-radius:999px;background:#ECEBE4;color:var(--pond-ink-soft);font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+    .pond-role.is-pato .pond-role-tag{border:1px solid #3B3C33;background:var(--pond-dark-soft);color:var(--pond-acid)}
+    .pond-role.is-pond .pond-role-tag{background:#DCEAB0;color:var(--pond-acid-deep)}
+    .pond-role h3{margin:16px 0 0;font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:600;letter-spacing:-.03em}
+    .pond-role p{margin:10px 0 0;color:var(--pond-ink-soft);font-size:14.5px;line-height:1.6}
+    .pond-role.is-pato p{color:#BFC0B6}
+    .pond-role ul{display:grid;gap:9px;margin:17px 0 0;padding:0;list-style:none}
+    .pond-role li{display:flex;align-items:flex-start;gap:9px;color:var(--pond-ink-soft);font-size:13.5px;line-height:1.45}
+    .pond-role li::before{content:"";width:7px;height:7px;margin-top:6px;flex:none;border-radius:50%;background:#9FBF3A}
+    .pond-role.is-pato li{color:#D3D2C9}
+    .pond-role.is-pato li::before{background:var(--pond-acid)}
+    .pond-example{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:26px;margin-top:34px;padding:clamp(22px,4vw,34px);border:1px solid #303128;border-radius:18px;background:var(--pond-dark);color:#F1F0E8}
+    .pond-example-label{color:var(--pond-acid);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .pond-example h3{max-width:15ch;margin:12px 0 0;font-family:'Space Grotesk',sans-serif;font-size:clamp(23px,3vw,32px);line-height:1.08;letter-spacing:-.03em}
+    .pond-example blockquote{margin:18px 0 0;padding-left:15px;border-left:3px solid var(--pond-acid);color:#DAD9D0;font-size:15px;line-height:1.55}
+    .pond-example-note{display:block;margin-top:13px;color:#85867B;font-size:11.5px;line-height:1.5}
+    .pond-example-flow{display:grid;gap:9px;margin:0;padding:0;list-style:none;counter-reset:pond-example}
+    .pond-example-flow li{counter-increment:pond-example;display:grid;grid-template-columns:27px minmax(0,1fr);gap:11px;padding:12px;border:1px solid #383930;border-radius:11px;background:#22231D;color:#C7C7BD;font-size:13px;line-height:1.45}
+    .pond-example-flow li::before{content:counter(pond-example);width:24px;height:24px;display:grid;place-items:center;border-radius:7px;background:var(--pond-acid);color:var(--pond-dark);font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:800}
+    .pond-example-flow strong{color:#F1F0E8}
+    .pond-steps{display:grid;gap:14px;margin-top:36px;counter-reset:pond-step}
+    .pond-step{counter-increment:pond-step;display:grid;grid-template-columns:74px minmax(0,1fr) auto;align-items:center;gap:20px;padding:20px 22px;border:1px solid #E2E0D8;border-radius:15px;background:var(--pond-card);transition:border-color .18s ease,transform .18s ease}
+    .pond-step:hover{border-color:#C9DD79;transform:translateY(-1px)}
+    .pond-step::before{content:"0" counter(pond-step);font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;letter-spacing:-.04em;color:#9FBF3A}
+    .pond-step h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:650;letter-spacing:-.025em}
+    .pond-step p{max-width:70ch;margin:6px 0 0;color:var(--pond-ink-soft);font-size:14px;line-height:1.55}
+    .pond-step-state{padding:5px 9px;border-radius:999px;background:#ECEBE4;color:var(--pond-muted);font-size:11px;font-weight:800;white-space:nowrap}
+    .pond-step-state.is-ready{background:var(--pond-acid-soft);color:var(--pond-acid-deep)}
+    .pond-step-state.is-next{border:1px solid #E1D7C1;background:#F8F1E4;color:#8B6428}
+    .pond-capabilities{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:34px}
+    .pond-capability{min-width:0;padding:18px 16px;border:1px solid #E2E0D8;border-radius:14px;background:var(--pond-card)}
+    .pond-capability-code{display:inline-block;padding:4px 7px;border-radius:6px;background:#ECEBE4;color:var(--pond-muted);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:10px;overflow-wrap:anywhere}
+    .pond-capability h3{margin:13px 0 0;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:650;line-height:1.25;letter-spacing:-.02em}
+    .pond-capability p{margin:7px 0 0;color:var(--pond-ink-soft);font-size:12.5px;line-height:1.5}
+    .pond-proof{display:flex;align-items:center;gap:18px;margin-top:20px;padding:16px 18px;border:1px solid #DDE4C2;border-radius:14px;background:#F3F7E4}
+    .pond-proof-label{color:var(--pond-acid-deep);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .pond-proof-businesses{display:flex;flex-wrap:wrap;gap:8px}
+    .pond-proof-businesses span{padding:6px 10px;border:1px solid #D5E1AC;border-radius:999px;background:#FAFCF4;color:#4F5E2B;font-size:12px;font-weight:700}
+    .pond-guardrail{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(28px,5vw,64px);padding:clamp(30px,5vw,52px);border:1px solid #303128;border-radius:18px;background:var(--pond-dark);color:#F1F0E8;box-shadow:0 28px 70px -54px rgba(0,0,0,.8)}
+    .pond-guardrail .pond-kicker{color:var(--pond-acid)}
+    .pond-guardrail .pond-heading{max-width:13ch}
+    .pond-guardrail p{margin:16px 0 0;color:#BFC0B6;font-size:15px;line-height:1.6}
+    .pond-limits{display:grid;gap:10px}
+    .pond-limit{display:flex;align-items:flex-start;gap:12px;padding:14px;border:1px solid #383930;border-radius:12px;background:#22231D}
+    .pond-limit-mark{width:22px;height:22px;display:grid;place-items:center;flex:none;border:1px solid #4B4C42;border-radius:50%;color:var(--pond-acid);font-size:12px;font-weight:800}
+    .pond-limit strong{display:block;font-size:14px}
+    .pond-limit span{display:block;margin-top:3px;color:#A8A99F;font-size:12.5px;line-height:1.45}
+    .pond-principles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:34px}
+    .pond-principle{padding:20px;border-top:3px solid var(--pond-acid);border-radius:4px 4px 14px 14px;background:var(--pond-card);box-shadow:inset 0 0 0 1px #E2E0D8}
+    .pond-principle h3{margin:0;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:650;letter-spacing:-.02em}
+    .pond-principle p{margin:8px 0 0;color:var(--pond-ink-soft);font-size:13.5px;line-height:1.55}
+    .pond-cta-section{padding:clamp(70px,9vw,112px) 0;background:var(--pond-dark);color:#F2F1E9}
+    .pond-cta{text-align:center}
+    .pond-cta h2{max-width:18ch;margin:0 auto;font-family:'Space Grotesk',sans-serif;font-size:clamp(33px,5vw,55px);font-weight:600;line-height:1.03;letter-spacing:-.042em}
+    .pond-cta p{max-width:650px;margin:18px auto 0;color:#BFC0B6;font-size:clamp(16px,1.7vw,19px);line-height:1.58}
+    .pond-cta .pond-button{margin-top:27px}
+    .pond-cta-note{max-width:650px;margin:14px auto 0;color:#7F8076;font-size:12.5px;line-height:1.55}
+    .pond-footer{border-top:1px solid #E2E0D8;background:#F8F7F2}
+    .pond-footer-inner{display:flex;align-items:center;gap:28px;min-height:86px;color:var(--pond-muted);font-size:13px}
+    .pond-footer-brand{display:flex;align-items:center;gap:10px;color:var(--pond-ink);font-weight:700}
+    .pond-footer-links{display:flex;flex-wrap:wrap;gap:18px;margin-left:auto}
+    .pond-footer-links a:hover{color:var(--pond-ink)}
+    @media(max-width:960px){
+      .pond-nav-links{display:none}
+      .pond-nav-cta{display:none}
+      .pond-mobile-menu{display:block}
+      .pond-capabilities{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .pond-principles{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:780px){
+      html,body{max-width:100%;overflow-x:hidden}
+      .pond-wrap{width:min(calc(100% - 32px),1120px)}
+      .pond-flow{grid-template-columns:minmax(0,1fr);gap:9px;padding:18px}
+      .pond-flow-arrow{height:25px;transform:rotate(90deg)}
+      .pond-roles{grid-template-columns:minmax(0,1fr)}
+      .pond-example{grid-template-columns:minmax(0,1fr)}
+      .pond-step{grid-template-columns:58px minmax(0,1fr);gap:14px;padding:18px}
+      .pond-step-state{grid-column:2;justify-self:start}
+      .pond-capabilities{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .pond-guardrail{grid-template-columns:minmax(0,1fr)}
+      .pond-proof{align-items:flex-start;flex-direction:column;gap:10px}
+    }
+    @media(max-width:520px){
+      .pond-wrap{width:min(calc(100% - 28px),1120px)}
+      .pond-product-tag{display:none}
+      .pond-hero{padding-top:42px}
+      .pond-hero h1{font-size:clamp(36px,11vw,48px)}
+      .pond-hero-actions{display:grid}
+      .pond-button,.pond-link-button{width:100%}
+      .pond-system-top{align-items:flex-start;flex-wrap:wrap}
+      .pond-system-status{width:100%;margin-left:0}
+      .pond-flow-card{padding:17px}
+      .pond-step{grid-template-columns:46px minmax(0,1fr);gap:10px;padding:16px 14px}
+      .pond-step::before{font-size:24px}
+      .pond-capabilities,.pond-principles{grid-template-columns:minmax(0,1fr)}
+      .pond-guardrail{padding:24px 18px}
+      .pond-footer-inner{align-items:flex-start;flex-direction:column;padding-block:24px}
+      .pond-footer-links{margin-left:0}
+    }
+    @media(max-width:340px){
+      .pond-wrap{width:min(calc(100% - 22px),1120px)}
+      .pond-wordmark{font-size:18px}
+      .pond-nav{gap:10px}
+      .pond-step{grid-template-columns:minmax(0,1fr)}
+      .pond-step::before,.pond-step-state{grid-column:1}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+    }
+  </style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#C8ED4B">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XESKPMDFSR');</script>
+</head>
+<body>
+<div id="dc-root">
+<a class="pond-skip" href="#contenido">Saltar al contenido</a>
+
+<header class="pond-header">
+  <nav class="pond-nav pond-wrap" aria-label="Navegación principal">
+    <a class="pond-brand" href="../" aria-label="Ir al inicio de Pato">
+      <span class="pond-mark" aria-hidden="true"></span>
+      <span class="pond-wordmark">pato</span>
+      <span class="pond-product-tag">POND</span>
+    </a>
+    <div class="pond-nav-links">
+      <a href="#que-es">Qué es</a>
+      <a href="#onboarding">Onboarding</a>
+      <a href="#capacidades">Qué hace hoy</a>
+      <a href="#limites">Límites</a>
+    </div>
+    <a class="pond-button pond-nav-cta" href="../solicitar.html?interes=pond">Evaluar mi conexión <span aria-hidden="true">→</span></a>
+    <details class="pond-mobile-menu">
+      <summary aria-label="Abrir menú"><span class="pond-menu-bars" aria-hidden="true"></span></summary>
+      <nav class="pond-mobile-panel" aria-label="Menú móvil">
+        <a href="#que-es" onclick="this.closest('details').removeAttribute('open')">Qué es</a>
+        <a href="#onboarding" onclick="this.closest('details').removeAttribute('open')">Onboarding</a>
+        <a href="#capacidades" onclick="this.closest('details').removeAttribute('open')">Qué hace hoy</a>
+        <a href="#limites" onclick="this.closest('details').removeAttribute('open')">Límites</a>
+        <a href="../" onclick="this.closest('details').removeAttribute('open')">Volver a Pato</a>
+        <a class="pond-mobile-cta" href="../solicitar.html?interes=pond">Evaluar mi conexión</a>
+      </nav>
+    </details>
+  </nav>
+</header>
+
+<main id="contenido">
+  <section class="pond-hero">
+    <div class="pond-wrap">
+      <div class="pond-hero-copy">
+        <div class="pond-hero-pill">POND · capa de conexión comercial</div>
+        <h1>Prepara tu negocio para ser <span class="pond-highlight">entendido</span> por agentes.</h1>
+        <p><strong>PATO corre y mejora el sistema.</strong> POND traduce la información pública de tu negocio a un contrato común para que herramientas autorizadas puedan consultar lo que vendes, sin reemplazar tu marca ni tu forma de operar.</p>
+        <div class="pond-hero-actions">
+          <a class="pond-button" href="../solicitar.html?interes=pond">Evaluar mi negocio <span aria-hidden="true">→</span></a>
+          <a class="pond-link-button" href="#onboarding">Ver el proceso paso a paso</a>
+        </div>
+        <div class="pond-hero-note">Tu catálogo sigue siendo la fuente de verdad · Ninguna conexión pública se activa automáticamente</div>
+      </div>
+
+      <div class="pond-system" aria-label="Cómo se relacionan PATO, POND y los canales autorizados">
+        <div class="pond-system-top">
+          <div class="pond-system-title">PATO <span>· gobierno y operación del sistema</span></div>
+          <div class="pond-system-status">Estado actual · lectura controlada</div>
+        </div>
+        <div class="pond-flow">
+          <div class="pond-flow-card">
+            <div class="pond-flow-eyebrow">La fuente</div>
+            <div class="pond-flow-name">Tu negocio</div>
+            <p>Conserva su identidad, sus datos confirmados y el control de cada decisión comercial.</p>
+            <div class="pond-flow-list"><span>Catálogo</span><span>Precios</span><span>Disponibilidad</span></div>
+          </div>
+          <div class="pond-flow-arrow" aria-hidden="true">→</div>
+          <div class="pond-flow-card is-pond">
+            <div class="pond-flow-eyebrow">La conexión</div>
+            <div class="pond-flow-name">POND</div>
+            <p>Lee, normaliza y valida únicamente la superficie pública aprobada por el negocio.</p>
+            <div class="pond-flow-list"><span>Contrato común</span><span>Validación</span><span>Trazabilidad</span></div>
+          </div>
+          <div class="pond-flow-arrow" aria-hidden="true">→</div>
+          <div class="pond-flow-card">
+            <div class="pond-flow-eyebrow">El canal</div>
+            <div class="pond-flow-name">Interfaces autorizadas</div>
+            <p>Podrán hacer consultas con un alcance e identidad definidos antes de abrir el acceso.</p>
+            <div class="pond-flow-list"><span>Agentes</span><span>Apps</span><span>Otros canales</span></div>
+          </div>
+        </div>
+        <div class="pond-flow-foot"><span><strong>Estado real:</strong> la consulta local funciona; las interfaces públicas autenticadas aún no están activas.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="que-es" class="pond-section is-soft">
+    <div class="pond-wrap">
+      <div class="pond-kicker">Una función distinta para cada capa</div>
+      <h2 class="pond-heading">PATO administra. POND conecta. Tu negocio decide.</h2>
+      <p class="pond-lede">POND no es otro panel, otra tienda ni un bot que toma control. Es la capa que vuelve consistente y consultable la oferta pública que ya pertenece a tu negocio.</p>
+
+      <div class="pond-roles">
+        <article class="pond-role is-pato">
+          <div class="pond-role-tag">PATO</div>
+          <h3>Corre el sistema</h3>
+          <p>El equipo y la IA de PATO construyen, mantienen y mejoran la operación comercial.</p>
+          <ul>
+            <li>Gobierna cambios y prioridades.</li>
+            <li>Conecta sitio, órdenes, medición y operación.</li>
+            <li>Mantiene supervisión humana.</li>
+          </ul>
+        </article>
+        <article class="pond-role is-pond">
+          <div class="pond-role-tag">POND</div>
+          <h3>Expone la conexión</h3>
+          <p>Convierte datos públicos confirmados a un formato común que distintos consumidores pueden entender.</p>
+          <ul>
+            <li>Lee una fuente canónica.</li>
+            <li>Recalcula desde datos vigentes.</li>
+            <li>Señala lo que requiere confirmación.</li>
+          </ul>
+        </article>
+        <article class="pond-role">
+          <div class="pond-role-tag">Tu negocio</div>
+          <h3>Conserva el control</h3>
+          <p>La marca, el catálogo, los clientes y la decisión final siguen dentro de tu operación.</p>
+          <ul>
+            <li>Aprueba qué información es pública.</li>
+            <li>Confirma disponibilidad y condiciones.</li>
+            <li>Elige los canales que puede usar POND.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="onboarding" class="pond-section">
+    <div class="pond-wrap">
+      <div class="pond-kicker">Onboarding POND</div>
+      <h2 class="pond-heading">De tu fuente actual a una conexión verificable.</h2>
+      <p class="pond-lede">El alta está diseñada para detectar errores antes de tocar la configuración y para poder volver atrás si una validación posterior falla.</p>
+
+      <aside class="pond-example" aria-label="Ejemplo ilustrativo de onboarding para un negocio de comida rápida">
+        <div>
+          <div class="pond-example-label">Ejemplo · comida rápida</div>
+          <h3>Una petición concreta, sin promesas inventadas.</h3>
+          <blockquote>“Quiero cuatro hamburguesas, dos sin queso, para recoger hoy a las ocho. ¿Qué está confirmado y qué falta validar?”</blockquote>
+          <span class="pond-example-note">Escenario ilustrativo. No representa un menú, precio, horario ni disponibilidad real.</span>
+        </div>
+        <ol class="pond-example-flow">
+          <li><span><strong>El negocio entrega su fuente oficial:</strong> menú, precios, modificadores, horarios y modalidades de entrega o recolección.</span></li>
+          <li><span><strong>POND traduce y valida:</strong> los productos y opciones reciben identificadores estables; lo desconocido queda por confirmar.</span></li>
+          <li><span><strong>Probamos la consulta:</strong> el sistema busca la combinación y recalcula la estimación desde esa fuente, no desde una copia dentro del agente.</span></li>
+          <li><span><strong>La persona conserva la decisión:</strong> disponibilidad, hora y pedido continúan por el canal oficial hasta que exista una integración transaccional aprobada.</span></li>
+        </ol>
+      </aside>
+
+      <div class="pond-steps">
+        <article class="pond-step">
+          <div>
+            <h3>Elegimos la fuente que manda</h3>
+            <p>Identificamos dónde viven hoy tus productos, servicios, precios, condiciones y disponibilidad. Si esa fuente todavía no está ordenada, PATO ayuda a construirla.</p>
+          </div>
+          <span class="pond-step-state is-ready">Diagnóstico</span>
+        </article>
+        <article class="pond-step">
+          <div>
+            <h3>Traducimos únicamente datos confirmados</h3>
+            <p>Mapeamos la superficie pública al contrato de POND. No copiamos datos de clientes, credenciales ni campos internos; lo desconocido queda explícitamente por confirmar.</p>
+          </div>
+          <span class="pond-step-state is-ready">Catálogo</span>
+        </article>
+        <article class="pond-step">
+          <div>
+            <h3>Ejecutamos un preflight sin cambios</h3>
+            <p>Antes de conectar, validamos identificadores, rutas, formatos, precios, campos públicos y políticas de solo lectura. Este paso es un ensayo: no modifica el registro.</p>
+          </div>
+          <span class="pond-step-state is-ready">Dry-run</span>
+        </article>
+        <article class="pond-step">
+          <div>
+            <h3>Conectamos de forma atómica y reversible</h3>
+            <p>La configuración se actualiza como una sola operación y pasa un diagnóstico completo. Si el postcheck falla, POND restaura la versión anterior.</p>
+          </div>
+          <span class="pond-step-state is-ready">Alta segura</span>
+        </article>
+        <article class="pond-step">
+          <div>
+            <h3>Probamos preguntas comerciales reales</h3>
+            <p>Revisamos búsquedas, detalles, cotizaciones y disponibilidad con escenarios de compra. El negocio valida que las respuestas representen su operación.</p>
+          </div>
+          <span class="pond-step-state is-ready">Aprobación</span>
+        </article>
+        <article class="pond-step">
+          <div>
+            <h3>Preparamos cada canal con su propia política</h3>
+            <p>El acceso externo requiere identidad, permisos y alcance por canal. Esa interfaz pública todavía no está activa; no se abre sin una política aprobada.</p>
+          </div>
+          <span class="pond-step-state is-next">Siguiente etapa</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="capacidades" class="pond-section is-soft">
+    <div class="pond-wrap">
+      <div class="pond-kicker">Qué puede hacer hoy</div>
+      <h2 class="pond-heading">Consultas comerciales, con alcance de solo lectura.</h2>
+      <p class="pond-lede">POND responde desde la fuente canónica y mantiene cada negocio aislado. Si un dato exige confirmación humana, lo dice en la respuesta.</p>
+
+      <div class="pond-capabilities">
+        <article class="pond-capability">
+          <span class="pond-capability-code">search_businesses</span>
+          <h3>Descubrir negocios</h3>
+          <p>Busca negocios habilitados por nombre, descripción y términos públicos.</p>
+        </article>
+        <article class="pond-capability">
+          <span class="pond-capability-code">search_offers</span>
+          <h3>Buscar ofertas</h3>
+          <p>Filtra productos o servicios por intención, presupuesto o capacidad cuando aplica.</p>
+        </article>
+        <article class="pond-capability">
+          <span class="pond-capability-code">get_offer</span>
+          <h3>Consultar detalles</h3>
+          <p>Devuelve una oferta pública con un identificador estable y sin campos internos.</p>
+        </article>
+        <article class="pond-capability">
+          <span class="pond-capability-code">quote_items</span>
+          <h3>Calcular una estimación</h3>
+          <p>Recalcula importes desde la fuente. No mezcla negocios ni crea una reserva.</p>
+        </article>
+        <article class="pond-capability">
+          <span class="pond-capability-code">check_availability</span>
+          <h3>Consultar disponibilidad</h3>
+          <p>Reporta el estado declarado; nunca promete inventario ni una fecha no confirmada.</p>
+        </article>
+      </div>
+
+      <div class="pond-proof">
+        <div class="pond-proof-label">Pilotos internos · modo lectura</div>
+        <div class="pond-proof-businesses">
+          <span>Patológicos</span>
+          <span>Picando Tabla</span>
+          <span>Lumin Candele</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="limites" class="pond-section">
+    <div class="pond-wrap">
+      <div class="pond-guardrail">
+        <div>
+          <div class="pond-kicker">Transparencia de producto</div>
+          <h2 class="pond-heading">Lo que POND no promete.</h2>
+          <p>Ser legible para una máquina mejora la capacidad de consulta. No garantiza aparecer, ser recomendado ni convertir una conversación en venta.</p>
+        </div>
+        <div class="pond-limits">
+          <div class="pond-limit">
+            <span class="pond-limit-mark" aria-hidden="true">×</span>
+            <div><strong>No crea, reserva ni confirma pedidos.</strong><span>Una cotización es una estimación; la operación real continúa en el canal oficial del negocio.</span></div>
+          </div>
+          <div class="pond-limit">
+            <span class="pond-limit-mark" aria-hidden="true">×</span>
+            <div><strong>No cobra ni guarda credenciales de pago.</strong><span>Los pagos requieren una integración separada, autenticada y aprobada.</span></div>
+          </div>
+          <div class="pond-limit">
+            <span class="pond-limit-mark" aria-hidden="true">×</span>
+            <div><strong>No inventa disponibilidad, envío o condiciones.</strong><span>Cuando falta un dato, POND pide confirmación humana en vez de completar el vacío.</span></div>
+          </div>
+          <div class="pond-limit">
+            <span class="pond-limit-mark" aria-hidden="true">×</span>
+            <div><strong>No está expuesto públicamente sin protección.</strong><span>La autenticación y las políticas por canal son requisito antes de abrir interfaces externas.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pond-principles">
+        <article class="pond-principle">
+          <h3>Una sola fuente</h3>
+          <p>El negocio actualiza su catálogo; POND lo consulta. No mantenemos una copia comercial paralela.</p>
+        </article>
+        <article class="pond-principle">
+          <h3>Aislamiento por negocio</h3>
+          <p>Una cotización no puede mezclar ofertas de empresas independientes.</p>
+        </article>
+        <article class="pond-principle">
+          <h3>Humano en lo incierto</h3>
+          <p>Pago, envío, impuestos, alcance o disponibilidad se escalan cuando requieren decisión.</p>
+        </article>
+        <article class="pond-principle">
+          <h3>Migración reversible</h3>
+          <p>El alta y el rollback rechazan cambios inseguros en vez de pisar trabajo nuevo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pond-cta-section">
+    <div class="pond-wrap pond-cta">
+      <h2>Primero entendemos tu negocio. Después conectamos.</h2>
+      <p>Revisamos tu fuente, detectamos los datos que faltan y definimos un alcance seguro para POND antes de activar cualquier canal.</p>
+      <a class="pond-button" href="../solicitar.html?interes=pond">Solicitar evaluación <span aria-hidden="true">→</span></a>
+      <div class="pond-cta-note">Registraremos tu solicitud y el equipo te contactará para revisar el alcance. No se publica, cobra ni activa ninguna conexión automáticamente.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="pond-footer">
+  <div class="pond-wrap pond-footer-inner">
+    <div class="pond-footer-brand"><span class="pond-mark" aria-hidden="true"></span><span>PATO · POND</span></div>
+    <span>Infraestructura comercial legible, con control humano.</span>
+    <div class="pond-footer-links">
+      <a href="../">Pato</a>
+      <a href="../producto.html">Producto</a>
+      <a href="../blog/">Blog</a>
+      <a href="../solicitar.html?interes=pond">Contacto</a>
+    </div>
+  </div>
+</footer>
+</div>
+<script src="../assets/dc-runtime.js"></script>
+<script>
+class Component extends DCLogic {}
+window.addEventListener('DOMContentLoaded', function () {
+  window.__dc = dcMount(document.getElementById('dc-root'), new Component({}));
+  window.__dcRender = window.__dc.render;   // permite refrescar al llegar datos del servidor
+});
+</script>
+
+</body>
+</html>

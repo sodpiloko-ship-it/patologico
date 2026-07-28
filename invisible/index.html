@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tu negocio no será irrelevante. Será invisible. · Patológicos</title><meta name="description" content="Los agentes de IA compararán y contratarán negocios. La nueva ventaja será ser comprensible, verificable y operable."><link rel="canonical" href="https://patologicos.com/invisible/"><meta property="og:title" content="Tu negocio no será irrelevante. Será invisible. · Patológicos"><meta property="og:description" content="Los agentes de IA compararán y contratarán negocios. La nueva ventaja será ser comprensible, verificable y operable."><meta property="og:type" content="article"><meta property="og:url" content="https://patologicos.com/invisible/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"><meta name="theme-color" content="#C8ED4B"><style>*{box-sizing:border-box;margin:0;padding:0}
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tu negocio no será irrelevante. Será invisible. · Patológicos</title><meta name="description" content="Los agentes de IA compararán y contratarán negocios. La nueva ventaja será ser comprensible, verificable y operable."><link rel="canonical" href="https://patologicos.com/invisible/"><meta property="og:title" content="Tu negocio no será irrelevante. Será invisible. · Patológicos"><meta property="og:description" content="Los agentes de IA compararán y contratarán negocios. La nueva ventaja será ser comprensible, verificable y operable."><meta property="og:type" content="article"><meta property="og:url" content="https://patologicos.com/invisible/"><meta property="og:image" content="https://patologicos.com/assets/blog/invisible/agente-compara-proveedores.webp"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"><meta name="theme-color" content="#C8ED4B"><style>*{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#1B1C18;--paper:#F4F3EE;--card:#FBFAF7;--acc:#C8ED4B;--dark:#191A16;
 --muted:#86867C;--line:#E4E2DA;--soft:#EEEDE6;--chipbg:#EAF1D2;--chipfg:#5c7a12;
 --display:'Space Grotesk',system-ui,sans-serif;--body:'Hanken Grotesk',system-ui,'Segoe UI',sans-serif}
@@ -15,8 +15,14 @@ header.nav{position:sticky;top:0;z-index:100;background:rgba(244,243,238,.92);ba
 .nlinks a.active{color:var(--ink);border-bottom-color:var(--acc)}
 .xnav{font-size:13.5px;font-weight:600;background:var(--dark);color:var(--paper);padding:9px 16px;border-radius:999px;white-space:nowrap}
 .xnav:hover{background:#000}
-@media(max-width:860px){.nlinks{display:none}}
-@media(max-width:520px){.xnav{display:none}}
+.mnav{display:none;position:relative;margin-left:auto}
+.mnav summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 12px;font-size:13.5px;font-weight:700}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav-panel{position:absolute;right:0;top:44px;width:min(270px,calc(100vw - 32px));display:grid;gap:2px;padding:9px;border:1px solid var(--line);border-radius:13px;background:var(--card);box-shadow:0 20px 45px -24px rgba(20,20,15,.5)}
+.mnav-panel a{padding:10px 11px;border:0;border-radius:8px;color:#43443D;font-size:14px;font-weight:650}
+.mnav-panel a:hover{background:var(--soft);color:var(--ink)}
+.mnav-panel .mnav-cta{margin-top:4px;background:var(--dark);color:var(--paper)}
+@media(max-width:860px){.nlinks,.xnav{display:none}.mnav{display:block}}
 .wrap{max-width:780px;margin:0 auto;padding:0 clamp(20px,4vw,24px)}
 .head{padding:clamp(40px,6vw,64px) 0 clamp(20px,3vw,28px)}
 .head .kick{display:inline-block;background:var(--chipbg);color:var(--chipfg);font-size:12px;font-weight:700;letter-spacing:.02em;border-radius:999px;padding:5px 12px}
@@ -47,20 +53,24 @@ article ul{margin:16px 0;list-style:none}
 article li{font-size:16.5px;padding:6px 0 6px 24px;position:relative;line-height:1.68;color:#2E2F29}
 article li::before{content:'';position:absolute;left:4px;top:16px;width:7px;height:7px;border-radius:2px;background:var(--acc)}
 article a{color:var(--chipfg);border-bottom:1px solid #b9d36a}
+.article-visual{margin:clamp(28px,5vw,42px) 0}
+.article-visual img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--card);box-shadow:0 18px 44px -34px rgba(20,20,15,.55)}
+.article-visual figcaption{margin-top:10px;font-size:13px;line-height:1.5;color:var(--muted)}
 .cta-box{background:var(--dark);color:var(--paper);border-radius:18px;padding:clamp(24px,3vw,32px);margin:42px 0 10px}
 .cta-box b{font-family:var(--display);font-size:clamp(19px,2.6vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.25;display:block}
 .cta-box p{font-size:15px;margin:10px 0 0;color:#C9C9C0;line-height:1.7}
 .btn{display:inline-block;margin-top:18px;font-weight:700;font-size:14.5px;background:var(--acc);color:var(--dark);padding:13px 24px;border-radius:999px}
 .btn:hover{background:#d8f76b}
 footer{border-top:1px solid var(--line);padding:30px 22px;font-size:13.5px;color:var(--muted);text-align:center}
-footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
+footer a{color:var(--chipfg)}
+@media(max-width:520px){.article-visual{margin:26px -4px}.article-visual img{border-radius:14px}}</style><!-- Google tag (gtag.js) - Patologicos -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-XESKPMDFSR');
-</script></head><body><header class="nav"><a class="brand" href="/">pato</a><nav class="nlinks"><a href="/#producto">Producto</a><a href="/#como">Cómo funciona</a><a href="/#precios">Precios</a><a href="/blog/" class="active">Blog</a><a href="/casos.html">Casos</a></nav><a class="xnav" href="/solicitar.html">Solicitar diagnóstico</a></header><article><div class="wrap"><a class="back" href="/blog/">← Blog</a><div class="kick" style="margin-top:16px">Manifiesto</div><h1>Tu negocio no será irrelevante. Será invisible.</h1><div class="meta">2026-07-27 · por <b>PATO</b></div><p>Durante años, la prioridad de cualquier negocio en internet fue aparecer.</p>
+</script></head><body><header class="nav"><a class="brand" href="/">pato</a><nav class="nlinks"><a href="/#producto">Producto</a><a href="/#como">Cómo funciona</a><a href="/#precios">Precios</a><a href="/blog/" class="active">Blog</a><a href="/casos.html">Casos</a></nav><details class="mnav"><summary aria-label="Abrir menú">Menú</summary><nav class="mnav-panel" aria-label="Menú móvil"><a href="/#producto">Producto</a><a href="/#como">Cómo funciona</a><a href="/#precios">Precios</a><a href="/blog/">Blog</a><a href="/casos.html">Casos</a><a class="mnav-cta" href="/solicitar.html">Solicitar diagnóstico</a></nav></details><a class="xnav" href="/solicitar.html">Solicitar diagnóstico</a></header><article><div class="wrap"><a class="back" href="/blog/">← Blog</a><div class="kick" style="margin-top:16px">Manifiesto</div><h1>Tu negocio no será irrelevante. Será invisible.</h1><div class="meta">2026-07-27 · por <b>PATO</b></div><p>Durante años, la prioridad de cualquier negocio en internet fue aparecer.</p>
 <p>Aparecer en Google. Aparecer en redes sociales. Conseguir un clic. Llevar a una persona hasta una página de venta.</p>
 <p>La inteligencia artificial agéntica cambiará ese recorrido.</p>
 <p>En la siguiente etapa de internet, el cliente no siempre buscará directamente un producto, un proveedor o un sistema. En muchos casos, ni siquiera tendrá que reconocer que existe una necesidad.</p>
@@ -72,6 +82,7 @@ footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
 <p>Si la respuesta es no, la empresa no perderá después de ser comparada.</p>
 <p>Nunca entrará en la comparación.</p>
 <p><em>Nota editorial: los escenarios y las cifras de este artículo son ejemplos hipotéticos. Las condiciones reales deberán consultarse en la fuente operativa de cada negocio.</em></p>
+<figure class="article-visual"><img src="/assets/blog/invisible/agente-compara-proveedores.webp" alt="Un agente de IA compara tres proveedores y destaca una alternativa por entrega y ahorro total" width="1200" height="517" loading="eager" decoding="async" fetchpriority="high"><figcaption>La comparación agéntica necesita datos claros, actuales y verificables.</figcaption></figure>
 <h2>Los agentes no esperarán a que una persona comience la búsqueda</h2>
 <p>Hoy todavía imaginamos la inteligencia artificial como una herramienta que responde instrucciones:</p>
 <p><strong>“Encuentra un proveedor.”</strong></p>
@@ -86,6 +97,7 @@ footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
 <p><strong>“El proveedor actual tarda nueve días en promedio. Encontré otro que utiliza una aleación equivalente, está más cerca y reporta entregas en seis días. El ahorro estimado en paquetería es del 18 %. Recomiendo enviar un caso de bajo riesgo para comprobar la calidad antes de trasladar más producción.”</strong></p>
 <p>La persona no comenzó esa búsqueda.</p>
 <p>El agente la inició porque entiende el negocio y está trabajando para mejorar su operación.</p>
+<figure class="article-visual"><img src="/assets/blog/invisible/agente-anticipa-necesidades.webp" alt="Una libreta enumera necesidades detectadas mientras un agente propone buscar alternativas en un teléfono" width="1200" height="428" loading="lazy" decoding="async"><figcaption>El cambio empieza cuando el sistema puede detectar una necesidad antes de recibir una búsqueda explícita.</figcaption></figure>
 <h2>El arbitraje por IA transformará todas las industrias</h2>
 <p>Los agentes realizarán una forma permanente de arbitraje.</p>
 <p>No se tratará únicamente de encontrar el precio más bajo. Compararán el efecto completo de cada alternativa sobre el negocio.</p>
@@ -110,6 +122,7 @@ footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
 <p>Este comportamiento hará que la competencia sea continua.</p>
 <p>Los negocios ya no competirán solamente cuando una persona decida buscar. Podrán ser evaluados en cualquier momento por agentes que intentan mejorar costes, tiempos, calidad o rentabilidad.</p>
 <p>El arbitraje por IA cambiará proveedores, logística, software, contratación, distribución, mantenimiento y prácticamente cualquier industria en la que existan alternativas comparables.</p>
+<figure class="article-visual"><img src="/assets/blog/invisible/arbitraje-ia.webp" alt="Una balanza compara precio, calidad, distancia, entrega, logística y capacidad frente a usar solamente el precio" width="1200" height="400" loading="lazy" decoding="async"><figcaption>El precio será una variable del arbitraje, no la única.</figcaption></figure>
 <h2>Tu agente será la carta de presentación de tu negocio</h2>
 <p>El comprador tendrá un agente que investigará opciones.</p>
 <p>El negocio necesitará un agente capaz de representarlo.</p>
@@ -253,6 +266,7 @@ footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
 <p>Esto no significa que las personas desaparezcan del proceso.</p>
 <p>Significa que dejarán de invertir tiempo en recopilar información básica, repetir requisitos y perseguir respuestas que un sistema puede resolver.</p>
 <p>La intervención humana se concentrará en decisiones complejas, sensibles o estratégicas.</p>
+<figure class="article-visual"><img src="/assets/blog/invisible/operacion-entre-agentes.webp" alt="Flujo entre el agente del comprador, la búsqueda, el agente del negocio y la decisión final" width="1200" height="324" loading="lazy" decoding="async"><figcaption>Los agentes pueden organizar la búsqueda y el intercambio; la autoridad para actuar debe permanecer explícita.</figcaption></figure>
 <h2>En algunos casos, el agente tomará la decisión</h2>
 <p>No todas las compras necesitarán aprobación individual.</p>
 <p>El usuario podrá establecer límites dentro de los cuales su agente tenga autorización para actuar.</p>
@@ -304,6 +318,7 @@ footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
 <p>Todos deberán trabajar con la misma fuente de información.</p>
 <p>La información vivirá dentro del negocio.</p>
 <p>Pero será encontrada, interpretada y comunicada por agentes.</p>
+<figure class="article-visual"><img src="/assets/blog/invisible/informacion-a-accion.webp" alt="Interfaz ilustrativa que conecta disponibilidad, resumen de orden y pago" width="1200" height="361" loading="lazy" decoding="async"><figcaption>Flujo ilustrativo e hipotético; no representa una orden, precio ni pago real.</figcaption></figure>
 <h2>Lo que construiremos con PATO</h2>
 <p><strong>PATO</strong> es la infraestructura que estamos desarrollando para preparar a pequeñas y medianas empresas para esta transición.</p>
 <p>Su objetivo no es solamente crear páginas web o automatizar mensajes.</p>
@@ -347,6 +362,7 @@ footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
 <p><strong>PROCAOps</strong> es un sistema de gestión para laboratorios dentales. Permitirá probar cómo una plataforma específica de industria representa la operación de un negocio y la vuelve comprensible para agentes.</p>
 <p><strong>PicandoTabla</strong> prepara tablas de quesos y carnes para reuniones y eventos. Servirá para probar necesidades anticipadas a partir de fechas, ubicaciones, número de invitados y presupuestos.</p>
 <p><strong>Lumin</strong> produce velas aromáticas y pedidos personalizados. Permitirá validar compras por volumen, personalización, capacidad de producción y fechas límite.</p>
+<figure class="article-visual"><img src="/assets/blog/invisible/casos-reales-pato.webp" alt="Cuatro casos de PATO: PROCA, PROCAOps, PicandoTabla y Lumin" width="1200" height="346" loading="lazy" decoding="async"><figcaption>Operaciones distintas permiten probar una misma base de información legible y verificable.</figcaption></figure>
 <p>Son cuatro tipos de operación diferentes:</p>
 <ul>
 <li>Servicios especializados.</li>
@@ -375,6 +391,7 @@ footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
 </ul>
 <p>La decisión comercial ocurrirá cada vez más entre sistemas que buscan proteger los intereses de sus usuarios.</p>
 <p>En muchos casos, el agente decidirá qué empresas merecen ser presentadas.</p>
+<figure class="article-visual"><img src="/assets/blog/invisible/negocio-visible-invisible.webp" alt="Comparación entre un negocio visible que habla IA y un negocio invisible sin información conectada" width="1200" height="290" loading="lazy" decoding="async"><figcaption>Ser legible no garantiza una recomendación; no serlo puede impedir siquiera entrar en la comparación.</figcaption></figure>
 <p>Por eso, si tu negocio no habla IA, no será considerado una mala opción.</p>
 <p>No será considerado en absoluto.</p>
 <p>Será invisible.</p><div class="cta-box"><b>¿Quieres esto funcionando en tu negocio?</b><p>Construimos y operamos tu sistema de ventas completo — sitio, tienda, órdenes, analítica y finanzas conectados — con nuestro equipo y potenciado por IA. Empieza con un diagnóstico sin costo.</p><a class="btn" href="/solicitar.html">Solicitar diagnóstico</a></div></div></article><footer>Pato · el sistema de ventas administrado para PYMES de Latinoamérica · <a href="/">patologicos.com</a></footer></body></html>
