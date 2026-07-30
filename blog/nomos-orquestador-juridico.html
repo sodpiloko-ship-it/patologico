@@ -15,8 +15,14 @@ header.nav{position:sticky;top:0;z-index:100;background:rgba(244,243,238,.92);ba
 .nlinks a.active{color:var(--ink);border-bottom-color:var(--acc)}
 .xnav{font-size:13.5px;font-weight:600;background:var(--dark);color:var(--paper);padding:9px 16px;border-radius:999px;white-space:nowrap}
 .xnav:hover{background:#000}
-@media(max-width:860px){.nlinks{display:none}}
-@media(max-width:520px){.xnav{display:none}}
+.mnav{display:none;position:relative;margin-left:auto}
+.mnav summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 12px;font-size:13.5px;font-weight:700}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav-panel{position:absolute;right:0;top:44px;width:min(270px,calc(100vw - 32px));display:grid;gap:2px;padding:9px;border:1px solid var(--line);border-radius:13px;background:var(--card);box-shadow:0 20px 45px -24px rgba(20,20,15,.5)}
+.mnav-panel a{padding:10px 11px;border:0;border-radius:8px;color:#43443D;font-size:14px;font-weight:650}
+.mnav-panel a:hover{background:var(--soft);color:var(--ink)}
+.mnav-panel .mnav-cta{margin-top:4px;background:var(--dark);color:var(--paper)}
+@media(max-width:860px){.nlinks,.xnav{display:none}.mnav{display:block}}
 .wrap{max-width:780px;margin:0 auto;padding:0 clamp(20px,4vw,24px)}
 .head{padding:clamp(40px,6vw,64px) 0 clamp(20px,3vw,28px)}
 .head .kick{display:inline-block;background:var(--chipbg);color:var(--chipfg);font-size:12px;font-weight:700;letter-spacing:.02em;border-radius:999px;padding:5px 12px}
@@ -47,20 +53,24 @@ article ul{margin:16px 0;list-style:none}
 article li{font-size:16.5px;padding:6px 0 6px 24px;position:relative;line-height:1.68;color:#2E2F29}
 article li::before{content:'';position:absolute;left:4px;top:16px;width:7px;height:7px;border-radius:2px;background:var(--acc)}
 article a{color:var(--chipfg);border-bottom:1px solid #b9d36a}
+.article-visual{margin:clamp(28px,5vw,42px) 0}
+.article-visual img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--card);box-shadow:0 18px 44px -34px rgba(20,20,15,.55)}
+.article-visual figcaption{margin-top:10px;font-size:13px;line-height:1.5;color:var(--muted)}
 .cta-box{background:var(--dark);color:var(--paper);border-radius:18px;padding:clamp(24px,3vw,32px);margin:42px 0 10px}
 .cta-box b{font-family:var(--display);font-size:clamp(19px,2.6vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.25;display:block}
 .cta-box p{font-size:15px;margin:10px 0 0;color:#C9C9C0;line-height:1.7}
 .btn{display:inline-block;margin-top:18px;font-weight:700;font-size:14.5px;background:var(--acc);color:var(--dark);padding:13px 24px;border-radius:999px}
 .btn:hover{background:#d8f76b}
 footer{border-top:1px solid var(--line);padding:30px 22px;font-size:13.5px;color:var(--muted);text-align:center}
-footer a{color:var(--chipfg)}</style><!-- Google tag (gtag.js) - Patologicos -->
+footer a{color:var(--chipfg)}
+@media(max-width:520px){.article-visual{margin:26px -4px}.article-visual img{border-radius:14px}}</style><!-- Google tag (gtag.js) - Patologicos -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-XESKPMDFSR');
-</script></head><body><header class="nav"><a class="brand" href="../">pato</a><nav class="nlinks"><a href="../#producto">Producto</a><a href="../#como">Cómo funciona</a><a href="../#precios">Precios</a><a href="./" class="active">Blog</a><a href="../casos.html">Casos</a></nav><a class="xnav" href="../solicitar.html">Solicitar diagnóstico</a></header><article><div class="wrap"><a class="back" href="./">← Blog</a><div class="kick" style="margin-top:16px">Caso · Vertical</div><h1>Nomos: un orquestador jurídico — IA por industria</h1><div class="meta">2026-06-25 · por <b>Departamento de Investigación</b></div><p>La IA útil no empieza con “un chatbot”. Empieza con una industria, un dolor repetido y una decisión clara: qué puede resolver una máquina, qué debe revisar una persona y qué nunca se debe automatizar sin responsabilidad humana.</p>
+</script></head><body><header class="nav"><a class="brand" href="../">pato</a><nav class="nlinks"><a href="../#producto">Producto</a><a href="../#como">Cómo funciona</a><a href="../#precios">Precios</a><a href="./" class="active">Blog</a><a href="../casos.html">Casos</a></nav><details class="mnav"><summary aria-label="Abrir menú">Menú</summary><nav class="mnav-panel" aria-label="Menú móvil"><a href="../#producto">Producto</a><a href="../#como">Cómo funciona</a><a href="../#precios">Precios</a><a href="./">Blog</a><a href="../casos.html">Casos</a><a class="mnav-cta" href="../solicitar.html">Solicitar diagnóstico</a></nav></details><a class="xnav" href="../solicitar.html">Solicitar diagnóstico</a></header><article><div class="wrap"><a class="back" href="./">← Blog</a><div class="kick" style="margin-top:16px">Caso · Vertical</div><h1>Nomos: un orquestador jurídico — IA por industria</h1><div class="meta">2026-06-25 · por <b>Departamento de Investigación</b></div><p>La IA útil no empieza con “un chatbot”. Empieza con una industria, un dolor repetido y una decisión clara: qué puede resolver una máquina, qué debe revisar una persona y qué nunca se debe automatizar sin responsabilidad humana.</p>
 <p>En Patológicos estamos construyendo Nomos Orquestador como un SaaS jurídico para despachos pequeños y profesionales legales en México. No lo pensamos como una herramienta genérica con lenguaje legal encima. Lo estamos tratando como un sistema vertical: conoce un flujo, reparte trabajo entre agentes, registra criterios y escala cuando la decisión rebasa su marco.</p>
 <p>El objetivo comercial del MVP es concreto: cerrar el primer cliente piloto jurídico con un setup de <strong>$12,000 MXN</strong> y una mensualidad de <strong>$999 MXN</strong>. La venta no es decoración. Es la validación.</p>
 <h2>Del vertical al producto</h2>
