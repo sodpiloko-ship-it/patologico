@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-02T04:02:02",
+ "generatedAt": "2026-08-02T05:02:02",
  "projects": [
   {
    "id": "patologicos",
@@ -77,11 +77,18 @@
    "domain": "www.velasaromaticas.com.mx",
    "health": "ok",
    "progress": 0.92
+  },
+  {
+   "id": "ercinmuebles",
+   "label": "ERC Inmuebles — venta de inmuebles con",
+   "domain": "ercinmuebles.com",
+   "health": "ciego",
+   "progress": 0.55
   }
  ],
  "counts": {
   "ok": 10,
-  "ciego": 0,
+  "ciego": 1,
   "roto": 1
  }
 }
