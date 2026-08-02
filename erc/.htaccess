@@ -1,0 +1,29 @@
+# ERC Inmuebles — reglas de servidor (Apache / Hostinger)
+#
+# El núcleo ya blinda su directorio de datos, pero la configuración y el catálogo son
+# archivos estáticos que Apache serviría crudos. No contienen credenciales (los correos
+# viven en negocio.local.json, que nunca sale del servidor), pero tampoco tienen por qué
+# ser públicos: la web lee esos datos desde PHP, no desde el navegador.
+
+RedirectMatch 404 ^/erc/data(/|$)
+RedirectMatch 404 ^/erc/secrets(/|$)
+RedirectMatch 404 ^/erc/data-
+
+<FilesMatch "\.(json|jsonl|md|lock|tmp|bak)$">
+  Require all denied
+</FilesMatch>
+
+# Los archivos del núcleo se ejecutan por include, nunca se piden directo.
+<FilesMatch "^(pato|store|notify|auth|catalog|orders|track|_tema)\.php$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  # El panel y el precalificador manejan datos de personas: nada de caché compartida.
+  <FilesMatch "\.php$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
