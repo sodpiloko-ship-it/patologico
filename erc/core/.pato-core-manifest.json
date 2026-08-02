@@ -1,0 +1,20 @@
+{
+  "schema_version": "pato.core-install.v1",
+  "business_id": "ercinmuebles",
+  "runtime_profile": "operational",
+  "core_version": "0.3.0",
+  "installed_at": "2026-08-02T09:55:45+00:00",
+  "files": {
+    "pato.php": "34c17cb228c32dc1b9a467d379167b03b2626672d0bad786def81c440488b197",
+    "lib/store.php": "cc32295896083cdb73f4be30ab47257a0270ed37409e779752d67a105ac1d7f5",
+    "lib/notify.php": "864e1fe9619f894307c771f2535b5f3bef666f9cf9316f5a15ece7017aae3a90",
+    "lib/auth.php": "d4af388a5edbd47c03422a6ad86c5e0aed428d6ec1be66e8a13032bde26336eb",
+    "lib/catalog.php": "648a849226cad73a2d0b6f99732a56a637dd452b746481d907b5d1df6e0846fd",
+    "lib/orders.php": "049106a08276fb42a8d4cc39d1138811260e24d37e7be410417e4baedf83629c",
+    "lib/track.php": "26905ca593633acef238eacd2c02536c9f1c955a0d4fa648356593364414aefe"
+  },
+  "source_digest": "08c53a425ae591c7e0180054a7c2f7e6f61b2c5d76ea082fdf5e341b190d2c5b",
+  "desired_config_sha256": "d7e2dc2a9427cf24bfa2f26fc0a50f8a8d92616912acf18b7c817955455dd7f5",
+  "onboarding_migration_id": "20260802T095533Z-ercinmuebles-aea32b746b9c",
+  "runtime_migration_id": "20260802T095545481062Z-bbfe6f051e74"
+}

@@ -1,0 +1,5 @@
+{
+  "_doc": "Inventario de propiedades de ERC. Vacío a propósito: PATO no inventa inmuebles. Cada ficha que se agregue aquí se renderiza sola en el sitio y queda disponible para el precalificador. Forma de cada propiedad: {id, titulo, zona, operacion (venta|renta), precio, moneda, recamaras, banos, m2, estacionamientos, descripcion, caracteristicas[], estado (disponible|apartada|cerrada), foto (url opcional)}.",
+  "actualizado": null,
+  "propiedades": []
+}

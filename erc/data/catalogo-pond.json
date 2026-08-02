@@ -1,0 +1,106 @@
+{
+  "schema_version": "pond.business-catalog.v1",
+  "business_id": "ercinmuebles",
+  "currency": "MXN",
+  "offers": [
+    {
+      "id": "erc.asesoria-compra",
+      "name": "Asesoría de compra de inmueble",
+      "description": "Acompañamiento completo para comprar: selección de propiedades según tu perfil, precalificación de crédito, revisión de documentos y cierre. La comisión se cobra únicamente al cerrar la operación.",
+      "active": true,
+      "price_minor": null,
+      "pricing": {
+        "type": "custom_quote",
+        "currency": "MXN",
+        "basis": "Comisión sobre el valor de la operación, pagadera solo al cierre.",
+        "note": "Cobramos si ganamos: sin operación cerrada no hay honorarios."
+      },
+      "availability": {
+        "status": "requires_confirmation",
+        "note": "Sujeta a disponibilidad del inmueble y a la precalificación del comprador."
+      },
+      "fulfillment": {
+        "type": "service",
+        "shipping": {
+          "status": "not_applicable",
+          "amount_minor": null,
+          "note": "Servicio profesional: no hay envio."
+        }
+      }
+    },
+    {
+      "id": "erc.venta-inmueble",
+      "name": "Venta de tu inmueble",
+      "description": "Publicamos tu propiedad con ficha en HTML, la difundimos y filtramos prospectos precalificados para que solo recibas visitas reales. Honorarios al cierre.",
+      "active": true,
+      "price_minor": null,
+      "pricing": {
+        "type": "custom_quote",
+        "currency": "MXN",
+        "basis": "Comisión sobre el precio de venta, pagadera al firmar escrituras.",
+        "note": "Cobramos si ganamos: sin venta no hay honorarios."
+      },
+      "availability": {
+        "status": "requires_confirmation",
+        "note": "Requiere visita, avalúo y documentación del propietario."
+      },
+      "fulfillment": {
+        "type": "service",
+        "shipping": {
+          "status": "not_applicable",
+          "amount_minor": null,
+          "note": "Servicio profesional: no hay envio."
+        }
+      }
+    },
+    {
+      "id": "erc.precalificacion",
+      "name": "Precalificación de crédito y prospecto",
+      "description": "Revisión sin costo de tu capacidad de crédito y de los documentos necesarios, para saber a qué inmueble puedes aspirar antes de perder tiempo en visitas.",
+      "active": true,
+      "price_minor": 0,
+      "pricing": {
+        "type": "fixed",
+        "currency": "MXN"
+      },
+      "availability": {
+        "status": "available",
+        "note": "Sin costo. El resultado es orientativo y no constituye una autorización bancaria."
+      },
+      "fulfillment": {
+        "type": "service",
+        "shipping": {
+          "status": "not_applicable",
+          "amount_minor": null,
+          "note": "Servicio profesional: no hay envio."
+        }
+      }
+    },
+    {
+      "id": "erc.equipamiento-marcas",
+      "name": "Equipamiento del inmueble con marcas aliadas",
+      "description": "Cotización de mobiliario y equipamiento de marcas aliadas (por ejemplo DEurope) para el inmueble que adquieras, presentada dentro de la misma ficha de la propiedad.",
+      "active": true,
+      "price_minor": null,
+      "pricing": {
+        "type": "custom_quote",
+        "currency": "MXN",
+        "basis": "Cotización por pieza según el catálogo vigente de cada marca aliada.",
+        "note": "Los precios y la existencia los confirma la marca aliada; ERC no los fija."
+      },
+      "availability": {
+        "status": "requires_confirmation",
+        "note": "Disponibilidad declarada por la marca aliada; siempre se confirma con una persona antes de comprometer una entrega."
+      },
+      "fulfillment": {
+        "type": "physical",
+        "shipping": {
+          "status": "requires_confirmation",
+          "amount_minor": null,
+          "currency": "MXN",
+          "note": "El costo de envio lo confirma la marca aliada segun la pieza y la zona."
+        }
+      }
+    }
+  ]
+}

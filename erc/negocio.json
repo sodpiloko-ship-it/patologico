@@ -1,0 +1,23 @@
+{
+  "id": "ercinmuebles",
+  "marca": "ERC Inmuebles",
+  "dominio": "https://ercinmuebles.com",
+  "moneda": "MXN",
+  "folio_prefijo": "ERC",
+  "folio_inicial": 1000,
+  "acceso": "ambos",
+  "whatsapp": "",
+  "catalogo": "data/catalogo-pond.json",
+  "estados": [
+    "prospecto",
+    "precalificado",
+    "visita",
+    "oferta",
+    "contrato"
+  ],
+  "modulos": [
+    "orders",
+    "track",
+    "catalog"
+  ]
+}

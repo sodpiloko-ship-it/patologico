@@ -17,3 +17,9 @@ panel/data/
 # comanda demo de velaslumin (sandbox): clave + pedidos en runtime — jamás al repo
 sandbox/velaslumin/data/
 sandbox/velaslumin/comanda/data/
+
+# nucleo PATO en /erc: datos del negocio y config local — jamas al repo
+erc/data-*/
+erc/negocio.local.json
+erc/secrets/
+.pato-data-*/
