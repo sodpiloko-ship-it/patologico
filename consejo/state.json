@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-02T06:02:02",
+ "generatedAt": "2026-08-02T12:02:01",
  "projects": [
   {
    "id": "patologicos",
@@ -82,13 +82,13 @@
    "id": "ercinmuebles",
    "label": "ERC Inmuebles — venta de inmuebles con",
    "domain": "ercinmuebles.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   }
  ],
  "counts": {
-  "ok": 10,
-  "ciego": 1,
+  "ok": 11,
+  "ciego": 0,
   "roto": 1
  }
 }

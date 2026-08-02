@@ -1,14 +1,14 @@
 {
- "generatedAt": "2026-08-02T06:02:02",
+ "generatedAt": "2026-08-02T12:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 25
+  "obras": 26
  },
  "climate": {
-  "ok": 10,
-  "ciego": 1,
+  "ok": 11,
+  "ciego": 0,
   "roto": 1
  },
  "inhabitants": [
@@ -206,6 +206,11 @@
    "stamp": "20260716"
   },
   {
+   "titulo": "Entregable web: Eventos + aroma Cempasúchil",
+   "proyecto": "lumin",
+   "stamp": "20260802"
+  },
+  {
    "titulo": "Lanzamiento de preventa Día de Muertos — Lumin Candele",
    "proyecto": "lumin",
    "stamp": "20260716"
@@ -317,11 +322,11 @@
   }
  ],
  "chronicle": [
-  "clima del universo: 10 en calma · 1 en tormenta",
+  "clima del universo: 11 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "25 obras en el cuerpo de trabajo del universo",
+  "26 obras en el cuerpo de trabajo del universo",
+  "obra: «Entregable web: Eventos + aroma Cempasúchil» — lumin",
   "obra: «Ajuste de tarjetas principales — Picando Tabla» — picandotabla",
-  "obra: «Cambio urgente — Picando Tabla» — picandotabla",
-  "obra: «Corrección urgente de picandotabla.com» — picandotabla"
+  "obra: «Cambio urgente — Picando Tabla» — picandotabla"
  ]
 }

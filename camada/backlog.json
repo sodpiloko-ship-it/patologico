@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-02T06:02:02",
- "count": 25,
+ "generatedAt": "2026-08-02T12:02:02",
+ "count": 26,
  "items": [
   {
    "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20260701-094808",
@@ -25,6 +25,14 @@
    "titulo": "Colección Día de Muertos — ficha de venta y publicación",
    "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-07-16T13:17:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Lumin Candele presenta una edición limitada hecha a mano para acompañar altares, recuerdos y momentos que permanecen encendidos. Una luz creada por Yasmin y Luigi, madre e hijo, con amore. | Producto | Aroma | Precio | |---|---|---:| | Vela personalizada | Pan de ",
    "stamp": "20260716"
+  },
+  {
+   "id": "prop-lumin-fundadora-entregable-web-eventos-aroma-cempasuchil-20260802-060554",
+   "proyecto": "lumin",
+   "vocacion": "ventas",
+   "titulo": "Entregable web: Eventos + aroma Cempasúchil",
+   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-07-30T12:37:03 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- La página Velas personalizadas para eventos(https://velaslumin.com/velas-personalizadas-para-eventos-en-mexico/) ya está publicada en el dominio actual, contiene una galería y dirige la cotización a WhatsApp. La carpeta “eventos” contiene 23 imágenes. Algunas mues",
+   "stamp": "20260802"
   },
   {
    "id": "prop-lumin-fundadora-lanzamiento-de-preventa-dia-de-muertos-lumin-can-20260716-124549",
