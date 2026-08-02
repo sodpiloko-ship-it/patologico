@@ -1,0 +1,76 @@
+{
+  "_doc": "Espacios navegables de ERC. Cada entrada se construye PARAMÉTRICAMENTE (medidas + huecos), no es una foto: por eso se le puede cambiar la hora del día, repintar los muros y —después— meterle muebles. Los espacios marcados demo=true son de DEMOSTRACIÓN DE LA TECNOLOGÍA, no inventario real; el sitio los etiqueta como tales. Cuando entre una propiedad real, se agrega aquí con sus medidas verdaderas y queda navegable sola.",
+  "muros": {
+    "_doc": "Paleta de muro que puede probar el visitante.",
+    "opciones": [
+      { "nombre": "Blanco cálido", "hex": "#EDE8E0" },
+      { "nombre": "Hueso", "hex": "#E4DDD0" },
+      { "nombre": "Arena", "hex": "#D6C6AE" },
+      { "nombre": "Salvia", "hex": "#B9C3B0" },
+      { "nombre": "Terracota", "hex": "#C08267" },
+      { "nombre": "Grafito", "hex": "#5A5A57" }
+    ]
+  },
+  "pisos": {
+    "opciones": [
+      { "nombre": "Roble claro", "hex": "#C79B68" },
+      { "nombre": "Nogal", "hex": "#8A5C3B" },
+      { "nombre": "Cemento pulido", "hex": "#9E9C97" },
+      { "nombre": "Mármol", "hex": "#E6E3DC" }
+    ]
+  },
+  "espacios": [
+    {
+      "id": "demo-sala-luz",
+      "demo": true,
+      "titulo": "Sala con doble altura de luz",
+      "zona": "Espacio de demostración",
+      "descripcion": "Una sala de 7 × 5 m con dos ventanales al oriente y uno al poniente. Sirve para ver cómo cambia por completo el carácter del espacio entre la mañana y el atardecer — sin mover un mueble.",
+      "largo": 7,
+      "ancho": 5,
+      "alto": 2.9,
+      "muro_color": "#EDE8E0",
+      "piso_color": "#C79B68",
+      "huecos": [
+        { "muro": "norte", "x": 2.0, "y": 0.55, "ancho": 1.6, "alto": 1.9, "tipo": "ventana" },
+        { "muro": "norte", "x": 5.0, "y": 0.55, "ancho": 1.6, "alto": 1.9, "tipo": "ventana" },
+        { "muro": "sur", "x": 3.5, "y": 0.0, "ancho": 1.0, "alto": 2.1, "tipo": "puerta" },
+        { "muro": "oeste", "x": 2.5, "y": 0.9, "ancho": 1.2, "alto": 1.2, "tipo": "ventana" }
+      ]
+    },
+    {
+      "id": "demo-recamara",
+      "demo": true,
+      "titulo": "Recámara principal",
+      "zona": "Espacio de demostración",
+      "descripcion": "4.5 × 4 m con ventana al oriente. El caso donde más se nota la hora: entra el sol de la mañana de lleno y a media tarde queda en penumbra.",
+      "largo": 4.5,
+      "ancho": 4,
+      "alto": 2.6,
+      "muro_color": "#E4DDD0",
+      "piso_color": "#8A5C3B",
+      "huecos": [
+        { "muro": "norte", "x": 2.25, "y": 0.7, "ancho": 1.8, "alto": 1.5, "tipo": "ventana" },
+        { "muro": "sur", "x": 0.9, "y": 0.0, "ancho": 0.9, "alto": 2.1, "tipo": "puerta" }
+      ]
+    },
+    {
+      "id": "demo-loft",
+      "demo": true,
+      "titulo": "Loft abierto",
+      "zona": "Espacio de demostración",
+      "descripcion": "9 × 6 m sin divisiones y 3.2 m de altura. Muestra el argumento de venta más difícil de fotografiar: el volumen.",
+      "largo": 9,
+      "ancho": 6,
+      "alto": 3.2,
+      "muro_color": "#D6C6AE",
+      "piso_color": "#9E9C97",
+      "huecos": [
+        { "muro": "norte", "x": 2.2, "y": 0.4, "ancho": 2.2, "alto": 2.4, "tipo": "ventana" },
+        { "muro": "norte", "x": 6.8, "y": 0.4, "ancho": 2.2, "alto": 2.4, "tipo": "ventana" },
+        { "muro": "este", "x": 3.0, "y": 0.5, "ancho": 1.6, "alto": 1.8, "tipo": "ventana" },
+        { "muro": "sur", "x": 4.5, "y": 0.0, "ancho": 1.2, "alto": 2.2, "tipo": "puerta" }
+      ]
+    }
+  ]
+}
