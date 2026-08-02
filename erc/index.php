@@ -3,11 +3,14 @@
  * ERC Inmuebles — LANDING.
  *
  * Deliberadamente minima: la marca y una sola accion. Nada mas.
- * El resto del sistema (recorrido 3D, precalificador, panel) sigue construido y
- * accesible por su ruta, pero NO se anuncia aqui todavia.
  *
- * El numero de WhatsApp sale de negocio.json. Si no esta configurado, el boton
- * NO se pinta: mas vale una landing limpia que un boton que no lleva a ningun lado.
+ * El logo es el ARCHIVO ORIGINAL de David, sin recortar ni redibujar: solo se recomprimio
+ * sin perdida (mismos pixeles, menos bytes) y se sirve en WebP con PNG de respaldo. Como su
+ * fondo es blanco, la pagina tambien lo es: asi el logo no se ve montado sobre un recuadro.
+ * El arte ya trae su propio margen, por eso el layout no agrega mas aire arriba y abajo.
+ *
+ * El numero de WhatsApp sale de negocio.json. Si no esta configurado, el boton NO se pinta:
+ * mas vale una landing limpia que un boton que no lleva a ningun lado.
  */
 declare(strict_types=1);
 require_once __DIR__ . '/core/pato.php';
@@ -24,30 +27,28 @@ $mensaje = 'Hola, me interesa saber más sobre ERC.';
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title><?= pato_esc($marca) ?></title>
 <meta name="description" content="ERC — la nueva forma de vender una propiedad.">
-<meta name="theme-color" content="#F7F6F3">
+<meta name="theme-color" content="#FEFEFE">
 <meta property="og:title" content="<?= pato_esc($marca) ?>">
 <meta property="og:description" content="La nueva forma de vender una propiedad.">
+<meta property="og:image" content="https://ercinmuebles.com/img/erc-logo.png">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://ercinmuebles.com/">
+<link rel="icon" href="img/erc-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  :root{ --tinta:#1A1A1A; --papel:#F7F6F3; --oro:#B08D57 }
+  :root{ --tinta:#1A1A1A; --papel:#FEFEFE }
   html,body{ height:100% }
   body{
     background:var(--papel); color:var(--tinta);
     font-family:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:clamp(38px,7vh,72px);
-    padding:max(28px,env(safe-area-inset-top)) 24px max(28px,env(safe-area-inset-bottom));
-    -webkit-font-smoothing:antialiased;
+    padding:24px; -webkit-font-smoothing:antialiased;
   }
-  .marca{ width:min(420px,72vw); height:auto; display:block }
-  .marca rect{ fill:var(--tinta) }
-  .marca .trazo{ fill:none; stroke:var(--tinta); stroke-width:11; stroke-linecap:butt }
-
+  /* El archivo trae su propio margen blanco; el layout no agrega mas. */
+  .marca{ width:min(560px,90vw); height:auto; display:block; margin-bottom:-6vh }
   .wa{
     display:inline-flex; align-items:center; gap:11px;
     border:1px solid var(--tinta); border-radius:2px;
@@ -58,22 +59,19 @@ $mensaje = 'Hola, me interesa saber más sobre ERC.';
   .wa:hover{ background:var(--tinta); color:var(--papel) }
   .wa svg{ width:18px; height:18px; flex:none }
   .wa svg path{ fill:currentColor }
-
   @media (max-width:520px){
+    .marca{ margin-bottom:-4vh }
     .wa{ padding:14px 24px; font-size:12px; letter-spacing:.12em }
   }
 </style>
 </head>
 <body>
 
-  <!-- La marca: E de tres barras, R y C de trazo fino. -->
-  <svg class="marca" viewBox="0 0 372 104" role="img" aria-label="<?= pato_esc($marca) ?>">
-    <rect x="0" y="0"  width="104" height="16"/>
-    <rect x="0" y="44" width="104" height="16"/>
-    <rect x="0" y="88" width="104" height="16"/>
-    <path class="trazo" d="M146 104 V6 h44 a25 25 0 0 1 0 50 h-44 M182 56 L230 104"/>
-    <path class="trazo" d="M357 22 A44 44 0 1 0 357 82"/>
-  </svg>
+  <picture>
+    <source srcset="img/erc-logo.webp" type="image/webp">
+    <img class="marca" src="img/erc-logo.png" alt="<?= pato_esc($marca) ?>"
+         width="1254" height="1254" fetchpriority="high">
+  </picture>
 
   <?php if ($wa !== ''): ?>
     <a class="wa" href="https://wa.me/<?= pato_esc($wa) ?>?text=<?= rawurlencode($mensaje) ?>"
