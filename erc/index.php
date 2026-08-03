@@ -59,6 +59,9 @@ $mensaje = 'Hola, me interesa saber más sobre ERC.';
   .wa:hover{ background:var(--tinta); color:var(--papel) }
   .wa svg{ width:18px; height:18px; flex:none }
   .wa svg path{ fill:currentColor }
+  .demos{ margin-top:22px; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:#8a8a85; text-decoration:none; border-bottom:1px solid transparent; transition:border-color .2s }
+  .demos:hover{ border-color:#8a8a85 }
   @media (max-width:520px){
     .marca{ margin-bottom:-4vh }
     .wa{ padding:14px 24px; font-size:12px; letter-spacing:.12em }
@@ -80,6 +83,8 @@ $mensaje = 'Hola, me interesa saber más sobre ERC.';
       Escríbenos
     </a>
   <?php endif; ?>
+
+  <a class="demos" href="demos.php">Ver demos</a>
 
 </body>
 </html>

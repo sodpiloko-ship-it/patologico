@@ -1,0 +1,25 @@
+{
+  "_doc": "Vitrina de demos de ERC. Se muestra en demos.php. Cada entrada declara su origen: 'interno' = construido en este repo (verificable en el codigo); 'externo' = detectado en el dominio pero SIN codigo fuente en este repositorio. No se inventa autoria: si no se sabe quien lo hizo, se dice 'pendiente_confirmar', no se afirma.",
+  "demos": [
+    {
+      "id": "recorrido-3d",
+      "titulo": "Recorrido inmersivo 3D",
+      "descripcion": "Espacios construidos por medidas, no por foto: cambia la hora del día (el sol se mueve de verdad), repinta muros y piso, navega en primera persona. Es la base de \"vendemos el potencial del espacio\".",
+      "url": "vr/",
+      "interno": true,
+      "origen": "Construido en este repositorio (vr/espacio3d.js sobre three.js).",
+      "estado": "vivo",
+      "fecha": "2026-08-02"
+    },
+    {
+      "id": "visor-departamentos-beta",
+      "titulo": "Visor de departamentos (beta)",
+      "descripcion": "Tres departamentos paramétricos en CDMX: distribución, mobiliario, color e iluminación.",
+      "url": "https://www.ercinmuebles.com",
+      "interno": false,
+      "origen": "[DATO] Detectado en www.ercinmuebles.com el 2026-08-03. No está en este repositorio ni en ningún otro repo de PATO — origen y autoría pendientes de confirmar con David antes de describirlo con más detalle.",
+      "estado": "pendiente_confirmar",
+      "fecha": "2026-08-03"
+    }
+  ]
+}
