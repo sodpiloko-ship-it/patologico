@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-03T06:02:02",
- "count": 26,
+ "generatedAt": "2026-08-03T07:02:02",
+ "count": 29,
  "items": [
   {
    "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20260701-094808",
@@ -25,6 +25,14 @@
    "titulo": "Colección Día de Muertos — ficha de venta y publicación",
    "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-07-16T13:17:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Lumin Candele presenta una edición limitada hecha a mano para acompañar altares, recuerdos y momentos que permanecen encendidos. Una luz creada por Yasmin y Luigi, madre e hijo, con amore. | Producto | Aroma | Precio | |---|---|---:| | Vela personalizada | Pan de ",
    "stamp": "20260716"
+  },
+  {
+   "id": "prop-lumin-fundadora-correccion-web-velas-para-tu-evento-y-galeria-co-20260803-060553",
+   "proyecto": "lumin",
+   "vocacion": "ventas",
+   "titulo": "Corrección web: “Velas para tu evento” y galería completa",
+   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-02T16:01:03 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- La sección debe representar exclusivamente velas para celebraciones. La vela de Día de Muertos se retira del bloque “Velas para tu evento” y permanece únicamente en su colección de temporada. - Imagen: fotografía real del lote de baby shower de Noah, tomada del ál",
+   "stamp": "20260803"
   },
   {
    "id": "prop-lumin-fundadora-entregable-web-eventos-aroma-cempasuchil-20260802-060554",
@@ -161,6 +169,22 @@
    "titulo": "Mensaje para el primer cliente de WhatsApp",
    "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-12T10:41:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- ¡Hola, Nombre! 😊 Gracias por escribir a Picando Tabla. Tenemos estas dos opciones: 🧀 Tabla para Dos — $490 Para 2 personas. Incluye una selección de quesos, carnes frías, fruta, frutos secos y crujientes. Llega armada y lista para disfrutar; también incluimos una",
    "stamp": "20260712"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-paquete-de-3-carruseles-para-picando-tabla-20260803-060950",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Paquete de 3 carruseles para Picando Tabla",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-31T08:35:36 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Localicé el post enviado por Jessica(https://www.instagram.com/p/DbW-7VzgIq-/?imgindex=5&igsh=dHQzdnAyd3g3NWg0), pero Instagram bloqueó su visualización en este entorno. No atribuyo al original textos ni recursos que no pude verificar. DATO: contenido visual del ",
+   "stamp": "20260803"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-piezas-listas-de-picando-tabla-20260803-061223",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Piezas listas de Picando Tabla",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-07-31T08:37:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Estado real del panel: - 13 copys aprobados y alineados con el concepto actual: tablas de quesos y carnes. - 5 pueden publicarse como texto. - 8 necesitan fotografía o video. - Ninguna tiene un archivo visual vinculado todavía. - Excluí 17 piezas del concepto ant",
+   "stamp": "20260803"
   },
   {
    "id": "prop-picandotabla-fundadora-plan-para-cobrar-con-mercado-pago-en-picando-tab-20260722-142245",
