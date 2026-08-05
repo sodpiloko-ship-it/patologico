@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-05T07:18:30",
+ "generatedAt": "2026-08-05T08:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 29
+  "obras": 30
  },
  "climate": {
   "ok": 10,
@@ -201,6 +201,11 @@
    "stamp": "20260716"
   },
   {
+   "titulo": "Cambio de foto principal — Velas para tu evento",
+   "proyecto": "lumin",
+   "stamp": "20260805"
+  },
+  {
    "titulo": "Colección Día de Muertos — ficha de venta y publicación",
    "proyecto": "lumin",
    "stamp": "20260716"
@@ -339,9 +344,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "29 obras en el cuerpo de trabajo del universo",
+  "30 obras en el cuerpo de trabajo del universo",
+  "obra: «Cambio de foto principal — Velas para tu evento» — lumin",
   "obra: «Corrección web: “Velas para tu evento” y galería completa» — lumin",
-  "obra: «Paquete de 3 carruseles para Picando Tabla» — picandotabla",
-  "obra: «Piezas listas de Picando Tabla» — picandotabla"
+  "obra: «Paquete de 3 carruseles para Picando Tabla» — picandotabla"
  ]
 }
