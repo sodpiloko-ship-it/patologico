@@ -1,40 +1,40 @@
 {
- "generatedAt": "2026-08-09T07:36:35",
+ "generatedAt": "2026-08-09T08:02:01",
  "projects": [
   {
    "id": "patologicos",
    "label": "Sitio del PRODUCTO Pato",
    "domain": "patologicos.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "procadental",
    "label": "Hub educativo de pacientes",
    "domain": "procadental.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "procaops",
    "label": "Plataforma/portal PROCAOps + blog SEO ",
    "domain": "procaops.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "picandotabla",
    "label": "Tienda de tablas de quesos/charcutería",
    "domain": "picandotabla.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "velaslumin",
    "label": "Sitio de velas Lumin Candele",
    "domain": "velaslumin.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "cadcamia",
@@ -47,36 +47,36 @@
    "id": "fanatia",
    "label": "Fanatia — fotografía artística / lence",
    "domain": "fanatia.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "piloko",
    "label": "Piloko — sitio personal de artista",
    "domain": "piloko.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "procagrillz",
    "label": "PROCA GrillZ — negocio de grillz",
    "domain": "procagrillz.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "usanomos",
    "label": "NOMOS - orquestador juridico con IA",
    "domain": "usanomos.com",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "velasaromaticas",
    "label": "Sitio NUEVO de Lumin Candele",
    "domain": "www.velasaromaticas.com.mx",
-   "health": "ciego",
-   "progress": 0.55
+   "health": "ok",
+   "progress": 0.92
   },
   {
    "id": "ercinmuebles",
@@ -87,8 +87,8 @@
   }
  ],
  "counts": {
-  "ok": 0,
-  "ciego": 11,
+  "ok": 10,
+  "ciego": 1,
   "roto": 1
  }
 }

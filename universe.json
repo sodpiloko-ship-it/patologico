@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-09T07:36:46",
+ "generatedAt": "2026-08-09T08:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
@@ -7,8 +7,8 @@
   "obras": 30
  },
  "climate": {
-  "ok": 0,
-  "ciego": 11,
+  "ok": 10,
+  "ciego": 1,
   "roto": 1
  },
  "inhabitants": [
@@ -342,7 +342,7 @@
   }
  ],
  "chronicle": [
-  "clima del universo: 0 en calma · 1 en tormenta",
+  "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
   "30 obras en el cuerpo de trabajo del universo",
   "obra: «Cambio de foto principal — Velas para tu evento» — lumin",
