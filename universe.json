@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-15T10:02:02",
+ "generatedAt": "2026-08-15T11:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 30
+  "obras": 0
  },
  "climate": {
   "ok": 10,
@@ -189,164 +189,10 @@
    "kind": "nativo"
   }
  ],
- "canon": [
-  {
-   "titulo": "Propuesta: Nomos de landing viva a piloto pagado medible",
-   "proyecto": "legal",
-   "stamp": "20260701"
-  },
-  {
-   "titulo": "Actualización de gramajes — Lumin Candele",
-   "proyecto": "lumin",
-   "stamp": "20260716"
-  },
-  {
-   "titulo": "Cambio de foto principal — Velas para tu evento",
-   "proyecto": "lumin",
-   "stamp": "20260805"
-  },
-  {
-   "titulo": "Colección Día de Muertos — ficha de venta y publicación",
-   "proyecto": "lumin",
-   "stamp": "20260716"
-  },
-  {
-   "titulo": "Corrección web: “Velas para tu evento” y galería completa",
-   "proyecto": "lumin",
-   "stamp": "20260803"
-  },
-  {
-   "titulo": "Entregable web: Eventos + aroma Cempasúchil",
-   "proyecto": "lumin",
-   "stamp": "20260802"
-  },
-  {
-   "titulo": "Lanzamiento de preventa Día de Muertos — Lumin Candele",
-   "proyecto": "lumin",
-   "stamp": "20260716"
-  },
-  {
-   "titulo": "Vela personalizada Día de Muertos — ficha de lanzamiento",
-   "proyecto": "lumin",
-   "stamp": "20260716"
-  },
-  {
-   "titulo": "Propuesta X (@Patologico) — \"Corre el motor con TU negocio\" · build-in-public",
-   "proyecto": "patologicos",
-   "stamp": ""
-  },
-  {
-   "titulo": "Actualización aprobada — Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Actualización de quesos y carnes en todas las tablas",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Actualización de variedades — Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Actualización — Tabla de Regalo",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Actualización urgente de variedades en Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Ajuste de tarjetas — Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Ajuste de tarjetas principales — Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260724"
-  },
-  {
-   "titulo": "Cambio urgente — Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260723"
-  },
-  {
-   "titulo": "Cómo implementar Mercado Pago en Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Complementos Para Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260708"
-  },
-  {
-   "titulo": "Corrección urgente de picandotabla.com",
-   "proyecto": "picandotabla",
-   "stamp": "20260723"
-  },
-  {
-   "titulo": "Descripciones de producto — Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Mensaje para el primer cliente de WhatsApp",
-   "proyecto": "picandotabla",
-   "stamp": "20260712"
-  },
-  {
-   "titulo": "Paquete de 3 carruseles para Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260803"
-  },
-  {
-   "titulo": "Piezas listas de Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260803"
-  },
-  {
-   "titulo": "Plan para cobrar con Mercado Pago en Picando Tabla",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Vínculos de Mercado Pago por producto",
-   "proyecto": "picandotabla",
-   "stamp": "20260722"
-  },
-  {
-   "titulo": "Propuesta: convertir Piloko en el hub curado de la marca personal de David",
-   "proyecto": "piloko",
-   "stamp": "20260715"
-  },
-  {
-   "titulo": "Propuesta: publicar el caso de estudio PROCA / PROCAOps",
-   "proyecto": "proca",
-   "stamp": "20260715"
-  },
-  {
-   "titulo": "PROCAGrillZ: convertir intención orgánica en solicitudes de escaneo",
-   "proyecto": "procagrillz",
-   "stamp": "20260715"
-  },
-  {
-   "titulo": "Velas Lumin — propuesta: Pixel validado + primer experimento de Meta Ads",
-   "proyecto": "velas",
-   "stamp": "20260715"
-  }
- ],
+ "canon": [],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "30 obras en el cuerpo de trabajo del universo",
-  "obra: «Cambio de foto principal — Velas para tu evento» — lumin",
-  "obra: «Corrección web: “Velas para tu evento” y galería completa» — lumin",
-  "obra: «Paquete de 3 carruseles para Picando Tabla» — picandotabla"
+  "0 obras en el cuerpo de trabajo del universo"
  ]
 }
