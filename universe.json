@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-15T13:02:01",
+ "generatedAt": "2026-08-15T14:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 1
+  "obras": 2
  },
  "climate": {
   "ok": 10,
@@ -191,6 +191,11 @@
  ],
  "canon": [
   {
+   "titulo": "Propuesta: convertir ERC en el caso vivo que venda el desarrollo agéntico completo",
+   "proyecto": "patologicos",
+   "stamp": "20260815"
+  },
+  {
    "titulo": "Propuesta de avance: primeras propiedades reales de ERC y embudo SEO paciente de PROCADent",
    "proyecto": "procadental",
    "stamp": "20260815"
@@ -199,7 +204,8 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "1 obras en el cuerpo de trabajo del universo",
+  "2 obras en el cuerpo de trabajo del universo",
+  "obra: «Propuesta: convertir ERC en el caso vivo que venda el desarrollo agéntico completo» — patologicos",
   "obra: «Propuesta de avance: primeras propiedades reales de ERC y embudo SEO paciente de PROCADent» — procadental"
  ]
 }

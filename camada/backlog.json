@@ -1,7 +1,15 @@
 {
- "generatedAt": "2026-08-15T13:02:01",
- "count": 1,
+ "generatedAt": "2026-08-15T14:02:01",
+ "count": 2,
  "items": [
+  {
+   "id": "prop-patologicos-vender-el-proyecto-completo-desarrollo-c-20260815-132454",
+   "proyecto": "patologicos",
+   "vocacion": "copy",
+   "titulo": "Propuesta: convertir ERC en el caso vivo que venda el desarrollo agéntico completo",
+   "resumen": "Usar ERC como prueba principal en patologicos.com para vender proyectos completos de desarrollo con IA agéntica: desde el brief y el modelo de datos hasta la interfaz 3D, operación, medición y mejora continua. ERC permite demostrar el producto de Patológicos con evidencia tangible. El siguiente hito no es crear otra página genérica, sino llevar propiedades reales por el flujo completo y convertir ese avance en un cas",
+   "stamp": "20260815"
+  },
   {
    "id": "prop-procadental-rumbo-a-10-000-visitas-mes-seo-paciente--20260815-112544",
    "proyecto": "procadental",
