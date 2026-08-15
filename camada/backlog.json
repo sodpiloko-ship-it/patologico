@@ -1,5 +1,14 @@
 {
- "generatedAt": "2026-08-15T11:02:01",
- "count": 0,
- "items": []
+ "generatedAt": "2026-08-15T12:02:01",
+ "count": 1,
+ "items": [
+  {
+   "id": "prop-procadental-rumbo-a-10-000-visitas-mes-seo-paciente--20260815-112544",
+   "proyecto": "procadental",
+   "vocacion": "seo",
+   "titulo": "Propuesta de avance: primeras propiedades reales de ERC y embudo SEO paciente de PROCADent",
+   "resumen": "El objetivo comercial de PROCADental es llegar a 10,000 visitas mensuales mediante búsquedas de pacientes en CDMX y convertir esa atención en referencias por zona: SEO paciente → guías educativas → /encuentra-dentista/ → referencia a un profesional. Sin embargo, la instrucción operativa más reciente del equipo da prioridad inmediata a ERC: conseguir las primeras propiedades, cargarlas con evidencia y reportar a David",
+   "stamp": "20260815"
+  }
+ ]
 }
