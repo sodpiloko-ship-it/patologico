@@ -1,7 +1,15 @@
 {
- "generatedAt": "2026-08-15T15:02:01",
- "count": 2,
+ "generatedAt": "2026-08-15T16:02:02",
+ "count": 3,
  "items": [
+  {
+   "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20260815-152611",
+   "proyecto": "cadcamia",
+   "vocacion": "seo",
+   "titulo": "Propuesta: convertir las primeras propiedades de ERC en evidencia pública para CAD·CAM·IA",
+   "resumen": "Posicionar CAD·CAM·IA como autoridad de la revolución de producción demostrando un proceso real: propiedad física → levantamiento/CAD → modelo o render 3D → IA y evidencia → ficha comercial medible. ERC sería el primer caso operativo. Esto permite avanzar dos frentes sin mezclarlos: - ERC: conseguir inventario real, generar fichas y demostrar el render. - CAD·CAM·IA: documentar el proceso con contenido técnico verifi",
+   "stamp": "20260815"
+  },
   {
    "id": "prop-patologicos-vender-el-proyecto-completo-desarrollo-c-20260815-132454",
    "proyecto": "patologicos",
