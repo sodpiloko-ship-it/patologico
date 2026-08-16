@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-15T17:02:02",
- "count": 3,
+ "generatedAt": "2026-08-15T18:02:02",
+ "count": 4,
  "items": [
   {
    "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20260815-152611",
@@ -24,6 +24,14 @@
    "vocacion": "seo",
    "titulo": "Propuesta de avance: primeras propiedades reales de ERC y embudo SEO paciente de PROCADent",
    "resumen": "El objetivo comercial de PROCADental es llegar a 10,000 visitas mensuales mediante búsquedas de pacientes en CDMX y convertir esa atención en referencias por zona: SEO paciente → guías educativas → /encuentra-dentista/ → referencia a un profesional. Sin embargo, la instrucción operativa más reciente del equipo da prioridad inmediata a ERC: conseguir las primeras propiedades, cargarlas con evidencia y reportar a David",
+   "stamp": "20260815"
+  },
+  {
+   "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20260815-172435",
+   "proyecto": "wine",
+   "vocacion": "ventas",
+   "titulo": "Picando Tabla · De escaparate por WhatsApp a e-commerce cobrando en línea",
+   "resumen": "Convertir el sitio vivo de Picando Tabla en una tienda transaccional aprobada por David y Jessica: catálogo definitivo, cobro en línea, pedido registrado en la comanda y operación de entrega claramente comunicada. El proyecto ya superó la etapa de “prototipo”: - picandotabla.com respondió HTTP 200 el 15 de agosto de 2026. - GA4 está activo y el sitemap reporta 11 URLs. - El flujo pedido → order.php → comanda → WhatsA",
    "stamp": "20260815"
   }
  ]

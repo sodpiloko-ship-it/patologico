@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-15T17:02:02",
+ "generatedAt": "2026-08-15T18:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 3
+  "obras": 4
  },
  "climate": {
   "ok": 10,
@@ -204,12 +204,17 @@
    "titulo": "Propuesta de avance: primeras propiedades reales de ERC y embudo SEO paciente de PROCADent",
    "proyecto": "procadental",
    "stamp": "20260815"
+  },
+  {
+   "titulo": "Picando Tabla · De escaparate por WhatsApp a e-commerce cobrando en línea",
+   "proyecto": "wine",
+   "stamp": "20260815"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "3 obras en el cuerpo de trabajo del universo",
+  "4 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: convertir las primeras propiedades de ERC en evidencia pública para CAD·CAM·IA» — cadcamia",
   "obra: «Propuesta: convertir ERC en el caso vivo que venda el desarrollo agéntico completo» — patologicos",
   "obra: «Propuesta de avance: primeras propiedades reales de ERC y embudo SEO paciente de PROCADent» — procadental"
