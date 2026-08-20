@@ -3,9 +3,11 @@
 # --------------------------------------------------------------------------
 # 1) BLINDAJE de datos y fuentes. data/ contiene PII de los leads (correo,
 #    WhatsApp): jamás debe ser legible por web. _design/ son las fuentes del
-#    compilador, no contenido publicable.
+#    compilador, no contenido publicable. Única excepción: data/catalogo.json
+#    es el catálogo público POND (mismo patrón que .gitignore y el deploy).
 # --------------------------------------------------------------------------
-RedirectMatch 404 ^/data(/|$)
+RedirectMatch 404 ^/data/?$
+RedirectMatch 404 ^/data/(?!catalogo\.json$)
 RedirectMatch 404 ^/secrets(/|$)
 RedirectMatch 404 ^/_design(/|$)
 RedirectMatch 404 ^/blog/_(src|pending|rejected)(/|$)
