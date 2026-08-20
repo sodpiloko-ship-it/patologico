@@ -5,9 +5,17 @@
 #    WhatsApp): jamás debe ser legible por web. _design/ son las fuentes del
 #    compilador, no contenido publicable. Única excepción: data/catalogo.json
 #    es el catálogo público POND (mismo patrón que .gitignore y el deploy).
+#    Se usa mod_rewrite (no RedirectMatch) porque la negación de un caso
+#    puntual dentro de un bloqueo general necesita RewriteCond "!", más
+#    portable entre configuraciones Apache que un negative lookahead PCRE.
 # --------------------------------------------------------------------------
 RedirectMatch 404 ^/data/?$
-RedirectMatch 404 ^/data/(?!catalogo\.json$)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} ^/data/ [NC]
+  RewriteCond %{REQUEST_URI} !^/data/catalogo\.json$ [NC]
+  RewriteRule ^ - [R=404,L]
+</IfModule>
 RedirectMatch 404 ^/secrets(/|$)
 RedirectMatch 404 ^/_design(/|$)
 RedirectMatch 404 ^/blog/_(src|pending|rejected)(/|$)
