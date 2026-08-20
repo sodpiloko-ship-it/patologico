@@ -1,0 +1,76 @@
+{
+  "schema_version": "pond.business-catalog.v1",
+  "business_id": "patologicos",
+  "currency": "MXN",
+  "offers": [
+    {
+      "id": "plan-fundador",
+      "name": "Plan fundador PATO",
+      "description": "Un sistema administrado de sitio, tienda, órdenes, analítica y finanzas, operado por el equipo y potenciado por IA.",
+      "url": "https://patologicos.com/solicitar.html",
+      "active": true,
+      "price_minor": 249000,
+      "availability": {
+        "status": "requires_confirmation",
+        "note": "La contratación y los cupos se confirman con el equipo."
+      },
+      "pricing": {
+        "type": "subscription_with_setup",
+        "currency": "MXN",
+        "setup_fee_minor": 590000,
+        "recurring_fee_minor": 249000,
+        "billing_period": "month",
+        "minimum_periods": 3,
+        "taxes": {
+          "status": "requires_confirmation",
+          "note": "[DATO] Impuestos y facturación se confirman con el equipo."
+        }
+      },
+      "attributes": {
+        "contracting": "human_handoff"
+      }
+    },
+    {
+      "id": "implementacion-avanzada",
+      "name": "PATO Implementación",
+      "description": "Para negocios con una operación más robusta: mapeamos el proceso y conectamos la capa comercial y operativa con sus catálogos, datos, pedidos y herramientas existentes. El alcance se define después del diagnóstico.",
+      "url": "https://patologicos.com/solicitar.html?interes=implementacion",
+      "active": true,
+      "price_minor": null,
+      "availability": {
+        "status": "requires_confirmation",
+        "note": "Viabilidad, calendario y alcance se confirman después del diagnóstico."
+      },
+      "pricing": {
+        "type": "custom_quote",
+        "currency": "MXN",
+        "basis": "diagnostic_and_scope",
+        "note": "Precio por proyecto; se cotiza después de entender la operación. [DATO] No hay precio base confirmado."
+      },
+      "attributes": {
+        "contracting": "human_handoff"
+      }
+    },
+    {
+      "id": "desarrollo-premium-industria",
+      "name": "PATO Industria",
+      "description": "Desarrollo premium de software y experiencias específicas de industria: diseñamos la herramienta alrededor del proceso real, con interfaces, automatización y agentes de IA cuando aportan valor. PROCA D, PROCAOps, KIBI y PATO demuestran esta capacidad.",
+      "url": "https://patologicos.com/solicitar.html?interes=industria",
+      "active": true,
+      "price_minor": null,
+      "availability": {
+        "status": "requires_confirmation",
+        "note": "Cada proyecto requiere descubrimiento, validación técnica y definición de alcance."
+      },
+      "pricing": {
+        "type": "custom_quote",
+        "currency": "MXN",
+        "basis": "discovery_and_scope",
+        "note": "Precio por proyecto; se cotiza después del descubrimiento. [DATO] No hay precio base confirmado."
+      },
+      "attributes": {
+        "contracting": "human_handoff"
+      }
+    }
+  ]
+}
