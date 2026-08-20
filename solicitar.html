@@ -188,7 +188,7 @@ class Component extends DCLogic {
     let interes = '';
     try {
       const q = new URLSearchParams(window.location.search).get('interes') || '';
-      if (['implementacion','industria','pond'].includes(q)) interes = q;
+      if (['implementacion','industria','pond','sitio-web'].includes(q)) interes = q;
     } catch (e) {}
     this.setState(prev => ({
       step: (s && s > 1) ? s : prev.step,

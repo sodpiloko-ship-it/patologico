@@ -1,0 +1,30 @@
+# Patológicos
+
+> Sistema administrado de sitio, tienda, órdenes, analítica y finanzas.
+
+Este archivo es un resumen de navegación. El catálogo JSON enlazado abajo es la fuente estructurada; no representa inventario en tiempo real ni habilita una transacción por agente.
+
+## Fuentes canónicas
+
+- Sitio: https://patologicos.com/
+- Catálogo POND: https://patologicos.com/data/catalogo.json
+- Manifiesto POND: https://patologicos.com/.well-known/pond.json
+
+## Ofertas
+
+- [Plan fundador PATO](https://patologicos.com/solicitar.html): Un sistema administrado de sitio, tienda, órdenes, analítica y finanzas, operado por el equipo y potenciado por IA. Precio: alta, recurrencia y compromiso estructurados en el catálogo POND. Disponibilidad declarada: requires_confirmation.
+- [PATO Implementación](https://patologicos.com/solicitar.html?interes=implementacion): Para negocios con una operación más robusta: mapeamos el proceso y conectamos la capa comercial y operativa con sus catálogos, datos, pedidos y herramientas existentes. El alcance se define después del diagnóstico. Precio: cotización humana; no asumir un importe. Disponibilidad declarada: requires_confirmation.
+- [Sitio a la medida PATO](https://patologicos.com/solicitar.html?interes=sitio-web): Solo el sitio: hasta 5-7 páginas a la medida, diseño propio, SEO técnico completo (sitemap, datos estructurados, meta) y un mes de ajustes después de la entrega. Entrega única, sin operación mensual — para quien ya tiene quién opere el negocio y solo necesita el sitio bien hecho. Precio: importe estructurado disponible en el catálogo POND. Disponibilidad declarada: requires_confirmation.
+- [PATO Industria](https://patologicos.com/solicitar.html?interes=industria): Desarrollo premium de software y experiencias específicas de industria: diseñamos la herramienta alrededor del proceso real, con interfaces, automatización y agentes de IA cuando aportan valor. PROCA D, PROCAOps, KIBI y PATO demuestran esta capacidad. Precio: cotización humana; no asumir un importe. Disponibilidad declarada: requires_confirmation.
+
+## Acceso para agentes
+
+- Modo público preparado: descubrimiento de solo lectura.
+- Inventario vivo: no.
+- Transacciones o pedidos por agente: no habilitados.
+- MCP remoto público: no publicado.
+
+## Operador
+
+- PATO: https://patologicos.com/
+- POND: https://patologicos.com/pond/

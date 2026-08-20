@@ -52,6 +52,25 @@
       }
     },
     {
+      "id": "sitio-a-medida",
+      "name": "Sitio a la medida PATO",
+      "description": "Solo el sitio: hasta 5-7 páginas a la medida, diseño propio, SEO técnico completo (sitemap, datos estructurados, meta) y un mes de ajustes después de la entrega. Entrega única, sin operación mensual — para quien ya tiene quién opere el negocio y solo necesita el sitio bien hecho.",
+      "url": "https://patologicos.com/solicitar.html?interes=sitio-web",
+      "active": true,
+      "price_minor": 920000,
+      "availability": {
+        "status": "requires_confirmation",
+        "note": "Alcance exacto (páginas, integraciones) se confirma con el equipo antes de arrancar."
+      },
+      "pricing": {
+        "type": "fixed",
+        "currency": "MXN"
+      },
+      "attributes": {
+        "contracting": "human_handoff"
+      }
+    },
+    {
       "id": "desarrollo-premium-industria",
       "name": "PATO Industria",
       "description": "Desarrollo premium de software y experiencias específicas de industria: diseñamos la herramienta alrededor del proceso real, con interfaces, automatización y agentes de IA cuando aportan valor. PROCA D, PROCAOps, KIBI y PATO demuestran esta capacidad.",
