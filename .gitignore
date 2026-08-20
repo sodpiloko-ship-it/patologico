@@ -12,7 +12,9 @@ secrets/
 panel/data/
 
 # solicitudes del formulario de auditoría (datos de prospectos) — jamás al repo
-/data/
+# excepción: catalogo.json es el catálogo público POND, se publica a propósito
+/data/*
+!/data/catalogo.json
 
 # comanda demo de velaslumin (sandbox): clave + pedidos en runtime — jamás al repo
 sandbox/velaslumin/data/
