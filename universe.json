@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-19T22:02:02",
+ "generatedAt": "2026-08-19T23:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 4
+  "obras": 5
  },
  "climate": {
   "ok": 10,
@@ -196,6 +196,11 @@
    "stamp": "20260815"
   },
   {
+   "titulo": "Fanatia: contrato de URLs para activar la membresía sin perder el SEO existente",
+   "proyecto": "fanatia",
+   "stamp": "20260819"
+  },
+  {
    "titulo": "Propuesta: convertir ERC en el caso vivo que venda el desarrollo agéntico completo",
    "proyecto": "patologicos",
    "stamp": "20260815"
@@ -214,9 +219,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "4 obras en el cuerpo de trabajo del universo",
+  "5 obras en el cuerpo de trabajo del universo",
+  "obra: «Fanatia: contrato de URLs para activar la membresía sin perder el SEO existente» — fanatia",
   "obra: «Propuesta: convertir las primeras propiedades de ERC en evidencia pública para CAD·CAM·IA» — cadcamia",
-  "obra: «Propuesta: convertir ERC en el caso vivo que venda el desarrollo agéntico completo» — patologicos",
-  "obra: «Propuesta de avance: primeras propiedades reales de ERC y embudo SEO paciente de PROCADent» — procadental"
+  "obra: «Propuesta: convertir ERC en el caso vivo que venda el desarrollo agéntico completo» — patologicos"
  ]
 }

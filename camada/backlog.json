@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-19T22:02:01",
- "count": 4,
+ "generatedAt": "2026-08-19T23:02:01",
+ "count": 5,
  "items": [
   {
    "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20260815-152611",
@@ -9,6 +9,14 @@
    "titulo": "Propuesta: convertir las primeras propiedades de ERC en evidencia pública para CAD·CAM·IA",
    "resumen": "Posicionar CAD·CAM·IA como autoridad de la revolución de producción demostrando un proceso real: propiedad física → levantamiento/CAD → modelo o render 3D → IA y evidencia → ficha comercial medible. ERC sería el primer caso operativo. Esto permite avanzar dos frentes sin mezclarlos: - ERC: conseguir inventario real, generar fichas y demostrar el render. - CAD·CAM·IA: documentar el proceso con contenido técnico verifi",
    "stamp": "20260815"
+  },
+  {
+   "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260819-222222",
+   "proyecto": "fanatia",
+   "vocacion": "seo",
+   "titulo": "Fanatia: contrato de URLs para activar la membresía sin perder el SEO existente",
+   "resumen": "Convertir Fanatia en una membresía 18+ con login, pago y crypto-marcas forenses, conservando las URLs, canonicals, hreflang, enlaces internos y señales orgánicas acumuladas. La migración no debe sustituir el sitio público: debe añadir una capa privada detrás de las mismas puertas de entrada. Baseline documentado: - 372 sesiones en 28 días al 22-jul-2026; 249 fueron orgánicas. - El índice de Bing generó 219 sesiones, ",
+   "stamp": "20260819"
   },
   {
    "id": "prop-patologicos-vender-el-proyecto-completo-desarrollo-c-20260815-132454",
