@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-20T03:02:02",
+ "generatedAt": "2026-08-20T04:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -221,6 +221,11 @@
    "stamp": "20260815"
   },
   {
+   "titulo": "Propuesta: activar Contenido + SEO de Lumin sin frenar la prioridad ERC",
+   "proyecto": "velas",
+   "stamp": "20260820"
+  },
+  {
    "titulo": "Picando Tabla · De escaparate por WhatsApp a e-commerce cobrando en línea",
    "proyecto": "wine",
    "stamp": "20260815"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: Bitácora ERC en Piloko — tecnología y emprendimiento con evidencia» — piloko",
-  "obra: «Fanatia: contrato de URLs para activar la membresía sin perder el SEO existente» — fanatia",
-  "obra: «Intel Jurídico: convertir dolores comprobados en producto, contenido y demos de Nomos» — legal"
+  "obra: «Propuesta: activar Contenido + SEO de Lumin sin frenar la prioridad ERC» — velas",
+  "obra: «Fanatia: contrato de URLs para activar la membresía sin perder el SEO existente» — fanatia"
  ]
 }
