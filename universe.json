@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-23T07:02:02",
+ "generatedAt": "2026-08-23T08:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 5
+  "obras": 6
  },
  "climate": {
   "ok": 10,
@@ -211,6 +211,11 @@
    "stamp": "20260823"
   },
   {
+   "titulo": "PROCAGrillZ: cerrar todo el clúster con un único CTA de escaneo intraoral",
+   "proyecto": "procagrillz",
+   "stamp": "20260823"
+  },
+  {
    "titulo": "Propuesta: activar Contenido + SEO de Lumin sin frenar la prioridad ERC",
    "proyecto": "velas",
    "stamp": "20260820"
@@ -219,9 +224,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "5 obras en el cuerpo de trabajo del universo",
+  "6 obras en el cuerpo de trabajo del universo",
   "obra: «PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados» — proca",
-  "obra: «Propuesta: Bitácora ERC en Piloko — tecnología y emprendimiento con evidencia» — piloko",
-  "obra: «Propuesta: activar Contenido + SEO de Lumin sin frenar la prioridad ERC» — velas"
+  "obra: «PROCAGrillZ: cerrar todo el clúster con un único CTA de escaneo intraoral» — procagrillz",
+  "obra: «Propuesta: Bitácora ERC en Piloko — tecnología y emprendimiento con evidencia» — piloko"
  ]
 }

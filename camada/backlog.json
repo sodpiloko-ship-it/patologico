@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-23T07:02:02",
- "count": 5,
+ "generatedAt": "2026-08-23T08:02:02",
+ "count": 6,
  "items": [
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260819-222222",
@@ -32,6 +32,14 @@
    "vocacion": "datos",
    "titulo": "PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados",
    "resumen": "El objetivo inmediato es convertir la intención que ya llega a PROCAGrillZ en una acción comercial verificable: visita → contacto → escaneo agendado → escaneo realizado → diseño/cotización → anticipo. El sitio ya avanzó sustancialmente. El 20 de agosto se publicó el posicionamiento «El arte del metal», el escaneo pasó a ser el primer paso obligatorio y quedaron activos el CTA «Agenda tu escaneo», WhatsApp, formulario",
+   "stamp": "20260823"
+  },
+  {
+   "id": "prop-procagrillz-cerrar-el-embudo-cta-nico-escaneo-intrao-20260823-072405",
+   "proyecto": "procagrillz",
+   "vocacion": "copy",
+   "titulo": "PROCAGrillZ: cerrar todo el clúster con un único CTA de escaneo intraoral",
+   "resumen": "Convertir toda la intención GrillZ que todavía entra por procadental.com en una sola acción comercial: visita → solicitud de escaneo → escaneo agendado → escaneo realizado → propuesta → anticipo. El trabajo principal ya existe: - PROCAGrillZ fue actualizado y publicado el 20 de agosto de 2026. - El escaneo intraoral ya es el paso obligatorio. - /cotiza/ recibe solicitudes y registra cotizasubmit{tieneescaneo}. - Está",
    "stamp": "20260823"
   },
   {
