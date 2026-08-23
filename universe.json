@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-23T05:02:02",
+ "generatedAt": "2026-08-23T06:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 4
  },
  "climate": {
   "ok": 10,
@@ -191,11 +191,6 @@
  ],
  "canon": [
   {
-   "titulo": "Propuesta: convertir las primeras propiedades de ERC en evidencia pública para CAD·CAM·IA",
-   "proyecto": "cadcamia",
-   "stamp": "20260815"
-  },
-  {
    "titulo": "Fanatia: contrato de URLs para activar la membresía sin perder el SEO existente",
    "proyecto": "fanatia",
    "stamp": "20260819"
@@ -206,35 +201,20 @@
    "stamp": "20260819"
   },
   {
-   "titulo": "Propuesta: convertir ERC en el caso vivo que venda el desarrollo agéntico completo",
-   "proyecto": "patologicos",
-   "stamp": "20260815"
-  },
-  {
    "titulo": "Propuesta: Bitácora ERC en Piloko — tecnología y emprendimiento con evidencia",
    "proyecto": "piloko",
    "stamp": "20260820"
   },
   {
-   "titulo": "Propuesta de avance: primeras propiedades reales de ERC y embudo SEO paciente de PROCADent",
-   "proyecto": "procadental",
-   "stamp": "20260815"
-  },
-  {
    "titulo": "Propuesta: activar Contenido + SEO de Lumin sin frenar la prioridad ERC",
    "proyecto": "velas",
    "stamp": "20260820"
-  },
-  {
-   "titulo": "Picando Tabla · De escaparate por WhatsApp a e-commerce cobrando en línea",
-   "proyecto": "wine",
-   "stamp": "20260815"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "4 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: Bitácora ERC en Piloko — tecnología y emprendimiento con evidencia» — piloko",
   "obra: «Propuesta: activar Contenido + SEO de Lumin sin frenar la prioridad ERC» — velas",
   "obra: «Fanatia: contrato de URLs para activar la membresía sin perder el SEO existente» — fanatia"
