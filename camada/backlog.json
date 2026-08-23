@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-23T06:02:02",
- "count": 4,
+ "generatedAt": "2026-08-23T07:02:02",
+ "count": 5,
  "items": [
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260819-222222",
@@ -25,6 +25,14 @@
    "titulo": "Propuesta: Bitácora ERC en Piloko — tecnología y emprendimiento con evidencia",
    "resumen": "Convertir el avance real de ERC en una primera serie editorial de Piloko donde David exponga ideas propias sobre tecnología y emprendimiento. El enfoque no será “anunciar un MVP”, sino mostrar decisiones reales: por qué una plataforma inmobiliaria necesita evidencia por dato, por qué un render no equivale a un negocio y cómo una decisión aparentemente pequeña —el número de WhatsApp— puede bloquear todo el camino come",
    "stamp": "20260820"
+  },
+  {
+   "id": "prop-proca-procagrillz-llevar-al-cliente-a-escaneo--20260823-062434",
+   "proyecto": "proca",
+   "vocacion": "datos",
+   "titulo": "PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados",
+   "resumen": "El objetivo inmediato es convertir la intención que ya llega a PROCAGrillZ en una acción comercial verificable: visita → contacto → escaneo agendado → escaneo realizado → diseño/cotización → anticipo. El sitio ya avanzó sustancialmente. El 20 de agosto se publicó el posicionamiento «El arte del metal», el escaneo pasó a ser el primer paso obligatorio y quedaron activos el CTA «Agenda tu escaneo», WhatsApp, formulario",
+   "stamp": "20260823"
   },
   {
    "id": "prop-velas-contenido-seo-en-paralelo-20260820-032444",
