@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-23T11:02:02",
+ "generatedAt": "2026-08-23T12:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -201,6 +201,11 @@
    "stamp": "20260819"
   },
   {
+   "titulo": "Propuesta: activar el motor multiformato con la primera propiedad real de ERC",
+   "proyecto": "patologicos",
+   "stamp": "20260823"
+  },
+  {
    "titulo": "Propuesta: Bitácora ERC en Piloko — tecnología y emprendimiento con evidencia",
    "proyecto": "piloko",
    "stamp": "20260820"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «Propuesta: activar el motor multiformato con la primera propiedad real de ERC» — patologicos",
   "obra: «PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados» — proca",
-  "obra: «Propuesta: desbloquear Search Console de PROCADental sin frenar la prioridad ERC» — procadental",
-  "obra: «PROCAGrillZ: cerrar todo el clúster con un único CTA de escaneo intraoral» — procagrillz"
+  "obra: «Propuesta: desbloquear Search Console de PROCADental sin frenar la prioridad ERC» — procadental"
  ]
 }
