@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-27T13:02:01",
- "count": 6,
+ "generatedAt": "2026-08-27T14:02:01",
+ "count": 7,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260827-112205",
@@ -49,6 +49,14 @@
    "titulo": "PROCAGrillZ: cerrar todo el clúster con un único CTA de escaneo intraoral",
    "resumen": "Convertir toda la intención GrillZ que todavía entra por procadental.com en una sola acción comercial: visita → solicitud de escaneo → escaneo agendado → escaneo realizado → propuesta → anticipo. El trabajo principal ya existe: - PROCAGrillZ fue actualizado y publicado el 20 de agosto de 2026. - El escaneo intraoral ya es el paso obligatorio. - /cotiza/ recibe solicitudes y registra cotizasubmit{tieneescaneo}. - Está",
    "stamp": "20260823"
+  },
+  {
+   "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20260827-132221",
+   "proyecto": "wine",
+   "vocacion": "ventas",
+   "titulo": "Picando Tabla · release de checkout online sin romper ventas actuales",
+   "resumen": "Convertir la tienda ya viva en un e-commerce que cobre en línea y deje cada pago conciliado con un pedido operativo. Picando Tabla ya vende por WhatsApp; el avance correcto no es “publicar un prototipo”, sino aprobar un corte transaccional seguro. Hoy el dinero depende de confirmación manual por WhatsApp y Stripe sigue pendiente. Además, la fuente desplegada documentada (C:\\picandotabla.com) diverge de la copia en we",
+   "stamp": "20260827"
   }
  ]
 }
