@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-27T09:34:56",
+ "generatedAt": "2026-08-27T10:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 4
+  "obras": 5
  },
  "climate": {
   "ok": 10,
@@ -191,6 +191,11 @@
  ],
  "canon": [
   {
+   "titulo": "Actualización de catálogo y sección de eventos — Lumin Candele",
+   "proyecto": "lumin",
+   "stamp": "20260827"
+  },
+  {
    "titulo": "Propuesta: activar el motor multiformato con la primera propiedad real de ERC",
    "proyecto": "patologicos",
    "stamp": "20260823"
@@ -214,9 +219,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "4 obras en el cuerpo de trabajo del universo",
+  "5 obras en el cuerpo de trabajo del universo",
+  "obra: «Actualización de catálogo y sección de eventos — Lumin Candele» — lumin",
   "obra: «Propuesta: activar el motor multiformato con la primera propiedad real de ERC» — patologicos",
-  "obra: «PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados» — proca",
-  "obra: «Propuesta: desbloquear Search Console de PROCADental sin frenar la prioridad ERC» — procadental"
+  "obra: «PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados» — proca"
  ]
 }

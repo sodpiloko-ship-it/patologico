@@ -1,22 +1,14 @@
 {
- "generatedAt": "2026-08-27T02:18:40",
- "count": 8,
+ "generatedAt": "2026-08-27T10:02:01",
+ "count": 5,
  "items": [
   {
-   "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260819-222222",
-   "proyecto": "fanatia",
-   "vocacion": "seo",
-   "titulo": "Fanatia: contrato de URLs para activar la membresía sin perder el SEO existente",
-   "resumen": "Convertir Fanatia en una membresía 18+ con login, pago y crypto-marcas forenses, conservando las URLs, canonicals, hreflang, enlaces internos y señales orgánicas acumuladas. La migración no debe sustituir el sitio público: debe añadir una capa privada detrás de las mismas puertas de entrada. Baseline documentado: - 372 sesiones en 28 días al 22-jul-2026; 249 fueron orgánicas. - El índice de Bing generó 219 sesiones, ",
-   "stamp": "20260819"
-  },
-  {
-   "id": "prop-legal-intel-jur-dico-minado-de-dolores-product-20260819-232434",
-   "proyecto": "legal",
-   "vocacion": "investigacion",
-   "titulo": "Intel Jurídico: convertir dolores comprobados en producto, contenido y demos de Nomos",
-   "resumen": "Ejecutar el primer ciclo quincenal manual de Intel Jurídico para identificar qué problemas operativos de los despachos litigantes mexicanos tienen evidencia suficiente, urgencia y señal de pago. Importa porque Nomos ya tiene producto y materiales de marketing, pero su validación real sigue siendo conseguir el primer despacho piloto pagado. Intel Jurídico debe decidir qué vender y qué construir; no convertirse en otro",
-   "stamp": "20260819"
+   "id": "prop-lumin-fundadora-actualizacion-de-catalogo-y-seccion-de-eventos-l-20260827-094735",
+   "proyecto": "lumin",
+   "vocacion": "ventas",
+   "titulo": "Actualización de catálogo y sección de eventos — Lumin Candele",
+   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-27T09:43:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- La fuente local todavía muestra los gramajes, precios y aromas anteriores. También confirma que “Velas para tu evento” utiliza una fotografía de Día de Muertos en index.html(C:/Patologicos/web/velasaromaticas/index.html:368). | Producto | Presentación anterior | N",
+   "stamp": "20260827"
   },
   {
    "id": "prop-patologicos-motor-de-contenido-multiformato-operando-20260823-112312",
@@ -25,14 +17,6 @@
    "titulo": "Propuesta: activar el motor multiformato con la primera propiedad real de ERC",
    "resumen": "Convertir la captación y carga de la primera propiedad verificable de ERC en el primer ciclo completo del motor de contenido: propiedad real → expediente con evidencia → ficha privada → demo/render → piezas multiformato → medición → aprendizaje comercial. Esto importa porque ERC ya tiene infraestructura suficiente, pero todavía no demuestra operación inmobiliaria real. El cuello de botella no es producir más páginas ",
    "stamp": "20260823"
-  },
-  {
-   "id": "prop-piloko-hablar-ideas-y-pensamiento-de-tecnologia-20260820-012413",
-   "proyecto": "piloko",
-   "vocacion": "copy",
-   "titulo": "Propuesta: Bitácora ERC en Piloko — tecnología y emprendimiento con evidencia",
-   "resumen": "Convertir el avance real de ERC en una primera serie editorial de Piloko donde David exponga ideas propias sobre tecnología y emprendimiento. El enfoque no será “anunciar un MVP”, sino mostrar decisiones reales: por qué una plataforma inmobiliaria necesita evidencia por dato, por qué un render no equivale a un negocio y cómo una decisión aparentemente pequeña —el número de WhatsApp— puede bloquear todo el camino come",
-   "stamp": "20260820"
   },
   {
    "id": "prop-proca-procagrillz-llevar-al-cliente-a-escaneo--20260823-062434",
@@ -57,14 +41,6 @@
    "titulo": "PROCAGrillZ: cerrar todo el clúster con un único CTA de escaneo intraoral",
    "resumen": "Convertir toda la intención GrillZ que todavía entra por procadental.com en una sola acción comercial: visita → solicitud de escaneo → escaneo agendado → escaneo realizado → propuesta → anticipo. El trabajo principal ya existe: - PROCAGrillZ fue actualizado y publicado el 20 de agosto de 2026. - El escaneo intraoral ya es el paso obligatorio. - /cotiza/ recibe solicitudes y registra cotizasubmit{tieneescaneo}. - Está",
    "stamp": "20260823"
-  },
-  {
-   "id": "prop-velas-contenido-seo-en-paralelo-20260820-032444",
-   "proyecto": "velas",
-   "vocacion": "ventas",
-   "titulo": "Propuesta: activar Contenido + SEO de Lumin sin frenar la prioridad ERC",
-   "resumen": "Convertir el contenido ya producido para Lumin Candele en demanda orgánica medible y pedidos atribuibles en www.velasaromaticas.com.mx, mientras la capacidad operativa principal consigue y carga las primeras propiedades reales de ERC. Lumin tiene capacidad de hasta 500 velas mensuales y margen aproximado de 40%; el cuello de botella sigue siendo demanda. Sin embargo, producir más borradores no es hoy la prioridad: ya",
-   "stamp": "20260820"
   }
  ]
 }
