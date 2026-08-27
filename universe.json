@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-27T02:18:41",
+ "generatedAt": "2026-08-27T09:34:56",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 4
  },
  "climate": {
   "ok": 10,
@@ -191,24 +191,9 @@
  ],
  "canon": [
   {
-   "titulo": "Fanatia: contrato de URLs para activar la membresía sin perder el SEO existente",
-   "proyecto": "fanatia",
-   "stamp": "20260819"
-  },
-  {
-   "titulo": "Intel Jurídico: convertir dolores comprobados en producto, contenido y demos de Nomos",
-   "proyecto": "legal",
-   "stamp": "20260819"
-  },
-  {
    "titulo": "Propuesta: activar el motor multiformato con la primera propiedad real de ERC",
    "proyecto": "patologicos",
    "stamp": "20260823"
-  },
-  {
-   "titulo": "Propuesta: Bitácora ERC en Piloko — tecnología y emprendimiento con evidencia",
-   "proyecto": "piloko",
-   "stamp": "20260820"
   },
   {
    "titulo": "PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados",
@@ -224,17 +209,12 @@
    "titulo": "PROCAGrillZ: cerrar todo el clúster con un único CTA de escaneo intraoral",
    "proyecto": "procagrillz",
    "stamp": "20260823"
-  },
-  {
-   "titulo": "Propuesta: activar Contenido + SEO de Lumin sin frenar la prioridad ERC",
-   "proyecto": "velas",
-   "stamp": "20260820"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "4 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: activar el motor multiformato con la primera propiedad real de ERC» — patologicos",
   "obra: «PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados» — proca",
   "obra: «Propuesta: desbloquear Search Console de PROCADental sin frenar la prioridad ERC» — procadental"
