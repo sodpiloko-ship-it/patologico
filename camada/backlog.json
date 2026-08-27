@@ -1,7 +1,15 @@
 {
- "generatedAt": "2026-08-27T11:02:01",
- "count": 5,
+ "generatedAt": "2026-08-27T12:02:01",
+ "count": 6,
  "items": [
+  {
+   "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260827-112205",
+   "proyecto": "cadcamia",
+   "vocacion": "seo",
+   "titulo": "Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC",
+   "resumen": "Reactivar cadcamia.com como medio que atrae hobbistas de impresión 3D mediante contenido SEO útil y monetizable, manteniendo WordPress como canal editorial. La prioridad inmediata es demostrar autoridad con contenido, antes que branding o rediseño. En paralelo, ERC aporta un caso real de CAD + IA: una propiedad captada con evidencia puede convertirse en una demostración verificable del flujo “medición → modelo/render",
+   "stamp": "20260827"
+  },
   {
    "id": "prop-lumin-fundadora-actualizacion-de-catalogo-y-seccion-de-eventos-l-20260827-094735",
    "proyecto": "lumin",

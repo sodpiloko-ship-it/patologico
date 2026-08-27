@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-27T11:02:01",
+ "generatedAt": "2026-08-27T12:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 5
+  "obras": 6
  },
  "climate": {
   "ok": 10,
@@ -191,6 +191,11 @@
  ],
  "canon": [
   {
+   "titulo": "Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC",
+   "proyecto": "cadcamia",
+   "stamp": "20260827"
+  },
+  {
    "titulo": "Actualización de catálogo y sección de eventos — Lumin Candele",
    "proyecto": "lumin",
    "stamp": "20260827"
@@ -219,9 +224,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "5 obras en el cuerpo de trabajo del universo",
+  "6 obras en el cuerpo de trabajo del universo",
+  "obra: «Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC» — cadcamia",
   "obra: «Actualización de catálogo y sección de eventos — Lumin Candele» — lumin",
-  "obra: «Propuesta: activar el motor multiformato con la primera propiedad real de ERC» — patologicos",
-  "obra: «PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados» — proca"
+  "obra: «Propuesta: activar el motor multiformato con la primera propiedad real de ERC» — patologicos"
  ]
 }
