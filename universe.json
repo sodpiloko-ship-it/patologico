@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-27T15:02:01",
+ "generatedAt": "2026-08-27T16:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -196,6 +196,11 @@
    "stamp": "20260827"
   },
   {
+   "titulo": "Propuesta: blindaje SEO de URLs durante el pivote a membresía de Fanatia",
+   "proyecto": "fanatia",
+   "stamp": "20260827"
+  },
+  {
    "titulo": "Actualización de catálogo y sección de eventos — Lumin Candele",
    "proyecto": "lumin",
    "stamp": "20260827"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
   "obra: «Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC» — cadcamia",
-  "obra: «Actualización de catálogo y sección de eventos — Lumin Candele» — lumin",
-  "obra: «Picando Tabla · release de checkout online sin romper ventas actuales» — wine"
+  "obra: «Propuesta: blindaje SEO de URLs durante el pivote a membresía de Fanatia» — fanatia",
+  "obra: «Actualización de catálogo y sección de eventos — Lumin Candele» — lumin"
  ]
 }

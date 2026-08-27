@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-27T15:02:01",
- "count": 7,
+ "generatedAt": "2026-08-27T16:02:01",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260827-112205",
@@ -8,6 +8,14 @@
    "vocacion": "seo",
    "titulo": "Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC",
    "resumen": "Reactivar cadcamia.com como medio que atrae hobbistas de impresión 3D mediante contenido SEO útil y monetizable, manteniendo WordPress como canal editorial. La prioridad inmediata es demostrar autoridad con contenido, antes que branding o rediseño. En paralelo, ERC aporta un caso real de CAD + IA: una propiedad captada con evidencia puede convertirse en una demostración verificable del flujo “medición → modelo/render",
+   "stamp": "20260827"
+  },
+  {
+   "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260827-152148",
+   "proyecto": "fanatia",
+   "vocacion": "seo",
+   "titulo": "Propuesta: blindaje SEO de URLs durante el pivote a membresía de Fanatia",
+   "resumen": "Mantener indexables y funcionales las URLs públicas que ya atraen audiencia mientras la galería privada, pago y marca forense evolucionan detrás de /cuenta/. Importa porque el último baseline disponible (GA4, 28 días al 22-jul-2026) atribuye 61% de las entradas a dos URLs existentes y 88% del orgánico al ecosistema Bing. Romper rutas, canonicales o acceso de rastreadores cortaría el canal de adquisición antes de que ",
    "stamp": "20260827"
   },
   {
