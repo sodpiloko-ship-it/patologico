@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-28T09:02:02",
- "count": 9,
+ "generatedAt": "2026-08-28T10:02:01",
+ "count": 10,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260827-112205",
@@ -25,6 +25,14 @@
    "titulo": "Actualización de catálogo y sección de eventos — Lumin Candele",
    "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-27T09:43:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- La fuente local todavía muestra los gramajes, precios y aromas anteriores. También confirma que “Velas para tu evento” utiliza una fotografía de Día de Muertos en index.html(C:/Patologicos/web/velasaromaticas/index.html:368). | Producto | Presentación anterior | N",
    "stamp": "20260827"
+  },
+  {
+   "id": "prop-lumin-fundadora-alta-de-catalogo-vela-conmemorativa-para-mascota-20260828-093716",
+   "proyecto": "lumin",
+   "vocacion": "ventas",
+   "titulo": "Alta de catálogo: Vela conmemorativa para mascota · Día de Muertos",
+   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-28T09:35:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Producto autorizado para la colección de temporada. Debe publicarse como SKU vendible, no sólo como teaser. | Campo | Valor | |---|---| | ID | ddm-mascota | | Nombre | Vela conmemorativa para mascota | | Colección | Día de Muertos · Edición limitada | | Contenido ",
+   "stamp": "20260828"
   },
   {
    "id": "prop-lumin-fundadora-correccion-de-catalogo-piccolina-es-de-90-g-20260828-060153",
