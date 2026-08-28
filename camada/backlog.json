@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-28T05:02:01",
- "count": 8,
+ "generatedAt": "2026-08-28T06:02:01",
+ "count": 9,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260827-112205",
@@ -25,6 +25,14 @@
    "titulo": "Actualización de catálogo y sección de eventos — Lumin Candele",
    "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-27T09:43:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- La fuente local todavía muestra los gramajes, precios y aromas anteriores. También confirma que “Velas para tu evento” utiliza una fotografía de Día de Muertos en index.html(C:/Patologicos/web/velasaromaticas/index.html:368). | Producto | Presentación anterior | N",
    "stamp": "20260827"
+  },
+  {
+   "id": "prop-lumin-fundadora-correccion-de-catalogo-piccolina-es-de-90-g-20260828-060153",
+   "proyecto": "lumin",
+   "vocacion": "ventas",
+   "titulo": "Corrección de catálogo: Piccolina es de 90 g",
+   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-27T09:45:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Actualiza la presentación pública de Piccolina a: - 90 g · $210 MXN - Aromas: Vino tinto, Galleta, Coco, Canela, Cheesecake, Lavanda y Miel de abeja. Sustituir cualquier mención de 88 g por 90 g en catálogo, ficha de producto, carrito, WhatsApp, panel, FAQ y texto",
+   "stamp": "20260828"
   },
   {
    "id": "prop-patologicos-motor-de-contenido-multiformato-operando-20260823-112312",

@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-28T05:02:02",
+ "generatedAt": "2026-08-28T06:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 9
  },
  "climate": {
   "ok": 10,
@@ -206,6 +206,11 @@
    "stamp": "20260827"
   },
   {
+   "titulo": "Corrección de catálogo: Piccolina es de 90 g",
+   "proyecto": "lumin",
+   "stamp": "20260828"
+  },
+  {
    "titulo": "Propuesta: activar el motor multiformato con la primera propiedad real de ERC",
    "proyecto": "patologicos",
    "stamp": "20260823"
@@ -234,9 +239,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "9 obras en el cuerpo de trabajo del universo",
+  "obra: «Corrección de catálogo: Piccolina es de 90 g» — lumin",
   "obra: «Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC» — cadcamia",
-  "obra: «Propuesta: blindaje SEO de URLs durante el pivote a membresía de Fanatia» — fanatia",
-  "obra: «Actualización de catálogo y sección de eventos — Lumin Candele» — lumin"
+  "obra: «Propuesta: blindaje SEO de URLs durante el pivote a membresía de Fanatia» — fanatia"
  ]
 }
