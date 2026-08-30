@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-30T02:43:54",
+ "generatedAt": "2026-08-30T08:17:03",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 10
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -221,18 +221,8 @@
    "stamp": "20260823"
   },
   {
-   "titulo": "PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados",
-   "proyecto": "proca",
-   "stamp": "20260823"
-  },
-  {
    "titulo": "Propuesta: desbloquear Search Console de PROCADental sin frenar la prioridad ERC",
    "proyecto": "procadental",
-   "stamp": "20260823"
-  },
-  {
-   "titulo": "PROCAGrillZ: cerrar todo el clúster con un único CTA de escaneo intraoral",
-   "proyecto": "procagrillz",
    "stamp": "20260823"
   },
   {
@@ -244,7 +234,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "10 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
   "obra: «Alta de catálogo: Vela conmemorativa para mascota · Día de Muertos» — lumin",
   "obra: «Corrección de catálogo: Piccolina es de 90 g» — lumin",
   "obra: «Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC» — cadcamia"

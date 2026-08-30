@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-30T02:43:54",
- "count": 10,
+ "generatedAt": "2026-08-30T08:17:03",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260827-112205",
@@ -51,27 +51,11 @@
    "stamp": "20260823"
   },
   {
-   "id": "prop-proca-procagrillz-llevar-al-cliente-a-escaneo--20260823-062434",
-   "proyecto": "proca",
-   "vocacion": "datos",
-   "titulo": "PROCAGrillZ: convertir el embudo publicado en escaneos intraorales confirmados",
-   "resumen": "El objetivo inmediato es convertir la intención que ya llega a PROCAGrillZ en una acción comercial verificable: visita → contacto → escaneo agendado → escaneo realizado → diseño/cotización → anticipo. El sitio ya avanzó sustancialmente. El 20 de agosto se publicó el posicionamiento «El arte del metal», el escaneo pasó a ser el primer paso obligatorio y quedaron activos el CTA «Agenda tu escaneo», WhatsApp, formulario",
-   "stamp": "20260823"
-  },
-  {
    "id": "prop-procadental-desbloquear-search-console-403-autorizar-20260823-092543",
    "proyecto": "procadental",
    "vocacion": "seo",
    "titulo": "Propuesta: desbloquear Search Console de PROCADental sin frenar la prioridad ERC",
    "resumen": "Convertir el estado de Search Console de 403 a una lectura válida de procadental.com, para priorizar las guías y las 50 piezas diarias con consultas reales de pacientes. Hoy el sitio está vivo, responde HTTP 200, tiene GA4 activo y un sitemap de 25 URLs, pero Search Console no entrega consultas, impresiones, CTR ni posiciones. Esto obliga a optimizar por hipótesis mientras existen 252 piezas generadas: 248 pendientes",
-   "stamp": "20260823"
-  },
-  {
-   "id": "prop-procagrillz-cerrar-el-embudo-cta-nico-escaneo-intrao-20260823-072405",
-   "proyecto": "procagrillz",
-   "vocacion": "copy",
-   "titulo": "PROCAGrillZ: cerrar todo el clúster con un único CTA de escaneo intraoral",
-   "resumen": "Convertir toda la intención GrillZ que todavía entra por procadental.com en una sola acción comercial: visita → solicitud de escaneo → escaneo agendado → escaneo realizado → propuesta → anticipo. El trabajo principal ya existe: - PROCAGrillZ fue actualizado y publicado el 20 de agosto de 2026. - El escaneo intraoral ya es el paso obligatorio. - /cotiza/ recibe solicitudes y registra cotizasubmit{tieneescaneo}. - Está",
    "stamp": "20260823"
   },
   {
