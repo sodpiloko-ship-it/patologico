@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-31T07:02:01",
- "count": 7,
+ "generatedAt": "2026-08-31T08:02:02",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260827-112205",
@@ -49,6 +49,14 @@
    "titulo": "Corrección de catálogo: Piccolina es de 90 g",
    "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-27T09:45:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Actualiza la presentación pública de Piccolina a: - 90 g · $210 MXN - Aromas: Vino tinto, Galleta, Coco, Canela, Cheesecake, Lavanda y Miel de abeja. Sustituir cualquier mención de 88 g por 90 g en catálogo, ficha de producto, carrito, WhatsApp, panel, FAQ y texto",
    "stamp": "20260828"
+  },
+  {
+   "id": "prop-piloko-mantener-el-sitio-personal-de-artista-20260831-072133",
+   "proyecto": "piloko",
+   "vocacion": "copy",
+   "titulo": "Propuesta: Piloko como bitácora verificable de ERC",
+   "resumen": "Mantener piloko.com como el archivo vivo de obra y pensamiento de David, usando el progreso real de ERC como su primera serie editorial con sustancia: tecnología, negocio y evidencia. La prioridad operativa sigue siendo ERC: conseguir y cargar las primeras propiedades reales con evidencia. Piloko no debe anunciar avances no comprobados; debe convertir los hallazgos demostrables de ese proceso en una pieza editorial l",
+   "stamp": "20260831"
   },
   {
    "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20260827-132221",
