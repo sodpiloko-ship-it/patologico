@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-08-31T06:02:02",
- "count": 6,
+ "generatedAt": "2026-08-31T07:02:01",
+ "count": 7,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260827-112205",
@@ -17,6 +17,14 @@
    "titulo": "Propuesta: blindaje SEO de URLs durante el pivote a membresía de Fanatia",
    "resumen": "Mantener indexables y funcionales las URLs públicas que ya atraen audiencia mientras la galería privada, pago y marca forense evolucionan detrás de /cuenta/. Importa porque el último baseline disponible (GA4, 28 días al 22-jul-2026) atribuye 61% de las entradas a dos URLs existentes y 88% del orgánico al ecosistema Bing. Romper rutas, canonicales o acceso de rastreadores cortaría el canal de adquisición antes de que ",
    "stamp": "20260827"
+  },
+  {
+   "id": "prop-legal-primer-cliente-piloto-de-pago-20260831-062134",
+   "proyecto": "legal",
+   "vocacion": "investigacion",
+   "titulo": "Nomos — cerrar el primer despacho piloto pagado sin distraer ERC",
+   "resumen": "Cerrar un despacho litigante mexicano como piloto pagado de Nomos. Es la validación comercial real: los datos seed de Nomos (2 despachos, 12 expedientes y 30 documentos) son demostrativos, no tracción; no hay evidencia revisada de un piloto pagado. La prioridad operativa sigue siendo ERC. Este frente no requiere desarrollo ni publicación: prepara el cierre y depende de una introducción cálida de David. Ejecutar un sp",
+   "stamp": "20260831"
   },
   {
    "id": "prop-lumin-fundadora-actualizacion-de-catalogo-y-seccion-de-eventos-l-20260827-094735",

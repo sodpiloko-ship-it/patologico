@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-08-31T06:02:02",
+ "generatedAt": "2026-08-31T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 6
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -201,6 +201,11 @@
    "stamp": "20260827"
   },
   {
+   "titulo": "Nomos — cerrar el primer despacho piloto pagado sin distraer ERC",
+   "proyecto": "legal",
+   "stamp": "20260831"
+  },
+  {
    "titulo": "Actualización de catálogo y sección de eventos — Lumin Candele",
    "proyecto": "lumin",
    "stamp": "20260827"
@@ -224,9 +229,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "6 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
+  "obra: «Nomos — cerrar el primer despacho piloto pagado sin distraer ERC» — legal",
   "obra: «Alta de catálogo: Vela conmemorativa para mascota · Día de Muertos» — lumin",
-  "obra: «Corrección de catálogo: Piccolina es de 90 g» — lumin",
-  "obra: «Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC» — cadcamia"
+  "obra: «Corrección de catálogo: Piccolina es de 90 g» — lumin"
  ]
 }
