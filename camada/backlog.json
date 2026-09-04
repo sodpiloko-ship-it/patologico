@@ -1,23 +1,7 @@
 {
- "generatedAt": "2026-09-04T02:56:39",
- "count": 8,
+ "generatedAt": "2026-09-04T07:36:16",
+ "count": 4,
  "items": [
-  {
-   "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260827-112205",
-   "proyecto": "cadcamia",
-   "vocacion": "seo",
-   "titulo": "Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC",
-   "resumen": "Reactivar cadcamia.com como medio que atrae hobbistas de impresión 3D mediante contenido SEO útil y monetizable, manteniendo WordPress como canal editorial. La prioridad inmediata es demostrar autoridad con contenido, antes que branding o rediseño. En paralelo, ERC aporta un caso real de CAD + IA: una propiedad captada con evidencia puede convertirse en una demostración verificable del flujo “medición → modelo/render",
-   "stamp": "20260827"
-  },
-  {
-   "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260827-152148",
-   "proyecto": "fanatia",
-   "vocacion": "seo",
-   "titulo": "Propuesta: blindaje SEO de URLs durante el pivote a membresía de Fanatia",
-   "resumen": "Mantener indexables y funcionales las URLs públicas que ya atraen audiencia mientras la galería privada, pago y marca forense evolucionan detrás de /cuenta/. Importa porque el último baseline disponible (GA4, 28 días al 22-jul-2026) atribuye 61% de las entradas a dos URLs existentes y 88% del orgánico al ecosistema Bing. Romper rutas, canonicales o acceso de rastreadores cortaría el canal de adquisición antes de que ",
-   "stamp": "20260827"
-  },
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260831-062134",
    "proyecto": "legal",
@@ -25,14 +9,6 @@
    "titulo": "Nomos — cerrar el primer despacho piloto pagado sin distraer ERC",
    "resumen": "Cerrar un despacho litigante mexicano como piloto pagado de Nomos. Es la validación comercial real: los datos seed de Nomos (2 despachos, 12 expedientes y 30 documentos) son demostrativos, no tracción; no hay evidencia revisada de un piloto pagado. La prioridad operativa sigue siendo ERC. Este frente no requiere desarrollo ni publicación: prepara el cierre y depende de una introducción cálida de David. Ejecutar un sp",
    "stamp": "20260831"
-  },
-  {
-   "id": "prop-lumin-fundadora-actualizacion-de-catalogo-y-seccion-de-eventos-l-20260827-094735",
-   "proyecto": "lumin",
-   "vocacion": "ventas",
-   "titulo": "Actualización de catálogo y sección de eventos — Lumin Candele",
-   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-27T09:43:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- La fuente local todavía muestra los gramajes, precios y aromas anteriores. También confirma que “Velas para tu evento” utiliza una fotografía de Día de Muertos en index.html(C:/Patologicos/web/velasaromaticas/index.html:368). | Producto | Presentación anterior | N",
-   "stamp": "20260827"
   },
   {
    "id": "prop-lumin-fundadora-alta-de-catalogo-vela-conmemorativa-para-mascota-20260828-093716",
@@ -57,14 +33,6 @@
    "titulo": "Propuesta: Piloko como bitácora verificable de ERC",
    "resumen": "Mantener piloko.com como el archivo vivo de obra y pensamiento de David, usando el progreso real de ERC como su primera serie editorial con sustancia: tecnología, negocio y evidencia. La prioridad operativa sigue siendo ERC: conseguir y cargar las primeras propiedades reales con evidencia. Piloko no debe anunciar avances no comprobados; debe convertir los hallazgos demostrables de ese proceso en una pieza editorial l",
    "stamp": "20260831"
-  },
-  {
-   "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20260827-132221",
-   "proyecto": "wine",
-   "vocacion": "ventas",
-   "titulo": "Picando Tabla · release de checkout online sin romper ventas actuales",
-   "resumen": "Convertir la tienda ya viva en un e-commerce que cobre en línea y deje cada pago conciliado con un pedido operativo. Picando Tabla ya vende por WhatsApp; el avance correcto no es “publicar un prototipo”, sino aprobar un corte transaccional seguro. Hoy el dinero depende de confirmación manual por WhatsApp y Stripe sigue pendiente. Además, la fuente desplegada documentada (C:\\picandotabla.com) diverge de la copia en we",
-   "stamp": "20260827"
   }
  ]
 }

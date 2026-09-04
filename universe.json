@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-04T02:56:39",
+ "generatedAt": "2026-09-04T07:36:24",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 4
  },
  "climate": {
   "ok": 10,
@@ -191,24 +191,9 @@
  ],
  "canon": [
   {
-   "titulo": "Sprint de reactivación CAD·CAM·IA: contenido de resina con prueba operativa ERC",
-   "proyecto": "cadcamia",
-   "stamp": "20260827"
-  },
-  {
-   "titulo": "Propuesta: blindaje SEO de URLs durante el pivote a membresía de Fanatia",
-   "proyecto": "fanatia",
-   "stamp": "20260827"
-  },
-  {
    "titulo": "Nomos — cerrar el primer despacho piloto pagado sin distraer ERC",
    "proyecto": "legal",
    "stamp": "20260831"
-  },
-  {
-   "titulo": "Actualización de catálogo y sección de eventos — Lumin Candele",
-   "proyecto": "lumin",
-   "stamp": "20260827"
   },
   {
    "titulo": "Alta de catálogo: Vela conmemorativa para mascota · Día de Muertos",
@@ -224,17 +209,12 @@
    "titulo": "Propuesta: Piloko como bitácora verificable de ERC",
    "proyecto": "piloko",
    "stamp": "20260831"
-  },
-  {
-   "titulo": "Picando Tabla · release de checkout online sin romper ventas actuales",
-   "proyecto": "wine",
-   "stamp": "20260827"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "4 obras en el cuerpo de trabajo del universo",
   "obra: «Nomos — cerrar el primer despacho piloto pagado sin distraer ERC» — legal",
   "obra: «Propuesta: Piloko como bitácora verificable de ERC» — piloko",
   "obra: «Alta de catálogo: Vela conmemorativa para mascota · Día de Muertos» — lumin"
