@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-05T13:02:03",
- "count": 5,
+ "generatedAt": "2026-09-05T16:02:13",
+ "count": 6,
  "items": [
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260831-062134",
@@ -24,6 +24,14 @@
    "vocacion": "datos",
    "titulo": "PROCA/PROCAOps: preparar un caso de estudio que venda capacidad demostrable",
    "resumen": "Propuesta al 5 de septiembre de 2026. Basada en documentación local; sin verificación externa, publicaciones ni cambios de archivos. 1. Objetivo y por qué importa Dejar el caso PROCA/PROCAOps listo para aprobación editorial y posterior publicación: demostrar cómo aplicamos software e IA a un proceso industrial y convertir esa evidencia en solicitudes de Auditoría de Proceso con IA. La prioridad operativa sigue siendo",
+   "stamp": "20260905"
+  },
+  {
+   "id": "prop-procadental-producir-los-7-huecos-de-categoria-sin-c-20260905-132726",
+   "proyecto": "procadental",
+   "vocacion": "seo",
+   "titulo": "Propuesta: cerrar los 7 huecos SEO de paciente con un CTA medible a `/encuentra-dentista/`",
+   "resumen": "Completar las siete categorías sin cobertura en PROCADental —limpieza, blanqueamiento, muela del juicio, resina/empaste, encías, niños y sensibilidad— con una guía canónica por tema y CTA contextual a /encuentra-dentista/. Esto convierte el motor de contenido en una ruta de negocio: búsqueda de paciente → guía confiable → solicitud de dentista. No se publica nada ni se modifica el sitio hasta pasar revisión editorial",
    "stamp": "20260905"
   },
   {

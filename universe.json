@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-05T13:02:03",
+ "generatedAt": "2026-09-05T16:02:14",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 5
+  "obras": 6
  },
  "climate": {
   "ok": 10,
@@ -206,6 +206,11 @@
    "stamp": "20260905"
   },
   {
+   "titulo": "Propuesta: cerrar los 7 huecos SEO de paciente con un CTA medible a `/encuentra-dentista/`",
+   "proyecto": "procadental",
+   "stamp": "20260905"
+  },
+  {
    "titulo": "PROCAGrillZ: convertir curiosidad orgánica en escaneos confirmados",
    "proyecto": "procagrillz",
    "stamp": "20260905"
@@ -219,9 +224,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "5 obras en el cuerpo de trabajo del universo",
+  "6 obras en el cuerpo de trabajo del universo",
   "obra: «PROCA/PROCAOps: preparar un caso de estudio que venda capacidad demostrable» — proca",
-  "obra: «PROCAGrillZ: convertir curiosidad orgánica en escaneos confirmados» — procagrillz",
-  "obra: «Lumin Candele: Pixel y primer set de anuncios para conseguir ventas comprobables» — velas"
+  "obra: «Propuesta: cerrar los 7 huecos SEO de paciente con un CTA medible a `/encuentra-dentista/`» — procadental",
+  "obra: «PROCAGrillZ: convertir curiosidad orgánica en escaneos confirmados» — procagrillz"
  ]
 }
