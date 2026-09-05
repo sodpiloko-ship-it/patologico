@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-05T01:02:01",
- "count": 5,
+ "generatedAt": "2026-09-05T07:02:01",
+ "count": 4,
  "items": [
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260831-062134",
@@ -11,28 +11,20 @@
    "stamp": "20260831"
   },
   {
-   "id": "prop-lumin-fundadora-alta-de-catalogo-vela-conmemorativa-para-mascota-20260828-093716",
-   "proyecto": "lumin",
-   "vocacion": "ventas",
-   "titulo": "Alta de catálogo: Vela conmemorativa para mascota · Día de Muertos",
-   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-28T09:35:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Producto autorizado para la colección de temporada. Debe publicarse como SKU vendible, no sólo como teaser. | Campo | Valor | |---|---| | ID | ddm-mascota | | Nombre | Vela conmemorativa para mascota | | Colección | Día de Muertos · Edición limitada | | Contenido ",
-   "stamp": "20260828"
-  },
-  {
-   "id": "prop-lumin-fundadora-correccion-de-catalogo-piccolina-es-de-90-g-20260828-060153",
-   "proyecto": "lumin",
-   "vocacion": "ventas",
-   "titulo": "Corrección de catálogo: Piccolina es de 90 g",
-   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-08-27T09:45:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Actualiza la presentación pública de Piccolina a: - 90 g · $210 MXN - Aromas: Vino tinto, Galleta, Coco, Canela, Cheesecake, Lavanda y Miel de abeja. Sustituir cualquier mención de 88 g por 90 g en catálogo, ficha de producto, carrito, WhatsApp, panel, FAQ y texto",
-   "stamp": "20260828"
-  },
-  {
    "id": "prop-piloko-mantener-el-sitio-personal-de-artista-20260831-072133",
    "proyecto": "piloko",
    "vocacion": "copy",
    "titulo": "Propuesta: Piloko como bitácora verificable de ERC",
    "resumen": "Mantener piloko.com como el archivo vivo de obra y pensamiento de David, usando el progreso real de ERC como su primera serie editorial con sustancia: tecnología, negocio y evidencia. La prioridad operativa sigue siendo ERC: conseguir y cargar las primeras propiedades reales con evidencia. Piloko no debe anunciar avances no comprobados; debe convertir los hallazgos demostrables de ese proceso en una pieza editorial l",
    "stamp": "20260831"
+  },
+  {
+   "id": "prop-proca-publicar-el-caso-de-estudio-proca-procao-20260905-012652",
+   "proyecto": "proca",
+   "vocacion": "datos",
+   "titulo": "PROCA/PROCAOps: preparar un caso de estudio que venda capacidad demostrable",
+   "resumen": "Propuesta al 5 de septiembre de 2026. Basada en documentación local; sin verificación externa, publicaciones ni cambios de archivos. 1. Objetivo y por qué importa Dejar el caso PROCA/PROCAOps listo para aprobación editorial y posterior publicación: demostrar cómo aplicamos software e IA a un proceso industrial y convertir esa evidencia en solicitudes de Auditoría de Proceso con IA. La prioridad operativa sigue siendo",
+   "stamp": "20260905"
   },
   {
    "id": "prop-velas-vender-con-meta-ads-instalar-pixel-1er-s-20260904-192946",
