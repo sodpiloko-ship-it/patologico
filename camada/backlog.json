@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-04T19:02:01",
- "count": 4,
+ "generatedAt": "2026-09-04T22:02:02",
+ "count": 5,
  "items": [
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260831-062134",
@@ -33,6 +33,14 @@
    "titulo": "Propuesta: Piloko como bitácora verificable de ERC",
    "resumen": "Mantener piloko.com como el archivo vivo de obra y pensamiento de David, usando el progreso real de ERC como su primera serie editorial con sustancia: tecnología, negocio y evidencia. La prioridad operativa sigue siendo ERC: conseguir y cargar las primeras propiedades reales con evidencia. Piloko no debe anunciar avances no comprobados; debe convertir los hallazgos demostrables de ese proceso en una pieza editorial l",
    "stamp": "20260831"
+  },
+  {
+   "id": "prop-velas-vender-con-meta-ads-instalar-pixel-1er-s-20260904-192946",
+   "proyecto": "velas",
+   "vocacion": "ventas",
+   "titulo": "Lumin Candele: Pixel y primer set de anuncios para conseguir ventas comprobables",
+   "resumen": "Propuesta al 4 de septiembre de 2026. Basada en archivos locales; no se modificaron archivos ni se realizaron publicaciones, envíos o gastos. 1. Objetivo y por qué importa Preparar la medición y tres anuncios de un mismo producto para convertir conversaciones de WhatsApp en pedidos pagados con margen positivo después de publicidad. El cuello declarado es demanda: hay capacidad de 500 velas y margen aproximado de 40%.",
+   "stamp": "20260904"
   }
  ]
 }
