@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-05T07:02:01",
+ "generatedAt": "2026-09-05T10:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 4
+  "obras": 5
  },
  "climate": {
   "ok": 10,
@@ -206,6 +206,11 @@
    "stamp": "20260905"
   },
   {
+   "titulo": "PROCAGrillZ: convertir curiosidad orgánica en escaneos confirmados",
+   "proyecto": "procagrillz",
+   "stamp": "20260905"
+  },
+  {
    "titulo": "Lumin Candele: Pixel y primer set de anuncios para conseguir ventas comprobables",
    "proyecto": "velas",
    "stamp": "20260904"
@@ -214,9 +219,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "4 obras en el cuerpo de trabajo del universo",
+  "5 obras en el cuerpo de trabajo del universo",
   "obra: «PROCA/PROCAOps: preparar un caso de estudio que venda capacidad demostrable» — proca",
-  "obra: «Lumin Candele: Pixel y primer set de anuncios para conseguir ventas comprobables» — velas",
-  "obra: «Nomos — cerrar el primer despacho piloto pagado sin distraer ERC» — legal"
+  "obra: «PROCAGrillZ: convertir curiosidad orgánica en escaneos confirmados» — procagrillz",
+  "obra: «Lumin Candele: Pixel y primer set de anuncios para conseguir ventas comprobables» — velas"
  ]
 }

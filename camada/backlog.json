@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-05T07:02:01",
- "count": 4,
+ "generatedAt": "2026-09-05T10:02:01",
+ "count": 5,
  "items": [
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260831-062134",
@@ -24,6 +24,14 @@
    "vocacion": "datos",
    "titulo": "PROCA/PROCAOps: preparar un caso de estudio que venda capacidad demostrable",
    "resumen": "Propuesta al 5 de septiembre de 2026. Basada en documentación local; sin verificación externa, publicaciones ni cambios de archivos. 1. Objetivo y por qué importa Dejar el caso PROCA/PROCAOps listo para aprobación editorial y posterior publicación: demostrar cómo aplicamos software e IA a un proceso industrial y convertir esa evidencia en solicitudes de Auditoría de Proceso con IA. La prioridad operativa sigue siendo",
+   "stamp": "20260905"
+  },
+  {
+   "id": "prop-procagrillz-capturar-la-demanda-org-nica-grillz-600--20260905-072622",
+   "proyecto": "procagrillz",
+   "vocacion": "copy",
+   "titulo": "PROCAGrillZ: convertir curiosidad orgánica en escaneos confirmados",
+   "resumen": "Capturar la demanda GrillZ que ya llega desde búsquedas y convertirla en el primer hito comercial verificable: visita → solicitud → escaneo agendado → escaneo realizado → cotización → anticipo. El cluster ya tiene una base real: /grillz/ registró 522 sesiones en 90 días y el objetivo operativo estima ~600 sesiones/mes. Nueve rutas históricas de GrillZ/BlingZ ya redirigen a procagrillz.com; el sitio publicado cuenta c",
    "stamp": "20260905"
   },
   {
