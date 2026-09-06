@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-05T19:02:02",
- "count": 6,
+ "generatedAt": "2026-09-05T22:02:02",
+ "count": 7,
  "items": [
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260831-062134",
@@ -9,6 +9,14 @@
    "titulo": "Nomos — cerrar el primer despacho piloto pagado sin distraer ERC",
    "resumen": "Cerrar un despacho litigante mexicano como piloto pagado de Nomos. Es la validación comercial real: los datos seed de Nomos (2 despachos, 12 expedientes y 30 documentos) son demostrativos, no tracción; no hay evidencia revisada de un piloto pagado. La prioridad operativa sigue siendo ERC. Este frente no requiere desarrollo ni publicación: prepara el cierre y depende de una introducción cálida de David. Ejecutar un sp",
    "stamp": "20260831"
+  },
+  {
+   "id": "prop-patologicos-vender-el-proyecto-completo-desarrollo-c-20260905-192646",
+   "proyecto": "patologicos",
+   "vocacion": "copy",
+   "titulo": "ERC como prueba comercial del proyecto completo de Patológicos",
+   "resumen": "Propuesta para revisión · 5 de septiembre de 2026. Basada en documentación local; sin cambios, publicaciones ni acciones externas. 1. Objetivo y por qué importa Vender en patologicos.com el desarrollo completo con IA agéntica mediante una demostración verificable de ERC: del inventario real a una ficha útil, una experiencia visual y una solicitud atendida. La prioridad es conseguir y cargar las primeras propiedades c",
+   "stamp": "20260905"
   },
   {
    "id": "prop-piloko-mantener-el-sitio-personal-de-artista-20260831-072133",
