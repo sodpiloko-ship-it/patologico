@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-06T01:02:02",
+ "generatedAt": "2026-09-06T04:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -191,6 +191,11 @@
  ],
  "canon": [
   {
+   "titulo": "CAD·CAM·IA: demostrar la revolución de producción con un proyecto reproducible",
+   "proyecto": "cadcamia",
+   "stamp": "20260906"
+  },
+  {
    "titulo": "Nomos — cerrar el primer despacho piloto pagado sin distraer ERC",
    "proyecto": "legal",
    "stamp": "20260831"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «CAD·CAM·IA: demostrar la revolución de producción con un proyecto reproducible» — cadcamia",
   "obra: «ERC como prueba comercial del proyecto completo de Patológicos» — patologicos",
-  "obra: «PROCA/PROCAOps: preparar un caso de estudio que venda capacidad demostrable» — proca",
-  "obra: «Propuesta: cerrar los 7 huecos SEO de paciente con un CTA medible a `/encuentra-dentista/`» — procadental"
+  "obra: «PROCA/PROCAOps: preparar un caso de estudio que venda capacidad demostrable» — proca"
  ]
 }

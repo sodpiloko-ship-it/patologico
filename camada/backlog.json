@@ -1,7 +1,15 @@
 {
- "generatedAt": "2026-09-06T01:02:02",
- "count": 7,
+ "generatedAt": "2026-09-06T04:02:02",
+ "count": 8,
  "items": [
+  {
+   "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20260906-012656",
+   "proyecto": "cadcamia",
+   "vocacion": "seo",
+   "titulo": "CAD·CAM·IA: demostrar la revolución de producción con un proyecto reproducible",
+   "resumen": "Posicionar CAD·CAM·IA como autoridad para hobbistas mostrando el recorrido completo idea → diseño CAD → preparación CAM → pieza física, con una intervención de IA documentada y evaluada. La oportunidad comercial es convertir tutoriales útiles en interés por archivos, kits y formación. Se mantiene WordPress y se prioriza contenido sobre rediseño. Prioridad operativa: ERC conserva el primer lugar conforme al canal. Est",
+   "stamp": "20260906"
+  },
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260831-062134",
    "proyecto": "legal",
