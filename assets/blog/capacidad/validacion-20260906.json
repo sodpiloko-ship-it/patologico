@@ -18,9 +18,28 @@
   ],
   "compilacion": "Completada",
   "comprobacion_tipos": "Completada",
-  "revision_visual_navegador": false,
+  "revision_visual_navegador": true,
   "pruebas_con_usuarios": false,
   "validacion_comercial": false,
   "resultados_ventas": null,
-  "nota": "Una prueba de reglas no acredita la experiencia de uso, recepción de solicitudes o ventas."
+  "nota": "La revisión de reglas y recorridos en navegador no acredita sesiones con usuarios, recepción comercial o ventas.",
+  "revision_navegador": {
+    "motor": "Chromium",
+    "ventanas": [
+      "1440 × 1000",
+      "360 × 800"
+    ],
+    "alcance": [
+      "Selección, edición y copia",
+      "Limpieza de referencia incompatible",
+      "Ruta de reparación",
+      "Variantes y cantidades",
+      "Fecha persistente y rechazo de fechas pasadas"
+    ],
+    "telefono_fisico": false
+  },
+  "correcciones": [
+    "Conservación de fecha al editar otro campo",
+    "Navegación HTML entre rutas"
+  ]
 }
