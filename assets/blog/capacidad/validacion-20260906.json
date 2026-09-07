@@ -1,0 +1,26 @@
+{
+  "serie": "Del catálogo a una solicitud lista para cotizar",
+  "fecha": "2026-09-06",
+  "tipo": "Comprobaciones automatizadas de reglas de selección y solicitudes",
+  "pruebas": {
+    "total": 20,
+    "aprobadas": 20,
+    "fallidas": 0
+  },
+  "alcance": [
+    "Cambios de referencia y ambiente",
+    "Medidas incompletas y valores inválidos",
+    "Distribuciones y rutas de reparación",
+    "Identidad de artículo y variante",
+    "Edición y eliminación de renglones",
+    "Fechas deseadas y cantidades",
+    "Rotulado de demostración en las solicitudes"
+  ],
+  "compilacion": "Completada",
+  "comprobacion_tipos": "Completada",
+  "revision_visual_navegador": false,
+  "pruebas_con_usuarios": false,
+  "validacion_comercial": false,
+  "resultados_ventas": null,
+  "nota": "Una prueba de reglas no acredita la experiencia de uso, recepción de solicitudes o ventas."
+}
