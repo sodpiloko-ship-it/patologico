@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-08T07:02:01",
+ "generatedAt": "2026-09-08T10:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -224,14 +224,19 @@
    "titulo": "Lumin Candele: Pixel y primer set de anuncios para conseguir ventas comprobables",
    "proyecto": "velas",
    "stamp": "20260904"
+  },
+  {
+   "titulo": "Picando Tabla: aprobar una compra completa antes de habilitar el cobro online",
+   "proyecto": "wine",
+   "stamp": "20260908"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
   "obra: «Lumin Candele — Ficha comercial de Día de Muertos» — lumin",
-  "obra: «CAD·CAM·IA: demostrar la revolución de producción con un proyecto reproducible» — cadcamia",
-  "obra: «ERC como prueba comercial del proyecto completo de Patológicos» — patologicos"
+  "obra: «Picando Tabla: aprobar una compra completa antes de habilitar el cobro online» — wine",
+  "obra: «CAD·CAM·IA: demostrar la revolución de producción con un proyecto reproducible» — cadcamia"
  ]
 }

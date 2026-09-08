@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-08T07:02:01",
- "count": 7,
+ "generatedAt": "2026-09-08T10:02:02",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20260906-012656",
@@ -57,6 +57,14 @@
    "titulo": "Lumin Candele: Pixel y primer set de anuncios para conseguir ventas comprobables",
    "resumen": "Propuesta al 4 de septiembre de 2026. Basada en archivos locales; no se modificaron archivos ni se realizaron publicaciones, envíos o gastos. 1. Objetivo y por qué importa Preparar la medición y tres anuncios de un mismo producto para convertir conversaciones de WhatsApp en pedidos pagados con margen positivo después de publicidad. El cuello declarado es demanda: hay capacidad de 500 velas y margen aproximado de 40%.",
    "stamp": "20260904"
+  },
+  {
+   "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20260908-072646",
+   "proyecto": "wine",
+   "vocacion": "ventas",
+   "titulo": "Picando Tabla: aprobar una compra completa antes de habilitar el cobro online",
+   "resumen": "Propuesta · 8 de septiembre de 2026 · Preparada en solo lectura Avanzar de la venta asistida por WhatsApp a una compra online que termine en pago conciliado, pedido recibido por Jessica y entrega viable en CDMX. El objetivo “aprobar prototipo → publicar” necesita actualizarse: los documentos de julio y agosto ya describen una tienda operando por WhatsApp. El siguiente hito es demostrar que el checkout funciona comerc",
+   "stamp": "20260908"
   }
  ]
 }
