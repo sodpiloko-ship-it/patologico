@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-08T04:02:02",
- "count": 8,
+ "generatedAt": "2026-09-08T07:02:01",
+ "count": 7,
  "items": [
   {
    "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20260906-012656",
@@ -11,12 +11,12 @@
    "stamp": "20260906"
   },
   {
-   "id": "prop-legal-primer-cliente-piloto-de-pago-20260831-062134",
-   "proyecto": "legal",
-   "vocacion": "investigacion",
-   "titulo": "Nomos — cerrar el primer despacho piloto pagado sin distraer ERC",
-   "resumen": "Cerrar un despacho litigante mexicano como piloto pagado de Nomos. Es la validación comercial real: los datos seed de Nomos (2 despachos, 12 expedientes y 30 documentos) son demostrativos, no tracción; no hay evidencia revisada de un piloto pagado. La prioridad operativa sigue siendo ERC. Este frente no requiere desarrollo ni publicación: prepara el cierre y depende de una introducción cálida de David. Ejecutar un sp",
-   "stamp": "20260831"
+   "id": "prop-lumin-fundadora-lumin-candele-ficha-comercial-de-dia-de-muertos-20260908-060224",
+   "proyecto": "lumin",
+   "vocacion": "ventas",
+   "titulo": "Lumin Candele — Ficha comercial de Día de Muertos",
+   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-09-07T07:42:03 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Borrador para catálogo, web y atención a clientes, con precios y condiciones proporcionados por Yasmin. Montos en pesos mexicanos. Texto de presentación Somos Yasmin y Luigi, madre e hijo detrás de Lumin Candele: un sueño familiar inspirado en Italia. Nuestro nomb",
+   "stamp": "20260908"
   },
   {
    "id": "prop-patologicos-vender-el-proyecto-completo-desarrollo-c-20260905-192646",
@@ -25,14 +25,6 @@
    "titulo": "ERC como prueba comercial del proyecto completo de Patológicos",
    "resumen": "Propuesta para revisión · 5 de septiembre de 2026. Basada en documentación local; sin cambios, publicaciones ni acciones externas. 1. Objetivo y por qué importa Vender en patologicos.com el desarrollo completo con IA agéntica mediante una demostración verificable de ERC: del inventario real a una ficha útil, una experiencia visual y una solicitud atendida. La prioridad es conseguir y cargar las primeras propiedades c",
    "stamp": "20260905"
-  },
-  {
-   "id": "prop-piloko-mantener-el-sitio-personal-de-artista-20260831-072133",
-   "proyecto": "piloko",
-   "vocacion": "copy",
-   "titulo": "Propuesta: Piloko como bitácora verificable de ERC",
-   "resumen": "Mantener piloko.com como el archivo vivo de obra y pensamiento de David, usando el progreso real de ERC como su primera serie editorial con sustancia: tecnología, negocio y evidencia. La prioridad operativa sigue siendo ERC: conseguir y cargar las primeras propiedades reales con evidencia. Piloko no debe anunciar avances no comprobados; debe convertir los hallazgos demostrables de ese proceso en una pieza editorial l",
-   "stamp": "20260831"
   },
   {
    "id": "prop-proca-publicar-el-caso-de-estudio-proca-procao-20260905-012652",

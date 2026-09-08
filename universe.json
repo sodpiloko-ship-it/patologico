@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-08T04:02:02",
+ "generatedAt": "2026-09-08T07:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -196,19 +196,14 @@
    "stamp": "20260906"
   },
   {
-   "titulo": "Nomos — cerrar el primer despacho piloto pagado sin distraer ERC",
-   "proyecto": "legal",
-   "stamp": "20260831"
+   "titulo": "Lumin Candele — Ficha comercial de Día de Muertos",
+   "proyecto": "lumin",
+   "stamp": "20260908"
   },
   {
    "titulo": "ERC como prueba comercial del proyecto completo de Patológicos",
    "proyecto": "patologicos",
    "stamp": "20260905"
-  },
-  {
-   "titulo": "Propuesta: Piloko como bitácora verificable de ERC",
-   "proyecto": "piloko",
-   "stamp": "20260831"
   },
   {
    "titulo": "PROCA/PROCAOps: preparar un caso de estudio que venda capacidad demostrable",
@@ -234,9 +229,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
+  "obra: «Lumin Candele — Ficha comercial de Día de Muertos» — lumin",
   "obra: «CAD·CAM·IA: demostrar la revolución de producción con un proyecto reproducible» — cadcamia",
-  "obra: «ERC como prueba comercial del proyecto completo de Patológicos» — patologicos",
-  "obra: «PROCA/PROCAOps: preparar un caso de estudio que venda capacidad demostrable» — proca"
+  "obra: «ERC como prueba comercial del proyecto completo de Patológicos» — patologicos"
  ]
 }
