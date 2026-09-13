@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-13T02:56:07",
+ "generatedAt": "2026-09-13T08:38:16",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 4
  },
  "climate": {
   "ok": 10,
@@ -191,11 +191,6 @@
  ],
  "canon": [
   {
-   "titulo": "CAD·CAM·IA: demostrar la revolución de producción con un proyecto reproducible",
-   "proyecto": "cadcamia",
-   "stamp": "20260906"
-  },
-  {
    "titulo": "Fanatia: conservar las entradas SEO al avanzar hacia membresía",
    "proyecto": "fanatia",
    "stamp": "20260912"
@@ -211,16 +206,6 @@
    "stamp": "20260908"
   },
   {
-   "titulo": "ERC como prueba comercial del proyecto completo de Patológicos",
-   "proyecto": "patologicos",
-   "stamp": "20260905"
-  },
-  {
-   "titulo": "Propuesta: cerrar los 7 huecos SEO de paciente con un CTA medible a `/encuentra-dentista/`",
-   "proyecto": "procadental",
-   "stamp": "20260905"
-  },
-  {
    "titulo": "Picando Tabla: aprobar una compra completa antes de habilitar el cobro online",
    "proyecto": "wine",
    "stamp": "20260908"
@@ -229,7 +214,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "4 obras en el cuerpo de trabajo del universo",
   "obra: «Fanatia: conservar las entradas SEO al avanzar hacia membresía» — fanatia",
   "obra: «Nomos: demo verificable y oferta para cerrar el primer despacho» — legal",
   "obra: «Lumin Candele — Ficha comercial de Día de Muertos» — lumin"

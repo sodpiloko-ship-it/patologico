@@ -1,15 +1,7 @@
 {
- "generatedAt": "2026-09-13T02:56:06",
- "count": 7,
+ "generatedAt": "2026-09-13T08:38:16",
+ "count": 4,
  "items": [
-  {
-   "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20260906-012656",
-   "proyecto": "cadcamia",
-   "vocacion": "seo",
-   "titulo": "CAD·CAM·IA: demostrar la revolución de producción con un proyecto reproducible",
-   "resumen": "Posicionar CAD·CAM·IA como autoridad para hobbistas mostrando el recorrido completo idea → diseño CAD → preparación CAM → pieza física, con una intervención de IA documentada y evaluada. La oportunidad comercial es convertir tutoriales útiles en interés por archivos, kits y formación. Se mantiene WordPress y se prioriza contenido sobre rediseño. Prioridad operativa: ERC conserva el primer lugar conforme al canal. Est",
-   "stamp": "20260906"
-  },
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260912-132649",
    "proyecto": "fanatia",
@@ -33,22 +25,6 @@
    "titulo": "Lumin Candele — Ficha comercial de Día de Muertos",
    "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-09-07T07:42:03 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Borrador para catálogo, web y atención a clientes, con precios y condiciones proporcionados por Yasmin. Montos en pesos mexicanos. Texto de presentación Somos Yasmin y Luigi, madre e hijo detrás de Lumin Candele: un sueño familiar inspirado en Italia. Nuestro nomb",
    "stamp": "20260908"
-  },
-  {
-   "id": "prop-patologicos-vender-el-proyecto-completo-desarrollo-c-20260905-192646",
-   "proyecto": "patologicos",
-   "vocacion": "copy",
-   "titulo": "ERC como prueba comercial del proyecto completo de Patológicos",
-   "resumen": "Propuesta para revisión · 5 de septiembre de 2026. Basada en documentación local; sin cambios, publicaciones ni acciones externas. 1. Objetivo y por qué importa Vender en patologicos.com el desarrollo completo con IA agéntica mediante una demostración verificable de ERC: del inventario real a una ficha útil, una experiencia visual y una solicitud atendida. La prioridad es conseguir y cargar las primeras propiedades c",
-   "stamp": "20260905"
-  },
-  {
-   "id": "prop-procadental-producir-los-7-huecos-de-categoria-sin-c-20260905-132726",
-   "proyecto": "procadental",
-   "vocacion": "seo",
-   "titulo": "Propuesta: cerrar los 7 huecos SEO de paciente con un CTA medible a `/encuentra-dentista/`",
-   "resumen": "Completar las siete categorías sin cobertura en PROCADental —limpieza, blanqueamiento, muela del juicio, resina/empaste, encías, niños y sensibilidad— con una guía canónica por tema y CTA contextual a /encuentra-dentista/. Esto convierte el motor de contenido en una ruta de negocio: búsqueda de paciente → guía confiable → solicitud de dentista. No se publica nada ni se modifica el sitio hasta pasar revisión editorial",
-   "stamp": "20260905"
   },
   {
    "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20260908-072646",
