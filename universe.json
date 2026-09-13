@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-12T19:02:01",
+ "generatedAt": "2026-09-13T02:56:07",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 6
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -201,6 +201,11 @@
    "stamp": "20260912"
   },
   {
+   "titulo": "Nomos: demo verificable y oferta para cerrar el primer despacho",
+   "proyecto": "legal",
+   "stamp": "20260912"
+  },
+  {
    "titulo": "Lumin Candele — Ficha comercial de Día de Muertos",
    "proyecto": "lumin",
    "stamp": "20260908"
@@ -224,9 +229,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "6 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
   "obra: «Fanatia: conservar las entradas SEO al avanzar hacia membresía» — fanatia",
-  "obra: «Lumin Candele — Ficha comercial de Día de Muertos» — lumin",
-  "obra: «Picando Tabla: aprobar una compra completa antes de habilitar el cobro online» — wine"
+  "obra: «Nomos: demo verificable y oferta para cerrar el primer despacho» — legal",
+  "obra: «Lumin Candele — Ficha comercial de Día de Muertos» — lumin"
  ]
 }
