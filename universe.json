@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-14T13:02:02",
+ "generatedAt": "2026-09-14T16:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 6
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -211,6 +211,11 @@
    "stamp": "20260913"
   },
   {
+   "titulo": "PROCAGrillZ: convertir solicitudes en escaneos realizados",
+   "proyecto": "proca",
+   "stamp": "20260914"
+  },
+  {
    "titulo": "Lumin Candele: convertir contenido y SEO en pedidos de Día de Muertos",
    "proyecto": "velas",
    "stamp": "20260913"
@@ -224,9 +229,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "6 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
+  "obra: «PROCAGrillZ: convertir solicitudes en escaneos realizados» — proca",
   "obra: «Piloko: crecer la marca de David con evidencia del avance de ERC» — piloko",
-  "obra: «Lumin Candele: convertir contenido y SEO en pedidos de Día de Muertos» — velas",
-  "obra: «Fanatia: conservar las entradas SEO al avanzar hacia membresía» — fanatia"
+  "obra: «Lumin Candele: convertir contenido y SEO en pedidos de Día de Muertos» — velas"
  ]
 }

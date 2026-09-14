@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-14T13:02:01",
- "count": 6,
+ "generatedAt": "2026-09-14T16:02:01",
+ "count": 7,
  "items": [
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260912-132649",
@@ -33,6 +33,14 @@
    "titulo": "Piloko: crecer la marca de David con evidencia del avance de ERC",
    "resumen": "Propuesta para revisión · 13 de septiembre de 2026. Basada en archivos locales; sin modificaciones, publicaciones ni acciones externas. Fortalecer la marca personal de David mostrando su criterio al construir proyectos: qué decide, qué consigue demostrar y qué aprende. La prioridad inmediata sigue siendo conseguir y cargar las primeras propiedades de ERC con evidencia. Piloko aprovecharía ese trabajo para producir un",
    "stamp": "20260913"
+  },
+  {
+   "id": "prop-proca-procagrillz-llevar-al-cliente-a-escaneo--20260914-132903",
+   "proyecto": "proca",
+   "vocacion": "datos",
+   "titulo": "PROCAGrillZ: convertir solicitudes en escaneos realizados",
+   "resumen": "Propuesta · 14 de septiembre de 2026. Basada en documentación local; sin publicaciones, contactos externos ni cambios de archivos. Objetivo y por qué importa Conseguir que quien solicita unos grillz complete el escaneo intraoral y pueda avanzar a una cotización revisada. La oportunidad inmediata es acompañar las solicitudes existentes hasta ese paso y documentar dónde se detienen. ERC mantiene la prioridad operativa:",
+   "stamp": "20260914"
   },
   {
    "id": "prop-velas-contenido-seo-en-paralelo-20260913-192827",
