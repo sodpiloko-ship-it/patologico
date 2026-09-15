@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-14T19:02:02",
- "count": 7,
+ "generatedAt": "2026-09-14T22:02:03",
+ "count": 8,
  "items": [
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260912-132649",
@@ -40,6 +40,14 @@
    "vocacion": "datos",
    "titulo": "PROCAGrillZ: convertir solicitudes en escaneos realizados",
    "resumen": "Propuesta · 14 de septiembre de 2026. Basada en documentación local; sin publicaciones, contactos externos ni cambios de archivos. Objetivo y por qué importa Conseguir que quien solicita unos grillz complete el escaneo intraoral y pueda avanzar a una cotización revisada. La oportunidad inmediata es acompañar las solicitudes existentes hasta ese paso y documentar dónde se detienen. ERC mantiene la prioridad operativa:",
+   "stamp": "20260914"
+  },
+  {
+   "id": "prop-procagrillz-cerrar-el-embudo-cta-nico-escaneo-intrao-20260914-192826",
+   "proyecto": "procagrillz",
+   "vocacion": "copy",
+   "titulo": "PROCA GrillZ: cerrar el recorrido desde PROCADental hasta el escaneo intraoral",
+   "resumen": "Propuesta · 14 de septiembre de 2026. Basada en documentación y archivos locales; sin cambios ni acciones externas. Convertir la intención de compra del clúster GrillZ de procadental.com en un recorrido consistente: Página de entrada → CTA «Escaneo intraoral» → solicitud registrada → escaneo realizado → cotización → anticipo. La oportunidad concreta es recuperar /listag/, la antigua página de precios, y unificar la a",
    "stamp": "20260914"
   },
   {
