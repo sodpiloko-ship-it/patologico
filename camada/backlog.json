@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-17T04:02:02",
- "count": 9,
+ "generatedAt": "2026-09-17T07:02:02",
+ "count": 7,
  "items": [
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260912-132649",
@@ -25,14 +25,6 @@
    "titulo": "Lumin Candele — Actualización de catálogo y envíos",
    "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-09-16T22:27:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Ficha lista para aplicar en la colección Día de Muertos, con las confirmaciones de Yasmin y los datos del brief del proyecto(/C:/Patologicos/knowledge/lumin-brief.md). Todos los precios están en pesos mexicanos. Catálogo confirmado | Producto | Precio individual |",
    "stamp": "20260916"
-  },
-  {
-   "id": "prop-lumin-fundadora-lumin-candele-ficha-comercial-de-dia-de-muertos-20260908-060224",
-   "proyecto": "lumin",
-   "vocacion": "ventas",
-   "titulo": "Lumin Candele — Ficha comercial de Día de Muertos",
-   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-09-07T07:42:03 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Borrador para catálogo, web y atención a clientes, con precios y condiciones proporcionados por Yasmin. Montos en pesos mexicanos. Texto de presentación Somos Yasmin y Luigi, madre e hijo detrás de Lumin Candele: un sueño familiar inspirado en Italia. Nuestro nomb",
-   "stamp": "20260908"
   },
   {
    "id": "prop-piloko-crecer-marca-personal-20260913-132708",
@@ -65,14 +57,6 @@
    "titulo": "Lumin Candele: convertir contenido y SEO en pedidos de Día de Muertos",
    "resumen": "Aprovechar la página de temporada existente para generar consultas calificadas y pedidos verificables, combinando contenido orgánico con mejoras SEO. El cuello declarado es la demanda; la capacidad de 500 y el margen aproximado del 40% no demuestran ventas actuales ni rentabilidad por producto. ERC conserva la prioridad operativa indicada por el equipo. Lumin avanzaría con un lote pequeño de contenido y ajustes sobre",
    "stamp": "20260913"
-  },
-  {
-   "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20260908-072646",
-   "proyecto": "wine",
-   "vocacion": "ventas",
-   "titulo": "Picando Tabla: aprobar una compra completa antes de habilitar el cobro online",
-   "resumen": "Propuesta · 8 de septiembre de 2026 · Preparada en solo lectura Avanzar de la venta asistida por WhatsApp a una compra online que termine en pago conciliado, pedido recibido por Jessica y entrega viable en CDMX. El objetivo “aprobar prototipo → publicar” necesita actualizarse: los documentos de julio y agosto ya describen una tienda operando por WhatsApp. El siguiente hito es demostrar que el checkout funciona comerc",
-   "stamp": "20260908"
   }
  ]
 }

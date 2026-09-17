@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-17T04:02:02",
+ "generatedAt": "2026-09-17T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 9
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -206,11 +206,6 @@
    "stamp": "20260916"
   },
   {
-   "titulo": "Lumin Candele — Ficha comercial de Día de Muertos",
-   "proyecto": "lumin",
-   "stamp": "20260908"
-  },
-  {
    "titulo": "Piloko: crecer la marca de David con evidencia del avance de ERC",
    "proyecto": "piloko",
    "stamp": "20260913"
@@ -229,17 +224,12 @@
    "titulo": "Lumin Candele: convertir contenido y SEO en pedidos de Día de Muertos",
    "proyecto": "velas",
    "stamp": "20260913"
-  },
-  {
-   "titulo": "Picando Tabla: aprobar una compra completa antes de habilitar el cobro online",
-   "proyecto": "wine",
-   "stamp": "20260908"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "9 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
   "obra: «Lumin Candele — Actualización de catálogo y envíos» — lumin",
   "obra: «PROCAGrillZ: convertir solicitudes en escaneos realizados» — proca",
   "obra: «PROCA GrillZ: cerrar el recorrido desde PROCADental hasta el escaneo intraoral» — procagrillz"
