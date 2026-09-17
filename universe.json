@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-17T07:02:02",
+ "generatedAt": "2026-09-17T10:02:04",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -216,6 +216,11 @@
    "stamp": "20260914"
   },
   {
+   "titulo": "PROCADental: convertir el SEO paciente en referencias por zona",
+   "proyecto": "procadental",
+   "stamp": "20260917"
+  },
+  {
    "titulo": "PROCA GrillZ: cerrar el recorrido desde PROCADental hasta el escaneo intraoral",
    "proyecto": "procagrillz",
    "stamp": "20260914"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «PROCADental: convertir el SEO paciente en referencias por zona» — procadental",
   "obra: «Lumin Candele — Actualización de catálogo y envíos» — lumin",
-  "obra: «PROCAGrillZ: convertir solicitudes en escaneos realizados» — proca",
-  "obra: «PROCA GrillZ: cerrar el recorrido desde PROCADental hasta el escaneo intraoral» — procagrillz"
+  "obra: «PROCAGrillZ: convertir solicitudes en escaneos realizados» — proca"
  ]
 }
