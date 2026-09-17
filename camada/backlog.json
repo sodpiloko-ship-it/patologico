@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-16T22:02:02",
- "count": 8,
+ "generatedAt": "2026-09-17T01:02:02",
+ "count": 9,
  "items": [
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260912-132649",
@@ -17,6 +17,14 @@
    "titulo": "Nomos: demo verificable y oferta para cerrar el primer despacho",
    "resumen": "Convertir el MVP de Nomos en una demostración comercial comprobable y una propuesta lista para el primer piloto pagado, dirigida a despachos mexicanos de 1–5 profesionales. La prioridad operativa inmediata sigue siendo conseguir y cargar las primeras propiedades de ERC con evidencia. Este avance de Nomos debe aprovechar el MVP existente y ocupar capacidad disponible, sin desplazar ese trabajo. | Frente | Baseline doc",
    "stamp": "20260912"
+  },
+  {
+   "id": "prop-lumin-fundadora-lumin-candele-actualizacion-de-catalogo-y-envios-20260916-222908",
+   "proyecto": "lumin",
+   "vocacion": "ventas",
+   "titulo": "Lumin Candele — Actualización de catálogo y envíos",
+   "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-09-16T22:27:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Ficha lista para aplicar en la colección Día de Muertos, con las confirmaciones de Yasmin y los datos del brief del proyecto(/C:/Patologicos/knowledge/lumin-brief.md). Todos los precios están en pesos mexicanos. Catálogo confirmado | Producto | Precio individual |",
+   "stamp": "20260916"
   },
   {
    "id": "prop-lumin-fundadora-lumin-candele-ficha-comercial-de-dia-de-muertos-20260908-060224",
