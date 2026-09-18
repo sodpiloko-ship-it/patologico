@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-18T10:02:01",
+ "generatedAt": "2026-09-18T13:02:01",
  "projects": [
   {
    "id": "patologicos",
@@ -52,7 +52,7 @@
   },
   {
    "id": "piloko",
-   "label": "Piloko — sitio personal de artista",
+   "label": "Piloko — hub de arte e ideas de David ",
    "domain": "piloko.com",
    "health": "ok",
    "progress": 0.92
