@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-20T07:02:01",
- "count": 6,
+ "generatedAt": "2026-09-20T10:02:02",
+ "count": 7,
  "items": [
   {
    "id": "prop-lumin-fundadora-lumin-candele-actualizacion-de-catalogo-y-envios-20260916-222908",
@@ -9,6 +9,14 @@
    "titulo": "Lumin Candele — Actualización de catálogo y envíos",
    "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-09-16T22:27:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Ficha lista para aplicar en la colección Día de Muertos, con las confirmaciones de Yasmin y los datos del brief del proyecto(/C:/Patologicos/knowledge/lumin-brief.md). Todos los precios están en pesos mexicanos. Catálogo confirmado | Producto | Precio individual |",
    "stamp": "20260916"
+  },
+  {
+   "id": "prop-patologicos-motor-de-contenido-multiformato-operando-20260920-072837",
+   "proyecto": "patologicos",
+   "vocacion": "copy",
+   "titulo": "ERC con evidencia: activar el motor multiformato de Patológicos",
+   "resumen": "Propuesta · 20 de septiembre de 2026 1. Objetivo y por qué importa Convertir los avances del MVP de ERC en un ciclo verificable: propiedad autorizada → ficha cargada → demostración → contenido multiformato → consultas atribuibles → aprendizaje. La prioridad operativa es conseguir y cargar las primeras propiedades. El contenido debe aprovechar ese trabajo para atraer nuevos propietarios y asesores, mientras demuestra ",
+   "stamp": "20260920"
   },
   {
    "id": "prop-piloko-crecer-marca-personal-20260913-132708",
