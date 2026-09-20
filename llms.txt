@@ -28,3 +28,74 @@ Este archivo es un resumen de navegación. El catálogo JSON enlazado abajo es l
 
 - PATO: https://patologicos.com/
 - POND: https://patologicos.com/pond/
+
+<!-- blog:inicio -->
+
+## Blog
+- [Blog de Patológicos](https://patologicos.com/blog/): 49 artículos sobre ventas, operación, datos e IA aplicada para dueños de PYME de Latinoamérica, más los ensayos de David Rivera. Escrito por agentes especializados y revisado antes de publicar.
+
+### Ensayos de David Rivera
+Columna de opinión firmada por David Rivera (fundador). Se publicaron originalmente en piloko.com y viven aquí desde el 20 de septiembre de 2026; las URLs viejas redirigen (301). piloko.com quedó dedicado a su obra fotográfica.
+- [📉 Cuando el Bitcoin Caiga, Medio Silicon Valley Caerá con Él](https://patologicos.com/blog/cuando-el-bitcoin-caiga-medio-silicon-valley-caera-con-el/): Por qué las valuaciones de startups dependen más de las criptomonedas de lo que nadie quiere admitir Durante años nos […]
+- [The Bubble | El Colapso multisistemico al caer](https://patologicos.com/blog/the-bubble-el-colapso-multisistemico-al-caer/): Hay algo que he sentido desde hace meses:no es “si” algo grande va a quebrarse…es qué se romperá primero, y […]
+- [BTC: el principio del fin de una burbuja — y el comienzo de algo más grande](https://patologicos.com/blog/btc-el-principio-del-fin-de-una-burbuja-y-el-comienzo-de-algo-mas-grande/): Durante más de 15 años, Bitcoin ha sido uno de los experimentos económicos y sociales más influyentes de la era […]
+- [La caída de NVIDIA](https://patologicos.com/blog/la-caida-de-nvidia/): El ícono que quedará asociado con la burbuja de la inteligencia artificial Uno de los grandes actos de la crisis […]
+- [El Demonio de BlackRock](https://patologicos.com/blog/el-demonio-de-blackrock/): La historia del algoritmo que destruyó la economía del mundo Por David Rivera — Piloko.com Todos bromeábamos con que la […]
+- [Daveconomics: $TSLA, el manifiesto](https://patologicos.com/blog/daveconomics-tsla-el-manifiesto/): ⚠️ Disclaimer:Esto es una opinión personal, no una recomendación de inversión. Tesla ($TSLA) no es un simple stock. Es una […]
+- [Cómo diseñamos nuestra estrategia SEO internacional para el Centro de Diseño PROCA](https://patologicos.com/blog/como-disenamos-nuestra-estrategia-seo-internacional-para-el-centro-de-diseno-proca/): 1. Una visión que comenzó con una idea Cuando imaginé PROCA hace tres años, la meta era clara:crear un centro […]
+- [La imaginación, la nueva frontera profesional](https://patologicos.com/blog/la-imaginacion-la-nueva-frontera-profesional/): Por David Rivera, con la colaboración de ChatGPT La humanidad ha vivido pocas transformaciones comparables a la que estamos presenciando.La […]
+- [Patológicos – Primer Acto: La compañia de medios.](https://patologicos.com/blog/nace-patologicos-inteligencia-artificial-al-servicio-de-los-negocios/): Desde hace casi dos décadas he estado aprendiendo sobre plataformas, publicidad, ventas y negocios.He intentado de todo: vender productos, ofrecer […]
+- [Sora, Grok y Midjourney: la nueva guerra de la inteligencia artificial y la consolidación del blockchain](https://patologicos.com/blog/sora-grok-y-midjourney-blockchain/): Sora, Grok y Midjourney dominan Twitter, Instagram y TikTok. El 2025 marca el inicio de una nueva era digital: la […]
+- [El presente del Trabajo con Inteligencia Artificial](https://patologicos.com/blog/el-presente-del-trabajo-con-inteligencia-artificial/): La discusión sobre el futuro del trabajo ya no es teórica. Cada día vemos más ejemplos de cómo la inteligencia […]
+- [Estrategia de Marketing para Emprendedores en CDMX: Empezar de Cero y Ganar](https://patologicos.com/blog/estrategia-de-marketing-para-emprendedores-en-cdmx-empezar-de-cero-y-ganar/): Empezar de cero no es una desventaja. Es la oportunidad de construir una estrategia clara y funcional, sin la presión […]
+- [KIBi: Cultura, lenguaje y arte digital en la era NFT](https://patologicos.com/blog/kibi-cultura-lenguaje-y-arte-digital-en-la-era-nft/): El arte digital está viviendo una revolución. Con la unión de la inteligencia artificial, el lenguaje y la blockchain, surge […]
+- [IM CEO, BITCH.](https://patologicos.com/blog/im-ceo-bitch/): Hacer www.procadental.com ha sido un viaje increíble. Un barquito con muchos huecos, sí… pero también con muchas manos ayudando a […]
+
+### Build-in-public
+- [Build-in-public: por qué construimos a la vista de todos](https://patologicos.com/blog/build-in-public-por-que/): Mostrar decisiones, pruebas y errores ayuda a ganar confianza y descubrir qué necesita tu cliente antes de gastar de más.
+- [Sitio vivo no es lo mismo que sitio que vende: nuestro estado real (julio 2026)](https://patologicos.com/blog/estado-proyectos-2026-07.html): Tenemos 11 proyectos corriendo y solo uno cobra de verdad; te explicamos por qué eso es una buena noticia y qué paso casi nadie se salta.
+- [El Forense de la Atención: cómo una IA decide qué publicamos](https://patologicos.com/blog/forense-de-la-atencion.html): Sin humo: el método real con el que una IA separa descubrir de producir, y por qué casi nadie lo cuenta.
+
+### Casos
+- [PROCA CORE: el orquestador que opera el laboratorio y ya produce piezas reales](https://patologicos.com/blog/proca-core-procaops.html): Detrás de PROCA no hay un equipo grande: hay un orquestador de agentes —CORE— que investiga, diseña, opera y coordina un laboratorio dental digital de punta a punta. Esta es la prueba, no el folleto, de una plataforma construida con IA para gestionar y diseñar en una industria real.
+- [Picando Tabla: e-commerce de regalo armado con IA](https://patologicos.com/blog/picando-tabla-ecommerce-ia.html): Levantamos una tienda de tablas y maridaje con el mismo motor de IA que usamos para vender en otras verticales.
+- [Nomos: un orquestador jurídico — IA por industria](https://patologicos.com/blog/nomos-orquestador-juridico.html): Un caso práctico de cómo convertir conocimiento vertical en un producto de IA operable, medible y vendible.
+- [PROCA: IA agéntica aplicada a procesos de industria](https://patologicos.com/blog/proca-ia-procesos.html): No es un chatbot. Es un equipo de agentes que coordina, ejecuta y verifica un proceso de negocio de punta a punta.
+- [Velas Lumin: IA para convertir una marca artesanal en un negocio que escala](https://patologicos.com/blog/velas-lumin-ia-comercio.html): Lumin Candele puede hacer 500 velas al mes. El reto nunca fue producirlas: era que la gente supiera que existen.
+
+### Estudios de capacidad
+- [Del catálogo a una solicitud lista para cotizar](https://patologicos.com/blog/del-catalogo-a-una-solicitud-lista-para-cotizar/): Tres prototipos de Pato conectan una selección visual con información para revisar un proyecto de materiales, cocina o mobiliario.
+- [Un asistente para explicar un proyecto de cocina a medida](https://patologicos.com/blog/estudio-asistente-cocina-proyecto/): Un estudio conceptual sobre cómo convertir preferencias de uso, apariencia y espacio en un resumen que pueda revisar un equipo de proyectos a medida.
+- [Explorar materiales y preparar una solicitud con contexto](https://patologicos.com/blog/estudio-explorador-materiales-solicitud/): Un prototipo conceptual que conecta la elección de una referencia de material con las preguntas necesarias para iniciar una conversación sobre el proyecto.
+- [Del mobiliario para eventos a una lista para solicitar cotización](https://patologicos.com/blog/estudio-mobiliario-eventos-lista-cotizacion/): Un prototipo conceptual para reunir familias de mobiliario, variantes, cantidades y contexto del evento en una solicitud que pueda revisarse antes de cotizar.
+
+### Guías para tu negocio
+- [Tu cliente pregunta “¿cómo va mi pedido?”: organiza un taller sin revisar veinte chats](https://patologicos.com/blog/control-pedidos-taller-estados-aprobaciones/): Organiza trabajos de taller con folio, versión, responsable y siguiente paso. Una guía para separar archivos, aprobaciones, producción y entrega.
+- [Cómo cotizar recuerdos para bodas y XV sin rehacer cada presupuesto](https://patologicos.com/blog/cotizar-recuerdos-bodas-xv/): Define cantidades, personalización, empaque, fechas y versión de la propuesta. Un método para cotizar recuerdos sin rehacer cada presupuesto.
+- [Vendo por Instagram: ¿necesito una tienda en línea o un catálogo?](https://patologicos.com/blog/instagram-tienda-en-linea-o-catalogo/): Compara catálogo con solicitud, cotización y tienda transaccional según tu producto. Decide qué canal necesitas sin empezar por la plataforma.
+- [Cómo organizar pedidos de pasteles por WhatsApp sin perder fechas ni anticipos](https://patologicos.com/blog/organizar-pedidos-pasteles-whatsapp/): Organiza pedidos de repostería con una ficha, estados y confirmaciones claras. Separa anticipo, producción y entrega sin reconstruir cada chat.
+- [Página web o sistema de ventas administrado: qué estás contratando](https://patologicos.com/blog/pagina-web-o-sistema-ventas-administrado/): Compara entregables, operación, seguimiento y mantenimiento antes de contratar. Una guía para distinguir una página publicada de un proceso comercial.
+- [Me piden precio y no contestan: cómo mejorar una cotización por WhatsApp](https://patologicos.com/blog/piden-precio-no-contestan-whatsapp/): Revisa qué incluye tu cotización, qué necesita saber el cliente y cuál es el siguiente paso. Ejemplos de respuesta sin presión ni descuentos automáticos.
+
+### Manifiesto
+- [Tu negocio no será irrelevante. Será invisible.](https://patologicos.com/invisible/): Los agentes de IA compararán y contratarán negocios. La nueva ventaja será ser comprensible, verificable y operable.
+- [Qué es Patológicos: una compañía de medios construida con IA](https://patologicos.com/blog/que-es-patologicos.html): Una compañía de medios nativa de IA que se publica a sí misma como prueba. Esto es lo que hacemos y por qué deberías creernos.
+
+### Otros
+- [SEO con IA para PYMES: autoridad que trae clientes](https://patologicos.com/blog/seo-con-ia-para-pymes/): Convierte las preguntas de tus futuros clientes en contenido útil: un sistema con IA para atraer búsquedas, generar confianza y medir ventas.
+- [5 errores al usar IA en tu negocio (y cómo evitarlos)](https://patologicos.com/blog/errores-ia-en-tu-negocio/): La IA acelera un negocio cuando mejora un sistema; cuando tapa uno roto, sólo automatiza el caos.
+- [Orquestar agentes: una persona corriendo lo que antes pedía un equipo](https://patologicos.com/blog/orquestar-agentes-negocio/): Orquestar agentes es convertir un proceso de equipo en un sistema dirigido por una persona, con contexto, controles y métricas.
+- [De idea a tienda en línea: el sistema mínimo para vender ya](https://patologicos.com/blog/de-idea-a-tienda-en-linea/): No necesitas una tienda perfecta para empezar: necesitas una oferta clara, un cobro probado y contenido que atraiga compradores.
+- [Desarrollo de software con IA: cómo construimos productos reales, no demos](https://patologicos.com/blog/desarrollo-de-software-con-ia/): La IA acelera el código; la ingeniería convierte esa velocidad en software confiable, vendible y mantenible.
+- [IA aplicada a industria: qué cambia cuando un agente opera un proceso real](https://patologicos.com/blog/ia-aplicada-a-industria/): Pasar de una IA que responde a una que opera exige límites, trazabilidad y un proceso que pueda detenerse sin perder el control.
+- [Qué automatizar primero en una PYME: proceso, responsable y prueba](https://patologicos.com/blog/automatizar-tu-operacion/): Elige un cuello de botella, define qué registro debe quedar y prueba también las excepciones antes de conectar más tareas.
+- [Herramientas de IA para emprender (y cuáles evitar)](https://patologicos.com/blog/herramientas-ia-para-emprender/): Antes de pagar otra suscripción de IA, identifica qué trabajo resolverá, cuánto cuesta cada resultado y quién revisará la salida.
+- [Cómo dar seguimiento a cotizaciones por WhatsApp con un responsable y un siguiente paso](https://patologicos.com/blog/captar-clientes-whatsapp-ia/): Ordena cotizaciones, responsables y próximas acciones. Un método de seguimiento que conserva el contexto sin convertir el silencio en una ráfaga de mensajes.
+- [Cómo saber si tu sistema comercial funciona: solicitudes, pedidos y cobros](https://patologicos.com/blog/medir-lo-que-importa/): Un tablero mínimo con definiciones claras, responsables y periodos comparables para distinguir interés, atención, pedidos y dinero recibido.
+- [Mi página recibe visitas pero no pedidos: cómo revisar el recorrido de compra](https://patologicos.com/blog/embudo-que-si-cobra/): Revisa oferta, siguiente paso, recepción y atención. Distingue un clic, una solicitud, un pedido y un cobro antes de atribuir el problema al tráfico.
+- [Deja de trabajar más: construye sistemas, no horas](https://patologicos.com/blog/sistemas-no-horas.html): Si tu negocio se detiene cuando tú paras, no tienes una operación: tienes un empleo especialmente demandante.
+- [Tu primer agente de IA: qué tarea delegarle primero](https://patologicos.com/blog/primer-agente-de-ia.html): No automatices todo: delega una tarea repetitiva, medible y de bajo riesgo para aprender a dirigir agentes sin poner en juego tu negocio.
+- [Marketing que corre solo: el sistema de contenido para tu PYME](https://patologicos.com/blog/marketing-que-corre-solo.html): Un sistema simple para crear, aprobar, publicar y mejorar contenido con IA sin soltar el volante.
+- [Cómo lanzar un negocio con IA en 2026: la guía honesta](https://patologicos.com/blog/como-lanzar-negocio-con-ia.html): La IA no crea un negocio por ti; te ayuda a montar un sistema que vende, entrega y aprende más rápido.
+
+<!-- blog:fin -->
