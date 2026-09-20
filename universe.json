@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-20T04:02:02",
+ "generatedAt": "2026-09-20T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 6
  },
  "climate": {
   "ok": 10,
@@ -191,16 +191,6 @@
  ],
  "canon": [
   {
-   "titulo": "Fanatia: conservar las entradas SEO al avanzar hacia membresía",
-   "proyecto": "fanatia",
-   "stamp": "20260912"
-  },
-  {
-   "titulo": "Nomos: demo verificable y oferta para cerrar el primer despacho",
-   "proyecto": "legal",
-   "stamp": "20260912"
-  },
-  {
    "titulo": "Lumin Candele — Actualización de catálogo y envíos",
    "proyecto": "lumin",
    "stamp": "20260916"
@@ -234,7 +224,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "6 obras en el cuerpo de trabajo del universo",
   "obra: «PROCADental: convertir el SEO paciente en referencias por zona» — procadental",
   "obra: «Lumin Candele — Actualización de catálogo y envíos» — lumin",
   "obra: «PROCAGrillZ: convertir solicitudes en escaneos realizados» — proca"

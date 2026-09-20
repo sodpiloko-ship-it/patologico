@@ -1,23 +1,7 @@
 {
- "generatedAt": "2026-09-20T04:02:02",
- "count": 8,
+ "generatedAt": "2026-09-20T07:02:01",
+ "count": 6,
  "items": [
-  {
-   "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260912-132649",
-   "proyecto": "fanatia",
-   "vocacion": "seo",
-   "titulo": "Fanatia: conservar las entradas SEO al avanzar hacia membresía",
-   "resumen": "Propuesta para revisión · 12 de septiembre de 2026. Basada en documentación local; sin cambios de archivos, consultas externas, publicaciones ni envíos por Telegram. Preservar las URLs, redirecciones y enlaces internos que ya atraen visitantes a Fanatia mientras se incorpora el acceso privado a fotografías. El valor comercial es conservar la adquisición existente para convertirla en registros y, cuando esté habilitad",
-   "stamp": "20260912"
-  },
-  {
-   "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20260912-192706",
-   "proyecto": "legal",
-   "vocacion": "investigacion",
-   "titulo": "Nomos: demo verificable y oferta para cerrar el primer despacho",
-   "resumen": "Convertir el MVP de Nomos en una demostración comercial comprobable y una propuesta lista para el primer piloto pagado, dirigida a despachos mexicanos de 1–5 profesionales. La prioridad operativa inmediata sigue siendo conseguir y cargar las primeras propiedades de ERC con evidencia. Este avance de Nomos debe aprovechar el MVP existente y ocupar capacidad disponible, sin desplazar ese trabajo. | Frente | Baseline doc",
-   "stamp": "20260912"
-  },
   {
    "id": "prop-lumin-fundadora-lumin-candele-actualizacion-de-catalogo-y-envios-20260916-222908",
    "proyecto": "lumin",
