@@ -1,7 +1,15 @@
 {
- "generatedAt": "2026-09-20T13:02:01",
- "count": 7,
+ "generatedAt": "2026-09-20T16:02:01",
+ "count": 8,
  "items": [
+  {
+   "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260920-132847",
+   "proyecto": "cadcamia",
+   "vocacion": "seo",
+   "titulo": "CAD CAM IA: reactivar tres contenidos y medir intención de compra",
+   "resumen": "1. Objetivo y por qué importa Reactivar CADCAMIA con un piloto editorial: recuperar tres artículos para hobbistas, conectarlos como recorrido de aprendizaje y medir si generan interés comercial. Mantener WordPress como plataforma indicada por el equipo; estilos y branding quedan para después. ERC conserva la prioridad operativa. Este piloto debe avanzar con capacidad editorial disponible, sin quitar responsables a la",
+   "stamp": "20260920"
+  },
   {
    "id": "prop-lumin-fundadora-lumin-candele-actualizacion-de-catalogo-y-envios-20260916-222908",
    "proyecto": "lumin",
