@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-21T22:02:01",
- "count": 8,
+ "generatedAt": "2026-09-22T07:02:01",
+ "count": 4,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260920-132847",
@@ -27,44 +27,12 @@
    "stamp": "20260920"
   },
   {
-   "id": "prop-piloko-crecer-marca-personal-20260913-132708",
-   "proyecto": "piloko",
-   "vocacion": "copy",
-   "titulo": "Piloko: crecer la marca de David con evidencia del avance de ERC",
-   "resumen": "Propuesta para revisión · 13 de septiembre de 2026. Basada en archivos locales; sin modificaciones, publicaciones ni acciones externas. Fortalecer la marca personal de David mostrando su criterio al construir proyectos: qué decide, qué consigue demostrar y qué aprende. La prioridad inmediata sigue siendo conseguir y cargar las primeras propiedades de ERC con evidencia. Piloko aprovecharía ese trabajo para producir un",
-   "stamp": "20260913"
-  },
-  {
-   "id": "prop-proca-procagrillz-llevar-al-cliente-a-escaneo--20260914-132903",
-   "proyecto": "proca",
-   "vocacion": "datos",
-   "titulo": "PROCAGrillZ: convertir solicitudes en escaneos realizados",
-   "resumen": "Propuesta · 14 de septiembre de 2026. Basada en documentación local; sin publicaciones, contactos externos ni cambios de archivos. Objetivo y por qué importa Conseguir que quien solicita unos grillz complete el escaneo intraoral y pueda avanzar a una cotización revisada. La oportunidad inmediata es acompañar las solicitudes existentes hasta ese paso y documentar dónde se detienen. ERC mantiene la prioridad operativa:",
-   "stamp": "20260914"
-  },
-  {
    "id": "prop-procadental-rumbo-a-10-000-visitas-mes-seo-paciente--20260917-072750",
    "proyecto": "procadental",
    "vocacion": "seo",
    "titulo": "PROCADental: convertir el SEO paciente en referencias por zona",
    "resumen": "Propuesta al 17 de septiembre de 2026. Preparar un piloto sobre tres guías existentes y /encuentra-dentista/, con medición de solicitudes y referencias reales. ERC conserva la prioridad operativa. Esta entrega es documental: no se modificó ni publicó nada. Avanzar hacia 10,000 visitas mensuales, definiendo “visitas” como sesiones GA4 para evitar ambigüedad. El recorrido será: Búsqueda de paciente CDMX → guía → /encue",
    "stamp": "20260917"
-  },
-  {
-   "id": "prop-procagrillz-cerrar-el-embudo-cta-nico-escaneo-intrao-20260914-192826",
-   "proyecto": "procagrillz",
-   "vocacion": "copy",
-   "titulo": "PROCA GrillZ: cerrar el recorrido desde PROCADental hasta el escaneo intraoral",
-   "resumen": "Propuesta · 14 de septiembre de 2026. Basada en documentación y archivos locales; sin cambios ni acciones externas. Convertir la intención de compra del clúster GrillZ de procadental.com en un recorrido consistente: Página de entrada → CTA «Escaneo intraoral» → solicitud registrada → escaneo realizado → cotización → anticipo. La oportunidad concreta es recuperar /listag/, la antigua página de precios, y unificar la a",
-   "stamp": "20260914"
-  },
-  {
-   "id": "prop-velas-contenido-seo-en-paralelo-20260913-192827",
-   "proyecto": "velas",
-   "vocacion": "ventas",
-   "titulo": "Lumin Candele: convertir contenido y SEO en pedidos de Día de Muertos",
-   "resumen": "Aprovechar la página de temporada existente para generar consultas calificadas y pedidos verificables, combinando contenido orgánico con mejoras SEO. El cuello declarado es la demanda; la capacidad de 500 y el margen aproximado del 40% no demuestran ventas actuales ni rentabilidad por producto. ERC conserva la prioridad operativa indicada por el equipo. Lumin avanzaría con un lote pequeño de contenido y ajustes sobre",
-   "stamp": "20260913"
   }
  ]
 }

@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-21T22:02:02",
+ "generatedAt": "2026-09-22T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 4
  },
  "climate": {
   "ok": 10,
@@ -206,35 +206,15 @@
    "stamp": "20260920"
   },
   {
-   "titulo": "Piloko: crecer la marca de David con evidencia del avance de ERC",
-   "proyecto": "piloko",
-   "stamp": "20260913"
-  },
-  {
-   "titulo": "PROCAGrillZ: convertir solicitudes en escaneos realizados",
-   "proyecto": "proca",
-   "stamp": "20260914"
-  },
-  {
    "titulo": "PROCADental: convertir el SEO paciente en referencias por zona",
    "proyecto": "procadental",
    "stamp": "20260917"
-  },
-  {
-   "titulo": "PROCA GrillZ: cerrar el recorrido desde PROCADental hasta el escaneo intraoral",
-   "proyecto": "procagrillz",
-   "stamp": "20260914"
-  },
-  {
-   "titulo": "Lumin Candele: convertir contenido y SEO en pedidos de Día de Muertos",
-   "proyecto": "velas",
-   "stamp": "20260913"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "4 obras en el cuerpo de trabajo del universo",
   "obra: «CAD CAM IA: reactivar tres contenidos y medir intención de compra» — cadcamia",
   "obra: «ERC con evidencia: activar el motor multiformato de Patológicos» — patologicos",
   "obra: «PROCADental: convertir el SEO paciente en referencias por zona» — procadental"
