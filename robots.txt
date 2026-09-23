@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /sandbox/
 Disallow: /novela/
+Disallow: /kit-ventas-ia/pago/
+Disallow: /kit-ventas-ia/gracias/
 
 Sitemap: https://patologicos.com/sitemap.xml

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dudas del playbook | Pato</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Envía tu duda del playbook Oferta, Tráfico y WhatsApp al equipo de Patológicos.">
+<meta name="theme-color" content="#191A16">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XESKPMDFSR');</script>
+<style>
+  :root{--bg:#F4F3EE;--ink:#191A16;--mute:#5E5F57;--line:#E0DED5;--lime:#C8ED4B;--card:#FBFAF7}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Hanken Grotesk',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px 64px}
+  header{display:flex;align-items:center;height:60px;border-bottom:1px solid var(--line);margin-bottom:36px}
+  .logo{font-family:'Space Grotesk';font-weight:700;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:8px}
+  .logo i{width:22px;height:22px;border-radius:7px;background:var(--lime);display:grid;place-items:center}
+  .logo i:after{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink)}
+  h1{font-family:'Space Grotesk';letter-spacing:-.025em;line-height:1.08;font-size:clamp(32px,6vw,44px);margin:0 0 12px}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#5c7a12;margin-bottom:10px}
+  .lead{color:#3a3b35;margin:0 0 28px}
+  form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+  label{display:block;font-weight:700;font-size:15px;margin:0 0 6px}
+  .hint{display:block;font-weight:400;color:var(--mute);font-size:13.5px}
+  input,textarea{width:100%;font:inherit;font-size:16px;border:1px solid #cfcdc4;border-radius:10px;padding:12px 14px;background:#fff;color:var(--ink);margin-bottom:18px}
+  textarea{min-height:130px;resize:vertical}
+  input:focus,textarea:focus{outline:2px solid var(--lime);border-color:var(--ink)}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:var(--bg);font-weight:700;font-size:16px;padding:15px 24px;border-radius:999px;border:0;cursor:pointer;text-decoration:none}
+  .btn.lime{background:var(--lime);color:var(--ink)}
+  .btn[hidden]{display:none}
+  .err{color:#a33a26;font-size:14px;margin:0 0 12px;min-height:1em}
+  .note{font-size:14px;color:var(--mute);margin-top:18px}
+  ol{padding-left:20px;margin:0 0 28px}
+  li{margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a class="logo" href="../../"><i></i>pato</a></header>
+  <div class="kicker">Playbook Oferta, Tráfico y WhatsApp</div>
+  <h1>¿Tienes una duda? Escríbenos.</h1>
+  <p class="lead">Te respondemos por WhatsApp en días hábiles, adaptado a tu negocio. Incluido por <span data-cfg="dias">90</span> días desde tu compra. Próximamente, tus respuestas quedarán guardadas en tu Biblioteca en patologicos.com.</p>
+
+  <form id="duda" novalidate>
+    <label for="codigo">Código de la parte <span class="hint">Por ejemplo E2, P-08 o M-04. Está en el PDF junto a cada prompt.</span></label>
+    <input id="codigo" name="codigo" maxlength="12" autocomplete="off" placeholder="P-08">
+    <label for="correo">Correo con el que compraste <span class="hint">Para verificar tu compra y darte acceso a la Biblioteca cuando abra.</span></label>
+    <input id="correo" name="correo" type="email" autocomplete="email" placeholder="tu@correo.com">
+    <label for="texto">Tu duda <span class="hint">Cuéntanos qué vendes y dónde te atoraste. No incluyas datos de tus clientes.</span></label>
+    <textarea id="texto" name="texto" maxlength="1200" placeholder="Vendo pasteles personalizados en Guadalajara y no sé qué páginas hacer primero…"></textarea>
+    <p class="err" id="err" role="alert"></p>
+    <div class="btns">
+      <button class="btn lime" type="submit" id="btn-wa" data-canal="whatsapp" hidden>Enviar por WhatsApp</button>
+      <button class="btn" type="submit" id="btn-mail" data-canal="correo">Enviar por correo</button>
+    </div>
+    <p class="note">Se abre tu WhatsApp o tu correo con el mensaje ya escrito; solo tienes que enviarlo.</p>
+  </form>
+</div>
+<script>
+/* Número de WhatsApp de soporte del playbook (código de país + número, solo dígitos).
+   Vacío = solo se ofrece el correo. El PDF apunta a esta página, así que el número
+   se puede configurar o cambiar sin reimprimir PDFs ya vendidos. */
+var WA_SOPORTE = "525540507302";
+var CORREO = "hola@patologicos.com";
+(function(){
+  var form = document.getElementById("duda");
+  var codigo = document.getElementById("codigo");
+  var correo = document.getElementById("correo");
+  var texto = document.getElementById("texto");
+  var err = document.getElementById("err");
+  var btnWa = document.getElementById("btn-wa");
+  // Solo acepta un código del PDF (E2, P-08, M-4…) y lo normaliza; cualquier otra cosa se ignora.
+  var m = (new URLSearchParams(location.search).get("p") || "").toUpperCase().match(/\b([EPMAFT])-?(\d{1,2})\b/);
+  var p = !m ? "" : m[1] === "E" ? "E" + m[2] : m[1] + "-" + ("PM".indexOf(m[1]) >= 0 && m[2].length < 2 ? "0" + m[2] : m[2]);
+  if (p) codigo.value = p;
+  if (/^\d{10,15}$/.test(WA_SOPORTE)) { btnWa.hidden = false; }
+  try { gtag("event", "kit_duda_view", {parte: p || "sin_codigo"}); } catch (e) {}
+  var canal = btnWa.hidden ? "correo" : "whatsapp";
+  document.querySelectorAll("button[data-canal]").forEach(function(b){
+    b.addEventListener("click", function(){ canal = b.getAttribute("data-canal"); });
+  });
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var c = codigo.value.trim().toUpperCase(), m = correo.value.trim(), t = texto.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m)) { err.textContent = "Escribe el correo con el que compraste."; correo.focus(); return; }
+    if (t.length < 10) { err.textContent = "Cuéntanos tu duda con un poco más de detalle."; texto.focus(); return; }
+    err.textContent = "";
+    var msg = "Hola, compré el playbook Oferta, Tráfico y WhatsApp.\n" +
+              "Código: " + (c || "sin código") + "\n" +
+              "Correo de compra: " + m + "\n" +
+              "Mi duda: " + t;
+    try { gtag("event", "kit_duda_click", {parte: c || "sin_codigo", canal: canal}); } catch (e) {}
+    if (canal === "whatsapp" && !btnWa.hidden) {
+      location.href = "https://wa.me/" + WA_SOPORTE + "?text=" + encodeURIComponent(msg);
+    } else {
+      location.href = "mailto:" + CORREO + "?subject=" + encodeURIComponent("Duda del playbook · " + (c || "sin código")) +
+                      "&body=" + encodeURIComponent(msg);
+    }
+  });
+})();
+</script>
+</body>
+</html>
