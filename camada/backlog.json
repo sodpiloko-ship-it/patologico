@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-23T07:02:02",
- "count": 6,
+ "generatedAt": "2026-09-23T10:02:01",
+ "count": 7,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260920-132847",
@@ -33,6 +33,14 @@
    "titulo": "ERC con evidencia: activar el motor multiformato de Patológicos",
    "resumen": "Propuesta · 20 de septiembre de 2026 1. Objetivo y por qué importa Convertir los avances del MVP de ERC en un ciclo verificable: propiedad autorizada → ficha cargada → demostración → contenido multiformato → consultas atribuibles → aprendizaje. La prioridad operativa es conseguir y cargar las primeras propiedades. El contenido debe aprovechar ese trabajo para atraer nuevos propietarios y asesores, mientras demuestra ",
    "stamp": "20260920"
+  },
+  {
+   "id": "prop-piloko-crecer-marca-personal-20260923-072702",
+   "proyecto": "piloko",
+   "vocacion": "copy",
+   "titulo": "Propuesta: crecer la marca de David con Piloko y reportar el avance real de ERC",
+   "resumen": "Hacer de Piloko la referencia de David como fotógrafo y creador, con un camino claro del portafolio al contacto comercial. La instrucción más reciente del equipo pide, además, un reporte de progreso de ERC: cuántas páginas están arriba y si existe un demo del render. Ese dato debe verificarse antes de presentarlo como avance. Mantener la ejecución del MVP en curso y usar una bitácora breve de David para mostrar traba",
+   "stamp": "20260923"
   },
   {
    "id": "prop-procadental-rumbo-a-10-000-visitas-mes-seo-paciente--20260917-072750",
