@@ -66,17 +66,39 @@ function ptlg_path_within(string $path, string $root): bool {
   return strpos($path, $root) === 0;
 }
 
-/** Raíz privada (debe existir y estar FUERA del document root) o false. */
+/**
+ * Raíz privada (debe existir y estar FUERA del document root) o false.
+ * Se aceptan las ubicaciones en que suele quedar al subirla por hPanel: la canónica (junto a public_html),
+ * la anidada que deja "Extraer" (propone una carpeta con el nombre del zip) y la raíz de la cuenta.
+ * Se elige la primera que tenga mercadopago.php; si ninguna lo tiene, la primera que exista.
+ */
 function ptlg_private_root() {
   static $cache = null;
   if ($cache !== null) return $cache;
   $docroot = @realpath((string)($_SERVER['DOCUMENT_ROOT'] ?? ''));
   if ($docroot === false || !is_dir($docroot)) return $cache = false;
+  $sep = DIRECTORY_SEPARATOR;
   $configurada = trim((string)getenv('PTLG_PRIVATE_DIR'));
-  $candidata = $configurada !== '' ? $configurada : dirname($docroot) . DIRECTORY_SEPARATOR . 'patologicos-private';
-  $real = @realpath($candidata);
-  if ($real === false || !is_dir($real) || is_link($candidata) || ptlg_path_within($real, $docroot)) return $cache = false;
-  return $cache = $real;
+  $candidatas = [];
+  if ($configurada !== '') {
+    $candidatas[] = $configurada;
+  } else {
+    $junto = dirname($docroot) . $sep . 'patologicos-private';
+    $candidatas[] = $junto;
+    $candidatas[] = $junto . $sep . 'patologicos-private';
+    if (preg_match('~\A(/home/[^/]+)/~', str_replace('\\', '/', $docroot), $m) === 1) {
+      $candidatas[] = $m[1] . '/patologicos-private';
+      $candidatas[] = $m[1] . '/patologicos-private/patologicos-private';
+    }
+  }
+  $validas = [];
+  foreach (array_unique($candidatas) as $candidata) {
+    $real = @realpath($candidata);
+    if ($real === false || !is_dir($real) || is_link($candidata) || ptlg_path_within($real, $docroot)) continue;
+    if (is_file($real . $sep . 'mercadopago.php')) return $cache = $real;
+    $validas[] = $real;
+  }
+  return $cache = ($validas[0] ?? false);
 }
 
 function ptlg_private_mode(string $path, int $mode): bool {
