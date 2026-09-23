@@ -18,6 +18,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XESKPMDFSR');</script>
+<script>
+/* A/B de la landing: variante por visitante (50/50), persistente; ?ab=A|B la fuerza (QA). Se decide antes de pintar. */
+(function(){var v="A";try{var q=new URLSearchParams(location.search).get("ab");v=(q==="A"||q==="B")?q:localStorage.getItem("ptlg_ab");
+if(v!=="A"&&v!=="B"){v=Math.random()<0.5?"A":"B";}localStorage.setItem("ptlg_ab",v);}catch(e){if(v!=="B")v="A";}
+document.documentElement.setAttribute("data-ab",v);})();
+</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1476266257879276');fbq('track','PageView');fbq('track','ViewContent',{content_ids:['kit-ventas-ia'],content_type:'product',value:349,currency:'MXN'});</script>
 <script type="application/ld+json">
 [{"@context":"https://schema.org","@type":"Product","name":"Oferta, Tráfico y WhatsApp — el playbook que tu IA ejecuta","description":"Playbook digital para vender con IA en Latinoamérica. Se sube a ChatGPT, Claude o Gemini y el asistente guía paso a paso: oferta específica, tráfico orgánico (SEO y búsqueda en IA), tráfico pagado y ventas por WhatsApp. Incluye instrucciones para el asistente, Ficha del negocio, 37 prompts, 15 mensajes de venta, hoja de seguimiento, bonus para construir un sitio con Claude Code o ChatGPT y 90 días de dudas por WhatsApp.","image":"https://patologicos.com/kit-ventas-ia/img/portada.jpg","brand":{"@type":"Brand","name":"Patológicos"},"offers":{"@type":"Offer","price":"349","priceCurrency":"MXN","availability":"https://schema.org/InStock","url":"https://patologicos.com/kit-ventas-ia/"}},
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -44,6 +51,10 @@
   .kicker{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#5c7a12;margin-bottom:12px}
   .hero h1{font-size:clamp(44px,6.4vw,72px)}
   .hero h1 em{font-style:normal;background:var(--lime);padding:0 .12em;border-radius:.12em}
+  .hero .h1{font-family:'Space Grotesk',sans-serif;letter-spacing:-.025em;line-height:1.08;margin:0;font-weight:700;font-size:clamp(38px,5.4vw,60px)}
+  .hero .h1 em{font-style:normal;background:var(--lime);padding:0 .12em;border-radius:.12em}
+  html[data-ab="B"] .ab-a{display:none}
+  html:not([data-ab="B"]) .ab-b{display:none}
   .sub{font-size:19px;color:#3a3b35;margin:18px 0 22px;max-width:34em}
   .checks{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:8px}
   .checks li{display:flex;gap:10px;align-items:flex-start}
@@ -130,8 +141,10 @@
   <div class="hero">
     <div>
       <div class="kicker">Playbook que tu IA ejecuta · LATAM</div>
-      <h1>Oferta. Tráfico. <em>WhatsApp.</em></h1>
-      <p class="sub">No es un curso para leer: es un PDF que subes a <b>ChatGPT, Claude o Gemini</b> y tu IA te guía paso a paso para crear tu oferta, atraer tráfico orgánico y pagado, y cerrar ventas por WhatsApp.</p>
+      <h1 class="ab-a">Oferta. Tráfico. <em>WhatsApp.</em></h1>
+      <p class="h1 ab-b" role="heading" aria-level="1">Tus clientes ya le preguntan a la IA. <em>¿Te recomienda a ti?</em></p>
+      <p class="sub ab-a">No es un curso para leer: es un PDF que subes a <b>ChatGPT, Claude o Gemini</b> y tu IA te guía paso a paso para crear tu oferta, atraer tráfico orgánico y pagado, y cerrar ventas por WhatsApp.</p>
+      <p class="sub ab-b">Sube este playbook a <b>ChatGPT, Claude o Gemini</b> y tu IA te guía paso a paso para que te encuentren y te compren: una oferta clara, tráfico orgánico y pagado, y ventas por WhatsApp.</p>
       <ul class="checks">
         <li><span><b>Tu IA lo ejecuta contigo:</b> trae instrucciones para el asistente, la Ficha de tu negocio y 37 prompts con código. Escribes “Ejecuta P-08” y listo.</span></li>
         <li><span><b>Orgánico + pagado, con 4 casos reales:</b> un nicho sin anuncios que llevó sus visitas desde IAs de 15 a 161, y PROCA, con 2,440 conversaciones de WhatsApp desde anuncios.</span></li>
@@ -339,19 +352,21 @@ var PRICE = 349;
     if(!CHECKOUT_URL) return "#comprar";
     var u = new URL(CHECKOUT_URL, location.href);
     // El origen viaja a la compra (qué anuncio y qué botón vendió): crear.php lo guarda con el folio.
-    ["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach(function(k){ if (qs.get(k)) u.searchParams.set(k, qs.get(k)); });
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach(function(k){ if (qs.get(k)) u.searchParams.set(k, qs.get(k)); });
     u.searchParams.set("pos", pos);
+    u.searchParams.set("ab", AB);
     return u.toString();
   }
+  var AB = document.documentElement.getAttribute("data-ab") === "B" ? "B" : "A";
   var item = {item_id:"kit-ventas-ia", item_name:"Oferta, Tráfico y WhatsApp", price:PRICE};
-  try{ gtag("event","view_item",{currency:"MXN",value:PRICE,items:[item]}); }catch(e){}
+  try{ gtag("event","view_item",{currency:"MXN",value:PRICE,items:[item],ab_variante:AB}); gtag("event","ab_"+AB.toLowerCase()+"_vista"); }catch(e){}
   document.querySelectorAll(".js-buy").forEach(function(a){
     var pos = a.getAttribute("data-pos");
     a.href = checkoutHref(pos);
     a.rel = "nofollow";
     a.addEventListener("click", function(){
-      try{ gtag("event","begin_checkout",{currency:"MXN",value:PRICE,items:[item],cta_position:pos}); }catch(e){}
-      try{ if(window.fbq) fbq("track","InitiateCheckout",{currency:"MXN",value:PRICE}); }catch(e){}
+      try{ gtag("event","begin_checkout",{currency:"MXN",value:PRICE,items:[item],cta_position:pos,ab_variante:AB}); gtag("event","ab_"+AB.toLowerCase()+"_checkout"); }catch(e){}
+      try{ if(window.fbq) fbq("track","InitiateCheckout",{currency:"MXN",value:PRICE,content_ids:["kit-ventas-ia"],content_type:"product"}); }catch(e){}
     });
   });
   document.querySelectorAll(".copy").forEach(function(b){

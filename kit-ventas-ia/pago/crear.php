@@ -13,7 +13,7 @@ if (ptlg_config() === false) {
 
 $folio = ptlg_nuevo_folio();
 $utm = [];
-foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'pos'] as $clave) {
+foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'pos', 'ab'] as $clave) {
   $valor = (string)($_GET[$clave] ?? '');
   if ($valor !== '' && preg_match('/\A[\w.\-|]{1,80}\z/', $valor) === 1) $utm[$clave] = $valor;
 }
