@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-23T13:02:02",
+ "generatedAt": "2026-09-23T16:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -201,6 +201,11 @@
    "stamp": "20260923"
   },
   {
+   "titulo": "Nomos: avanzar hacia el primer piloto pagado con un reporte verificable",
+   "proyecto": "legal",
+   "stamp": "20260923"
+  },
+  {
    "titulo": "Lumin Candele — Actualización de catálogo y envíos",
    "proyecto": "lumin",
    "stamp": "20260916"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets» — fanatia",
-  "obra: «Propuesta: crecer la marca de David con Piloko y reportar el avance real de ERC» — piloko",
-  "obra: «Picando Tabla: aprobar una compra completa y preparar la tienda para publicar» — wine"
+  "obra: «Nomos: avanzar hacia el primer piloto pagado con un reporte verificable» — legal",
+  "obra: «Propuesta: crecer la marca de David con Piloko y reportar el avance real de ERC» — piloko"
  ]
 }

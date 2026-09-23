@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-23T13:02:02",
- "count": 7,
+ "generatedAt": "2026-09-23T16:02:01",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260920-132847",
@@ -16,6 +16,14 @@
    "vocacion": "seo",
    "titulo": "Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets",
    "resumen": "Conservar las URLs y la estructura indexable de fanatia.com durante su enfoque en fotografía real 18+, membresía y venta de sets. El activo ya trae audiencia: el corte de GA4 del 20 de septiembre registró 809 sesiones en 28 días, 444 de búsqueda orgánica; aproximadamente 86 % del orgánico procedía del ecosistema Bing. Romper una URL de entrada puede cortar ese recorrido antes de que exista un cobro propio. Preparar u",
+   "stamp": "20260923"
+  },
+  {
+   "id": "prop-legal-primer-cliente-piloto-de-pago-20260923-132647",
+   "proyecto": "legal",
+   "vocacion": "investigacion",
+   "titulo": "Nomos: avanzar hacia el primer piloto pagado con un reporte verificable",
+   "resumen": "Cerrar un despacho litigante mexicano como primer piloto pagado de Nomos. El pago confirmado, junto con un flujo útil para el abogado, daría una señal comercial que los datos de demostración no pueden dar. Las instrucciones recientes piden reportar cómo va ERC, incluidas las páginas y el render. Ese reporte debe entrar en el siguiente corte operativo mientras David lleva la relación con el posible piloto de Nomos. En",
    "stamp": "20260923"
   },
   {
