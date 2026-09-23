@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-23T01:02:02",
- "count": 5,
+ "generatedAt": "2026-09-23T04:02:02",
+ "count": 6,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260920-132847",
@@ -9,6 +9,14 @@
    "titulo": "CAD CAM IA: reactivar tres contenidos y medir intención de compra",
    "resumen": "1. Objetivo y por qué importa Reactivar CADCAMIA con un piloto editorial: recuperar tres artículos para hobbistas, conectarlos como recorrido de aprendizaje y medir si generan interés comercial. Mantener WordPress como plataforma indicada por el equipo; estilos y branding quedan para después. ERC conserva la prioridad operativa. Este piloto debe avanzar con capacidad editorial disponible, sin quitar responsables a la",
    "stamp": "20260920"
+  },
+  {
+   "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260923-012635",
+   "proyecto": "fanatia",
+   "vocacion": "seo",
+   "titulo": "Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets",
+   "resumen": "Conservar las URLs y la estructura indexable de fanatia.com durante su enfoque en fotografía real 18+, membresía y venta de sets. El activo ya trae audiencia: el corte de GA4 del 20 de septiembre registró 809 sesiones en 28 días, 444 de búsqueda orgánica; aproximadamente 86 % del orgánico procedía del ecosistema Bing. Romper una URL de entrada puede cortar ese recorrido antes de que exista un cobro propio. Preparar u",
+   "stamp": "20260923"
   },
   {
    "id": "prop-lumin-fundadora-lumin-candele-actualizacion-de-catalogo-y-envios-20260916-222908",

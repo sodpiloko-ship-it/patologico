@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-23T01:02:02",
+ "generatedAt": "2026-09-23T04:02:02",
  "projects": [
   {
    "id": "patologicos",
@@ -10,7 +10,7 @@
   },
   {
    "id": "procadental",
-   "label": "Hub educativo de pacientes",
+   "label": "Sitio 100% pacientes",
    "domain": "procadental.com",
    "health": "ok",
    "progress": 0.92

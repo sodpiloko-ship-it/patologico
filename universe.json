@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-23T01:02:02",
+ "generatedAt": "2026-09-23T04:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 5
+  "obras": 6
  },
  "climate": {
   "ok": 10,
@@ -196,6 +196,11 @@
    "stamp": "20260920"
   },
   {
+   "titulo": "Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets",
+   "proyecto": "fanatia",
+   "stamp": "20260923"
+  },
+  {
    "titulo": "Lumin Candele — Actualización de catálogo y envíos",
    "proyecto": "lumin",
    "stamp": "20260916"
@@ -219,9 +224,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "5 obras en el cuerpo de trabajo del universo",
+  "6 obras en el cuerpo de trabajo del universo",
+  "obra: «Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets» — fanatia",
   "obra: «Picando Tabla: aprobar una compra completa y preparar la tienda para publicar» — wine",
-  "obra: «CAD CAM IA: reactivar tres contenidos y medir intención de compra» — cadcamia",
-  "obra: «ERC con evidencia: activar el motor multiformato de Patológicos» — patologicos"
+  "obra: «CAD CAM IA: reactivar tres contenidos y medir intención de compra» — cadcamia"
  ]
 }
