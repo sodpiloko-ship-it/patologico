@@ -379,11 +379,21 @@ var PRICE = 349;
     var pos = a.getAttribute("data-pos");
     a.href = checkoutHref(pos);
     a.rel = "nofollow";
-    a.addEventListener("click", function(){
+    a.addEventListener("click", function(ev){
+      // crear.php tarda ~1 s en abrir Mercado Pago: sin aviso, en el celular se toca dos veces y se crean dos pedidos.
+      if (a.getAttribute("aria-busy") === "true") { ev.preventDefault(); return; }
       try{ gtag("event","begin_checkout",{currency:"MXN",value:PRICE,items:[item],cta_position:pos,ab_variante:AB}); gtag("event","ab_"+AB.toLowerCase()+"_checkout"); }catch(e){}
       try{ if(window.fbq) fbq("track","InitiateCheckout",{currency:"MXN",value:PRICE,content_ids:["kit-ventas-ia"],content_type:"product"}); }catch(e){}
+      if (!CHECKOUT_URL) return;
+      a.setAttribute("aria-busy", "true");
+      a.setAttribute("data-txt", a.textContent);
+      a.textContent = "Abriendo Mercado Pago…";
+      setTimeout(function(){ libera(a); }, 8000);
     });
   });
+  function libera(a){ if (a.getAttribute("aria-busy") === "true") { a.textContent = a.getAttribute("data-txt"); a.removeAttribute("aria-busy"); } }
+  // Al volver desde Mercado Pago con "atrás", el navegador restaura la página tal cual: el botón vuelve a su texto.
+  window.addEventListener("pageshow", function(){ document.querySelectorAll(".js-buy").forEach(libera); });
   document.querySelectorAll(".copy").forEach(function(b){
     b.addEventListener("click", function(){
       var t = document.getElementById(b.getAttribute("data-copy")).innerText;
