@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-24T07:02:01",
- "count": 7,
+ "generatedAt": "2026-09-24T10:02:02",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260920-132847",
@@ -49,6 +49,14 @@
    "titulo": "PROCADental: convertir el SEO paciente en referencias por zona",
    "resumen": "Propuesta al 17 de septiembre de 2026. Preparar un piloto sobre tres guías existentes y /encuentra-dentista/, con medición de solicitudes y referencias reales. ERC conserva la prioridad operativa. Esta entrega es documental: no se modificó ni publicó nada. Avanzar hacia 10,000 visitas mensuales, definiendo “visitas” como sesiones GA4 para evitar ambigüedad. El recorrido será: Búsqueda de paciente CDMX → guía → /encue",
    "stamp": "20260917"
+  },
+  {
+   "id": "prop-velas-vender-con-meta-ads-instalar-pixel-1er-s-20260924-072725",
+   "proyecto": "velas",
+   "vocacion": "ventas",
+   "titulo": "Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables",
+   "resumen": "Propuesta · 24 de septiembre de 2026. Elaborada con archivos locales. Sin modificaciones, publicaciones ni acciones externas. Conseguir los primeros pedidos pagados atribuibles a Meta Ads y comprobar si dejan contribución positiva después de publicidad. El cuello declarado es demanda: el proyecto reporta capacidad de 500 velas y margen aproximado de 40%. Ese margen necesita actualizarse por producto antes de decidir ",
+   "stamp": "20260924"
   },
   {
    "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20260922-192615",
