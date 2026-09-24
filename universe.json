@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-24T04:02:02",
+ "generatedAt": "2026-09-24T07:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -206,11 +206,6 @@
    "stamp": "20260923"
   },
   {
-   "titulo": "Lumin Candele — Actualización de catálogo y envíos",
-   "proyecto": "lumin",
-   "stamp": "20260916"
-  },
-  {
    "titulo": "ERC con evidencia: activar el motor multiformato de Patológicos",
    "proyecto": "patologicos",
    "stamp": "20260920"
@@ -234,7 +229,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets» — fanatia",
   "obra: «Nomos: avanzar hacia el primer piloto pagado con un reporte verificable» — legal",
   "obra: «Propuesta: crecer la marca de David con Piloko y reportar el avance real de ERC» — piloko"
