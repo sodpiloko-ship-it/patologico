@@ -183,7 +183,7 @@ document.documentElement.setAttribute("data-ab",v);})();
 <section>
   <div class="wrap">
     <div class="kicker">Cómo funciona</div>
-    <h2>Tres pasos y tu IA hace el resto.</h2>
+    <h2 data-hito="como">Tres pasos y tu IA hace el resto.</h2>
     <div class="steps">
       <div><b>Adjunta el PDF</b>A una conversación nueva de ChatGPT, Claude o Gemini. Sirven las versiones gratuitas.</div>
       <div><b>Pega el prompt de arranque</b>Viene en la primera página. Tu IA lee las instrucciones del playbook y sabe exactamente qué hacer.</div>
@@ -208,7 +208,7 @@ document.documentElement.setAttribute("data-ab",v);})();
 <section>
   <div class="wrap">
     <div class="kicker">Casos reales · negocios que operamos</div>
-    <h2>Orgánico es el rey. El pagado construye marca.</h2>
+    <h2 data-hito="casos">Orgánico es el rey. El pagado construye marca.</h2>
     <p class="lead">Estas cifras no son proyecciones: salen de Google Analytics y del administrador de anuncios de cada negocio. En el playbook está paso a paso qué hicimos en cada uno, y también lo que no funcionó.</p>
     <div class="cases">
       <div class="case"><div class="tag">Un nicho donde no se puede anunciar</div><div class="big">15 → 161</div><h3>visitas desde asistentes de IA</h3><p>En 28 días, contra los 28 anteriores, con cero pesos en anuncios. El sitio pasó de 200 a 747 sesiones al mes entre abril y septiembre.</p></div>
@@ -223,7 +223,7 @@ document.documentElement.setAttribute("data-ab",v);})();
 <section>
   <div class="wrap">
     <div class="kicker">Qué incluye</div>
-    <h2>Un playbook que tu IA puede ejecutar.</h2>
+    <h2 data-hito="incluye">Un playbook que tu IA puede ejecutar.</h2>
     <p class="lead">Cada etapa dice qué lograr, qué prompts correr y cuándo está lista. Tu IA lo sigue; tú pones los datos reales y decides.</p>
     <div class="inside">
       <figure><img src="img/instrucciones.jpg" alt="Página de instrucciones para el asistente de IA" width="935" height="1210" loading="lazy"><figcaption><b>Instrucciones para tu IA</b><span>El protocolo que sigue tu asistente, la Ficha de tu negocio y el tablero de avance.</span></figcaption></figure>
@@ -317,7 +317,7 @@ Cierre: [Botón WhatsApp] + 2 o 3 páginas relacionadas</div>
 <section id="comprar">
   <div class="wrap">
     <div class="kicker">Cómo funciona la compra</div>
-    <h2>Pagas y en minutos lo tienes.</h2>
+    <h2 data-hito="compra">Pagas y en minutos lo tienes.</h2>
     <div class="steps">
       <div><b>Pagas $349 MXN</b>En el checkout seguro de Mercado Pago: tarjeta de crédito o débito, OXXO, SPEI o saldo de Mercado Pago.</div>
       <div><b>Lo descargas al instante</b>Al terminar de pagar descargas el playbook, y te llega también a tu correo. En OXXO o SPEI, te llega en cuanto se acredita.</div>
@@ -330,7 +330,7 @@ Cierre: [Botón WhatsApp] + 2 o 3 páginas relacionadas</div>
 <section>
   <div class="wrap">
     <div class="kicker">Preguntas</div>
-    <h2>Lo que nos preguntan.</h2>
+    <h2 data-hito="preguntas">Lo que nos preguntan.</h2>
     <details><summary>¿Cómo lo uso con mi IA?</summary><p>Adjuntas el PDF a una conversación de ChatGPT, Claude o Gemini y pegas el prompt de arranque que viene en la primera página. Tu IA lee las instrucciones del PDF, te entrevista para armar la Ficha de tu negocio y te lleva etapa por etapa. Si tu IA lee mal el PDF, incluimos el mismo contenido en un archivo de texto.</p></details>
     <details><summary>¿Necesito pagar una IA?</summary><p>Para la estrategia, no: funciona con las versiones gratuitas de ChatGPT, Claude o Gemini, con sus límites de archivos. Para el bonus de construir tu sitio basta un plan básico de suscripción (alrededor de US$20 al mes) que incluya Claude Code o Codex.</p></details>
     <details><summary>¿Cómo funcionan las dudas y la Biblioteca?</summary><p>Durante <span data-cfg="dias">90</span> días desde tu compra puedes escribirnos tus dudas por WhatsApp y te respondemos adaptado a tu negocio. La Biblioteca es un espacio en patologicos.com que abriremos próximamente: guardará tus respuestas junto con las guías y plantillas que salen de las preguntas de todos los compradores, sin datos de nadie. Al abrir tendrás acceso incluido.</p></details>
@@ -344,7 +344,7 @@ Cierre: [Botón WhatsApp] + 2 o 3 páginas relacionadas</div>
 
 <div class="wrap">
   <div class="final">
-    <h2>Tu IA ya sabe escribir. Ahora sabrá vender.</h2>
+    <h2 data-hito="final">Tu IA ya sabe escribir. Ahora sabrá vender.</h2>
     <p>El playbook Oferta, Tráfico y WhatsApp: 4 casos reales, 37 prompts, 15 mensajes, bonus para tu sitio y <span data-cfg="dias">90</span> días de dudas. $349 MXN, pago único, garantía de 7 días.</p>
     <a class="btn lime js-buy" href="#comprar" data-pos="final">Quiero el playbook →</a>
   </div>
@@ -394,6 +394,22 @@ var PRICE = 349;
   function libera(a){ if (a.getAttribute("aria-busy") === "true") { a.textContent = a.getAttribute("data-txt"); a.removeAttribute("aria-busy"); } }
   // Al volver desde Mercado Pago con "atrás", el navegador restaura la página tal cual: el botón vuelve a su texto.
   window.addEventListener("pageshow", function(){ document.querySelectorAll(".js-buy").forEach(libera); });
+  // Lectura real. Los navegadores internos de Facebook e Instagram cierran sin mandarle a GA4 el tiempo en página
+  // (1 sesión "con interacción" de 100), así que estos eventos salen en el momento: quién se queda 15 s y hasta
+  // qué sección baja, por variante (lee_<hito>_<a|b>). El Pixel recibe Lectura15s para optimizar después por lectura.
+  var leido = {};
+  function lee(h){ if (!h || leido[h]) return; leido[h] = 1; try{ gtag("event", "lee_" + h + "_" + AB.toLowerCase()); }catch(e){} }
+  setTimeout(function(){
+    if (document.visibilityState === "hidden") return;
+    lee("15s");
+    try{ if(window.fbq) fbq("trackCustom", "Lectura15s", {ab_variante: AB}); }catch(e){}
+  }, 15000);
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { lee(e.target.getAttribute("data-hito")); io.unobserve(e.target); } });
+    }, {threshold: 1});
+    document.querySelectorAll("h2[data-hito]").forEach(function(h){ io.observe(h); });
+  }
   document.querySelectorAll(".copy").forEach(function(b){
     b.addEventListener("click", function(){
       var t = document.getElementById(b.getAttribute("data-copy")).innerText;
