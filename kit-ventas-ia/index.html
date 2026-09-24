@@ -33,7 +33,7 @@ document.documentElement.setAttribute("data-ab",v);})();
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"¿Cómo lo uso con mi IA?","acceptedAnswer":{"@type":"Answer","text":"Adjuntas el PDF a una conversación de ChatGPT, Claude o Gemini y pegas el prompt de arranque que viene en la primera página. Tu IA lee las instrucciones del PDF, te entrevista para armar la Ficha de tu negocio y te lleva etapa por etapa."}},
 {"@type":"Question","name":"¿Necesito pagar una IA?","acceptedAnswer":{"@type":"Answer","text":"Para la estrategia, no: funciona con las versiones gratuitas de ChatGPT, Claude o Gemini, con sus límites de archivos. Para el bonus de construir tu sitio basta un plan básico de suscripción (alrededor de US$20 al mes) que incluya Claude Code o Codex."}},
-{"@type":"Question","name":"¿Cómo funcionan las dudas y la Biblioteca?","acceptedAnswer":{"@type":"Answer","text":"Durante 90 días desde tu compra puedes escribirnos tus dudas por WhatsApp y te respondemos adaptado a tu negocio. La Biblioteca es un espacio en patologicos.com que abriremos próximamente: guardará tus respuestas junto con las guías y plantillas que salen de las preguntas de todos los compradores, sin datos de nadie. Al abrir tendrás acceso incluido."}},
+{"@type":"Question","name":"¿Cómo funcionan las dudas y la Biblioteca?","acceptedAnswer":{"@type":"Answer","text":"Durante 90 días desde tu compra puedes escribirnos tus dudas por WhatsApp y te respondemos adaptado a tu negocio. La Biblioteca es un espacio en patologicos.com que abriremos próximamente, sin fecha todavía: guardará tus respuestas junto con las guías y plantillas que salgan de las preguntas de todos los compradores, sin datos de nadie. Cuando abra, entras sin volver a pagar."}},
 {"@type":"Question","name":"¿Los casos son reales?","acceptedAnswer":{"@type":"Answer","text":"Sí. Son negocios que operamos; las cifras salen de Google Analytics 4 y del administrador de anuncios de Meta. Describen lo que pasó en esos negocios, no una garantía de resultados."}}]}]
 </script>
 <style>
@@ -122,6 +122,36 @@ document.documentElement.setAttribute("data-ab",v);})();
   .bar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(25,26,22,.97);color:var(--bg);display:none;align-items:center;gap:12px;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
   .bar .btn{padding:12px 20px;font-size:15px;margin-left:auto}
   .bar b{font-family:'Space Grotesk';font-size:20px}
+  /* Un solo color para lo que se toca (investigación 2026-09-24: el botón gana por contraste y aislamiento, no por
+     el tono). El lima con texto negro queda SOLO en los botones de compra; resaltados, viñetas y cifras dejan de usarlo.
+     Toda zona de compra es una franja oscura con el botón lima (13:1). */
+  .hero h1 em{background:none;color:#4f6a0f;padding:0}
+  .checks li:before{background:var(--ink);color:var(--bg)}
+  .steps>div:before{background:var(--ink);color:var(--bg)}
+  .case .tag{color:#cfcfc6}
+  .case .big{color:var(--bg)}
+  .soon{color:var(--bg)}
+  .btn{background:var(--lime);color:var(--ink);border:2px solid var(--ink);min-height:52px;font-weight:800}
+  .btn.lime{background:var(--lime);color:var(--ink)}
+  .buybox{background:var(--ink);color:var(--bg);border-radius:18px;padding:18px 18px 16px;margin:6px 0 24px;max-width:32em}
+  .buybox .fila{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .buybox .price{color:var(--bg);font-size:36px}
+  .buybox .price small{color:#bdbcb3}
+  .buybox .btn,.bar .btn,.final .btn,.pase .btn{border-color:var(--lime)}
+  .confianza{list-style:none;padding:0;margin:14px 0 0;font-size:14px;line-height:1.45;color:#d9d8cf;display:grid;gap:6px}
+  .confianza li{padding-left:22px;position:relative}
+  .confianza li:before{content:"✓";position:absolute;left:0;font-weight:800;color:var(--bg)}
+  .pagos{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+  .pagos span{font-size:12px;font-weight:700;color:var(--bg);border:1px solid #55564e;border-radius:6px;padding:4px 8px}
+  .bajo{font-size:13.5px;color:var(--mute);margin:12px 0 0;max-width:40em}
+  .pase{background:var(--ink);color:var(--bg);border-radius:24px;padding:36px 28px}
+  .pase h2{color:var(--bg)}
+  .pase .kicker{color:#cfd9a3}
+  .pase .lead{color:#d9d8cf}
+  .pase ul{margin:0;padding-left:20px;color:#e8e7df}
+  .pase li{margin-bottom:10px}
+  .pase .soon{background:var(--bg);color:var(--ink)}
+  .pase .bajo,.final .bajo{color:#bdbcb3;margin-left:auto;margin-right:auto}
   @media(max-width:860px){
     .hero,.split{grid-template-columns:1fr;gap:32px}
     .hero{padding-top:32px}
@@ -131,6 +161,12 @@ document.documentElement.setAttribute("data-ab",v);})();
     .sample,.fit{grid-template-columns:1fr}
     .bar{display:flex}
     header nav{display:none}
+    .buybox .fila{flex-direction:column;align-items:stretch;gap:10px}
+    .buybox .btn{width:100%}
+    .pase{padding:28px 20px}
+    .pase .btn,.final .btn{width:100%}
+    .bar{transform:translateY(110%);transition:transform .25s ease}
+    .bar.ver{transform:none}
   }
 </style>
 </head>
@@ -138,40 +174,47 @@ document.documentElement.setAttribute("data-ab",v);})();
 <div class="wrap">
   <header>
     <a class="logo" href="../"><i></i>pato</a>
-    <nav><a href="../">¿Prefieres que lo operemos por ti? →</a></nav>
   </header>
 
   <div class="hero">
     <div>
-      <div class="kicker">Playbook que tu IA ejecuta · LATAM</div>
-      <h1 class="ab-a">Oferta. Tráfico. <em>WhatsApp.</em></h1>
-      <p class="h1 ab-b" id="ab-b-h1" role="heading" aria-level="1">Tus clientes ya le preguntan a la IA. <em>¿Te recomienda a ti?</em></p>
-      <p class="sub ab-a">No es un curso para leer: es un PDF que subes a <b>ChatGPT, Claude o Gemini</b> y tu IA te guía paso a paso para crear tu oferta, atraer tráfico orgánico y pagado, y cerrar ventas por WhatsApp.</p>
-      <p class="sub ab-b" id="ab-b-sub">Sube este playbook a <b>ChatGPT, Claude o Gemini</b> y tu IA te guía paso a paso para que te encuentren y te compren: una oferta clara, tráfico orgánico y pagado, y ventas por WhatsApp.</p>
+      <div class="kicker" id="h-kicker">Para negocios que venden por WhatsApp · México y LATAM</div>
+      <h1 id="h-titulo">Que tus clientes te escriban <em>sin pagar cada visita.</em></h1>
+      <p class="sub" id="h-sub">Subes el playbook a tu IA (ChatGPT, Claude o Gemini) y te guía paso a paso: tu oferta, una página para que te encuentren y mensajes que cierran por WhatsApp.</p>
       <script>
-      /* Variante B: el primer pantallazo continúa el mensaje del anuncio que trajo al visitante (utm_content).
-         "ia" y el tráfico sin anuncio ven el texto de arriba. Las cifras son las mismas que citan el anuncio y el PDF. */
-      (function(){if(document.documentElement.getAttribute("data-ab")!=="B")return;var c="";
+      /* A/B de la primera pantalla. A = el titular repite el anuncio que trajo al visitante (utm_content);
+         B = el titular de la página para todos. El resto de la página es igual en las dos. Las cifras son las
+         mismas que citan el anuncio y el PDF. */
+      (function(){if(document.documentElement.getAttribute("data-ab")!=="A")return;var c="";
       try{c=new URLSearchParams(location.search).get("utm_content")||"";}catch(e){}
-      var T={casos:["De 15 a 161 visitas desde la IA. <em>Sin pagar anuncios.</em>",
-        "Eso pasó en uno de los negocios que operamos. El playbook trae ese caso y 3 más, paso a paso, para que tu IA lo aplique a tu negocio: oferta, tráfico orgánico y pagado, y ventas por WhatsApp."],
-        oferta:["No es otro curso. <em>Es un playbook que tu IA ejecuta.</em>",
-        "Súbelo a <b>ChatGPT, Claude o Gemini</b>: tu IA te entrevista, arma la ficha de tu negocio y te guía paso a paso para crear tu oferta, atraer tráfico y cerrar por WhatsApp."]};
-      var t=T[c];if(!t)return;var h=document.getElementById("ab-b-h1"),u=document.getElementById("ab-b-sub");
-      if(h)h.innerHTML=t[0];if(u)u.innerHTML=t[1];})();
+      var T={casos:["Casos reales, paso a paso","De 15 a 161 visitas desde la IA, <em>sin anuncios.</em>",
+        "Pasó en un negocio que operamos. Este playbook lleva el método a tu IA para aplicarlo en el tuyo: oferta, una página para que te encuentren y WhatsApp. No es garantía."],
+        ia:["Para negocios que venden por WhatsApp · México y LATAM","Tus clientes ya le preguntan a ChatGPT dónde comprar. <em>¿Te recomienda a ti?</em>",
+        "Subes el playbook a tu IA y te guía paso a paso: tu oferta, una página para que te encuentren en Google y en la IA, y mensajes que cierran por WhatsApp."],
+        oferta:["Para negocios que venden por WhatsApp · México y LATAM","No es otro curso que no vas a terminar. <em>Tu IA lo aplica contigo.</em>",
+        "Subes el playbook a ChatGPT, Claude o Gemini: tu IA te entrevista, arma la ficha de tu negocio y te guía paso a paso para que te encuentren y te escriban."]};
+      var t=T[c];if(!t)return;
+      document.getElementById("h-kicker").textContent=t[0];document.getElementById("h-titulo").innerHTML=t[1];document.getElementById("h-sub").innerHTML=t[2];})();
       </script>
-      <ul class="checks">
-        <li><span><b>Tu IA lo ejecuta contigo:</b> trae instrucciones para el asistente, la Ficha de tu negocio y 37 prompts con código. Escribes “Ejecuta P-08” y listo.</span></li>
-        <li><span><b>Orgánico + pagado, con 4 casos reales:</b> un nicho sin anuncios que llevó sus visitas desde IAs de 15 a 161, y PROCA, con 2,440 conversaciones de WhatsApp desde anuncios.</span></li>
-        <li><span><b>15 mensajes de venta</b> para WhatsApp y hoja de seguimiento.</span></li>
-        <li><span><b>Bonus:</b> construye tu sitio con Claude Code o ChatGPT.</span></li>
-        <li><span><b><span data-cfg="dias">90</span> días de dudas por WhatsApp</b> con nuestro equipo. <span class="soon">Próximamente</span> tu Biblioteca personal en patologicos.com.</span></li>
-      </ul>
-      <div class="buy">
-        <div class="price">$349 <small>MXN · pago único</small></div>
-        <a class="btn js-buy" href="#comprar" data-pos="hero">Quiero el playbook →</a>
+      <div class="buybox" id="compra-hero">
+        <div class="fila">
+          <div class="price">$349 <small>MXN · pago único</small></div>
+          <a class="btn js-buy" href="#comprar" data-pos="hero">Quiero mi playbook →</a>
+        </div>
+        <ul class="confianza">
+          <li>Garantía de 7 días: si no te sirve, te devolvemos tu dinero.</li>
+          <li>Pagas en Mercado Pago, sin crear cuenta. El vendedor aparece como PROCA, uno de los negocios que operamos.</li>
+          <li>El PDF te llega al confirmarse el pago, con copia a tu correo, y tienes <span data-cfg="dias">90</span> días de dudas por WhatsApp.</li>
+        </ul>
+        <p class="pagos"><span>Tarjeta</span><span>OXXO</span><span>SPEI</span><span>Mercado Pago</span></p>
       </div>
-      <p class="fine">PDF de <span data-cfg="paginas">30</span> páginas + versión en texto para tu IA + prompts y mensajes para copiar + hoja de seguimiento. Pagas con Mercado Pago (tarjeta, OXXO o SPEI; el cobro sale a nombre de PROCA, uno de los negocios que operamos) y lo descargas al instante; también te llega por correo. Garantía de 7 días.</p>
+      <ul class="checks">
+        <li><span><b>Una oferta en una frase</b> que puedes sostener cuando te preguntan el precio.</span></li>
+        <li><span><b>Que te encuentren</b> en Google y en los asistentes de IA, no solo rentar el clic de hoy.</span></li>
+        <li><span><b>Un siguiente paso para cada «¿precio?»:</b> 15 mensajes de venta listos para WhatsApp.</span></li>
+        <li><span><b>Tus números a las 4 y a las 8 semanas:</b> visitas, clics y chats de tu negocio.</span></li>
+        <li><span><b><span data-cfg="dias">90</span> días de dudas por WhatsApp</b> con nuestro equipo, sobre tu giro.</span></li>
+      </ul>
     </div>
     <div class="cover">
       <img src="img/portada.jpg" alt="Portada del playbook Oferta, Tráfico y WhatsApp" width="935" height="1210">
@@ -182,25 +225,24 @@ document.documentElement.setAttribute("data-ab",v);})();
 
 <section>
   <div class="wrap">
-    <div class="kicker">Cómo funciona</div>
-    <h2 data-hito="como">Tres pasos y tu IA hace el resto.</h2>
-    <div class="steps">
-      <div><b>Adjunta el PDF</b>A una conversación nueva de ChatGPT, Claude o Gemini. Sirven las versiones gratuitas.</div>
-      <div><b>Pega el prompt de arranque</b>Viene en la primera página. Tu IA lee las instrucciones del playbook y sabe exactamente qué hacer.</div>
-      <div><b>Responde y decide</b>Tu IA te entrevista, arma la Ficha de tu negocio y te lleva etapa por etapa: oferta, WhatsApp, orgánico, pagado y números.</div>
+    <div class="kicker">Si hoy te pasa esto</div>
+    <h2 data-hito="dolor">Hay que vender. El canal de hoy no alcanza.</h2>
+    <div class="grid3">
+      <div class="tile"><b>La pauta es una renta</b>El día que la pausas, el teléfono se queda quieto. Y hay giros donde ni siquiera te dejan anunciarte.</div>
+      <div class="tile"><b>Te buscan y sale otro</b>Tu cliente ya le pregunta a Google y a ChatGPT a quién comprarle. Si no estás en esa respuesta, esa venta no te llega.</div>
+      <div class="tile"><b>El chat se muere en el precio</b>Escriben «¿precio?», contestas y se enfría. No siempre falta gente: falta un siguiente paso.</div>
     </div>
-    <p class="lead" style="margin:24px 0 0">¿Quieres un copiloto permanente? El PDF incluye las instrucciones para convertirlo en un Proyecto de Claude, un GPT o Proyecto de ChatGPT, o un Gem de Gemini.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="kicker">El problema</div>
-    <h2>Los anuncios se apagan. La búsqueda se queda.</h2>
+    <div class="kicker">La meta</div>
+    <h2 data-hito="meta">Un negocio que recibe mensajes aunque no estés publicando.</h2>
     <div class="grid3">
-      <div class="tile"><b>Pagas por cada visita</b>El día que dejas de pagar, deja de llegar gente. Y hay giros donde ni siquiera te dejan anunciarte.</div>
-      <div class="tile"><b>Nadie te encuentra</b>Tus clientes le preguntan a Google y a ChatGPT qué comprar, y la respuesta es tu competencia.</div>
-      <div class="tile"><b>Los chats no cierran</b>Llegan mensajes de “¿precio?” que se enfrían, y botones que no avisan que alguien quiso comprar.</div>
+      <div class="tile"><b>Te encuentran</b>Cuando alguien busca lo que vendes en Google o le pregunta a ChatGPT, aparece tu página, con precio y botón de WhatsApp.</div>
+      <div class="tile"><b>Llegan con el pedido</b>Tu página contesta las dudas antes del chat y el botón manda el mensaje con el pedido armado.</div>
+      <div class="tile"><b>Decides con números</b>Cada semana ves visitas, clics y chats, y tu IA te dice qué mejorar.</div>
     </div>
   </div>
 </section>
@@ -208,8 +250,8 @@ document.documentElement.setAttribute("data-ab",v);})();
 <section>
   <div class="wrap">
     <div class="kicker">Casos reales · negocios que operamos</div>
-    <h2 data-hito="casos">Orgánico es el rey. El pagado construye marca.</h2>
-    <p class="lead">Estas cifras no son proyecciones: salen de Google Analytics y del administrador de anuncios de cada negocio. En el playbook está paso a paso qué hicimos en cada uno, y también lo que no funcionó.</p>
+    <h2 data-hito="casos">Esto ya pasó en 4 negocios que operamos.</h2>
+    <p class="lead">La visita que no pagas se acumula; la que pagas se apaga con el presupuesto. Estas cifras salen de Google Analytics y del administrador de anuncios de cada negocio, y en el playbook está paso a paso qué hicimos y qué no funcionó.</p>
     <div class="cases">
       <div class="case"><div class="tag">Un nicho donde no se puede anunciar</div><div class="big">15 → 161</div><h3>visitas desde asistentes de IA</h3><p>En 28 días, contra los 28 anteriores, con cero pesos en anuncios. El sitio pasó de 200 a 747 sesiones al mes entre abril y septiembre.</p></div>
       <div class="case"><div class="tag">PROCA · tráfico pagado</div><div class="big">2,440</div><h3>conversaciones de WhatsApp desde anuncios</h3><p>En 12 meses, a unos $34 MXN cada una. PROCA, un laboratorio dental, construyó su marca sobre pauta: hoy recibe mensajes de clientes potenciales todos los días, y cada cliente que se queda vuelve a comprar.</p></div>
@@ -222,16 +264,46 @@ document.documentElement.setAttribute("data-ab",v);})();
 
 <section>
   <div class="wrap">
+    <div class="kicker">Cómo funciona</div>
+    <h2 data-hito="como">Tres pasos y tu IA hace el resto.</h2>
+    <div class="steps">
+      <div><b>Adjunta el PDF</b>A una conversación nueva de ChatGPT, Claude o Gemini. Sirven las versiones gratuitas.</div>
+      <div><b>Pega el prompt de arranque</b>Viene en la primera página. Tu IA lee las instrucciones del playbook y sabe exactamente qué hacer.</div>
+      <div><b>Responde y decide</b>Tu IA te entrevista, arma la Ficha de tu negocio y te lleva etapa por etapa: oferta, WhatsApp, Google y asistentes de IA, anuncios y números.</div>
+    </div>
+    <p class="lead" style="margin:24px 0 0">¿Quieres un copiloto permanente? El PDF incluye las instrucciones para convertirlo en un Proyecto de Claude, un GPT o Proyecto de ChatGPT, o un Gem de Gemini.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pase">
+      <div class="kicker">Tu acceso incluido</div>
+      <h2 data-hito="acceso">No te llevas un PDF para leer solo.</h2>
+      <p class="lead">Por <span data-cfg="dias">90</span> días le escribes al equipo por WhatsApp, con el código de la parte donde te atoras. Respondemos en días hábiles, sobre tu negocio: la respuesta, un ejemplo y, si aplica, un prompt a tu caso. No es un grupo ni un bot.</p>
+      <ul>
+        <li>Tu IA te arma el mensaje con el código de la parte, para que no tengas que explicar todo desde cero.</li>
+        <li><span class="soon">Próximamente</span> <b>tu Biblioteca en patologicos.com:</b> tus respuestas guardadas y las guías que salgan de lo que pregunten todos los compradores, sin datos de nadie. No vuelves a pagar: cuando abra, entras.</li>
+        <li><b>Es el método de nuestro servicio de operación de ventas</b> ($5,900 de arranque + $2,490 al mes). Aquí lo haces tú, con tu IA y con nosotros para preguntar.</li>
+      </ul>
+      <p style="margin:22px 0 0"><a class="btn js-buy" href="#comprar" data-pos="acceso">Quiero mi playbook · $349 →</a></p>
+      <p class="bajo">Garantía de 7 días · Pagas en Mercado Pago sin crear cuenta (tarjeta, OXXO o SPEI) · El PDF te llega al confirmarse el pago.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="kicker">Qué incluye</div>
     <h2 data-hito="incluye">Un playbook que tu IA puede ejecutar.</h2>
-    <p class="lead">Cada etapa dice qué lograr, qué prompts correr y cuándo está lista. Tu IA lo sigue; tú pones los datos reales y decides.</p>
+    <p class="lead">Un PDF de <span data-cfg="paginas">30</span> páginas, más una versión en texto para tu IA. Cada etapa dice qué lograr, qué prompts correr y cuándo está lista. Tu IA lo sigue; tú pones los datos reales y decides.</p>
     <div class="inside">
       <figure><img src="img/instrucciones.jpg" alt="Página de instrucciones para el asistente de IA" width="935" height="1210" loading="lazy"><figcaption><b>Instrucciones para tu IA</b><span>El protocolo que sigue tu asistente, la Ficha de tu negocio y el tablero de avance.</span></figcaption></figure>
-      <figure><img src="img/organico.jpg" alt="Página de tráfico orgánico del playbook" width="935" height="1210" loading="lazy"><figcaption><b>E2 · Tráfico orgánico</b><span>SEO y búsqueda en IA: 3 casos, lo que aprendimos y el método en 6 pasos.</span></figcaption></figure>
-      <figure><img src="img/pagado.jpg" alt="Página de tráfico pagado con el caso PROCA" width="935" height="1210" loading="lazy"><figcaption><b>E3 · Tráfico pagado</b><span>El caso PROCA, cuándo sí pagar y qué bajó el costo por conversación.</span></figcaption></figure>
-      <figure><img src="img/whatsapp.jpg" alt="Página de WhatsApp del playbook" width="935" height="1210" loading="lazy"><figcaption><b>E4 · WhatsApp</b><span>La prueba del botón, links con pedido y 15 mensajes que venden.</span></figcaption></figure>
-      <figure><img src="img/bonus.jpg" alt="Página del bonus para construir un sitio con Claude Code o ChatGPT" width="935" height="1210" loading="lazy"><figcaption><b>E6 · Bonus: tu sitio</b><span>El prompt de construcción para Claude Code o Codex y el checklist.</span></figcaption></figure>
-      <figure><img src="img/dudas.jpg" alt="Página de dudas por WhatsApp y Biblioteca" width="935" height="1210" loading="lazy"><figcaption><b>Dudas por WhatsApp</b><span><span data-cfg="dias">90</span> días de dudas con nuestro equipo. Biblioteca: próximamente.</span></figcaption></figure>
+      <figure><img src="img/organico.jpg" alt="Página de tráfico orgánico del playbook" width="935" height="1210" loading="lazy"><figcaption><b>Que te encuentren</b><span>Google y búsqueda en IA: 3 casos, lo que aprendimos y el método en 6 pasos.</span></figcaption></figure>
+      <figure><img src="img/pagado.jpg" alt="Página de tráfico pagado con el caso PROCA" width="935" height="1210" loading="lazy"><figcaption><b>Anuncios, solo cuando convienen</b><span>El caso PROCA, cuándo sí pagar y qué bajó el costo por conversación.</span></figcaption></figure>
+      <figure><img src="img/whatsapp.jpg" alt="Página de WhatsApp del playbook" width="935" height="1210" loading="lazy"><figcaption><b>WhatsApp que cierra</b><span>La prueba del botón, links con pedido y 15 mensajes que venden.</span></figcaption></figure>
+      <figure><img src="img/bonus.jpg" alt="Página del bonus para construir un sitio con Claude Code o ChatGPT" width="935" height="1210" loading="lazy"><figcaption><b>Bonus: tu sitio</b><span>Una página que rankea, hecha por ti con un plan básico de Claude o ChatGPT. Sin agencia.</span></figcaption></figure>
+      <figure><img src="img/dudas.jpg" alt="Página de dudas por WhatsApp y Biblioteca" width="935" height="1210" loading="lazy"><figcaption><b>Dudas por WhatsApp</b><span><span data-cfg="dias">90</span> días con nuestro equipo. Biblioteca: próximamente.</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -264,37 +336,6 @@ Cierre: [Botón WhatsApp] + 2 o 3 páginas relacionadas</div>
 </section>
 
 <section>
-  <div class="wrap split">
-    <img src="img/dudas.jpg" alt="Dudas por WhatsApp y tu Biblioteca en patologicos.com" width="935" height="1210" loading="lazy">
-    <div>
-      <div class="kicker">No te quedas solo</div>
-      <h2><span data-cfg="dias">90</span> días de dudas por WhatsApp.</h2>
-      <p class="lead" style="margin-bottom:16px">Si una parte no te queda clara o tu negocio no encaja en los ejemplos, nos escribes por WhatsApp con el código de la parte. Te respondemos en días hábiles, adaptado a tu negocio: la respuesta, un ejemplo y, cuando aplica, un prompt ajustado a tu caso.</p>
-      <ul>
-        <li>Tu IA te da el enlace armado cuando te atoras en un paso.</li>
-        <li><span class="soon">Próximamente</span> <b>tu Biblioteca en patologicos.com:</b> tus respuestas guardadas, más las guías y plantillas que salen de las preguntas de todos los compradores, sin datos de nadie. Al abrir tendrás acceso incluido, con tus respuestas desde la primera.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap split">
-    <img src="img/bonus.jpg" alt="Bonus: construye un sitio que rankea con Claude Code o ChatGPT" width="935" height="1210" loading="lazy">
-    <div>
-      <div class="kicker">Bonus</div>
-      <h2>Tu sitio que rankea, hecho con Claude Code o ChatGPT.</h2>
-      <p class="lead" style="margin-bottom:16px">Para un negocio que vende productos repetibles no necesitas WordPress ni agencia. Una suscripción básica de Claude o ChatGPT alcanza para construirlo y mantenerlo.</p>
-      <ul>
-        <li>El <b>prompt de construcción</b> completo: páginas, WhatsApp medido, datos estructurados, sitemap, <code>llms.txt</code> e IndexNow.</li>
-        <li>Precios en un solo archivo: los cambias ahí y se actualizan en todo el sitio.</li>
-        <li>Cómo publicarlo, avisar a Google y Bing, y agregar 2 páginas nuevas por semana.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section>
   <div class="wrap">
     <div class="kicker">¿Es para ti?</div>
     <h2>Hecho para negocios pequeños en Latinoamérica.</h2>
@@ -303,11 +344,11 @@ Cierre: [Botón WhatsApp] + 2 o 3 páginas relacionadas</div>
         <li>Vendes productos o servicios concretos y cierras por WhatsApp.</li>
         <li>Dependes de anuncios, o tu giro no puede anunciarse.</li>
         <li>Quieres que te encuentren en Google y que ChatGPT te recomiende.</li>
-        <li>Ya usas ChatGPT, Claude o Gemini, o quieres empezar a usarlos en serio.</li>
+        <li>Usas WhatsApp y puedes abrir ChatGPT, Claude o Gemini. No necesitas saber de tecnología.</li>
       </ul></div>
       <div class="box"><h3>No, si…</h3><ul>
-        <li>Buscas resultados en días: el orgánico tarda semanas.</li>
-        <li>Quieres un bot que conteste solo sin que revises nada.</li>
+        <li>Buscas resultados en días: lo orgánico tarda semanas.</li>
+        <li>Quieres que alguien lo haga por ti: eso es nuestro servicio, no este playbook.</li>
         <li>Necesitas un e-commerce grande con miles de productos.</li>
       </ul></div>
     </div>
@@ -319,11 +360,21 @@ Cierre: [Botón WhatsApp] + 2 o 3 páginas relacionadas</div>
     <div class="kicker">Cómo funciona la compra</div>
     <h2 data-hito="compra">Pagas y en minutos lo tienes.</h2>
     <div class="steps">
-      <div><b>Pagas $349 MXN</b>En el checkout seguro de Mercado Pago: tarjeta de crédito o débito, OXXO, SPEI o saldo de Mercado Pago. Verás el cobro a nombre de PROCA, uno de los negocios que operamos.</div>
-      <div><b>Lo descargas al instante</b>Al terminar de pagar descargas el playbook, y te llega también a tu correo. En OXXO o SPEI, te llega en cuanto se acredita.</div>
-      <div><b>Empiezas hoy</b>Adjuntas el PDF a tu IA, pegas el arranque y tu IA te guía.</div>
+      <div><b>Pagas $349 MXN</b>En Mercado Pago, sin crear cuenta: tarjeta de crédito o débito, OXXO u otras tiendas, SPEI o saldo de Mercado Pago. El vendedor aparece como PROCA, uno de los negocios que operamos.</div>
+      <div><b>Lo descargas al instante</b>Al confirmarse el pago descargas el playbook, y te llega también a tu correo. En OXXO o SPEI, te llega en cuanto se acredita.</div>
+      <div><b>Empiezas hoy</b>Adjuntas el PDF a tu IA, pegas el arranque y tu IA te guía. Si te atoras, nos escribes.</div>
     </div>
-    <p style="margin-top:28px"><a class="btn js-buy" href="#comprar" data-pos="steps">Comprar el playbook · $349 →</a></p>
+    <div class="buybox" style="margin-top:28px">
+      <div class="fila">
+        <div class="price">$349 <small>MXN · pago único</small></div>
+        <a class="btn js-buy" href="#comprar" data-pos="steps">Quiero mi playbook →</a>
+      </div>
+      <ul class="confianza">
+        <li>Garantía de 7 días: nos escribes con tu folio y te devolvemos tu dinero por Mercado Pago.</li>
+        <li>Incluye <span data-cfg="dias">90</span> días de dudas por WhatsApp con el equipo.</li>
+      </ul>
+      <p class="pagos"><span>Tarjeta</span><span>OXXO</span><span>SPEI</span><span>Mercado Pago</span></p>
+    </div>
   </div>
 </section>
 
@@ -331,22 +382,29 @@ Cierre: [Botón WhatsApp] + 2 o 3 páginas relacionadas</div>
   <div class="wrap">
     <div class="kicker">Preguntas</div>
     <h2 data-hito="preguntas">Lo que nos preguntan.</h2>
+    <details><summary>¿Esto me va a hacer vender?</summary><p>Nadie honesto te lo puede prometer: no hay cifra de ventas ni garantía de ingresos. El playbook te guía para armar la oferta, conseguir visitas que no pagas una por una y llevar el WhatsApp más allá del «¿precio?». Cerrar lo sigues haciendo tú. En los casos medimos visitas e inicios de chat.</p></details>
+    <details><summary>No sé de tecnología, ¿puedo?</summary><p>Si usas WhatsApp y puedes abrir ChatGPT, sí. Tu IA te hace preguntas, tú contestas con los datos de tu negocio y decides. Si te atoras, nos escribes.</p></details>
+    <details><summary>¿Qué pasa cuando pago?</summary><p>Mercado Pago te regresa a esta página y descargas el playbook en ese momento; también te llega a tu correo. Si pagas en OXXO o por SPEI, te llega en cuanto se acredita el pago.</p></details>
+    <details><summary>¿Por qué el cargo dice PROCA?</summary><p>PROCA es un laboratorio dental que operamos, y Mercado Pago cobra a ese nombre. No es un cargo desconocido: si algo no cuadra, escríbenos con tu folio. Tienes 7 días y la devolución sale por Mercado Pago.</p></details>
     <details><summary>¿Cómo lo uso con mi IA?</summary><p>Adjuntas el PDF a una conversación de ChatGPT, Claude o Gemini y pegas el prompt de arranque que viene en la primera página. Tu IA lee las instrucciones del PDF, te entrevista para armar la Ficha de tu negocio y te lleva etapa por etapa. Si tu IA lee mal el PDF, incluimos el mismo contenido en un archivo de texto.</p></details>
     <details><summary>¿Necesito pagar una IA?</summary><p>Para la estrategia, no: funciona con las versiones gratuitas de ChatGPT, Claude o Gemini, con sus límites de archivos. Para el bonus de construir tu sitio basta un plan básico de suscripción (alrededor de US$20 al mes) que incluya Claude Code o Codex.</p></details>
-    <details><summary>¿Cómo funcionan las dudas y la Biblioteca?</summary><p>Durante <span data-cfg="dias">90</span> días desde tu compra puedes escribirnos tus dudas por WhatsApp y te respondemos adaptado a tu negocio. La Biblioteca es un espacio en patologicos.com que abriremos próximamente: guardará tus respuestas junto con las guías y plantillas que salen de las preguntas de todos los compradores, sin datos de nadie. Al abrir tendrás acceso incluido.</p></details>
-    <details><summary>¿Sirve fuera de México?</summary><p>Sí. Está escrito para Latinoamérica: tu IA usa tu país y tu moneda, e incluye los códigos de país para los links de WhatsApp.</p></details>
+    <details><summary>¿Es el servicio de $5,900?</summary><p>No. Allá lo operamos nosotros: arranque de $5,900 y $2,490 al mes. Aquí lo haces tú con tu IA, con el método escrito y <span data-cfg="dias">90</span> días para preguntarnos. Si buscas que alguien lo lleve por ti, <a href="../">conoce el servicio</a>.</p></details>
+    <details><summary>¿Cómo funcionan las dudas y la Biblioteca?</summary><p>Durante <span data-cfg="dias">90</span> días desde tu compra puedes escribirnos tus dudas por WhatsApp y te respondemos adaptado a tu negocio. La Biblioteca es un espacio en patologicos.com que abriremos próximamente, sin fecha todavía: guardará tus respuestas junto con las guías y plantillas que salgan de las preguntas de todos los compradores, sin datos de nadie. Cuando abra, entras sin volver a pagar.</p></details>
+    <details><summary>¿Sirve si no puedo anunciar mi negocio?</summary><p>Sí, está pensado para eso. En un nicho donde no se puede pautar, las visitas desde asistentes de IA pasaron de 15 a 161 en 28 días, contra los 28 anteriores, con cero pesos en anuncios. El playbook trae qué se hizo y qué no. Es lo que pasó ahí, no lo que te va a pasar a ti.</p></details>
     <details><summary>¿Los casos son reales?</summary><p>Sí. Son negocios que operamos; las cifras salen de Google Analytics 4 y del administrador de anuncios de Meta. Describen lo que pasó en esos negocios, no una garantía de resultados.</p></details>
-    <details><summary>¿Cuánto tarda en funcionar?</summary><p>El orgánico tarda semanas: en el playbook se mide a las 4 y a las 8 semanas. La oferta y WhatsApp puedes mejorarlos desde el primer día, y el pagado da señales en 7 días.</p></details>
+    <details><summary>¿Sirve fuera de México?</summary><p>Sí. Está escrito para Latinoamérica: tu IA usa tu país y tu moneda, e incluye los códigos de país para los links de WhatsApp.</p></details>
+    <details><summary>¿Cuánto tarda en funcionar?</summary><p>Lo orgánico tarda semanas: en el playbook se mide a las 4 y a las 8 semanas. La oferta y WhatsApp puedes mejorarlos desde el primer día, y los anuncios dan señales en 7 días.</p></details>
     <details><summary>¿Y si no me sirve?</summary><p>Tienes 7 días de garantía: escríbenos por WhatsApp con tu folio de compra y te devolvemos tu dinero por Mercado Pago.</p></details>
-    <details><summary>¿Quién hace esto?</summary><p>Patológicos: operamos la venta de negocios pequeños con agentes de IA supervisados por personas. Este playbook es lo que puedes hacer tú mismo con tu IA; si prefieres que lo operemos nosotros, <a href="../">conoce el servicio</a>.</p></details>
+    <details><summary>¿Quién hace esto?</summary><p>Patológicos: operamos la venta de negocios pequeños con agentes de IA supervisados por personas. Este playbook es lo que puedes hacer tú con tu IA; si prefieres que lo operemos nosotros, <a href="../">conoce el servicio</a>.</p></details>
   </div>
 </section>
 
 <div class="wrap">
   <div class="final">
-    <h2 data-hito="final">Tu IA ya sabe escribir. Ahora sabrá vender.</h2>
-    <p>El playbook Oferta, Tráfico y WhatsApp: 4 casos reales, 37 prompts, 15 mensajes, bonus para tu sitio y <span data-cfg="dias">90</span> días de dudas. $349 MXN, pago único, garantía de 7 días.</p>
-    <a class="btn lime js-buy" href="#comprar" data-pos="final">Quiero el playbook →</a>
+    <h2 data-hito="final">Empieza hoy con tu negocio.</h2>
+    <p>El playbook que tu IA ejecuta contigo, <span data-cfg="dias">90</span> días de dudas por WhatsApp y 7 días para pedir tu dinero. $349 MXN, pago único.</p>
+    <a class="btn js-buy" href="#comprar" data-pos="final">Quiero mi playbook →</a>
+    <p class="bajo">Pagas en Mercado Pago sin crear cuenta: tarjeta, OXXO o SPEI. El vendedor aparece como PROCA.</p>
   </div>
 </div>
 
@@ -354,7 +412,7 @@ Cierre: [Botón WhatsApp] + 2 o 3 páginas relacionadas</div>
   <div class="wrap">© 2026 Patológicos · <a href="../">patologicos.com</a> · hola@patologicos.com · WhatsApp, Facebook e Instagram son marcas de Meta Platforms; Claude, ChatGPT, Gemini, Google y Bing son marcas de sus dueños. Este playbook no está afiliado a ninguno de ellos.</div>
 </footer>
 
-<div class="bar"><div><b>$349</b> <span style="font-size:13px;color:#cfcfc6">MXN · playbook</span></div><a class="btn lime js-buy" href="#comprar" data-pos="bar">Lo quiero</a></div>
+<div class="bar"><div><b>$349</b> <span style="font-size:13px;color:#cfcfc6">MXN · garantía 7 días</span></div><a class="btn js-buy" href="#comprar" data-pos="bar">Quiero mi playbook</a></div>
 
 <script>
 /* Checkout propio con Mercado Pago (pago/crear.php crea la preferencia y manda a pagar).
@@ -394,6 +452,13 @@ var PRICE = 349;
   function libera(a){ if (a.getAttribute("aria-busy") === "true") { a.textContent = a.getAttribute("data-txt"); a.removeAttribute("aria-busy"); } }
   // Al volver desde Mercado Pago con "atrás", el navegador restaura la página tal cual: el botón vuelve a su texto.
   window.addEventListener("pageshow", function(){ document.querySelectorAll(".js-buy").forEach(libera); });
+  // La barra fija de compra aparece cuando la caja de compra del inicio ya quedó arriba (no compite con ella al cargar).
+  var barra = document.querySelector(".bar"), caja = document.getElementById("compra-hero");
+  if (barra && caja && "IntersectionObserver" in window) {
+    new IntersectionObserver(function(es){
+      barra.classList.toggle("ver", !es[0].isIntersecting && es[0].boundingClientRect.top < 0);
+    }).observe(caja);
+  } else if (barra) { barra.classList.add("ver"); }
   // Lectura real. Los navegadores internos de Facebook e Instagram cierran sin mandarle a GA4 el tiempo en página
   // (1 sesión "con interacción" de 100), así que estos eventos salen en el momento: quién se queda 15 s y hasta
   // qué sección baja, por variante (lee_<hito>_<a|b>). El Pixel recibe Lectura15s para optimizar después por lectura.
