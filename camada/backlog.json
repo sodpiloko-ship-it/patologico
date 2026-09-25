@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-25T07:02:01",
- "count": 7,
+ "generatedAt": "2026-09-25T10:02:01",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20260920-132847",
@@ -41,6 +41,14 @@
    "titulo": "Propuesta: crecer la marca de David con Piloko y reportar el avance real de ERC",
    "resumen": "Hacer de Piloko la referencia de David como fotógrafo y creador, con un camino claro del portafolio al contacto comercial. La instrucción más reciente del equipo pide, además, un reporte de progreso de ERC: cuántas páginas están arriba y si existe un demo del render. Ese dato debe verificarse antes de presentarlo como avance. Mantener la ejecución del MVP en curso y usar una bitácora breve de David para mostrar traba",
    "stamp": "20260923"
+  },
+  {
+   "id": "prop-proca-publicar-el-caso-de-estudio-proca-procao-20260925-072712",
+   "proyecto": "proca",
+   "vocacion": "datos",
+   "titulo": "PROCA/PROCAOps: convertir un flujo dental real en un caso que genere oportunidades comerci",
+   "resumen": "Propuesta de PATOLOGICO · 25 de septiembre de 2026. Basada en documentación local; sin acciones externas ni publicaciones. 1. Objetivo y por qué importa Preparar el caso PROCA/PROCAOps para publicación y convertirlo en una prueba comercial de nuestra capacidad para aplicar software, IA e interfaces a procesos de negocio. El brief del caso(C:/Patologicos/knowledge/caso-proca.md) define el mensaje: «Lo construimos para",
+   "stamp": "20260925"
   },
   {
    "id": "prop-velas-vender-con-meta-ads-instalar-pixel-1er-s-20260924-072725",

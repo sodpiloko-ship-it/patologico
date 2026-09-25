@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-25T07:02:01",
+ "generatedAt": "2026-09-25T10:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -216,6 +216,11 @@
    "stamp": "20260923"
   },
   {
+   "titulo": "PROCA/PROCAOps: convertir un flujo dental real en un caso que genere oportunidades comerci",
+   "proyecto": "proca",
+   "stamp": "20260925"
+  },
+  {
    "titulo": "Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables",
    "proyecto": "velas",
    "stamp": "20260924"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «PROCA/PROCAOps: convertir un flujo dental real en un caso que genere oportunidades comerci» — proca",
   "obra: «Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables» — velas",
-  "obra: «Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets» — fanatia",
-  "obra: «Nomos: avanzar hacia el primer piloto pagado con un reporte verificable» — legal"
+  "obra: «Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets» — fanatia"
  ]
 }
