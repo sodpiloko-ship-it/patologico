@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-25T04:02:02",
+ "generatedAt": "2026-09-25T07:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -216,11 +216,6 @@
    "stamp": "20260923"
   },
   {
-   "titulo": "PROCADental: convertir el SEO paciente en referencias por zona",
-   "proyecto": "procadental",
-   "stamp": "20260917"
-  },
-  {
    "titulo": "Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables",
    "proyecto": "velas",
    "stamp": "20260924"
@@ -234,7 +229,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
   "obra: «Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables» — velas",
   "obra: «Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets» — fanatia",
   "obra: «Nomos: avanzar hacia el primer piloto pagado con un reporte verificable» — legal"
