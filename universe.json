@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-26T13:02:02",
+ "generatedAt": "2026-09-26T16:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 9
  },
  "climate": {
   "ok": 10,
@@ -206,6 +206,11 @@
    "stamp": "20260923"
   },
   {
+   "titulo": "Aroma cempasúchil para Lumin Candele",
+   "proyecto": "lumin",
+   "stamp": "20260926"
+  },
+  {
    "titulo": "ERC con evidencia: activar el motor multiformato de Patológicos",
    "proyecto": "patologicos",
    "stamp": "20260920"
@@ -234,9 +239,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "9 obras en el cuerpo de trabajo del universo",
+  "obra: «Aroma cempasúchil para Lumin Candele» — lumin",
   "obra: «PROCA/PROCAOps: convertir un flujo dental real en un caso que genere oportunidades comerci» — proca",
-  "obra: «Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables» — velas",
-  "obra: «Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets» — fanatia"
+  "obra: «Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables» — velas"
  ]
 }
