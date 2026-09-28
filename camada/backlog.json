@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-28T07:02:01",
- "count": 7,
+ "generatedAt": "2026-09-28T10:02:01",
+ "count": 8,
  "items": [
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260923-012635",
@@ -41,6 +41,14 @@
    "titulo": "PROCA/PROCAOps: convertir un flujo dental real en un caso que genere oportunidades comerci",
    "resumen": "Propuesta de PATOLOGICO · 25 de septiembre de 2026. Basada en documentación local; sin acciones externas ni publicaciones. 1. Objetivo y por qué importa Preparar el caso PROCA/PROCAOps para publicación y convertirlo en una prueba comercial de nuestra capacidad para aplicar software, IA e interfaces a procesos de negocio. El brief del caso(C:/Patologicos/knowledge/caso-proca.md) define el mensaje: «Lo construimos para",
    "stamp": "20260925"
+  },
+  {
+   "id": "prop-procagrillz-capturar-la-demanda-org-nica-grillz-600--20260928-072652",
+   "proyecto": "procagrillz",
+   "vocacion": "copy",
+   "titulo": "PROCA GrillZ: convertir búsquedas de precio en escaneos recibidos y pedidos pagados",
+   "resumen": "Propuesta · 28 de septiembre de 2026 · Preparada con documentación local, sin publicaciones ni acciones externas. Aprovechar la demanda existente para aumentar solicitudes calificadas, escaneos recibidos y piezas liquidadas. El resumen inicial está desactualizado: el tablero registra sitio estático con Git, formulario operativo y condiciones comerciales publicadas el 17 de septiembre. El siguiente avance debe aprovec",
+   "stamp": "20260928"
   },
   {
    "id": "prop-velas-vender-con-meta-ads-instalar-pixel-1er-s-20260924-072725",
