@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-30T13:02:02",
+ "generatedAt": "2026-09-30T16:02:03",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -201,6 +201,11 @@
    "stamp": "20260926"
   },
   {
+   "titulo": "Patológicos: un escaparate que convierta demos en proyectos completos",
+   "proyecto": "patologicos",
+   "stamp": "20260930"
+  },
+  {
    "titulo": "Propuesta: crecer la marca de David con Piloko y reportar el avance real de ERC",
    "proyecto": "piloko",
    "stamp": "20260923"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «Patológicos: un escaparate que convierta demos en proyectos completos» — patologicos",
   "obra: «PROCADental: desbloquear Search Console y convertir búsquedas reales en prioridades de con» — procadental",
-  "obra: «PROCA GrillZ: convertir búsquedas de precio en escaneos recibidos y pedidos pagados» — procagrillz",
-  "obra: «Aroma cempasúchil para Lumin Candele» — lumin"
+  "obra: «PROCA GrillZ: convertir búsquedas de precio en escaneos recibidos y pedidos pagados» — procagrillz"
  ]
 }

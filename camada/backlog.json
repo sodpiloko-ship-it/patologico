@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-30T13:02:02",
- "count": 7,
+ "generatedAt": "2026-09-30T16:02:03",
+ "count": 8,
  "items": [
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260923-132647",
@@ -17,6 +17,14 @@
    "titulo": "Aroma cempasúchil para Lumin Candele",
    "resumen": "<!-- pedido de Yasmin (Lumin Candele) vía Telegram, 2026-09-26T15:42:09 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Propuesta para Yaz: desarrollar cempasúchil como aroma protagonista de la edición limitada de Día de Muertos. Desde la historia de madre e hijo que dio vida a Lumin Candele —un sueño inspirado en Italia—, esta edición puede celebrar los recuerdos que compartimos e",
    "stamp": "20260926"
+  },
+  {
+   "id": "prop-patologicos-vender-el-proyecto-completo-desarrollo-c-20260930-132837",
+   "proyecto": "patologicos",
+   "vocacion": "copy",
+   "titulo": "Patológicos: un escaparate que convierta demos en proyectos completos",
+   "resumen": "Propuesta para revisión · 30 de septiembre de 2026. Basada en documentos locales; sin cambios ni publicaciones. Conseguir oportunidades calificadas para contratar un proyecto completo de desarrollo con IA agéntica: diagnóstico del proceso, aplicación, interfaz, integraciones, piloto y entrega operativa. El informe del portafolio del 6 de septiembre(/C:/Patologicos/knowledge/portafolio-informe-20260906.md) registra qu",
+   "stamp": "20260930"
   },
   {
    "id": "prop-piloko-crecer-marca-personal-20260923-072702",
