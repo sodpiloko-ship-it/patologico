@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-29T19:02:01",
+ "generatedAt": "2026-09-30T13:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 6
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -211,6 +211,11 @@
    "stamp": "20260925"
   },
   {
+   "titulo": "PROCADental: desbloquear Search Console y convertir búsquedas reales en prioridades de con",
+   "proyecto": "procadental",
+   "stamp": "20260929"
+  },
+  {
    "titulo": "PROCA GrillZ: convertir búsquedas de precio en escaneos recibidos y pedidos pagados",
    "proyecto": "procagrillz",
    "stamp": "20260928"
@@ -224,9 +229,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "6 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
+  "obra: «PROCADental: desbloquear Search Console y convertir búsquedas reales en prioridades de con» — procadental",
   "obra: «PROCA GrillZ: convertir búsquedas de precio en escaneos recibidos y pedidos pagados» — procagrillz",
-  "obra: «Aroma cempasúchil para Lumin Candele» — lumin",
-  "obra: «PROCA/PROCAOps: convertir un flujo dental real en un caso que genere oportunidades comerci» — proca"
+  "obra: «Aroma cempasúchil para Lumin Candele» — lumin"
  ]
 }

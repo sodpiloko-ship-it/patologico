@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-09-29T19:02:01",
- "count": 6,
+ "generatedAt": "2026-09-30T13:02:02",
+ "count": 7,
  "items": [
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260923-132647",
@@ -33,6 +33,14 @@
    "titulo": "PROCA/PROCAOps: convertir un flujo dental real en un caso que genere oportunidades comerci",
    "resumen": "Propuesta de PATOLOGICO · 25 de septiembre de 2026. Basada en documentación local; sin acciones externas ni publicaciones. 1. Objetivo y por qué importa Preparar el caso PROCA/PROCAOps para publicación y convertirlo en una prueba comercial de nuestra capacidad para aplicar software, IA e interfaces a procesos de negocio. El brief del caso(C:/Patologicos/knowledge/caso-proca.md) define el mensaje: «Lo construimos para",
    "stamp": "20260925"
+  },
+  {
+   "id": "prop-procadental-desbloquear-search-console-403-autorizar-20260929-192819",
+   "proyecto": "procadental",
+   "vocacion": "seo",
+   "titulo": "PROCADental: desbloquear Search Console y convertir búsquedas reales en prioridades de con",
+   "resumen": "Propuesta · 29 de septiembre de 2026 Objetivo y por qué importa Que David autorice la cuenta de servicio existente en la propiedad correcta de Search Console y que PATO compruebe la lectura de consultas de procadental.com. Esto permitirá orientar la producción educativa hacia preguntas que los pacientes ya buscan, detectar páginas con oportunidades y distinguir tráfico paciente de búsquedas profesionales históricas. ",
+   "stamp": "20260929"
   },
   {
    "id": "prop-procagrillz-capturar-la-demanda-org-nica-grillz-600--20260928-072652",
