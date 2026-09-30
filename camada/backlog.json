@@ -1,15 +1,7 @@
 {
- "generatedAt": "2026-09-30T04:02:02",
- "count": 8,
+ "generatedAt": "2026-09-30T07:02:02",
+ "count": 6,
  "items": [
-  {
-   "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20260923-012635",
-   "proyecto": "fanatia",
-   "vocacion": "seo",
-   "titulo": "Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets",
-   "resumen": "Conservar las URLs y la estructura indexable de fanatia.com durante su enfoque en fotografía real 18+, membresía y venta de sets. El activo ya trae audiencia: el corte de GA4 del 20 de septiembre registró 809 sesiones en 28 días, 444 de búsqueda orgánica; aproximadamente 86 % del orgánico procedía del ecosistema Bing. Romper una URL de entrada puede cortar ese recorrido antes de que exista un cobro propio. Preparar u",
-   "stamp": "20260923"
-  },
   {
    "id": "prop-legal-primer-cliente-piloto-de-pago-20260923-132647",
    "proyecto": "legal",
@@ -57,14 +49,6 @@
    "titulo": "Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables",
    "resumen": "Propuesta · 24 de septiembre de 2026. Elaborada con archivos locales. Sin modificaciones, publicaciones ni acciones externas. Conseguir los primeros pedidos pagados atribuibles a Meta Ads y comprobar si dejan contribución positiva después de publicidad. El cuello declarado es demanda: el proyecto reporta capacidad de 500 velas y margen aproximado de 40%. Ese margen necesita actualizarse por producto antes de decidir ",
    "stamp": "20260924"
-  },
-  {
-   "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20260922-192615",
-   "proyecto": "wine",
-   "vocacion": "ventas",
-   "titulo": "Picando Tabla: aprobar una compra completa y preparar la tienda para publicar",
-   "resumen": "Convertir el sitio de Picando Tabla en una compra online verificable: una persona en CDMX elige una tabla de quesos y carnes lista para servir, conoce el total y la entrega, paga, y Jessica recibe un pedido que puede preparar. El sitio ya ha generado interés por WhatsApp, pero un clic no demuestra una venta. ERC conserva la prioridad operativa indicada por el equipo. Esta propuesta acota el siguiente hito de Picando ",
-   "stamp": "20260922"
   }
  ]
 }

@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-09-30T04:02:02",
+ "generatedAt": "2026-09-30T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 6
  },
  "climate": {
   "ok": 10,
@@ -191,11 +191,6 @@
  ],
  "canon": [
   {
-   "titulo": "Propuesta: proteger el SEO de Fanatia mientras avanza la venta de sets",
-   "proyecto": "fanatia",
-   "stamp": "20260923"
-  },
-  {
    "titulo": "Nomos: avanzar hacia el primer piloto pagado con un reporte verificable",
    "proyecto": "legal",
    "stamp": "20260923"
@@ -224,17 +219,12 @@
    "titulo": "Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables",
    "proyecto": "velas",
    "stamp": "20260924"
-  },
-  {
-   "titulo": "Picando Tabla: aprobar una compra completa y preparar la tienda para publicar",
-   "proyecto": "wine",
-   "stamp": "20260922"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "6 obras en el cuerpo de trabajo del universo",
   "obra: «PROCA GrillZ: convertir búsquedas de precio en escaneos recibidos y pedidos pagados» — procagrillz",
   "obra: «Aroma cempasúchil para Lumin Candele» — lumin",
   "obra: «PROCA/PROCAOps: convertir un flujo dental real en un caso que genere oportunidades comerci» — proca"
