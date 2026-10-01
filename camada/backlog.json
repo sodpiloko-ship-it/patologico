@@ -1,15 +1,7 @@
 {
- "generatedAt": "2026-10-01T04:02:01",
- "count": 8,
+ "generatedAt": "2026-10-01T07:02:01",
+ "count": 6,
  "items": [
-  {
-   "id": "prop-legal-primer-cliente-piloto-de-pago-20260923-132647",
-   "proyecto": "legal",
-   "vocacion": "investigacion",
-   "titulo": "Nomos: avanzar hacia el primer piloto pagado con un reporte verificable",
-   "resumen": "Cerrar un despacho litigante mexicano como primer piloto pagado de Nomos. El pago confirmado, junto con un flujo útil para el abogado, daría una señal comercial que los datos de demostración no pueden dar. Las instrucciones recientes piden reportar cómo va ERC, incluidas las páginas y el render. Ese reporte debe entrar en el siguiente corte operativo mientras David lleva la relación con el posible piloto de Nomos. En",
-   "stamp": "20260923"
-  },
   {
    "id": "prop-lumin-fundadora-aroma-cempasuchil-para-lumin-candele-20260926-154414",
    "proyecto": "lumin",
@@ -25,14 +17,6 @@
    "titulo": "Patológicos: un escaparate que convierta demos en proyectos completos",
    "resumen": "Propuesta para revisión · 30 de septiembre de 2026. Basada en documentos locales; sin cambios ni publicaciones. Conseguir oportunidades calificadas para contratar un proyecto completo de desarrollo con IA agéntica: diagnóstico del proceso, aplicación, interfaz, integraciones, piloto y entrega operativa. El informe del portafolio del 6 de septiembre(/C:/Patologicos/knowledge/portafolio-informe-20260906.md) registra qu",
    "stamp": "20260930"
-  },
-  {
-   "id": "prop-piloko-crecer-marca-personal-20260923-072702",
-   "proyecto": "piloko",
-   "vocacion": "copy",
-   "titulo": "Propuesta: crecer la marca de David con Piloko y reportar el avance real de ERC",
-   "resumen": "Hacer de Piloko la referencia de David como fotógrafo y creador, con un camino claro del portafolio al contacto comercial. La instrucción más reciente del equipo pide, además, un reporte de progreso de ERC: cuántas páginas están arriba y si existe un demo del render. Ese dato debe verificarse antes de presentarlo como avance. Mantener la ejecución del MVP en curso y usar una bitácora breve de David para mostrar traba",
-   "stamp": "20260923"
   },
   {
    "id": "prop-proca-publicar-el-caso-de-estudio-proca-procao-20260925-072712",
