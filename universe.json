@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-02T07:02:02",
+ "generatedAt": "2026-10-02T10:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -196,6 +196,11 @@
    "stamp": "20261001"
   },
   {
+   "titulo": "Fanatia: conservar las URLs que atraen audiencia y su recorrido hacia la compra",
+   "proyecto": "fanatia",
+   "stamp": "20261002"
+  },
+  {
    "titulo": "Aroma cempasúchil para Lumin Candele",
    "proyecto": "lumin",
    "stamp": "20260926"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «Fanatia: conservar las URLs que atraen audiencia y su recorrido hacia la compra» — fanatia",
   "obra: «CAD·CAM·IA: convertir un proyecto real en autoridad y demanda educativa» — cadcamia",
-  "obra: «Picando Tabla: aprobar una compra completa y habilitar el cobro online» — wine",
-  "obra: «Patológicos: un escaparate que convierta demos en proyectos completos» — patologicos"
+  "obra: «Picando Tabla: aprobar una compra completa y habilitar el cobro online» — wine"
  ]
 }
