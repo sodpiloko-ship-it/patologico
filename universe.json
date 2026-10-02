@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-02T04:02:02",
+ "generatedAt": "2026-10-02T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -221,11 +221,6 @@
    "stamp": "20260928"
   },
   {
-   "titulo": "Lumin Candele: instalar Pixel y probar tres anuncios con ventas verificables",
-   "proyecto": "velas",
-   "stamp": "20260924"
-  },
-  {
    "titulo": "Picando Tabla: aprobar una compra completa y habilitar el cobro online",
    "proyecto": "wine",
    "stamp": "20261001"
@@ -234,7 +229,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
   "obra: «CAD·CAM·IA: convertir un proyecto real en autoridad y demanda educativa» — cadcamia",
   "obra: «Picando Tabla: aprobar una compra completa y habilitar el cobro online» — wine",
   "obra: «Patológicos: un escaparate que convierta demos en proyectos completos» — patologicos"
