@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-03T04:02:02",
+ "generatedAt": "2026-10-03T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -211,11 +211,6 @@
    "stamp": "20260930"
   },
   {
-   "titulo": "PROCA/PROCAOps: convertir un flujo dental real en un caso que genere oportunidades comerci",
-   "proyecto": "proca",
-   "stamp": "20260925"
-  },
-  {
    "titulo": "PROCADental: desbloquear Search Console y convertir búsquedas reales en prioridades de con",
    "proyecto": "procadental",
    "stamp": "20260929"
@@ -234,7 +229,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
   "obra: «Fanatia: conservar las URLs que atraen audiencia y su recorrido hacia la compra» — fanatia",
   "obra: «CAD·CAM·IA: convertir un proyecto real en autoridad y demanda educativa» — cadcamia",
   "obra: «Picando Tabla: aprobar una compra completa y habilitar el cobro online» — wine"
