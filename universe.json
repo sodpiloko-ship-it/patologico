@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-04T04:38:27",
+ "generatedAt": "2026-10-04T08:57:25",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -201,11 +201,6 @@
    "stamp": "20261002"
   },
   {
-   "titulo": "Aroma cempasúchil para Lumin Candele",
-   "proyecto": "lumin",
-   "stamp": "20260926"
-  },
-  {
    "titulo": "Patológicos: un escaparate que convierta demos en proyectos completos",
    "proyecto": "patologicos",
    "stamp": "20260930"
@@ -234,7 +229,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
   "obra: «Piloko: «Qué cambia cuando crear imágenes se vuelve barato»» — piloko",
   "obra: «Fanatia: conservar las URLs que atraen audiencia y su recorrido hacia la compra» — fanatia",
   "obra: «CAD·CAM·IA: convertir un proyecto real en autoridad y demanda educativa» — cadcamia"
