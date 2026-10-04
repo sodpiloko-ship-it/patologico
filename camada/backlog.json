@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-04T13:02:02",
- "count": 7,
+ "generatedAt": "2026-10-04T16:02:04",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20261001-072737",
@@ -17,6 +17,14 @@
    "titulo": "Fanatia: conservar las URLs que atraen audiencia y su recorrido hacia la compra",
    "resumen": "Propuesta al 2 de octubre de 2026. Basada en documentación local; no se ejecutaron cambios ni consultas externas. Evitar que las próximas modificaciones de Fanatia rompan sus entradas desde buscadores, enlaces históricos o navegación hacia los sets. El diagnóstico del 26 de septiembre registró 1,002 sesiones en 28 días, pero solo 3.7 % de las sesiones llegó a la ficha del set. La oportunidad consiste en conservar esa",
    "stamp": "20261002"
+  },
+  {
+   "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20261004-132840",
+   "proyecto": "legal",
+   "vocacion": "investigacion",
+   "titulo": "Nomos: convertir un flujo documental en un piloto pagado y utilizado",
+   "resumen": "Propuesta · 4 de octubre de 2026 · Jurídico / Producto Nomos Conseguir un despacho mexicano de 1–5 profesionales que pague y utilice Nomos para preparar antecedentes de un expediente, midiendo el tiempo hasta obtener un borrador revisado por su abogado. Esto permitiría validar tres cosas distintas: disposición a pagar, utilidad operativa y costo de entrega. El siguiente desarrollo del producto debe responder a esas e",
+   "stamp": "20261004"
   },
   {
    "id": "prop-patologicos-vender-el-proyecto-completo-desarrollo-c-20260930-132837",
