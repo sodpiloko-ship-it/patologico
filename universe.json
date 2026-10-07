@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-07T07:02:01",
+ "generatedAt": "2026-10-07T10:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -216,6 +216,11 @@
    "stamp": "20261003"
   },
   {
+   "titulo": "PROCAGrillZ: del interés al escaneo intraoral recibido",
+   "proyecto": "proca",
+   "stamp": "20261007"
+  },
+  {
    "titulo": "Velas Lumin: contenido que lleva al pedido y SEO sobre la oferta existente",
    "proyecto": "velas",
    "stamp": "20261006"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «PROCAGrillZ: del interés al escaneo intraoral recibido» — proca",
   "obra: «Velas Lumin: contenido que lleva al pedido y SEO sobre la oferta existente» — velas",
-  "obra: «Nomos: convertir un flujo documental en un piloto pagado y utilizado» — legal",
-  "obra: «Piloko: «Qué cambia cuando crear imágenes se vuelve barato»» — piloko"
+  "obra: «Nomos: convertir un flujo documental en un piloto pagado y utilizado» — legal"
  ]
 }

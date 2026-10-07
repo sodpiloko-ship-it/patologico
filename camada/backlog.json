@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-07T07:02:01",
- "count": 7,
+ "generatedAt": "2026-10-07T10:02:02",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20261001-072737",
@@ -41,6 +41,14 @@
    "titulo": "Piloko: «Qué cambia cuando crear imágenes se vuelve barato»",
    "resumen": "Propuesta de PATO · 3 de octubre de 2026 · Piloto editorial de 28 días Posicionar a David como una voz con criterio sobre tecnología y emprendimiento creativo, convirtiendo decisiones reales del estudio en conversaciones con posibles clientes. El reparto vigente del proyecto, actualizado el 23 de septiembre, permite en Piloko dirección creativa, producción, distribución y evaluación. Los ensayos generales de economía",
    "stamp": "20261003"
+  },
+  {
+   "id": "prop-proca-procagrillz-llevar-al-cliente-a-escaneo--20261007-072709",
+   "proyecto": "proca",
+   "vocacion": "datos",
+   "titulo": "PROCAGrillZ: del interés al escaneo intraoral recibido",
+   "resumen": "Propuesta · 7 de octubre de 2026 · Piloto de 28 días Conseguir que los interesados sin escaneo pasen a una cita y entreguen archivos utilizables, para avanzar después a una pieza pagada. Existe una base comercial aprovechable: el tablero documenta formulario operativo y condiciones actualizadas publicadas el 17 de septiembre. El siguiente avance consiste en acompañar al cliente durante el requisito que debe resolver ",
+   "stamp": "20261007"
   },
   {
    "id": "prop-velas-contenido-seo-en-paralelo-20261006-073052",
