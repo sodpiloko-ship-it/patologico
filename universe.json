@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-08T04:02:02",
+ "generatedAt": "2026-10-08T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -206,11 +206,6 @@
    "stamp": "20261004"
   },
   {
-   "titulo": "Patológicos: un escaparate que convierta demos en proyectos completos",
-   "proyecto": "patologicos",
-   "stamp": "20260930"
-  },
-  {
    "titulo": "Piloko: «Qué cambia cuando crear imágenes se vuelve barato»",
    "proyecto": "piloko",
    "stamp": "20261003"
@@ -234,7 +229,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
   "obra: «PROCAGrillZ: del interés al escaneo intraoral recibido» — proca",
   "obra: «Velas Lumin: contenido que lleva al pedido y SEO sobre la oferta existente» — velas",
   "obra: «Nomos: convertir un flujo documental en un piloto pagado y utilizado» — legal"
