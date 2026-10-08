@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-08T07:02:01",
- "count": 7,
+ "generatedAt": "2026-10-08T10:02:01",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20261001-072737",
@@ -41,6 +41,14 @@
    "titulo": "PROCAGrillZ: del interés al escaneo intraoral recibido",
    "resumen": "Propuesta · 7 de octubre de 2026 · Piloto de 28 días Conseguir que los interesados sin escaneo pasen a una cita y entreguen archivos utilizables, para avanzar después a una pieza pagada. Existe una base comercial aprovechable: el tablero documenta formulario operativo y condiciones actualizadas publicadas el 17 de septiembre. El siguiente avance consiste en acompañar al cliente durante el requisito que debe resolver ",
    "stamp": "20261007"
+  },
+  {
+   "id": "prop-procagrillz-cerrar-el-embudo-cta-nico-escaneo-intrao-20261008-072928",
+   "proyecto": "procagrillz",
+   "vocacion": "copy",
+   "titulo": "PROCA GrillZ: un solo CTA para convertir el tráfico de PROCADental en solicitudes de escan",
+   "resumen": "Propuesta · 8 de octubre de 2026 · Preparación en 5 días hábiles y piloto de 28 días. 1. Objetivo y por qué importa Cerrar el recorrido comercial del clúster GrillZ: Entrada desde PROCADental → «Escaneo intraoral» → solicitud válida → archivos aceptados → pedido liquidado. La oportunidad inmediata es recuperar /listag/, antigua entrada de precios que en el archivo local redirige a la portada general de PROCADental, y",
+   "stamp": "20261008"
   },
   {
    "id": "prop-velas-contenido-seo-en-paralelo-20261006-073052",
