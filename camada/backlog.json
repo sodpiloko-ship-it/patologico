@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-09T07:02:02",
- "count": 6,
+ "generatedAt": "2026-10-09T10:02:02",
+ "count": 7,
  "items": [
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20261002-072956",
@@ -33,6 +33,14 @@
    "titulo": "PROCAGrillZ: del interés al escaneo intraoral recibido",
    "resumen": "Propuesta · 7 de octubre de 2026 · Piloto de 28 días Conseguir que los interesados sin escaneo pasen a una cita y entreguen archivos utilizables, para avanzar después a una pieza pagada. Existe una base comercial aprovechable: el tablero documenta formulario operativo y condiciones actualizadas publicadas el 17 de septiembre. El siguiente avance consiste en acompañar al cliente durante el requisito que debe resolver ",
    "stamp": "20261007"
+  },
+  {
+   "id": "prop-procadental-producir-los-7-huecos-de-categoria-sin-c-20261009-072617",
+   "proyecto": "procadental",
+   "vocacion": "seo",
+   "titulo": "PROCADental: cerrar siete huecos de contenido y convertir consultas en visitas al director",
+   "resumen": "Propuesta para revisión; no se ejecutaron acciones externas ni publicaciones. No fue posible leer knowledge/ ni .pato/PATOBOARD.md por un fallo del entorno de lectura. Esta propuesta parte del resumen proporcionado; queda pendiente contrastarla con el brief y el mandato completo de Números y Análisis. Producir siete guías educativas para pacientes, una por categoría sin cobertura, todas con CTA a /encuentra-dentista/",
+   "stamp": "20261009"
   },
   {
    "id": "prop-procagrillz-cerrar-el-embudo-cta-nico-escaneo-intrao-20261008-072928",

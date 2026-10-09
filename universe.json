@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-09T07:02:02",
+ "generatedAt": "2026-10-09T10:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 6
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -211,6 +211,11 @@
    "stamp": "20261007"
   },
   {
+   "titulo": "PROCADental: cerrar siete huecos de contenido y convertir consultas en visitas al director",
+   "proyecto": "procadental",
+   "stamp": "20261009"
+  },
+  {
    "titulo": "PROCA GrillZ: un solo CTA para convertir el tráfico de PROCADental en solicitudes de escan",
    "proyecto": "procagrillz",
    "stamp": "20261008"
@@ -224,9 +229,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "6 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
+  "obra: «PROCADental: cerrar siete huecos de contenido y convertir consultas en visitas al director» — procadental",
   "obra: «PROCA GrillZ: un solo CTA para convertir el tráfico de PROCADental en solicitudes de escan» — procagrillz",
-  "obra: «PROCAGrillZ: del interés al escaneo intraoral recibido» — proca",
-  "obra: «Velas Lumin: contenido que lleva al pedido y SEO sobre la oferta existente» — velas"
+  "obra: «PROCAGrillZ: del interés al escaneo intraoral recibido» — proca"
  ]
 }
