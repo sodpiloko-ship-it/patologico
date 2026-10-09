@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-09T13:02:02",
- "count": 7,
+ "generatedAt": "2026-10-09T16:02:02",
+ "count": 8,
  "items": [
   {
    "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20261002-072956",
@@ -17,6 +17,14 @@
    "titulo": "Nomos: convertir un flujo documental en un piloto pagado y utilizado",
    "resumen": "Propuesta · 4 de octubre de 2026 · Jurídico / Producto Nomos Conseguir un despacho mexicano de 1–5 profesionales que pague y utilice Nomos para preparar antecedentes de un expediente, midiendo el tiempo hasta obtener un borrador revisado por su abogado. Esto permitiría validar tres cosas distintas: disposición a pagar, utilidad operativa y costo de entrega. El siguiente desarrollo del producto debe responder a esas e",
    "stamp": "20261004"
+  },
+  {
+   "id": "prop-patologicos-motor-de-contenido-multiformato-operando-20261009-132613",
+   "proyecto": "patologicos",
+   "vocacion": "copy",
+   "titulo": "Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible",
+   "resumen": "Estado de la propuesta: provisional. El entorno rechazó la ejecución necesaria para leer knowledge/ y .pato/PATOBOARD.md. No pude verificar el contexto documental, incluido knowledge/departamento-numeros.md, ni los avances existentes. Esta propuesta parte del resumen proporcionado; las metas siguientes son propuestas, no resultados reales. No se realizaron acciones externas ni publicaciones. Poner en operación un cic",
+   "stamp": "20261009"
   },
   {
    "id": "prop-piloko-hablar-ideas-y-pensamiento-de-tecnologia-20261003-072715",
