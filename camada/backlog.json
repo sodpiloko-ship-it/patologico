@@ -1,15 +1,7 @@
 {
- "generatedAt": "2026-10-10T03:11:05",
- "count": 8,
+ "generatedAt": "2026-10-10T13:02:01",
+ "count": 6,
  "items": [
-  {
-   "id": "prop-fanatia-mantener-urls-estructura-seo-existentes--20261002-072956",
-   "proyecto": "fanatia",
-   "vocacion": "seo",
-   "titulo": "Fanatia: conservar las URLs que atraen audiencia y su recorrido hacia la compra",
-   "resumen": "Propuesta al 2 de octubre de 2026. Basada en documentación local; no se ejecutaron cambios ni consultas externas. Evitar que las próximas modificaciones de Fanatia rompan sus entradas desde buscadores, enlaces históricos o navegación hacia los sets. El diagnóstico del 26 de septiembre registró 1,002 sesiones en 28 días, pero solo 3.7 % de las sesiones llegó a la ficha del set. La oportunidad consiste en conservar esa",
-   "stamp": "20261002"
-  },
   {
    "id": "prop-legal-producto-nomos-orquestador-ia-jur-dico-20261004-132840",
    "proyecto": "legal",
@@ -25,14 +17,6 @@
    "titulo": "Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible",
    "resumen": "Estado de la propuesta: provisional. El entorno rechazó la ejecución necesaria para leer knowledge/ y .pato/PATOBOARD.md. No pude verificar el contexto documental, incluido knowledge/departamento-numeros.md, ni los avances existentes. Esta propuesta parte del resumen proporcionado; las metas siguientes son propuestas, no resultados reales. No se realizaron acciones externas ni publicaciones. Poner en operación un cic",
    "stamp": "20261009"
-  },
-  {
-   "id": "prop-piloko-hablar-ideas-y-pensamiento-de-tecnologia-20261003-072715",
-   "proyecto": "piloko",
-   "vocacion": "copy",
-   "titulo": "Piloko: «Qué cambia cuando crear imágenes se vuelve barato»",
-   "resumen": "Propuesta de PATO · 3 de octubre de 2026 · Piloto editorial de 28 días Posicionar a David como una voz con criterio sobre tecnología y emprendimiento creativo, convirtiendo decisiones reales del estudio en conversaciones con posibles clientes. El reparto vigente del proyecto, actualizado el 23 de septiembre, permite en Piloko dirección creativa, producción, distribución y evaluación. Los ensayos generales de economía",
-   "stamp": "20261003"
   },
   {
    "id": "prop-proca-procagrillz-llevar-al-cliente-a-escaneo--20261007-072709",

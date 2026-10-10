@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-10T03:11:05",
+ "generatedAt": "2026-10-10T13:02:01",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 6
  },
  "climate": {
   "ok": 10,
@@ -191,11 +191,6 @@
  ],
  "canon": [
   {
-   "titulo": "Fanatia: conservar las URLs que atraen audiencia y su recorrido hacia la compra",
-   "proyecto": "fanatia",
-   "stamp": "20261002"
-  },
-  {
    "titulo": "Nomos: convertir un flujo documental en un piloto pagado y utilizado",
    "proyecto": "legal",
    "stamp": "20261004"
@@ -204,11 +199,6 @@
    "titulo": "Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible",
    "proyecto": "patologicos",
    "stamp": "20261009"
-  },
-  {
-   "titulo": "Piloko: «Qué cambia cuando crear imágenes se vuelve barato»",
-   "proyecto": "piloko",
-   "stamp": "20261003"
   },
   {
    "titulo": "PROCAGrillZ: del interés al escaneo intraoral recibido",
@@ -234,7 +224,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "6 obras en el cuerpo de trabajo del universo",
   "obra: «Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible» — patologicos",
   "obra: «PROCADental: cerrar siete huecos de contenido y convertir consultas en visitas al director» — procadental",
   "obra: «PROCA GrillZ: un solo CTA para convertir el tráfico de PROCADental en solicitudes de escan» — procagrillz"
