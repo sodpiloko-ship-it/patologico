@@ -3,24 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Casos — El portafolio que Pato opera de verdad</title>
-<meta name="description" content="Sin clientes inventados. Estas son las 11 propiedades vivas que operamos, con cifras verificables de Google Analytics. El sistema probado en nuestra propia casa.">
+<title>Casos — Proyectos, evidencia y aprendizajes de Pato</title>
+<meta name="description" content="Conoce los proyectos de Patológicos: qué construimos, qué evidencia respalda cada caso y qué falta comprobar. Corte del 10 de octubre de 2026.">
 <link rel="canonical" href="https://patologicos.com/casos.html">
 <meta property="og:url" content="https://patologicos.com/casos.html">
-<meta property="og:title" content="Casos — El portafolio que Pato opera de verdad">
-<meta property="og:description" content="Sin clientes inventados. Estas son las 11 propiedades vivas que operamos, con cifras verificables de Google Analytics. El sistema probado en nuestra propia casa.">
+<meta property="og:title" content="Casos — Proyectos, evidencia y aprendizajes de Pato">
+<meta property="og:description" content="Conoce los proyectos de Patológicos: qué construimos, qué evidencia respalda cada caso y qué falta comprobar. Corte del 10 de octubre de 2026.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:#F4F3EE;color:#1B1C18;font-family:'Hanken Grotesk',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-    a{color:#1B1C18;text-decoration:none}
-    a:hover{color:#000}
-    button{font-family:inherit;cursor:pointer}
-    ::selection{background:#d7f06a;color:#191A16}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;background:#F4F3EE;color:#1B1C18;font-family:'Hanken Grotesk',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:4px}a:focus-visible,summary:focus-visible{outline:3px solid #526d12;outline-offset:5px}
+    ::selection{background:#d7f06a;color:#191A16}.wrap{max-width:1120px;margin:auto;padding-left:clamp(20px,4vw,40px);padding-right:clamp(20px,4vw,40px)}
+    .site-header{position:sticky;top:0;z-index:10;background:rgba(244,243,238,.96);border-bottom:1px solid #E0DED5;backdrop-filter:blur(12px)}
+    .nav{min-height:72px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.brand{font:700 23px 'Space Grotesk',sans-serif;letter-spacing:-.04em;display:inline-flex;align-items:center;gap:10px}.brand-mark{width:26px;height:26px;border-radius:8px;background:#C8ED4B;display:grid;place-items:center}.brand-mark:after{content:'';width:9px;height:9px;border-radius:50%;background:#191A16}
+    .nav-links{display:flex;gap:20px;align-items:center;font-size:14px}.nav-links [aria-current]{font-weight:700}.nav-cta{margin-left:auto}.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#C8ED4B;color:#191A16;border:1px solid #b4dc3c;border-radius:9px;padding:11px 17px;font-weight:700;font-size:14px;line-height:1.3}.button:hover{background:#d3f163;text-decoration:none}.button.secondary{background:transparent;border-color:#5d5f50;color:#EDECE4}
+    .skip{position:absolute;left:20px;top:-100px;background:#C8ED4B;padding:12px;z-index:30}.skip:focus{top:12px}.hero{padding-top:clamp(44px,7vw,80px);padding-bottom:32px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#526b16;margin:0 0 16px}.hero h1{font:600 clamp(34px,5.1vw,58px)/1.06 'Space Grotesk',sans-serif;letter-spacing:-.045em;max-width:19ch;margin:0}.intro{font-size:clamp(17px,2vw,21px);line-height:1.6;max-width:740px;color:#55564E;margin:24px 0}.date{font-size:13px;color:#616257;margin:0}
+    .principle{background:#EAF1D2;border:1px solid #d7e3b4;border-radius:14px;padding:22px 24px;margin-top:28px;display:grid;grid-template-columns:1fr 2fr;gap:24px}.principle h2{font:600 19px/1.3 'Space Grotesk',sans-serif;margin:0}.principle p{font-size:15px;line-height:1.65;margin:0;color:#414736}.jump-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.jump-links a{border:1px solid #d8d7cb;padding:9px 13px;border-radius:999px;font-size:13px;background:#FBFAF7}
+    .case-section{padding-top:40px;padding-bottom:12px}.section-heading{display:flex;align-items:baseline;gap:16px;border-top:1px solid #d9d8ce;padding-top:28px;margin-bottom:24px}.section-number{font:500 13px 'Space Grotesk',sans-serif;color:#68695d}.section-heading h2{font:600 clamp(23px,3vw,30px)/1.2 'Space Grotesk',sans-serif;letter-spacing:-.03em;margin:0}.section-lead{font-size:16px;line-height:1.6;color:#55564E;max-width:760px;margin:-8px 0 24px}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.card{background:#FBFAF7;border:1px solid #E0DED4;border-radius:16px;padding:clamp(22px,3vw,30px);display:flex;flex-direction:column;min-width:0}.card .category{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#65733e;font-weight:700;margin:0 0 10px}.card h3{font:600 25px/1.18 'Space Grotesk',sans-serif;letter-spacing:-.025em;margin:0 0 12px}.card .summary{font-size:16px;line-height:1.55;margin:0 0 20px;color:#4e5047}.facts{margin:0}.facts dt{font-size:12px;font-weight:800;color:#34392b;margin:18px 0 5px}.facts dt:first-child{margin-top:0}.facts dd{font-size:14px;line-height:1.65;color:#56584e;margin:0}.facts dd+dt{border-top:1px solid #E8E6DD;padding-top:15px}.card-link{margin-top:auto;padding-top:22px;font-size:14px;font-weight:700;color:#425c0f}.card-link a{display:inline-flex;gap:8px;align-items:center}.wide{grid-column:1/-1}.cad-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:4px 0 22px}.cad-grid h4{font:600 17px 'Space Grotesk',sans-serif;margin:0 0 8px}.cad-grid p{font-size:14px;line-height:1.65;color:#56584e;margin:0}.status{display:inline-block;border:1px solid #DCE4C7;background:#f0f4e6;color:#495d23;font-size:11px;font-weight:700;padding:5px 9px;border-radius:5px;margin-bottom:16px;align-self:flex-start}
+    .method{margin-top:48px;padding:28px;border:1px solid #dddccf;border-radius:16px;background:#ECEBE2}.method h2{font:600 24px/1.2 'Space Grotesk',sans-serif;margin:0 0 15px;letter-spacing:-.02em}.method p{font-size:15px;line-height:1.7;color:#505347;max-width:800px}.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.method-grid h3{font-size:14px;margin:10px 0 6px}.method-grid p{font-size:14px;margin:0}.archive{margin-top:24px;border-top:1px solid #d1d1c3;padding-top:18px}.archive summary{cursor:pointer;font-weight:700;font-size:14px;line-height:1.5}.archive p{font-size:14px}
+    .lab-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.lab-link{display:block;border:1px solid #E0DED4;border-radius:12px;padding:20px;background:#FBFAF7}.lab-link strong{display:block;font:600 16px 'Space Grotesk',sans-serif;margin-bottom:8px}.lab-link span{font-size:13px;line-height:1.6;color:#5c5e53;display:block}.lab-note{font-size:13px;line-height:1.65;color:#646659;margin:18px 0 0}
+    .closing{margin-top:64px;background:#191A16;color:#EDECE4;padding:clamp(44px,6vw,68px) 0}.closing h2{font:600 clamp(29px,4vw,42px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.03em;margin:0;max-width:23ch}.closing p{font-size:17px;line-height:1.6;color:#babdb0;max-width:650px;margin:20px 0 24px}.actions{display:flex;flex-wrap:wrap;gap:12px}.site-footer{padding-top:30px;padding-bottom:30px;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;font-size:13px;color:#606257}.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+    @media(max-width:760px){.nav{gap:14px}.nav-links{order:3;width:100%;gap:22px;overflow:auto;padding:4px 0}.nav-cta{font-size:12px;padding:9px 12px}.principle{grid-template-columns:1fr;gap:12px}.cards,.cad-grid,.method-grid{grid-template-columns:1fr}.cad-grid{gap:18px}.cad-grid>div+div{border-top:1px solid #e2e1d7;padding-top:18px}.lab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.method{padding:22px}.hero h1{max-width:19ch}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#C8ED4B">
@@ -29,244 +38,85 @@
 </head>
 <body>
 <div id="dc-root">
-<header style="position:sticky;top:0;z-index:50;background:rgba(244,243,238,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E7E5DE">
-  <nav style="max-width:1120px;margin:0 auto;padding:0 clamp(18px,4vw,40px);height:64px;display:flex;align-items:center;gap:20px">
-    <a href="index.html" style="display:flex;align-items:center;gap:10px">
-      <div style="width:26px;height:26px;border-radius:8px;background:#C8ED4B;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px #b4dc3c"><div style="width:9px;height:9px;border-radius:50%;background:#191A16"></div></div>
-      <span style="font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:-0.03em">pato</span>
-    </a>
-    <div style="display:flex;gap:2px;margin-left:8px">
-      <a href="index.html#producto" style="color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Producto</a>
-      <a href="index.html#como" style="color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Cómo funciona</a>
-      <a href="index.html#precios" style="color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Precios</a>
-      <a href="blog/" style="color:#55564E;font-size:14.5px;padding:8px 11px;border-radius:8px">Blog</a>
-      <a style="color:#1B1C18;font-size:14.5px;font-weight:600;padding:8px 11px;border-radius:8px;background:#EAF1D2;cursor:pointer">Casos</a>
-    </div>
-    <div style="margin-left:auto;display:flex;align-items:center;gap:12px">
-      <a href="solicitar.html" style="cursor:pointer;color:#55564E;font-size:14.5px">Iniciar sesión</a>
-      <a href="solicitar.html" style="background:#C8ED4B;color:#191A16;border:1px solid #b4dc3c;border-radius:9px;padding:9px 15px;font-size:14px;font-weight:600" style-hover="background:#d3f163">Solicitar diagnóstico</a>
-    </div>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Navegación principal">
+    <a class="brand" href="index.html" aria-label="Pato, inicio"><span class="brand-mark" aria-hidden="true"></span>pato</a>
+    <div class="nav-links"><a href="producto.html">Producto</a><a href="index.html#precios">Precios</a><a href="blog/">Blog</a><a href="casos.html" aria-current="page">Casos</a></div>
+    <a class="button nav-cta" href="solicitar.html">Solicitar diagnóstico <span aria-hidden="true">→</span></a>
   </nav>
 </header>
-
-<section style="max-width:1120px;margin:0 auto;padding:clamp(44px,6vw,80px) clamp(20px,4vw,40px) 0">
-  <div style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#5c7a12"><span style="width:7px;height:7px;border-radius:2px;background:#C8ED4B"></span>Casos de estudio</div>
-  <h1 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(32px,4.6vw,54px);line-height:1.04;letter-spacing:-0.03em;margin:16px 0 0;max-width:16ch">Resultados reales, no promesas.</h1>
-  <p style="font-size:clamp(16px,1.6vw,20px);color:#55564E;line-height:1.55;max-width:600px;margin:18px 0 0">Negocios de Latinoamérica que pasaron de herramientas sueltas a un sistema de ventas administrado. Esto es lo que cambió.</p>
-</section>
-
-<sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
-<section style="max-width:1120px;margin:32px auto 0;padding:0 clamp(20px,4vw,40px)">
-  <div style="border:1px solid #E9E7DF;border-radius:14px;background:#FBFAF7;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
-    <div style="padding:20px 22px;border-right:1px solid #EEEDE6"><div style="font-family:'Space Grotesk';font-weight:600;font-size:30px;letter-spacing:-0.02em">12</div><div style="font-size:13px;color:#86867C;margin-top:4px">propiedades vivas que operamos</div></div>
-    <div style="padding:20px 22px;border-right:1px solid #EEEDE6"><div style="font-family:'Space Grotesk';font-weight:600;font-size:30px;letter-spacing:-0.02em">5,593</div><div style="font-size:13px;color:#86867C;margin-top:4px">sesiones · últimos 30 días</div></div>
-    <div style="padding:20px 22px;border-right:1px solid #EEEDE6"><div style="font-family:'Space Grotesk';font-weight:600;font-size:30px;letter-spacing:-0.02em">9</div><div style="font-size:13px;color:#86867C;margin-top:4px">midiendo en GA4, en vivo</div></div>
-    <div style="padding:20px 22px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:30px;letter-spacing:-0.02em">1</div><div style="font-size:13px;color:#86867C;margin-top:4px">sistema, todo conectado</div></div>
-  </div>
-  <p style="font-size:12.5px;color:#9a9a90;margin:10px 2px 0;line-height:1.6">Cifras de Google Analytics 4 de nuestras propias propiedades, últimos 30 días, leídas el 23 de julio de 2026. Son verificables: cada sitio está abajo con su dominio.</p>
-</section>
-
-<section style="max-width:1120px;margin:clamp(36px,5vw,56px) auto 0;padding:0 clamp(20px,4vw,40px)">
-  <div style="border:1px solid #E4E2DA;background:#191A16;color:#F4F3EE;border-radius:18px;padding:clamp(22px,3vw,30px)">
-    <div style="display:inline-flex;align-items:center;gap:8px;background:#C8ED4B;color:#191A16;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;letter-spacing:0.02em;margin-bottom:14px">SIN CLIENTES QUE INVENTAR</div>
-    <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(22px,3vw,30px);letter-spacing:-0.02em;margin:0 0 12px;line-height:1.25">El plan fundador abre ahora. Todavía no tenemos clientes de este producto.</h2>
-    <p style="margin:0;font-size:15.5px;line-height:1.7;color:#C9C9C0;max-width:74ch">Podríamos haber puesto testimonios bonitos. Preferimos esto: <strong style="color:#F4F3EE">el portafolio que operamos nosotros</strong>. Son negocios reales, con dominios que puedes abrir ahora mismo, medidos con las mismas herramientas que instalaríamos en el tuyo. El sistema lo probamos en nuestra propia casa antes de vendértelo.</p>
+<main id="contenido">
+  <div class="wrap">
+    <section class="hero" aria-labelledby="titulo-casos">
+      <p class="eyebrow">Casos de construcción con IA</p>
+      <h1 id="titulo-casos">Del conocimiento del negocio a herramientas que podemos explicar.</h1>
+      <p class="intro">Software dental, operaciones, tiendas y productos de contenido. Compartimos qué construimos, las decisiones que tomamos y lo que aún necesita comprobarse.</p>
+      <p class="date">Estado de la evidencia: <time datetime="2026-10-10">10 de octubre de 2026</time>.</p>
+      <div class="principle"><h2>El portafolio es nuestro punto de partida.</h2><p>Estos proyectos forman parte de nuestro trabajo y del ecosistema que desarrollamos. Cada ficha distingue lo encontrado en el sitio, el código o la documentación. Construir una función, publicarla y demostrar su impacto en el negocio son pasos diferentes.</p></div>
+      <nav class="jump-links" aria-label="Explorar casos por tema"><a href="#comercio">Web y comercio</a><a href="#software">Software y operación</a><a href="#contenido-educacion">Contenido y educación</a><a href="#metodo">Cómo revisamos</a><a href="#laboratorio">Laboratorio</a></nav>
+    </section>
+    <section class="case-section" id="comercio" aria-labelledby="comercio-titulo">
+  <div class="section-heading"><span class="section-number">01</span><h2 id="comercio-titulo">Web y comercio</h2></div>
+  <p class="section-lead">Negocios distintos ayudan a entender una misma pregunta: ¿qué necesita saber el cliente y qué debe ocurrir después de su consulta?</p>
+  <div class="cards">
+    <article class="card" id="picando-tabla"><p class="category">Alimentos y eventos</p><h3>Picando Tabla</h3><p class="summary">Distinguir una tabla de catálogo de una solicitud de catering.</p><span class="status">Sitio revisado · captura implementada</span><dl class="facts"><dt>Qué construimos</dt><dd>Catálogo, páginas de eventos y un formulario que reúne fecha, personas y alcance. La solicitud recibe un folio para continuar la cotización.</dd><dt>Qué respalda este caso</dt><dd>La página está publicada. El código guarda la solicitud y solo muestra confirmación cuando el servidor devuelve un folio; también distingue un reintento de una corrección.</dd><dt>Qué falta comprobar</dt><dd>Relacionar solicitudes recibidas con cotizaciones, anticipos y ventas. Un folio acredita una solicitud, no una reserva pagada.</dd></dl><p class="card-link"><a href="https://picandotabla.com/eventos/">Ver catering y eventos <span aria-hidden="true">↗</span></a></p></article>
+    <article class="card" id="lumin"><p class="category">Productos artesanales</p><h3>Lumin Candele</h3><p class="summary">Hacer que el catálogo publicado conserve la información del negocio.</p><span class="status">Catálogo público revisado</span><dl class="facts"><dt>Qué construimos</dt><dd>Catálogo y fichas legibles en la página, conservando el carrito y el recorrido hacia WhatsApp. El proceso de publicación reúne los cambios en una fuente común.</dd><dt>Qué respalda este caso</dt><dd>El catálogo y las políticas de pedido son públicos. La documentación registra la corrección de contenido que existía localmente pero no había llegado al sitio.</dd><dt>Qué falta comprobar</dt><dd>La recepción de los eventos de medición y su relación con pedidos pagados. Esta revisión no demuestra mejoras de posiciones ni de ventas.</dd></dl><p class="card-link"><a href="https://www.velasaromaticas.com.mx/velas/">Ver el catálogo <span aria-hidden="true">↗</span></a></p></article>
+    <article class="card" id="grillz"><p class="category">Joyería dental personalizada</p><h3>PROCA Grillz</h3><p class="summary">Explicar el escaneo necesario antes de preparar una cotización.</p><span class="status">Sitio revisado · formulario implementado</span><dl class="facts"><dt>Qué construimos</dt><dd>Una oferta y un recorrido de cotización que hacen visible el requisito de escaneo intraoral para el trabajo personalizado.</dd><dt>Qué respalda este caso</dt><dd>La portada y el cotizador están publicados. El código guarda la solicitud antes de avisar y no confirma el registro cuando falla ese guardado.</dd><dt>Qué falta comprobar</dt><dd>El recorrido completo de recepción, revisión del escaneo, cotización y pago. Un clic de contacto no demuestra una venta.</dd></dl><p class="card-link"><a href="https://procagrillz.com/cotiza/">Ver el cotizador <span aria-hidden="true">↗</span></a></p></article>
+    <article class="card" id="cadcamia"><p class="category">Diseño y fabricación</p><h3>CADCAMIA</h3><p class="summary">Presentar una oferta de productos personalizados con su capacidad real.</p><span class="status">Oferta pública · capacidad en validación</span><dl class="facts"><dt>Qué está presentado</dt><dd>Diseño, productos personalizados, prototipos y series cortas. La oferta actual amplía la etapa anterior de contenido sobre impresión 3D.</dd><dt>Qué respalda este caso</dt><dd>El sitio describe estos servicios y señala que la granja de impresión está en construcción y validación.</dd><dt>Qué falta comprobar</dt><dd>Capacidad instalada, piezas entregadas, cotizaciones y ventas. La oferta publicada no acredita esos resultados.</dd></dl><p class="card-link"><a href="https://cadcamia.com/">Conocer CADCAMIA <span aria-hidden="true">↗</span></a></p></article>
   </div>
 </section>
-
-<section style="max-width:1120px;margin:clamp(36px,5vw,56px) auto 0;padding:0 clamp(20px,4vw,40px)">
-  <div style="border:1px solid #E4E2DA;background:#FBFAF7;border-radius:18px;overflow:hidden">
-    <div style="padding:clamp(22px,3vw,32px);border-bottom:1px solid #EEEDE6">
-      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px">
-        <div style="width:40px;height:40px;border-radius:10px;background:#191A16;color:#C8ED4B;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:17px">P</div>
-        <div><div style="font-weight:600;font-size:16px">Picando Tabla — Tablas de quesos y charcutería</div><div style="font-size:12.5px;color:#9a9a90">CDMX · <a href="https://picandotabla.com" style="color:#9a9a90">picandotabla.com</a> · operado por Pato</div></div>
-        <span style="margin-left:auto;background:#EAF1D2;color:#5c7a12;font-size:12px;font-weight:700;border-radius:999px;padding:5px 12px">VENTAS REALES</span>
-      </div>
-      <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(20px,2.6vw,26px);letter-spacing:-0.02em;margin:0 0 8px;line-height:1.3">Encontramos que el checkout desechaba todos los pedidos. Y lo arreglamos.</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:20px">
-        <div style="border:1px solid #E9E7DF;border-radius:12px;padding:14px 16px;background:#fff"><div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em">2,086</div><div style="font-size:12.5px;color:#86867C;margin-top:3px">sesiones · 30 días</div></div>
-        <div style="border:1px solid #E9E7DF;border-radius:12px;padding:14px 16px;background:#fff"><div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em">100%</div><div style="font-size:12.5px;color:#86867C;margin-top:3px">de pedidos se perdían antes</div></div>
-        <div style="border:1px solid #E9E7DF;border-radius:12px;padding:14px 16px;background:#fff"><div style="font-family:'Space Grotesk';font-weight:600;font-size:26px;letter-spacing:-0.02em">GA4 + Pixel</div><div style="font-size:12.5px;color:#86867C;margin-top:3px">midiendo, en vivo</div></div>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
-      <div style="padding:22px 24px;border-right:1px solid #EEEDE6"><div style="font-size:12px;font-weight:700;letter-spacing:0.04em;color:#9a9a90;margin-bottom:8px">EL PROBLEMA</div><p style="margin:0;font-size:14.5px;line-height:1.7;color:#43443D">El sitio mostraba una confirmación de pedido al cliente, pero el pedido no llegaba a ningún lado. La fundadora no recibía nada. Nadie lo había notado porque la pantalla decía "gracias por tu compra".</p></div>
-      <div style="padding:22px 24px;border-right:1px solid #EEEDE6"><div style="font-size:12px;font-weight:700;letter-spacing:0.04em;color:#9a9a90;margin-bottom:8px">QUÉ HICIMOS</div><p style="margin:0;font-size:14.5px;line-height:1.7;color:#43443D">Auditamos a dónde llegaba cada pedido. Reconectamos el checkout a WhatsApp con el pedido ya armado, agregamos captura del lado del servidor y aviso por correo. Después instrumentamos GA4 y Meta Pixel para medir cada paso.</p></div>
-      <div style="padding:22px 24px"><div style="font-size:12px;font-weight:700;letter-spacing:0.04em;color:#9a9a90;margin-bottom:8px">EL RESULTADO</div><p style="margin:0;font-size:14.5px;line-height:1.7;color:#43443D">Los pedidos llegan. Quedan guardados aunque falle el correo. Y ahora se mide el embudo completo — antes era invisible. Este es exactamente el tipo de fuga que buscamos en el diagnóstico.</p></div>
-    </div>
+<section class="case-section" id="software" aria-labelledby="software-titulo">
+  <div class="section-heading"><span class="section-number">02</span><h2 id="software-titulo">Software y operación</h2></div>
+  <p class="section-lead">Convertir un oficio en software exige definir reglas, conservar versiones y saber cuándo una herramienta todavía necesita revisión.</p>
+  <div class="cards">
+    <article class="card wide" id="proca-cad"><p class="category">Software especializado para el oficio dental</p><h3>PROCA D, R y F</h3><p class="summary">Tres frentes de desarrollo, con funciones y grados de avance diferentes.</p><span class="status">Código y documentación revisados</span><div class="cad-grid"><div><h4>PROCA D · mallas y refinado</h4><p>Operaciones de corte, cierre de agujeros, unión de bordes y suavizado. Hay evidencia de reutilización de herramientas; falta comprobar un recorrido completo de la versión actual.</p></div><div><h4>PROCA R · removibles</h4><p>El estado documenta importación, preparación y construcción de componentes. También reconoce pendientes de confiabilidad para el trabajo cotidiano.</p></div><div><h4>PROCA F · restauraciones fijas</h4><p>El desarrollo relaciona preparación, margen, eje y anatomía. La entrega sigue bloqueada mientras faltan comprobaciones de ajuste, espesor, contactos y geometría.</p></div></div><dl class="facts"><dt>Qué aprendemos</dt><dd>El especialista define qué debe conservarse y qué necesita validación. La IA participa en la construcción; una pieza visible en pantalla todavía requiere pruebas antes de fabricarse.</dd><dt>Qué falta comprobar</dt><dd>Una versión identificada, un caso completo y la revisión de su resultado. No presentamos estos tres desarrollos como una suite terminada ni como validación clínica.</dd></dl><p class="card-link"><a href="solicitar.html?interes=industria">Evaluar software para tu industria <span aria-hidden="true">→</span></a></p></article>
+    <article class="card" id="procaops"><p class="category">Administración de laboratorios y maquila</p><h3>PROCAOps y registro interno</h3><p class="summary">Separar el avance del trabajo, sus archivos y el dinero.</p><span class="status">Funciones documentadas · integración por comprobar</span><dl class="facts"><dt>Qué encontramos construido</dt><dd>Herramientas para clientes, trabajos, etapas, pagos, créditos, gastos, archivos y reportes. Conviven la app interna, una edición local, un complemento CAD y el expediente de revisión.</dd><dt>Qué respalda este caso</dt><dd>El código distingue cuentas, movimientos y versiones. Las herramientas locales y el portal tienen funciones diferentes: no se comprobó una sincronización integral entre todas.</dd><dt>Qué falta comprobar</dt><dd>Qué registro utiliza hoy el equipo y cómo recorre un trabajo cada sistema, desde su recepción hasta el cierre y la conciliación.</dd></dl><p class="card-link"><a href="https://procaops.com/">Conocer PROCAOps <span aria-hidden="true">↗</span></a></p></article>
+    <article class="card" id="tod"><p class="category">Asistentes con contexto y permisos</p><h3>Tod y las solicitudes de Ops</h3><p class="summary">Conectar un asistente a una tarea que se puede revisar.</p><span class="status">Conexión disponible · uso por comprobar</span><dl class="facts"><dt>Qué está preparado</dt><dd>Un plugin conecta al Dot Tod existente con solicitudes de Ops. Su contrato exige consultar la revisión de la solicitud y confirmar el resultado de una respuesta.</dd><dt>Qué respalda este caso</dt><dd>Se revisaron las instrucciones y la superficie de conexión. El prototipo local es otro desarrollo y mantiene la IA desactivada; no se usa como prueba del funcionamiento del Dot.</dd><dt>Qué falta comprobar</dt><dd>Actividad reciente, entregas y reintentos. Resolver una solicitud no aprueba una pieza, registra un pago ni autoriza fabricación.</dd></dl><p class="card-link"><a href="solicitar.html?interes=implementacion">Evaluar una tarea para un asistente <span aria-hidden="true">→</span></a></p></article>
+    <article class="card wide" id="pato"><p class="category">Nuestro propio sistema</p><h3>Patológicos y POND</h3><p class="summary">Mantener coherencia entre lo que construimos, lo que publicamos y lo que una herramienta puede consultar.</p><dl class="facts"><dt>Qué construimos</dt><dd>Un sitio y un flujo editorial con fuentes de contenido, generación de páginas y captura de solicitudes. POND desarrolla una capa de consulta de información comercial.</dd><dt>Qué respalda este caso</dt><dd>El reporte contrastó las páginas públicas con sus archivos de origen. La página de POND declara consultas locales de lectura y deja pendientes las interfaces públicas autenticadas.</dd><dt>Qué falta comprobar</dt><dd>La recepción completa de solicitudes y el acceso público al catálogo de POND, que devolvió un error en la revisión. No se presenta como un sistema que ya compra, reserva o cobra mediante agentes.</dd></dl><p class="card-link"><a href="avances/">Consultar los avances <span aria-hidden="true">→</span></a></p></article>
   </div>
 </section>
-
-<section style="max-width:1120px;margin:clamp(40px,5vw,64px) auto 0;padding:0 clamp(20px,4vw,40px)">
-  <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px">
-    <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(20px,2.6vw,26px);letter-spacing:-0.02em;margin:0">El resto del portafolio</h2>
-    <span style="font-family:'Space Grotesk';font-size:13px;color:#9a9a90">todos vivos · ábrelos y compruébalo</span>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px">
-
-    <article style="border:1px solid #C8ED4B;background:#FBFAF7;border-radius:16px;padding:20px 22px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="background:#191A16;color:#C8ED4B;font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 10px">PILOTO #0 DEL PRODUCTO</span></div>
-      <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:17px;letter-spacing:-0.01em;margin:0 0 6px">Velas Lumin</h3>
-      <p style="margin:0 0 14px;font-size:14px;line-height:1.65;color:#43443D">La primera marca corriendo sobre el sistema completo: sitio, catálogo real, pedidos por WhatsApp con folio y panel propio donde la fundadora mueve precios, inventario y el estado de cada pedido.</p>
-      <div style="display:flex;gap:18px;padding-top:12px;border-top:1px solid #EEEDE6">
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">Panel</div><div style="font-size:11.5px;color:#86867C">operado por ella</div></div>
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">32</div><div style="font-size:11.5px;color:#86867C">fotos, 0 rotas</div></div>
-      </div>
-      <a href="https://www.velasaromaticas.com.mx" style="display:inline-block;margin-top:12px;font-size:13px;color:#5c7a12;font-weight:600;text-decoration:none">velasaromaticas.com.mx ›</a>
-    </article>
-
-    <article style="border:1px solid #E4E2DA;background:#FBFAF7;border-radius:16px;padding:20px 22px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="background:#EAF1D2;color:#5c7a12;font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 10px">DENTAL B2B</span></div>
-      <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:17px;letter-spacing:-0.01em;margin:0 0 6px">PROCAOps</h3>
-      <p style="margin:0 0 14px;font-size:14px;line-height:1.65;color:#43443D">Portal de laboratorio dental con catálogo de maquila a precios públicos y un CAD de escritorio descargable. Sitio, producto y portal en un solo sistema.</p>
-      <div style="display:flex;gap:18px;padding-top:12px;border-top:1px solid #EEEDE6">
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">1,927</div><div style="font-size:11.5px;color:#86867C">sesiones · 30d</div></div>
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">MXN</div><div style="font-size:11.5px;color:#86867C">precios públicos</div></div>
-      </div>
-      <a href="https://procaops.com" style="display:inline-block;margin-top:12px;font-size:13px;color:#5c7a12;font-weight:600;text-decoration:none">procaops.com ›</a>
-    </article>
-
-    <article style="border:1px solid #E4E2DA;background:#FBFAF7;border-radius:16px;padding:20px 22px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="background:#EAF1D2;color:#5c7a12;font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 10px">E-COMMERCE</span></div>
-      <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:17px;letter-spacing:-0.01em;margin:0 0 6px">PROCA GrillZ</h3>
-      <p style="margin:0 0 14px;font-size:14px;line-height:1.65;color:#43443D">Joyería dental a la medida con escaneo digital. Sitio de ventas y guías de compra construidos para captar intención de búsqueda.</p>
-      <div style="display:flex;gap:18px;padding-top:12px;border-top:1px solid #EEEDE6">
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">783</div><div style="font-size:11.5px;color:#86867C">sesiones · 30d</div></div>
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">SEO</div><div style="font-size:11.5px;color:#86867C">intención de compra</div></div>
-      </div>
-      <a href="https://procagrillz.com" style="display:inline-block;margin-top:12px;font-size:13px;color:#5c7a12;font-weight:600;text-decoration:none">procagrillz.com ›</a>
-    </article>
-
-    <article style="border:1px solid #E4E2DA;background:#FBFAF7;border-radius:16px;padding:20px 22px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="background:#EAF1D2;color:#5c7a12;font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 10px">CRECIMIENTO</span></div>
-      <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:17px;letter-spacing:-0.01em;margin:0 0 6px">Fanatia</h3>
-      <p style="margin:0 0 14px;font-size:14px;line-height:1.65;color:#43443D">Fotografía y membresía. Detectamos por analítica que su tráfico crecía por un buscador que nadie estaba mirando, y ajustamos la estrategia a ese canal.</p>
-      <div style="display:flex;gap:18px;padding-top:12px;border-top:1px solid #EEEDE6">
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">+413%</div><div style="font-size:11.5px;color:#86867C">tráfico · 7 días</div></div>
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">373</div><div style="font-size:11.5px;color:#86867C">sesiones · 30d</div></div>
-      </div>
-      <a href="https://fanatia.com" style="display:inline-block;margin-top:12px;font-size:13px;color:#5c7a12;font-weight:600;text-decoration:none">fanatia.com ›</a>
-    </article>
-
-    <article style="border:1px solid #E4E2DA;background:#FBFAF7;border-radius:16px;padding:20px 22px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="background:#EAF1D2;color:#5c7a12;font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 10px">CONTENIDO SEO</span></div>
-      <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:17px;letter-spacing:-0.01em;margin:0 0 6px">PROCADental</h3>
-      <p style="margin:0 0 14px;font-size:14px;line-height:1.65;color:#43443D">Hub educativo para pacientes. Migramos 106 URLs a su nuevo destino sin perder posiciones — cada redirección verificada una por una en vivo.</p>
-      <div style="display:flex;gap:18px;padding-top:12px;border-top:1px solid #EEEDE6">
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">246</div><div style="font-size:11.5px;color:#86867C">sesiones · 30d</div></div>
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">106</div><div style="font-size:11.5px;color:#86867C">URLs migradas</div></div>
-      </div>
-      <a href="https://procadental.com" style="display:inline-block;margin-top:12px;font-size:13px;color:#5c7a12;font-weight:600;text-decoration:none">procadental.com ›</a>
-    </article>
-
-    <article style="border:1px solid #E4E2DA;background:#FBFAF7;border-radius:16px;padding:20px 22px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="background:#EAF1D2;color:#5c7a12;font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 10px">SaaS</span></div>
-      <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:17px;letter-spacing:-0.01em;margin:0 0 6px">Nomos</h3>
-      <p style="margin:0 0 14px;font-size:14px;line-height:1.65;color:#43443D">Plataforma de orquestadores de IA por industria. Producto propio, con su página de ventas y su alpha demostrativo en vivo.</p>
-      <div style="display:flex;gap:18px;padding-top:12px;border-top:1px solid #EEEDE6">
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">Alpha</div><div style="font-size:11.5px;color:#86867C">en vivo</div></div>
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">Demo</div><div style="font-size:11.5px;color:#86867C">abierta</div></div>
-      </div>
-      <a href="https://usanomos.com" style="display:inline-block;margin-top:12px;font-size:13px;color:#5c7a12;font-weight:600;text-decoration:none">usanomos.com ›</a>
-    </article>
-
-    <article style="border:1px solid #E4E2DA;background:#FBFAF7;border-radius:16px;padding:20px 22px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="background:#EAF1D2;color:#5c7a12;font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 10px">100% IA</span></div>
-      <h3 style="font-family:'Space Grotesk';font-weight:600;font-size:17px;letter-spacing:-0.01em;margin:0 0 6px">cadcamia</h3>
-      <p style="margin:0 0 14px;font-size:14px;line-height:1.65;color:#43443D">Blog de impresión 3D de resina, escrito y publicado por el motor de contenido. Prueba de que la máquina produce sola cuando la dejas correr.</p>
-      <div style="display:flex;gap:18px;padding-top:12px;border-top:1px solid #EEEDE6">
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">58</div><div style="font-size:11.5px;color:#86867C">sesiones · 30d</div></div>
-        <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:19px">Auto</div><div style="font-size:11.5px;color:#86867C">publicación</div></div>
-      </div>
-      <a href="https://cadcamia.com" style="display:inline-block;margin-top:12px;font-size:13px;color:#5c7a12;font-weight:600;text-decoration:none">cadcamia.com ›</a>
-    </article>
-
-  </div>
-  <p style="font-size:12.5px;color:#9a9a90;margin:18px 2px 0;line-height:1.6">Sesiones de Google Analytics 4, últimos 30 días al 23 de julio de 2026. El dato de Fanatia compara los 7 días previos contra los 7 anteriores. No publicamos cifras que no podamos mostrar en la herramienta.</p>
-</section><section style="max-width:1120px;margin:clamp(40px,5vw,64px) auto 0;padding:0 clamp(20px,4vw,40px)">
-  <div style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#5c7a12"><span style="width:7px;height:7px;border-radius:2px;background:#C8ED4B"></span>Cómo mejoramos</div>
-  <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(24px,3vw,34px);line-height:1.1;letter-spacing:-0.025em;margin:14px 0 6px;max-width:20ch">Cada cambio, con hipótesis y evidencia.</h2>
-  <p style="font-size:15px;color:#55564E;line-height:1.55;max-width:56ch;margin:0 0 24px">No adivinamos. Probamos, medimos y conservamos lo que vende más. Este es el historial real de Migas.</p>
-  <div style="border:1px solid #E9E7DF;background:#FBFAF7;border-radius:14px;overflow:hidden">
-    <div style="display:grid;grid-template-columns:2fr 1.4fr 0.9fr;gap:14px;padding:12px 20px;background:#F8F7F2;border-bottom:1px solid #EEEDE6;font-size:11.5px;font-weight:600;color:#9a9a90"><div>Qué cambiamos</div><div>Hipótesis</div><div style="text-align:right">Resultado</div></div>
-    <div style="display:grid;grid-template-columns:2fr 1.4fr 0.9fr;gap:14px;padding:16px 20px;border-bottom:1px solid #F0EFE8;align-items:center"><div style="font-size:13.5px;font-weight:600">Encabezado con entrega local y tiempo de preparación</div><div style="font-size:13px;color:#6A6B61">Genera confianza y urgencia en el primer vistazo</div><div style="text-align:right"><span style="background:#ECF3D6;color:#4E7D16;font-size:12px;font-weight:700;padding:3px 9px;border-radius:20px">+18%</span></div></div>
-    <div style="display:grid;grid-template-columns:2fr 1.4fr 0.9fr;gap:14px;padding:16px 20px;border-bottom:1px solid #F0EFE8;align-items:center"><div style="font-size:13.5px;font-weight:600">Checkout móvil: mostrar envío antes del pago</div><div style="font-size:13px;color:#6A6B61">Reduce el abandono en el paso de envío</div><div style="text-align:right"><span style="background:#ECF3D6;color:#4E7D16;font-size:12px;font-weight:700;padding:3px 9px;border-radius:20px">+12%</span></div></div>
-    <div style="display:grid;grid-template-columns:2fr 1.4fr 0.9fr;gap:14px;padding:16px 20px;align-items:center"><div style="font-size:13.5px;font-weight:600">Destacar el pastel fondant para eventos</div><div style="font-size:13px;color:#6A6B61">Es el producto con mayor margen y ticket</div><div style="text-align:right"><span style="background:#ECF3D6;color:#4E7D16;font-size:12px;font-weight:700;padding:3px 9px;border-radius:20px">+$9,400</span></div></div>
+<section class="case-section" id="contenido-educacion" aria-labelledby="contenido-titulo">
+  <div class="section-heading"><span class="section-number">03</span><h2 id="contenido-titulo">Contenido y educación</h2></div>
+  <p class="section-lead">La tecnología también ayuda a organizar una audiencia, definir qué se vende y transformar conocimiento en una experiencia que se puede explorar.</p>
+  <div class="cards">
+    <article class="card" id="fanatia"><p class="category">Fotografía y acceso de pago · 18+</p><h3>Fanatia</h3><p class="summary">Pasar de la idea de membresía a una oferta clara por colección.</p><span class="status">Pago único por set · acceso manual</span><dl class="facts"><dt>Qué está publicado</dt><dd>Fotografía original, contenido editorial abierto y venta de acceso por set. El modelo actual es pago único con habilitación manual tras confirmar el pago.</dd><dt>Qué respalda este caso</dt><dd>La oferta pública y el código coinciden en venta por set. El apartado, las cuentas y los mecanismos de acceso están implementados; no acreditan una suscripción recurrente.</dd><dt>Qué falta comprobar</dt><dd>El recorrido de pago, alta, correo y acceso, junto con ventas conciliadas. La fotografía real y su edición con IA se distinguen de los personajes sintéticos.</dd></dl><p class="card-link"><a href="https://fanatia.com/membresia/">Ver la oferta de Fanatia · 18+ <span aria-hidden="true">↗</span></a></p></article>
+    <article class="card" id="proca-ed"><p class="category">Educación profesional</p><h3>PROCA Ed</h3><p class="summary">Enseñar conceptos dentales con clases y prácticas interactivas.</p><span class="status">Publicación documentada · módulos en desarrollo</span><dl class="facts"><dt>Qué construimos</dt><dd>Recursos para explorar anatomía, mallas y restricciones de diseño, junto con clases y preguntas contextualizadas. Algunos módulos siguen en desarrollo local.</dd><dt>Qué respalda este caso</dt><dd>La documentación de octubre registra dominio propio y clases disponibles. Los recursos combinan geometría real, referencias y simulaciones que necesitan distinguirse.</dd><dt>Qué falta comprobar</dt><dd>El recorrido de acceso de un alumno y el aprendizaje obtenido. El último registro revisado de altas automáticas conserva un bloqueo; no se promete acceso automático después del pago.</dd></dl><p class="card-link"><a href="https://procaed.com/">Conocer PROCA Ed <span aria-hidden="true">↗</span></a></p></article>
+    <article class="card" id="piloko"><p class="category">Fotografía y arquitectura de marca</p><h3>Piloko</h3><p class="summary">Explicar la procedencia de una imagen y darle una casa editorial.</p><span class="status">Portafolio público revisado</span><dl class="facts"><dt>Qué está organizado</dt><dd>Fotografía real, fotografía trabajada con IA y personajes sintéticos identificados. El contenido de fotografía adulta y sus sets se diferencia del portafolio de Piloko.</dd><dt>Qué respalda este caso</dt><dd>La portada y el mapa editorial expresan esa separación. Es un caso de claridad de marca y procedencia visual.</dd><dt>Qué falta comprobar</dt><dd>El efecto de los cambios de contenido y su relación con solicitudes o encargos. Una muestra de portafolio no demuestra una venta.</dd></dl><p class="card-link"><a href="https://piloko.com/">Ver el portafolio <span aria-hidden="true">↗</span></a></p></article>
+    <article class="card" id="procadental"><p class="category">Información para pacientes</p><h3>PROCADental</h3><p class="summary">Organizar las guías desde la preocupación del lector.</p><span class="status">Navegación y guías públicas revisadas</span><dl class="facts"><dt>Qué está publicado</dt><dd>Una entrada por problemas y preocupaciones dentales, guías abiertas y orientación hacia consulta. Su público es distinto del usuario profesional de PROCAOps.</dd><dt>Qué respalda este caso</dt><dd>El sitio permite revisar esa arquitectura informativa. La migración y las redirecciones son antecedentes del trabajo, no prueba de posiciones conservadas.</dd><dt>Qué falta comprobar</dt><dd>Autoría y revisión especializada de cada contenido, además del efecto de la migración con datos comparables de búsqueda.</dd></dl><p class="card-link"><a href="https://procadental.com/">Consultar las guías <span aria-hidden="true">↗</span></a></p></article>
   </div>
 </section>
-</sc-if>
-
-<section style="margin-top:clamp(56px,7vw,90px);background:#191A16;color:#EDECE4">
-  <div style="max-width:820px;margin:0 auto;padding:clamp(52px,7vw,84px) clamp(20px,4vw,40px);text-align:center">
-    <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(28px,4vw,46px);line-height:1.06;letter-spacing:-0.03em;margin:0">¿Listo para tener tu propio caso de éxito?</h2>
-    <p style="font-size:clamp(16px,1.6vw,19px);color:#B5B4AA;line-height:1.5;max-width:480px;margin:16px auto 0">Empieza con un diagnóstico gratuito. Te decimos exactamente cómo Pato haría crecer tus ventas.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px">
-      <a href="solicitar.html" style="background:#C8ED4B;color:#191A16;border:1px solid #C8ED4B;border-radius:11px;padding:14px 24px;font-size:15.5px;font-weight:600;display:inline-flex;align-items:center;gap:9px" style-hover="background:#d3f163">Solicitar diagnóstico <span style="font-size:17px">→</span></a>
-      <a href="index.html#como" style="background:transparent;color:#EDECE4;border:1px solid #3a3b31;border-radius:11px;padding:14px 24px;font-size:15.5px;font-weight:600" style-hover="background:#232419">Ver cómo funciona</a>
-    </div>
-  </div>
+<section class="method" id="metodo" aria-labelledby="metodo-titulo">
+  <h2 id="metodo-titulo">Cómo revisamos lo que contamos</h2>
+  <p>Este corte se apoya en páginas públicas, código y documentación del portafolio. La revisión no envió pedidos, ejecutó pagos ni accedió a expedientes privados. Por eso cada ficha explica qué evidencia tiene y qué recorrido todavía necesita comprobarse.</p>
+  <div class="method-grid"><div><h3>1. Identificar el problema</h3><p>Una tarea del negocio, su responsable y las condiciones que importan.</p></div><div><h3>2. Mostrar la construcción</h3><p>La decisión tomada, la herramienta y la prueba que respalda su alcance.</p></div><div><h3>3. Verificar el impacto</h3><p>Uso y resultados con fuente y periodo. Visitas, solicitudes y cobros se cuentan por separado.</p></div></div>
+  <details class="archive"><summary>Nomos: caso anterior pendiente de actualización</summary><p>Nomos aparece en el archivo del portafolio como un desarrollo de orquestación para el ámbito jurídico. Su operación y resultados actuales no se verificaron en este corte. Conservamos esa referencia como antecedente y dejamos pendiente una revisión específica antes de presentarlo como caso vigente.</p></details>
 </section>
-
-<footer style="background:#F7F6F1;border-top:1px solid #E7E5DE">
-  <div style="max-width:1120px;margin:0 auto;padding:clamp(44px,5vw,64px) clamp(20px,4vw,40px) 28px;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between">
-    <div style="max-width:280px">
-      <a href="index.html" style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-        <div style="width:26px;height:26px;border-radius:8px;background:#C8ED4B;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px #b4dc3c"><div style="width:9px;height:9px;border-radius:50%;background:#191A16"></div></div>
-        <span style="font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:-0.03em">pato</span>
-      </a>
-      <p style="font-size:13.5px;color:#86867C;line-height:1.55;margin:0">El sistema de ventas administrado para PYMES de Latinoamérica. Tú te dedicas a tu producto.</p>
-    </div>
-    <div style="display:flex;gap:clamp(32px,6vw,72px);flex-wrap:wrap">
-      <div><div style="font-size:12.5px;font-weight:600;color:#1B1C18;margin-bottom:14px">Producto</div><div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px"><a href="index.html#producto" style="color:#86867C">Dashboard</a><a href="index.html#producto" style="color:#86867C">Pato IA</a><a href="index.html#precios" style="color:#86867C">Precios</a></div></div>
-      <div><div style="font-size:12.5px;font-weight:600;color:#1B1C18;margin-bottom:14px">Recursos</div><div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px"><a href="blog/" style="color:#86867C">Blog</a><a style="color:#86867C;cursor:pointer">Casos</a><a style="color:#86867C;cursor:pointer">Guías</a></div></div>
-      <div><div style="font-size:12.5px;font-weight:600;color:#1B1C18;margin-bottom:14px">Contacto</div><div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px"><a style="color:#86867C;cursor:pointer">WhatsApp</a><a style="color:#86867C;cursor:pointer">hola@pato.mx</a><a style="color:#86867C;cursor:pointer">Instagram</a></div></div>
-    </div>
+    <section class="case-section" id="laboratorio" aria-labelledby="laboratorio-titulo">
+  <div class="section-heading"><span class="section-number">04</span><h2 id="laboratorio-titulo">El laboratorio</h2></div>
+  <p class="section-lead">Experimentos públicos para explorar agentes, lenguaje e interfaces. Se presentan como demostraciones, sin atribuirles resultados comerciales.</p>
+  <div class="lab-grid">
+    <a class="lab-link" href="consejo/"><strong>Consejo 3D <span aria-hidden="true" style="display:inline">↗</span></strong><span>Una visualización de la coordinación entre agentes.</span></a>
+    <a class="lab-link" href="camada/"><strong>Camada <span aria-hidden="true" style="display:inline">↗</span></strong><span>Exploración de agentes dentro de un mundo simulado.</span></a>
+    <a class="lab-link" href="kibiexe/"><strong>KIBI <span aria-hidden="true" style="display:inline">↗</span></strong><span>Un experimento alrededor del lenguaje y el mundo digital.</span></a>
+    <a class="lab-link" href="universo/"><strong>Universo <span aria-hidden="true" style="display:inline">↗</span></strong><span>Una representación visual del ecosistema de proyectos.</span></a>
   </div>
-  <div style="max-width:1120px;margin:0 auto;padding:18px clamp(20px,4vw,40px);border-top:1px solid #E7E5DE;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12.5px;color:#9a9a90">
-    <span>© 2025 Pato · Hecho en México para Latinoamérica</span>
-    <div style="display:flex;gap:20px"><a style="color:#9a9a90;cursor:pointer">Términos</a><a style="color:#9a9a90;cursor:pointer">Privacidad</a></div>
-  <section style="max-width:1120px;margin:clamp(40px,5vw,64px) auto clamp(40px,6vw,72px);padding:0 clamp(20px,4vw,40px)">
-  <div style="border-top:1px solid #E4E2DA;padding-top:clamp(28px,4vw,40px)">
-    <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px">
-      <h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(19px,2.4vw,24px);letter-spacing:-0.02em;margin:0">El laboratorio</h2>
-      <span style="font-family:'Space Grotesk';font-size:13px;color:#9a9a90">experimentos abiertos</span>
-    </div>
-    <p style="margin:0 0 20px;font-size:15px;line-height:1.7;color:#43443D;max-width:72ch">Antes de operar el sistema de alguien más, lo probamos en el nuestro. Estos son experimentos públicos de orquestación de agentes: no son el producto, son el banco de pruebas donde aprendemos lo que después aplicamos en tu negocio.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px">
-      <a href="consejo/" style="display:block;border:1px solid #E4E2DA;background:#FBFAF7;border-radius:14px;padding:16px 18px;text-decoration:none">
-        <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;color:#1B1C18;margin-bottom:4px">Consejo 3D ›</div>
-        <div style="font-size:13px;line-height:1.6;color:#86867C">16 agentes deliberando en vivo sobre un caso real.</div>
-      </a>
-      <a href="camada/" style="display:block;border:1px solid #E4E2DA;background:#FBFAF7;border-radius:14px;padding:16px 18px;text-decoration:none">
-        <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;color:#1B1C18;margin-bottom:4px">Camada ›</div>
-        <div style="font-size:13px;line-height:1.6;color:#86867C">Criar agentes que traen trabajo real del backlog.</div>
-      </a>
-      <a href="kibiexe/" style="display:block;border:1px solid #E4E2DA;background:#FBFAF7;border-radius:14px;padding:16px 18px;text-decoration:none">
-        <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;color:#1B1C18;margin-bottom:4px">KIBI ›</div>
-        <div style="font-size:13px;line-height:1.6;color:#86867C">Un mundo donde el lenguaje es la infraestructura.</div>
-      </a>
-      <a href="universo/" style="display:block;border:1px solid #E4E2DA;background:#FBFAF7;border-radius:14px;padding:16px 18px;text-decoration:none">
-        <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;color:#1B1C18;margin-bottom:4px">Universo ›</div>
-        <div style="font-size:13px;line-height:1.6;color:#86867C">El mapa vivo de todo lo que operamos.</div>
-      </a>
-    </div>
-  </div>
+  <p class="lab-note">Las páginas fueron accesibles en la revisión. No se comprobó actividad continua ni funcionamiento completo de estas demostraciones.</p>
 </section>
-</div>
-</footer>
+  </div>
+  <section class="closing" aria-labelledby="diagnostico-titulo"><div class="wrap">
+    <h2 id="diagnostico-titulo">¿Qué necesita resolver tu negocio?</h2>
+    <p>Revisamos tu proceso, la información que ya tienes y el alcance que conviene construir. Puede ser un sitio, una integración o una herramienta propia de tu industria.</p>
+    <div class="actions"><a class="button" href="solicitar.html">Solicitar diagnóstico <span aria-hidden="true">→</span></a><a class="button secondary" href="sitio-web/">Conocer el sitio a medida</a></div>
+  </div></section>
+</main>
+<footer class="wrap site-footer"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>pato</a><span>Patológicos · Construcción con IA y criterio profesional.</span><nav class="footer-links" aria-label="Enlaces del pie"><a href="blog/">Blog</a><a href="avances/">Avances</a><a href="solicitar.html">Contacto</a></nav></footer>
 </div>
 <script src="assets/dc-runtime.js"></script>
 <script>
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      showStats: this.props.showStats ?? true,
-      showOptim: this.props.showOptim ?? true,
-    };
-  }
-}
+class Component extends DCLogic { renderVals() { return {}; } }
 window.addEventListener('DOMContentLoaded', function () {
-  window.__dc = dcMount(document.getElementById('dc-root'), new Component({"showStats": true, "showOptim": true}));
+  window.__dc = dcMount(document.getElementById('dc-root'), new Component({}));
   window.__dcRender = window.__dc.render;   // permite refrescar al llegar datos del servidor
 });
 </script>
