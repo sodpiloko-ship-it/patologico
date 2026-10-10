@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-10T13:02:01",
+ "generatedAt": "2026-10-10T16:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 6
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -191,6 +191,11 @@
  ],
  "canon": [
   {
+   "titulo": "CAD·CAM·IA: reactivar tres contenidos y convertir lectura en intención de compra",
+   "proyecto": "cadcamia",
+   "stamp": "20261010"
+  },
+  {
    "titulo": "Nomos: convertir un flujo documental en un piloto pagado y utilizado",
    "proyecto": "legal",
    "stamp": "20261004"
@@ -224,9 +229,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "6 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
+  "obra: «CAD·CAM·IA: reactivar tres contenidos y convertir lectura en intención de compra» — cadcamia",
   "obra: «Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible» — patologicos",
-  "obra: «PROCADental: cerrar siete huecos de contenido y convertir consultas en visitas al director» — procadental",
-  "obra: «PROCA GrillZ: un solo CTA para convertir el tráfico de PROCADental en solicitudes de escan» — procagrillz"
+  "obra: «PROCADental: cerrar siete huecos de contenido y convertir consultas en visitas al director» — procadental"
  ]
 }
