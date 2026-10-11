@@ -32,7 +32,7 @@ Este archivo es un resumen de navegación. El catálogo JSON enlazado abajo es l
 <!-- blog:inicio -->
 
 ## Blog
-- [Blog de Patológicos](https://patologicos.com/blog/): 49 artículos sobre ventas, operación, datos e IA aplicada para dueños de PYME de Latinoamérica, más los ensayos de David Rivera. Escrito por agentes especializados y revisado antes de publicar.
+- [Blog de Patológicos](https://patologicos.com/blog/): 51 artículos sobre ventas, operación, datos e IA aplicada para dueños de PYME de Latinoamérica, más los ensayos de David Rivera. Escrito por agentes especializados y revisado antes de publicar.
 
 ### Ensayos de David Rivera
 Columna de opinión firmada por David Rivera (fundador). Se publicaron originalmente en piloko.com y viven aquí desde el 20 de septiembre de 2026; las URLs viejas redirigen (301). piloko.com quedó dedicado a su obra fotográfica.
@@ -70,19 +70,21 @@ Columna de opinión firmada por David Rivera (fundador). Se publicaron originalm
 - [Del mobiliario para eventos a una lista para solicitar cotización](https://patologicos.com/blog/estudio-mobiliario-eventos-lista-cotizacion/): Un prototipo conceptual para reunir familias de mobiliario, variantes, cantidades y contexto del evento en una solicitud que pueda revisarse antes de cotizar.
 
 ### Guías para tu negocio
+- [Cómo aparecer en ChatGPT y recibir consultas con intención de compra](https://patologicos.com/blog/aparecer-en-chatgpt/): Qué necesita tu sitio para entrar en una recomendación de ChatGPT y cómo convertir una consulta con contexto en una oportunidad comercial.
 - [Tu cliente pregunta “¿cómo va mi pedido?”: organiza un taller sin revisar veinte chats](https://patologicos.com/blog/control-pedidos-taller-estados-aprobaciones/): Organiza trabajos de taller con folio, versión, responsable y siguiente paso. Una guía para separar archivos, aprobaciones, producción y entrega.
 - [Cómo cotizar recuerdos para bodas y XV sin rehacer cada presupuesto](https://patologicos.com/blog/cotizar-recuerdos-bodas-xv/): Define cantidades, personalización, empaque, fechas y versión de la propuesta. Un método para cotizar recuerdos sin rehacer cada presupuesto.
 - [Vendo por Instagram: ¿necesito una tienda en línea o un catálogo?](https://patologicos.com/blog/instagram-tienda-en-linea-o-catalogo/): Compara catálogo con solicitud, cotización y tienda transaccional según tu producto. Decide qué canal necesitas sin empezar por la plataforma.
 - [Cómo organizar pedidos de pasteles por WhatsApp sin perder fechas ni anticipos](https://patologicos.com/blog/organizar-pedidos-pasteles-whatsapp/): Organiza pedidos de repostería con una ficha, estados y confirmaciones claras. Separa anticipo, producción y entrega sin reconstruir cada chat.
 - [Página web o sistema de ventas administrado: qué estás contratando](https://patologicos.com/blog/pagina-web-o-sistema-ventas-administrado/): Compara entregables, operación, seguimiento y mantenimiento antes de contratar. Una guía para distinguir una página publicada de un proceso comercial.
 - [Me piden precio y no contestan: cómo mejorar una cotización por WhatsApp](https://patologicos.com/blog/piden-precio-no-contestan-whatsapp/): Revisa qué incluye tu cotización, qué necesita saber el cliente y cuál es el siguiente paso. Ejemplos de respuesta sin presión ni descuentos automáticos.
+- [Lo que aprendimos sobre SEO y LLMs al desarrollar nuestros sitios](https://patologicos.com/blog/seo-con-ia-para-pymes/): Tres aprendizajes de Lumin, Picando Tabla y PROCA Grillz sobre contenido accesible, preguntas de compra y medición en buscadores y asistentes de IA.
 
 ### Manifiesto
+- [Dots, Muse y Grok Bot acercan el arbitraje por IA al comprador](https://patologicos.com/blog/dots-muse-grok-arbitraje/): Los agentes personales empiezan a reunir contexto, continuidad y herramientas. Así podrían encontrar el producto que necesita su usuario y comparar proveedores.
 - [Tu negocio no será irrelevante. Será invisible.](https://patologicos.com/invisible/): Los agentes de IA compararán y contratarán negocios. La nueva ventaja será ser comprensible, verificable y operable.
 - [Qué es Patológicos: una compañía de medios construida con IA](https://patologicos.com/blog/que-es-patologicos.html): Una compañía de medios nativa de IA que se publica a sí misma como prueba. Esto es lo que hacemos y por qué deberías creernos.
 
 ### Otros
-- [SEO con IA para PYMES: autoridad que trae clientes](https://patologicos.com/blog/seo-con-ia-para-pymes/): Convierte las preguntas de tus futuros clientes en contenido útil: un sistema con IA para atraer búsquedas, generar confianza y medir ventas.
 - [5 errores al usar IA en tu negocio (y cómo evitarlos)](https://patologicos.com/blog/errores-ia-en-tu-negocio/): La IA acelera un negocio cuando mejora un sistema; cuando tapa uno roto, sólo automatiza el caos.
 - [Orquestar agentes: una persona corriendo lo que antes pedía un equipo](https://patologicos.com/blog/orquestar-agentes-negocio/): Orquestar agentes es convertir un proceso de equipo en un sistema dirigido por una persona, con contexto, controles y métricas.
 - [De idea a tienda en línea: el sistema mínimo para vender ya](https://patologicos.com/blog/de-idea-a-tienda-en-linea/): No necesitas una tienda perfecta para empezar: necesitas una oferta clara, un cobro probado y contenido que atraiga compradores.

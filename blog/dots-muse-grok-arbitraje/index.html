@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dots, Muse y Grok Bot acercan el arbitraje por IA al comprador · Patológicos</title><meta name="description" content="Los agentes personales empiezan a reunir contexto, continuidad y herramientas. Así podrían encontrar el producto que necesita su usuario y comparar proveedores."><link rel="canonical" href="https://patologicos.com/blog/dots-muse-grok-arbitraje/"><meta property="og:title" content="Dots, Muse y Grok Bot acercan el arbitraje por IA al comprador · Patológicos"><meta property="og:description" content="Los agentes personales empiezan a reunir contexto, continuidad y herramientas. Así podrían encontrar el producto que necesita su usuario y comparar proveedores."><meta property="og:type" content="article"><meta property="og:url" content="https://patologicos.com/blog/dots-muse-grok-arbitraje/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"><meta name="theme-color" content="#C8ED4B"><style>*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1B1C18;--paper:#F4F3EE;--card:#FBFAF7;--acc:#C8ED4B;--dark:#191A16;
+--muted:#86867C;--line:#E4E2DA;--soft:#EEEDE6;--chipbg:#EAF1D2;--chipfg:#5c7a12;
+--display:'Space Grotesk',system-ui,sans-serif;--body:'Hanken Grotesk',system-ui,'Segoe UI',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acc);color:var(--dark)}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.2}
+header.nav{position:sticky;top:0;z-index:100;background:rgba(244,243,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:0 clamp(16px,4vw,40px);height:62px}
+.brand{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.03em}
+.nlinks{display:flex;gap:22px;margin-left:auto;font-size:14px;font-weight:500}
+.nlinks a{color:#43443D;padding:4px 0;border-bottom:2px solid transparent}
+.nlinks a:hover{color:var(--ink)}
+.nlinks a.active{color:var(--ink);border-bottom-color:var(--acc)}
+.xnav{font-size:13.5px;font-weight:600;background:var(--dark);color:var(--paper);padding:9px 16px;border-radius:999px;white-space:nowrap}
+.xnav:hover{background:#000}
+.mnav{display:none;position:relative;margin-left:auto}
+.mnav summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 12px;font-size:13.5px;font-weight:700}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav-panel{position:absolute;right:0;top:44px;width:min(270px,calc(100vw - 32px));display:grid;gap:2px;padding:9px;border:1px solid var(--line);border-radius:13px;background:var(--card);box-shadow:0 20px 45px -24px rgba(20,20,15,.5)}
+.mnav-panel a{padding:10px 11px;border:0;border-radius:8px;color:#43443D;font-size:14px;font-weight:650}
+.mnav-panel a:hover{background:var(--soft);color:var(--ink)}
+.mnav-panel .mnav-cta{margin-top:4px;background:var(--dark);color:var(--paper)}
+@media(max-width:860px){.nlinks,.xnav{display:none}.mnav{display:block}}
+.wrap{max-width:780px;margin:0 auto;padding:0 clamp(20px,4vw,24px)}
+.head{padding:clamp(40px,6vw,64px) 0 clamp(20px,3vw,28px)}
+.head .kick{display:inline-block;background:var(--chipbg);color:var(--chipfg);font-size:12px;font-weight:700;letter-spacing:.02em;border-radius:999px;padding:5px 12px}
+.head h1{font-size:clamp(30px,5.4vw,46px);margin-top:16px}
+.head p{margin-top:14px;font-size:17px;max-width:62ch;line-height:1.7;color:#43443D}
+.filters{display:flex;gap:8px;flex-wrap:wrap;max-width:780px;margin:0 auto;padding:4px clamp(20px,4vw,24px) 2px}
+.chip{font-size:13px;font-weight:600;color:#43443D;background:var(--card);border:1px solid var(--line);padding:7px 14px;border-radius:999px;cursor:pointer;font-family:var(--body)}
+.chip:hover{border-color:var(--ink)}
+.chip.active{background:var(--dark);color:var(--paper);border-color:var(--dark)}
+.cards{display:grid;gap:16px;padding:22px 0 56px}
+.bcard{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;transition:border-color .14s,transform .14s,box-shadow .14s}
+.bcard:hover{border-color:#CFCDBF;transform:translateY(-2px);box-shadow:0 12px 28px -18px rgba(20,20,15,.3)}
+.bcard .tag{display:inline-block;background:var(--chipbg);color:var(--chipfg);font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 10px}
+.bcard h2{font-size:clamp(18px,2.6vw,22px);margin:11px 0 8px;line-height:1.3}
+.bcard p{font-size:14.5px;line-height:1.65;color:#43443D}
+.bcard .d{font-size:12.5px;color:var(--muted);margin-top:13px;padding-top:12px;border-top:1px solid var(--soft)}
+article{padding:clamp(30px,5vw,44px) 0 20px}
+.back{font-size:13.5px;font-weight:600;color:var(--chipfg)}
+.kick{display:inline-block;background:var(--chipbg);color:var(--chipfg);font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 11px}
+article h1{font-size:clamp(27px,5vw,42px);margin:16px 0 14px;line-height:1.18}
+.meta{font-size:13.5px;color:var(--muted);margin-bottom:30px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.meta b{color:#43443D;font-weight:600}
+article h2{font-size:clamp(20px,3vw,27px);margin:36px 0 10px}
+article h3{font-family:var(--display);font-weight:600;font-size:19px;margin:26px 0 8px;line-height:1.3}
+article p{font-size:17px;margin:16px 0;line-height:1.75;color:#2E2F29}
+article strong{font-weight:700;color:var(--ink)}
+article ul{margin:16px 0;list-style:none}
+article li{font-size:16.5px;padding:6px 0 6px 24px;position:relative;line-height:1.68;color:#2E2F29}
+article li::before{content:'';position:absolute;left:4px;top:16px;width:7px;height:7px;border-radius:2px;background:var(--acc)}
+article a{color:var(--chipfg);border-bottom:1px solid #b9d36a}
+.article-visual{margin:clamp(28px,5vw,42px) 0}
+.article-visual img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--card);box-shadow:0 18px 44px -34px rgba(20,20,15,.55)}
+.article-visual figcaption{margin-top:10px;font-size:13px;line-height:1.5;color:var(--muted)}
+.cta-box{background:var(--dark);color:var(--paper);border-radius:18px;padding:clamp(24px,3vw,32px);margin:42px 0 10px}
+.cta-box b{font-family:var(--display);font-size:clamp(19px,2.6vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.25;display:block}
+.cta-box p{font-size:15px;margin:10px 0 0;color:#C9C9C0;line-height:1.7}
+.btn{display:inline-block;margin-top:18px;font-weight:700;font-size:14.5px;background:var(--acc);color:var(--dark);padding:13px 24px;border-radius:999px}
+.btn:hover{background:#d8f76b}
+footer{border-top:1px solid var(--line);padding:30px 22px;font-size:13.5px;color:var(--muted);text-align:center}
+footer a{color:var(--chipfg)}
+@media(max-width:520px){.article-visual{margin:26px -4px}.article-visual img{border-radius:14px}}</style><!-- Google tag (gtag.js) - Patologicos -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XESKPMDFSR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XESKPMDFSR');
+</script></head><body><header class="nav"><a class="brand" href="/">pato</a><nav class="nlinks"><a href="/#producto">Producto</a><a href="/#como">Cómo funciona</a><a href="/#precios">Precios</a><a href="/blog/" class="active">Blog</a><a href="/casos.html">Casos</a></nav><details class="mnav"><summary aria-label="Abrir menú">Menú</summary><nav class="mnav-panel" aria-label="Menú móvil"><a href="/#producto">Producto</a><a href="/#como">Cómo funciona</a><a href="/#precios">Precios</a><a href="/blog/">Blog</a><a href="/casos.html">Casos</a><a class="mnav-cta" href="/solicitar.html">Solicitar diagnóstico</a></nav></details><a class="xnav" href="/solicitar.html">Solicitar diagnóstico</a></header><article><div class="wrap"><a class="back" href="/blog/">← Blog</a><div class="kick" style="margin-top:16px">Manifiesto · Agentes y comercio</div><h1>Dots, Muse y Grok Bot acercan el arbitraje por IA al comprador</h1><div class="meta">2026-10-10 · por <b>Patológicos</b></div><p>En <a href="https://patologicos.com/invisible/">Tu negocio no será irrelevante. Será invisible</a> planteamos una tesis: los agentes de IA podrán detectar una necesidad, comparar proveedores y ayudar a contratar la alternativa que mejor encaje. Llamamos arbitraje por IA a esa comparación del valor completo de una decisión: precio, calidad, entrega, distancia y riesgo.</p>
+<p>Dots, Muse de Meta —la empresa de Facebook— y Grok Bot acercan esa tesis a productos concretos. Sus propuestas reúnen elementos necesarios para pasar de una respuesta a un trabajo sostenido: contexto, herramientas y continuidad.</p>
+<p><strong>La profecía empieza a tomar forma en esas capacidades.</strong> Que existan no demuestra todavía que los agentes estén seleccionando y comprando de manera habitual en nuestros negocios. Sí cambia la pregunta que conviene hacerse: ¿qué encontraría un agente si hoy intentara resolver la necesidad de su usuario con nuestra oferta?</p>
+<h2>Tres propuestas de agente personal</h2>
+<p><strong>Dots, de OpenAI.</strong> La documentación los presenta como agentes que pueden asumir responsabilidades continuas, trabajar entre conversaciones y utilizar contexto, aplicaciones conectadas y su computadora en la nube. Pueden investigar y volver con resultados o decisiones que requieren intervención. El acceso se despliega gradualmente. <a href="https://learn.chatgpt.com/docs/dots">Conoce Dots</a>.</p>
+<p><strong>Muse, de Meta.</strong> Meta presentó Muse como un agente personal que recuerda contexto y puede trabajar entre aplicaciones desde una computadora virtual. Su anuncio incluye planificación y tareas relacionadas con compras, y explica que pide permiso antes de acciones sensibles, como comprar. El lanzamiento anunciado comienza en Estados Unidos; no debe confundirse con disponibilidad universal de todas las funciones en Facebook. <a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">Presentación de Muse</a>.</p>
+<p><strong>Grok Bot.</strong> Su documentación describe agentes persistentes que trabajan con aplicaciones y sitios web desde una computadora en la nube, conservan contexto y recurren al usuario cuando necesitan aprobación. También advierte que un sitio puede bloquear la automatización o requerir un paso humano. <a href="https://docs.x.ai/grok-bot/overview">Documentación de Grok Bot</a>.</p>
+<p>Son productos diferentes, con sus propios accesos y controles. Nuestra lectura es que los tres apuntan hacia una relación más duradera entre la persona y su asistente: el usuario puede delegar un objetivo con contexto, en lugar de reconstruir la tarea en cada conversación.</p>
+<h2>Cómo el agente podría encontrar el producto adecuado</h2>
+<p>Imaginemos a una persona que prepara un evento. Este recorrido es hipotético; no es una compra realizada por alguno de estos productos en nuestros sitios.</p>
+<p>La persona comparte la fecha, el número de invitados, la ubicación y un presupuesto. Autoriza al agente a investigar opciones, pero conserva la decisión de contratar. Con ese encargo, el agente podría convertir “organizar el evento” en necesidades concretas: alimentos, regalos y tiempos de entrega.</p>
+<p>Para los alimentos, revisaría proveedores que atiendan la zona y puedan cubrir el número de personas. Para los regalos, buscaría productos compatibles con el plazo, las cantidades y la personalización. Después compararía el costo completo y señalaría las condiciones que todavía requieren confirmación.</p>
+<p>La recomendación útil tendría que explicar por qué una opción encaja y qué queda pendiente. “Este proveedor publica el servicio que necesitas; falta confirmar disponibilidad para tu fecha” es una conclusión distinta de “ya está reservado”.</p>
+<p>El agente podría preparar la solicitud con el contexto reunido y presentarla para aprobación. La compra dependería de las capacidades disponibles, los permisos y la confirmación del negocio. <strong>Investigar, recomendar, solicitar y pagar son pasos distintos.</strong></p>
+<h2>El arbitraje será sobre el resultado completo</h2>
+<p>Nuestro manifiesto usó la palabra arbitraje para describir una comparación más amplia que ordenar precios. Un producto barato puede dejar de ser conveniente si llega tarde, requiere un envío costoso o no permite la personalización necesaria.</p>
+<p>En el escenario del evento, el agente tendría que comparar alternativas contra el objetivo del cliente. El precio por unidad sería una variable junto con cantidad mínima, entrega, preparación, condiciones de cambio y disponibilidad confirmada.</p>
+<p>La ventaja potencial de un agente personal es conservar esas restricciones durante la investigación. Si el usuario cambia la fecha o el número de invitados, podría revisar la selección con ese nuevo contexto. Esa es nuestra proyección comercial a partir de las capacidades descritas, no un resultado medido del portafolio.</p>
+<h2>Lo que nuestros sitios enseñan sobre esa preparación</h2>
+<p>En <a href="https://patologicos.com/casos.html#lumin">Lumin</a>, organizar el catálogo y las fichas permite consultar productos concretos. Una comparación necesita distinguir lo disponible en una ficha de lo que requiere cotización o confirmación.</p>
+<p>En <a href="https://patologicos.com/casos.html#picando-tabla">Picando Tabla</a>, separar catálogo y eventos permite llegar a la ruta comercial correspondiente. Una solicitud de catering necesita alcance; el folio identifica su recepción y no sustituye la reserva.</p>
+<p>En <a href="https://patologicos.com/casos.html#grillz">PROCA Grillz</a>, explicar el requisito de escaneo prepara el siguiente paso. Un asistente que pase por alto esa condición podría recomendar una ruta incompleta, aunque el producto coincida con el gusto del comprador.</p>
+<p>Estos trabajos aportan información y recorridos que pueden examinar personas y sistemas. No prueban que Dots, Muse o Grok Bot ya hayan elegido esos negocios ni que hayan producido ventas.</p>
+<p>Estos ejemplos forman parte de nuestros <a href="https://patologicos.com/blog/seo-con-ia-para-pymes/">aprendizajes de SEO y LLMs al desarrollar sitios</a>.</p>
+<h2>Qué debe poder entender un agente de tu negocio</h2>
+<p>La preparación empieza por una oferta pública que se pueda comprobar: productos o servicios definidos, condiciones vigentes, cobertura, requisitos y un canal claro para continuar. Si la disponibilidad solo se conoce al consultar la operación, la respuesta debe dejarlo explícito.</p>
+<p>Después viene la capacidad de actuar con esa información. Un enlace a la ficha correcta, un formulario comprensible y una confirmación verificable permiten avanzar. Las integraciones pueden reducir trabajo cuando existen, pero el dato operativo sigue siendo decisivo: ninguna interfaz convierte una disponibilidad desconocida en una promesa confiable.</p>
+<p>El negocio también debe distinguir una consulta de una orden autorizada. Que un agente investigue en nombre de una persona no significa que tenga permiso para contratar por ella.</p>
+<h2>La oportunidad para los negocios que se preparen</h2>
+<p>Si este recorrido se vuelve habitual, parte de la selección ocurrirá antes de la visita al sitio. El cliente podría llegar con alternativas comparadas y una pregunta de compra muy concreta. También podría descubrir una opción que no conocía porque su agente encontró una coincidencia con su necesidad.</p>
+<p>Nuestra apuesta es preparar a los negocios para poder entrar en esa evaluación y responder con información que puedan cumplir. La tesis del <a href="https://patologicos.com/invisible/">arbitraje por IA</a> cobra fuerza cuando el agente reúne contexto y capacidad de trabajo; su valor comercial tendrá que demostrarse en solicitudes, entregas y compras reales.</p>
+<p>En Patológicos trabajamos esa base desde el <a href="https://patologicos.com/sitio-web/">desarrollo web</a> y los recorridos de atención. La siguiente ventaja puede empezar con algo muy concreto: que un agente entienda qué resuelves, compruebe si encajas y encuentre cómo dar el siguiente paso contigo.</p><div class="cta-box"><b>¿Quieres esto funcionando en tu negocio?</b><p>Construimos y operamos tu sistema de ventas completo — sitio, tienda, órdenes, analítica y finanzas conectados — con nuestro equipo y potenciado por IA. Empieza con un diagnóstico sin costo.</p><a class="btn" href="/solicitar.html">Solicitar diagnóstico</a></div></div></article><footer>Pato · el sistema de ventas administrado para PYMES de Latinoamérica · <a href="/">patologicos.com</a></footer></body></html>
