@@ -28,7 +28,11 @@ $STORE = $DATA_DIR . '/solicitudes.jsonl';
 foreach ([$DATA_DIR, __DIR__ . '/secrets'] as $dir) {
     if (!is_dir($dir)) @mkdir($dir, 0755, true);
     $h = $dir . '/.htaccess';
-    if (!is_file($h)) @file_put_contents($h, "Require all denied\nDeny from all\n");
+    if (!is_file($h)) {
+        $rules = "Require all denied\n";
+        if ($dir === $DATA_DIR) $rules .= "<Files \"catalogo.json\">\n  Require all granted\n</Files>\n";
+        @file_put_contents($h, $rules);
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

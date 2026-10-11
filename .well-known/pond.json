@@ -1,0 +1,42 @@
+{
+  "schema_version": "pond.public-discovery.v1",
+  "business": {
+    "id": "patologicos",
+    "name": "Patológicos",
+    "url": "https://patologicos.com/",
+    "description": "Agentes de IA, desarrollos y experiencia práctica de dirección. Mastermind premium y sistema comercial para PYMES.",
+    "keywords": [
+      "Patológicos",
+      "agentes IA",
+      "Mastermind",
+      "negocios AI native",
+      "desarrollo web",
+      "PYMES"
+    ]
+  },
+  "catalog": {
+    "schema_version": "pond.business-catalog.v1",
+    "url": "https://patologicos.com/data/catalogo.json",
+    "availability_kind": "declared_catalog",
+    "live_inventory": false
+  },
+  "agent_access": {
+    "mode": "discovery",
+    "capabilities": [
+      "search_offers",
+      "get_offer",
+      "quote_items",
+      "check_availability"
+    ],
+    "transactional": false,
+    "mcp": {
+      "status": "not_public"
+    }
+  },
+  "operator": {
+    "id": "patologicos",
+    "name": "Patológicos",
+    "url": "https://patologicos.com/",
+    "pond_url": "https://patologicos.com/pond/"
+  }
+}

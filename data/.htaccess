@@ -1,0 +1,4 @@
+Require all denied
+<Files "catalogo.json">
+  Require all granted
+</Files>
