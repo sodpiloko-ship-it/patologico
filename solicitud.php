@@ -23,6 +23,7 @@ header('X-Robots-Tag: noindex');
 $NOTIFY = ['sodpiloko@gmail.com'];
 $DATA_DIR = __DIR__ . '/data';
 $STORE = $DATA_DIR . '/solicitudes.jsonl';
+$NOTIFICATION_STORE = $DATA_DIR . '/solicitudes-notificaciones.jsonl';
 
 // --- blindaje de carpetas sensibles (idempotente) ---
 foreach ([$DATA_DIR, __DIR__ . '/secrets'] as $dir) {
@@ -136,6 +137,13 @@ function pato_tg_cfg() {
     return [null, null];
 }
 
+// Aceptación por la API: no acredita entrega al dispositivo ni lectura humana.
+function pato_tg_accepted($body, $status) {
+    if ($status < 200 || $status >= 300 || !is_string($body)) return false;
+    $reply = json_decode($body, true);
+    return is_array($reply) && isset($reply['ok']) && $reply['ok'] === true;
+}
+
 $tg_ok = false;
 list($tok, $chat) = pato_tg_cfg();
 if ($tok && $chat) {
@@ -156,15 +164,25 @@ if ($tok && $chat) {
             CURLOPT_RETURNTRANSFER => true, CURLOPT_POST => true,
             CURLOPT_POSTFIELDS => $post, CURLOPT_TIMEOUT => 8,
         ]);
-        $tg_ok = curl_exec($ch) !== false;
+        $body = curl_exec($ch);
+        $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $tg_ok = pato_tg_accepted($body, $status);
         curl_close($ch);
     } else {
         $ctx = stream_context_create(['http' => [
             'method' => 'POST', 'timeout' => 8,
+            'ignore_errors' => true, 'follow_location' => 0,
             'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
             'content' => $post,
         ]]);
-        $tg_ok = @file_get_contents($url, false, $ctx) !== false;
+        $body = @file_get_contents($url, false, $ctx);
+        $status = 0;
+        foreach (($http_response_header ?? []) as $line) {
+            if (preg_match('/^HTTP\/\S+\s+(\d{3})\b/', $line, $match)) {
+                $status = (int) $match[1];
+            }
+        }
+        $tg_ok = pato_tg_accepted($body, $status);
     }
 }
 
@@ -174,9 +192,29 @@ foreach ($rec as $k => $v) {
     if ($k === 'ua') continue;
     $cuerpo .= str_pad($k, 13) . ': ' . $v . "\n";
 }
+// true significa que mail() aceptó todos los avisos configurados, no recepción en Gmail.
+$email_ok = count($NOTIFY) > 0;
 foreach ($NOTIFY as $to) {
-    @mail($to, 'Patológicos — solicitud: ' . ($negocio ?: $nombre ?: 'sin nombre'),
+    $accepted = @mail($to, 'Patológicos — solicitud: ' . ($negocio ?: $nombre ?: 'sin nombre'),
           $cuerpo, "From: no-reply@patologicos.com\r\nContent-Type: text/plain; charset=utf-8");
+    $email_ok = $email_ok && $accepted;
 }
 
+// --- 4) Registro privado de aceptación técnica; sin contactos, respuestas ni secretos. ---
+$notification = [
+    'id' => $rec['id'],
+    'at' => date('c'),
+    'telegram_accepted' => $tg_ok,
+    'email_accepted' => $email_ok,
+];
+if (@file_put_contents(
+    $NOTIFICATION_STORE,
+    json_encode($notification, JSON_UNESCAPED_UNICODE) . "\n",
+    FILE_APPEND | LOCK_EX
+) === false) {
+    // El lead sigue guardado. Este fallo queda solo en el registro del servidor.
+    error_log('Patologicos: no se pudo registrar el estado de avisos del folio ' . $rec['id']);
+}
+
+// Compatible con el formulario existente: notificado es aceptación de Telegram.
 echo json_encode(['ok' => true, 'id' => $rec['id'], 'notificado' => $tg_ok], JSON_UNESCAPED_UNICODE);

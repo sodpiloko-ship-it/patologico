@@ -6,19 +6,19 @@
     {
       "id": "mastermind-agentes",
       "name": "Mastermind de negocios con agentes IA",
-      "description": "Primera edición propuesta: 12 semanas en línea, máximo 8 empresas, CEO y líder operativo. Seis consejos, tres clínicas, dos sesiones privadas y tres revisiones de un piloto acotado. Inversión propuesta de 120000 MXN más IVA por empresa; calendario y condiciones finales por confirmar. Admisión por entrevista, sin reserva ni cobro automático.",
+      "description": "Preventa abierta: inicio 9 de noviembre de 2026 y cierre 12 de febrero de 2027. 12 semanas de trabajo con pausa del 21 de diciembre al 3 de enero. Máximo 8 empresas, CEO y líder operativo. Seis consejos, tres clínicas, dos privadas y tres revisiones de un piloto acotado. Inversión de 120000 MXN más IVA por empresa. Admisión por entrevista.",
       "url": "https://patologicos.com/mastermind/",
       "active": true,
       "price_minor": null,
       "availability": {
         "status": "requires_confirmation",
-        "note": "Primera edición en preparación. Sin reserva ni cobro automático."
+        "note": "Preventa abierta. Solicitud sin reserva ni cobro. La plaza requiere admisión, aceptación escrita y primer pago verificado; disponibilidad por confirmar."
       },
       "pricing": {
         "type": "custom_quote",
         "currency": "MXN",
         "basis": "diagnostic_and_scope",
-        "note": "Inversión propuesta de 120000 MXN más IVA por empresa; confirmar calendario y condiciones por escrito antes de contratar."
+        "note": "120000 MXN más IVA por empresa. Dos pagos de 60000 más IVA: primero tras admisión y aceptación, antes del 9 de noviembre de 2026; segundo antes del 4 de enero de 2027. Sin cobro automático. Condiciones por escrito antes de pagar."
       },
       "attributes": {
         "contracting": "human_handoff"
