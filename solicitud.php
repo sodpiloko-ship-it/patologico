@@ -80,6 +80,14 @@ $rec = [
     'nombre'      => $nombre,
     'correo'      => $correo,
     'whatsapp'    => $whats,
+    'rol'         => pv($d, 'rol', 120),
+    'landing'     => pv($d, 'landing', 300),
+    'referrer'    => pv($d, 'referrer', 500),
+    'utm_source' => pv($d, 'utm_source', 160),
+    'utm_medium' => pv($d, 'utm_medium', 160),
+    'utm_campaign' => pv($d, 'utm_campaign', 160),
+    'utm_content' => pv($d, 'utm_content', 160),
+    'utm_term' => pv($d, 'utm_term', 160),
     'interes'     => pv($d, 'interes', 40),
     'negocio'     => $negocio,
     'giro'        => pv($d, 'giro', 80),
@@ -93,7 +101,7 @@ $rec = [
     'ventas_mes'  => pv($d, 'ventas_mes', 80),
     'objetivos'   => pv($d, 'objetivos', 300),
     'reto'        => pv($d, 'reto', 400),
-    'origen'      => pv($d, 'origen', 120),
+    'origen'      => pv($d, 'origen', 500),
     'ua'          => substr((string) ($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 200),
 ];
 
@@ -127,7 +135,8 @@ function pato_tg_cfg() {
 $tg_ok = false;
 list($tok, $chat) = pato_tg_cfg();
 if ($tok && $chat) {
-    $msg = "🦆 NUEVA SOLICITUD DE DIAGNÓSTICO\n"
+    $msg = "🦆 NUEVA SOLICITUD — PATOLÓGICOS\n"
+         . "Interés: " . ($rec['interes'] ?: '—') . "\n"
          . "Negocio: " . ($negocio ?: '—') . "\n"
          . "Nombre: " . ($nombre ?: '—') . "\n"
          . "Correo: " . ($correo ?: '—') . "\n"
@@ -156,13 +165,13 @@ if ($tok && $chat) {
 }
 
 // --- 3) Correo (best-effort) ---
-$cuerpo = "Nueva solicitud de diagnóstico\n\n";
+$cuerpo = "Nueva solicitud — Patológicos\n\n";
 foreach ($rec as $k => $v) {
     if ($k === 'ua') continue;
     $cuerpo .= str_pad($k, 13) . ': ' . $v . "\n";
 }
 foreach ($NOTIFY as $to) {
-    @mail($to, 'Pato — solicitud de diagnóstico: ' . ($negocio ?: $nombre ?: 'sin nombre'),
+    @mail($to, 'Patológicos — solicitud: ' . ($negocio ?: $nombre ?: 'sin nombre'),
           $cuerpo, "From: no-reply@patologicos.com\r\nContent-Type: text/plain; charset=utf-8");
 }
 

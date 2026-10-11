@@ -1,6 +1,6 @@
 # Patológicos
 
-> Sistema administrado de sitio, tienda, órdenes, analítica y finanzas.
+> Agentes de IA, desarrollos y experiencia práctica de dirección. Mastermind premium y sistema comercial para PYMES.
 
 Este archivo es un resumen de navegación. El catálogo JSON enlazado abajo es la fuente estructurada; no representa inventario en tiempo real ni habilita una transacción por agente.
 
@@ -12,7 +12,9 @@ Este archivo es un resumen de navegación. El catálogo JSON enlazado abajo es l
 
 ## Ofertas
 
-- [Plan fundador PATO](https://patologicos.com/solicitar.html): Un sistema administrado de sitio, tienda, órdenes, analítica y finanzas, operado por el equipo y potenciado por IA. Precio: alta, recurrencia y compromiso estructurados en el catálogo POND. Disponibilidad declarada: requires_confirmation.
+- [Mastermind de negocios con agentes IA](https://patologicos.com/mastermind/): primera edición propuesta: 12 semanas en línea, máximo 8 empresas, CEO y líder operativo. Inversión propuesta de 120000 MXN más IVA por empresa. Piloto acotado acompañado y revisiones; calendario y condiciones se confirman por escrito. Solicitud sin cobro ni reserva.
+- [Sistema para PYMES](https://patologicos.com/sistema-pymes/): web, tienda y estrategia de tráfico. Automatizaciones y conexión con agentes como ampliaciones de alcance definido.
+
 - [PATO Implementación](https://patologicos.com/solicitar.html?interes=implementacion): Para negocios con una operación más robusta: mapeamos el proceso y conectamos la capa comercial y operativa con sus catálogos, datos, pedidos y herramientas existentes. El alcance se define después del diagnóstico. Precio: cotización humana; no asumir un importe. Disponibilidad declarada: requires_confirmation.
 - [Sitio a la medida PATO](https://patologicos.com/solicitar.html?interes=sitio-web): Solo el sitio: hasta 5-7 páginas a la medida, diseño propio, SEO técnico completo (sitemap, datos estructurados, meta) y un mes de ajustes después de la entrega. Entrega única, sin operación mensual — para quien ya tiene quién opere el negocio y solo necesita el sitio bien hecho. Precio: importe estructurado disponible en el catálogo POND. Disponibilidad declarada: requires_confirmation.
 - [PATO Industria](https://patologicos.com/solicitar.html?interes=industria): Desarrollo premium de software y experiencias específicas de industria: diseñamos la herramienta alrededor del proceso real, con interfaces, automatización y agentes de IA cuando aportan valor. PROCA D, PROCAOps, KIBI y PATO demuestran esta capacidad. Precio: cotización humana; no asumir un importe. Disponibilidad declarada: requires_confirmation.
@@ -26,13 +28,13 @@ Este archivo es un resumen de navegación. El catálogo JSON enlazado abajo es l
 
 ## Operador
 
-- PATO: https://patologicos.com/
+- Patológicos: https://patologicos.com/
 - POND: https://patologicos.com/pond/
 
 <!-- blog:inicio -->
 
 ## Blog
-- [Blog de Patológicos](https://patologicos.com/blog/): 51 artículos sobre ventas, operación, datos e IA aplicada para dueños de PYME de Latinoamérica, más los ensayos de David Rivera. Escrito por agentes especializados y revisado antes de publicar.
+- [Blog de Patológicos](https://patologicos.com/blog/): 53 artículos sobre ventas, operación, datos e IA aplicada para dueños de PYME de Latinoamérica, más los ensayos de David Rivera. Escrito por agentes especializados y revisado antes de publicar.
 
 ### Ensayos de David Rivera
 Columna de opinión firmada por David Rivera (fundador). Se publicaron originalmente en piloko.com y viven aquí desde el 20 de septiembre de 2026; las URLs viejas redirigen (301). piloko.com quedó dedicado a su obra fotográfica.
@@ -71,6 +73,8 @@ Columna de opinión firmada por David Rivera (fundador). Se publicaron originalm
 
 ### Guías para tu negocio
 - [Cómo aparecer en ChatGPT y recibir consultas con intención de compra](https://patologicos.com/blog/aparecer-en-chatgpt/): Qué necesita tu sitio para entrar en una recomendación de ChatGPT y cómo convertir una consulta con contexto en una oportunidad comercial.
+- [Dirigir varios negocios con un equipo AI native](https://patologicos.com/blog/equipo-ai-native-negocios/): Lo que cambia en la dirección cuando las personas trabajan con agentes IA, contexto compartido y criterios de entrega. Aprendizajes desde nuestros proyectos.
+- [Cómo llevar tu negocio desde GPT o Claude con agentes IA](https://patologicos.com/blog/operar-negocio-desde-agente-ia/): Qué necesita un negocio para consultar sus datos y ejecutar tareas desde un agente, con permisos, registros y confirmaciones que correspondan a la realidad.
 - [Tu cliente pregunta “¿cómo va mi pedido?”: organiza un taller sin revisar veinte chats](https://patologicos.com/blog/control-pedidos-taller-estados-aprobaciones/): Organiza trabajos de taller con folio, versión, responsable y siguiente paso. Una guía para separar archivos, aprobaciones, producción y entrega.
 - [Cómo cotizar recuerdos para bodas y XV sin rehacer cada presupuesto](https://patologicos.com/blog/cotizar-recuerdos-bodas-xv/): Define cantidades, personalización, empaque, fechas y versión de la propuesta. Un método para cotizar recuerdos sin rehacer cada presupuesto.
 - [Vendo por Instagram: ¿necesito una tienda en línea o un catálogo?](https://patologicos.com/blog/instagram-tienda-en-linea-o-catalogo/): Compara catálogo con solicitud, cotización y tienda transaccional según tu producto. Decide qué canal necesitas sin empezar por la plataforma.

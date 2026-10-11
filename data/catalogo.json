@@ -4,10 +4,31 @@
   "currency": "MXN",
   "offers": [
     {
+      "id": "mastermind-agentes",
+      "name": "Mastermind de negocios con agentes IA",
+      "description": "Primera edición propuesta: 12 semanas en línea, máximo 8 empresas, CEO y líder operativo. Seis consejos, tres clínicas, dos sesiones privadas y tres revisiones de un piloto acotado. Inversión propuesta de 120000 MXN más IVA por empresa; calendario y condiciones finales por confirmar. Admisión por entrevista, sin reserva ni cobro automático.",
+      "url": "https://patologicos.com/mastermind/",
+      "active": true,
+      "price_minor": null,
+      "availability": {
+        "status": "requires_confirmation",
+        "note": "Primera edición en preparación. Sin reserva ni cobro automático."
+      },
+      "pricing": {
+        "type": "custom_quote",
+        "currency": "MXN",
+        "basis": "diagnostic_and_scope",
+        "note": "Inversión propuesta de 120000 MXN más IVA por empresa; confirmar calendario y condiciones por escrito antes de contratar."
+      },
+      "attributes": {
+        "contracting": "human_handoff"
+      }
+    },
+    {
       "id": "plan-fundador",
-      "name": "Plan fundador PATO",
-      "description": "Un sistema administrado de sitio, tienda, órdenes, analítica y finanzas, operado por el equipo y potenciado por IA.",
-      "url": "https://patologicos.com/solicitar.html",
+      "name": "Sistema para PYMES · Plan fundador",
+      "description": "Base comercial con web, tienda y estrategia de tráfico según alcance acordado. Automatizaciones de ventas y conexión con agentes se cotizan como ampliaciones; inversión publicitaria por separado.",
+      "url": "https://patologicos.com/sistema-pymes/",
       "active": true,
       "price_minor": 249000,
       "availability": {
