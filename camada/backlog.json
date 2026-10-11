@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-10T19:02:02",
- "count": 7,
+ "generatedAt": "2026-10-10T22:02:02",
+ "count": 9,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20261010-132617",
@@ -25,6 +25,14 @@
    "titulo": "Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible",
    "resumen": "Estado de la propuesta: provisional. El entorno rechazó la ejecución necesaria para leer knowledge/ y .pato/PATOBOARD.md. No pude verificar el contexto documental, incluido knowledge/departamento-numeros.md, ni los avances existentes. Esta propuesta parte del resumen proporcionado; las metas siguientes son propuestas, no resultados reales. No se realizaron acciones externas ni publicaciones. Poner en operación un cic",
    "stamp": "20261009"
+  },
+  {
+   "id": "prop-picandotabla-fundadora-gramaje-de-crackers-extra-20261010-204401",
+   "proyecto": "picandotabla",
+   "vocacion": "copy",
+   "titulo": "Gramaje de crackers extra",
+   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-10-10T20:42:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Jessica, todavía no tenemos un gramaje confirmado para la porción extra. Encontré una propuesta previa de gramajes(/C:/Patologicos/knowledge/archive/prop-picandotabla-fundadora-picando-tabla-gramajes-y-costeo-base-por-numero-20260626-221904.md:17) de 20 g de pan/",
+   "stamp": "20261010"
   },
   {
    "id": "prop-proca-procagrillz-llevar-al-cliente-a-escaneo--20261007-072709",
@@ -57,6 +65,14 @@
    "titulo": "Velas Lumin: contenido que lleva al pedido y SEO sobre la oferta existente",
    "resumen": "Propuesta al 6 de octubre de 2026. Sprint de preparación y contenido de 14 días, con seguimiento SEO a 28 días. Basada en documentación local; sin publicaciones ni acciones externas. Objetivo y por qué importa Generar pedidos para Lumin Candele aprovechando la colección de Día de Muertos y mantener demanda de velas para eventos. El cuello documentado es demanda; el proyecto reporta margen aproximado de 40% y capacida",
    "stamp": "20261006"
+  },
+  {
+   "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20261010-192805",
+   "proyecto": "wine",
+   "vocacion": "ventas",
+   "titulo": "Picando Tabla: aprobar una compra completa y abrir el cobro en línea",
+   "resumen": "Propuesta · 10 de octubre de 2026 · Para revisión, sin ejecución ni publicación. 1. Objetivo y por qué importa Convertir la visita en un pedido pagado, con entrega viable y visible para Jessica, empezando por la Tabla de la Anfitriona. El contexto actualizado cambia el punto de partida: el tablero(/C:/Patologicos/.pato/PATOBOARD.md) y el registro del 23 de septiembre(/C:/Patologicos/knowledge/picandotabla-seo-llm-cat",
+   "stamp": "20261010"
   }
  ]
 }

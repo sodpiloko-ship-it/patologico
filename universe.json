@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-10T19:02:02",
+ "generatedAt": "2026-10-10T22:02:03",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 9
  },
  "climate": {
   "ok": 10,
@@ -206,6 +206,11 @@
    "stamp": "20261009"
   },
   {
+   "titulo": "Gramaje de crackers extra",
+   "proyecto": "picandotabla",
+   "stamp": "20261010"
+  },
+  {
    "titulo": "PROCAGrillZ: del interés al escaneo intraoral recibido",
    "proyecto": "proca",
    "stamp": "20261007"
@@ -224,14 +229,19 @@
    "titulo": "Velas Lumin: contenido que lleva al pedido y SEO sobre la oferta existente",
    "proyecto": "velas",
    "stamp": "20261006"
+  },
+  {
+   "titulo": "Picando Tabla: aprobar una compra completa y abrir el cobro en línea",
+   "proyecto": "wine",
+   "stamp": "20261010"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "9 obras en el cuerpo de trabajo del universo",
   "obra: «CAD·CAM·IA: reactivar tres contenidos y convertir lectura en intención de compra» — cadcamia",
-  "obra: «Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible» — patologicos",
-  "obra: «PROCADental: cerrar siete huecos de contenido y convertir consultas en visitas al director» — procadental"
+  "obra: «Gramaje de crackers extra» — picandotabla",
+  "obra: «Picando Tabla: aprobar una compra completa y abrir el cobro en línea» — wine"
  ]
 }
