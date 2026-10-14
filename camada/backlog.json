@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-14T07:02:01",
- "count": 7,
+ "generatedAt": "2026-10-14T10:02:04",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20261010-132617",
@@ -9,6 +9,14 @@
    "titulo": "CAD·CAM·IA: reactivar tres contenidos y convertir lectura en intención de compra",
    "resumen": "Propuesta · 10 de octubre de 2026 · Piloto editorial de siete días y medición posterior de 28 días. 1. Objetivo y por qué importa Reactivar el sitio en WordPress mediante tres contenidos conectados que ayuden al aficionado a elegir equipo, resolver problemas y fabricar su primera pieza. Aprovechar el contenido acumulado para atraer búsquedas y comprobar qué temas acercan al lector a productos y educación. La hipótesi",
    "stamp": "20261010"
+  },
+  {
+   "id": "prop-fanatia-conservar-urls-adultas-y-de-sets-prepara-20261014-072630",
+   "proyecto": "fanatia",
+   "vocacion": "seo",
+   "titulo": "Fanatia: proteger las URLs adultas y medir la migración a Piloko",
+   "resumen": "Propuesta al 14 de octubre de 2026 · Solo lectura, sin publicaciones ni acciones externas. Conservar las entradas a fotografía adulta y sets de Fanatia, mantener las equivalencias hacia Piloko y detectar qué páginas y canales generan oportunidades comerciales. El siguiente avance es auditar y medir lo ya trasladado: la documentación vigente registra que el 10 de octubre se migraron 63 guías generales a Piloko, con 18",
+   "stamp": "20261014"
   },
   {
    "id": "prop-patologicos-motor-de-contenido-multiformato-operando-20261009-132613",

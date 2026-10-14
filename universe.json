@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-14T07:02:01",
+ "generatedAt": "2026-10-14T10:02:06",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -196,6 +196,11 @@
    "stamp": "20261010"
   },
   {
+   "titulo": "Fanatia: proteger las URLs adultas y medir la migración a Piloko",
+   "proyecto": "fanatia",
+   "stamp": "20261014"
+  },
+  {
    "titulo": "Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible",
    "proyecto": "patologicos",
    "stamp": "20261009"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «Fanatia: proteger las URLs adultas y medir la migración a Piloko» — fanatia",
   "obra: «CAD·CAM·IA: reactivar tres contenidos y convertir lectura en intención de compra» — cadcamia",
-  "obra: «Gramaje de crackers extra» — picandotabla",
-  "obra: «Picando Tabla: aprobar una compra completa y abrir el cobro en línea» — wine"
+  "obra: «Gramaje de crackers extra» — picandotabla"
  ]
 }
