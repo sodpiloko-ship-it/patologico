@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-15T07:02:02",
- "count": 7,
+ "generatedAt": "2026-10-15T10:02:01",
+ "count": 8,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20261010-132617",
@@ -33,6 +33,14 @@
    "titulo": "Gramaje de crackers extra",
    "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-10-10T20:42:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Jessica, todavía no tenemos un gramaje confirmado para la porción extra. Encontré una propuesta previa de gramajes(/C:/Patologicos/knowledge/archive/prop-picandotabla-fundadora-picando-tabla-gramajes-y-costeo-base-por-numero-20260626-221904.md:17) de 20 g de pan/",
    "stamp": "20261010"
+  },
+  {
+   "id": "prop-piloko-recibir-contenido-no-gr-fico-de-fanatia--20261015-072822",
+   "proyecto": "piloko",
+   "vocacion": "copy",
+   "titulo": "Piloko: verificar las 63 guías recibidas y convertir su lectura en oportunidades de encarg",
+   "resumen": "Propuesta · 15 de octubre de 2026. Basada en documentación y archivos locales; sin comprobaciones externas ni publicaciones. Consolidar la recepción de contenido no gráfico de Fanatia mediante mapa por URL, destino equivalente y evidencia de verificación, manteniendo el desnudo explícito y los sets adultos en Fanatia. La migración inicial ya está documentada: 63 guías trasladadas el 10 de octubre, 45 en español y 18 ",
+   "stamp": "20261015"
   },
   {
    "id": "prop-procadental-producir-los-7-huecos-de-categoria-sin-c-20261009-072617",
