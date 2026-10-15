@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-15T04:02:01",
- "count": 8,
+ "generatedAt": "2026-10-15T07:02:02",
+ "count": 7,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20261010-132617",
@@ -33,14 +33,6 @@
    "titulo": "Gramaje de crackers extra",
    "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-10-10T20:42:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Jessica, todavía no tenemos un gramaje confirmado para la porción extra. Encontré una propuesta previa de gramajes(/C:/Patologicos/knowledge/archive/prop-picandotabla-fundadora-picando-tabla-gramajes-y-costeo-base-por-numero-20260626-221904.md:17) de 20 g de pan/",
    "stamp": "20261010"
-  },
-  {
-   "id": "prop-proca-procagrillz-llevar-al-cliente-a-escaneo--20261007-072709",
-   "proyecto": "proca",
-   "vocacion": "datos",
-   "titulo": "PROCAGrillZ: del interés al escaneo intraoral recibido",
-   "resumen": "Propuesta · 7 de octubre de 2026 · Piloto de 28 días Conseguir que los interesados sin escaneo pasen a una cita y entreguen archivos utilizables, para avanzar después a una pieza pagada. Existe una base comercial aprovechable: el tablero documenta formulario operativo y condiciones actualizadas publicadas el 17 de septiembre. El siguiente avance consiste en acompañar al cliente durante el requisito que debe resolver ",
-   "stamp": "20261007"
   },
   {
    "id": "prop-procadental-producir-los-7-huecos-de-categoria-sin-c-20261009-072617",
