@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-16T13:02:02",
+ "generatedAt": "2026-10-16T16:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -201,6 +201,11 @@
    "stamp": "20261014"
   },
   {
+   "titulo": "Intel Jurídico: una quincena para convertir dolores comprobados en demos y mejoras de Nomo",
+   "proyecto": "legal",
+   "stamp": "20261016"
+  },
+  {
    "titulo": "Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible",
    "proyecto": "patologicos",
    "stamp": "20261009"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «Intel Jurídico: una quincena para convertir dolores comprobados en demos y mejoras de Nomo» — legal",
   "obra: «Piloko: verificar las 63 guías recibidas y convertir su lectura en oportunidades de encarg» — piloko",
-  "obra: «Fanatia: proteger las URLs adultas y medir la migración a Piloko» — fanatia",
-  "obra: «CAD·CAM·IA: reactivar tres contenidos y convertir lectura en intención de compra» — cadcamia"
+  "obra: «Fanatia: proteger las URLs adultas y medir la migración a Piloko» — fanatia"
  ]
 }
