@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-16T04:02:16",
- "count": 8,
+ "generatedAt": "2026-10-16T07:02:03",
+ "count": 7,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20261010-132617",
@@ -49,14 +49,6 @@
    "titulo": "PROCADental: cerrar siete huecos de contenido y convertir consultas en visitas al director",
    "resumen": "Propuesta para revisión; no se ejecutaron acciones externas ni publicaciones. No fue posible leer knowledge/ ni .pato/PATOBOARD.md por un fallo del entorno de lectura. Esta propuesta parte del resumen proporcionado; queda pendiente contrastarla con el brief y el mandato completo de Números y Análisis. Producir siete guías educativas para pacientes, una por categoría sin cobertura, todas con CTA a /encuentra-dentista/",
    "stamp": "20261009"
-  },
-  {
-   "id": "prop-procagrillz-cerrar-el-embudo-cta-nico-escaneo-intrao-20261008-072928",
-   "proyecto": "procagrillz",
-   "vocacion": "copy",
-   "titulo": "PROCA GrillZ: un solo CTA para convertir el tráfico de PROCADental en solicitudes de escan",
-   "resumen": "Propuesta · 8 de octubre de 2026 · Preparación en 5 días hábiles y piloto de 28 días. 1. Objetivo y por qué importa Cerrar el recorrido comercial del clúster GrillZ: Entrada desde PROCADental → «Escaneo intraoral» → solicitud válida → archivos aceptados → pedido liquidado. La oportunidad inmediata es recuperar /listag/, antigua entrada de precios que en el archivo local redirige a la portada general de PROCADental, y",
-   "stamp": "20261008"
   },
   {
    "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20261010-192805",
