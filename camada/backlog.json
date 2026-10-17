@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-17T04:02:02",
- "count": 8,
+ "generatedAt": "2026-10-17T07:02:02",
+ "count": 6,
  "items": [
   {
    "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20261010-132617",
@@ -27,14 +27,6 @@
    "stamp": "20261016"
   },
   {
-   "id": "prop-patologicos-motor-de-contenido-multiformato-operando-20261009-132613",
-   "proyecto": "patologicos",
-   "vocacion": "copy",
-   "titulo": "Propuesta: convertir un experimento de Patológicos en un ciclo de contenido medible",
-   "resumen": "Estado de la propuesta: provisional. El entorno rechazó la ejecución necesaria para leer knowledge/ y .pato/PATOBOARD.md. No pude verificar el contexto documental, incluido knowledge/departamento-numeros.md, ni los avances existentes. Esta propuesta parte del resumen proporcionado; las metas siguientes son propuestas, no resultados reales. No se realizaron acciones externas ni publicaciones. Poner en operación un cic",
-   "stamp": "20261009"
-  },
-  {
    "id": "prop-picandotabla-fundadora-gramaje-de-crackers-extra-20261010-204401",
    "proyecto": "picandotabla",
    "vocacion": "copy",
@@ -49,14 +41,6 @@
    "titulo": "Piloko: verificar las 63 guías recibidas y convertir su lectura en oportunidades de encarg",
    "resumen": "Propuesta · 15 de octubre de 2026. Basada en documentación y archivos locales; sin comprobaciones externas ni publicaciones. Consolidar la recepción de contenido no gráfico de Fanatia mediante mapa por URL, destino equivalente y evidencia de verificación, manteniendo el desnudo explícito y los sets adultos en Fanatia. La migración inicial ya está documentada: 63 guías trasladadas el 10 de octubre, 45 en español y 18 ",
    "stamp": "20261015"
-  },
-  {
-   "id": "prop-procadental-producir-los-7-huecos-de-categoria-sin-c-20261009-072617",
-   "proyecto": "procadental",
-   "vocacion": "seo",
-   "titulo": "PROCADental: cerrar siete huecos de contenido y convertir consultas en visitas al director",
-   "resumen": "Propuesta para revisión; no se ejecutaron acciones externas ni publicaciones. No fue posible leer knowledge/ ni .pato/PATOBOARD.md por un fallo del entorno de lectura. Esta propuesta parte del resumen proporcionado; queda pendiente contrastarla con el brief y el mandato completo de Números y Análisis. Producir siete guías educativas para pacientes, una por categoría sin cobertura, todas con CTA a /encuentra-dentista/",
-   "stamp": "20261009"
   },
   {
    "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20261010-192805",
