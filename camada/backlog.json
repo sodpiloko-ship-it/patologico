@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-18T07:02:02",
- "count": 5,
+ "generatedAt": "2026-10-18T10:02:01",
+ "count": 6,
  "items": [
   {
    "id": "prop-fanatia-conservar-urls-adultas-y-de-sets-prepara-20261014-072630",
@@ -33,6 +33,14 @@
    "titulo": "PROCA/PROCAOps: una demostración real que abra conversaciones comerciales",
    "resumen": "Propuesta de PATOLOGICO · 17 de octubre de 2026 Basada en documentación local. Sin publicaciones, modificaciones ni acciones externas. Convertir PROCA/PROCAOps en un caso de estudio publicable que genere solicitudes de Auditoría de Proceso con IA para Patológicos. El brief del caso(/C:/Patologicos/knowledge/caso-proca.md) establece la oportunidad: demostrar cómo aplicamos software, IA e interfaces al trabajo dental y",
    "stamp": "20261017"
+  },
+  {
+   "id": "prop-procagrillz-capturar-la-demanda-org-nica-grillz-600--20261018-072645",
+   "proyecto": "procagrillz",
+   "vocacion": "copy",
+   "titulo": "PROCA GrillZ: convertir la curiosidad orgánica en solicitudes y piezas pagadas",
+   "resumen": "Conectar las páginas que ya atraen búsquedas de GrillZ con una solicitud de cotización y acompañar al interesado hasta recibir su escaneo y pago. La oportunidad inmediata es mejorar ese recorrido comercial. El contexto local documenta tráfico de intención y un formulario que ya recibió solicitudes reales, pero falta medir cuántas terminan en ventas. Hay dos actualizaciones relevantes frente al resumen inicial: - El i",
+   "stamp": "20261018"
   },
   {
    "id": "prop-velas-vender-con-meta-ads-instalar-pixel-1er-s-20261017-072645",
