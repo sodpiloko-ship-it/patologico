@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-18T04:02:02",
+ "generatedAt": "2026-10-18T07:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 5
  },
  "climate": {
   "ok": 10,
@@ -191,11 +191,6 @@
  ],
  "canon": [
   {
-   "titulo": "CAD·CAM·IA: reactivar tres contenidos y convertir lectura en intención de compra",
-   "proyecto": "cadcamia",
-   "stamp": "20261010"
-  },
-  {
    "titulo": "Fanatia: proteger las URLs adultas y medir la migración a Piloko",
    "proyecto": "fanatia",
    "stamp": "20261014"
@@ -204,11 +199,6 @@
    "titulo": "Intel Jurídico: una quincena para convertir dolores comprobados en demos y mejoras de Nomo",
    "proyecto": "legal",
    "stamp": "20261016"
-  },
-  {
-   "titulo": "Gramaje de crackers extra",
-   "proyecto": "picandotabla",
-   "stamp": "20261010"
   },
   {
    "titulo": "Piloko: verificar las 63 guías recibidas y convertir su lectura en oportunidades de encarg",
@@ -224,17 +214,12 @@
    "titulo": "Lumin Candele: instalar Pixel y convertir el primer set de anuncios en pedidos pagados",
    "proyecto": "velas",
    "stamp": "20261017"
-  },
-  {
-   "titulo": "Picando Tabla: aprobar una compra completa y abrir el cobro en línea",
-   "proyecto": "wine",
-   "stamp": "20261010"
   }
  ],
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "5 obras en el cuerpo de trabajo del universo",
   "obra: «PROCA/PROCAOps: una demostración real que abra conversaciones comerciales» — proca",
   "obra: «Lumin Candele: instalar Pixel y convertir el primer set de anuncios en pedidos pagados» — velas",
   "obra: «Intel Jurídico: una quincena para convertir dolores comprobados en demos y mejoras de Nomo» — legal"

@@ -1,15 +1,7 @@
 {
- "generatedAt": "2026-10-18T04:02:02",
- "count": 8,
+ "generatedAt": "2026-10-18T07:02:02",
+ "count": 5,
  "items": [
-  {
-   "id": "prop-cadcamia-reactivar-el-sitio-contenido-primero-est-20261010-132617",
-   "proyecto": "cadcamia",
-   "vocacion": "seo",
-   "titulo": "CAD·CAM·IA: reactivar tres contenidos y convertir lectura en intención de compra",
-   "resumen": "Propuesta · 10 de octubre de 2026 · Piloto editorial de siete días y medición posterior de 28 días. 1. Objetivo y por qué importa Reactivar el sitio en WordPress mediante tres contenidos conectados que ayuden al aficionado a elegir equipo, resolver problemas y fabricar su primera pieza. Aprovechar el contenido acumulado para atraer búsquedas y comprobar qué temas acercan al lector a productos y educación. La hipótesi",
-   "stamp": "20261010"
-  },
   {
    "id": "prop-fanatia-conservar-urls-adultas-y-de-sets-prepara-20261014-072630",
    "proyecto": "fanatia",
@@ -25,14 +17,6 @@
    "titulo": "Intel Jurídico: una quincena para convertir dolores comprobados en demos y mejoras de Nomo",
    "resumen": "Propuesta · 16 de octubre de 2026 · PATOLOGICO / Jurídico Identificar un dolor operativo de despachos litigantes mexicanos que genere una demo calificada de Nomos, y convertir su evidencia en una mejora concreta del producto y un argumento comercial. El segmento ya está definido: despachos de 1–5 profesionales con alta carga documental. La decisión vigente de Nomos(C:/Patologicos/knowledge/nomos-decisiones.md) mantie",
    "stamp": "20261016"
-  },
-  {
-   "id": "prop-picandotabla-fundadora-gramaje-de-crackers-extra-20261010-204401",
-   "proyecto": "picandotabla",
-   "vocacion": "copy",
-   "titulo": "Gramaje de crackers extra",
-   "resumen": "<!-- pedido de Jessica (Picando Tabla) vía Telegram, 2026-10-10T20:42:02 -- <!-- atendido por founderaction (motor Grok/Codex); revisar antes de publicar -- Jessica, todavía no tenemos un gramaje confirmado para la porción extra. Encontré una propuesta previa de gramajes(/C:/Patologicos/knowledge/archive/prop-picandotabla-fundadora-picando-tabla-gramajes-y-costeo-base-por-numero-20260626-221904.md:17) de 20 g de pan/",
-   "stamp": "20261010"
   },
   {
    "id": "prop-piloko-recibir-contenido-no-gr-fico-de-fanatia--20261015-072822",
@@ -57,14 +41,6 @@
    "titulo": "Lumin Candele: instalar Pixel y convertir el primer set de anuncios en pedidos pagados",
    "resumen": "Propuesta de PATOLOGICO · 17 de octubre de 2026. Basada en archivos locales; sin modificaciones, publicaciones ni acciones externas. Preparar un piloto de Meta Ads que conecte anuncio → conversación → pedido → pago, con Pixel instalado y tres anuncios comparables. El cuello declarado es la demanda. La capacidad reportada de 500 velas y el margen aproximado de 40% justifican probar adquisición, pero no acreditan venta",
    "stamp": "20261017"
-  },
-  {
-   "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20261010-192805",
-   "proyecto": "wine",
-   "vocacion": "ventas",
-   "titulo": "Picando Tabla: aprobar una compra completa y abrir el cobro en línea",
-   "resumen": "Propuesta · 10 de octubre de 2026 · Para revisión, sin ejecución ni publicación. 1. Objetivo y por qué importa Convertir la visita en un pedido pagado, con entrega viable y visible para Jessica, empezando por la Tabla de la Anfitriona. El contexto actualizado cambia el punto de partida: el tablero(/C:/Patologicos/.pato/PATOBOARD.md) y el registro del 23 de septiembre(/C:/Patologicos/knowledge/picandotabla-seo-llm-cat",
-   "stamp": "20261010"
   }
  ]
 }
