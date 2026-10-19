@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-19T01:02:03",
+ "generatedAt": "2026-10-19T04:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -201,6 +201,11 @@
    "stamp": "20261016"
   },
   {
+   "titulo": "Convertir el escaparate de Patológicos en solicitudes de proyecto completo",
+   "proyecto": "patologicos",
+   "stamp": "20261019"
+  },
+  {
    "titulo": "Piloko: verificar las 63 guías recibidas y convertir su lectura en oportunidades de encarg",
    "proyecto": "piloko",
    "stamp": "20261015"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
+  "obra: «Convertir el escaparate de Patológicos en solicitudes de proyecto completo» — patologicos",
   "obra: «PROCADental: activar un piloto SEO que termine en referencias por zona» — procadental",
-  "obra: «PROCA GrillZ: convertir la curiosidad orgánica en solicitudes y piezas pagadas» — procagrillz",
-  "obra: «PROCA/PROCAOps: una demostración real que abra conversaciones comerciales» — proca"
+  "obra: «PROCA GrillZ: convertir la curiosidad orgánica en solicitudes y piezas pagadas» — procagrillz"
  ]
 }
