@@ -34,7 +34,7 @@ Este archivo es un resumen de navegación. El catálogo JSON enlazado abajo es l
 <!-- blog:inicio -->
 
 ## Blog
-- [Blog de Patológicos](https://patologicos.com/blog/): 53 artículos sobre ventas, operación, datos e IA aplicada para dueños de PYME de Latinoamérica, más los ensayos de David Rivera. Escrito por agentes especializados y revisado antes de publicar.
+- [Blog de Patológicos](https://patologicos.com/blog/): 54 artículos sobre ventas, operación, datos e IA aplicada para dueños de PYME de Latinoamérica, más los ensayos de David Rivera. Escrito por agentes especializados y revisado antes de publicar.
 
 ### Ensayos de David Rivera
 Columna de opinión firmada por David Rivera (fundador). Se publicaron originalmente en piloko.com y viven aquí desde el 20 de septiembre de 2026; las URLs viejas redirigen (301). piloko.com quedó dedicado a su obra fotográfica.
@@ -72,6 +72,7 @@ Columna de opinión firmada por David Rivera (fundador). Se publicaron originalm
 - [Del mobiliario para eventos a una lista para solicitar cotización](https://patologicos.com/blog/estudio-mobiliario-eventos-lista-cotizacion/): Un prototipo conceptual para reunir familias de mobiliario, variantes, cantidades y contexto del evento en una solicitud que pueda revisarse antes de cotizar.
 
 ### Guías para tu negocio
+- [Cómo crear un negocio que venda en automático con IA](https://patologicos.com/blog/negocio-que-vende-en-automatico-con-ia/): Un playbook de cuatro pasos para encontrar mercados, validar ideas, desarrollar productos y automatizar ventas utilizando Claude, ChatGPT, Grok y otras herramientas de inteligencia artificial.
 - [Cómo aparecer en ChatGPT y recibir consultas con intención de compra](https://patologicos.com/blog/aparecer-en-chatgpt/): Qué necesita tu sitio para entrar en una recomendación de ChatGPT y cómo convertir una consulta con contexto en una oportunidad comercial.
 - [Dirigir varios negocios con un equipo AI native](https://patologicos.com/blog/equipo-ai-native-negocios/): Lo que cambia en la dirección cuando las personas trabajan con agentes IA, contexto compartido y criterios de entrega. Aprendizajes desde nuestros proyectos.
 - [Cómo llevar tu negocio desde GPT o Claude con agentes IA](https://patologicos.com/blog/operar-negocio-desde-agente-ia/): Qué necesita un negocio para consultar sus datos y ejecutar tareas desde un agente, con permisos, registros y confirmaciones que correspondan a la realidad.
