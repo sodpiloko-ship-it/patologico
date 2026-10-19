@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-19T07:02:01",
+ "generatedAt": "2026-10-19T10:02:01",
  "projects": [
   {
    "id": "patologicos",
@@ -52,7 +52,7 @@
   },
   {
    "id": "piloko",
-   "label": "Piloko — estudio de fotografia de Davi",
+   "label": "Piloko — estudio de IA para creación v",
    "domain": "piloko.com",
    "health": "ok",
    "progress": 0.92
