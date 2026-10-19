@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-18T19:02:02",
+ "generatedAt": "2026-10-18T22:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 6
+  "obras": 7
  },
  "climate": {
   "ok": 10,
@@ -211,6 +211,11 @@
    "stamp": "20261017"
   },
   {
+   "titulo": "PROCADental: activar un piloto SEO que termine en referencias por zona",
+   "proyecto": "procadental",
+   "stamp": "20261018"
+  },
+  {
    "titulo": "PROCA GrillZ: convertir la curiosidad orgánica en solicitudes y piezas pagadas",
    "proyecto": "procagrillz",
    "stamp": "20261018"
@@ -224,9 +229,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "6 obras en el cuerpo de trabajo del universo",
+  "7 obras en el cuerpo de trabajo del universo",
+  "obra: «PROCADental: activar un piloto SEO que termine en referencias por zona» — procadental",
   "obra: «PROCA GrillZ: convertir la curiosidad orgánica en solicitudes y piezas pagadas» — procagrillz",
-  "obra: «PROCA/PROCAOps: una demostración real que abra conversaciones comerciales» — proca",
-  "obra: «Lumin Candele: instalar Pixel y convertir el primer set de anuncios en pedidos pagados» — velas"
+  "obra: «PROCA/PROCAOps: una demostración real que abra conversaciones comerciales» — proca"
  ]
 }
