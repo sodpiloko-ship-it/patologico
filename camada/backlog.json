@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-24T02:44:38",
- "count": 8,
+ "generatedAt": "2026-10-24T08:00:28",
+ "count": 5,
  "items": [
   {
    "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20261022-072637",
@@ -11,28 +11,12 @@
    "stamp": "20261022"
   },
   {
-   "id": "prop-legal-intel-jur-dico-minado-de-dolores-product-20261016-132707",
-   "proyecto": "legal",
-   "vocacion": "investigacion",
-   "titulo": "Intel Jurídico: una quincena para convertir dolores comprobados en demos y mejoras de Nomo",
-   "resumen": "Propuesta · 16 de octubre de 2026 · PATOLOGICO / Jurídico Identificar un dolor operativo de despachos litigantes mexicanos que genere una demo calificada de Nomos, y convertir su evidencia en una mejora concreta del producto y un argumento comercial. El segmento ya está definido: despachos de 1–5 profesionales con alta carga documental. La decisión vigente de Nomos(C:/Patologicos/knowledge/nomos-decisiones.md) mantie",
-   "stamp": "20261016"
-  },
-  {
    "id": "prop-patologicos-vender-el-proyecto-completo-desarrollo-c-20261019-012658",
    "proyecto": "patologicos",
    "vocacion": "copy",
    "titulo": "Convertir el escaparate de Patológicos en solicitudes de proyecto completo",
    "resumen": "Conseguir una oportunidad comercial calificada para desarrollo con IA agéntica y llevarla a una propuesta de alcance y presupuesto. El escaparate debe explicar qué compra el cliente, demostrar capacidad y facilitar una conversación sobre su proceso. El contexto más reciente cambia el punto de partida: knowledge/patologicos-mastermind-marca-20261010.md sitúa al Mastermind como oferta principal y al sistema PYME como s",
    "stamp": "20261019"
-  },
-  {
-   "id": "prop-piloko-recibir-contenido-no-gr-fico-de-fanatia--20261015-072822",
-   "proyecto": "piloko",
-   "vocacion": "copy",
-   "titulo": "Piloko: verificar las 63 guías recibidas y convertir su lectura en oportunidades de encarg",
-   "resumen": "Propuesta · 15 de octubre de 2026. Basada en documentación y archivos locales; sin comprobaciones externas ni publicaciones. Consolidar la recepción de contenido no gráfico de Fanatia mediante mapa por URL, destino equivalente y evidencia de verificación, manteniendo el desnudo explícito y los sets adultos en Fanatia. La migración inicial ya está documentada: 63 guías trasladadas el 10 de octubre, 45 en español y 18 ",
-   "stamp": "20261015"
   },
   {
    "id": "prop-proca-publicar-el-caso-de-estudio-proca-procao-20261017-132641",
@@ -57,14 +41,6 @@
    "titulo": "PROCA GrillZ: convertir la curiosidad orgánica en solicitudes y piezas pagadas",
    "resumen": "Conectar las páginas que ya atraen búsquedas de GrillZ con una solicitud de cotización y acompañar al interesado hasta recibir su escaneo y pago. La oportunidad inmediata es mejorar ese recorrido comercial. El contexto local documenta tráfico de intención y un formulario que ya recibió solicitudes reales, pero falta medir cuántas terminan en ventas. Hay dos actualizaciones relevantes frente al resumen inicial: - El i",
    "stamp": "20261018"
-  },
-  {
-   "id": "prop-velas-vender-con-meta-ads-instalar-pixel-1er-s-20261017-072645",
-   "proyecto": "velas",
-   "vocacion": "ventas",
-   "titulo": "Lumin Candele: instalar Pixel y convertir el primer set de anuncios en pedidos pagados",
-   "resumen": "Propuesta de PATOLOGICO · 17 de octubre de 2026. Basada en archivos locales; sin modificaciones, publicaciones ni acciones externas. Preparar un piloto de Meta Ads que conecte anuncio → conversación → pedido → pago, con Pixel instalado y tres anuncios comparables. El cuello declarado es la demanda. La capacidad reportada de 500 velas y el margen aproximado de 40% justifican probar adquisición, pero no acreditan venta",
-   "stamp": "20261017"
   }
  ]
 }
