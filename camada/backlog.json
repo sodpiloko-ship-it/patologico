@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-24T08:00:28",
- "count": 5,
+ "generatedAt": "2026-10-24T10:02:02",
+ "count": 6,
  "items": [
   {
    "id": "prop-cadcamia-posicionar-cad-cam-ia-como-autoridad-de--20261022-072637",
@@ -41,6 +41,14 @@
    "titulo": "PROCA GrillZ: convertir la curiosidad orgánica en solicitudes y piezas pagadas",
    "resumen": "Conectar las páginas que ya atraen búsquedas de GrillZ con una solicitud de cotización y acompañar al interesado hasta recibir su escaneo y pago. La oportunidad inmediata es mejorar ese recorrido comercial. El contexto local documenta tráfico de intención y un formulario que ya recibió solicitudes reales, pero falta medir cuántas terminan en ventas. Hay dos actualizaciones relevantes frente al resumen inicial: - El i",
    "stamp": "20261018"
+  },
+  {
+   "id": "prop-wine-tienda-online-que-convierte-aprobar-prot-20261024-080404",
+   "proyecto": "wine",
+   "vocacion": "ventas",
+   "titulo": "Picando Tabla: aprobar el flujo de compra y cerrar ventas medibles",
+   "resumen": "Propuesta para revisión · 24 de octubre de 2026 Completar un recorrido móvil que permita elegir una tabla de quesos y carnes, confirmar entrega local, pagar y recibir una confirmación verificable, con el pedido disponible para Jessica. El objetivo «aprobar prototipo → publicar» necesita actualizarse: el tablero y el documento del 23 de septiembre registran una tienda ya publicada. La siguiente entrega debe completar ",
+   "stamp": "20261024"
   }
  ]
 }
