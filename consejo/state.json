@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T10:02:02",
+ "generatedAt": "2026-10-24T13:02:02",
  "projects": [
   {
    "id": "patologicos",
@@ -38,7 +38,7 @@
   },
   {
    "id": "cadcamia",
-   "label": "CAD CAM IA",
+   "label": "CAD CAM IA — impresión 3D/diseño CAD +",
    "domain": "cadcamia.com",
    "health": "roto",
    "progress": 0.32
