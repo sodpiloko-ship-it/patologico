@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-25T02:44:20",
+ "generatedAt": "2026-10-25T10:44:00",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 8
+  "obras": 6
  },
  "climate": {
   "ok": 10,
@@ -211,18 +211,8 @@
    "stamp": "20261024"
   },
   {
-   "titulo": "PROCA/PROCAOps: una demostración real que abra conversaciones comerciales",
-   "proyecto": "proca",
-   "stamp": "20261017"
-  },
-  {
    "titulo": "PROCADental: activar un piloto SEO que termine en referencias por zona",
    "proyecto": "procadental",
-   "stamp": "20261018"
-  },
-  {
-   "titulo": "PROCA GrillZ: convertir la curiosidad orgánica en solicitudes y piezas pagadas",
-   "proyecto": "procagrillz",
    "stamp": "20261018"
   },
   {
@@ -234,7 +224,7 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "8 obras en el cuerpo de trabajo del universo",
+  "6 obras en el cuerpo de trabajo del universo",
   "obra: «Fanatia: conservar las entradas adultas y convertir la separación con Piloko en resultados» — fanatia",
   "obra: «Piloko: convertir la obra de David Rivera en encargos visuales» — piloko",
   "obra: «Picando Tabla: aprobar el flujo de compra y cerrar ventas medibles» — wine"
