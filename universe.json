@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-24T19:02:02",
+ "generatedAt": "2026-10-24T22:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -206,6 +206,11 @@
    "stamp": "20261019"
   },
   {
+   "titulo": "Piloko: convertir la obra de David Rivera en encargos visuales",
+   "proyecto": "piloko",
+   "stamp": "20261024"
+  },
+  {
    "titulo": "PROCA/PROCAOps: una demostración real que abra conversaciones comerciales",
    "proyecto": "proca",
    "stamp": "20261017"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
   "obra: «Fanatia: conservar las entradas adultas y convertir la separación con Piloko en resultados» — fanatia",
-  "obra: «Picando Tabla: aprobar el flujo de compra y cerrar ventas medibles» — wine",
-  "obra: «CAD·CAM·IA: demostrar la revolución de producción con una pieza reproducible» — cadcamia"
+  "obra: «Piloko: convertir la obra de David Rivera en encargos visuales» — piloko",
+  "obra: «Picando Tabla: aprobar el flujo de compra y cerrar ventas medibles» — wine"
  ]
 }
