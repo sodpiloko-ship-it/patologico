@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T22:02:02",
+ "generatedAt": "2026-10-26T01:02:02",
  "projects": [
   {
    "id": "patologicos",
@@ -52,7 +52,7 @@
   },
   {
    "id": "piloko",
-   "label": "Piloko — estudio de PRODUCCIÓN MULTIME",
+   "label": "Piloko — estudio creativo multidiscipl",
    "domain": "piloko.com",
    "health": "ok",
    "progress": 0.92
