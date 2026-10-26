@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-25T19:02:02",
+ "generatedAt": "2026-10-25T22:02:02",
  "universe": "Patológicos",
  "census": {
   "regiones": 12,
   "habitantes": 16,
-  "obras": 7
+  "obras": 8
  },
  "climate": {
   "ok": 10,
@@ -221,6 +221,11 @@
    "stamp": "20261018"
   },
   {
+   "titulo": "Lumin Candele: convertir contenido y SEO en pedidos medibles",
+   "proyecto": "velas",
+   "stamp": "20261025"
+  },
+  {
    "titulo": "Picando Tabla: aprobar el flujo de compra y cerrar ventas medibles",
    "proyecto": "wine",
    "stamp": "20261024"
@@ -229,9 +234,9 @@
  "chronicle": [
   "clima del universo: 10 en calma · 1 en tormenta",
   "16 agentes nativos habitan el Consejo",
-  "7 obras en el cuerpo de trabajo del universo",
+  "8 obras en el cuerpo de trabajo del universo",
   "obra: «Nomos: cerrar el primer piloto pagado con una oferta y una demo concretas» — legal",
-  "obra: «Fanatia: conservar las entradas adultas y convertir la separación con Piloko en resultados» — fanatia",
-  "obra: «Piloko: convertir la obra de David Rivera en encargos visuales» — piloko"
+  "obra: «Lumin Candele: convertir contenido y SEO en pedidos medibles» — velas",
+  "obra: «Fanatia: conservar las entradas adultas y convertir la separación con Piloko en resultados» — fanatia"
  ]
 }
